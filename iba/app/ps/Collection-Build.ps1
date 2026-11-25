@@ -28,11 +28,13 @@
       Subgroup  -Collection <name> -Name <subgroup> -Reason <text>   make a subgroup of a collection (a group of surfaces of one meaning), as your correction of the grouping by meaning
                 -Collection <name> -Name <subgroup> -Surface <a,b> [-Strong <code>] -Reason <text>   place surfaces in it (-Strong places one sense of a surface)
                 -Collection <name> -Surface <a,b> -Isolate -Reason <text>   set aside surfaces whose meaning is not the one the collection gathers. -Check previews (#2503)
-      LayerOpen  -Collection <name> -Step S1|1.1|1.2|2.1|3.1|3.2|3.3 [-Check]   open a step of the layered reading: the gates (step 1.1 needs the lexical analysis S1 closed, the grouping
-                                    finished, the previous step closed; step 3.1, the first of stage 4 (the inner-being analysis), needs 1.1, 1.2 and 2.1 closed), then the ledger rows the data demands (#2505, #2528)
+      LayerOpen  -Collection <name> -Step S1|1.1|1.2|2.1|3.1|3.2|3.3 [-Check]   open a step of the layered reading: the gates (the grouping finished, the previous step closed; -Subgroup <name> opens a step for one subgroup of the collection
+                                    in isolation, #2538, and S1 (the words) is read after the grouping, subgroup by subgroup; step 3.1, the first of stage 4 (the inner-being analysis), needs 1.1, 1.2 and 2.1 closed), then the ledger rows the data demands (#2505, #2528)
       LayerPull  -Collection <name> -Step <step>   write the working file of the open rows with the evidence to read (a stage 4 file holds pull_max_rows rows: the verse in its passage, the
                                     occurrences, the stage 1 to 3 observations, the earlier observations with their flags, the meaning evidence, the interventions)
+      (LayerOpen, LayerPull take -Subgroup <name>: the loop over the subgroups, one subgroup in isolation, #2538)
       LayerRecord -File <filled working file> [-Check]   check the file whole and write its observations, nodes and ledger answers in one transaction
+      LayerNext -Collection <name>   say what to do next in the layered reading, from the ledger alone: the subgroup in flight, the step, its state and the verbs; a step of a subgroup is refused while another subgroup is further through its loop and not finished (escalation #2538)
       LayerCheck -Collection <name>   validate every answered row against the tables, set validated, write the report; names what is open, failed or missing
       NodeGroups [-Check]   set the group on the live nodes from the collection index
       GroupPull  -Collection <name>   write the working file for grouping the surfaces of a collection by their dictionary meaning (stage 2): one row for each row of the index with the evidence of the
@@ -68,7 +70,7 @@
 [CmdletBinding()]
 param(
     [Parameter(Mandatory = $true)]
-    [ValidateSet('Status', 'Links', 'Show', 'Export', 'ExportMembers', 'ExportSurfaces', 'Evidence', 'Set', 'Merge', 'Seed', 'Ask', 'Gather', 'AttachPhrases', 'Index', 'Subgroup', 'IndexCheck', 'LayerOpen', 'LayerPull', 'LayerRecord', 'LayerCheck', 'NodeGroups', 'GroupPull', 'GroupRecord', 'ValidatePull', 'ValidateRecord', 'ValidateCheck')]
+    [ValidateSet('Status', 'Links', 'Show', 'Export', 'ExportMembers', 'ExportSurfaces', 'Evidence', 'Set', 'Merge', 'Seed', 'Ask', 'Gather', 'AttachPhrases', 'Index', 'Subgroup', 'IndexCheck', 'LayerOpen', 'LayerPull', 'LayerRecord', 'LayerCheck', 'LayerNext', 'NodeGroups', 'GroupPull', 'GroupRecord', 'ValidatePull', 'ValidateRecord', 'ValidateCheck')]
     [string] $Action,
     [string[]] $Collection,
     [string] $Verse,
@@ -82,6 +84,7 @@ param(
     [string] $Into,
     [string] $Strong,
     [string] $Step,
+    [string] $Subgroup,
     [string] $File,
     [switch] $Isolate,
     [switch] $Check,
@@ -97,12 +100,12 @@ $RepoRoot = Split-Path -Parent (Split-Path -Parent (Split-Path -Parent $PSScript
 Set-Location $RepoRoot
 . $PSScriptRoot\_lib\Notify.ps1
 
-$stepMap = @{ Status = 'collection.status'; Links = 'collection.links'; Show = 'collection.show'; Export = 'collection.export'; ExportMembers = 'collection.export_members'; ExportSurfaces = 'collection.export_surfaces'; Evidence = 'collection.evidence'; Set = 'collection.set'; Merge = 'collection.merge'; Seed = 'collection.seed'; Ask = 'collection.ask'; Gather = 'collection.gather'; AttachPhrases = 'collection.attach_phrases'; Index = 'collection.index'; Subgroup = 'collection.subgroup'; IndexCheck = 'collection.index_check'; LayerOpen = 'collection.layer_open'; LayerPull = 'collection.layer_pull'; LayerRecord = 'collection.layer_record'; LayerCheck = 'collection.layer_check'; NodeGroups = 'collection.node_groups'; GroupPull = 'collection.group_pull'; GroupRecord = 'collection.group_record'; ValidatePull = 'collection.validate_pull'; ValidateRecord = 'collection.validate_record'; ValidateCheck = 'collection.validate_check' }
+$stepMap = @{ Status = 'collection.status'; Links = 'collection.links'; Show = 'collection.show'; Export = 'collection.export'; ExportMembers = 'collection.export_members'; ExportSurfaces = 'collection.export_surfaces'; Evidence = 'collection.evidence'; Set = 'collection.set'; Merge = 'collection.merge'; Seed = 'collection.seed'; Ask = 'collection.ask'; Gather = 'collection.gather'; AttachPhrases = 'collection.attach_phrases'; Index = 'collection.index'; Subgroup = 'collection.subgroup'; IndexCheck = 'collection.index_check'; LayerOpen = 'collection.layer_open'; LayerPull = 'collection.layer_pull'; LayerRecord = 'collection.layer_record'; LayerCheck = 'collection.layer_check'; LayerNext = 'collection.layer_next'; NodeGroups = 'collection.node_groups'; GroupPull = 'collection.group_pull'; GroupRecord = 'collection.group_record'; ValidatePull = 'collection.validate_pull'; ValidateRecord = 'collection.validate_record'; ValidateCheck = 'collection.validate_check' }
 $stepId = $stepMap[$Action]
 $runId = "RUN-$(Get-Date -Format 'yyyyMMdd_HHmmss_fff')-COLLECTIONBUILD"
 
 $paramArgs = @()
-foreach ($p in @('Collection', 'Verse', 'Word', 'Name', 'Surface', 'Limit', 'Status', 'Reason', 'From', 'Into', 'Strong', 'Step', 'File')) {
+foreach ($p in @('Collection', 'Verse', 'Word', 'Name', 'Surface', 'Limit', 'Status', 'Reason', 'From', 'Into', 'Strong', 'Step', 'Subgroup', 'File')) {
     if ($PSBoundParameters.ContainsKey($p)) { $paramArgs += @('--param', "$p=$($PSBoundParameters[$p] -join ',')") }
 }
 if ($Check) { $paramArgs += @('--param', 'Check=true') }

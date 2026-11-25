@@ -2,6 +2,8 @@
 
 SELECT * FROM ib_observation obs
 INNER JOIN ib_node node ON obs.id = node.observation_id
+where obs.deleted = 0
+and collection_id = 56
 ;
 
 
@@ -39,6 +41,7 @@ select
 obs.id,
 node.deleted as 'node_deleted',
 obs.deleted as 'obs_deleted',
+obs.nature,
 node.verse_reference,
 node.seq,
 node.surface,
@@ -51,8 +54,8 @@ obs.stage,
 node.*
 from ib_observation obs
 inner join ib_node node on obs.id = node.observation_id
-where  node.cluster_subgroup_code = 'M21_asking'
--- where node.cluster_code = 'M21'
+--where  node.cluster_subgroup_code = 'M21_asking'
+where node.collection_id = 56
 order by node.verse_reference
 ;
 
@@ -72,8 +75,8 @@ obs.stage,
 node.*
 from ib_observation obs
 inner join ib_node node on obs.id = node.observation_id and node.deleted = 0 and obs.deleted = 0
---where  node.verse_reference = 'Gen 38:21' 
-where  node.cluster_subgroup_code = 'M21_asking'
+where  node.verse_reference = '1Chr.28.9' 
+--where  node.cluster_subgroup_code = 'M21_asking'
 order by node.verse_reference
 ;
 

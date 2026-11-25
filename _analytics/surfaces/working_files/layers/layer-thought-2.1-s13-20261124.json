@@ -1,0 +1,3012 @@
+{
+ "collection": "thought",
+ "step": "2.1",
+ "pulled": "2026-11-24T17:04:44Z",
+ "control": {
+  "reasoning and giving grounds": {
+   "both": [
+    "convince",
+    "know",
+    "quarrel",
+    "wise"
+   ],
+   "wordnet_only": [
+    "disease",
+    "hear",
+    "justify",
+    "skill"
+   ],
+   "verse_only": [
+    "abase",
+    "ask",
+    "believe",
+    "benefit",
+    "blaspheme",
+    "bless",
+    "bold",
+    "bondage",
+    "cleanse",
+    "combat",
+    "comfort",
+    "command",
+    "commend",
+    "compassion",
+    "continual",
+    "crime",
+    "cruel",
+    "delight",
+    "desire",
+    "destruction",
+    "die",
+    "earnest",
+    "endure",
+    "entice",
+    "evildoer",
+    "faint",
+    "fear",
+    "fill",
+    "firm",
+    "follow",
+    "forget",
+    "forgive",
+    "godly",
+    "heart",
+    "honor",
+    "hope",
+    "impartial",
+    "labor",
+    "live",
+    "majesty",
+    "offer",
+    "open",
+    "pride",
+    "profess",
+    "ready",
+    "reject",
+    "return",
+    "rich",
+    "righteous",
+    "search",
+    "self-control",
+    "share",
+    "sin",
+    "snatch",
+    "tribulation",
+    "willful"
+   ],
+   "verse_pairings": {
+    "fill": 1,
+    "follow": 3,
+    "cruel": 2,
+    "faint": 1,
+    "endure": 3,
+    "sin": 7,
+    "blaspheme": 1,
+    "die": 2,
+    "combat": 1,
+    "command": 4,
+    "delight": 2,
+    "profess": 1,
+    "fear": 2,
+    "quarrel": 2,
+    "benefit": 1,
+    "rich": 1,
+    "abase": 1,
+    "return": 3,
+    "bless": 1,
+    "commend": 1,
+    "honor": 3,
+    "live": 1,
+    "continual": 3,
+    "majesty": 4,
+    "search": 2,
+    "firm": 1,
+    "evildoer": 3,
+    "know": 4,
+    "heart": 2,
+    "snatch": 2,
+    "godly": 2,
+    "convince": 2,
+    "open": 2,
+    "crime": 4,
+    "reject": 2,
+    "bold": 1,
+    "willful": 1,
+    "believe": 5,
+    "righteous": 2,
+    "self-control": 2,
+    "wise": 2,
+    "offer": 1,
+    "desire": 2,
+    "bondage": 1,
+    "ask": 2,
+    "hope": 2,
+    "share": 1,
+    "entice": 1,
+    "labor": 3,
+    "pride": 1,
+    "tribulation": 4,
+    "comfort": 2,
+    "forgive": 2,
+    "forget": 1,
+    "cleanse": 1,
+    "compassion": 2,
+    "impartial": 1,
+    "earnest": 1,
+    "ready": 1,
+    "destruction": 2
+   },
+   "wordnet_pairs": {
+    "convince": 6,
+    "quarrel": 9,
+    "justify": 3,
+    "disease": 3,
+    "know": 8,
+    "wise": 3,
+    "skill": 1,
+    "hear": 1
+   }
+  }
+ },
+ "subgroup": "reasoning and giving grounds",
+ "unmarked": [],
+ "delete_unmarked": [],
+ "rows": [
+  {
+   "ledger_id": 648,
+   "item": "pairing",
+   "kind": "pairing",
+   "group": "reasoning and giving grounds",
+   "subject": "believe",
+   "existing_observations": [],
+   "wordnet_control": null,
+   "asks": "Which words of the partner collection stand with this group in the verses they share, where does each stand (side and distance, from the stored structure), and which stand out? State the structure the data shows.",
+   "nodes_total": 9,
+   "nodes_shown": 9,
+   "strong_codes": {
+    "G1256": 1,
+    "G1223": 3,
+    "G5124": 1
+   },
+   "evidence": [
+    {
+     "reference": "Act 19:9",
+     "surface": "reasoning",
+     "strong": "G1256",
+     "as": "member",
+     "verse": "But when some became stubborn and continued in unbelief, speaking evil of the Way before the congregation, he withdrew from them and took the disciples with him, reasoning daily in the hall of Tyrannu"
+    },
+    {
+     "reference": "1Th 3:5",
+     "surface": "reason",
+     "strong": "G1223",
+     "as": "member",
+     "verse": "For this reason, when I could bear it no longer, I sent to learn about your faith, for fear that somehow the tempter had tempted you and our labor would be in vain."
+    },
+    {
+     "reference": "1Th 3:7",
+     "surface": "reason",
+     "strong": "G1223",
+     "as": "member",
+     "verse": "for this reason, brothers, in all our distress and affliction we have been comforted about you through your faith."
+    },
+    {
+     "reference": "1Th 3:7",
+     "surface": "reason",
+     "strong": "G5124",
+     "as": "member",
+     "verse": "for this reason, brothers, in all our distress and affliction we have been comforted about you through your faith."
+    },
+    {
+     "reference": "1Ti 1:16",
+     "surface": "reason",
+     "strong": "G1223",
+     "as": "member",
+     "verse": "But I received mercy for this reason, that in me, as the foremost, Jesus Christ might display his perfect patience as an example to those who were to believe in him for eternal life."
+    },
+    {
+     "reference": "Act 19:9",
+     "surface": "unbelief",
+     "strong": "G0544",
+     "as": "partner",
+     "verse": "But when some became stubborn and continued in unbelief, speaking evil of the Way before the congregation, he withdrew from them and took the disciples with him, reasoning daily in the hall of Tyrannu"
+    },
+    {
+     "reference": "1Th 3:5",
+     "surface": "faith",
+     "strong": "G4102G",
+     "as": "partner",
+     "verse": "For this reason, when I could bear it no longer, I sent to learn about your faith, for fear that somehow the tempter had tempted you and our labor would be in vain."
+    },
+    {
+     "reference": "1Th 3:7",
+     "surface": "faith",
+     "strong": "G4102G",
+     "as": "partner",
+     "verse": "for this reason, brothers, in all our distress and affliction we have been comforted about you through your faith."
+    },
+    {
+     "reference": "1Ti 1:16",
+     "surface": "believe",
+     "strong": "G4100",
+     "as": "partner",
+     "verse": "But I received mercy for this reason, that in me, as the foremost, Jesus Christ might display his perfect patience as an example to those who were to believe in him for eternal life."
+    }
+   ],
+   "fill": {
+    "disposition": "observed",
+    "obs_text": "Believe stands with this group in four verses. In Act 19:9 unbelief (G0544) stands 10 words before reasoning (G1256), in the account of those who became stubborn; in 1Th 3:5 faith (G4102G) stands 8 words after the member reason (G1223), in 1Th 3:7 faith stands 13 after, and in 1Ti 1:16 the verb believe (G4100) stands 13 after. In the three verses of Paul's letters the member is the phrase for this reason and the partner the faith of the readers or of the later believers; in Act 19:9 it is the opposite, unbelief. WordNet links believe to this group in no pair that the verses lack; the control lists it as shared.",
+    "basis": "stated",
+    "route": "",
+    "member_role": "lexical",
+    "partner_role": "lexical",
+    "reason": "",
+    "older": []
+   }
+  },
+  {
+   "ledger_id": 649,
+   "item": "pairing",
+   "kind": "pairing",
+   "group": "reasoning and giving grounds",
+   "subject": "continual",
+   "existing_observations": [
+    {
+     "observation": 18844,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "text": "4. God's rule (Dan 4:17): *\"to the end that the living may know that the Most High rules the kingdom of men and gives it to whom he will and sets over it the lowliest of men.\"* The passage: the same s",
+     "roles": [
+      "qualifier"
+     ],
+     "occurrences": 2
+    },
+    {
+     "observation": 20193,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "text": "The return: *\"my reason returned to me, and I blessed the Most High\"* (4:34), and *\"he does according to his will among the host of heaven and among the inhabitants of the earth; and none can stay his",
+     "roles": [
+      "qualifier"
+     ],
+     "occurrences": 1
+    },
+    {
+     "observation": 20207,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "text": "2.2 Passages where Scripture itself puts them together: Pro 1:29–31. Did not choose the fear of the Lord, would have none of my counsel, are filled with their own devices: choosing, willing and devisi",
+     "roles": [
+      "qualifier"
+     ],
+     "occurrences": 1
+    },
+    {
+     "observation": 17102,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "text": "6.4 Hope and the NT inner seat: \"my heart was glad … my flesh also will dwell in hope\" (Act 2:26) — flesh in hope; \"hope does not put us to shame, because God's love has been poured into our hearts th",
+     "roles": [
+      "qualifier"
+     ],
+     "occurrences": 1
+    }
+   ],
+   "wordnet_control": null,
+   "asks": "Which words of the partner collection stand with this group in the verses they share, where does each stand (side and distance, from the stored structure), and which stand out? State the structure the data shows.",
+   "nodes_total": 6,
+   "nodes_shown": 6,
+   "strong_codes": {
+    "H4486": 1,
+    "G1223": 1,
+    "G3056": 1
+   },
+   "evidence": [
+    {
+     "reference": "Dan 4:34",
+     "surface": "reason",
+     "strong": "H4486",
+     "as": "member",
+     "verse": "At the end of the days I, Nebuchadnezzar, lifted my eyes to heaven, and my reason returned to me, and I blessed the Most High, and praised and honored him who lives forever, for his dominion is an eve"
+    },
+    {
+     "reference": "1Ti 1:16",
+     "surface": "reason",
+     "strong": "G1223",
+     "as": "member",
+     "verse": "But I received mercy for this reason, that in me, as the foremost, Jesus Christ might display his perfect patience as an example to those who were to believe in him for eternal life."
+    },
+    {
+     "reference": "1Pe 3:15",
+     "surface": "reason",
+     "strong": "G3056",
+     "as": "member",
+     "verse": "but in your hearts honor Christ the Lord as holy, always being prepared to make a defense to anyone who asks you for a reason for the hope that is in you; yet do it with gentleness and respect,"
+    },
+    {
+     "reference": "Dan 4:34",
+     "surface": "everlasting",
+     "strong": "H5957",
+     "as": "partner",
+     "verse": "At the end of the days I, Nebuchadnezzar, lifted my eyes to heaven, and my reason returned to me, and I blessed the Most High, and praised and honored him who lives forever, for his dominion is an eve"
+    },
+    {
+     "reference": "1Ti 1:16",
+     "surface": "eternal",
+     "strong": "G0166",
+     "as": "partner",
+     "verse": "But I received mercy for this reason, that in me, as the foremost, Jesus Christ might display his perfect patience as an example to those who were to believe in him for eternal life."
+    },
+    {
+     "reference": "1Pe 3:15",
+     "surface": "always",
+     "strong": "G0104",
+     "as": "partner",
+     "verse": "but in your hearts honor Christ the Lord as holy, always being prepared to make a defense to anyone who asks you for a reason for the hope that is in you; yet do it with gentleness and respect,"
+    }
+   ],
+   "fill": {
+    "disposition": "observed",
+    "obs_text": "Continual stands with this group in three verses. In Dan 4:34 everlasting (H5957) stands 10 words after reason (H4486), in the king's praise after his reason returned; in 1Ti 1:16 eternal (G0166) stands 17 after the member (G1223), in the clause of the life to come; and in 1Pe 3:15 always (G0104) stands 7 before the member (G3056), in the readiness to give an account. In the first two the partner names God's duration and the member the ground or the faculty, and in the last it qualifies the believer's readiness.",
+    "basis": "stated",
+    "route": "",
+    "member_role": "lexical",
+    "partner_role": "lexical",
+    "reason": "",
+    "older": []
+   }
+  },
+  {
+   "ledger_id": 650,
+   "item": "pairing",
+   "kind": "pairing",
+   "group": "reasoning and giving grounds",
+   "subject": "endure",
+   "existing_observations": [],
+   "wordnet_control": null,
+   "asks": "Which words of the partner collection stand with this group in the verses they share, where does each stand (side and distance, from the stored structure), and which stand out? State the structure the data shows.",
+   "nodes_total": 6,
+   "nodes_shown": 6,
+   "strong_codes": {
+    "H5921A": 1,
+    "G1223": 2
+   },
+   "evidence": [
+    {
+     "reference": "Num 18:32",
+     "surface": "reason",
+     "strong": "H5921A",
+     "as": "member",
+     "verse": "And you shall bear no sin by reason of it, when you have contributed the best of it. But you shall not profane the holy things of the people of Israel, lest you die.’”"
+    },
+    {
+     "reference": "1Th 3:5",
+     "surface": "reason",
+     "strong": "G1223",
+     "as": "member",
+     "verse": "For this reason, when I could bear it no longer, I sent to learn about your faith, for fear that somehow the tempter had tempted you and our labor would be in vain."
+    },
+    {
+     "reference": "1Ti 1:16",
+     "surface": "reason",
+     "strong": "G1223",
+     "as": "member",
+     "verse": "But I received mercy for this reason, that in me, as the foremost, Jesus Christ might display his perfect patience as an example to those who were to believe in him for eternal life."
+    },
+    {
+     "reference": "Num 18:32",
+     "surface": "bear",
+     "strong": "H5375J",
+     "as": "partner",
+     "verse": "And you shall bear no sin by reason of it, when you have contributed the best of it. But you shall not profane the holy things of the people of Israel, lest you die.’”"
+    },
+    {
+     "reference": "1Th 3:5",
+     "surface": "bear",
+     "strong": "G4722",
+     "as": "partner",
+     "verse": "For this reason, when I could bear it no longer, I sent to learn about your faith, for fear that somehow the tempter had tempted you and our labor would be in vain."
+    },
+    {
+     "reference": "1Ti 1:16",
+     "surface": "patience",
+     "strong": "G3115",
+     "as": "partner",
+     "verse": "But I received mercy for this reason, that in me, as the foremost, Jesus Christ might display his perfect patience as an example to those who were to believe in him for eternal life."
+    }
+   ],
+   "fill": {
+    "disposition": "observed",
+    "obs_text": "Endure stands with this group in three verses. In Num 18:32 bear (H5375J) stands 2 words before reason (H5921A), in the warning that the priests will bear no sin by reason of the offering; in 1Th 3:5 bear (G4722) stands 2 after the member (G1223), where Paul could bear it no longer; in 1Ti 1:16 patience (G3115) stands 9 after, the patience Christ displays. In each verse the partner is a bearing or patience and the member the cause on account of which it is borne or shown.",
+    "basis": "stated",
+    "route": "",
+    "member_role": "lexical",
+    "partner_role": "lexical",
+    "reason": "",
+    "older": []
+   }
+  },
+  {
+   "ledger_id": 651,
+   "item": "pairing",
+   "kind": "pairing",
+   "group": "reasoning and giving grounds",
+   "subject": "know",
+   "existing_observations": [
+    {
+     "observation": 12407,
+     "stage": "strand-reading",
+     "kind": "key-statement",
+     "text": "The heart is where thoughts come from",
+     "roles": [],
+     "occurrences": 1
+    },
+    {
+     "observation": 12431,
+     "stage": "strand-reading",
+     "kind": "key-statement",
+     "text": "The thoughts of people are open to God and to Jesus: God discerns, knows and understands them (Ps 139:2; 1Chr 28:9; Isa 66:18), Jesus perceives them (Luke 5:22; Matt 9:4), and the word of God discerns",
+     "roles": [
+      "characteristic"
+     ],
+     "occurrences": 1
+    },
+    {
+     "observation": 12447,
+     "stage": "strand-reading",
+     "kind": "key-statement",
+     "text": "Inner reasoning becomes outward quarrel when it is shared and set on one's own standing",
+     "roles": [],
+     "occurrences": 1
+    },
+    {
+     "observation": 15963,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "text": "1.10 Heart and mind (nous / dianoia) side by side: \"put my laws into their minds, and write them on their hearts\" / \"on their hearts … on their minds\" (Heb 8:10 / 10:16); \"guard your hearts and your m",
+     "roles": [
+      "qualifier"
+     ],
+     "occurrences": 1
+    },
+    {
+     "observation": 17236,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "text": "d. Thinking, planning, understanding, remembering: *Plans and devising:* Pro 16:1, 9; 19:21; 6:14, 18; 24:2; 12:20; Psa 140:2; 58:2; Zec 7:10; 8:17; Isa 10:7; Act 5:4; Eze 38:10.; *Understanding and k",
+     "roles": [
+      "qualifier"
+     ],
+     "occurrences": 1
+    },
+    {
+     "observation": 19290,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "text": "Luk 9:45–47: perception blocked from outside → fear to ask → rivalry → Jesus knows the reasoning of their hearts (v3)",
+     "roles": [
+      "qualifier"
+     ],
+     "occurrences": 1
+    },
+    {
+     "observation": 20481,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "text": "1. The heart or mind is the place thoughts come from. Mark 7:21 and Matt 15:19 (\"out of the heart come evil thoughts\"). Also: \"a heart that devises wicked plans\" (Prov 6:18); \"plan evil things in thei",
+     "roles": [
+      "qualifier"
+     ],
+     "occurrences": 1
+    },
+    {
+     "observation": 20565,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "text": "*dialogizomai / dialogismos* | Honest troubled reasoning · hardened anxious reasoning · inner questioning seen by Jesus · reasoning together into murder · self-talk of the rich man · quarrel, dispute,",
+     "roles": [
+      "qualifier"
+     ],
+     "occurrences": 1
+    }
+   ],
+   "wordnet_control": {
+    "pairs": 8,
+    "types": {
+     "synonym": 8
+    },
+    "examples": [
+     {
+      "surface": "reason",
+      "partner_surface": "conclude",
+      "type": "synonym",
+      "weight": 1
+     },
+     {
+      "surface": "reason",
+      "partner_surface": "concluded",
+      "type": "synonym",
+      "weight": 1
+     },
+     {
+      "surface": "reasoned",
+      "partner_surface": "conclude",
+      "type": "synonym",
+      "weight": 1
+     },
+     {
+      "surface": "reasoned",
+      "partner_surface": "concluded",
+      "type": "synonym",
+      "weight": 1
+     },
+     {
+      "surface": "reasoning",
+      "partner_surface": "conclude",
+      "type": "synonym",
+      "weight": 1
+     }
+    ]
+   },
+   "asks": "Which words of the partner collection stand with this group in the verses they share, where does each stand (side and distance, from the stored structure), and which stand out? State the structure the data shows.",
+   "nodes_total": 7,
+   "nodes_shown": 7,
+   "strong_codes": {
+    "G1223": 2,
+    "G5124": 1,
+    "G1261": 1
+   },
+   "evidence": [
+    {
+     "reference": "Mar 12:24",
+     "surface": "reason",
+     "strong": "G1223",
+     "as": "member",
+     "verse": "Jesus said to them, “Is this not the reason you are wrong, because you know neither the Scriptures nor the power of God?"
+    },
+    {
+     "reference": "Mar 12:24",
+     "surface": "reason",
+     "strong": "G5124",
+     "as": "member",
+     "verse": "Jesus said to them, “Is this not the reason you are wrong, because you know neither the Scriptures nor the power of God?"
+    },
+    {
+     "reference": "Luk 9:47",
+     "surface": "reasoning",
+     "strong": "G1261",
+     "as": "member",
+     "verse": "But Jesus, knowing the reasoning of their hearts, took a child and put him by his side"
+    },
+    {
+     "reference": "1Th 3:5",
+     "surface": "reason",
+     "strong": "G1223",
+     "as": "member",
+     "verse": "For this reason, when I could bear it no longer, I sent to learn about your faith, for fear that somehow the tempter had tempted you and our labor would be in vain."
+    },
+    {
+     "reference": "Mar 12:24",
+     "surface": "know",
+     "strong": "G6063",
+     "as": "partner",
+     "verse": "Jesus said to them, “Is this not the reason you are wrong, because you know neither the Scriptures nor the power of God?"
+    },
+    {
+     "reference": "Luk 9:47",
+     "surface": "knowing",
+     "strong": "G6063",
+     "as": "partner",
+     "verse": "But Jesus, knowing the reasoning of their hearts, took a child and put him by his side"
+    },
+    {
+     "reference": "1Th 3:5",
+     "surface": "learn",
+     "strong": "G1097",
+     "as": "partner",
+     "verse": "For this reason, when I could bear it no longer, I sent to learn about your faith, for fear that somehow the tempter had tempted you and our labor would be in vain."
+    }
+   ],
+   "fill": {
+    "disposition": "observed",
+    "obs_text": "Know stands with this group in three verses and WordNet relates it to the surface reason by 8 pairs, all synonyms (such as conclude), so the pairing is one the control confirms. In Mar 12:24 know (G6063) stands 2 words after the member reason (G1223 and G5124), where Jesus asks whether the cause of their error is not knowing the Scriptures; in Luk 9:47 knowing (G6063) stands 1 before reasoning (G1261), where Jesus knows the reasoning of their hearts; in 1Th 3:5 learn (G1097) stands 6 after the member, where Paul sends to learn of their faith. In the first the knowing is the lack that causes, in the second it is Jesus' knowing of the reasoning, and in the third a means to learn how they stand.",
+    "basis": "stated",
+    "route": "",
+    "member_role": "lexical",
+    "partner_role": "lexical",
+    "reason": "",
+    "older": []
+   }
+  },
+  {
+   "ledger_id": 652,
+   "item": "pairing",
+   "kind": "pairing",
+   "group": "reasoning and giving grounds",
+   "subject": "sin",
+   "existing_observations": [
+    {
+     "observation": 19653,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "text": "Isaiah 1:29 — \"the oaks that you desired … the gardens that you have chosen\": The oracle opens as a lawsuit: *\"Hear, O heavens, and give ear, O earth\"* (v2). The charge goes to the inner being: *\"Chil",
+     "roles": [
+      "qualifier"
+     ],
+     "occurrences": 1
+    },
+    {
+     "observation": 20163,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "text": "Cleansing, after reasoning: *\"Come now, let us reason together … though your sins are like scarlet, they shall be as white as snow … If you are willing and obedient, you shall eat the good of the land",
+     "roles": [
+      "qualifier"
+     ],
+     "occurrences": 1
+    }
+   ],
+   "wordnet_control": null,
+   "asks": "Which words of the partner collection stand with this group in the verses they share, where does each stand (side and distance, from the stored structure), and which stand out? State the structure the data shows.",
+   "nodes_total": 9,
+   "nodes_shown": 9,
+   "strong_codes": {
+    "H5921A": 1,
+    "H3198": 1,
+    "G1519": 1,
+    "G5124": 1
+   },
+   "evidence": [
+    {
+     "reference": "Num 18:32",
+     "surface": "reason",
+     "strong": "H5921A",
+     "as": "member",
+     "verse": "And you shall bear no sin by reason of it, when you have contributed the best of it. But you shall not profane the holy things of the people of Israel, lest you die.’”"
+    },
+    {
+     "reference": "Isa 1:18",
+     "surface": "reason",
+     "strong": "H3198",
+     "as": "member",
+     "verse": "“ Come now, let us reason together, says the Lord: though your sins are like scarlet, they shall be as white as snow; though they are red like crimson, they shall become like wool."
+    },
+    {
+     "reference": "1Jo 3:8",
+     "surface": "reason",
+     "strong": "G1519",
+     "as": "member",
+     "verse": "Whoever makes a practice of sinning is of the devil, for the devil has been sinning from the beginning. The reason the Son of God appeared was to destroy the works of the devil."
+    },
+    {
+     "reference": "1Jo 3:8",
+     "surface": "reason",
+     "strong": "G5124",
+     "as": "member",
+     "verse": "Whoever makes a practice of sinning is of the devil, for the devil has been sinning from the beginning. The reason the Son of God appeared was to destroy the works of the devil."
+    },
+    {
+     "reference": "Num 18:32",
+     "surface": "sin",
+     "strong": "H2399",
+     "as": "partner",
+     "verse": "And you shall bear no sin by reason of it, when you have contributed the best of it. But you shall not profane the holy things of the people of Israel, lest you die.’”"
+    },
+    {
+     "reference": "Isa 1:18",
+     "surface": "sins",
+     "strong": "H2399",
+     "as": "partner",
+     "verse": "“ Come now, let us reason together, says the Lord: though your sins are like scarlet, they shall be as white as snow; though they are red like crimson, they shall become like wool."
+    },
+    {
+     "reference": "Isa 1:18",
+     "surface": "sins",
+     "strong": "H1961",
+     "as": "partner",
+     "verse": "“ Come now, let us reason together, says the Lord: though your sins are like scarlet, they shall be as white as snow; though they are red like crimson, they shall become like wool."
+    },
+    {
+     "reference": "1Jo 3:8",
+     "surface": "sinning",
+     "strong": "G0266",
+     "as": "partner",
+     "verse": "Whoever makes a practice of sinning is of the devil, for the devil has been sinning from the beginning. The reason the Son of God appeared was to destroy the works of the devil."
+    },
+    {
+     "reference": "1Jo 3:8",
+     "surface": "sinning",
+     "strong": "G0264",
+     "as": "partner",
+     "verse": "Whoever makes a practice of sinning is of the devil, for the devil has been sinning from the beginning. The reason the Son of God appeared was to destroy the works of the devil."
+    }
+   ],
+   "fill": {
+    "disposition": "observed",
+    "obs_text": "Sin stands with this group in three verses. In Num 18:32 sin (H2399) stands 1 word before reason (H5921A); in Isa 1:18 sins (H2399 and H1961) stand 4 after reason (H3198), the sins named in the Lord's call to argue the case; in 1Jo 3:8 sinning (G0266 and G0264) stands 9 and 3 before the members (G1519, G5124), where the purpose of the Son's coming is stated against the devil's sinning. In each verse the sin is the matter that the ground or the reasoning concerns.",
+    "basis": "stated",
+    "route": "",
+    "member_role": "lexical",
+    "partner_role": "lexical",
+    "reason": "",
+    "older": [
+     {
+      "observation": 19653,
+      "action": "keep",
+      "nature": "inner_being",
+      "reason": "kept and marked inner being: it states how the mind or heart works in the verses it names, and rests on them"
+     },
+     {
+      "observation": 20163,
+      "action": "keep",
+      "nature": "inner_being",
+      "reason": "kept and marked inner being: it states how the mind or heart works in the verses it names, and rests on them"
+     }
+    ]
+   }
+  },
+  {
+   "ledger_id": 675,
+   "item": "qualifier",
+   "kind": "pairing",
+   "group": "reasoning and giving grounds",
+   "subject": "",
+   "existing_observations": [
+    {
+     "observation": 18844,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "text": "4. God's rule (Dan 4:17): *\"to the end that the living may know that the Most High rules the kingdom of men and gives it to whom he will and sets over it the lowliest of men.\"* The passage: the same s",
+     "roles": [
+      "characteristic",
+      "qualifier"
+     ],
+     "occurrences": 6
+    },
+    {
+     "observation": 20193,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "text": "The return: *\"my reason returned to me, and I blessed the Most High\"* (4:34), and *\"he does according to his will among the host of heaven and among the inhabitants of the earth; and none can stay his",
+     "roles": [
+      "qualifier"
+     ],
+     "occurrences": 4
+    },
+    {
+     "observation": 20207,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "text": "2.2 Passages where Scripture itself puts them together: Pro 1:29–31. Did not choose the fear of the Lord, would have none of my counsel, are filled with their own devices: choosing, willing and devisi",
+     "roles": [
+      "qualifier"
+     ],
+     "occurrences": 3
+    },
+    {
+     "observation": 11837,
+     "stage": "strand-reading",
+     "kind": "key-statement",
+     "text": "Fear at the same kind of act, and asking him to go.",
+     "roles": [],
+     "occurrences": 1
+    },
+    {
+     "observation": 12738,
+     "stage": "prior-capture",
+     "kind": "face",
+     "text": "Face B. Felt before God's presence, act or word, or a messenger (21 / 19 hits and verses; surfaces fear · afraid · terrified · terror · frightened · alarmed · trembled · tremble · trembling · awe): An",
+     "roles": [
+      "characteristic"
+     ],
+     "occurrences": 1
+    },
+    {
+     "observation": 13008,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "text": "What the angry person does with it: Nehemiah: \"I took counsel with myself\"; Absalom \"spoke to Amnon neither good nor bad\"; Jacob's sons answered \"deceitfully\"; Samuel \"cried to the Lord all night\"; Da",
+     "roles": [
+      "standalone"
+     ],
+     "occurrences": 1
+    },
+    {
+     "observation": 13043,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "text": "A person's anger leads to counsel, then open charge; reasoning: \"I took counsel with myself, and I brought charges against the nobles\"; \"So he reasoned in the synagogue\".",
+     "roles": [
+      "standalone"
+     ],
+     "occurrences": 1
+    },
+    {
+     "observation": 13673,
+     "stage": "prior-capture",
+     "kind": "link",
+     "text": "his spirit provoked as he saw idols → so he reasoned (Act 17:16–17); many days → greatly annoyed → commanded the spirit → it came out (16:18).",
+     "roles": [
+      "standalone"
+     ],
+     "occurrences": 1
+    },
+    {
+     "observation": 14217,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "text": "Part 2 verses: what they add. The one wronged is now God, or God's law, rather than a sister, a friend or the poor: The indignation seizes its bearer: \"Hot indignation seizes me because of the wicked,",
+     "roles": [
+      "standalone"
+     ],
+     "occurrences": 1
+    },
+    {
+     "observation": 12421,
+     "stage": "strand-reading",
+     "kind": "key-statement",
+     "text": "Thinking matures (\"I thought like a child … I gave up childish ways\")",
+     "roles": [],
+     "occurrences": 1
+    },
+    {
+     "observation": 21540,
+     "stage": "engagement",
+     "kind": "qualification",
+     "text": "Above gives the inner operation or quality it is joined to its priority, its superiority or its origin: love set first before all else, fear of the Lord supreme over the gods, the heart or the self li",
+     "roles": [
+      "qualifier"
+     ],
+     "occurrences": 1
+    },
+    {
+     "observation": 17102,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "text": "6.4 Hope and the NT inner seat: \"my heart was glad … my flesh also will dwell in hope\" (Act 2:26) — flesh in hope; \"hope does not put us to shame, because God's love has been poured into our hearts th",
+     "roles": [
+      "qualifier"
+     ],
+     "occurrences": 1
+    }
+   ],
+   "asks": "Which qualifiers (negators and the words they reach, adjectives, adverbs, prepositional qualifiers) stand with this group, and what does each give it by the grammar? Adjacency is not scope: state the word the negator or qualifier reaches.",
+   "nodes_total": 93,
+   "nodes_shown": 80,
+   "strong_codes": {
+    "H6440I": 2,
+    "H5921A": 2,
+    "H1697M": 1,
+    "H3651C": 1,
+    "H2600": 1,
+    "H1961": 1,
+    "H4486": 2,
+    "G1223": 4,
+    "G5124": 3,
+    "G1256": 6,
+    "G2596": 1,
+    "G0302": 1,
+    "G0156": 1,
+    "G1352": 1,
+    "G3049": 1,
+    "G2138": 1,
+    "G3056": 1,
+    "G1519": 1
+   },
+   "evidence": [
+    {
+     "reference": "Gen 41:31",
+     "surface": "reason",
+     "strong": "H6440I",
+     "as": "member",
+     "verse": "and the plenty will be unknown in the land by reason of the famine that will follow, for it will be very severe."
+    },
+    {
+     "reference": "Gen 47:13",
+     "surface": "reason",
+     "strong": "H6440I",
+     "as": "member",
+     "verse": "Now there was no food in all the land, for the famine was very severe, so that the land of Egypt and the land of Canaan languished by reason of the famine."
+    },
+    {
+     "reference": "Num 18:32",
+     "surface": "reason",
+     "strong": "H5921A",
+     "as": "member",
+     "verse": "And you shall bear no sin by reason of it, when you have contributed the best of it. But you shall not profane the holy things of the people of Israel, lest you die.’”"
+    },
+    {
+     "reference": "Jos 5:4",
+     "surface": "reason",
+     "strong": "H1697M",
+     "as": "member",
+     "verse": "And this is the reason why Joshua circumcised them: all the males of the people who came out of Egypt, all the men of war, had died in the wilderness on the way after they had come out of Egypt."
+    },
+    {
+     "reference": "1Sa 20:29",
+     "surface": "reason",
+     "strong": "H5921A",
+     "as": "member",
+     "verse": "He said, ‘Let me go, for our clan holds a sacrifice in the city, and my brother has commanded me to be there. So now, if I have found favor in your eyes, let me get away and see my brothers.’ For this"
+    },
+    {
+     "reference": "1Sa 20:29",
+     "surface": "reason",
+     "strong": "H3651C",
+     "as": "member",
+     "verse": "He said, ‘Let me go, for our clan holds a sacrifice in the city, and my brother has commanded me to be there. So now, if I have found favor in your eyes, let me get away and see my brothers.’ For this"
+    },
+    {
+     "reference": "Pro 3:30",
+     "surface": "reason",
+     "strong": "H2600",
+     "as": "member",
+     "verse": "Do not contend with a man for no reason, when he has done you no harm."
+    },
+    {
+     "reference": "Eze 19:10",
+     "surface": "reason",
+     "strong": "H1961",
+     "as": "member",
+     "verse": "Your mother was like a vine in a vineyard planted by the water, fruitful and full of branches by reason of abundant water."
+    },
+    {
+     "reference": "Dan 4:34",
+     "surface": "reason",
+     "strong": "H4486",
+     "as": "member",
+     "verse": "At the end of the days I, Nebuchadnezzar, lifted my eyes to heaven, and my reason returned to me, and I blessed the Most High, and praised and honored him who lives forever, for his dominion is an eve"
+    },
+    {
+     "reference": "Dan 4:36",
+     "surface": "reason",
+     "strong": "H4486",
+     "as": "member",
+     "verse": "At the same time my reason returned to me, and for the glory of my kingdom, my majesty and splendor returned to me. My counselors and my lords sought me, and I was established in my kingdom, and still"
+    },
+    {
+     "reference": "Mar 12:24",
+     "surface": "reason",
+     "strong": "G1223",
+     "as": "member",
+     "verse": "Jesus said to them, “Is this not the reason you are wrong, because you know neither the Scriptures nor the power of God?"
+    },
+    {
+     "reference": "Mar 12:24",
+     "surface": "reason",
+     "strong": "G5124",
+     "as": "member",
+     "verse": "Jesus said to them, “Is this not the reason you are wrong, because you know neither the Scriptures nor the power of God?"
+    },
+    {
+     "reference": "Act 17:2",
+     "surface": "reasoned",
+     "strong": "G1256",
+     "as": "member",
+     "verse": "And Paul went in, as was his custom, and on three Sabbath days he reasoned with them from the Scriptures,"
+    },
+    {
+     "reference": "Act 17:17",
+     "surface": "reasoned",
+     "strong": "G1256",
+     "as": "member",
+     "verse": "So he reasoned in the synagogue with the Jews and the devout persons, and in the marketplace every day with those who happened to be there."
+    },
+    {
+     "reference": "Act 18:4",
+     "surface": "reasoned",
+     "strong": "G1256",
+     "as": "member",
+     "verse": "And he reasoned in the synagogue every Sabbath, and tried to persuade Jews and Greeks."
+    },
+    {
+     "reference": "Act 18:14",
+     "surface": "reason",
+     "strong": "G2596",
+     "as": "member",
+     "verse": "But when Paul was about to open his mouth, Gallio said to the Jews, “ If it were a matter of wrongdoing or vicious crime, O Jews, I would have reason to accept your complaint."
+    },
+    {
+     "reference": "Act 18:14",
+     "surface": "reason",
+     "strong": "G0302",
+     "as": "member",
+     "verse": "But when Paul was about to open his mouth, Gallio said to the Jews, “ If it were a matter of wrongdoing or vicious crime, O Jews, I would have reason to accept your complaint."
+    },
+    {
+     "reference": "Act 18:19",
+     "surface": "reasoned",
+     "strong": "G1256",
+     "as": "member",
+     "verse": "And they came to Ephesus, and he left them there, but he himself went into the synagogue and reasoned with the Jews."
+    },
+    {
+     "reference": "Act 19:8",
+     "surface": "reasoning",
+     "strong": "G1256",
+     "as": "member",
+     "verse": "And he entered the synagogue and for three months spoke boldly, reasoning and persuading them about the kingdom of God."
+    },
+    {
+     "reference": "Act 24:25",
+     "surface": "reasoned",
+     "strong": "G1256",
+     "as": "member",
+     "verse": "And as he reasoned about righteousness and self-control and the coming judgment, Felix was alarmed and said, “ Go away for the present. When I get an opportunity I will summon you.”"
+    },
+    {
+     "reference": "Act 28:18",
+     "surface": "reason",
+     "strong": "G0156",
+     "as": "member",
+     "verse": "When they had examined me, they wished to set me at liberty, because there was no reason for the death penalty in my case."
+    },
+    {
+     "reference": "Rom 15:22",
+     "surface": "reason",
+     "strong": "G1352",
+     "as": "member",
+     "verse": "This is the reason why I have so often been hindered from coming to you."
+    },
+    {
+     "reference": "1Cor 13:11",
+     "surface": "reasoned",
+     "strong": "G3049",
+     "as": "member",
+     "verse": "When I was a child, I spoke like a child, I thought like a child, I reasoned like a child. When I became a man, I gave up childish ways."
+    },
+    {
+     "reference": "1Th 3:5",
+     "surface": "reason",
+     "strong": "G1223",
+     "as": "member",
+     "verse": "For this reason, when I could bear it no longer, I sent to learn about your faith, for fear that somehow the tempter had tempted you and our labor would be in vain."
+    },
+    {
+     "reference": "1Th 3:7",
+     "surface": "reason",
+     "strong": "G1223",
+     "as": "member",
+     "verse": "for this reason, brothers, in all our distress and affliction we have been comforted about you through your faith."
+    },
+    {
+     "reference": "1Th 3:7",
+     "surface": "reason",
+     "strong": "G5124",
+     "as": "member",
+     "verse": "for this reason, brothers, in all our distress and affliction we have been comforted about you through your faith."
+    },
+    {
+     "reference": "1Ti 1:16",
+     "surface": "reason",
+     "strong": "G1223",
+     "as": "member",
+     "verse": "But I received mercy for this reason, that in me, as the foremost, Jesus Christ might display his perfect patience as an example to those who were to believe in him for eternal life."
+    },
+    {
+     "reference": "Jam 3:17",
+     "surface": "reason",
+     "strong": "G2138",
+     "as": "member",
+     "verse": "But the wisdom from above is first pure, then peaceable, gentle, open to reason, full of mercy and good fruits, impartial and sincere."
+    },
+    {
+     "reference": "1Pe 3:15",
+     "surface": "reason",
+     "strong": "G3056",
+     "as": "member",
+     "verse": "but in your hearts honor Christ the Lord as holy, always being prepared to make a defense to anyone who asks you for a reason for the hope that is in you; yet do it with gentleness and respect,"
+    },
+    {
+     "reference": "1Jo 3:8",
+     "surface": "reason",
+     "strong": "G1519",
+     "as": "member",
+     "verse": "Whoever makes a practice of sinning is of the devil, for the devil has been sinning from the beginning. The reason the Son of God appeared was to destroy the works of the devil."
+    },
+    {
+     "reference": "1Jo 3:8",
+     "surface": "reason",
+     "strong": "G5124",
+     "as": "member",
+     "verse": "Whoever makes a practice of sinning is of the devil, for the devil has been sinning from the beginning. The reason the Son of God appeared was to destroy the works of the devil."
+    },
+    {
+     "reference": "Gen 41:31",
+     "surface": "unknown",
+     "strong": "H3808",
+     "as": "partner",
+     "verse": "and the plenty will be unknown in the land by reason of the famine that will follow, for it will be very severe."
+    },
+    {
+     "reference": "Gen 41:31",
+     "surface": "follow",
+     "strong": "H0310A",
+     "as": "partner",
+     "verse": "and the plenty will be unknown in the land by reason of the famine that will follow, for it will be very severe."
+    },
+    {
+     "reference": "Gen 41:31",
+     "surface": "follow",
+     "strong": "H3651C",
+     "as": "partner",
+     "verse": "and the plenty will be unknown in the land by reason of the famine that will follow, for it will be very severe."
+    },
+    {
+     "reference": "Gen 41:31",
+     "surface": "very",
+     "strong": "H3966",
+     "as": "partner",
+     "verse": "and the plenty will be unknown in the land by reason of the famine that will follow, for it will be very severe."
+    },
+    {
+     "reference": "Gen 41:31",
+     "surface": "severe",
+     "strong": "H3515",
+     "as": "partner",
+     "verse": "and the plenty will be unknown in the land by reason of the famine that will follow, for it will be very severe."
+    },
+    {
+     "reference": "Gen 47:13",
+     "surface": "very",
+     "strong": "H3966",
+     "as": "partner",
+     "verse": "Now there was no food in all the land, for the famine was very severe, so that the land of Egypt and the land of Canaan languished by reason of the famine."
+    },
+    {
+     "reference": "Gen 47:13",
+     "surface": "severe",
+     "strong": "H3515",
+     "as": "partner",
+     "verse": "Now there was no food in all the land, for the famine was very severe, so that the land of Egypt and the land of Canaan languished by reason of the famine."
+    },
+    {
+     "reference": "Num 18:32",
+     "surface": "bear",
+     "strong": "H3808",
+     "as": "partner",
+     "verse": "And you shall bear no sin by reason of it, when you have contributed the best of it. But you shall not profane the holy things of the people of Israel, lest you die.’”"
+    },
+    {
+     "reference": "Num 18:32",
+     "surface": "not",
+     "strong": "H3808",
+     "as": "partner",
+     "verse": "And you shall bear no sin by reason of it, when you have contributed the best of it. But you shall not profane the holy things of the people of Israel, lest you die.’”"
+    },
+    {
+     "reference": "Num 18:32",
+     "surface": "die",
+     "strong": "H3808",
+     "as": "partner",
+     "verse": "And you shall bear no sin by reason of it, when you have contributed the best of it. But you shall not profane the holy things of the people of Israel, lest you die.’”"
+    },
+    {
+     "reference": "Jos 5:4",
+     "surface": "males",
+     "strong": "H2145",
+     "as": "partner",
+     "verse": "And this is the reason why Joshua circumcised them: all the males of the people who came out of Egypt, all the men of war, had died in the wilderness on the way after they had come out of Egypt."
+    },
+    {
+     "reference": "1Sa 20:29",
+     "surface": "now",
+     "strong": "H6258",
+     "as": "partner",
+     "verse": "He said, ‘Let me go, for our clan holds a sacrifice in the city, and my brother has commanded me to be there. So now, if I have found favor in your eyes, let me get away and see my brothers.’ For this"
+    },
+    {
+     "reference": "1Sa 20:29",
+     "surface": "not",
+     "strong": "H3808",
+     "as": "partner",
+     "verse": "He said, ‘Let me go, for our clan holds a sacrifice in the city, and my brother has commanded me to be there. So now, if I have found favor in your eyes, let me get away and see my brothers.’ For this"
+    },
+    {
+     "reference": "Pro 3:30",
+     "surface": "not",
+     "strong": "H0408",
+     "as": "partner",
+     "verse": "Do not contend with a man for no reason, when he has done you no harm."
+    },
+    {
+     "reference": "Pro 3:30",
+     "surface": "no",
+     "strong": "H3808",
+     "as": "partner",
+     "verse": "Do not contend with a man for no reason, when he has done you no harm."
+    },
+    {
+     "reference": "Eze 19:10",
+     "surface": "branches",
+     "strong": "H6058",
+     "as": "partner",
+     "verse": "Your mother was like a vine in a vineyard planted by the water, fruitful and full of branches by reason of abundant water."
+    },
+    {
+     "reference": "Eze 19:10",
+     "surface": "abundant",
+     "strong": "H7227A",
+     "as": "partner",
+     "verse": "Your mother was like a vine in a vineyard planted by the water, fruitful and full of branches by reason of abundant water."
+    },
+    {
+     "reference": "Dan 4:34",
+     "surface": "most high",
+     "strong": "H5943",
+     "as": "partner",
+     "verse": "At the end of the days I, Nebuchadnezzar, lifted my eyes to heaven, and my reason returned to me, and I blessed the Most High, and praised and honored him who lives forever, for his dominion is an eve"
+    },
+    {
+     "reference": "Dan 4:34",
+     "surface": "lives",
+     "strong": "H2417",
+     "as": "partner",
+     "verse": "At the end of the days I, Nebuchadnezzar, lifted my eyes to heaven, and my reason returned to me, and I blessed the Most High, and praised and honored him who lives forever, for his dominion is an eve"
+    },
+    {
+     "reference": "Dan 4:34",
+     "surface": "forever",
+     "strong": "H5957",
+     "as": "partner",
+     "verse": "At the end of the days I, Nebuchadnezzar, lifted my eyes to heaven, and my reason returned to me, and I blessed the Most High, and praised and honored him who lives forever, for his dominion is an eve"
+    },
+    {
+     "reference": "Dan 4:34",
+     "surface": "everlasting",
+     "strong": "H5957",
+     "as": "partner",
+     "verse": "At the end of the days I, Nebuchadnezzar, lifted my eyes to heaven, and my reason returned to me, and I blessed the Most High, and praised and honored him who lives forever, for his dominion is an eve"
+    },
+    {
+     "reference": "Dan 4:36",
+     "surface": "more",
+     "strong": "H3493",
+     "as": "partner",
+     "verse": "At the same time my reason returned to me, and for the glory of my kingdom, my majesty and splendor returned to me. My counselors and my lords sought me, and I was established in my kingdom, and still"
+    },
+    {
+     "reference": "Mar 12:24",
+     "surface": "not",
+     "strong": "G3756",
+     "as": "partner",
+     "verse": "Jesus said to them, “Is this not the reason you are wrong, because you know neither the Scriptures nor the power of God?"
+    },
+    {
+     "reference": "Mar 12:24",
+     "surface": "neither",
+     "strong": "G3361",
+     "as": "partner",
+     "verse": "Jesus said to them, “Is this not the reason you are wrong, because you know neither the Scriptures nor the power of God?"
+    },
+    {
+     "reference": "Mar 12:24",
+     "surface": "nor",
+     "strong": "G3366",
+     "as": "partner",
+     "verse": "Jesus said to them, “Is this not the reason you are wrong, because you know neither the Scriptures nor the power of God?"
+    },
+    {
+     "reference": "Act 17:2",
+     "surface": "three",
+     "strong": "G5140",
+     "as": "partner",
+     "verse": "And Paul went in, as was his custom, and on three Sabbath days he reasoned with them from the Scriptures,"
+    },
+    {
+     "reference": "Act 17:17",
+     "surface": "every",
+     "strong": "G3956",
+     "as": "partner",
+     "verse": "So he reasoned in the synagogue with the Jews and the devout persons, and in the marketplace every day with those who happened to be there."
+    },
+    {
+     "reference": "Act 18:4",
+     "surface": "every",
+     "strong": "G3956",
+     "as": "partner",
+     "verse": "And he reasoned in the synagogue every Sabbath, and tried to persuade Jews and Greeks."
+    },
+    {
+     "reference": "Act 18:14",
+     "surface": "vicious",
+     "strong": "G4190",
+     "as": "partner",
+     "verse": "But when Paul was about to open his mouth, Gallio said to the Jews, “ If it were a matter of wrongdoing or vicious crime, O Jews, I would have reason to accept your complaint."
+    },
+    {
+     "reference": "Act 18:19",
+     "surface": "there",
+     "strong": "G0847",
+     "as": "partner",
+     "verse": "And they came to Ephesus, and he left them there, but he himself went into the synagogue and reasoned with the Jews."
+    },
+    {
+     "reference": "Act 19:8",
+     "surface": "three",
+     "strong": "G5140",
+     "as": "partner",
+     "verse": "And he entered the synagogue and for three months spoke boldly, reasoning and persuading them about the kingdom of God."
+    },
+    {
+     "reference": "Act 24:25",
+     "surface": "alarmed",
+     "strong": "G1719",
+     "as": "partner",
+     "verse": "And as he reasoned about righteousness and self-control and the coming judgment, Felix was alarmed and said, “ Go away for the present. When I get an opportunity I will summon you.”"
+    },
+    {
+     "reference": "Act 24:25",
+     "surface": "present",
+     "strong": "G3568",
+     "as": "partner",
+     "verse": "And as he reasoned about righteousness and self-control and the coming judgment, Felix was alarmed and said, “ Go away for the present. When I get an opportunity I will summon you.”"
+    },
+    {
+     "reference": "Act 28:18",
+     "surface": "no",
+     "strong": "G3367",
+     "as": "partner",
+     "verse": "When they had examined me, they wished to set me at liberty, because there was no reason for the death penalty in my case."
+    },
+    {
+     "reference": "Rom 15:22",
+     "surface": "often",
+     "strong": "G4183",
+     "as": "partner",
+     "verse": "This is the reason why I have so often been hindered from coming to you."
+    },
+    {
+     "reference": "1Cor 13:11",
+     "surface": "child",
+     "strong": "G3516",
+     "as": "partner",
+     "verse": "When I was a child, I spoke like a child, I thought like a child, I reasoned like a child. When I became a man, I gave up childish ways."
+    },
+    {
+     "reference": "1Cor 13:11",
+     "surface": "child",
+     "strong": "G3516",
+     "as": "partner",
+     "verse": "When I was a child, I spoke like a child, I thought like a child, I reasoned like a child. When I became a man, I gave up childish ways."
+    },
+    {
+     "reference": "1Cor 13:11",
+     "surface": "child",
+     "strong": "G3516",
+     "as": "partner",
+     "verse": "When I was a child, I spoke like a child, I thought like a child, I reasoned like a child. When I became a man, I gave up childish ways."
+    },
+    {
+     "reference": "1Cor 13:11",
+     "surface": "child",
+     "strong": "G3516",
+     "as": "partner",
+     "verse": "When I was a child, I spoke like a child, I thought like a child, I reasoned like a child. When I became a man, I gave up childish ways."
+    },
+    {
+     "reference": "1Cor 13:11",
+     "surface": "childish ways",
+     "strong": "G3516",
+     "as": "partner",
+     "verse": "When I was a child, I spoke like a child, I thought like a child, I reasoned like a child. When I became a man, I gave up childish ways."
+    },
+    {
+     "reference": "1Th 3:5",
+     "surface": "longer",
+     "strong": "G3371",
+     "as": "partner",
+     "verse": "For this reason, when I could bear it no longer, I sent to learn about your faith, for fear that somehow the tempter had tempted you and our labor would be in vain."
+    },
+    {
+     "reference": "1Th 3:5",
+     "surface": "vain",
+     "strong": "G2756",
+     "as": "partner",
+     "verse": "For this reason, when I could bear it no longer, I sent to learn about your faith, for fear that somehow the tempter had tempted you and our labor would be in vain."
+    },
+    {
+     "reference": "1Th 3:7",
+     "surface": "all",
+     "strong": "G3956",
+     "as": "partner",
+     "verse": "for this reason, brothers, in all our distress and affliction we have been comforted about you through your faith."
+    },
+    {
+     "reference": "1Ti 1:16",
+     "surface": "foremost",
+     "strong": "G4413J",
+     "as": "partner",
+     "verse": "But I received mercy for this reason, that in me, as the foremost, Jesus Christ might display his perfect patience as an example to those who were to believe in him for eternal life."
+    },
+    {
+     "reference": "1Ti 1:16",
+     "surface": "perfect",
+     "strong": "G3956",
+     "as": "partner",
+     "verse": "But I received mercy for this reason, that in me, as the foremost, Jesus Christ might display his perfect patience as an example to those who were to believe in him for eternal life."
+    },
+    {
+     "reference": "1Ti 1:16",
+     "surface": "eternal",
+     "strong": "G0166",
+     "as": "partner",
+     "verse": "But I received mercy for this reason, that in me, as the foremost, Jesus Christ might display his perfect patience as an example to those who were to believe in him for eternal life."
+    },
+    {
+     "reference": "Jam 3:17",
+     "surface": "above",
+     "strong": "G0509",
+     "as": "partner",
+     "verse": "But the wisdom from above is first pure, then peaceable, gentle, open to reason, full of mercy and good fruits, impartial and sincere."
+    },
+    {
+     "reference": "Jam 3:17",
+     "surface": "first",
+     "strong": "G4413G",
+     "as": "partner",
+     "verse": "But the wisdom from above is first pure, then peaceable, gentle, open to reason, full of mercy and good fruits, impartial and sincere."
+    },
+    {
+     "reference": "Jam 3:17",
+     "surface": "pure",
+     "strong": "G0053",
+     "as": "partner",
+     "verse": "But the wisdom from above is first pure, then peaceable, gentle, open to reason, full of mercy and good fruits, impartial and sincere."
+    }
+   ],
+   "fill": {
+    "disposition": "observed",
+    "obs_text": "Qualifiers stand with this group in most of its verses and reach the words beside the member, not the member. The negators reach other words: in Gen 41:31 the negator of unknown reaches the plenty (the plenty will be unknown by reason of the famine), in Num 18:32 negation reaches bearing sin, profaning and dying, in Pro 3:30 the negator of the proverb reaches contending, and in Act 28:18 no reaches the ground for the death penalty, so that in this verse the negated word is the member's own object. Degree words reach the famine (very severe in Gen 41:31 and 47:13), frequency words reach the reasoning (three Sabbaths in Act 17:2, every Sabbath in Act 18:4, every day in Act 17:17, three months in Act 19:8), and in Mar 12:24 the not and neither-nor reach the knowledge that Jesus says is lacking. In Jam 3:17 the neighbours (from above, first, pure) qualify the wisdom, of which being open to reason is one trait. In 1Cor 13:11 child reaches the reckoning as a child's. In 1Pe 3:15 and 1Jo 3:8 no qualifier stands near the member.",
+    "basis": "stated",
+    "route": "",
+    "member_role": "lexical",
+    "partner_role": "lexical",
+    "reason": "",
+    "older": [
+     {
+      "observation": 11837,
+      "action": "keep",
+      "nature": "inner_being",
+      "reason": "kept and marked inner being: it states how the mind or heart works in the verses it names, and rests on them"
+     },
+     {
+      "observation": 12738,
+      "action": "keep",
+      "nature": "inner_being",
+      "reason": "kept and marked inner being: it states how the mind or heart works in the verses it names, and rests on them"
+     },
+     {
+      "observation": 21540,
+      "action": "keep",
+      "nature": "evidence",
+      "reason": "kept and marked evidence: it states what the verses it names show of the word or the structure, and rests on them"
+     }
+    ]
+   }
+  },
+  {
+   "ledger_id": 682,
+   "item": "entity",
+   "kind": "pairing",
+   "group": "reasoning and giving grounds",
+   "subject": "",
+   "existing_observations": [
+    {
+     "observation": 18844,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "text": "4. God's rule (Dan 4:17): *\"to the end that the living may know that the Most High rules the kingdom of men and gives it to whom he will and sets over it the lowliest of men.\"* The passage: the same s",
+     "roles": [
+      "qualifier"
+     ],
+     "occurrences": 1
+    },
+    {
+     "observation": 20193,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "text": "The return: *\"my reason returned to me, and I blessed the Most High\"* (4:34), and *\"he does according to his will among the host of heaven and among the inhabitants of the earth; and none can stay his",
+     "roles": [
+      "qualifier"
+     ],
+     "occurrences": 1
+    },
+    {
+     "observation": 20207,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "text": "2.2 Passages where Scripture itself puts them together: Pro 1:29–31. Did not choose the fear of the Lord, would have none of my counsel, are filled with their own devices: choosing, willing and devisi",
+     "roles": [
+      "qualifier"
+     ],
+     "occurrences": 1
+    },
+    {
+     "observation": 12407,
+     "stage": "strand-reading",
+     "kind": "key-statement",
+     "text": "The heart is where thoughts come from",
+     "roles": [],
+     "occurrences": 1
+    },
+    {
+     "observation": 12431,
+     "stage": "strand-reading",
+     "kind": "key-statement",
+     "text": "The thoughts of people are open to God and to Jesus: God discerns, knows and understands them (Ps 139:2; 1Chr 28:9; Isa 66:18), Jesus perceives them (Luke 5:22; Matt 9:4), and the word of God discerns",
+     "roles": [
+      "characteristic"
+     ],
+     "occurrences": 1
+    },
+    {
+     "observation": 12447,
+     "stage": "strand-reading",
+     "kind": "key-statement",
+     "text": "Inner reasoning becomes outward quarrel when it is shared and set on one's own standing",
+     "roles": [],
+     "occurrences": 1
+    },
+    {
+     "observation": 15963,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "text": "1.10 Heart and mind (nous / dianoia) side by side: \"put my laws into their minds, and write them on their hearts\" / \"on their hearts … on their minds\" (Heb 8:10 / 10:16); \"guard your hearts and your m",
+     "roles": [
+      "qualifier"
+     ],
+     "occurrences": 1
+    },
+    {
+     "observation": 17236,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "text": "d. Thinking, planning, understanding, remembering: *Plans and devising:* Pro 16:1, 9; 19:21; 6:14, 18; 24:2; 12:20; Psa 140:2; 58:2; Zec 7:10; 8:17; Isa 10:7; Act 5:4; Eze 38:10.; *Understanding and k",
+     "roles": [
+      "qualifier"
+     ],
+     "occurrences": 1
+    },
+    {
+     "observation": 19290,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "text": "Luk 9:45–47: perception blocked from outside → fear to ask → rivalry → Jesus knows the reasoning of their hearts (v3)",
+     "roles": [
+      "qualifier"
+     ],
+     "occurrences": 1
+    },
+    {
+     "observation": 20481,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "text": "1. The heart or mind is the place thoughts come from. Mark 7:21 and Matt 15:19 (\"out of the heart come evil thoughts\"). Also: \"a heart that devises wicked plans\" (Prov 6:18); \"plan evil things in thei",
+     "roles": [
+      "qualifier"
+     ],
+     "occurrences": 1
+    },
+    {
+     "observation": 20565,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "text": "*dialogizomai / dialogismos* | Honest troubled reasoning · hardened anxious reasoning · inner questioning seen by Jesus · reasoning together into murder · self-talk of the rich man · quarrel, dispute,",
+     "roles": [
+      "qualifier"
+     ],
+     "occurrences": 1
+    },
+    {
+     "observation": 4707,
+     "stage": "verse-reading",
+     "kind": "no-impact",
+     "text": "In Acts.10.21 aitia is used in its plain practical sense 'reason/cause' (for the men's coming) -- sitting within the base gloss with no notable divergence.",
+     "roles": [],
+     "occurrences": 1
+    }
+   ],
+   "asks": "Which entities (divine, human, other) are named or referred to, by name or pronoun, in the verses of this group, and do they differ from those of the other groups? State who is named and how the text refers to them.",
+   "nodes_total": 47,
+   "nodes_shown": 47,
+   "strong_codes": {
+    "H1697M": 2,
+    "H2600": 2,
+    "H3198": 1,
+    "H4486": 1,
+    "G1223": 3,
+    "G5124": 3,
+    "G1261": 1,
+    "G0156": 2,
+    "G1256": 2,
+    "G3049": 1,
+    "G5484": 1,
+    "G3056": 1,
+    "G1519": 1
+   },
+   "evidence": [
+    {
+     "reference": "Jos 5:4",
+     "surface": "reason",
+     "strong": "H1697M",
+     "as": "member",
+     "verse": "And this is the reason why Joshua circumcised them: all the males of the people who came out of Egypt, all the men of war, had died in the wilderness on the way after they had come out of Egypt."
+    },
+    {
+     "reference": "1Ki 11:27",
+     "surface": "reason",
+     "strong": "H1697M",
+     "as": "member",
+     "verse": "And this was the reason why he lifted up his hand against the king. Solomon built the Millo, and closed up the breach of the city of David his father."
+    },
+    {
+     "reference": "Job 1:9",
+     "surface": "reason",
+     "strong": "H2600",
+     "as": "member",
+     "verse": "Then Satan answered the Lord and said, “Does Job fear God for no reason?"
+    },
+    {
+     "reference": "Pro 3:30",
+     "surface": "reason",
+     "strong": "H2600",
+     "as": "member",
+     "verse": "Do not contend with a man for no reason, when he has done you no harm."
+    },
+    {
+     "reference": "Isa 1:18",
+     "surface": "reason",
+     "strong": "H3198",
+     "as": "member",
+     "verse": "“ Come now, let us reason together, says the Lord: though your sins are like scarlet, they shall be as white as snow; though they are red like crimson, they shall become like wool."
+    },
+    {
+     "reference": "Dan 4:34",
+     "surface": "reason",
+     "strong": "H4486",
+     "as": "member",
+     "verse": "At the end of the days I, Nebuchadnezzar, lifted my eyes to heaven, and my reason returned to me, and I blessed the Most High, and praised and honored him who lives forever, for his dominion is an eve"
+    },
+    {
+     "reference": "Mar 12:24",
+     "surface": "reason",
+     "strong": "G1223",
+     "as": "member",
+     "verse": "Jesus said to them, “Is this not the reason you are wrong, because you know neither the Scriptures nor the power of God?"
+    },
+    {
+     "reference": "Mar 12:24",
+     "surface": "reason",
+     "strong": "G5124",
+     "as": "member",
+     "verse": "Jesus said to them, “Is this not the reason you are wrong, because you know neither the Scriptures nor the power of God?"
+    },
+    {
+     "reference": "Luk 9:47",
+     "surface": "reasoning",
+     "strong": "G1261",
+     "as": "member",
+     "verse": "But Jesus, knowing the reasoning of their hearts, took a child and put him by his side"
+    },
+    {
+     "reference": "Act 10:21",
+     "surface": "reason",
+     "strong": "G0156",
+     "as": "member",
+     "verse": "And Peter went down to the men and said, “ I am the one you are looking for. What is the reason for your coming?”"
+    },
+    {
+     "reference": "Act 19:8",
+     "surface": "reasoning",
+     "strong": "G1256",
+     "as": "member",
+     "verse": "And he entered the synagogue and for three months spoke boldly, reasoning and persuading them about the kingdom of God."
+    },
+    {
+     "reference": "Act 19:9",
+     "surface": "reasoning",
+     "strong": "G1256",
+     "as": "member",
+     "verse": "But when some became stubborn and continued in unbelief, speaking evil of the Way before the congregation, he withdrew from them and took the disciples with him, reasoning daily in the hall of Tyrannu"
+    },
+    {
+     "reference": "1Cor 13:11",
+     "surface": "reasoned",
+     "strong": "G3049",
+     "as": "member",
+     "verse": "When I was a child, I spoke like a child, I thought like a child, I reasoned like a child. When I became a man, I gave up childish ways."
+    },
+    {
+     "reference": "Eph 3:1",
+     "surface": "reason",
+     "strong": "G5484",
+     "as": "member",
+     "verse": "For this reason I, Paul, a prisoner of Christ Jesus on behalf of you Gentiles —"
+    },
+    {
+     "reference": "1Th 3:7",
+     "surface": "reason",
+     "strong": "G1223",
+     "as": "member",
+     "verse": "for this reason, brothers, in all our distress and affliction we have been comforted about you through your faith."
+    },
+    {
+     "reference": "1Th 3:7",
+     "surface": "reason",
+     "strong": "G5124",
+     "as": "member",
+     "verse": "for this reason, brothers, in all our distress and affliction we have been comforted about you through your faith."
+    },
+    {
+     "reference": "1Ti 1:16",
+     "surface": "reason",
+     "strong": "G1223",
+     "as": "member",
+     "verse": "But I received mercy for this reason, that in me, as the foremost, Jesus Christ might display his perfect patience as an example to those who were to believe in him for eternal life."
+    },
+    {
+     "reference": "2Ti 1:6",
+     "surface": "reason",
+     "strong": "G0156",
+     "as": "member",
+     "verse": "For this reason I remind you to fan into flame the gift of God, which is in you through the laying on of my hands,"
+    },
+    {
+     "reference": "1Pe 3:15",
+     "surface": "reason",
+     "strong": "G3056",
+     "as": "member",
+     "verse": "but in your hearts honor Christ the Lord as holy, always being prepared to make a defense to anyone who asks you for a reason for the hope that is in you; yet do it with gentleness and respect,"
+    },
+    {
+     "reference": "1Jo 3:8",
+     "surface": "reason",
+     "strong": "G1519",
+     "as": "member",
+     "verse": "Whoever makes a practice of sinning is of the devil, for the devil has been sinning from the beginning. The reason the Son of God appeared was to destroy the works of the devil."
+    },
+    {
+     "reference": "1Jo 3:8",
+     "surface": "reason",
+     "strong": "G5124",
+     "as": "member",
+     "verse": "Whoever makes a practice of sinning is of the devil, for the devil has been sinning from the beginning. The reason the Son of God appeared was to destroy the works of the devil."
+    },
+    {
+     "reference": "Jos 5:4",
+     "surface": "joshua",
+     "strong": "H3091G",
+     "as": "partner",
+     "verse": "And this is the reason why Joshua circumcised them: all the males of the people who came out of Egypt, all the men of war, had died in the wilderness on the way after they had come out of Egypt."
+    },
+    {
+     "reference": "Jos 5:4",
+     "surface": "men",
+     "strong": "H0582",
+     "as": "partner",
+     "verse": "And this is the reason why Joshua circumcised them: all the males of the people who came out of Egypt, all the men of war, had died in the wilderness on the way after they had come out of Egypt."
+    },
+    {
+     "reference": "1Ki 11:27",
+     "surface": "solomon",
+     "strong": "H8010",
+     "as": "partner",
+     "verse": "And this was the reason why he lifted up his hand against the king. Solomon built the Millo, and closed up the breach of the city of David his father."
+    },
+    {
+     "reference": "1Ki 11:27",
+     "surface": "david",
+     "strong": "H1732",
+     "as": "partner",
+     "verse": "And this was the reason why he lifted up his hand against the king. Solomon built the Millo, and closed up the breach of the city of David his father."
+    },
+    {
+     "reference": "Job 1:9",
+     "surface": "lord",
+     "strong": "H3068G",
+     "as": "partner",
+     "verse": "Then Satan answered the Lord and said, “Does Job fear God for no reason?"
+    },
+    {
+     "reference": "Job 1:9",
+     "surface": "job",
+     "strong": "H0347",
+     "as": "partner",
+     "verse": "Then Satan answered the Lord and said, “Does Job fear God for no reason?"
+    },
+    {
+     "reference": "Job 1:9",
+     "surface": "god",
+     "strong": "H0430G",
+     "as": "partner",
+     "verse": "Then Satan answered the Lord and said, “Does Job fear God for no reason?"
+    },
+    {
+     "reference": "Pro 3:30",
+     "surface": "man",
+     "strong": "H0120G",
+     "as": "partner",
+     "verse": "Do not contend with a man for no reason, when he has done you no harm."
+    },
+    {
+     "reference": "Isa 1:18",
+     "surface": "lord",
+     "strong": "H3068G",
+     "as": "partner",
+     "verse": "“ Come now, let us reason together, says the Lord: though your sins are like scarlet, they shall be as white as snow; though they are red like crimson, they shall become like wool."
+    },
+    {
+     "reference": "Dan 4:34",
+     "surface": "nebuchadnezzar",
+     "strong": "H5020",
+     "as": "partner",
+     "verse": "At the end of the days I, Nebuchadnezzar, lifted my eyes to heaven, and my reason returned to me, and I blessed the Most High, and praised and honored him who lives forever, for his dominion is an eve"
+    },
+    {
+     "reference": "Mar 12:24",
+     "surface": "jesus",
+     "strong": "G2424G",
+     "as": "partner",
+     "verse": "Jesus said to them, “Is this not the reason you are wrong, because you know neither the Scriptures nor the power of God?"
+    },
+    {
+     "reference": "Mar 12:24",
+     "surface": "god",
+     "strong": "G2316",
+     "as": "partner",
+     "verse": "Jesus said to them, “Is this not the reason you are wrong, because you know neither the Scriptures nor the power of God?"
+    },
+    {
+     "reference": "Luk 9:47",
+     "surface": "jesus",
+     "strong": "G2424G",
+     "as": "partner",
+     "verse": "But Jesus, knowing the reasoning of their hearts, took a child and put him by his side"
+    },
+    {
+     "reference": "Act 10:21",
+     "surface": "men",
+     "strong": "G0435G",
+     "as": "partner",
+     "verse": "And Peter went down to the men and said, “ I am the one you are looking for. What is the reason for your coming?”"
+    },
+    {
+     "reference": "Act 19:8",
+     "surface": "god",
+     "strong": "G2316",
+     "as": "partner",
+     "verse": "And he entered the synagogue and for three months spoke boldly, reasoning and persuading them about the kingdom of God."
+    },
+    {
+     "reference": "Act 19:9",
+     "surface": "disciples",
+     "strong": "G3101",
+     "as": "partner",
+     "verse": "But when some became stubborn and continued in unbelief, speaking evil of the Way before the congregation, he withdrew from them and took the disciples with him, reasoning daily in the hall of Tyrannu"
+    },
+    {
+     "reference": "1Cor 13:11",
+     "surface": "man",
+     "strong": "G0435G",
+     "as": "partner",
+     "verse": "When I was a child, I spoke like a child, I thought like a child, I reasoned like a child. When I became a man, I gave up childish ways."
+    },
+    {
+     "reference": "Eph 3:1",
+     "surface": "christ",
+     "strong": "G5547",
+     "as": "partner",
+     "verse": "For this reason I, Paul, a prisoner of Christ Jesus on behalf of you Gentiles —"
+    },
+    {
+     "reference": "Eph 3:1",
+     "surface": "jesus",
+     "strong": "G2424G",
+     "as": "partner",
+     "verse": "For this reason I, Paul, a prisoner of Christ Jesus on behalf of you Gentiles —"
+    },
+    {
+     "reference": "1Th 3:7",
+     "surface": "brothers",
+     "strong": "G0080",
+     "as": "partner",
+     "verse": "for this reason, brothers, in all our distress and affliction we have been comforted about you through your faith."
+    },
+    {
+     "reference": "1Ti 1:16",
+     "surface": "jesus",
+     "strong": "G2424G",
+     "as": "partner",
+     "verse": "But I received mercy for this reason, that in me, as the foremost, Jesus Christ might display his perfect patience as an example to those who were to believe in him for eternal life."
+    },
+    {
+     "reference": "1Ti 1:16",
+     "surface": "christ",
+     "strong": "G5547",
+     "as": "partner",
+     "verse": "But I received mercy for this reason, that in me, as the foremost, Jesus Christ might display his perfect patience as an example to those who were to believe in him for eternal life."
+    },
+    {
+     "reference": "2Ti 1:6",
+     "surface": "god",
+     "strong": "G2316",
+     "as": "partner",
+     "verse": "For this reason I remind you to fan into flame the gift of God, which is in you through the laying on of my hands,"
+    },
+    {
+     "reference": "1Pe 3:15",
+     "surface": "lord",
+     "strong": "G2962G",
+     "as": "partner",
+     "verse": "but in your hearts honor Christ the Lord as holy, always being prepared to make a defense to anyone who asks you for a reason for the hope that is in you; yet do it with gentleness and respect,"
+    },
+    {
+     "reference": "1Pe 3:15",
+     "surface": "lord",
+     "strong": "G2316",
+     "as": "partner",
+     "verse": "but in your hearts honor Christ the Lord as holy, always being prepared to make a defense to anyone who asks you for a reason for the hope that is in you; yet do it with gentleness and respect,"
+    },
+    {
+     "reference": "1Jo 3:8",
+     "surface": "god",
+     "strong": "G2316",
+     "as": "partner",
+     "verse": "Whoever makes a practice of sinning is of the devil, for the devil has been sinning from the beginning. The reason the Son of God appeared was to destroy the works of the devil."
+    }
+   ],
+   "fill": {
+    "disposition": "observed",
+    "obs_text": "The entities named in the verses of this group are divine and human. Divine: the Lord (Job 1:9, Isa 1:18, 1Pe 3:15), God (Job 1:9, Mar 12:24, Act 19:8, 2Ti 1:6, 1Pe 3:15, 1Jo 3:8), Jesus and Christ (Mar 12:24, Luk 9:47, Eph 3:1, 1Ti 1:16). Human: Joshua and the men (Jos 5:4), Solomon and David (1Ki 11:27), Job (Job 1:9), a man (Pro 3:30, 1Cor 13:11), Nebuchadnezzar (Dan 4:34), the men who came for Peter (Act 10:21), the disciples (Act 19:9, Luk 9:47), Paul's brothers (1Th 3:7). The reasoning in the verses of Acts is Paul's, addressed to hearers, and the grounds in the letters are Paul's, addressed to readers. This record does not compare the group with the others.",
+    "basis": "stated",
+    "route": "",
+    "member_role": "lexical",
+    "partner_role": "lexical",
+    "reason": "",
+    "older": []
+   }
+  },
+  {
+   "ledger_id": 689,
+   "item": "direction",
+   "kind": "relation",
+   "group": "reasoning and giving grounds",
+   "subject": "",
+   "existing_observations": [
+    {
+     "observation": 18844,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "text": "4. God's rule (Dan 4:17): *\"to the end that the living may know that the Most High rules the kingdom of men and gives it to whom he will and sets over it the lowliest of men.\"* The passage: the same s",
+     "roles": [
+      "qualifier"
+     ],
+     "occurrences": 1
+    },
+    {
+     "observation": 20193,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "text": "The return: *\"my reason returned to me, and I blessed the Most High\"* (4:34), and *\"he does according to his will among the host of heaven and among the inhabitants of the earth; and none can stay his",
+     "roles": [
+      "qualifier"
+     ],
+     "occurrences": 1
+    },
+    {
+     "observation": 20207,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "text": "2.2 Passages where Scripture itself puts them together: Pro 1:29–31. Did not choose the fear of the Lord, would have none of my counsel, are filled with their own devices: choosing, willing and devisi",
+     "roles": [
+      "qualifier"
+     ],
+     "occurrences": 1
+    },
+    {
+     "observation": 12407,
+     "stage": "strand-reading",
+     "kind": "key-statement",
+     "text": "The heart is where thoughts come from",
+     "roles": [],
+     "occurrences": 1
+    },
+    {
+     "observation": 12431,
+     "stage": "strand-reading",
+     "kind": "key-statement",
+     "text": "The thoughts of people are open to God and to Jesus: God discerns, knows and understands them (Ps 139:2; 1Chr 28:9; Isa 66:18), Jesus perceives them (Luke 5:22; Matt 9:4), and the word of God discerns",
+     "roles": [
+      "characteristic"
+     ],
+     "occurrences": 1
+    },
+    {
+     "observation": 12447,
+     "stage": "strand-reading",
+     "kind": "key-statement",
+     "text": "Inner reasoning becomes outward quarrel when it is shared and set on one's own standing",
+     "roles": [],
+     "occurrences": 1
+    },
+    {
+     "observation": 15963,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "text": "1.10 Heart and mind (nous / dianoia) side by side: \"put my laws into their minds, and write them on their hearts\" / \"on their hearts … on their minds\" (Heb 8:10 / 10:16); \"guard your hearts and your m",
+     "roles": [
+      "qualifier"
+     ],
+     "occurrences": 1
+    },
+    {
+     "observation": 17236,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "text": "d. Thinking, planning, understanding, remembering: *Plans and devising:* Pro 16:1, 9; 19:21; 6:14, 18; 24:2; 12:20; Psa 140:2; 58:2; Zec 7:10; 8:17; Isa 10:7; Act 5:4; Eze 38:10.; *Understanding and k",
+     "roles": [
+      "qualifier"
+     ],
+     "occurrences": 1
+    },
+    {
+     "observation": 19290,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "text": "Luk 9:45–47: perception blocked from outside → fear to ask → rivalry → Jesus knows the reasoning of their hearts (v3)",
+     "roles": [
+      "qualifier"
+     ],
+     "occurrences": 1
+    },
+    {
+     "observation": 20481,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "text": "1. The heart or mind is the place thoughts come from. Mark 7:21 and Matt 15:19 (\"out of the heart come evil thoughts\"). Also: \"a heart that devises wicked plans\" (Prov 6:18); \"plan evil things in thei",
+     "roles": [
+      "qualifier"
+     ],
+     "occurrences": 1
+    },
+    {
+     "observation": 20565,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "text": "*dialogizomai / dialogismos* | Honest troubled reasoning · hardened anxious reasoning · inner questioning seen by Jesus · reasoning together into murder · self-talk of the rich man · quarrel, dispute,",
+     "roles": [
+      "qualifier"
+     ],
+     "occurrences": 1
+    },
+    {
+     "observation": 4707,
+     "stage": "verse-reading",
+     "kind": "no-impact",
+     "text": "In Acts.10.21 aitia is used in its plain practical sense 'reason/cause' (for the men's coming) -- sitting within the base gloss with no notable divergence.",
+     "roles": [],
+     "occurrences": 1
+    }
+   ],
+   "asks": "Does the direction of travel the text states (from whom to whom, by the grammar) change across the verses of this group?",
+   "nodes_total": 47,
+   "nodes_shown": 47,
+   "strong_codes": {
+    "H1697M": 2,
+    "H2600": 2,
+    "H3198": 1,
+    "H4486": 1,
+    "G1223": 3,
+    "G5124": 3,
+    "G1261": 1,
+    "G0156": 2,
+    "G1256": 2,
+    "G3049": 1,
+    "G5484": 1,
+    "G3056": 1,
+    "G1519": 1
+   },
+   "evidence": [
+    {
+     "reference": "Jos 5:4",
+     "surface": "reason",
+     "strong": "H1697M",
+     "as": "member",
+     "verse": "And this is the reason why Joshua circumcised them: all the males of the people who came out of Egypt, all the men of war, had died in the wilderness on the way after they had come out of Egypt."
+    },
+    {
+     "reference": "1Ki 11:27",
+     "surface": "reason",
+     "strong": "H1697M",
+     "as": "member",
+     "verse": "And this was the reason why he lifted up his hand against the king. Solomon built the Millo, and closed up the breach of the city of David his father."
+    },
+    {
+     "reference": "Job 1:9",
+     "surface": "reason",
+     "strong": "H2600",
+     "as": "member",
+     "verse": "Then Satan answered the Lord and said, “Does Job fear God for no reason?"
+    },
+    {
+     "reference": "Pro 3:30",
+     "surface": "reason",
+     "strong": "H2600",
+     "as": "member",
+     "verse": "Do not contend with a man for no reason, when he has done you no harm."
+    },
+    {
+     "reference": "Isa 1:18",
+     "surface": "reason",
+     "strong": "H3198",
+     "as": "member",
+     "verse": "“ Come now, let us reason together, says the Lord: though your sins are like scarlet, they shall be as white as snow; though they are red like crimson, they shall become like wool."
+    },
+    {
+     "reference": "Dan 4:34",
+     "surface": "reason",
+     "strong": "H4486",
+     "as": "member",
+     "verse": "At the end of the days I, Nebuchadnezzar, lifted my eyes to heaven, and my reason returned to me, and I blessed the Most High, and praised and honored him who lives forever, for his dominion is an eve"
+    },
+    {
+     "reference": "Mar 12:24",
+     "surface": "reason",
+     "strong": "G1223",
+     "as": "member",
+     "verse": "Jesus said to them, “Is this not the reason you are wrong, because you know neither the Scriptures nor the power of God?"
+    },
+    {
+     "reference": "Mar 12:24",
+     "surface": "reason",
+     "strong": "G5124",
+     "as": "member",
+     "verse": "Jesus said to them, “Is this not the reason you are wrong, because you know neither the Scriptures nor the power of God?"
+    },
+    {
+     "reference": "Luk 9:47",
+     "surface": "reasoning",
+     "strong": "G1261",
+     "as": "member",
+     "verse": "But Jesus, knowing the reasoning of their hearts, took a child and put him by his side"
+    },
+    {
+     "reference": "Act 10:21",
+     "surface": "reason",
+     "strong": "G0156",
+     "as": "member",
+     "verse": "And Peter went down to the men and said, “ I am the one you are looking for. What is the reason for your coming?”"
+    },
+    {
+     "reference": "Act 19:8",
+     "surface": "reasoning",
+     "strong": "G1256",
+     "as": "member",
+     "verse": "And he entered the synagogue and for three months spoke boldly, reasoning and persuading them about the kingdom of God."
+    },
+    {
+     "reference": "Act 19:9",
+     "surface": "reasoning",
+     "strong": "G1256",
+     "as": "member",
+     "verse": "But when some became stubborn and continued in unbelief, speaking evil of the Way before the congregation, he withdrew from them and took the disciples with him, reasoning daily in the hall of Tyrannu"
+    },
+    {
+     "reference": "1Cor 13:11",
+     "surface": "reasoned",
+     "strong": "G3049",
+     "as": "member",
+     "verse": "When I was a child, I spoke like a child, I thought like a child, I reasoned like a child. When I became a man, I gave up childish ways."
+    },
+    {
+     "reference": "Eph 3:1",
+     "surface": "reason",
+     "strong": "G5484",
+     "as": "member",
+     "verse": "For this reason I, Paul, a prisoner of Christ Jesus on behalf of you Gentiles —"
+    },
+    {
+     "reference": "1Th 3:7",
+     "surface": "reason",
+     "strong": "G1223",
+     "as": "member",
+     "verse": "for this reason, brothers, in all our distress and affliction we have been comforted about you through your faith."
+    },
+    {
+     "reference": "1Th 3:7",
+     "surface": "reason",
+     "strong": "G5124",
+     "as": "member",
+     "verse": "for this reason, brothers, in all our distress and affliction we have been comforted about you through your faith."
+    },
+    {
+     "reference": "1Ti 1:16",
+     "surface": "reason",
+     "strong": "G1223",
+     "as": "member",
+     "verse": "But I received mercy for this reason, that in me, as the foremost, Jesus Christ might display his perfect patience as an example to those who were to believe in him for eternal life."
+    },
+    {
+     "reference": "2Ti 1:6",
+     "surface": "reason",
+     "strong": "G0156",
+     "as": "member",
+     "verse": "For this reason I remind you to fan into flame the gift of God, which is in you through the laying on of my hands,"
+    },
+    {
+     "reference": "1Pe 3:15",
+     "surface": "reason",
+     "strong": "G3056",
+     "as": "member",
+     "verse": "but in your hearts honor Christ the Lord as holy, always being prepared to make a defense to anyone who asks you for a reason for the hope that is in you; yet do it with gentleness and respect,"
+    },
+    {
+     "reference": "1Jo 3:8",
+     "surface": "reason",
+     "strong": "G1519",
+     "as": "member",
+     "verse": "Whoever makes a practice of sinning is of the devil, for the devil has been sinning from the beginning. The reason the Son of God appeared was to destroy the works of the devil."
+    },
+    {
+     "reference": "1Jo 3:8",
+     "surface": "reason",
+     "strong": "G5124",
+     "as": "member",
+     "verse": "Whoever makes a practice of sinning is of the devil, for the devil has been sinning from the beginning. The reason the Son of God appeared was to destroy the works of the devil."
+    },
+    {
+     "reference": "Jos 5:4",
+     "surface": "joshua",
+     "strong": "H3091G",
+     "as": "partner",
+     "verse": "And this is the reason why Joshua circumcised them: all the males of the people who came out of Egypt, all the men of war, had died in the wilderness on the way after they had come out of Egypt."
+    },
+    {
+     "reference": "Jos 5:4",
+     "surface": "men",
+     "strong": "H0582",
+     "as": "partner",
+     "verse": "And this is the reason why Joshua circumcised them: all the males of the people who came out of Egypt, all the men of war, had died in the wilderness on the way after they had come out of Egypt."
+    },
+    {
+     "reference": "1Ki 11:27",
+     "surface": "solomon",
+     "strong": "H8010",
+     "as": "partner",
+     "verse": "And this was the reason why he lifted up his hand against the king. Solomon built the Millo, and closed up the breach of the city of David his father."
+    },
+    {
+     "reference": "1Ki 11:27",
+     "surface": "david",
+     "strong": "H1732",
+     "as": "partner",
+     "verse": "And this was the reason why he lifted up his hand against the king. Solomon built the Millo, and closed up the breach of the city of David his father."
+    },
+    {
+     "reference": "Job 1:9",
+     "surface": "lord",
+     "strong": "H3068G",
+     "as": "partner",
+     "verse": "Then Satan answered the Lord and said, “Does Job fear God for no reason?"
+    },
+    {
+     "reference": "Job 1:9",
+     "surface": "job",
+     "strong": "H0347",
+     "as": "partner",
+     "verse": "Then Satan answered the Lord and said, “Does Job fear God for no reason?"
+    },
+    {
+     "reference": "Job 1:9",
+     "surface": "god",
+     "strong": "H0430G",
+     "as": "partner",
+     "verse": "Then Satan answered the Lord and said, “Does Job fear God for no reason?"
+    },
+    {
+     "reference": "Pro 3:30",
+     "surface": "man",
+     "strong": "H0120G",
+     "as": "partner",
+     "verse": "Do not contend with a man for no reason, when he has done you no harm."
+    },
+    {
+     "reference": "Isa 1:18",
+     "surface": "lord",
+     "strong": "H3068G",
+     "as": "partner",
+     "verse": "“ Come now, let us reason together, says the Lord: though your sins are like scarlet, they shall be as white as snow; though they are red like crimson, they shall become like wool."
+    },
+    {
+     "reference": "Dan 4:34",
+     "surface": "nebuchadnezzar",
+     "strong": "H5020",
+     "as": "partner",
+     "verse": "At the end of the days I, Nebuchadnezzar, lifted my eyes to heaven, and my reason returned to me, and I blessed the Most High, and praised and honored him who lives forever, for his dominion is an eve"
+    },
+    {
+     "reference": "Mar 12:24",
+     "surface": "jesus",
+     "strong": "G2424G",
+     "as": "partner",
+     "verse": "Jesus said to them, “Is this not the reason you are wrong, because you know neither the Scriptures nor the power of God?"
+    },
+    {
+     "reference": "Mar 12:24",
+     "surface": "god",
+     "strong": "G2316",
+     "as": "partner",
+     "verse": "Jesus said to them, “Is this not the reason you are wrong, because you know neither the Scriptures nor the power of God?"
+    },
+    {
+     "reference": "Luk 9:47",
+     "surface": "jesus",
+     "strong": "G2424G",
+     "as": "partner",
+     "verse": "But Jesus, knowing the reasoning of their hearts, took a child and put him by his side"
+    },
+    {
+     "reference": "Act 10:21",
+     "surface": "men",
+     "strong": "G0435G",
+     "as": "partner",
+     "verse": "And Peter went down to the men and said, “ I am the one you are looking for. What is the reason for your coming?”"
+    },
+    {
+     "reference": "Act 19:8",
+     "surface": "god",
+     "strong": "G2316",
+     "as": "partner",
+     "verse": "And he entered the synagogue and for three months spoke boldly, reasoning and persuading them about the kingdom of God."
+    },
+    {
+     "reference": "Act 19:9",
+     "surface": "disciples",
+     "strong": "G3101",
+     "as": "partner",
+     "verse": "But when some became stubborn and continued in unbelief, speaking evil of the Way before the congregation, he withdrew from them and took the disciples with him, reasoning daily in the hall of Tyrannu"
+    },
+    {
+     "reference": "1Cor 13:11",
+     "surface": "man",
+     "strong": "G0435G",
+     "as": "partner",
+     "verse": "When I was a child, I spoke like a child, I thought like a child, I reasoned like a child. When I became a man, I gave up childish ways."
+    },
+    {
+     "reference": "Eph 3:1",
+     "surface": "christ",
+     "strong": "G5547",
+     "as": "partner",
+     "verse": "For this reason I, Paul, a prisoner of Christ Jesus on behalf of you Gentiles —"
+    },
+    {
+     "reference": "Eph 3:1",
+     "surface": "jesus",
+     "strong": "G2424G",
+     "as": "partner",
+     "verse": "For this reason I, Paul, a prisoner of Christ Jesus on behalf of you Gentiles —"
+    },
+    {
+     "reference": "1Th 3:7",
+     "surface": "brothers",
+     "strong": "G0080",
+     "as": "partner",
+     "verse": "for this reason, brothers, in all our distress and affliction we have been comforted about you through your faith."
+    },
+    {
+     "reference": "1Ti 1:16",
+     "surface": "jesus",
+     "strong": "G2424G",
+     "as": "partner",
+     "verse": "But I received mercy for this reason, that in me, as the foremost, Jesus Christ might display his perfect patience as an example to those who were to believe in him for eternal life."
+    },
+    {
+     "reference": "1Ti 1:16",
+     "surface": "christ",
+     "strong": "G5547",
+     "as": "partner",
+     "verse": "But I received mercy for this reason, that in me, as the foremost, Jesus Christ might display his perfect patience as an example to those who were to believe in him for eternal life."
+    },
+    {
+     "reference": "2Ti 1:6",
+     "surface": "god",
+     "strong": "G2316",
+     "as": "partner",
+     "verse": "For this reason I remind you to fan into flame the gift of God, which is in you through the laying on of my hands,"
+    },
+    {
+     "reference": "1Pe 3:15",
+     "surface": "lord",
+     "strong": "G2962G",
+     "as": "partner",
+     "verse": "but in your hearts honor Christ the Lord as holy, always being prepared to make a defense to anyone who asks you for a reason for the hope that is in you; yet do it with gentleness and respect,"
+    },
+    {
+     "reference": "1Pe 3:15",
+     "surface": "lord",
+     "strong": "G2316",
+     "as": "partner",
+     "verse": "but in your hearts honor Christ the Lord as holy, always being prepared to make a defense to anyone who asks you for a reason for the hope that is in you; yet do it with gentleness and respect,"
+    },
+    {
+     "reference": "1Jo 3:8",
+     "surface": "god",
+     "strong": "G2316",
+     "as": "partner",
+     "verse": "Whoever makes a practice of sinning is of the devil, for the devil has been sinning from the beginning. The reason the Son of God appeared was to destroy the works of the devil."
+    }
+   ],
+   "fill": {
+    "disposition": "observed",
+    "obs_text": "The direction of the reasoning and of the ground given is by the verses stated in four ways. The grounds of Paul's letters (Eph 3:1, 1Th 3:7, 1Ti 1:16, 2Ti 1:6) run from Paul to those he writes to, and in 1Ti 1:16 from Christ's mercy to him as an example. The reasoning of Acts (Act 19:8, 19:9) runs from Paul to the hearers in the synagogue, and the reasoning of Isa 1:18 from the Lord to the people. In Luk 9:47 and Mar 12:24 it runs from Jesus' knowing to the disciples' or the Sadducees' reasoning or error, and in Dan 4:34 it is the king's own reason returning to him. The cause given in Jos 5:4 and 1Ki 11:27 stands with a human act, and in Job 1:9 and Pro 3:30 the denial of a cause is said by Satan of Job and by the proverb of a man.",
+    "basis": "stated",
+    "route": "",
+    "member_role": "lexical",
+    "partner_role": "lexical",
+    "reason": "",
+    "older": []
+   }
+  },
+  {
+   "ledger_id": 708,
+   "item": "double-meaning",
+   "kind": "face",
+   "group": "reasoning and giving grounds",
+   "subject": "reason",
+   "existing_observations": [
+    {
+     "observation": 18844,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "text": "4. God's rule (Dan 4:17): *\"to the end that the living may know that the Most High rules the kingdom of men and gives it to whom he will and sets over it the lowliest of men.\"* The passage: the same s",
+     "roles": [
+      "qualifier"
+     ],
+     "occurrences": 1
+    },
+    {
+     "observation": 20193,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "text": "The return: *\"my reason returned to me, and I blessed the Most High\"* (4:34), and *\"he does according to his will among the host of heaven and among the inhabitants of the earth; and none can stay his",
+     "roles": [
+      "qualifier"
+     ],
+     "occurrences": 1
+    },
+    {
+     "observation": 20207,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "text": "2.2 Passages where Scripture itself puts them together: Pro 1:29–31. Did not choose the fear of the Lord, would have none of my counsel, are filled with their own devices: choosing, willing and devisi",
+     "roles": [
+      "qualifier"
+     ],
+     "occurrences": 1
+    },
+    {
+     "observation": 4707,
+     "stage": "verse-reading",
+     "kind": "no-impact",
+     "text": "In Acts.10.21 aitia is used in its plain practical sense 'reason/cause' (for the men's coming) -- sitting within the base gloss with no notable divergence.",
+     "roles": [],
+     "occurrences": 1
+    },
+    {
+     "observation": 17102,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "text": "6.4 Hope and the NT inner seat: \"my heart was glad … my flesh also will dwell in hope\" (Act 2:26) — flesh in hope; \"hope does not put us to shame, because God's love has been poured into our hearts th",
+     "roles": [
+      "qualifier"
+     ],
+     "occurrences": 1
+    }
+   ],
+   "asks": "Does this surface carry a different Strong's code or sense in different verses (the faces of the word)? State the codes and the verses.",
+   "nodes_total": 32,
+   "nodes_shown": 32,
+   "strong_codes": {
+    "H6440I": 2,
+    "H5921A": 2,
+    "H1697M": 2,
+    "H3651C": 1,
+    "H2600": 2,
+    "H3198": 1,
+    "H1961": 1,
+    "H4486": 2,
+    "G1223": 4,
+    "G5124": 3,
+    "G0156": 4,
+    "G2596": 1,
+    "G0302": 1,
+    "G1352": 1,
+    "G5484": 2,
+    "G2138": 1,
+    "G3056": 1,
+    "G1519": 1
+   },
+   "evidence": [
+    {
+     "reference": "Gen 41:31",
+     "surface": "reason",
+     "strong": "H6440I",
+     "as": "member",
+     "verse": "and the plenty will be unknown in the land by reason of the famine that will follow, for it will be very severe."
+    },
+    {
+     "reference": "Gen 47:13",
+     "surface": "reason",
+     "strong": "H6440I",
+     "as": "member",
+     "verse": "Now there was no food in all the land, for the famine was very severe, so that the land of Egypt and the land of Canaan languished by reason of the famine."
+    },
+    {
+     "reference": "Num 18:32",
+     "surface": "reason",
+     "strong": "H5921A",
+     "as": "member",
+     "verse": "And you shall bear no sin by reason of it, when you have contributed the best of it. But you shall not profane the holy things of the people of Israel, lest you die.’”"
+    },
+    {
+     "reference": "Jos 5:4",
+     "surface": "reason",
+     "strong": "H1697M",
+     "as": "member",
+     "verse": "And this is the reason why Joshua circumcised them: all the males of the people who came out of Egypt, all the men of war, had died in the wilderness on the way after they had come out of Egypt."
+    },
+    {
+     "reference": "1Sa 20:29",
+     "surface": "reason",
+     "strong": "H5921A",
+     "as": "member",
+     "verse": "He said, ‘Let me go, for our clan holds a sacrifice in the city, and my brother has commanded me to be there. So now, if I have found favor in your eyes, let me get away and see my brothers.’ For this"
+    },
+    {
+     "reference": "1Sa 20:29",
+     "surface": "reason",
+     "strong": "H3651C",
+     "as": "member",
+     "verse": "He said, ‘Let me go, for our clan holds a sacrifice in the city, and my brother has commanded me to be there. So now, if I have found favor in your eyes, let me get away and see my brothers.’ For this"
+    },
+    {
+     "reference": "1Ki 11:27",
+     "surface": "reason",
+     "strong": "H1697M",
+     "as": "member",
+     "verse": "And this was the reason why he lifted up his hand against the king. Solomon built the Millo, and closed up the breach of the city of David his father."
+    },
+    {
+     "reference": "Job 1:9",
+     "surface": "reason",
+     "strong": "H2600",
+     "as": "member",
+     "verse": "Then Satan answered the Lord and said, “Does Job fear God for no reason?"
+    },
+    {
+     "reference": "Pro 3:30",
+     "surface": "reason",
+     "strong": "H2600",
+     "as": "member",
+     "verse": "Do not contend with a man for no reason, when he has done you no harm."
+    },
+    {
+     "reference": "Isa 1:18",
+     "surface": "reason",
+     "strong": "H3198",
+     "as": "member",
+     "verse": "“ Come now, let us reason together, says the Lord: though your sins are like scarlet, they shall be as white as snow; though they are red like crimson, they shall become like wool."
+    },
+    {
+     "reference": "Eze 19:10",
+     "surface": "reason",
+     "strong": "H1961",
+     "as": "member",
+     "verse": "Your mother was like a vine in a vineyard planted by the water, fruitful and full of branches by reason of abundant water."
+    },
+    {
+     "reference": "Dan 4:34",
+     "surface": "reason",
+     "strong": "H4486",
+     "as": "member",
+     "verse": "At the end of the days I, Nebuchadnezzar, lifted my eyes to heaven, and my reason returned to me, and I blessed the Most High, and praised and honored him who lives forever, for his dominion is an eve"
+    },
+    {
+     "reference": "Dan 4:36",
+     "surface": "reason",
+     "strong": "H4486",
+     "as": "member",
+     "verse": "At the same time my reason returned to me, and for the glory of my kingdom, my majesty and splendor returned to me. My counselors and my lords sought me, and I was established in my kingdom, and still"
+    },
+    {
+     "reference": "Mar 12:24",
+     "surface": "reason",
+     "strong": "G1223",
+     "as": "member",
+     "verse": "Jesus said to them, “Is this not the reason you are wrong, because you know neither the Scriptures nor the power of God?"
+    },
+    {
+     "reference": "Mar 12:24",
+     "surface": "reason",
+     "strong": "G5124",
+     "as": "member",
+     "verse": "Jesus said to them, “Is this not the reason you are wrong, because you know neither the Scriptures nor the power of God?"
+    },
+    {
+     "reference": "Act 10:21",
+     "surface": "reason",
+     "strong": "G0156",
+     "as": "member",
+     "verse": "And Peter went down to the men and said, “ I am the one you are looking for. What is the reason for your coming?”"
+    },
+    {
+     "reference": "Act 18:14",
+     "surface": "reason",
+     "strong": "G2596",
+     "as": "member",
+     "verse": "But when Paul was about to open his mouth, Gallio said to the Jews, “ If it were a matter of wrongdoing or vicious crime, O Jews, I would have reason to accept your complaint."
+    },
+    {
+     "reference": "Act 18:14",
+     "surface": "reason",
+     "strong": "G0302",
+     "as": "member",
+     "verse": "But when Paul was about to open his mouth, Gallio said to the Jews, “ If it were a matter of wrongdoing or vicious crime, O Jews, I would have reason to accept your complaint."
+    },
+    {
+     "reference": "Act 28:18",
+     "surface": "reason",
+     "strong": "G0156",
+     "as": "member",
+     "verse": "When they had examined me, they wished to set me at liberty, because there was no reason for the death penalty in my case."
+    },
+    {
+     "reference": "Act 28:20",
+     "surface": "reason",
+     "strong": "G0156",
+     "as": "member",
+     "verse": "For this reason, therefore, I have asked to see you and speak with you, since it is because of the hope of Israel that I am wearing this chain.”"
+    },
+    {
+     "reference": "Rom 15:22",
+     "surface": "reason",
+     "strong": "G1352",
+     "as": "member",
+     "verse": "This is the reason why I have so often been hindered from coming to you."
+    },
+    {
+     "reference": "Eph 3:1",
+     "surface": "reason",
+     "strong": "G5484",
+     "as": "member",
+     "verse": "For this reason I, Paul, a prisoner of Christ Jesus on behalf of you Gentiles —"
+    },
+    {
+     "reference": "Eph 3:14",
+     "surface": "reason",
+     "strong": "G5484",
+     "as": "member",
+     "verse": "For this reason I bow my knees before the Father,"
+    },
+    {
+     "reference": "1Th 3:5",
+     "surface": "reason",
+     "strong": "G1223",
+     "as": "member",
+     "verse": "For this reason, when I could bear it no longer, I sent to learn about your faith, for fear that somehow the tempter had tempted you and our labor would be in vain."
+    },
+    {
+     "reference": "1Th 3:7",
+     "surface": "reason",
+     "strong": "G1223",
+     "as": "member",
+     "verse": "for this reason, brothers, in all our distress and affliction we have been comforted about you through your faith."
+    },
+    {
+     "reference": "1Th 3:7",
+     "surface": "reason",
+     "strong": "G5124",
+     "as": "member",
+     "verse": "for this reason, brothers, in all our distress and affliction we have been comforted about you through your faith."
+    },
+    {
+     "reference": "1Ti 1:16",
+     "surface": "reason",
+     "strong": "G1223",
+     "as": "member",
+     "verse": "But I received mercy for this reason, that in me, as the foremost, Jesus Christ might display his perfect patience as an example to those who were to believe in him for eternal life."
+    },
+    {
+     "reference": "2Ti 1:6",
+     "surface": "reason",
+     "strong": "G0156",
+     "as": "member",
+     "verse": "For this reason I remind you to fan into flame the gift of God, which is in you through the laying on of my hands,"
+    },
+    {
+     "reference": "Jam 3:17",
+     "surface": "reason",
+     "strong": "G2138",
+     "as": "member",
+     "verse": "But the wisdom from above is first pure, then peaceable, gentle, open to reason, full of mercy and good fruits, impartial and sincere."
+    },
+    {
+     "reference": "1Pe 3:15",
+     "surface": "reason",
+     "strong": "G3056",
+     "as": "member",
+     "verse": "but in your hearts honor Christ the Lord as holy, always being prepared to make a defense to anyone who asks you for a reason for the hope that is in you; yet do it with gentleness and respect,"
+    },
+    {
+     "reference": "1Jo 3:8",
+     "surface": "reason",
+     "strong": "G1519",
+     "as": "member",
+     "verse": "Whoever makes a practice of sinning is of the devil, for the devil has been sinning from the beginning. The reason the Son of God appeared was to destroy the works of the devil."
+    },
+    {
+     "reference": "1Jo 3:8",
+     "surface": "reason",
+     "strong": "G5124",
+     "as": "member",
+     "verse": "Whoever makes a practice of sinning is of the devil, for the devil has been sinning from the beginning. The reason the Son of God appeared was to destroy the works of the devil."
+    }
+   ],
+   "fill": {
+    "disposition": "observed",
+    "obs_text": "The surface reason carries many codes in this group and the verses show two senses. In one it names a ground or cause: H6440I in Gen 41:31 and 47:13, H5921A in Num 18:32 and 1Sa 20:29, H1697M in Jos 5:4 and 1Ki 11:27, H2600 for no reason in Job 1:9 and Pro 3:30, G1223 and G5124 in Mar 12:24, 1Th 3:5, 1Th 3:7 and 1Jo 3:8, G0156 in Act 10:21, 28:18, 28:20 and 2Ti 1:6, G1352 in Rom 15:22, G5484 in Eph 3:1 and 3:14, G0302 with G2596 in Act 18:14, G1519 in 1Jo 3:8 and G1961 in Eze 19:10. In the other it names the mind's working: H4486 the king's reason in Dan 4:34 and 4:36, H3198 the arguing of a case in Isa 1:18, G2138 the being open to reason in Jam 3:17, and G3056 the account of a hope in 1Pe 3:15. The surface is therefore double: a cause that stands outside the mind, and a working of the mind.",
+    "basis": "stated",
+    "route": "",
+    "member_role": "lexical",
+    "partner_role": "",
+    "reason": "",
+    "older": []
+   }
+  },
+  {
+   "ledger_id": 709,
+   "item": "double-meaning",
+   "kind": "face",
+   "group": "reasoning and giving grounds",
+   "subject": "reasoned",
+   "existing_observations": [
+    {
+     "observation": 13008,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "text": "What the angry person does with it: Nehemiah: \"I took counsel with myself\"; Absalom \"spoke to Amnon neither good nor bad\"; Jacob's sons answered \"deceitfully\"; Samuel \"cried to the Lord all night\"; Da",
+     "roles": [
+      "standalone"
+     ],
+     "occurrences": 1
+    },
+    {
+     "observation": 13043,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "text": "A person's anger leads to counsel, then open charge; reasoning: \"I took counsel with myself, and I brought charges against the nobles\"; \"So he reasoned in the synagogue\".",
+     "roles": [
+      "standalone"
+     ],
+     "occurrences": 1
+    },
+    {
+     "observation": 13673,
+     "stage": "prior-capture",
+     "kind": "link",
+     "text": "his spirit provoked as he saw idols → so he reasoned (Act 17:16–17); many days → greatly annoyed → commanded the spirit → it came out (16:18).",
+     "roles": [
+      "standalone"
+     ],
+     "occurrences": 1
+    },
+    {
+     "observation": 14217,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "text": "Part 2 verses: what they add. The one wronged is now God, or God's law, rather than a sister, a friend or the poor: The indignation seizes its bearer: \"Hot indignation seizes me because of the wicked,",
+     "roles": [
+      "standalone"
+     ],
+     "occurrences": 1
+    },
+    {
+     "observation": 12421,
+     "stage": "strand-reading",
+     "kind": "key-statement",
+     "text": "Thinking matures (\"I thought like a child … I gave up childish ways\")",
+     "roles": [],
+     "occurrences": 1
+    }
+   ],
+   "asks": "Does this surface carry a different Strong's code or sense in different verses (the faces of the word)? State the codes and the verses.",
+   "nodes_total": 6,
+   "nodes_shown": 6,
+   "strong_codes": {
+    "G1256": 5,
+    "G3049": 1
+   },
+   "evidence": [
+    {
+     "reference": "Act 17:2",
+     "surface": "reasoned",
+     "strong": "G1256",
+     "as": "member",
+     "verse": "And Paul went in, as was his custom, and on three Sabbath days he reasoned with them from the Scriptures,"
+    },
+    {
+     "reference": "Act 17:17",
+     "surface": "reasoned",
+     "strong": "G1256",
+     "as": "member",
+     "verse": "So he reasoned in the synagogue with the Jews and the devout persons, and in the marketplace every day with those who happened to be there."
+    },
+    {
+     "reference": "Act 18:4",
+     "surface": "reasoned",
+     "strong": "G1256",
+     "as": "member",
+     "verse": "And he reasoned in the synagogue every Sabbath, and tried to persuade Jews and Greeks."
+    },
+    {
+     "reference": "Act 18:19",
+     "surface": "reasoned",
+     "strong": "G1256",
+     "as": "member",
+     "verse": "And they came to Ephesus, and he left them there, but he himself went into the synagogue and reasoned with the Jews."
+    },
+    {
+     "reference": "Act 24:25",
+     "surface": "reasoned",
+     "strong": "G1256",
+     "as": "member",
+     "verse": "And as he reasoned about righteousness and self-control and the coming judgment, Felix was alarmed and said, “ Go away for the present. When I get an opportunity I will summon you.”"
+    },
+    {
+     "reference": "1Cor 13:11",
+     "surface": "reasoned",
+     "strong": "G3049",
+     "as": "member",
+     "verse": "When I was a child, I spoke like a child, I thought like a child, I reasoned like a child. When I became a man, I gave up childish ways."
+    }
+   ],
+   "fill": {
+    "disposition": "observed",
+    "obs_text": "The surface reasoned carries two codes. G1256 stands in the five verses of Acts where Paul reasons with hearers (Act 17:2, 17:17, 18:4, 18:19, 24:25), as argument aimed at another; G3049 stands in 1Cor 13:11 for the child's reckoning, which belongs to the one who reckons and is set against the thinking of the man. The two senses differ: argument with another, and the mind's own reckoning.",
+    "basis": "stated",
+    "route": "",
+    "member_role": "lexical",
+    "partner_role": "",
+    "reason": "",
+    "older": []
+   }
+  },
+  {
+   "ledger_id": 710,
+   "item": "double-meaning",
+   "kind": "face",
+   "group": "reasoning and giving grounds",
+   "subject": "reasoning",
+   "existing_observations": [
+    {
+     "observation": 12407,
+     "stage": "strand-reading",
+     "kind": "key-statement",
+     "text": "The heart is where thoughts come from",
+     "roles": [],
+     "occurrences": 1
+    },
+    {
+     "observation": 12431,
+     "stage": "strand-reading",
+     "kind": "key-statement",
+     "text": "The thoughts of people are open to God and to Jesus: God discerns, knows and understands them (Ps 139:2; 1Chr 28:9; Isa 66:18), Jesus perceives them (Luke 5:22; Matt 9:4), and the word of God discerns",
+     "roles": [
+      "characteristic"
+     ],
+     "occurrences": 1
+    },
+    {
+     "observation": 12447,
+     "stage": "strand-reading",
+     "kind": "key-statement",
+     "text": "Inner reasoning becomes outward quarrel when it is shared and set on one's own standing",
+     "roles": [],
+     "occurrences": 1
+    },
+    {
+     "observation": 15963,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "text": "1.10 Heart and mind (nous / dianoia) side by side: \"put my laws into their minds, and write them on their hearts\" / \"on their hearts … on their minds\" (Heb 8:10 / 10:16); \"guard your hearts and your m",
+     "roles": [
+      "qualifier"
+     ],
+     "occurrences": 1
+    },
+    {
+     "observation": 17236,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "text": "d. Thinking, planning, understanding, remembering: *Plans and devising:* Pro 16:1, 9; 19:21; 6:14, 18; 24:2; 12:20; Psa 140:2; 58:2; Zec 7:10; 8:17; Isa 10:7; Act 5:4; Eze 38:10.; *Understanding and k",
+     "roles": [
+      "qualifier"
+     ],
+     "occurrences": 1
+    },
+    {
+     "observation": 19290,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "text": "Luk 9:45–47: perception blocked from outside → fear to ask → rivalry → Jesus knows the reasoning of their hearts (v3)",
+     "roles": [
+      "qualifier"
+     ],
+     "occurrences": 1
+    },
+    {
+     "observation": 20481,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "text": "1. The heart or mind is the place thoughts come from. Mark 7:21 and Matt 15:19 (\"out of the heart come evil thoughts\"). Also: \"a heart that devises wicked plans\" (Prov 6:18); \"plan evil things in thei",
+     "roles": [
+      "qualifier"
+     ],
+     "occurrences": 1
+    },
+    {
+     "observation": 20565,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "text": "*dialogizomai / dialogismos* | Honest troubled reasoning · hardened anxious reasoning · inner questioning seen by Jesus · reasoning together into murder · self-talk of the rich man · quarrel, dispute,",
+     "roles": [
+      "qualifier"
+     ],
+     "occurrences": 1
+    }
+   ],
+   "asks": "Does this surface carry a different Strong's code or sense in different verses (the faces of the word)? State the codes and the verses.",
+   "nodes_total": 3,
+   "nodes_shown": 3,
+   "strong_codes": {
+    "G1261": 1,
+    "G1256": 2
+   },
+   "evidence": [
+    {
+     "reference": "Luk 9:47",
+     "surface": "reasoning",
+     "strong": "G1261",
+     "as": "member",
+     "verse": "But Jesus, knowing the reasoning of their hearts, took a child and put him by his side"
+    },
+    {
+     "reference": "Act 19:8",
+     "surface": "reasoning",
+     "strong": "G1256",
+     "as": "member",
+     "verse": "And he entered the synagogue and for three months spoke boldly, reasoning and persuading them about the kingdom of God."
+    },
+    {
+     "reference": "Act 19:9",
+     "surface": "reasoning",
+     "strong": "G1256",
+     "as": "member",
+     "verse": "But when some became stubborn and continued in unbelief, speaking evil of the Way before the congregation, he withdrew from them and took the disciples with him, reasoning daily in the hall of Tyrannu"
+    }
+   ],
+   "fill": {
+    "disposition": "observed",
+    "obs_text": "The surface reasoning carries two codes. G1256 stands in Act 19:8 and 19:9 for Paul's arguing with the hearers, the same sense as the verbs of the surface reasoned; G1261 stands in Luk 9:47 for the reasoning of the disciples' hearts, a noun for what goes on inside and is known by Jesus. The first is spoken to others and the second is held inside.",
+    "basis": "stated",
+    "route": "",
+    "member_role": "lexical",
+    "partner_role": "",
+    "reason": "",
+    "older": []
+   }
+  }
+ ]
+}

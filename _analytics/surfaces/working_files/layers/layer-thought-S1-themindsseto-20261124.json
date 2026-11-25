@@ -1,0 +1,394 @@
+{
+ "collection": "thought",
+ "step": "S1",
+ "pulled": "2026-11-24T16:57:30Z",
+ "rows": [
+  {
+   "ledger_id": 937,
+   "item": "word-sense",
+   "kind": "term",
+   "word": "mind on",
+   "strong": "G5427",
+   "subject": "mind on|G5427",
+   "asks": "In the verses of this collection where this word stands (the surface with its lettered Strong's code), what does it mean in each, as the verse itself shows it? Write one observation for each sense the verses give it, with the occurrences it holds for (every occurrence is in some sense, none is left out): state the sense in the verse, how the verse shows it (the words it stands with, the construction, the morph) and name the verses by reference. An occurrence whose sense departs from the usual sense of the word is its own observation, of kind face. The lexicon entries are evidence to read, never text to restate (RW-04, B:131). A prompt that does not apply is not answered (RG-17).",
+   "prompts": [
+    {
+     "code": "M0.1.1",
+     "question": "In this verse, looking at this specific occurrence (its surface form and morph_code), what does this term's name/form show about its essential nature here?"
+    },
+    {
+     "code": "M0.1.2",
+     "question": "In this verse, drawing on this term's lexicon entries but grounded in how it is actually used in this occurrence, what does it mean at the definitional level?"
+    },
+    {
+     "code": "M0.1.3",
+     "question": "In this verse, what directional, relational, or constitutional implication does this term's name carry as it functions in this specific occurrence?"
+    },
+    {
+     "code": "M0.4.1",
+     "question": "What is the grammatical/stem form of this term in this verse?"
+    },
+    {
+     "code": "M0.5.1",
+     "question": "In this verse, what does this term's root meaning show about how it operates in this specific occurrence?"
+    },
+    {
+     "code": "M0.5.2",
+     "question": "In this verse, what does this occurrence's own grammatical form (per its morph_code — e.g. noun, verb, adjective, participle) show about how the term operates here?"
+    },
+    {
+     "code": "M0.5.3",
+     "question": "In this verse, given this term's known semantic range — the breadth of meaning it can carry, including idiomatic, analogical, or combinatorial senses — where does this occurrence sit within that range, and what does that show about how the term operates here?"
+    },
+    {
+     "code": "M0.5.4",
+     "question": "In this verse, does this occurrence express a specific aspect — disposition versus act, received versus given, condition versus quality? Record which, or none."
+    },
+    {
+     "code": "M0.5.5",
+     "question": "In this verse, among this term's own related terms, is there one that functions as this occurrence's structural opposite? Record it, or none."
+    },
+    {
+     "code": "M0.5.6",
+     "question": "In this verse, among this term's own related terms, is there a person-type term relevant to this occurrence — one for a person who habitually possesses or exercises it? Record it, or none."
+    },
+    {
+     "code": "M0.5.7",
+     "question": "In this verse, among this term's own related terms, is there a supplication or seeking term relevant to this occurrence — one for the act of seeking it from another? Record it, or none."
+    },
+    {
+     "code": "M0.5.8",
+     "question": "In this verse, does this term's Testament context (OT Hebrew vs. NT Greek) affect how this specific occurrence should be interpreted, and if so, how? Record none if the Testament context makes no interpretive difference here."
+    },
+    {
+     "code": "M0.5.9",
+     "question": "In this verse, if this term is newly coined in the NT period, what does that coinage show about how it functions in this occurrence? Record none if not applicable or not relevant to this occurrence."
+    },
+    {
+     "code": "M0.5.11",
+     "question": "In this verse, where this occurrence's meaning diverges from the term's usual sense elsewhere, what nuance does that divergence carry here, and how does it compare to the word's other occurrences? Pay particular attention to this occurrence's own surface form/rendering — a marked or atypical surface form is often the visible trace of the divergence itself, not a separate fact. Record none if this occurrence matches the term's usual sense."
+    }
+   ],
+   "nodes_total": 2,
+   "nodes_shown": 2,
+   "lexicon": {
+    "sense_head": "purpose",
+    "meaning_range": "<b>purpose, frame of thought, will, aspirations,</b> <ref='Rom.8.6, 7, 27'>Rom. 8:6, 7, 27</ref>*",
+    "lsj": "<b> φρόν-ημα</b>, ατος, τό, <br /> <b>mind, spirit,</b> ἔστ᾽ ἂν Διὸς φ. λωφήσῃ χόλου [<a href=\"javascript:void(0)\" title=\" 4th-5th c.BC: Aeschylus Tragicus “Prometheus Vinctus” 378; Αἰσχύλου φ. ἔχων 5th c.BC: Teleclides Comicus 14 \">Refs 5th c.BC+</a>]; with limiting epithets, φ. δύσθεον [<a href=\"javascript:void(0)\" title=\" 4th-5th c.BC: Aeschylus Tragicus “Choephori” 191; ὑπέρτολμον [prev. work] 595 (Lyric poetry)\">Refs 4th c.BC+</a>]; ὠμόν [<a href=\"javascript:void(0)\" title=\" [prev. author] “Th.” 537; ἐλεύθερον 5th-6th c.BC: Plato Philosophus “Leges” 865d; τυραννικόν [prev. author] “R.” 573b, 5th-6th c.BC: Xenophon Historicus “Respublica Lacedaemoniorum” 15.8: _plural_, 5th c.BC: Herodot",
+    "mounce": "mind",
+    "related": [
+     "G5426 φρονέω to reason"
+    ]
+   },
+   "existing_observations": [],
+   "evidence": [
+    {
+     "occurrence": 1479698,
+     "reference": "Rom 8:6",
+     "surface": "mind on",
+     "strong": "G5427",
+     "morph": "N-NSN",
+     "unit": "mind on",
+     "surface_kind": "own",
+     "negator": false,
+     "party_kind": null,
+     "gloss_consistent_in_verse": 1,
+     "verse": "For to set the mind on the flesh is death, but to set the mind on the Spirit is life and peace."
+    },
+    {
+     "occurrence": 1479702,
+     "reference": "Rom 8:6",
+     "surface": "mind on",
+     "strong": "G5427",
+     "morph": "N-NSN",
+     "unit": "mind on",
+     "surface_kind": "own",
+     "negator": false,
+     "party_kind": null,
+     "gloss_consistent_in_verse": 1,
+     "verse": "For to set the mind on the flesh is death, but to set the mind on the Spirit is life and peace."
+    }
+   ],
+   "fill": {
+    "disposition": "observed",
+    "senses": [
+     {
+      "kind": "term",
+      "obs_text": "In Rom 8:6 the noun names the mind's set or bent, the frame of thought that is directed to the flesh or to the Spirit; the verse makes it the thing that leads to death or to life and peace, and it stands twice, once for each direction.",
+      "basis": "stated",
+      "occurrences": [
+       "Rom 8:6"
+      ]
+     }
+    ],
+    "member_role": "lexical",
+    "reason": "",
+    "older": [
+     {
+      "observation": 16106,
+      "action": "keep",
+      "nature": "inner_being",
+      "reason": "kept and marked inner being: it states how the mind or heart works in the verses it names, and rests on them"
+     },
+     {
+      "observation": 16202,
+      "action": "keep",
+      "nature": "inner_being",
+      "reason": "kept and marked inner being: it states how the mind or heart works in the verses it names, and rests on them"
+     },
+     {
+      "observation": 16975,
+      "action": "keep",
+      "nature": "evidence",
+      "reason": "kept and marked evidence: it states what the verses it names show of the word or the structure, and rests on them"
+     },
+     {
+      "observation": 17064,
+      "action": "keep",
+      "nature": "inner_being",
+      "reason": "kept and marked inner being: it states how the mind or heart works in the verses it names, and rests on them"
+     },
+     {
+      "observation": 20016,
+      "action": "keep",
+      "nature": "inner_being",
+      "reason": "kept and marked inner being: it states how the mind or heart works in the verses it names, and rests on them"
+     },
+     {
+      "observation": 20397,
+      "action": "keep",
+      "nature": "inner_being",
+      "reason": "kept and marked inner being: it states how the mind or heart works in the verses it names, and rests on them"
+     }
+    ]
+   }
+  },
+  {
+   "ledger_id": 938,
+   "item": "word-sense",
+   "kind": "term",
+   "word": "minds on",
+   "strong": "G5426",
+   "subject": "minds on|G5426",
+   "asks": "In the verses of this collection where this word stands (the surface with its lettered Strong's code), what does it mean in each, as the verse itself shows it? Write one observation for each sense the verses give it, with the occurrences it holds for (every occurrence is in some sense, none is left out): state the sense in the verse, how the verse shows it (the words it stands with, the construction, the morph) and name the verses by reference. An occurrence whose sense departs from the usual sense of the word is its own observation, of kind face. The lexicon entries are evidence to read, never text to restate (RW-04, B:131). A prompt that does not apply is not answered (RG-17).",
+   "prompts": [
+    {
+     "code": "M0.1.1",
+     "question": "In this verse, looking at this specific occurrence (its surface form and morph_code), what does this term's name/form show about its essential nature here?"
+    },
+    {
+     "code": "M0.1.2",
+     "question": "In this verse, drawing on this term's lexicon entries but grounded in how it is actually used in this occurrence, what does it mean at the definitional level?"
+    },
+    {
+     "code": "M0.1.3",
+     "question": "In this verse, what directional, relational, or constitutional implication does this term's name carry as it functions in this specific occurrence?"
+    },
+    {
+     "code": "M0.4.1",
+     "question": "What is the grammatical/stem form of this term in this verse?"
+    },
+    {
+     "code": "M0.5.1",
+     "question": "In this verse, what does this term's root meaning show about how it operates in this specific occurrence?"
+    },
+    {
+     "code": "M0.5.2",
+     "question": "In this verse, what does this occurrence's own grammatical form (per its morph_code — e.g. noun, verb, adjective, participle) show about how the term operates here?"
+    },
+    {
+     "code": "M0.5.3",
+     "question": "In this verse, given this term's known semantic range — the breadth of meaning it can carry, including idiomatic, analogical, or combinatorial senses — where does this occurrence sit within that range, and what does that show about how the term operates here?"
+    },
+    {
+     "code": "M0.5.4",
+     "question": "In this verse, does this occurrence express a specific aspect — disposition versus act, received versus given, condition versus quality? Record which, or none."
+    },
+    {
+     "code": "M0.5.5",
+     "question": "In this verse, among this term's own related terms, is there one that functions as this occurrence's structural opposite? Record it, or none."
+    },
+    {
+     "code": "M0.5.6",
+     "question": "In this verse, among this term's own related terms, is there a person-type term relevant to this occurrence — one for a person who habitually possesses or exercises it? Record it, or none."
+    },
+    {
+     "code": "M0.5.7",
+     "question": "In this verse, among this term's own related terms, is there a supplication or seeking term relevant to this occurrence — one for the act of seeking it from another? Record it, or none."
+    },
+    {
+     "code": "M0.5.8",
+     "question": "In this verse, does this term's Testament context (OT Hebrew vs. NT Greek) affect how this specific occurrence should be interpreted, and if so, how? Record none if the Testament context makes no interpretive difference here."
+    },
+    {
+     "code": "M0.5.9",
+     "question": "In this verse, if this term is newly coined in the NT period, what does that coinage show about how it functions in this occurrence? Record none if not applicable or not relevant to this occurrence."
+    },
+    {
+     "code": "M0.5.11",
+     "question": "In this verse, where this occurrence's meaning diverges from the term's usual sense elsewhere, what nuance does that divergence carry here, and how does it compare to the word's other occurrences? Pay particular attention to this occurrence's own surface form/rendering — a marked or atypical surface form is often the visible trace of the divergence itself, not a separate fact. Record none if this occurrence matches the term's usual sense."
+    }
+   ],
+   "nodes_total": 1,
+   "nodes_shown": 1,
+   "lexicon": {
+    "sense_head": "to reason",
+    "meaning_range": "to think, regard, hold an opinion; to set one’s mind on; to have a (certain) attitude; <b>to think, to mind; to be of opinion,</b> <ref='Act.28.22'>Acts 28:22;</ref> <ref='Php.1.7'>Phil. 1:7;</ref> <b>to take thought, be considerate,</b> <ref='Php.4.10'>Phil. 4:10;</ref> <b>to entertain sentiments</b> or <b>inclinations</b> of a specific kind, <b>to be minded,</b> <ref='Rom.12.16'>Rom. 12:16;</ref> 15:5; <ref='1Co.13.11'>1Cor. 13:11;</ref> <ref='2Co.13.11'>2Cor. 13:11;</ref> <ref='Gal.5.10'>Gal. 5:10;</ref> <ref='Php.2.2'>Phil. 2:2;</ref> 3:16; 4:2; <b>to be in a</b> certain <b>frame of mind,</b> <ref='Rom.12.3'>Rom. 12:3;</ref> <ref='Php.2.5'>Phil. 2:5;</ref> <b>to imagine, entertain concei",
+    "lsj": "<b> φρον-έω</b>, <br /> <i>Epic dialect</i> <i>subjunctive</i> φρονέῃσι [<a href=\"javascript:void(0)\" title=\" 8th c.BC: Odyssea Homerus Epicus “Odyssey” 7.75 \">Refs 8th c.BC+</a>]: <i>Epic dialect</i> <i>imperfect</i> φρόνεον [<a href=\"javascript:void(0)\" title=\" 8th c.BC: Ilias Homerus Epicus “Illiad” 17.286, φρονέεσκον 3rd c.BC: Apollonius Rhodius Epicus 4.1164 \">Refs 8th c.BC+</a>]: <i>future</i> <b>-ήσω</b>[<a href=\"javascript:void(0)\" title=\" 5th-6th c.BC: Aristophanes Comicus “Ecclesiazusae” 630 (_anapaest meter_)\">Refs 5th c.BC+</a>], etc.: <i>aorist</i> ἐφρόνησα [<a href=\"javascript:void(0)\" title=\" 5th c.BC: Herodotus Historicus 1.60, 4th-5th c.BC: Aeschylus Tragicus “Eumenides” 115",
+    "mounce": "to reason,  think, regard, hold an opinion; to set one’s mind on; to have a (certain) attitude",
+    "related": [
+     "G5424 φρήν thinking",
+     "G5427 φρόνημα purpose",
+     "G5428 φρόνησις understanding"
+    ]
+   },
+   "existing_observations": [],
+   "evidence": [
+    {
+     "occurrence": 1479689,
+     "reference": "Rom 8:5",
+     "surface": "minds on",
+     "strong": "G5426",
+     "morph": "V-PAI-3P",
+     "unit": "minds on",
+     "surface_kind": "own",
+     "negator": false,
+     "party_kind": null,
+     "gloss_consistent_in_verse": 1,
+     "verse": "For those who live according to the flesh set their minds on the things of the flesh, but those who live according to the Spirit set their minds on the things of the Spirit."
+    }
+   ],
+   "fill": {
+    "disposition": "observed",
+    "senses": [
+     {
+      "kind": "term",
+      "obs_text": "In Rom 8:5 the verb stands for directing the mind to something: the people of the flesh direct it to the flesh's concerns and the people of the Spirit to the Spirit's; it is a directing of thought and not a conclusion reached.",
+      "basis": "stated",
+      "occurrences": [
+       "Rom 8:5"
+      ]
+     }
+    ],
+    "member_role": "lexical",
+    "reason": "",
+    "older": [
+     {
+      "observation": 15959,
+      "action": "keep",
+      "nature": "inner_being",
+      "reason": "kept and marked inner being: it states how the mind or heart works in the verses it names, and rests on them"
+     },
+     {
+      "observation": 16032,
+      "action": "keep",
+      "nature": "inner_being",
+      "reason": "kept and marked inner being: it states how the mind or heart works in the verses it names, and rests on them"
+     }
+    ]
+   }
+  },
+  {
+   "ledger_id": 939,
+   "item": "word-sense",
+   "kind": "term",
+   "word": "setting your mind",
+   "strong": "G5426",
+   "subject": "setting your mind|G5426",
+   "asks": "In the verses of this collection where this word stands (the surface with its lettered Strong's code), what does it mean in each, as the verse itself shows it? Write one observation for each sense the verses give it, with the occurrences it holds for (every occurrence is in some sense, none is left out): state the sense in the verse, how the verse shows it (the words it stands with, the construction, the morph) and name the verses by reference. An occurrence whose sense departs from the usual sense of the word is its own observation, of kind face. The lexicon entries are evidence to read, never text to restate (RW-04, B:131). A prompt that does not apply is not answered (RG-17).",
+   "prompts": [
+    {
+     "code": "M0.1.1",
+     "question": "In this verse, looking at this specific occurrence (its surface form and morph_code), what does this term's name/form show about its essential nature here?"
+    },
+    {
+     "code": "M0.1.2",
+     "question": "In this verse, drawing on this term's lexicon entries but grounded in how it is actually used in this occurrence, what does it mean at the definitional level?"
+    },
+    {
+     "code": "M0.1.3",
+     "question": "In this verse, what directional, relational, or constitutional implication does this term's name carry as it functions in this specific occurrence?"
+    },
+    {
+     "code": "M0.4.1",
+     "question": "What is the grammatical/stem form of this term in this verse?"
+    },
+    {
+     "code": "M0.5.1",
+     "question": "In this verse, what does this term's root meaning show about how it operates in this specific occurrence?"
+    },
+    {
+     "code": "M0.5.2",
+     "question": "In this verse, what does this occurrence's own grammatical form (per its morph_code — e.g. noun, verb, adjective, participle) show about how the term operates here?"
+    },
+    {
+     "code": "M0.5.3",
+     "question": "In this verse, given this term's known semantic range — the breadth of meaning it can carry, including idiomatic, analogical, or combinatorial senses — where does this occurrence sit within that range, and what does that show about how the term operates here?"
+    },
+    {
+     "code": "M0.5.4",
+     "question": "In this verse, does this occurrence express a specific aspect — disposition versus act, received versus given, condition versus quality? Record which, or none."
+    },
+    {
+     "code": "M0.5.5",
+     "question": "In this verse, among this term's own related terms, is there one that functions as this occurrence's structural opposite? Record it, or none."
+    },
+    {
+     "code": "M0.5.6",
+     "question": "In this verse, among this term's own related terms, is there a person-type term relevant to this occurrence — one for a person who habitually possesses or exercises it? Record it, or none."
+    },
+    {
+     "code": "M0.5.7",
+     "question": "In this verse, among this term's own related terms, is there a supplication or seeking term relevant to this occurrence — one for the act of seeking it from another? Record it, or none."
+    },
+    {
+     "code": "M0.5.8",
+     "question": "In this verse, does this term's Testament context (OT Hebrew vs. NT Greek) affect how this specific occurrence should be interpreted, and if so, how? Record none if the Testament context makes no interpretive difference here."
+    },
+    {
+     "code": "M0.5.9",
+     "question": "In this verse, if this term is newly coined in the NT period, what does that coinage show about how it functions in this occurrence? Record none if not applicable or not relevant to this occurrence."
+    },
+    {
+     "code": "M0.5.11",
+     "question": "In this verse, where this occurrence's meaning diverges from the term's usual sense elsewhere, what nuance does that divergence carry here, and how does it compare to the word's other occurrences? Pay particular attention to this occurrence's own surface form/rendering — a marked or atypical surface form is often the visible trace of the divergence itself, not a separate fact. Record none if this occurrence matches the term's usual sense."
+    }
+   ],
+   "nodes_total": 1,
+   "nodes_shown": 1,
+   "lexicon": "same code as the row of minds on",
+   "existing_observations": [],
+   "evidence": [
+    {
+     "occurrence": 1421837,
+     "reference": "Mar 8:33",
+     "surface": "setting your mind",
+     "strong": "G5426",
+     "morph": "V-PAI-2S",
+     "unit": "setting your mind",
+     "surface_kind": "own",
+     "negator": false,
+     "party_kind": null,
+     "gloss_consistent_in_verse": 1,
+     "verse": "But turning and seeing his disciples, he rebuked Peter and said, “ Get behind me, Satan! For you are not setting your mind on the things of God, but on the things of man.”"
+    }
+   ],
+   "fill": {
+    "disposition": "observed",
+    "senses": [
+     {
+      "kind": "term",
+      "obs_text": "In Mar 8:33 the verb is Jesus' charge to Peter, who directs his mind to what belongs to men and not to what belongs to God; it names where the mind is directed, and the verse sets the two objects against each other.",
+      "basis": "stated",
+      "occurrences": [
+       "Mar 8:33"
+      ]
+     }
+    ],
+    "member_role": "lexical",
+    "reason": "",
+    "older": []
+   }
+  }
+ ]
+}

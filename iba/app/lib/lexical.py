@@ -19,6 +19,7 @@ import re
 import sqlite3
 
 from . import reportkit
+from . import spancorrection
 from .cfg import Cfg
 from .versespanmeaningreport import (
     _BASE_RE_FALLBACK, _base, _range_str, detect_verse_gaps, fetch_verses, gap_note,
@@ -405,11 +406,14 @@ def write_readings_for_span(conn: sqlite3.Connection, span_id: int, verse_id: in
     existing_by_ordinal = {row["code_ordinal"]: dict(row) for row in conn.execute(
         "SELECT * FROM verse_lexical WHERE span_id=? AND deleted=0", (span_id,)).fetchall()}
     seen_ordinals: set[int] = set()
+    held = spancorrection.for_span(conn, span_id)      # the live corrections of this span (#2551); none when the table is absent
 
     for ordinal, r in enumerate(resolved):
         seen_ordinals.add(ordinal)
         new_content = {f: r.get(f, 1 if f == "gloss_consistent_in_verse" else None)
                        for f in _CONTENT_FIELDS}
+        if held:
+            spancorrection.apply(conn, span_id, ordinal, new_content, held, now)
         existing = existing_by_ordinal.get(ordinal)
 
         if existing is None:

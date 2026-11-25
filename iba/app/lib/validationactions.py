@@ -274,23 +274,30 @@ def mark_self_evidencing(conn, oid: int, reason: str, run_id: str, who: str) -> 
 def trace_gaps(conn, ids: list[int]) -> dict:
     """IB-07 over `ids`: `no_trace` are inner-being observations with no live trace at all and not recorded self-evidencing; `pending`
     are those whose live traces point at observations not yet marked (the marking of the target's own scope is still to come, so
-    they are not failed); `dead_trace` are live traced nodes that point at a deleted observation."""
+    they are not failed); `dead_trace` are live traced nodes that point at a deleted observation. Three statements for each chunk of ids,
+    searched by the primary key and by the observation_id indexes, never one for each observation."""
     gaps, pending, dead = [], [], []
-    for oid in ids:
-        o = conn.execute("SELECT nature, deleted FROM ib_observation WHERE id=?", (oid,)).fetchone()
-        if o is None or o["deleted"]:
-            continue
-        tr = conn.execute("SELECT t.id, t.deleted, t.nature FROM ib_node n JOIN ib_observation t ON t.id=n.traced_observation_id "
-                          "WHERE n.observation_id=? AND n.deleted=0", (oid,)).fetchall()
-        dead += [(oid, r[0]) for r in tr if r[1]]
-        if o["nature"] == "inner_being":
-            ok = any((not r[1]) and r[2] == "evidence" for r in tr)
-            own = conn.execute("SELECT 1 FROM ib_observation_change WHERE observation_id=? AND column_name='self_evidencing'", (oid,)).fetchone()
-            if not ok and not own:
-                if any((not r[1]) and r[2] is None for r in tr):
-                    pending.append(oid)
-                else:
-                    gaps.append(oid)
+    for ch in _chunks(sorted(set(ids))):
+        info = {r[0]: (r[1], r[2]) for r in conn.execute(f"SELECT id, nature, deleted FROM ib_observation WHERE id IN ({_qm(len(ch))})", ch)}
+        traces: dict = {}
+        for r in conn.execute(f"SELECT n.observation_id, t.id, t.deleted, t.nature FROM ib_node n JOIN ib_observation t ON t.id=n.traced_observation_id "
+                              f"WHERE n.observation_id IN ({_qm(len(ch))}) AND n.deleted=0", ch):
+            traces.setdefault(r[0], []).append(r[1:])
+        own = {r[0] for r in conn.execute(f"SELECT DISTINCT observation_id FROM ib_observation_change WHERE observation_id IN ({_qm(len(ch))}) "
+                                          "AND column_name='self_evidencing'", ch)}
+        for oid in ch:
+            o = info.get(oid)
+            if o is None or o[1]:
+                continue
+            tr = traces.get(oid, [])
+            dead += [(oid, r[0]) for r in tr if r[1]]
+            if o[0] == "inner_being":
+                ok = any((not r[1]) and r[2] == "evidence" for r in tr)
+                if not ok and oid not in own:
+                    if any((not r[1]) and r[2] is None for r in tr):
+                        pending.append(oid)
+                    else:
+                        gaps.append(oid)
     return {"no_trace": gaps, "pending": pending, "dead_trace": dead}
 
 
@@ -400,7 +407,7 @@ def consume(cfg, conn, old_id: int, carriers: list[int], mapping: str, run_id: s
     return {"carriers": carriers, "occurrences": len(occ), "traces_moved": moved, "traces_dropped": dropped}
 
 
-def delete_neither(cfg, conn, oid: int, reason: str, run_id: str, who: str) -> dict:
+def delete_neither(cfg, conn, oid: int, reason: str, run_id: str, who: str, node_ids=None) -> dict:
     """An observation that is neither evidence nor inner being (principle 13): comment first (the reason, with the occurrences
     no other live observation holds), then deleted. Refused for an observation already marked evidence or inner being, and for one
     another observation traces (that trace is repaired first)."""
@@ -414,5 +421,15 @@ def delete_neither(cfg, conn, oid: int, reason: str, run_id: str, who: str) -> d
     note = (f"Neither evidence nor inner being: {reason.strip()} Word occurrences not held by another live observation: "
             f"{len(fh['uncovered'])} of {fh['nodes']}.")
     annotate(conn, oid, note, run_id, who)
-    orec.soft_delete_observation(conn, oid, note, None, run_id, who)
+    # deleting an observation deletes its nodes (researcher 2026-11-25: "Deletion includes the node"); with node_ids only those nodes go (the nodes of this subgroup), and the observation goes when no
+    # live word node is left of it
+    live = [r[0] for r in conn.execute("SELECT id FROM ib_node WHERE observation_id=? AND deleted=0", (oid,))]
+    gone = set(live) if node_ids is None else (set(node_ids) & set(live))
+    for nid in sorted(gone):
+        orec.delete_node(conn, nid, note, None, run_id, who)
+    left = conn.execute("SELECT count(*) FROM ib_node WHERE observation_id=? AND deleted=0 AND traced_observation_id IS NULL", (oid,)).fetchone()[0]
+    if left == 0:
+        for (nid,) in conn.execute("SELECT id FROM ib_node WHERE observation_id=? AND deleted=0", (oid,)).fetchall():
+            orec.delete_node(conn, nid, note, None, run_id, who)
+        orec.soft_delete_observation(conn, oid, note, None, run_id, who)
     return fh

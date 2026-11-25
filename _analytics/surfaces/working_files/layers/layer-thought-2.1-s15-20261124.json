@@ -1,0 +1,3158 @@
+{
+ "collection": "thought",
+ "step": "2.1",
+ "pulled": "2026-11-24T17:16:44Z",
+ "control": {
+  "taking account of, and reckoning as": {
+   "both": [
+    "hear",
+    "honor",
+    "know",
+    "loyalty",
+    "pride",
+    "scoff",
+    "watch",
+    "wise"
+   ],
+   "wordnet_only": [
+    "believe",
+    "blind",
+    "care",
+    "choose",
+    "commend",
+    "compel",
+    "consent",
+    "count",
+    "intend",
+    "renown",
+    "reverence",
+    "self-control",
+    "solemn",
+    "trust",
+    "witness"
+   ],
+   "verse_only": [
+    "anger",
+    "benefit",
+    "bless",
+    "build",
+    "command",
+    "condemn",
+    "continual",
+    "cruel",
+    "deceive",
+    "dedicate",
+    "delight",
+    "desire",
+    "destruction",
+    "evildoer",
+    "fear",
+    "fill",
+    "firm",
+    "folly",
+    "forget",
+    "forgive",
+    "forsake",
+    "govern",
+    "heart",
+    "innocent",
+    "kill",
+    "labor",
+    "laugh",
+    "live",
+    "love",
+    "mute",
+    "offer",
+    "preach",
+    "quarrel",
+    "real",
+    "remove",
+    "righteous",
+    "save",
+    "serve",
+    "shatter",
+    "sin",
+    "supplication",
+    "teach",
+    "trial",
+    "turn",
+    "uncircumcised",
+    "warn",
+    "willful"
+   ],
+   "verse_pairings": {
+    "anger": 2,
+    "labor": 10,
+    "deceive": 2,
+    "command": 2,
+    "forget": 1,
+    "willful": 2,
+    "cruel": 4,
+    "sin": 2,
+    "forsake": 1,
+    "watch": 1,
+    "remove": 2,
+    "innocent": 3,
+    "serve": 2,
+    "benefit": 3,
+    "pride": 4,
+    "fear": 2,
+    "folly": 2,
+    "live": 1,
+    "offer": 1,
+    "dedicate": 1,
+    "supplication": 4,
+    "hear": 3,
+    "laugh": 1,
+    "love": 3,
+    "turn": 4,
+    "loyalty": 2,
+    "fill": 1,
+    "wise": 2,
+    "build": 1,
+    "kill": 2,
+    "destruction": 1,
+    "save": 1,
+    "continual": 1,
+    "righteous": 1,
+    "forgive": 1,
+    "evildoer": 1,
+    "heart": 1,
+    "trial": 1,
+    "delight": 2,
+    "mute": 1,
+    "shatter": 1,
+    "scoff": 3,
+    "honor": 3,
+    "quarrel": 1,
+    "desire": 1,
+    "know": 1,
+    "uncircumcised": 2,
+    "govern": 1,
+    "condemn": 1,
+    "warn": 1,
+    "teach": 1,
+    "preach": 2,
+    "real": 1,
+    "bless": 1,
+    "firm": 1
+   },
+   "wordnet_pairs": {
+    "intend": 4,
+    "wise": 4,
+    "know": 6,
+    "witness": 2,
+    "believe": 5,
+    "blind": 2,
+    "pride": 1,
+    "honor": 3,
+    "reverence": 1,
+    "commend": 1,
+    "self-control": 1,
+    "scoff": 1,
+    "care": 3,
+    "renown": 1,
+    "loyalty": 1,
+    "trust": 1,
+    "consent": 1,
+    "compel": 1,
+    "solemn": 1,
+    "watch": 3,
+    "hear": 1,
+    "choose": 2,
+    "count": 2
+   }
+  }
+ },
+ "subgroup": "taking account of, and reckoning as",
+ "unmarked": [],
+ "delete_unmarked": [],
+ "rows": [
+  {
+   "ledger_id": 653,
+   "item": "pairing",
+   "kind": "pairing",
+   "group": "taking account of, and reckoning as",
+   "subject": "hear",
+   "existing_observations": [],
+   "wordnet_control": {
+    "pairs": 1,
+    "types": {
+     "synonym": 1
+    },
+    "examples": [
+     {
+      "surface": "regard",
+      "partner_surface": "heed",
+      "type": "synonym",
+      "weight": 1
+     }
+    ]
+   },
+   "asks": "Which words of the partner collection stand with this group in the verses they share, where does each stand (side and distance, from the stored structure), and which stand out? State the structure the data shows.",
+   "nodes_total": 6,
+   "nodes_shown": 6,
+   "strong_codes": {
+    "H6437G": 1,
+    "H7789": 1,
+    "G4012": 1
+   },
+   "evidence": [
+    {
+     "reference": "2Ch 6:19",
+     "surface": "regard",
+     "strong": "H6437G",
+     "as": "member",
+     "verse": "Yet have regard to the prayer of your servant and to his plea, O Lord my God, listening to the cry and to the prayer that your servant prays before you,"
+    },
+    {
+     "reference": "Job 35:13",
+     "surface": "regard",
+     "strong": "H7789",
+     "as": "member",
+     "verse": "Surely God does not hear an empty cry, nor does the Almighty regard it."
+    },
+    {
+     "reference": "Act 28:22",
+     "surface": "regard",
+     "strong": "G4012",
+     "as": "member",
+     "verse": "But we desire to hear from you what your views are, for with regard to this sect we know that everywhere it is spoken against.”"
+    },
+    {
+     "reference": "2Ch 6:19",
+     "surface": "listening",
+     "strong": "H8085G",
+     "as": "partner",
+     "verse": "Yet have regard to the prayer of your servant and to his plea, O Lord my God, listening to the cry and to the prayer that your servant prays before you,"
+    },
+    {
+     "reference": "Job 35:13",
+     "surface": "hear",
+     "strong": "H8085G",
+     "as": "partner",
+     "verse": "Surely God does not hear an empty cry, nor does the Almighty regard it."
+    },
+    {
+     "reference": "Act 28:22",
+     "surface": "hear",
+     "strong": "G0191",
+     "as": "partner",
+     "verse": "But we desire to hear from you what your views are, for with regard to this sect we know that everywhere it is spoken against.”"
+    }
+   ],
+   "fill": {
+    "disposition": "observed",
+    "obs_text": "Hear stands with this group in three verses, and WordNet relates regard to heed as a synonym, so the control confirms the pairing. In 2Ch 6:19 listening (H8085G) stands 8 words after regard (H6437G), the Lord's listening to the cry that goes with the regard to the prayer; in Job 35:13 hear (H8085G) stands 4 before regard (H7789), God who does not hear an empty cry nor regard it; in Act 28:22 hear (G0191) stands 6 before regard (G4012), the leaders' wish to hear what Paul thinks, with a regard for the sect. In each the hearing and the regard are two acts of attention to the same plea or matter.",
+    "basis": "stated",
+    "route": "",
+    "member_role": "lexical",
+    "partner_role": "lexical",
+    "reason": "",
+    "older": []
+   }
+  },
+  {
+   "ledger_id": 654,
+   "item": "pairing",
+   "kind": "pairing",
+   "group": "taking account of, and reckoning as",
+   "subject": "labor",
+   "existing_observations": [
+    {
+     "observation": 12505,
+     "stage": "strand-reading",
+     "kind": "key-statement",
+     "text": "People value and regard: \"Are we not regarded by him as foreigners?\" (Gen 31:15); \"Let not my lord hold me guilty\" (2Sa 19:19); \"who have no regard for silver\" (Isa 13:17); \"there is no regard for man",
+     "roles": [],
+     "occurrences": 1
+    }
+   ],
+   "wordnet_control": null,
+   "asks": "Which words of the partner collection stand with this group in the verses they share, where does each stand (side and distance, from the stored structure), and which stand out? State the structure the data shows.",
+   "nodes_total": 13,
+   "nodes_shown": 13,
+   "strong_codes": {
+    "H8159": 1,
+    "H0408": 1,
+    "H0995": 1,
+    "H5027": 1,
+    "H2803H": 1
+   },
+   "evidence": [
+    {
+     "reference": "Exo 5:9",
+     "surface": "regard",
+     "strong": "H8159",
+     "as": "member",
+     "verse": "Let heavier work be laid on the men that they may labor at it and pay no regard to lying words.”"
+    },
+    {
+     "reference": "Exo 5:9",
+     "surface": "regard",
+     "strong": "H0408",
+     "as": "member",
+     "verse": "Let heavier work be laid on the men that they may labor at it and pay no regard to lying words.”"
+    },
+    {
+     "reference": "Psa 28:5",
+     "surface": "regard",
+     "strong": "H0995",
+     "as": "member",
+     "verse": "Because they do not regard the works of the Lord or the work of his hands, he will tear them down and build them up no more."
+    },
+    {
+     "reference": "Isa 5:12",
+     "surface": "regard",
+     "strong": "H5027",
+     "as": "member",
+     "verse": "They have lyre and harp, tambourine and flute and wine at their feasts, but they do not regard the deeds of the Lord, or see the work of his hands."
+    },
+    {
+     "reference": "Lam 4:2",
+     "surface": "regarded",
+     "strong": "H2803H",
+     "as": "member",
+     "verse": "The precious sons of Zion, worth their weight in fine gold, how they are regarded as earthen pots, the work of a potter’s hands!"
+    },
+    {
+     "reference": "Exo 5:9",
+     "surface": "work",
+     "strong": "H5656I",
+     "as": "partner",
+     "verse": "Let heavier work be laid on the men that they may labor at it and pay no regard to lying words.”"
+    },
+    {
+     "reference": "Exo 5:9",
+     "surface": "labor",
+     "strong": "H6213A",
+     "as": "partner",
+     "verse": "Let heavier work be laid on the men that they may labor at it and pay no regard to lying words.”"
+    },
+    {
+     "reference": "Psa 28:5",
+     "surface": "works",
+     "strong": "H6468",
+     "as": "partner",
+     "verse": "Because they do not regard the works of the Lord or the work of his hands, he will tear them down and build them up no more."
+    },
+    {
+     "reference": "Psa 28:5",
+     "surface": "works",
+     "strong": "H0413",
+     "as": "partner",
+     "verse": "Because they do not regard the works of the Lord or the work of his hands, he will tear them down and build them up no more."
+    },
+    {
+     "reference": "Psa 28:5",
+     "surface": "work",
+     "strong": "H4639G",
+     "as": "partner",
+     "verse": "Because they do not regard the works of the Lord or the work of his hands, he will tear them down and build them up no more."
+    },
+    {
+     "reference": "Psa 28:5",
+     "surface": "work",
+     "strong": "H0413",
+     "as": "partner",
+     "verse": "Because they do not regard the works of the Lord or the work of his hands, he will tear them down and build them up no more."
+    },
+    {
+     "reference": "Isa 5:12",
+     "surface": "work",
+     "strong": "H4639G",
+     "as": "partner",
+     "verse": "They have lyre and harp, tambourine and flute and wine at their feasts, but they do not regard the deeds of the Lord, or see the work of his hands."
+    },
+    {
+     "reference": "Lam 4:2",
+     "surface": "work",
+     "strong": "H4639G",
+     "as": "partner",
+     "verse": "The precious sons of Zion, worth their weight in fine gold, how they are regarded as earthen pots, the work of a potter’s hands!"
+    }
+   ],
+   "fill": {
+    "disposition": "observed",
+    "obs_text": "Labor stands with this group in four verses. In Exo 5:9 work (H5656I) stands 5 words before and labor (H6213A) 1 before regard (H8159, H0408), the instruction that the men labour and pay no regard to words; in Psa 28:5 works (H6468) stands 1 after and work (H4639G) 3 after regard (H0995), the works of the Lord that the wicked do not regard; in Isa 5:12 work (H4639G) stands 5 after regard (H5027), the revellers who do not regard the Lord's work; in Lam 4:2 work (H4639G) stands 3 after regarded (H2803H), the work of the potter's hands to which the sons of Zion are compared. The partner is the work that is or is not regarded, or the labour that takes the place of regard.",
+    "basis": "stated",
+    "route": "",
+    "member_role": "lexical",
+    "partner_role": "lexical",
+    "reason": "",
+    "older": []
+   }
+  },
+  {
+   "ledger_id": 655,
+   "item": "pairing",
+   "kind": "pairing",
+   "group": "taking account of, and reckoning as",
+   "subject": "pride",
+   "existing_observations": [],
+   "wordnet_control": {
+    "pairs": 1,
+    "types": {
+     "synonym": 1
+    },
+    "examples": [
+     {
+      "surface": "regard",
+      "partner_surface": "esteem",
+      "type": "synonym",
+      "weight": 2
+     }
+    ]
+   },
+   "asks": "Which words of the partner collection stand with this group in the verses they share, where does each stand (side and distance, from the stored structure), and which stand out? State the structure the data shows.",
+   "nodes_total": 7,
+   "nodes_shown": 7,
+   "strong_codes": {
+    "H5414I": 1,
+    "H3820A": 1,
+    "H0853": 1,
+    "H7200G": 1
+   },
+   "evidence": [
+    {
+     "reference": "1Sa 1:16",
+     "surface": "regard",
+     "strong": "H5414I",
+     "as": "member",
+     "verse": "Do not regard your servant as a worthless woman, for all along I have been speaking out of my great anxiety and vexation.”"
+    },
+    {
+     "reference": "1Sa 25:25",
+     "surface": "regard",
+     "strong": "H3820A",
+     "as": "member",
+     "verse": "Let not my lord regard this worthless fellow, Nabal, for as his name is, so is he. Nabal is his name, and folly is with him. But I your servant did not see the young men of my lord, whom you sent."
+    },
+    {
+     "reference": "1Sa 25:25",
+     "surface": "regard",
+     "strong": "H0853",
+     "as": "member",
+     "verse": "Let not my lord regard this worthless fellow, Nabal, for as his name is, so is he. Nabal is his name, and folly is with him. But I your servant did not see the young men of my lord, whom you sent."
+    },
+    {
+     "reference": "Job 37:24",
+     "surface": "regard",
+     "strong": "H7200G",
+     "as": "member",
+     "verse": "Therefore men fear him; he does not regard any who are wise in their own conceit.”"
+    },
+    {
+     "reference": "1Sa 1:16",
+     "surface": "worthless",
+     "strong": "H1100G",
+     "as": "partner",
+     "verse": "Do not regard your servant as a worthless woman, for all along I have been speaking out of my great anxiety and vexation.”"
+    },
+    {
+     "reference": "1Sa 25:25",
+     "surface": "worthless",
+     "strong": "H1100G",
+     "as": "partner",
+     "verse": "Let not my lord regard this worthless fellow, Nabal, for as his name is, so is he. Nabal is his name, and folly is with him. But I your servant did not see the young men of my lord, whom you sent."
+    },
+    {
+     "reference": "Job 37:24",
+     "surface": "conceit",
+     "strong": "H3820A",
+     "as": "partner",
+     "verse": "Therefore men fear him; he does not regard any who are wise in their own conceit.”"
+    }
+   ],
+   "fill": {
+    "disposition": "observed",
+    "obs_text": "Pride stands with this group in three verses, and WordNet relates regard to esteem as a synonym, so the control confirms one pairing. In 1Sa 1:16 worthless (H1100G) stands 2 words after regard (H5414I), the worthless woman that Hannah asks not to be taken for; in 1Sa 25:25 worthless stands 1 after regard (H0853, H3820A), Nabal as a worthless fellow; in Job 37:24 conceit (H3820A) stands 3 after regard (H7200G), the wise in their own conceit that God does not regard. The partner is the low or high self-estimate that the regard is withheld from or granted to.",
+    "basis": "stated",
+    "route": "",
+    "member_role": "lexical",
+    "partner_role": "lexical",
+    "reason": "",
+    "older": []
+   }
+  },
+  {
+   "ledger_id": 656,
+   "item": "pairing",
+   "kind": "pairing",
+   "group": "taking account of, and reckoning as",
+   "subject": "scoff",
+   "existing_observations": [
+    {
+     "observation": 12505,
+     "stage": "strand-reading",
+     "kind": "key-statement",
+     "text": "People value and regard: \"Are we not regarded by him as foreigners?\" (Gen 31:15); \"Let not my lord hold me guilty\" (2Sa 19:19); \"who have no regard for silver\" (Isa 13:17); \"there is no regard for man",
+     "roles": [],
+     "occurrences": 1
+    },
+    {
+     "observation": 20021,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "text": "People valuing: *\"we esteemed him not\"* (Isa 53:3); *\"those who feared the Lord … esteemed his name\"* (Mal 3:16); *\"no regard for silver\"* (Isa 13:17); *\"there is no regard for man\"* (Isa 33:8)",
+     "roles": [
+      "characteristic"
+     ],
+     "occurrences": 1
+    }
+   ],
+   "wordnet_control": {
+    "pairs": 1,
+    "types": {
+     "synonym": 1
+    },
+    "examples": [
+     {
+      "surface": "regard",
+      "partner_surface": "respect",
+      "type": "synonym",
+      "weight": 4
+     }
+    ]
+   },
+   "asks": "Which words of the partner collection stand with this group in the verses they share, where does each stand (side and distance, from the stored structure), and which stand out? State the structure the data shows.",
+   "nodes_total": 6,
+   "nodes_shown": 6,
+   "strong_codes": {
+    "H2803H": 1,
+    "G4012": 1,
+    "G2233": 1
+   },
+   "evidence": [
+    {
+     "reference": "Isa 33:8",
+     "surface": "regard",
+     "strong": "H2803H",
+     "as": "member",
+     "verse": "The highways lie waste; the traveler ceases. Covenants are broken; cities are despised; there is no regard for man."
+    },
+    {
+     "reference": "Act 28:22",
+     "surface": "regard",
+     "strong": "G4012",
+     "as": "member",
+     "verse": "But we desire to hear from you what your views are, for with regard to this sect we know that everywhere it is spoken against.”"
+    },
+    {
+     "reference": "1Ti 6:1",
+     "surface": "regard",
+     "strong": "G2233",
+     "as": "member",
+     "verse": "Let all who are under a yoke as bondservants regard their own masters as worthy of all honor, so that the name of God and the teaching may not be reviled."
+    },
+    {
+     "reference": "Isa 33:8",
+     "surface": "despised",
+     "strong": "H3988A",
+     "as": "partner",
+     "verse": "The highways lie waste; the traveler ceases. Covenants are broken; cities are despised; there is no regard for man."
+    },
+    {
+     "reference": "Act 28:22",
+     "surface": "spoken against",
+     "strong": "G0483",
+     "as": "partner",
+     "verse": "But we desire to hear from you what your views are, for with regard to this sect we know that everywhere it is spoken against.”"
+    },
+    {
+     "reference": "1Ti 6:1",
+     "surface": "reviled",
+     "strong": "G0987",
+     "as": "partner",
+     "verse": "Let all who are under a yoke as bondservants regard their own masters as worthy of all honor, so that the name of God and the teaching may not be reviled."
+    }
+   ],
+   "fill": {
+    "disposition": "observed",
+    "obs_text": "Scoff stands with this group in three verses, and WordNet relates regard to respect as a synonym, so the control confirms one pairing. In Isa 33:8 despised (H3988A) stands 2 words before regard (H2803H), the despised cities in the broken covenant that have no regard for man; in Act 28:22 spoken against (G0483) stands 9 after regard (G4012), the sect spoken against everywhere; in 1Ti 6:1 reviled (G0987) stands 11 after regard (G2233), the name of God reviled when the servants do not honour their masters. In each the partner is the scorn that follows or accompanies the withheld regard.",
+    "basis": "stated",
+    "route": "",
+    "member_role": "lexical",
+    "partner_role": "lexical",
+    "reason": "",
+    "older": []
+   }
+  },
+  {
+   "ledger_id": 677,
+   "item": "qualifier",
+   "kind": "pairing",
+   "group": "taking account of, and reckoning as",
+   "subject": "",
+   "existing_observations": [
+    {
+     "observation": 12505,
+     "stage": "strand-reading",
+     "kind": "key-statement",
+     "text": "People value and regard: \"Are we not regarded by him as foreigners?\" (Gen 31:15); \"Let not my lord hold me guilty\" (2Sa 19:19); \"who have no regard for silver\" (Isa 13:17); \"there is no regard for man",
+     "roles": [],
+     "occurrences": 5
+    },
+    {
+     "observation": 15959,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "text": "1.8 Flesh as a way of knowing: \"we regard no one according to the flesh. Even though we once regarded Christ according to the flesh\" (2Co 5:16); \"set their minds on the things of the flesh … the Spiri",
+     "roles": [
+      "characteristic"
+     ],
+     "occurrences": 3
+    },
+    {
+     "observation": 14221,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "text": "How it co-exists: With the sufferer's own speech that explains it. Hannah: \"I am a woman troubled in spirit … I have been pouring out my soul before the Lord … I have been speaking out of my great anx",
+     "roles": [
+      "standalone"
+     ],
+     "occurrences": 2
+    },
+    {
+     "observation": 17086,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "text": "Blameless soul-life: \"I am blameless; I regard not myself; I loathe my life\" (Job 9:21) — integrity with self-rejection; \"Bloodthirsty men hate one who is blameless and seek the life of the upright\" (",
+     "roles": [
+      "characteristic",
+      "qualifier"
+     ],
+     "occurrences": 2
+    },
+    {
+     "observation": 16528,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "text": "The righteous regard animal life: \"Whoever is righteous has regard for the life [*nephesh*] of his beast\" (Pro 12:10).",
+     "roles": [
+      "characteristic",
+      "qualifier"
+     ],
+     "occurrences": 2
+    },
+    {
+     "observation": 20021,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "text": "People valuing: *\"we esteemed him not\"* (Isa 53:3); *\"those who feared the Lord … esteemed his name\"* (Mal 3:16); *\"no regard for silver\"* (Isa 13:17); *\"there is no regard for man\"* (Isa 33:8)",
+     "roles": [
+      "characteristic"
+     ],
+     "occurrences": 2
+    },
+    {
+     "observation": 17267,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "text": "b. Greek *sarx*: *Neutral uses continue:* one flesh; all flesh; \"the Word became flesh\" (Joh 1:14); \"in the days of his flesh\" (Heb 5:7); \"flesh and blood\" (Heb 2:14; Mat 16:17); \"a thorn … in the fle",
+     "roles": [
+      "qualifier"
+     ],
+     "occurrences": 2
+    },
+    {
+     "observation": 12326,
+     "stage": "strand-reading",
+     "kind": "key-statement",
+     "text": "The oath names what the LORD has done for the one who swears.",
+     "roles": [],
+     "occurrences": 1
+    },
+    {
+     "observation": 21469,
+     "stage": "engagement",
+     "kind": "face",
+     "text": "Righteous is here the godliness, devoutness, reverence or uprightness of a person as a state of the heart toward God or toward what is right (a devout man who feared God, godliness trained and pursued",
+     "roles": [
+      "characteristic"
+     ],
+     "occurrences": 1
+    },
+    {
+     "observation": 15745,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "text": "Cruelty is defined by the absence of mercy, stated explicitly, not implied. Three of H0394's six verses use the near-identical formula cruel and have no mercy (Jer 6:23, 50:42) or merciless (Jer 30:14",
+     "roles": [
+      "characteristic"
+     ],
+     "occurrences": 1
+    },
+    {
+     "observation": 12412,
+     "stage": "strand-reading",
+     "kind": "key-statement",
+     "text": "yēṣer (\"intention\", \"inclination\") is the same word as the potter's thing formed, and as our frame.",
+     "roles": [
+      "qualifier"
+     ],
+     "occurrences": 1
+    },
+    {
+     "observation": 18877,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "text": "Hiding from God: In each scene where a person hides from God, something of God is perceived first: a sound (Genesis 3:10), God naming himself (Exodus 3:6), \"the terror of the Lord, and … the splendor ",
+     "roles": [
+      "qualifier"
+     ],
+     "occurrences": 1
+    }
+   ],
+   "asks": "Which qualifiers (negators and the words they reach, adjectives, adverbs, prepositional qualifiers) stand with this group, and what does each give it by the grammar? Adjacency is not scope: state the word the negator or qualifier reaches.",
+   "nodes_total": 103,
+   "nodes_shown": 80,
+   "strong_codes": {
+    "H8159": 1,
+    "H2803H": 5,
+    "H6188": 1,
+    "H7200G": 2,
+    "H5414I": 1,
+    "H3820A": 1,
+    "H0853": 1,
+    "H5375Q": 1,
+    "H3045": 2,
+    "H3808": 1,
+    "H7919A": 1,
+    "H7789": 1,
+    "H0995": 1,
+    "H5027": 2,
+    "H2803J": 2,
+    "H5234A": 1,
+    "G1380": 1,
+    "G4012": 1,
+    "G3049": 4,
+    "G6063": 1,
+    "G1097": 2,
+    "G3313": 1,
+    "G2233": 2
+   },
+   "evidence": [
+    {
+     "reference": "Gen 4:5",
+     "surface": "regard",
+     "strong": "H8159",
+     "as": "member",
+     "verse": "but for Cain and his offering he had no regard. So Cain was very angry, and his face fell."
+    },
+    {
+     "reference": "Gen 31:15",
+     "surface": "regarded",
+     "strong": "H2803H",
+     "as": "member",
+     "verse": "Are we not regarded by him as foreigners? For he has sold us, and he has indeed devoured our money."
+    },
+    {
+     "reference": "Lev 19:23",
+     "surface": "regard",
+     "strong": "H6188",
+     "as": "member",
+     "verse": "“ When you come into the land and plant any kind of tree for food, then you shall regard its fruit as forbidden. Three years it shall be forbidden to you; it must not be eaten."
+    },
+    {
+     "reference": "Deu 33:9",
+     "surface": "regard",
+     "strong": "H7200G",
+     "as": "member",
+     "verse": "who said of his father and mother, ‘I regard them not ’; he disowned his brothers and ignored his children. For they observed your word and kept your covenant."
+    },
+    {
+     "reference": "1Sa 1:16",
+     "surface": "regard",
+     "strong": "H5414I",
+     "as": "member",
+     "verse": "Do not regard your servant as a worthless woman, for all along I have been speaking out of my great anxiety and vexation.”"
+    },
+    {
+     "reference": "1Sa 25:25",
+     "surface": "regard",
+     "strong": "H3820A",
+     "as": "member",
+     "verse": "Let not my lord regard this worthless fellow, Nabal, for as his name is, so is he. Nabal is his name, and folly is with him. But I your servant did not see the young men of my lord, whom you sent."
+    },
+    {
+     "reference": "1Sa 25:25",
+     "surface": "regard",
+     "strong": "H0853",
+     "as": "member",
+     "verse": "Let not my lord regard this worthless fellow, Nabal, for as his name is, so is he. Nabal is his name, and folly is with him. But I your servant did not see the young men of my lord, whom you sent."
+    },
+    {
+     "reference": "2Ki 3:14",
+     "surface": "regard",
+     "strong": "H5375Q",
+     "as": "member",
+     "verse": "And Elisha said, “As the Lord of hosts lives, before whom I stand, were it not that I have regard for Jehoshaphat the king of Judah, I would neither look at you nor see you."
+    },
+    {
+     "reference": "Job 9:21",
+     "surface": "regard",
+     "strong": "H3045",
+     "as": "member",
+     "verse": "I am blameless; I regard not myself; I loathe my life."
+    },
+    {
+     "reference": "Job 9:21",
+     "surface": "regard",
+     "strong": "H3808",
+     "as": "member",
+     "verse": "I am blameless; I regard not myself; I loathe my life."
+    },
+    {
+     "reference": "Job 34:27",
+     "surface": "regard",
+     "strong": "H7919A",
+     "as": "member",
+     "verse": "because they turned aside from following him and had no regard for any of his ways,"
+    },
+    {
+     "reference": "Job 35:13",
+     "surface": "regard",
+     "strong": "H7789",
+     "as": "member",
+     "verse": "Surely God does not hear an empty cry, nor does the Almighty regard it."
+    },
+    {
+     "reference": "Job 37:24",
+     "surface": "regard",
+     "strong": "H7200G",
+     "as": "member",
+     "verse": "Therefore men fear him; he does not regard any who are wise in their own conceit.”"
+    },
+    {
+     "reference": "Psa 28:5",
+     "surface": "regard",
+     "strong": "H0995",
+     "as": "member",
+     "verse": "Because they do not regard the works of the Lord or the work of his hands, he will tear them down and build them up no more."
+    },
+    {
+     "reference": "Pro 12:10",
+     "surface": "regard",
+     "strong": "H3045",
+     "as": "member",
+     "verse": "Whoever is righteous has regard for the life of his beast, but the mercy of the wicked is cruel."
+    },
+    {
+     "reference": "Isa 5:12",
+     "surface": "regard",
+     "strong": "H5027",
+     "as": "member",
+     "verse": "They have lyre and harp, tambourine and flute and wine at their feasts, but they do not regard the deeds of the Lord, or see the work of his hands."
+    },
+    {
+     "reference": "Isa 13:17",
+     "surface": "regard",
+     "strong": "H2803H",
+     "as": "member",
+     "verse": "Behold, I am stirring up the Medes against them, who have no regard for silver and do not delight in gold."
+    },
+    {
+     "reference": "Isa 29:16",
+     "surface": "regarded",
+     "strong": "H2803J",
+     "as": "member",
+     "verse": "You turn things upside down! Shall the potter be regarded as the clay, that the thing made should say of its maker, “He did not make me”; or the thing formed say of him who formed it, “He has no under"
+    },
+    {
+     "reference": "Isa 29:17",
+     "surface": "regarded",
+     "strong": "H2803J",
+     "as": "member",
+     "verse": "Is it not yet a very little while until Lebanon shall be turned into a fruitful field, and the fruitful field shall be regarded as a forest?"
+    },
+    {
+     "reference": "Isa 33:8",
+     "surface": "regard",
+     "strong": "H2803H",
+     "as": "member",
+     "verse": "The highways lie waste; the traveler ceases. Covenants are broken; cities are despised; there is no regard for man."
+    },
+    {
+     "reference": "Jer 24:5",
+     "surface": "regard",
+     "strong": "H5234A",
+     "as": "member",
+     "verse": "“ Thus says the Lord, the God of Israel: Like these good figs, so I will regard as good the exiles from Judah, whom I have sent away from this place to the land of the Chaldeans."
+    },
+    {
+     "reference": "Lam 4:2",
+     "surface": "regarded",
+     "strong": "H2803H",
+     "as": "member",
+     "verse": "The precious sons of Zion, worth their weight in fine gold, how they are regarded as earthen pots, the work of a potter’s hands!"
+    },
+    {
+     "reference": "Lam 4:16",
+     "surface": "regard",
+     "strong": "H5027",
+     "as": "member",
+     "verse": "The Lord himself has scattered them; he will regard them no more; no honor was shown to the priests, no favor to the elders."
+    },
+    {
+     "reference": "Hos 8:12",
+     "surface": "regarded",
+     "strong": "H2803H",
+     "as": "member",
+     "verse": "Were I to write for him my laws by the ten thousands, they would be regarded as a strange thing."
+    },
+    {
+     "reference": "Luk 22:24",
+     "surface": "regarded",
+     "strong": "G1380",
+     "as": "member",
+     "verse": "A dispute also arose among them, as to which of them was to be regarded as the greatest."
+    },
+    {
+     "reference": "Act 28:22",
+     "surface": "regard",
+     "strong": "G4012",
+     "as": "member",
+     "verse": "But we desire to hear from you what your views are, for with regard to this sect we know that everywhere it is spoken against.”"
+    },
+    {
+     "reference": "Rom 2:26",
+     "surface": "regarded",
+     "strong": "G3049",
+     "as": "member",
+     "verse": "So, if a man who is uncircumcised keeps the precepts of the law, will not his uncircumcision be regarded as circumcision?"
+    },
+    {
+     "reference": "Rom 8:36",
+     "surface": "regarded",
+     "strong": "G3049",
+     "as": "member",
+     "verse": "As it is written, “For your sake we are being killed all the day long; we are regarded as sheep to be slaughtered.”"
+    },
+    {
+     "reference": "1Cor 4:1",
+     "surface": "regard",
+     "strong": "G3049",
+     "as": "member",
+     "verse": "This is how one should regard us, as servants of Christ and stewards of the mysteries of God."
+    },
+    {
+     "reference": "2Cor 5:16",
+     "surface": "regard",
+     "strong": "G6063",
+     "as": "member",
+     "verse": "From now on, therefore, we regard no one according to the flesh. Even though we once regarded Christ according to the flesh, we regard him thus no longer."
+    },
+    {
+     "reference": "2Cor 5:16",
+     "surface": "once regarded",
+     "strong": "G1097",
+     "as": "member",
+     "verse": "From now on, therefore, we regard no one according to the flesh. Even though we once regarded Christ according to the flesh, we regard him thus no longer."
+    },
+    {
+     "reference": "2Cor 5:16",
+     "surface": "regard",
+     "strong": "G1097",
+     "as": "member",
+     "verse": "From now on, therefore, we regard no one according to the flesh. Even though we once regarded Christ according to the flesh, we regard him thus no longer."
+    },
+    {
+     "reference": "Col 2:16",
+     "surface": "regard",
+     "strong": "G3313",
+     "as": "member",
+     "verse": "Therefore let no one pass judgment on you in questions of food and drink, or with regard to a festival or a new moon or a Sabbath."
+    },
+    {
+     "reference": "2Th 3:15",
+     "surface": "regard",
+     "strong": "G2233",
+     "as": "member",
+     "verse": "Do not regard him as an enemy, but warn him as a brother."
+    },
+    {
+     "reference": "1Ti 6:1",
+     "surface": "regard",
+     "strong": "G2233",
+     "as": "member",
+     "verse": "Let all who are under a yoke as bondservants regard their own masters as worthy of all honor, so that the name of God and the teaching may not be reviled."
+    },
+    {
+     "reference": "1Pe 5:12",
+     "surface": "regard",
+     "strong": "G3049",
+     "as": "member",
+     "verse": "By Silvanus, a faithful brother as I regard him, I have written briefly to you, exhorting and declaring that this is the true grace of God. Stand firm in it."
+    },
+    {
+     "reference": "Gen 4:5",
+     "surface": "no",
+     "strong": "H3808",
+     "as": "partner",
+     "verse": "but for Cain and his offering he had no regard. So Cain was very angry, and his face fell."
+    },
+    {
+     "reference": "Gen 4:5",
+     "surface": "very",
+     "strong": "H3966",
+     "as": "partner",
+     "verse": "but for Cain and his offering he had no regard. So Cain was very angry, and his face fell."
+    },
+    {
+     "reference": "Gen 31:15",
+     "surface": "not",
+     "strong": "H3808",
+     "as": "partner",
+     "verse": "Are we not regarded by him as foreigners? For he has sold us, and he has indeed devoured our money."
+    },
+    {
+     "reference": "Gen 31:15",
+     "surface": "foreigners",
+     "strong": "H5237",
+     "as": "partner",
+     "verse": "Are we not regarded by him as foreigners? For he has sold us, and he has indeed devoured our money."
+    },
+    {
+     "reference": "Gen 31:15",
+     "surface": "devoured",
+     "strong": "H1571",
+     "as": "partner",
+     "verse": "Are we not regarded by him as foreigners? For he has sold us, and he has indeed devoured our money."
+    },
+    {
+     "reference": "Lev 19:23",
+     "surface": "three",
+     "strong": "H7969",
+     "as": "partner",
+     "verse": "“ When you come into the land and plant any kind of tree for food, then you shall regard its fruit as forbidden. Three years it shall be forbidden to you; it must not be eaten."
+    },
+    {
+     "reference": "Lev 19:23",
+     "surface": "forbidden",
+     "strong": "H6189",
+     "as": "partner",
+     "verse": "“ When you come into the land and plant any kind of tree for food, then you shall regard its fruit as forbidden. Three years it shall be forbidden to you; it must not be eaten."
+    },
+    {
+     "reference": "Lev 19:23",
+     "surface": "not",
+     "strong": "H3808",
+     "as": "partner",
+     "verse": "“ When you come into the land and plant any kind of tree for food, then you shall regard its fruit as forbidden. Three years it shall be forbidden to you; it must not be eaten."
+    },
+    {
+     "reference": "Deu 33:9",
+     "surface": "not",
+     "strong": "H3808",
+     "as": "partner",
+     "verse": "who said of his father and mother, ‘I regard them not ’; he disowned his brothers and ignored his children. For they observed your word and kept your covenant."
+    },
+    {
+     "reference": "Deu 33:9",
+     "surface": "disowned",
+     "strong": "H3808",
+     "as": "partner",
+     "verse": "who said of his father and mother, ‘I regard them not ’; he disowned his brothers and ignored his children. For they observed your word and kept your covenant."
+    },
+    {
+     "reference": "Deu 33:9",
+     "surface": "ignored",
+     "strong": "H3808",
+     "as": "partner",
+     "verse": "who said of his father and mother, ‘I regard them not ’; he disowned his brothers and ignored his children. For they observed your word and kept your covenant."
+    },
+    {
+     "reference": "1Sa 1:16",
+     "surface": "along",
+     "strong": "H2008",
+     "as": "partner",
+     "verse": "Do not regard your servant as a worthless woman, for all along I have been speaking out of my great anxiety and vexation.”"
+    },
+    {
+     "reference": "1Sa 1:16",
+     "surface": "great",
+     "strong": "H7230",
+     "as": "partner",
+     "verse": "Do not regard your servant as a worthless woman, for all along I have been speaking out of my great anxiety and vexation.”"
+    },
+    {
+     "reference": "1Sa 25:25",
+     "surface": "let",
+     "strong": "H0408",
+     "as": "partner",
+     "verse": "Let not my lord regard this worthless fellow, Nabal, for as his name is, so is he. Nabal is his name, and folly is with him. But I your servant did not see the young men of my lord, whom you sent."
+    },
+    {
+     "reference": "1Sa 25:25",
+     "surface": "nabal",
+     "strong": "H3651C",
+     "as": "partner",
+     "verse": "Let not my lord regard this worthless fellow, Nabal, for as his name is, so is he. Nabal is his name, and folly is with him. But I your servant did not see the young men of my lord, whom you sent."
+    },
+    {
+     "reference": "1Sa 25:25",
+     "surface": "not",
+     "strong": "H3808",
+     "as": "partner",
+     "verse": "Let not my lord regard this worthless fellow, Nabal, for as his name is, so is he. Nabal is his name, and folly is with him. But I your servant did not see the young men of my lord, whom you sent."
+    },
+    {
+     "reference": "2Ki 3:14",
+     "surface": "lives",
+     "strong": "H2416A",
+     "as": "partner",
+     "verse": "And Elisha said, “As the Lord of hosts lives, before whom I stand, were it not that I have regard for Jehoshaphat the king of Judah, I would neither look at you nor see you."
+    },
+    {
+     "reference": "Job 9:21",
+     "surface": "blameless",
+     "strong": "H8535",
+     "as": "partner",
+     "verse": "I am blameless; I regard not myself; I loathe my life."
+    },
+    {
+     "reference": "Job 34:27",
+     "surface": "turned aside",
+     "strong": "H3651C",
+     "as": "partner",
+     "verse": "because they turned aside from following him and had no regard for any of his ways,"
+    },
+    {
+     "reference": "Job 34:27",
+     "surface": "following him",
+     "strong": "H0310A",
+     "as": "partner",
+     "verse": "because they turned aside from following him and had no regard for any of his ways,"
+    },
+    {
+     "reference": "Job 34:27",
+     "surface": "no",
+     "strong": "H3808",
+     "as": "partner",
+     "verse": "because they turned aside from following him and had no regard for any of his ways,"
+    },
+    {
+     "reference": "Job 35:13",
+     "surface": "surely",
+     "strong": "H0389",
+     "as": "partner",
+     "verse": "Surely God does not hear an empty cry, nor does the Almighty regard it."
+    },
+    {
+     "reference": "Job 35:13",
+     "surface": "not",
+     "strong": "H3808",
+     "as": "partner",
+     "verse": "Surely God does not hear an empty cry, nor does the Almighty regard it."
+    },
+    {
+     "reference": "Job 35:13",
+     "surface": "nor",
+     "strong": "H3808",
+     "as": "partner",
+     "verse": "Surely God does not hear an empty cry, nor does the Almighty regard it."
+    },
+    {
+     "reference": "Job 37:24",
+     "surface": "therefore",
+     "strong": "H3651C",
+     "as": "partner",
+     "verse": "Therefore men fear him; he does not regard any who are wise in their own conceit.”"
+    },
+    {
+     "reference": "Job 37:24",
+     "surface": "not",
+     "strong": "H3808",
+     "as": "partner",
+     "verse": "Therefore men fear him; he does not regard any who are wise in their own conceit.”"
+    },
+    {
+     "reference": "Job 37:24",
+     "surface": "wise",
+     "strong": "H2450",
+     "as": "partner",
+     "verse": "Therefore men fear him; he does not regard any who are wise in their own conceit.”"
+    },
+    {
+     "reference": "Psa 28:5",
+     "surface": "not",
+     "strong": "H3808",
+     "as": "partner",
+     "verse": "Because they do not regard the works of the Lord or the work of his hands, he will tear them down and build them up no more."
+    },
+    {
+     "reference": "Psa 28:5",
+     "surface": "build",
+     "strong": "H3808",
+     "as": "partner",
+     "verse": "Because they do not regard the works of the Lord or the work of his hands, he will tear them down and build them up no more."
+    },
+    {
+     "reference": "Pro 12:10",
+     "surface": "righteous",
+     "strong": "H6662",
+     "as": "partner",
+     "verse": "Whoever is righteous has regard for the life of his beast, but the mercy of the wicked is cruel."
+    },
+    {
+     "reference": "Pro 12:10",
+     "surface": "cruel",
+     "strong": "H0394",
+     "as": "partner",
+     "verse": "Whoever is righteous has regard for the life of his beast, but the mercy of the wicked is cruel."
+    },
+    {
+     "reference": "Isa 5:12",
+     "surface": "not",
+     "strong": "H3808",
+     "as": "partner",
+     "verse": "They have lyre and harp, tambourine and flute and wine at their feasts, but they do not regard the deeds of the Lord, or see the work of his hands."
+    },
+    {
+     "reference": "Isa 5:12",
+     "surface": "or",
+     "strong": "H3808",
+     "as": "partner",
+     "verse": "They have lyre and harp, tambourine and flute and wine at their feasts, but they do not regard the deeds of the Lord, or see the work of his hands."
+    },
+    {
+     "reference": "Isa 13:17",
+     "surface": "no",
+     "strong": "H3808",
+     "as": "partner",
+     "verse": "Behold, I am stirring up the Medes against them, who have no regard for silver and do not delight in gold."
+    },
+    {
+     "reference": "Isa 13:17",
+     "surface": "not",
+     "strong": "H3808",
+     "as": "partner",
+     "verse": "Behold, I am stirring up the Medes against them, who have no regard for silver and do not delight in gold."
+    },
+    {
+     "reference": "Isa 29:16",
+     "surface": "not",
+     "strong": "H3808",
+     "as": "partner",
+     "verse": "You turn things upside down! Shall the potter be regarded as the clay, that the thing made should say of its maker, “He did not make me”; or the thing formed say of him who formed it, “He has no under"
+    },
+    {
+     "reference": "Isa 29:16",
+     "surface": "no",
+     "strong": "H3808",
+     "as": "partner",
+     "verse": "You turn things upside down! Shall the potter be regarded as the clay, that the thing made should say of its maker, “He did not make me”; or the thing formed say of him who formed it, “He has no under"
+    },
+    {
+     "reference": "Isa 29:17",
+     "surface": "not",
+     "strong": "H3808",
+     "as": "partner",
+     "verse": "Is it not yet a very little while until Lebanon shall be turned into a fruitful field, and the fruitful field shall be regarded as a forest?"
+    },
+    {
+     "reference": "Isa 29:17",
+     "surface": "yet",
+     "strong": "H5750",
+     "as": "partner",
+     "verse": "Is it not yet a very little while until Lebanon shall be turned into a fruitful field, and the fruitful field shall be regarded as a forest?"
+    },
+    {
+     "reference": "Isa 33:8",
+     "surface": "no",
+     "strong": "H3808",
+     "as": "partner",
+     "verse": "The highways lie waste; the traveler ceases. Covenants are broken; cities are despised; there is no regard for man."
+    },
+    {
+     "reference": "Jer 24:5",
+     "surface": "thus",
+     "strong": "H3541",
+     "as": "partner",
+     "verse": "“ Thus says the Lord, the God of Israel: Like these good figs, so I will regard as good the exiles from Judah, whom I have sent away from this place to the land of the Chaldeans."
+    },
+    {
+     "reference": "Jer 24:5",
+     "surface": "good",
+     "strong": "H2896A",
+     "as": "partner",
+     "verse": "“ Thus says the Lord, the God of Israel: Like these good figs, so I will regard as good the exiles from Judah, whom I have sent away from this place to the land of the Chaldeans."
+    },
+    {
+     "reference": "Jer 24:5",
+     "surface": "so",
+     "strong": "H3651C",
+     "as": "partner",
+     "verse": "“ Thus says the Lord, the God of Israel: Like these good figs, so I will regard as good the exiles from Judah, whom I have sent away from this place to the land of the Chaldeans."
+    },
+    {
+     "reference": "Lam 4:2",
+     "surface": "precious",
+     "strong": "H3368",
+     "as": "partner",
+     "verse": "The precious sons of Zion, worth their weight in fine gold, how they are regarded as earthen pots, the work of a potter’s hands!"
+    }
+   ],
+   "fill": {
+    "disposition": "observed",
+    "obs_text": "Qualifiers stand with this group in most of its verses, and negators dominate. The negator reaches the regard in Gen 4:5 (no regard, 1 before), Gen 31:15 (not regarded, 1 before), Deu 33:9 (not, 1 after), Job 35:13 (not, 5 before, with nor 2 before), Job 37:24 (not, 1 before), Psa 28:5 (not, 1 before), Isa 5:12 (not, 1 before), Isa 13:17 (no, 1 before), Isa 29:16 and 29:17 (not), Isa 33:8 (no, 1 before), Job 34:27 (no, 1 before) and Exo 5:9 (the word of negation in the unit); in Lev 19:23 the not reaches the fruit as forbidden, three years, and in 1Sa 25:25 the not reaches Nabal's name. Positive qualifiers reach the one regarded or the manner: good (H2896A, 3 before) in Jer 24:5, very (H3966, 2 after) in Gen 4:5, great (H7230) in 1Sa 1:16, precious (H3368) 6 before in Lam 4:2, blameless (H8535) 2 before in Job 9:21 and righteous (H6662) 1 before in Pro 12:10, with cruel (H0394) 5 after in the same verse. In the Greek verses and Lam 4:16 and Hos 8:12 the stored data gives no qualifier beside the member.",
+    "basis": "stated",
+    "route": "",
+    "member_role": "lexical",
+    "partner_role": "lexical",
+    "reason": "",
+    "older": [
+     {
+      "observation": 12326,
+      "action": "keep",
+      "nature": "inner_being",
+      "reason": "kept and marked inner being: it states how the mind or heart works in the verses it names, and rests on them"
+     },
+     {
+      "observation": 14221,
+      "action": "keep",
+      "nature": "inner_being",
+      "reason": "kept and marked inner being: it states how the mind or heart works in the verses it names, and rests on them"
+     },
+     {
+      "observation": 15745,
+      "action": "keep",
+      "nature": "inner_being",
+      "reason": "kept and marked inner being: it states how the mind or heart works in the verses it names, and rests on them"
+     },
+     {
+      "observation": 21689,
+      "action": "keep",
+      "nature": "evidence",
+      "reason": "kept and marked evidence: it states what the word does in the verses it names, from the stored data"
+     }
+    ]
+   }
+  },
+  {
+   "ledger_id": 684,
+   "item": "entity",
+   "kind": "pairing",
+   "group": "taking account of, and reckoning as",
+   "subject": "",
+   "existing_observations": [
+    {
+     "observation": 15959,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "text": "1.8 Flesh as a way of knowing: \"we regard no one according to the flesh. Even though we once regarded Christ according to the flesh\" (2Co 5:16); \"set their minds on the things of the flesh … the Spiri",
+     "roles": [
+      "characteristic"
+     ],
+     "occurrences": 3
+    },
+    {
+     "observation": 12505,
+     "stage": "strand-reading",
+     "kind": "key-statement",
+     "text": "People value and regard: \"Are we not regarded by him as foreigners?\" (Gen 31:15); \"Let not my lord hold me guilty\" (2Sa 19:19); \"who have no regard for silver\" (Isa 13:17); \"there is no regard for man",
+     "roles": [],
+     "occurrences": 2
+    },
+    {
+     "observation": 17267,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "text": "b. Greek *sarx*: *Neutral uses continue:* one flesh; all flesh; \"the Word became flesh\" (Joh 1:14); \"in the days of his flesh\" (Heb 5:7); \"flesh and blood\" (Heb 2:14; Mat 16:17); \"a thorn … in the fle",
+     "roles": [
+      "qualifier"
+     ],
+     "occurrences": 2
+    },
+    {
+     "observation": 20021,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "text": "People valuing: *\"we esteemed him not\"* (Isa 53:3); *\"those who feared the Lord … esteemed his name\"* (Mal 3:16); *\"no regard for silver\"* (Isa 13:17); *\"there is no regard for man\"* (Isa 33:8)",
+     "roles": [
+      "characteristic"
+     ],
+     "occurrences": 1
+    },
+    {
+     "observation": 12412,
+     "stage": "strand-reading",
+     "kind": "key-statement",
+     "text": "yēṣer (\"intention\", \"inclination\") is the same word as the potter's thing formed, and as our frame.",
+     "roles": [
+      "qualifier"
+     ],
+     "occurrences": 1
+    },
+    {
+     "observation": 18877,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "text": "Hiding from God: In each scene where a person hides from God, something of God is perceived first: a sound (Genesis 3:10), God naming himself (Exodus 3:6), \"the terror of the Lord, and … the splendor ",
+     "roles": [
+      "qualifier"
+     ],
+     "occurrences": 1
+    },
+    {
+     "observation": 19220,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "text": "Where it comes from: the attempt to hide. \"Ah, you who hide deep from the Lord your counsel … and who say, 'Who sees us? Who knows us?'\" (Isa 29:15). The next verse names what that attempt does: \"You ",
+     "roles": [
+      "qualifier"
+     ],
+     "occurrences": 1
+    }
+   ],
+   "asks": "Which entities (divine, human, other) are named or referred to, by name or pronoun, in the verses of this group, and do they differ from those of the other groups? State who is named and how the text refers to them.",
+   "nodes_total": 76,
+   "nodes_shown": 76,
+   "strong_codes": {
+    "H8159": 2,
+    "H0408": 1,
+    "H6437G": 2,
+    "H9006": 1,
+    "H3820A": 1,
+    "H0853": 1,
+    "H5375Q": 1,
+    "H8104J": 1,
+    "H7789": 1,
+    "H7200G": 1,
+    "H0995": 1,
+    "H6485I": 1,
+    "H3045": 1,
+    "H1700": 1,
+    "H5027": 2,
+    "H2803J": 1,
+    "H2803H": 2,
+    "H5234A": 1,
+    "G3049": 2,
+    "G6063": 1,
+    "G1097": 2,
+    "G2233": 2
+   },
+   "evidence": [
+    {
+     "reference": "Gen 4:5",
+     "surface": "regard",
+     "strong": "H8159",
+     "as": "member",
+     "verse": "but for Cain and his offering he had no regard. So Cain was very angry, and his face fell."
+    },
+    {
+     "reference": "Exo 5:9",
+     "surface": "regard",
+     "strong": "H8159",
+     "as": "member",
+     "verse": "Let heavier work be laid on the men that they may labor at it and pay no regard to lying words.”"
+    },
+    {
+     "reference": "Exo 5:9",
+     "surface": "regard",
+     "strong": "H0408",
+     "as": "member",
+     "verse": "Let heavier work be laid on the men that they may labor at it and pay no regard to lying words.”"
+    },
+    {
+     "reference": "Deu 9:27",
+     "surface": "regard",
+     "strong": "H6437G",
+     "as": "member",
+     "verse": "Remember your servants, Abraham, Isaac, and Jacob. Do not regard the stubbornness of this people, or their wickedness or their sin,"
+    },
+    {
+     "reference": "Judg 15:3",
+     "surface": "regard",
+     "strong": "H9006",
+     "as": "member",
+     "verse": "And Samson said to them, “This time I shall be innocent in regard to the Philistines, when I do them harm.”"
+    },
+    {
+     "reference": "1Sa 25:25",
+     "surface": "regard",
+     "strong": "H3820A",
+     "as": "member",
+     "verse": "Let not my lord regard this worthless fellow, Nabal, for as his name is, so is he. Nabal is his name, and folly is with him. But I your servant did not see the young men of my lord, whom you sent."
+    },
+    {
+     "reference": "1Sa 25:25",
+     "surface": "regard",
+     "strong": "H0853",
+     "as": "member",
+     "verse": "Let not my lord regard this worthless fellow, Nabal, for as his name is, so is he. Nabal is his name, and folly is with him. But I your servant did not see the young men of my lord, whom you sent."
+    },
+    {
+     "reference": "2Ki 3:14",
+     "surface": "regard",
+     "strong": "H5375Q",
+     "as": "member",
+     "verse": "And Elisha said, “As the Lord of hosts lives, before whom I stand, were it not that I have regard for Jehoshaphat the king of Judah, I would neither look at you nor see you."
+    },
+    {
+     "reference": "2Ch 5:11",
+     "surface": "regard",
+     "strong": "H8104J",
+     "as": "member",
+     "verse": "And when the priests came out of the Holy Place ( for all the priests who were present had consecrated themselves, without regard to their divisions,"
+    },
+    {
+     "reference": "2Ch 6:19",
+     "surface": "regard",
+     "strong": "H6437G",
+     "as": "member",
+     "verse": "Yet have regard to the prayer of your servant and to his plea, O Lord my God, listening to the cry and to the prayer that your servant prays before you,"
+    },
+    {
+     "reference": "Job 35:13",
+     "surface": "regard",
+     "strong": "H7789",
+     "as": "member",
+     "verse": "Surely God does not hear an empty cry, nor does the Almighty regard it."
+    },
+    {
+     "reference": "Job 37:24",
+     "surface": "regard",
+     "strong": "H7200G",
+     "as": "member",
+     "verse": "Therefore men fear him; he does not regard any who are wise in their own conceit.”"
+    },
+    {
+     "reference": "Psa 28:5",
+     "surface": "regard",
+     "strong": "H0995",
+     "as": "member",
+     "verse": "Because they do not regard the works of the Lord or the work of his hands, he will tear them down and build them up no more."
+    },
+    {
+     "reference": "Psa 80:14",
+     "surface": "regard",
+     "strong": "H6485I",
+     "as": "member",
+     "verse": "Turn again, O God of hosts! Look down from heaven, and see; have regard for this vine,"
+    },
+    {
+     "reference": "Psa 144:3",
+     "surface": "regard",
+     "strong": "H3045",
+     "as": "member",
+     "verse": "O Lord, what is man that you regard him, or the son of man that you think of him?"
+    },
+    {
+     "reference": "Ecc 3:18",
+     "surface": "regard",
+     "strong": "H1700",
+     "as": "member",
+     "verse": "I said in my heart with regard to the children of man that God is testing them that they may see that they themselves are but beasts."
+    },
+    {
+     "reference": "Isa 5:12",
+     "surface": "regard",
+     "strong": "H5027",
+     "as": "member",
+     "verse": "They have lyre and harp, tambourine and flute and wine at their feasts, but they do not regard the deeds of the Lord, or see the work of his hands."
+    },
+    {
+     "reference": "Isa 29:16",
+     "surface": "regarded",
+     "strong": "H2803J",
+     "as": "member",
+     "verse": "You turn things upside down! Shall the potter be regarded as the clay, that the thing made should say of its maker, “He did not make me”; or the thing formed say of him who formed it, “He has no under"
+    },
+    {
+     "reference": "Isa 33:8",
+     "surface": "regard",
+     "strong": "H2803H",
+     "as": "member",
+     "verse": "The highways lie waste; the traveler ceases. Covenants are broken; cities are despised; there is no regard for man."
+    },
+    {
+     "reference": "Jer 24:5",
+     "surface": "regard",
+     "strong": "H5234A",
+     "as": "member",
+     "verse": "“ Thus says the Lord, the God of Israel: Like these good figs, so I will regard as good the exiles from Judah, whom I have sent away from this place to the land of the Chaldeans."
+    },
+    {
+     "reference": "Lam 4:2",
+     "surface": "regarded",
+     "strong": "H2803H",
+     "as": "member",
+     "verse": "The precious sons of Zion, worth their weight in fine gold, how they are regarded as earthen pots, the work of a potter’s hands!"
+    },
+    {
+     "reference": "Lam 4:16",
+     "surface": "regard",
+     "strong": "H5027",
+     "as": "member",
+     "verse": "The Lord himself has scattered them; he will regard them no more; no honor was shown to the priests, no favor to the elders."
+    },
+    {
+     "reference": "1Cor 4:1",
+     "surface": "regard",
+     "strong": "G3049",
+     "as": "member",
+     "verse": "This is how one should regard us, as servants of Christ and stewards of the mysteries of God."
+    },
+    {
+     "reference": "2Cor 5:16",
+     "surface": "regard",
+     "strong": "G6063",
+     "as": "member",
+     "verse": "From now on, therefore, we regard no one according to the flesh. Even though we once regarded Christ according to the flesh, we regard him thus no longer."
+    },
+    {
+     "reference": "2Cor 5:16",
+     "surface": "once regarded",
+     "strong": "G1097",
+     "as": "member",
+     "verse": "From now on, therefore, we regard no one according to the flesh. Even though we once regarded Christ according to the flesh, we regard him thus no longer."
+    },
+    {
+     "reference": "2Cor 5:16",
+     "surface": "regard",
+     "strong": "G1097",
+     "as": "member",
+     "verse": "From now on, therefore, we regard no one according to the flesh. Even though we once regarded Christ according to the flesh, we regard him thus no longer."
+    },
+    {
+     "reference": "2Th 3:15",
+     "surface": "regard",
+     "strong": "G2233",
+     "as": "member",
+     "verse": "Do not regard him as an enemy, but warn him as a brother."
+    },
+    {
+     "reference": "1Ti 6:1",
+     "surface": "regard",
+     "strong": "G2233",
+     "as": "member",
+     "verse": "Let all who are under a yoke as bondservants regard their own masters as worthy of all honor, so that the name of God and the teaching may not be reviled."
+    },
+    {
+     "reference": "1Pe 5:12",
+     "surface": "regard",
+     "strong": "G3049",
+     "as": "member",
+     "verse": "By Silvanus, a faithful brother as I regard him, I have written briefly to you, exhorting and declaring that this is the true grace of God. Stand firm in it."
+    },
+    {
+     "reference": "Gen 4:5",
+     "surface": "cain",
+     "strong": "H7014B",
+     "as": "partner",
+     "verse": "but for Cain and his offering he had no regard. So Cain was very angry, and his face fell."
+    },
+    {
+     "reference": "Gen 4:5",
+     "surface": "cain",
+     "strong": "H7014B",
+     "as": "partner",
+     "verse": "but for Cain and his offering he had no regard. So Cain was very angry, and his face fell."
+    },
+    {
+     "reference": "Exo 5:9",
+     "surface": "men",
+     "strong": "H0582",
+     "as": "partner",
+     "verse": "Let heavier work be laid on the men that they may labor at it and pay no regard to lying words.”"
+    },
+    {
+     "reference": "Deu 9:27",
+     "surface": "servants",
+     "strong": "H5650",
+     "as": "partner",
+     "verse": "Remember your servants, Abraham, Isaac, and Jacob. Do not regard the stubbornness of this people, or their wickedness or their sin,"
+    },
+    {
+     "reference": "Deu 9:27",
+     "surface": "abraham",
+     "strong": "H0085",
+     "as": "partner",
+     "verse": "Remember your servants, Abraham, Isaac, and Jacob. Do not regard the stubbornness of this people, or their wickedness or their sin,"
+    },
+    {
+     "reference": "Deu 9:27",
+     "surface": "isaac",
+     "strong": "H3327",
+     "as": "partner",
+     "verse": "Remember your servants, Abraham, Isaac, and Jacob. Do not regard the stubbornness of this people, or their wickedness or their sin,"
+    },
+    {
+     "reference": "Deu 9:27",
+     "surface": "jacob",
+     "strong": "H3290",
+     "as": "partner",
+     "verse": "Remember your servants, Abraham, Isaac, and Jacob. Do not regard the stubbornness of this people, or their wickedness or their sin,"
+    },
+    {
+     "reference": "Judg 15:3",
+     "surface": "samson",
+     "strong": "H8123",
+     "as": "partner",
+     "verse": "And Samson said to them, “This time I shall be innocent in regard to the Philistines, when I do them harm.”"
+    },
+    {
+     "reference": "1Sa 25:25",
+     "surface": "fellow",
+     "strong": "H0376G",
+     "as": "partner",
+     "verse": "Let not my lord regard this worthless fellow, Nabal, for as his name is, so is he. Nabal is his name, and folly is with him. But I your servant did not see the young men of my lord, whom you sent."
+    },
+    {
+     "reference": "1Sa 25:25",
+     "surface": "nabal",
+     "strong": "H5037",
+     "as": "partner",
+     "verse": "Let not my lord regard this worthless fellow, Nabal, for as his name is, so is he. Nabal is his name, and folly is with him. But I your servant did not see the young men of my lord, whom you sent."
+    },
+    {
+     "reference": "1Sa 25:25",
+     "surface": "nabal",
+     "strong": "H5037",
+     "as": "partner",
+     "verse": "Let not my lord regard this worthless fellow, Nabal, for as his name is, so is he. Nabal is his name, and folly is with him. But I your servant did not see the young men of my lord, whom you sent."
+    },
+    {
+     "reference": "1Sa 25:25",
+     "surface": "young men",
+     "strong": "H5288",
+     "as": "partner",
+     "verse": "Let not my lord regard this worthless fellow, Nabal, for as his name is, so is he. Nabal is his name, and folly is with him. But I your servant did not see the young men of my lord, whom you sent."
+    },
+    {
+     "reference": "2Ki 3:14",
+     "surface": "elisha",
+     "strong": "H0477",
+     "as": "partner",
+     "verse": "And Elisha said, “As the Lord of hosts lives, before whom I stand, were it not that I have regard for Jehoshaphat the king of Judah, I would neither look at you nor see you."
+    },
+    {
+     "reference": "2Ki 3:14",
+     "surface": "lord",
+     "strong": "H3068G",
+     "as": "partner",
+     "verse": "And Elisha said, “As the Lord of hosts lives, before whom I stand, were it not that I have regard for Jehoshaphat the king of Judah, I would neither look at you nor see you."
+    },
+    {
+     "reference": "2Ki 3:14",
+     "surface": "jehoshaphat",
+     "strong": "H3092I",
+     "as": "partner",
+     "verse": "And Elisha said, “As the Lord of hosts lives, before whom I stand, were it not that I have regard for Jehoshaphat the king of Judah, I would neither look at you nor see you."
+    },
+    {
+     "reference": "2Ch 5:11",
+     "surface": "priests",
+     "strong": "H3548",
+     "as": "partner",
+     "verse": "And when the priests came out of the Holy Place ( for all the priests who were present had consecrated themselves, without regard to their divisions,"
+    },
+    {
+     "reference": "2Ch 5:11",
+     "surface": "priests",
+     "strong": "H3548",
+     "as": "partner",
+     "verse": "And when the priests came out of the Holy Place ( for all the priests who were present had consecrated themselves, without regard to their divisions,"
+    },
+    {
+     "reference": "2Ch 6:19",
+     "surface": "servant",
+     "strong": "H5650",
+     "as": "partner",
+     "verse": "Yet have regard to the prayer of your servant and to his plea, O Lord my God, listening to the cry and to the prayer that your servant prays before you,"
+    },
+    {
+     "reference": "2Ch 6:19",
+     "surface": "lord",
+     "strong": "H3068G",
+     "as": "partner",
+     "verse": "Yet have regard to the prayer of your servant and to his plea, O Lord my God, listening to the cry and to the prayer that your servant prays before you,"
+    },
+    {
+     "reference": "2Ch 6:19",
+     "surface": "god",
+     "strong": "H0430G",
+     "as": "partner",
+     "verse": "Yet have regard to the prayer of your servant and to his plea, O Lord my God, listening to the cry and to the prayer that your servant prays before you,"
+    },
+    {
+     "reference": "2Ch 6:19",
+     "surface": "servant",
+     "strong": "H5650",
+     "as": "partner",
+     "verse": "Yet have regard to the prayer of your servant and to his plea, O Lord my God, listening to the cry and to the prayer that your servant prays before you,"
+    },
+    {
+     "reference": "Job 35:13",
+     "surface": "god",
+     "strong": "H0410G",
+     "as": "partner",
+     "verse": "Surely God does not hear an empty cry, nor does the Almighty regard it."
+    },
+    {
+     "reference": "Job 35:13",
+     "surface": "almighty",
+     "strong": "H7706",
+     "as": "partner",
+     "verse": "Surely God does not hear an empty cry, nor does the Almighty regard it."
+    },
+    {
+     "reference": "Job 37:24",
+     "surface": "men",
+     "strong": "H0582",
+     "as": "partner",
+     "verse": "Therefore men fear him; he does not regard any who are wise in their own conceit.”"
+    },
+    {
+     "reference": "Psa 28:5",
+     "surface": "lord",
+     "strong": "H3068G",
+     "as": "partner",
+     "verse": "Because they do not regard the works of the Lord or the work of his hands, he will tear them down and build them up no more."
+    },
+    {
+     "reference": "Psa 80:14",
+     "surface": "god",
+     "strong": "H0430G",
+     "as": "partner",
+     "verse": "Turn again, O God of hosts! Look down from heaven, and see; have regard for this vine,"
+    },
+    {
+     "reference": "Psa 144:3",
+     "surface": "lord",
+     "strong": "H3068G",
+     "as": "partner",
+     "verse": "O Lord, what is man that you regard him, or the son of man that you think of him?"
+    },
+    {
+     "reference": "Psa 144:3",
+     "surface": "man",
+     "strong": "H0120G",
+     "as": "partner",
+     "verse": "O Lord, what is man that you regard him, or the son of man that you think of him?"
+    },
+    {
+     "reference": "Psa 144:3",
+     "surface": "man",
+     "strong": "H0582",
+     "as": "partner",
+     "verse": "O Lord, what is man that you regard him, or the son of man that you think of him?"
+    },
+    {
+     "reference": "Ecc 3:18",
+     "surface": "man",
+     "strong": "H0120G",
+     "as": "partner",
+     "verse": "I said in my heart with regard to the children of man that God is testing them that they may see that they themselves are but beasts."
+    },
+    {
+     "reference": "Ecc 3:18",
+     "surface": "god",
+     "strong": "H0430G",
+     "as": "partner",
+     "verse": "I said in my heart with regard to the children of man that God is testing them that they may see that they themselves are but beasts."
+    },
+    {
+     "reference": "Isa 5:12",
+     "surface": "lord",
+     "strong": "H3068G",
+     "as": "partner",
+     "verse": "They have lyre and harp, tambourine and flute and wine at their feasts, but they do not regard the deeds of the Lord, or see the work of his hands."
+    },
+    {
+     "reference": "Isa 29:16",
+     "surface": "potter",
+     "strong": "H3335H",
+     "as": "partner",
+     "verse": "You turn things upside down! Shall the potter be regarded as the clay, that the thing made should say of its maker, “He did not make me”; or the thing formed say of him who formed it, “He has no under"
+    },
+    {
+     "reference": "Isa 33:8",
+     "surface": "man",
+     "strong": "H0582",
+     "as": "partner",
+     "verse": "The highways lie waste; the traveler ceases. Covenants are broken; cities are despised; there is no regard for man."
+    },
+    {
+     "reference": "Jer 24:5",
+     "surface": "lord",
+     "strong": "H3068G",
+     "as": "partner",
+     "verse": "“ Thus says the Lord, the God of Israel: Like these good figs, so I will regard as good the exiles from Judah, whom I have sent away from this place to the land of the Chaldeans."
+    },
+    {
+     "reference": "Jer 24:5",
+     "surface": "god",
+     "strong": "H0430G",
+     "as": "partner",
+     "verse": "“ Thus says the Lord, the God of Israel: Like these good figs, so I will regard as good the exiles from Judah, whom I have sent away from this place to the land of the Chaldeans."
+    },
+    {
+     "reference": "Lam 4:2",
+     "surface": "potter’s",
+     "strong": "H3335H",
+     "as": "partner",
+     "verse": "The precious sons of Zion, worth their weight in fine gold, how they are regarded as earthen pots, the work of a potter’s hands!"
+    },
+    {
+     "reference": "Lam 4:16",
+     "surface": "lord",
+     "strong": "H3068G",
+     "as": "partner",
+     "verse": "The Lord himself has scattered them; he will regard them no more; no honor was shown to the priests, no favor to the elders."
+    },
+    {
+     "reference": "Lam 4:16",
+     "surface": "priests",
+     "strong": "H3548",
+     "as": "partner",
+     "verse": "The Lord himself has scattered them; he will regard them no more; no honor was shown to the priests, no favor to the elders."
+    },
+    {
+     "reference": "1Cor 4:1",
+     "surface": "one",
+     "strong": "G0444",
+     "as": "partner",
+     "verse": "This is how one should regard us, as servants of Christ and stewards of the mysteries of God."
+    },
+    {
+     "reference": "1Cor 4:1",
+     "surface": "christ",
+     "strong": "G5547",
+     "as": "partner",
+     "verse": "This is how one should regard us, as servants of Christ and stewards of the mysteries of God."
+    },
+    {
+     "reference": "1Cor 4:1",
+     "surface": "god",
+     "strong": "G2316",
+     "as": "partner",
+     "verse": "This is how one should regard us, as servants of Christ and stewards of the mysteries of God."
+    },
+    {
+     "reference": "2Cor 5:16",
+     "surface": "christ",
+     "strong": "G5547",
+     "as": "partner",
+     "verse": "From now on, therefore, we regard no one according to the flesh. Even though we once regarded Christ according to the flesh, we regard him thus no longer."
+    },
+    {
+     "reference": "2Th 3:15",
+     "surface": "brother",
+     "strong": "G0080",
+     "as": "partner",
+     "verse": "Do not regard him as an enemy, but warn him as a brother."
+    },
+    {
+     "reference": "1Ti 6:1",
+     "surface": "god",
+     "strong": "G2316",
+     "as": "partner",
+     "verse": "Let all who are under a yoke as bondservants regard their own masters as worthy of all honor, so that the name of God and the teaching may not be reviled."
+    },
+    {
+     "reference": "1Pe 5:12",
+     "surface": "brother",
+     "strong": "G0080",
+     "as": "partner",
+     "verse": "By Silvanus, a faithful brother as I regard him, I have written briefly to you, exhorting and declaring that this is the true grace of God. Stand firm in it."
+    },
+    {
+     "reference": "1Pe 5:12",
+     "surface": "god",
+     "strong": "G2316",
+     "as": "partner",
+     "verse": "By Silvanus, a faithful brother as I regard him, I have written briefly to you, exhorting and declaring that this is the true grace of God. Stand firm in it."
+    }
+   ],
+   "fill": {
+    "disposition": "observed",
+    "obs_text": "The entities named in the verses of this group are divine and human. Divine: the Lord (2Ki 3:14, 2Ch 6:19, Psa 28:5, 144:3, Isa 5:12, Jer 24:5, Lam 4:16), God (2Ch 6:19, Job 35:13, Psa 80:14, Ecc 3:18, Jer 24:5, 1Cor 4:1, 1Ti 6:1, 1Pe 5:12) and Christ (1Cor 4:1, 2Cor 5:16). Human: Cain (Gen 4:5), the men set to labour (Exo 5:9, Job 37:24), the patriarchs and the servants (Deu 9:27, 2Ch 6:19), Samson (Jdg 15:3), Nabal and the young men (1Sa 25:25), Elisha and Jehoshaphat (2Ki 3:14), the priests (2Ch 5:11, Lam 4:16), man (Psa 144:3, Ecc 3:18, Isa 33:8, 1Cor 4:1) and a brother (2Th 3:15, 1Pe 5:12). The potter appears in Isa 29:16 and Lam 4:2 as the figure of the one who makes. In the verses of the Lord's regard the one regarded is a person or a people; in the verses of persons, one regards another. This record does not compare the group with the others.",
+    "basis": "stated",
+    "route": "",
+    "member_role": "lexical",
+    "partner_role": "lexical",
+    "reason": "",
+    "older": []
+   }
+  },
+  {
+   "ledger_id": 691,
+   "item": "direction",
+   "kind": "relation",
+   "group": "taking account of, and reckoning as",
+   "subject": "",
+   "existing_observations": [
+    {
+     "observation": 15959,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "text": "1.8 Flesh as a way of knowing: \"we regard no one according to the flesh. Even though we once regarded Christ according to the flesh\" (2Co 5:16); \"set their minds on the things of the flesh … the Spiri",
+     "roles": [
+      "characteristic"
+     ],
+     "occurrences": 3
+    },
+    {
+     "observation": 12505,
+     "stage": "strand-reading",
+     "kind": "key-statement",
+     "text": "People value and regard: \"Are we not regarded by him as foreigners?\" (Gen 31:15); \"Let not my lord hold me guilty\" (2Sa 19:19); \"who have no regard for silver\" (Isa 13:17); \"there is no regard for man",
+     "roles": [],
+     "occurrences": 2
+    },
+    {
+     "observation": 17267,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "text": "b. Greek *sarx*: *Neutral uses continue:* one flesh; all flesh; \"the Word became flesh\" (Joh 1:14); \"in the days of his flesh\" (Heb 5:7); \"flesh and blood\" (Heb 2:14; Mat 16:17); \"a thorn … in the fle",
+     "roles": [
+      "qualifier"
+     ],
+     "occurrences": 2
+    },
+    {
+     "observation": 20021,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "text": "People valuing: *\"we esteemed him not\"* (Isa 53:3); *\"those who feared the Lord … esteemed his name\"* (Mal 3:16); *\"no regard for silver\"* (Isa 13:17); *\"there is no regard for man\"* (Isa 33:8)",
+     "roles": [
+      "characteristic"
+     ],
+     "occurrences": 1
+    },
+    {
+     "observation": 12412,
+     "stage": "strand-reading",
+     "kind": "key-statement",
+     "text": "yēṣer (\"intention\", \"inclination\") is the same word as the potter's thing formed, and as our frame.",
+     "roles": [
+      "qualifier"
+     ],
+     "occurrences": 1
+    },
+    {
+     "observation": 18877,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "text": "Hiding from God: In each scene where a person hides from God, something of God is perceived first: a sound (Genesis 3:10), God naming himself (Exodus 3:6), \"the terror of the Lord, and … the splendor ",
+     "roles": [
+      "qualifier"
+     ],
+     "occurrences": 1
+    },
+    {
+     "observation": 19220,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "text": "Where it comes from: the attempt to hide. \"Ah, you who hide deep from the Lord your counsel … and who say, 'Who sees us? Who knows us?'\" (Isa 29:15). The next verse names what that attempt does: \"You ",
+     "roles": [
+      "qualifier"
+     ],
+     "occurrences": 1
+    }
+   ],
+   "asks": "Does the direction of travel the text states (from whom to whom, by the grammar) change across the verses of this group?",
+   "nodes_total": 76,
+   "nodes_shown": 76,
+   "strong_codes": {
+    "H8159": 2,
+    "H0408": 1,
+    "H6437G": 2,
+    "H9006": 1,
+    "H3820A": 1,
+    "H0853": 1,
+    "H5375Q": 1,
+    "H8104J": 1,
+    "H7789": 1,
+    "H7200G": 1,
+    "H0995": 1,
+    "H6485I": 1,
+    "H3045": 1,
+    "H1700": 1,
+    "H5027": 2,
+    "H2803J": 1,
+    "H2803H": 2,
+    "H5234A": 1,
+    "G3049": 2,
+    "G6063": 1,
+    "G1097": 2,
+    "G2233": 2
+   },
+   "evidence": [
+    {
+     "reference": "Gen 4:5",
+     "surface": "regard",
+     "strong": "H8159",
+     "as": "member",
+     "verse": "but for Cain and his offering he had no regard. So Cain was very angry, and his face fell."
+    },
+    {
+     "reference": "Exo 5:9",
+     "surface": "regard",
+     "strong": "H8159",
+     "as": "member",
+     "verse": "Let heavier work be laid on the men that they may labor at it and pay no regard to lying words.”"
+    },
+    {
+     "reference": "Exo 5:9",
+     "surface": "regard",
+     "strong": "H0408",
+     "as": "member",
+     "verse": "Let heavier work be laid on the men that they may labor at it and pay no regard to lying words.”"
+    },
+    {
+     "reference": "Deu 9:27",
+     "surface": "regard",
+     "strong": "H6437G",
+     "as": "member",
+     "verse": "Remember your servants, Abraham, Isaac, and Jacob. Do not regard the stubbornness of this people, or their wickedness or their sin,"
+    },
+    {
+     "reference": "Judg 15:3",
+     "surface": "regard",
+     "strong": "H9006",
+     "as": "member",
+     "verse": "And Samson said to them, “This time I shall be innocent in regard to the Philistines, when I do them harm.”"
+    },
+    {
+     "reference": "1Sa 25:25",
+     "surface": "regard",
+     "strong": "H3820A",
+     "as": "member",
+     "verse": "Let not my lord regard this worthless fellow, Nabal, for as his name is, so is he. Nabal is his name, and folly is with him. But I your servant did not see the young men of my lord, whom you sent."
+    },
+    {
+     "reference": "1Sa 25:25",
+     "surface": "regard",
+     "strong": "H0853",
+     "as": "member",
+     "verse": "Let not my lord regard this worthless fellow, Nabal, for as his name is, so is he. Nabal is his name, and folly is with him. But I your servant did not see the young men of my lord, whom you sent."
+    },
+    {
+     "reference": "2Ki 3:14",
+     "surface": "regard",
+     "strong": "H5375Q",
+     "as": "member",
+     "verse": "And Elisha said, “As the Lord of hosts lives, before whom I stand, were it not that I have regard for Jehoshaphat the king of Judah, I would neither look at you nor see you."
+    },
+    {
+     "reference": "2Ch 5:11",
+     "surface": "regard",
+     "strong": "H8104J",
+     "as": "member",
+     "verse": "And when the priests came out of the Holy Place ( for all the priests who were present had consecrated themselves, without regard to their divisions,"
+    },
+    {
+     "reference": "2Ch 6:19",
+     "surface": "regard",
+     "strong": "H6437G",
+     "as": "member",
+     "verse": "Yet have regard to the prayer of your servant and to his plea, O Lord my God, listening to the cry and to the prayer that your servant prays before you,"
+    },
+    {
+     "reference": "Job 35:13",
+     "surface": "regard",
+     "strong": "H7789",
+     "as": "member",
+     "verse": "Surely God does not hear an empty cry, nor does the Almighty regard it."
+    },
+    {
+     "reference": "Job 37:24",
+     "surface": "regard",
+     "strong": "H7200G",
+     "as": "member",
+     "verse": "Therefore men fear him; he does not regard any who are wise in their own conceit.”"
+    },
+    {
+     "reference": "Psa 28:5",
+     "surface": "regard",
+     "strong": "H0995",
+     "as": "member",
+     "verse": "Because they do not regard the works of the Lord or the work of his hands, he will tear them down and build them up no more."
+    },
+    {
+     "reference": "Psa 80:14",
+     "surface": "regard",
+     "strong": "H6485I",
+     "as": "member",
+     "verse": "Turn again, O God of hosts! Look down from heaven, and see; have regard for this vine,"
+    },
+    {
+     "reference": "Psa 144:3",
+     "surface": "regard",
+     "strong": "H3045",
+     "as": "member",
+     "verse": "O Lord, what is man that you regard him, or the son of man that you think of him?"
+    },
+    {
+     "reference": "Ecc 3:18",
+     "surface": "regard",
+     "strong": "H1700",
+     "as": "member",
+     "verse": "I said in my heart with regard to the children of man that God is testing them that they may see that they themselves are but beasts."
+    },
+    {
+     "reference": "Isa 5:12",
+     "surface": "regard",
+     "strong": "H5027",
+     "as": "member",
+     "verse": "They have lyre and harp, tambourine and flute and wine at their feasts, but they do not regard the deeds of the Lord, or see the work of his hands."
+    },
+    {
+     "reference": "Isa 29:16",
+     "surface": "regarded",
+     "strong": "H2803J",
+     "as": "member",
+     "verse": "You turn things upside down! Shall the potter be regarded as the clay, that the thing made should say of its maker, “He did not make me”; or the thing formed say of him who formed it, “He has no under"
+    },
+    {
+     "reference": "Isa 33:8",
+     "surface": "regard",
+     "strong": "H2803H",
+     "as": "member",
+     "verse": "The highways lie waste; the traveler ceases. Covenants are broken; cities are despised; there is no regard for man."
+    },
+    {
+     "reference": "Jer 24:5",
+     "surface": "regard",
+     "strong": "H5234A",
+     "as": "member",
+     "verse": "“ Thus says the Lord, the God of Israel: Like these good figs, so I will regard as good the exiles from Judah, whom I have sent away from this place to the land of the Chaldeans."
+    },
+    {
+     "reference": "Lam 4:2",
+     "surface": "regarded",
+     "strong": "H2803H",
+     "as": "member",
+     "verse": "The precious sons of Zion, worth their weight in fine gold, how they are regarded as earthen pots, the work of a potter’s hands!"
+    },
+    {
+     "reference": "Lam 4:16",
+     "surface": "regard",
+     "strong": "H5027",
+     "as": "member",
+     "verse": "The Lord himself has scattered them; he will regard them no more; no honor was shown to the priests, no favor to the elders."
+    },
+    {
+     "reference": "1Cor 4:1",
+     "surface": "regard",
+     "strong": "G3049",
+     "as": "member",
+     "verse": "This is how one should regard us, as servants of Christ and stewards of the mysteries of God."
+    },
+    {
+     "reference": "2Cor 5:16",
+     "surface": "regard",
+     "strong": "G6063",
+     "as": "member",
+     "verse": "From now on, therefore, we regard no one according to the flesh. Even though we once regarded Christ according to the flesh, we regard him thus no longer."
+    },
+    {
+     "reference": "2Cor 5:16",
+     "surface": "once regarded",
+     "strong": "G1097",
+     "as": "member",
+     "verse": "From now on, therefore, we regard no one according to the flesh. Even though we once regarded Christ according to the flesh, we regard him thus no longer."
+    },
+    {
+     "reference": "2Cor 5:16",
+     "surface": "regard",
+     "strong": "G1097",
+     "as": "member",
+     "verse": "From now on, therefore, we regard no one according to the flesh. Even though we once regarded Christ according to the flesh, we regard him thus no longer."
+    },
+    {
+     "reference": "2Th 3:15",
+     "surface": "regard",
+     "strong": "G2233",
+     "as": "member",
+     "verse": "Do not regard him as an enemy, but warn him as a brother."
+    },
+    {
+     "reference": "1Ti 6:1",
+     "surface": "regard",
+     "strong": "G2233",
+     "as": "member",
+     "verse": "Let all who are under a yoke as bondservants regard their own masters as worthy of all honor, so that the name of God and the teaching may not be reviled."
+    },
+    {
+     "reference": "1Pe 5:12",
+     "surface": "regard",
+     "strong": "G3049",
+     "as": "member",
+     "verse": "By Silvanus, a faithful brother as I regard him, I have written briefly to you, exhorting and declaring that this is the true grace of God. Stand firm in it."
+    },
+    {
+     "reference": "Gen 4:5",
+     "surface": "cain",
+     "strong": "H7014B",
+     "as": "partner",
+     "verse": "but for Cain and his offering he had no regard. So Cain was very angry, and his face fell."
+    },
+    {
+     "reference": "Gen 4:5",
+     "surface": "cain",
+     "strong": "H7014B",
+     "as": "partner",
+     "verse": "but for Cain and his offering he had no regard. So Cain was very angry, and his face fell."
+    },
+    {
+     "reference": "Exo 5:9",
+     "surface": "men",
+     "strong": "H0582",
+     "as": "partner",
+     "verse": "Let heavier work be laid on the men that they may labor at it and pay no regard to lying words.”"
+    },
+    {
+     "reference": "Deu 9:27",
+     "surface": "servants",
+     "strong": "H5650",
+     "as": "partner",
+     "verse": "Remember your servants, Abraham, Isaac, and Jacob. Do not regard the stubbornness of this people, or their wickedness or their sin,"
+    },
+    {
+     "reference": "Deu 9:27",
+     "surface": "abraham",
+     "strong": "H0085",
+     "as": "partner",
+     "verse": "Remember your servants, Abraham, Isaac, and Jacob. Do not regard the stubbornness of this people, or their wickedness or their sin,"
+    },
+    {
+     "reference": "Deu 9:27",
+     "surface": "isaac",
+     "strong": "H3327",
+     "as": "partner",
+     "verse": "Remember your servants, Abraham, Isaac, and Jacob. Do not regard the stubbornness of this people, or their wickedness or their sin,"
+    },
+    {
+     "reference": "Deu 9:27",
+     "surface": "jacob",
+     "strong": "H3290",
+     "as": "partner",
+     "verse": "Remember your servants, Abraham, Isaac, and Jacob. Do not regard the stubbornness of this people, or their wickedness or their sin,"
+    },
+    {
+     "reference": "Judg 15:3",
+     "surface": "samson",
+     "strong": "H8123",
+     "as": "partner",
+     "verse": "And Samson said to them, “This time I shall be innocent in regard to the Philistines, when I do them harm.”"
+    },
+    {
+     "reference": "1Sa 25:25",
+     "surface": "fellow",
+     "strong": "H0376G",
+     "as": "partner",
+     "verse": "Let not my lord regard this worthless fellow, Nabal, for as his name is, so is he. Nabal is his name, and folly is with him. But I your servant did not see the young men of my lord, whom you sent."
+    },
+    {
+     "reference": "1Sa 25:25",
+     "surface": "nabal",
+     "strong": "H5037",
+     "as": "partner",
+     "verse": "Let not my lord regard this worthless fellow, Nabal, for as his name is, so is he. Nabal is his name, and folly is with him. But I your servant did not see the young men of my lord, whom you sent."
+    },
+    {
+     "reference": "1Sa 25:25",
+     "surface": "nabal",
+     "strong": "H5037",
+     "as": "partner",
+     "verse": "Let not my lord regard this worthless fellow, Nabal, for as his name is, so is he. Nabal is his name, and folly is with him. But I your servant did not see the young men of my lord, whom you sent."
+    },
+    {
+     "reference": "1Sa 25:25",
+     "surface": "young men",
+     "strong": "H5288",
+     "as": "partner",
+     "verse": "Let not my lord regard this worthless fellow, Nabal, for as his name is, so is he. Nabal is his name, and folly is with him. But I your servant did not see the young men of my lord, whom you sent."
+    },
+    {
+     "reference": "2Ki 3:14",
+     "surface": "elisha",
+     "strong": "H0477",
+     "as": "partner",
+     "verse": "And Elisha said, “As the Lord of hosts lives, before whom I stand, were it not that I have regard for Jehoshaphat the king of Judah, I would neither look at you nor see you."
+    },
+    {
+     "reference": "2Ki 3:14",
+     "surface": "lord",
+     "strong": "H3068G",
+     "as": "partner",
+     "verse": "And Elisha said, “As the Lord of hosts lives, before whom I stand, were it not that I have regard for Jehoshaphat the king of Judah, I would neither look at you nor see you."
+    },
+    {
+     "reference": "2Ki 3:14",
+     "surface": "jehoshaphat",
+     "strong": "H3092I",
+     "as": "partner",
+     "verse": "And Elisha said, “As the Lord of hosts lives, before whom I stand, were it not that I have regard for Jehoshaphat the king of Judah, I would neither look at you nor see you."
+    },
+    {
+     "reference": "2Ch 5:11",
+     "surface": "priests",
+     "strong": "H3548",
+     "as": "partner",
+     "verse": "And when the priests came out of the Holy Place ( for all the priests who were present had consecrated themselves, without regard to their divisions,"
+    },
+    {
+     "reference": "2Ch 5:11",
+     "surface": "priests",
+     "strong": "H3548",
+     "as": "partner",
+     "verse": "And when the priests came out of the Holy Place ( for all the priests who were present had consecrated themselves, without regard to their divisions,"
+    },
+    {
+     "reference": "2Ch 6:19",
+     "surface": "servant",
+     "strong": "H5650",
+     "as": "partner",
+     "verse": "Yet have regard to the prayer of your servant and to his plea, O Lord my God, listening to the cry and to the prayer that your servant prays before you,"
+    },
+    {
+     "reference": "2Ch 6:19",
+     "surface": "lord",
+     "strong": "H3068G",
+     "as": "partner",
+     "verse": "Yet have regard to the prayer of your servant and to his plea, O Lord my God, listening to the cry and to the prayer that your servant prays before you,"
+    },
+    {
+     "reference": "2Ch 6:19",
+     "surface": "god",
+     "strong": "H0430G",
+     "as": "partner",
+     "verse": "Yet have regard to the prayer of your servant and to his plea, O Lord my God, listening to the cry and to the prayer that your servant prays before you,"
+    },
+    {
+     "reference": "2Ch 6:19",
+     "surface": "servant",
+     "strong": "H5650",
+     "as": "partner",
+     "verse": "Yet have regard to the prayer of your servant and to his plea, O Lord my God, listening to the cry and to the prayer that your servant prays before you,"
+    },
+    {
+     "reference": "Job 35:13",
+     "surface": "god",
+     "strong": "H0410G",
+     "as": "partner",
+     "verse": "Surely God does not hear an empty cry, nor does the Almighty regard it."
+    },
+    {
+     "reference": "Job 35:13",
+     "surface": "almighty",
+     "strong": "H7706",
+     "as": "partner",
+     "verse": "Surely God does not hear an empty cry, nor does the Almighty regard it."
+    },
+    {
+     "reference": "Job 37:24",
+     "surface": "men",
+     "strong": "H0582",
+     "as": "partner",
+     "verse": "Therefore men fear him; he does not regard any who are wise in their own conceit.”"
+    },
+    {
+     "reference": "Psa 28:5",
+     "surface": "lord",
+     "strong": "H3068G",
+     "as": "partner",
+     "verse": "Because they do not regard the works of the Lord or the work of his hands, he will tear them down and build them up no more."
+    },
+    {
+     "reference": "Psa 80:14",
+     "surface": "god",
+     "strong": "H0430G",
+     "as": "partner",
+     "verse": "Turn again, O God of hosts! Look down from heaven, and see; have regard for this vine,"
+    },
+    {
+     "reference": "Psa 144:3",
+     "surface": "lord",
+     "strong": "H3068G",
+     "as": "partner",
+     "verse": "O Lord, what is man that you regard him, or the son of man that you think of him?"
+    },
+    {
+     "reference": "Psa 144:3",
+     "surface": "man",
+     "strong": "H0120G",
+     "as": "partner",
+     "verse": "O Lord, what is man that you regard him, or the son of man that you think of him?"
+    },
+    {
+     "reference": "Psa 144:3",
+     "surface": "man",
+     "strong": "H0582",
+     "as": "partner",
+     "verse": "O Lord, what is man that you regard him, or the son of man that you think of him?"
+    },
+    {
+     "reference": "Ecc 3:18",
+     "surface": "man",
+     "strong": "H0120G",
+     "as": "partner",
+     "verse": "I said in my heart with regard to the children of man that God is testing them that they may see that they themselves are but beasts."
+    },
+    {
+     "reference": "Ecc 3:18",
+     "surface": "god",
+     "strong": "H0430G",
+     "as": "partner",
+     "verse": "I said in my heart with regard to the children of man that God is testing them that they may see that they themselves are but beasts."
+    },
+    {
+     "reference": "Isa 5:12",
+     "surface": "lord",
+     "strong": "H3068G",
+     "as": "partner",
+     "verse": "They have lyre and harp, tambourine and flute and wine at their feasts, but they do not regard the deeds of the Lord, or see the work of his hands."
+    },
+    {
+     "reference": "Isa 29:16",
+     "surface": "potter",
+     "strong": "H3335H",
+     "as": "partner",
+     "verse": "You turn things upside down! Shall the potter be regarded as the clay, that the thing made should say of its maker, “He did not make me”; or the thing formed say of him who formed it, “He has no under"
+    },
+    {
+     "reference": "Isa 33:8",
+     "surface": "man",
+     "strong": "H0582",
+     "as": "partner",
+     "verse": "The highways lie waste; the traveler ceases. Covenants are broken; cities are despised; there is no regard for man."
+    },
+    {
+     "reference": "Jer 24:5",
+     "surface": "lord",
+     "strong": "H3068G",
+     "as": "partner",
+     "verse": "“ Thus says the Lord, the God of Israel: Like these good figs, so I will regard as good the exiles from Judah, whom I have sent away from this place to the land of the Chaldeans."
+    },
+    {
+     "reference": "Jer 24:5",
+     "surface": "god",
+     "strong": "H0430G",
+     "as": "partner",
+     "verse": "“ Thus says the Lord, the God of Israel: Like these good figs, so I will regard as good the exiles from Judah, whom I have sent away from this place to the land of the Chaldeans."
+    },
+    {
+     "reference": "Lam 4:2",
+     "surface": "potter’s",
+     "strong": "H3335H",
+     "as": "partner",
+     "verse": "The precious sons of Zion, worth their weight in fine gold, how they are regarded as earthen pots, the work of a potter’s hands!"
+    },
+    {
+     "reference": "Lam 4:16",
+     "surface": "lord",
+     "strong": "H3068G",
+     "as": "partner",
+     "verse": "The Lord himself has scattered them; he will regard them no more; no honor was shown to the priests, no favor to the elders."
+    },
+    {
+     "reference": "Lam 4:16",
+     "surface": "priests",
+     "strong": "H3548",
+     "as": "partner",
+     "verse": "The Lord himself has scattered them; he will regard them no more; no honor was shown to the priests, no favor to the elders."
+    },
+    {
+     "reference": "1Cor 4:1",
+     "surface": "one",
+     "strong": "G0444",
+     "as": "partner",
+     "verse": "This is how one should regard us, as servants of Christ and stewards of the mysteries of God."
+    },
+    {
+     "reference": "1Cor 4:1",
+     "surface": "christ",
+     "strong": "G5547",
+     "as": "partner",
+     "verse": "This is how one should regard us, as servants of Christ and stewards of the mysteries of God."
+    },
+    {
+     "reference": "1Cor 4:1",
+     "surface": "god",
+     "strong": "G2316",
+     "as": "partner",
+     "verse": "This is how one should regard us, as servants of Christ and stewards of the mysteries of God."
+    },
+    {
+     "reference": "2Cor 5:16",
+     "surface": "christ",
+     "strong": "G5547",
+     "as": "partner",
+     "verse": "From now on, therefore, we regard no one according to the flesh. Even though we once regarded Christ according to the flesh, we regard him thus no longer."
+    },
+    {
+     "reference": "2Th 3:15",
+     "surface": "brother",
+     "strong": "G0080",
+     "as": "partner",
+     "verse": "Do not regard him as an enemy, but warn him as a brother."
+    },
+    {
+     "reference": "1Ti 6:1",
+     "surface": "god",
+     "strong": "G2316",
+     "as": "partner",
+     "verse": "Let all who are under a yoke as bondservants regard their own masters as worthy of all honor, so that the name of God and the teaching may not be reviled."
+    },
+    {
+     "reference": "1Pe 5:12",
+     "surface": "brother",
+     "strong": "G0080",
+     "as": "partner",
+     "verse": "By Silvanus, a faithful brother as I regard him, I have written briefly to you, exhorting and declaring that this is the true grace of God. Stand firm in it."
+    },
+    {
+     "reference": "1Pe 5:12",
+     "surface": "god",
+     "strong": "G2316",
+     "as": "partner",
+     "verse": "By Silvanus, a faithful brother as I regard him, I have written briefly to you, exhorting and declaring that this is the true grace of God. Stand firm in it."
+    }
+   ],
+   "fill": {
+    "disposition": "observed",
+    "obs_text": "The direction of the regard is stated in four ways. God regards persons or refuses to: the Lord's regard for the exiles (Jer 24:5), for the vine (Psa 80:14), for the covenant (Psa 74:20), his lack of regard for Cain's offering (Gen 4:5), for the empty cry (Job 35:13) and for the wise in conceit (Job 37:24), his not looking on the priests (Lam 4:16). Persons ask God for regard: Moses (Deu 9:27), Solomon (2Ch 6:19), the psalmist (Psa 119:117), Hannah (1Sa 1:16). Persons regard or fail to regard one another: Elisha for Jehoshaphat (2Ki 3:14), the Medes for silver (Isa 13:17), the master and the servant (1Ti 6:1), the brother (2Th 3:15). And persons are regarded by others as something else: the daughters as foreigners (Gen 31:15), the faithful as sheep (Psa 44:22, Rom 8:36), the disciples among themselves (Luk 22:24). The direction changes: from God to persons, from persons to God, between persons, and of persons by others.",
+    "basis": "stated",
+    "route": "",
+    "member_role": "lexical",
+    "partner_role": "lexical",
+    "reason": "",
+    "older": []
+   }
+  },
+  {
+   "ledger_id": 711,
+   "item": "double-meaning",
+   "kind": "face",
+   "group": "taking account of, and reckoning as",
+   "subject": "regard",
+   "existing_observations": [
+    {
+     "observation": 12505,
+     "stage": "strand-reading",
+     "kind": "key-statement",
+     "text": "People value and regard: \"Are we not regarded by him as foreigners?\" (Gen 31:15); \"Let not my lord hold me guilty\" (2Sa 19:19); \"who have no regard for silver\" (Isa 13:17); \"there is no regard for man",
+     "roles": [],
+     "occurrences": 2
+    },
+    {
+     "observation": 20021,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "text": "People valuing: *\"we esteemed him not\"* (Isa 53:3); *\"those who feared the Lord … esteemed his name\"* (Mal 3:16); *\"no regard for silver\"* (Isa 13:17); *\"there is no regard for man\"* (Isa 33:8)",
+     "roles": [
+      "characteristic"
+     ],
+     "occurrences": 2
+    },
+    {
+     "observation": 15959,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "text": "1.8 Flesh as a way of knowing: \"we regard no one according to the flesh. Even though we once regarded Christ according to the flesh\" (2Co 5:16); \"set their minds on the things of the flesh … the Spiri",
+     "roles": [
+      "characteristic"
+     ],
+     "occurrences": 2
+    },
+    {
+     "observation": 17267,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "text": "b. Greek *sarx*: *Neutral uses continue:* one flesh; all flesh; \"the Word became flesh\" (Joh 1:14); \"in the days of his flesh\" (Heb 5:7); \"flesh and blood\" (Heb 2:14; Mat 16:17); \"a thorn … in the fle",
+     "roles": [
+      "qualifier"
+     ],
+     "occurrences": 2
+    },
+    {
+     "observation": 17086,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "text": "Blameless soul-life: \"I am blameless; I regard not myself; I loathe my life\" (Job 9:21) — integrity with self-rejection; \"Bloodthirsty men hate one who is blameless and seek the life of the upright\" (",
+     "roles": [
+      "qualifier"
+     ],
+     "occurrences": 1
+    },
+    {
+     "observation": 16528,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "text": "The righteous regard animal life: \"Whoever is righteous has regard for the life [*nephesh*] of his beast\" (Pro 12:10).",
+     "roles": [
+      "qualifier"
+     ],
+     "occurrences": 1
+    },
+    {
+     "observation": 18165,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "text": "The stirred person still acts as himself. Cyrus makes a proclamation and writes it down. The Medes *\"have no regard for silver and do not delight in gold\"* (Isa 13:17), and Cyrus works *\"not for price",
+     "roles": [
+      "qualifier"
+     ],
+     "occurrences": 1
+    }
+   ],
+   "asks": "Does this surface carry a different Strong's code or sense in different verses (the faces of the word)? State the codes and the verses.",
+   "nodes_total": 38,
+   "nodes_shown": 38,
+   "strong_codes": {
+    "H8159": 3,
+    "H0408": 1,
+    "H6188": 1,
+    "H6437G": 2,
+    "H7200G": 2,
+    "H9006": 1,
+    "H5414I": 1,
+    "H3820A": 1,
+    "H0853": 1,
+    "H5375Q": 1,
+    "H8104J": 1,
+    "H3045": 3,
+    "H3808": 1,
+    "H7919A": 1,
+    "H7789": 1,
+    "H0995": 1,
+    "H5027": 3,
+    "H6485I": 1,
+    "H1700": 1,
+    "H2803H": 2,
+    "H5234A": 1,
+    "G4012": 1,
+    "G3049": 2,
+    "G6063": 1,
+    "G1097": 1,
+    "G3313": 1,
+    "G2233": 2
+   },
+   "evidence": [
+    {
+     "reference": "Gen 4:5",
+     "surface": "regard",
+     "strong": "H8159",
+     "as": "member",
+     "verse": "but for Cain and his offering he had no regard. So Cain was very angry, and his face fell."
+    },
+    {
+     "reference": "Exo 5:9",
+     "surface": "regard",
+     "strong": "H8159",
+     "as": "member",
+     "verse": "Let heavier work be laid on the men that they may labor at it and pay no regard to lying words.”"
+    },
+    {
+     "reference": "Exo 5:9",
+     "surface": "regard",
+     "strong": "H0408",
+     "as": "member",
+     "verse": "Let heavier work be laid on the men that they may labor at it and pay no regard to lying words.”"
+    },
+    {
+     "reference": "Lev 19:23",
+     "surface": "regard",
+     "strong": "H6188",
+     "as": "member",
+     "verse": "“ When you come into the land and plant any kind of tree for food, then you shall regard its fruit as forbidden. Three years it shall be forbidden to you; it must not be eaten."
+    },
+    {
+     "reference": "Deu 9:27",
+     "surface": "regard",
+     "strong": "H6437G",
+     "as": "member",
+     "verse": "Remember your servants, Abraham, Isaac, and Jacob. Do not regard the stubbornness of this people, or their wickedness or their sin,"
+    },
+    {
+     "reference": "Deu 33:9",
+     "surface": "regard",
+     "strong": "H7200G",
+     "as": "member",
+     "verse": "who said of his father and mother, ‘I regard them not ’; he disowned his brothers and ignored his children. For they observed your word and kept your covenant."
+    },
+    {
+     "reference": "Judg 15:3",
+     "surface": "regard",
+     "strong": "H9006",
+     "as": "member",
+     "verse": "And Samson said to them, “This time I shall be innocent in regard to the Philistines, when I do them harm.”"
+    },
+    {
+     "reference": "1Sa 1:16",
+     "surface": "regard",
+     "strong": "H5414I",
+     "as": "member",
+     "verse": "Do not regard your servant as a worthless woman, for all along I have been speaking out of my great anxiety and vexation.”"
+    },
+    {
+     "reference": "1Sa 25:25",
+     "surface": "regard",
+     "strong": "H3820A",
+     "as": "member",
+     "verse": "Let not my lord regard this worthless fellow, Nabal, for as his name is, so is he. Nabal is his name, and folly is with him. But I your servant did not see the young men of my lord, whom you sent."
+    },
+    {
+     "reference": "1Sa 25:25",
+     "surface": "regard",
+     "strong": "H0853",
+     "as": "member",
+     "verse": "Let not my lord regard this worthless fellow, Nabal, for as his name is, so is he. Nabal is his name, and folly is with him. But I your servant did not see the young men of my lord, whom you sent."
+    },
+    {
+     "reference": "2Ki 3:14",
+     "surface": "regard",
+     "strong": "H5375Q",
+     "as": "member",
+     "verse": "And Elisha said, “As the Lord of hosts lives, before whom I stand, were it not that I have regard for Jehoshaphat the king of Judah, I would neither look at you nor see you."
+    },
+    {
+     "reference": "2Ch 5:11",
+     "surface": "regard",
+     "strong": "H8104J",
+     "as": "member",
+     "verse": "And when the priests came out of the Holy Place ( for all the priests who were present had consecrated themselves, without regard to their divisions,"
+    },
+    {
+     "reference": "2Ch 6:19",
+     "surface": "regard",
+     "strong": "H6437G",
+     "as": "member",
+     "verse": "Yet have regard to the prayer of your servant and to his plea, O Lord my God, listening to the cry and to the prayer that your servant prays before you,"
+    },
+    {
+     "reference": "Job 9:21",
+     "surface": "regard",
+     "strong": "H3045",
+     "as": "member",
+     "verse": "I am blameless; I regard not myself; I loathe my life."
+    },
+    {
+     "reference": "Job 9:21",
+     "surface": "regard",
+     "strong": "H3808",
+     "as": "member",
+     "verse": "I am blameless; I regard not myself; I loathe my life."
+    },
+    {
+     "reference": "Job 34:27",
+     "surface": "regard",
+     "strong": "H7919A",
+     "as": "member",
+     "verse": "because they turned aside from following him and had no regard for any of his ways,"
+    },
+    {
+     "reference": "Job 35:13",
+     "surface": "regard",
+     "strong": "H7789",
+     "as": "member",
+     "verse": "Surely God does not hear an empty cry, nor does the Almighty regard it."
+    },
+    {
+     "reference": "Job 37:24",
+     "surface": "regard",
+     "strong": "H7200G",
+     "as": "member",
+     "verse": "Therefore men fear him; he does not regard any who are wise in their own conceit.”"
+    },
+    {
+     "reference": "Psa 28:5",
+     "surface": "regard",
+     "strong": "H0995",
+     "as": "member",
+     "verse": "Because they do not regard the works of the Lord or the work of his hands, he will tear them down and build them up no more."
+    },
+    {
+     "reference": "Psa 74:20",
+     "surface": "regard",
+     "strong": "H5027",
+     "as": "member",
+     "verse": "Have regard for the covenant, for the dark places of the land are full of the habitations of violence."
+    },
+    {
+     "reference": "Psa 80:14",
+     "surface": "regard",
+     "strong": "H6485I",
+     "as": "member",
+     "verse": "Turn again, O God of hosts! Look down from heaven, and see; have regard for this vine,"
+    },
+    {
+     "reference": "Psa 119:117",
+     "surface": "regard",
+     "strong": "H8159",
+     "as": "member",
+     "verse": "Hold me up, that I may be safe and have regard for your statutes continually!"
+    },
+    {
+     "reference": "Psa 144:3",
+     "surface": "regard",
+     "strong": "H3045",
+     "as": "member",
+     "verse": "O Lord, what is man that you regard him, or the son of man that you think of him?"
+    },
+    {
+     "reference": "Pro 12:10",
+     "surface": "regard",
+     "strong": "H3045",
+     "as": "member",
+     "verse": "Whoever is righteous has regard for the life of his beast, but the mercy of the wicked is cruel."
+    },
+    {
+     "reference": "Ecc 3:18",
+     "surface": "regard",
+     "strong": "H1700",
+     "as": "member",
+     "verse": "I said in my heart with regard to the children of man that God is testing them that they may see that they themselves are but beasts."
+    },
+    {
+     "reference": "Isa 5:12",
+     "surface": "regard",
+     "strong": "H5027",
+     "as": "member",
+     "verse": "They have lyre and harp, tambourine and flute and wine at their feasts, but they do not regard the deeds of the Lord, or see the work of his hands."
+    },
+    {
+     "reference": "Isa 13:17",
+     "surface": "regard",
+     "strong": "H2803H",
+     "as": "member",
+     "verse": "Behold, I am stirring up the Medes against them, who have no regard for silver and do not delight in gold."
+    },
+    {
+     "reference": "Isa 33:8",
+     "surface": "regard",
+     "strong": "H2803H",
+     "as": "member",
+     "verse": "The highways lie waste; the traveler ceases. Covenants are broken; cities are despised; there is no regard for man."
+    },
+    {
+     "reference": "Jer 24:5",
+     "surface": "regard",
+     "strong": "H5234A",
+     "as": "member",
+     "verse": "“ Thus says the Lord, the God of Israel: Like these good figs, so I will regard as good the exiles from Judah, whom I have sent away from this place to the land of the Chaldeans."
+    },
+    {
+     "reference": "Lam 4:16",
+     "surface": "regard",
+     "strong": "H5027",
+     "as": "member",
+     "verse": "The Lord himself has scattered them; he will regard them no more; no honor was shown to the priests, no favor to the elders."
+    },
+    {
+     "reference": "Act 28:22",
+     "surface": "regard",
+     "strong": "G4012",
+     "as": "member",
+     "verse": "But we desire to hear from you what your views are, for with regard to this sect we know that everywhere it is spoken against.”"
+    },
+    {
+     "reference": "1Cor 4:1",
+     "surface": "regard",
+     "strong": "G3049",
+     "as": "member",
+     "verse": "This is how one should regard us, as servants of Christ and stewards of the mysteries of God."
+    },
+    {
+     "reference": "2Cor 5:16",
+     "surface": "regard",
+     "strong": "G6063",
+     "as": "member",
+     "verse": "From now on, therefore, we regard no one according to the flesh. Even though we once regarded Christ according to the flesh, we regard him thus no longer."
+    },
+    {
+     "reference": "2Cor 5:16",
+     "surface": "regard",
+     "strong": "G1097",
+     "as": "member",
+     "verse": "From now on, therefore, we regard no one according to the flesh. Even though we once regarded Christ according to the flesh, we regard him thus no longer."
+    },
+    {
+     "reference": "Col 2:16",
+     "surface": "regard",
+     "strong": "G3313",
+     "as": "member",
+     "verse": "Therefore let no one pass judgment on you in questions of food and drink, or with regard to a festival or a new moon or a Sabbath."
+    },
+    {
+     "reference": "2Th 3:15",
+     "surface": "regard",
+     "strong": "G2233",
+     "as": "member",
+     "verse": "Do not regard him as an enemy, but warn him as a brother."
+    },
+    {
+     "reference": "1Ti 6:1",
+     "surface": "regard",
+     "strong": "G2233",
+     "as": "member",
+     "verse": "Let all who are under a yoke as bondservants regard their own masters as worthy of all honor, so that the name of God and the teaching may not be reviled."
+    },
+    {
+     "reference": "1Pe 5:12",
+     "surface": "regard",
+     "strong": "G3049",
+     "as": "member",
+     "verse": "By Silvanus, a faithful brother as I regard him, I have written briefly to you, exhorting and declaring that this is the true grace of God. Stand firm in it."
+    }
+   ],
+   "fill": {
+    "disposition": "observed",
+    "obs_text": "The surface regard carries many codes in this group, and the verses show several senses. It names a look of attention: H8159 (Gen 4:5, Psa 119:117), H5027 (Psa 74:20, Isa 5:12, Lam 4:16), H7200G (Deu 33:9, Job 37:24), H7789 (Job 35:13), H6485I (Psa 80:14), H6437G (Deu 9:27, 2Ch 6:19). It names an understanding or knowing: H0995 in Psa 28:5, H3045 in Job 9:21, Psa 144:3 and Pro 12:10, G1097 and G6063 in 2Cor 5:16, H7919A in Job 34:27, H5234A (to recognise) in Jer 24:5. It names a reckoning: H2803H in Isa 13:17 and 33:8, G3049 in 1Cor 4:1 and 1Pe 5:12, H6188 in Lev 19:23. It names a taking up of favour: H5375Q in 2Ki 3:14, H5414I in 1Sa 1:16. And in some verses the translated regard is a ground or a small word: H1700 (a matter) in Ecc 3:18, G3313 (a part) in Col 2:16, G4012 (about) in Act 28:22, H8104J (to keep) in 2Ch 5:11, and H0853, H9006 and H3820A in the units of Jdg 15:3 and 1Sa 25:25. So the surface is a word for attention by look, by knowing, by reckoning and by favour, with some verses where it is not regard at all.",
+    "basis": "stated",
+    "route": "",
+    "member_role": "lexical",
+    "partner_role": "",
+    "reason": "",
+    "older": []
+   }
+  },
+  {
+   "ledger_id": 712,
+   "item": "double-meaning",
+   "kind": "face",
+   "group": "taking account of, and reckoning as",
+   "subject": "regarded",
+   "existing_observations": [
+    {
+     "observation": 12505,
+     "stage": "strand-reading",
+     "kind": "key-statement",
+     "text": "People value and regard: \"Are we not regarded by him as foreigners?\" (Gen 31:15); \"Let not my lord hold me guilty\" (2Sa 19:19); \"who have no regard for silver\" (Isa 13:17); \"there is no regard for man",
+     "roles": [],
+     "occurrences": 4
+    },
+    {
+     "observation": 20022,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "text": "Being regarded: *\"we are regarded as sheep to be slaughtered\"* (Psa 44:22) and *\"I am counted among those who go down to the pit\"* (Psa 88:4).",
+     "roles": [
+      "characteristic"
+     ],
+     "occurrences": 1
+    },
+    {
+     "observation": 12412,
+     "stage": "strand-reading",
+     "kind": "key-statement",
+     "text": "yēṣer (\"intention\", \"inclination\") is the same word as the potter's thing formed, and as our frame.",
+     "roles": [
+      "qualifier"
+     ],
+     "occurrences": 1
+    },
+    {
+     "observation": 18877,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "text": "Hiding from God: In each scene where a person hides from God, something of God is perceived first: a sound (Genesis 3:10), God naming himself (Exodus 3:6), \"the terror of the Lord, and … the splendor ",
+     "roles": [
+      "qualifier"
+     ],
+     "occurrences": 1
+    },
+    {
+     "observation": 19220,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "text": "Where it comes from: the attempt to hide. \"Ah, you who hide deep from the Lord your counsel … and who say, 'Who sees us? Who knows us?'\" (Isa 29:15). The next verse names what that attempt does: \"You ",
+     "roles": [
+      "qualifier"
+     ],
+     "occurrences": 1
+    }
+   ],
+   "asks": "Does this surface carry a different Strong's code or sense in different verses (the faces of the word)? State the codes and the verses.",
+   "nodes_total": 9,
+   "nodes_shown": 9,
+   "strong_codes": {
+    "H2803H": 4,
+    "H2803J": 2,
+    "G1380": 1,
+    "G3049": 2
+   },
+   "evidence": [
+    {
+     "reference": "Gen 31:15",
+     "surface": "regarded",
+     "strong": "H2803H",
+     "as": "member",
+     "verse": "Are we not regarded by him as foreigners? For he has sold us, and he has indeed devoured our money."
+    },
+    {
+     "reference": "Psa 44:22",
+     "surface": "regarded",
+     "strong": "H2803H",
+     "as": "member",
+     "verse": "Yet for your sake we are killed all the day long; we are regarded as sheep to be slaughtered."
+    },
+    {
+     "reference": "Isa 29:16",
+     "surface": "regarded",
+     "strong": "H2803J",
+     "as": "member",
+     "verse": "You turn things upside down! Shall the potter be regarded as the clay, that the thing made should say of its maker, “He did not make me”; or the thing formed say of him who formed it, “He has no under"
+    },
+    {
+     "reference": "Isa 29:17",
+     "surface": "regarded",
+     "strong": "H2803J",
+     "as": "member",
+     "verse": "Is it not yet a very little while until Lebanon shall be turned into a fruitful field, and the fruitful field shall be regarded as a forest?"
+    },
+    {
+     "reference": "Lam 4:2",
+     "surface": "regarded",
+     "strong": "H2803H",
+     "as": "member",
+     "verse": "The precious sons of Zion, worth their weight in fine gold, how they are regarded as earthen pots, the work of a potter’s hands!"
+    },
+    {
+     "reference": "Hos 8:12",
+     "surface": "regarded",
+     "strong": "H2803H",
+     "as": "member",
+     "verse": "Were I to write for him my laws by the ten thousands, they would be regarded as a strange thing."
+    },
+    {
+     "reference": "Luk 22:24",
+     "surface": "regarded",
+     "strong": "G1380",
+     "as": "member",
+     "verse": "A dispute also arose among them, as to which of them was to be regarded as the greatest."
+    },
+    {
+     "reference": "Rom 2:26",
+     "surface": "regarded",
+     "strong": "G3049",
+     "as": "member",
+     "verse": "So, if a man who is uncircumcised keeps the precepts of the law, will not his uncircumcision be regarded as circumcision?"
+    },
+    {
+     "reference": "Rom 8:36",
+     "surface": "regarded",
+     "strong": "G3049",
+     "as": "member",
+     "verse": "As it is written, “For your sake we are being killed all the day long; we are regarded as sheep to be slaughtered.”"
+    }
+   ],
+   "fill": {
+    "disposition": "observed",
+    "obs_text": "The surface regarded carries four codes in this group. H2803H stands in Gen 31:15, Psa 44:22, Lam 4:2 and Hos 8:12 for the account made of persons or things by another, usually a lowering; H2803J stands in Isa 29:16 and 29:17 for the equating of one thing with another; G1380 stands in Luk 22:24 for the disciples' reckoning of rank; G3049 stands in Rom 2:26 and 8:36 for the account made by God or by others. The first two are the Hebrew of one root (to think, account), and the Greek verbs differ: G1380 is to seem or be thought, G3049 to count or credit. The sense in all is an account made of someone or something, passive in every verse.",
+    "basis": "stated",
+    "route": "",
+    "member_role": "lexical",
+    "partner_role": "",
+    "reason": "",
+    "older": []
+   }
+  }
+ ]
+}

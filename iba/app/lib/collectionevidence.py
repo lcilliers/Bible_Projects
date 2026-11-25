@@ -120,8 +120,11 @@ def _terms(conn):
     return terms, of_base
 
 
-def build_collection(conn, col: dict, tiers: list, order: Order) -> dict:
-    """Everything stored for one collection, as lists of dicts, from the tables only."""
+def build_collection(conn, col: dict, tiers: list, order: Order, lean: bool = False, only_surfaces=None) -> dict:
+    """Everything stored for one collection, as lists of dicts, from the tables only. `lean` reads only what the layered reading uses (the links, the member terms and the occurrences);
+    the chain of nodes, observations and claims, the phrases and the faults are the evidence report's and are not read (#2538: the read is as targeted as the work in hand).
+    `only_surfaces`: the surfaces of one subgroup (researcher 2026-11-24: a subgroup is read in isolation, nothing of the others is read): only their terms and occurrences are read;
+    d["all_surfaces"] keeps the surfaces of the whole collection (from the links, no occurrence read) so a word of another subgroup is still typed as a member of the collection."""
     d = {"kind": "collection", "name": col["name"], "collection": col, "tiers": tiers}
     terms, of_base = _terms(conn)
     d["links"] = _dicts(conn.execute(
@@ -149,12 +152,19 @@ def build_collection(conn, col: dict, tiers: list, order: Order) -> dict:
     tier_of = collections.defaultdict(set)
     for t in d["terms"]:
         tier_of[t["surface"]].update(t["tiers"].split("/"))
+    d["all_surfaces"] = sorted(tier_of)
     surfaces = set(tier_of)
-    occ = _occurrences(conn, order, lambda surface, vid: surface in surfaces)
+    if only_surfaces is not None:
+        surfaces &= set(only_surfaces)
+        d["terms"] = [t for t in d["terms"] if t["surface"] in surfaces]
+    occ = _occurrences(conn, order, surfaces=surfaces)
     for o in occ:
         o["memb"] = "/".join(sorted(tier_of[o["surface"]], key=lambda x: TIER_ORDER.get(x, 9)))
     occ.sort(key=lambda o: (o["surface"], o["sk"], o["position"] if o["position"] is not None else 0, o["code_ordinal"] or 0, o["vl_id"]))
     d["occurrences"] = occ
+    if lean:
+        d["phrases"], d["faults"] = [], []
+        return d
     _chain(conn, d, order)
     d["phrases"] = _phrases(conn, d)
     d["faults"] = _faults(conn, d, surfaces=surfaces)
@@ -210,6 +220,7 @@ def build_pairs(conn, d: dict, vals: dict, order: Order) -> dict:
     idx = {(c_, t_, s_): (g_ or "", st_) for c_, t_, s_, g_, st_ in conn.execute(
         "SELECT i.collection_id, i.term_id, i.strong, g.name, i.state FROM collection_subgroup_surface i LEFT JOIN collection_subgroup g ON g.id=i.subgroup_id AND g.deleted=0 WHERE i.deleted=0")}
     mine = {t["surface"] for t in d["terms"]}
+    others_own = set(d.get("all_surfaces") or ()) - mine      # the surfaces of the other subgroups of the collection (empty when the whole collection is read)
     q = P["qualifier"]
     qsub = {}
     for strong, label in conn.execute("SELECT ss.strong, cs.label FROM surface_subgroup ss JOIN cluster_subgroup cs ON cs.id=ss.cluster_subgroup_id "
@@ -244,7 +255,7 @@ def build_pairs(conn, d: dict, vals: dict, order: Order) -> dict:
         if x["morph_class"] in q["morph_classes"]:
             why.append("morph: " + x["morph_class"])
         x["qualifier"] = "; ".join(why)
-        if x["member"]:
+        if x["member"] or x["surface"] in others_own:
             x["type"] = "member of this collection"
         elif x["party_kind"]:
             x["type"] = "entity (" + x["party_kind"] + ")"
@@ -257,6 +268,8 @@ def build_pairs(conn, d: dict, vals: dict, order: Order) -> dict:
         elif "T6" in x["clusters"].split(", "):
             x["type"] = "connective"
         else:
+            x["type"] = "other"
+        if not x["surface"] and x["type"] != "member of this collection":     # a word folded into the unit of another (surface_kind shared) has no surface of its own: it cannot be a node (a node has one surface), so it is no partner (found by the audit of 2026-11-25: one such word refused a whole 2.1 file)
             x["type"] = "other"
         rows.append(x)
     rows.sort(key=lambda x: (x["sk"], x["position"] if x["position"] is not None else 0, x["code_ordinal"] or 0, x["vl_id"]))
@@ -340,7 +353,7 @@ def build_verses(conn, verses: list[dict], order: Order) -> dict:
         for sid in reach:
             memb[terms[sid][1]].add((cname, tier))
     ids = {v["verse_id"] for v in verses}
-    occ = _occurrences(conn, order, lambda surface, vid: vid in ids)
+    occ = _occurrences(conn, order, verse_ids=ids)
     for o in occ:
         o["memb"] = "; ".join(f"{c}:{t}" for c, t in sorted(memb.get(o["surface"], ()), key=lambda x: (x[0], TIER_ORDER.get(x[1], 9))))
     occ.sort(key=lambda o: (o["sk"], o["position"] if o["position"] is not None else 0, o["code_ordinal"] or 0, o["vl_id"]))
@@ -352,15 +365,34 @@ def build_verses(conn, verses: list[dict], order: Order) -> dict:
 
 
 # ══ the chain from the occurrences to the narrative ══════════════════════════════════════════════
-def _occurrences(conn, order: Order, wanted) -> list[dict]:
+_OCC_SELECT = ("SELECT vl.id, lower(trim(vl.surface)), vl.strong, vl.morph_code, vl.code_ordinal, vl.position, vl.surface_kind, vl.unit_surface, vl.unit_role, "
+               "vl.status, vl.verse_id, v.osisId, v.reference, v.text, v.deleted, vl.role, vl.is_negator, vl.party_kind, vl.unit_size "
+               "FROM verse_lexical vl JOIN verse v ON v.id=vl.verse_id WHERE vl.deleted=0 AND ")
+_OCC_COLS = ("vl_id", "surface", "strong", "morph", "code_ordinal", "position", "surface_kind", "unit_surface", "unit_role", "status",
+             "verse_id", "osis", "reference", "text", "verse_deleted", "vl_role", "is_negator", "party_kind", "unit_size")
+
+
+def _occurrences(conn, order: Order, surfaces=None, verse_ids=None) -> list[dict]:
+    """The live verse_lexical rows asked for, read by index and never by a pass over the table (#2538, researcher 2026-11-24: the read of the base data is as targeted as possible).
+    `surfaces`: the lower-cased surfaces wanted, found by idx_verse_lexical_surface_lc a chunk at a time; with `verse_ids` as well, the rows of those verses only (the surfaces
+    are searched, then the verses kept). `verse_ids` alone: the rows of those verses, by idx_verse_lexical_verse_id."""
+    rows = []
+    if surfaces is not None:
+        keep = None if verse_ids is None else set(verse_ids)
+        want = sorted(surfaces)
+        for i in range(0, len(want), CHUNK):
+            part = want[i:i + CHUNK]
+            rows += [r for r in conn.execute(_OCC_SELECT + f"lower(trim(vl.surface)) IN ({','.join('?' * len(part))})", part) if keep is None or r[10] in keep]
+    else:
+        ids = sorted(set(verse_ids or ()))
+        for i in range(0, len(ids), CHUNK):
+            part = ids[i:i + CHUNK]
+            rows += conn.execute(_OCC_SELECT + f"vl.verse_id IN ({','.join('?' * len(part))})", part).fetchall()
     occ = []
-    for r in conn.execute("SELECT vl.id, lower(trim(vl.surface)), vl.strong, vl.morph_code, vl.code_ordinal, vl.position, vl.surface_kind, vl.unit_surface, vl.unit_role, "
-                          "vl.status, vl.verse_id, v.osisId, v.reference, v.text, v.deleted, vl.role, vl.is_negator, vl.party_kind, vl.unit_size FROM verse_lexical vl JOIN verse v ON v.id=vl.verse_id WHERE vl.deleted=0"):
-        if wanted(r[1], r[10]):
-            o = dict(zip(("vl_id", "surface", "strong", "morph", "code_ordinal", "position", "surface_kind", "unit_surface", "unit_role", "status",
-                          "verse_id", "osis", "reference", "text", "verse_deleted", "vl_role", "is_negator", "party_kind", "unit_size"), r))
-            o["sk"] = order.key(o["osis"])
-            occ.append(o)
+    for r in rows:
+        o = dict(zip(_OCC_COLS, r))
+        o["sk"] = order.key(o["osis"])
+        occ.append(o)
     return occ
 
 

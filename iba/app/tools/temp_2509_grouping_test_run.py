@@ -5,6 +5,7 @@ Each case checks the tables against a direct query written here and runs the ref
 placements it makes are test rows on that copy. Usage: python iba/app/tools/temp_2509_grouping_test_run.py <db copy> <scratch dir>
 """
 import json
+import sqlite3
 import pathlib
 import sys
 
@@ -34,6 +35,10 @@ def refuses(fn, *a, **k):
 
 def main(db, scratch):
     cfg = Cfg(pathlib.Path(db))
+    import importlib.util as _iu
+    _sp = _iu.spec_from_file_location("findings_mig", str(ROOT / "iba" / "app" / "migration" / "archive" / "findings_2538_v1_20261125.py"))
+    _m = _iu.module_from_spec(_sp); _sp.loader.exec_module(_m)
+    _m.apply_to_copy(cfg.conn)
     conn = cfg.conn
     q = lambda s, *a: conn.execute(s, a).fetchall()  # noqa: E731
     one = lambda s, *a: conn.execute(s, a).fetchone()[0]  # noqa: E731
@@ -57,20 +62,27 @@ def main(db, scratch):
     ci.fill(conn, cfg, RUN)
     rows0 = cg._index(conn, cid)
     # ── pull
-    path, n = cg.pull(conn, cfg, name, pathlib.Path(scratch))
+    denied = []
+
+    def _auth(action, a1, a2, a3, a4):
+        if action == sqlite3.SQLITE_READ and a1 in ("verse_lexical", "verse"):
+            denied.append(a1)
+            return sqlite3.SQLITE_DENY
+        return sqlite3.SQLITE_OK
+    conn.set_authorizer(_auth)
+    try:
+        path, n = cg.pull(conn, cfg, name, pathlib.Path(scratch))
+    finally:
+        conn.set_authorizer(None)
     d = json.loads(path.read_text(encoding="utf-8"))
-    case("P1", "the working file has one row for each surface of the index, each with its codes (count and dictionary sense as a pointer) and a spread of its verses with the text (#2526)",
+    case("P1", "the working file has one row for each surface of the index, each with what the WordNet tables say of it and a seed group, and no verse or code (#2538, 2026-11-24)",
          n == len(rows0) == len(d["rows"]) and len({r["surface"] for r in d["rows"]}) == n
-         and all(r["codes"] and all(("sense_head" in c and "occurrences" in c) or "more_codes" in c for c in r["codes"]) and r["verses"] and all(v["text"] and v["reference"] for v in r["verses"]) for r in d["rows"]), f"{n} rows")
+         and all("wordnet" in r and "seed_group" in r and "codes" not in r and "verses" not in r and {"in_wordnet", "network_kind", "neighbours"} <= set(r["wordnet"]) for r in d["rows"]), f"{n} rows")
     case("P2", "no row is split by code and none has a by_code fill", all(not r.get("strong") and "by_code" not in r["fill"] for r in d["rows"]), "")
-    gs_ = cg.settings(cfg)
-    one_surf = max(d["rows"], key=lambda r: r["codes_total"])
-    case("P3", "the verses of a row are at most sample_verses, each from a code of the surface, and every code shown is counted from verse_lexical",
-         all(len(r["verses"]) <= gs_["sample_verses"] for r in d["rows"]) and all(len([c for c in r["codes"] if "strong" in c]) <= gs_["max_codes_shown"] for r in d["rows"])
-         and all(sum(c["occurrences"] for c in r["codes"]) == r["occurrences"] == one("SELECT count(*) FROM verse_lexical WHERE deleted=0 AND strong IS NOT NULL AND lower(trim(surface))=?", r["surface"].strip().lower()) for r in d["rows"]),
-         one_surf["surface"])
-    multi = [r for r in d["rows"] if r["codes_total"] > 1]
-    case("P4", "the family of each surface is shown with the others of its family in the collection", all("family" in r and "family_in_collection" in r for r in d["rows"]), f"{len(multi)} surfaces with several codes")
+    case("P3", "the pull reads neither verse_lexical nor verse (an authorizer refuses any read of them and the pull completes)", not denied and n == len(rows0), denied[:3])
+    own = [r for r in d["rows"] if not r["wordnet"]["in_wordnet"] or r["wordnet"]["network_kind"] in (None, "no_pair")]
+    case("P4", "a surface with no WordNet entry is a subgroup on its own: its seed group is the surface itself and no other surface shares it",
+         all(r["seed_group"] == r["surface"] for r in own) and all(sum(1 for x in d["rows"] if x["seed_group"] == r["surface"]) == 1 for r in own), f"{len(own)} surfaces with no WordNet entry")
     # ── refusals (each leaves nothing written)
     before = (one("SELECT count(*) FROM collection_subgroup"), one("SELECT count(*) FROM collection_subgroup_surface WHERE state!='unplaced' AND deleted=0"))
     DEF = "the surfaces of this group mean a falling away from what was held, as the dictionary gives their meaning (test of #2509)"

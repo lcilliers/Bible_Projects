@@ -11,7 +11,9 @@ cfg_setting reading.observation_items, reading.observation_rules and reading.nod
                              stage 3 observation of the subgroup is taken up by a finding or declared not used, with its reason
   3.2 collection-gathering   one row for the collection: the behaviours discovered (each a flag finding of type discovery that gathers element observations by traced nodes), and the findings that
                              relate elements across subgroups; every 3.1 observation is gathered into a behaviour or declared not gathered, with its reason
-  3.3 interworking           one row for each subgroup and partner collection that share pair_min_verses verses: how they work together, resting on 3.1 or 3.2 observations
+  3.3 interworking           one row for each UNIQUE MATCH across all the observations whose nodes reference more than one collection (researcher 2026-11-25; no minimum, no cap, no judgement of
+                             significance): one new observation per match, tracing every observation the match comes from, with the occurrences of both sides in the shared verses as nodes;
+                             the basis for a deeper analysis of what the pairing means. It depends on 3.2 and the pairings recording the collection on the nodes of both sides
 
 An occurrence node of a finding lies within the occurrences of the observations the finding rests on, unless the finding records a read-back (the verse and why): reading back into the base data
 is an act on the record (3.1 and 3.2). A filled file is checked whole and written in one savepoint; the written rows are then checked by check_row, the same function LayerCheck uses, and the
@@ -23,13 +25,13 @@ import collections
 import json
 import pathlib
 
+from . import buildvalidate as bv
 from . import layerreading as lr
 from . import observationrecord as orec
 from . import verseevidence as ve
 
 WHO = lr.WHO
 STATE = "row_state:"   # the prefix of the ledger reason of an observed row: JSON {"not_used": {id: reason}, "not_gathered": {id: reason}, "read_back": {finding key: [{verse, why}]}}; the check re-reads it
-SOURCE_STEPS = {"3.2": ("3.1",), "3.3": ("3.1", "3.2")}
 SUBGROUP, COLLECTION, CROSS = "subgroup-analysis", "collection-gathering", "interworking"
 
 
@@ -40,64 +42,180 @@ def _roles(cfg) -> set:
     return set(g.get("relevant", [])) | set(g.get("bears_on", [])) | set(g.get("recognised", []))
 
 
-def _stage3_of_subgroup(conn, s, cid: int, gid: int, with_lexical: bool = False) -> list:
-    """The live stage 3 observations (layers 1 and 2; with the stage 1 word senses when with_lexical) that have a live node on the subgroup's words in this collection."""
-    st = [s["stages"]["1"], s["stages"]["2"]] + ([s["stages"]["0"]] if with_lexical else [])
-    return [r[0] for r in conn.execute(
-        "SELECT DISTINCT o.id FROM ib_observation o JOIN ib_node n ON n.observation_id=o.id WHERE o.deleted=0 AND n.deleted=0 AND n.collection_id=? AND n.subgroup_id=? "
-        "AND o.stage IN (SELECT value FROM json_each(?)) ORDER BY o.id", (cid, gid, json.dumps(st)))]
+def _on(conn, vls, nature: str) -> set:
+    """The live observations of the given nature with a live word node on one of the occurrences (idx_ib_node_verse_lexical_id, in chunks). The input of stage 4 is chosen by the MARKER, never by the
+    stage (researcher 2026-11-24: "extract the evidence observations"; 2026-11-22: the marker follows content, not stage; RS-04)."""
+    out = set()
+    for part in lr._chunks(sorted(set(int(v) for v in vls))):
+        out |= {r[0] for r in conn.execute("SELECT DISTINCT o.id FROM ib_node n JOIN ib_observation o ON o.id=n.observation_id WHERE n.deleted=0 AND o.deleted=0 AND n.traced_observation_id IS NULL AND o.nature=? "
+                                           "AND n.verse_lexical_id IN (SELECT value FROM json_each(?))", (nature, json.dumps(part)))}
+    return out
 
 
-def _stage4_of(conn, s, cid: int, steps) -> list:
-    """The live stage 4 observations written under the ledger rows of the given steps of this collection."""
-    return [r[0] for r in conn.execute(
-        "SELECT DISTINCT o.id FROM ib_observation o JOIN collection_layer_item c ON o.stable_key LIKE 'layer:' || c.id || ':%' WHERE o.deleted=0 AND c.deleted=0 AND c.collection_id=? "
-        "AND c.step IN (SELECT value FROM json_each(?)) AND o.stage=? ORDER BY o.id", (cid, json.dumps(list(steps)), s["stages"]["3"]))]
+def _of_steps(conn, cid: int, steps) -> set:
+    """The live observations written under the ledger rows of the given steps of a collection (the stable key of the row)."""
+    return {r[0] for r in conn.execute("SELECT DISTINCT o.id FROM ib_observation o JOIN collection_layer_item c ON o.stable_key LIKE 'layer:' || c.id || ':%' WHERE o.deleted=0 AND c.deleted=0 AND c.collection_id=? "
+                                       "AND c.step IN (SELECT value FROM json_each(?))", (cid, json.dumps(list(steps))))}
+
+
+def _inner_of_collection(conn, cid: int, own_steps) -> set:
+    """Every live inner_being observation with a live node of the collection, by marker (the 3.1 findings and the older ones kept as inner being), without what the given steps of the collection wrote."""
+    ids = {r[0] for r in conn.execute("SELECT DISTINCT o.id FROM ib_node n JOIN ib_observation o ON o.id=n.observation_id WHERE n.deleted=0 AND o.deleted=0 AND o.nature='inner_being' AND n.collection_id=?", (cid,))}
+    return ids - _of_steps(conn, cid, own_steps)
+
+
+MATCH = "match:"
+
+
+def match_subject(sa, ta, coll, sb, tb) -> str:
+    """The subject of a 3.3 row: this collection's word, the partner collection and its word (surface|strong each)."""
+    return f"{MATCH}{sa or ''}|{ta or ''}~{coll}:{sb or ''}|{tb or ''}"
+
+
+def parse_match(subject):
+    """(this surface, this strong, partner collection, partner surface, partner strong) of a 3.3 subject, or None."""
+    if not (subject or "").startswith(MATCH):
+        return None
+    a, _, b = subject[len(MATCH):].partition("~")
+    coll, _, w = b.partition(":")
+    sa, _, ta = a.rpartition("|")
+    sb, _, tb = w.rpartition("|")
+    return sa, ta, coll, sb, tb
+
+
+def match_partners(subjects) -> set:
+    """The partner collection names of the match subjects."""
+    return {m[2] for m in (parse_match(s_) for s_ in subjects) if m}
+
+
+def _cross_observations(conn, cid: int) -> dict:
+    """{(observation id, verse reference): [(collection id, surface, strong, vl id)]} for every live observation's live word nodes in a verse where the observation has a node of the collection AND a node of
+    another collection (the nodes carry the collection: researcher 2026-11-25), except what a 3.3 row wrote (3.3 reads the others). A match is a pairing in a verse. Searched by idx_ib_node_collection."""
+    wrote = {r[0] for r in conn.execute("SELECT DISTINCT o.id FROM ib_observation o JOIN collection_layer_item c ON o.stable_key LIKE 'layer:' || c.id || ':%' WHERE o.deleted=0 AND c.step='3.3'")}
+    by = collections.defaultdict(list)
+    for oid, ref, col, sf, st, vl in conn.execute("SELECT n.observation_id, n.verse_reference, n.collection_id, n.surface, n.strong, n.verse_lexical_id FROM ib_node n JOIN ib_observation o ON o.id=n.observation_id "
+                                                  "WHERE n.deleted=0 AND o.deleted=0 AND n.traced_observation_id IS NULL AND n.verse_lexical_id IS NOT NULL AND n.collection_id IS NOT NULL "
+                                                  "AND n.observation_id IN (SELECT observation_id FROM ib_node WHERE collection_id=? AND deleted=0)", (cid,)):
+        if oid not in wrote:
+            by[(oid, ref)].append((col, sf, st, vl))
+    return {k: w for k, w in by.items() if len({x[0] for x in w}) > 1 and any(x[0] == cid for x in w)}
+
+
+_MATCH_CACHE: dict = {}
+
+
+def matches(conn, L) -> dict:
+    key = (id(conn), L["cid"], conn.total_changes)
+    if key not in _MATCH_CACHE:
+        _MATCH_CACHE.clear()
+        _MATCH_CACHE[key] = _matches(conn, L)
+    return _MATCH_CACHE[key]
+
+
+def _matches(conn, L) -> dict:
+    """{subject: {"sources": {observation ids}, "occurrences": {vl ids of both sides}, "partner": name}}: one entry for each unique match, a distinct pairing of a word (surface, Strong's code) of this
+    collection with a word of another collection that the nodes of one or more observations place together (researcher 2026-11-25: one new observation for each unique match across all observations)."""
+    cid = L["cid"]
+    names = {v: k for k, v in L["col_ids"].items()}
+    out: dict = {}
+    for (oid, _ref), w in _cross_observations(conn, cid).items():
+        others = {}
+        for col, sf, st, vl in w:
+            if col != cid:
+                others.setdefault((col, sf, st), set()).add(vl)
+        for (sa, ta) in {(x[1], x[2]) for x in w if x[0] == cid}:
+            mine_vl = {x[3] for x in w if x[0] == cid and (x[1], x[2]) == (sa, ta)}
+            for (col, sb, tb), vls in others.items():
+                key = match_subject((sa or '').lower(), ta, names.get(col, str(col)), (sb or '').lower(), tb)
+                m = out.setdefault(key, {"sources": set(), "occurrences": set(), "partner": names.get(col, str(col)), "partner_id": col})
+                m["sources"].add(oid)
+                m["occurrences"] |= vls | mine_vl
+    return out
+
+
+def cross_gaps(conn, L) -> list[str]:
+    """What stops 3.3 reading the pairings: an observation of this collection's pairing (2.1) or collection-gathering (3.2) rows whose word nodes do not carry the collection (3.3 can then not extract
+    the match), and a partner word of the typed pairings whose node on such an observation names no collection or the wrong one. Refused before 3.3 opens (researcher 2026-11-25)."""
+    cid = L["cid"]
+    gaps = []
+    ids = [r[0] for r in conn.execute("SELECT DISTINCT o.id FROM ib_observation o JOIN collection_layer_item c ON o.stable_key LIKE 'layer:' || c.id || ':%' WHERE o.deleted=0 AND c.deleted=0 AND c.collection_id=? "
+                                      "AND (c.item='pairing' OR c.step='3.2')", (cid,))]
+    for part in lr._chunks(ids):
+        for oid, n_ in conn.execute("SELECT observation_id, count(*) FROM ib_node WHERE deleted=0 AND traced_observation_id IS NULL AND verse_lexical_id IS NOT NULL AND collection_id IS NULL "
+                                    "AND observation_id IN (SELECT value FROM json_each(?)) GROUP BY observation_id", (json.dumps(part),)):
+            gaps.append(f"observation {oid}: {n_} word node(s) carry no collection, so a match cannot be read from them")
+    pairs = (L.get("pairs") or {}).get("pairs") or []
+    partner_of = {}
+    for p in pairs:
+        if p["other"]["type"] == "word of another collection":
+            partner_of.setdefault(p["other"]["vl_id"], set()).update(L["col_ids"].get(c) for c in p["other"].get("collections") or [])
+    if partner_of and ids:
+        for part in lr._chunks(partner_of):
+            for oid, vl, col in conn.execute("SELECT observation_id, verse_lexical_id, collection_id FROM ib_node WHERE deleted=0 AND traced_observation_id IS NULL AND verse_lexical_id IN (SELECT value FROM json_each(?)) "
+                                             "AND observation_id IN (SELECT value FROM json_each(?))", (json.dumps(part), json.dumps(ids))):
+                if col not in partner_of[vl]:
+                    gaps.append(f"observation {oid}: the node on partner occurrence {vl} names collection {col}, not the partner's {sorted(x for x in partner_of[vl] if x)}")
+    return gaps[:50]
+
+
+def match_occurrences(conn, ids) -> list[dict]:
+    """The occurrences of a match as the rows of the collection load hold them (vl_id, osis, verse_id, reference, surface, strong)."""
+    out = []
+    for part in lr._chunks(ids):
+        for r in conn.execute("SELECT vl.id, v.osisId, vl.verse_id, v.reference, vl.surface, vl.strong FROM verse_lexical vl JOIN verse v ON v.id=vl.verse_id WHERE vl.id IN (SELECT value FROM json_each(?)) ORDER BY vl.id", (json.dumps(part),)):
+            out.append({"vl_id": r[0], "osis": r[1], "verse_id": r[2], "reference": r[3], "surface": r[4], "strong": r[5], "group": None})
+    return out
 
 
 def derive(conn, cfg, L, step: str) -> list[dict]:
     s = lr.settings(cfg)
     items = lr.step_def(s, step)["items"]
-    th = s["thresholds"]
     out = []
     occ = [o for o in L["d"]["occurrences"] if o["group"]]
     if SUBGROUP in items:
-        out += [{"item": SUBGROUP, "subgroup_id": g, "subject": ""} for g in sorted({o["group"] for o in occ}) if _stage3_of_subgroup(conn, s, L["cid"], g)]
+        out += [{"item": SUBGROUP, "subgroup_id": g, "subject": ""} for g in sorted({o["group"] for o in occ}) if _on(conn, [o["vl_id"] for o in occ if o["group"] == g], "evidence")]
     if COLLECTION in items and occ:
         out += [{"item": COLLECTION, "subgroup_id": 0, "subject": ""}]
     if CROSS in items:
-        name2id = {g["name"]: g["id"] for g in L["groups"].values()}
-        partner = collections.defaultdict(set)
-        for p in L["pairs"]["pairs"]:
-            g = name2id.get(p["member"]["subgroup"])
-            if g is not None and p["other"]["type"] == "word of another collection":
-                for cn in p["other"]["collections"]:
-                    partner[(g, cn)].add(p["member"]["verse_id"])
-        out += [{"item": CROSS, "subgroup_id": g, "subject": f"collection:{cn}"} for (g, cn), vs in sorted(partner.items()) if len(vs) >= th["pair_min_verses"]]
+        out += [{"item": CROSS, "subgroup_id": 0, "subject": subj} for subj in sorted(matches(conn, L))]      # one row for each unique match: no minimum, no cap (researcher 2026-11-25)
     return out
 
 
-def demanded(L, item: str, gid: int, subject: str) -> list[dict]:
+def demanded(L, item: str, gid: int, subject: str, conn=None) -> list[dict]:
     """The occurrences (verse_lexical rows as the collection load holds them) a row's nodes may name: the subgroup's words, all the collection's grouped words, or the shared verses with a partner."""
     if item == SUBGROUP:
         return [o for o in L["d"]["occurrences"] if o["group"] == gid]
     if item == COLLECTION:
         return [o for o in L["d"]["occurrences"] if o["group"]]
-    _kind, _, rest = subject.partition(":")
-    return [o for o, _r in lr.expected_nodes(L, "pairing", gid, rest)]
+    m = matches(conn, L).get(subject) if conn is not None else None      # the occurrences of both sides of the match
+    return match_occurrences(conn, sorted(m["occurrences"])) if m else []
 
 
 def _allowed(dem: list[dict]) -> set:
     return {int(o["vl_id"]) for o in dem}
 
 
-def _sources(conn, s, L, sd, gid: int) -> tuple[set, set]:
-    """(the observations a finding of the row may rest on, those the row must take up): 3.1 rests on the stage 3 observations (and the stage 1 senses) of the subgroup and takes up the stage 3 ones;
-    3.2 rests on the 3.1 observations of the collection and takes up all of them; 3.3 rests on 3.1 and 3.2 observations and takes up none."""
+def _sources(conn, s, L, sd, gid: int, subject: str = "") -> tuple[set, set]:
+    """(the observations a finding of the row may rest on, those the row must take up), all chosen by the MARKER (researcher 2026-11-24):
+    3.1 rests on the EVIDENCE observations of the subgroup (every stage, the senses first) and takes up those at the top of the chain: the sense, pairing and older evidence observations; a word observation a sense
+    already carries (a traced node) is rested on through the sense and is not demanded again;
+    3.2 rests on, and takes up, ALL the inner_being observations of the collection (the 3.1 findings and the older ones kept as inner being);
+    3.3 rests on, and takes up, every observation its match comes from (any nature: those whose nodes reference this collection and the partner's)."""
     if sd["key"] == "3.1":
-        return set(_stage3_of_subgroup(conn, s, L["cid"], gid, with_lexical=True)), set(_stage3_of_subgroup(conn, s, L["cid"], gid))
-    below = set(_stage4_of(conn, s, L["cid"], SOURCE_STEPS[sd["key"]]))
-    return below, (below if sd["key"] == "3.2" else set())
+        vls = [o["vl_id"] for o in L["d"]["occurrences"] if o["group"] == gid]
+        ev = _on(conn, vls, "evidence")
+        carried = set()
+        if ev:
+            carried = {r[0] for r in conn.execute("SELECT DISTINCT n.traced_observation_id FROM ib_node n JOIN ib_observation o ON o.id=n.observation_id WHERE n.deleted=0 AND o.deleted=0 AND o.stage=? "
+                                                  "AND n.traced_observation_id IN (SELECT value FROM json_each(?))", (s["stages"]["1"], json.dumps(sorted(ev))))}
+            carried = {c for c in carried if conn.execute("SELECT stage FROM ib_observation WHERE id=?", (c,)).fetchone()[0] == s["stages"]["0"]}
+        return ev, ev - carried
+    if sd["key"] == "3.2":
+        inner = _inner_of_collection(conn, L["cid"], ("3.2", "3.3"))
+        return inner, inner
+    m = matches(conn, L).get(subject)      # 3.3: the observations the match comes from, every one traced by the observation of the match
+    src = set(m["sources"]) if m else set()
+    return src, src
 
 
 def _covered(conn, ids) -> set:
@@ -131,7 +249,6 @@ def pull(conn, cfg, L, step: str, rows: list, out_dir: pathlib.Path):
     s = lr.settings(cfg)
     sd = lr.step_def(s, step)
     cap = s.get("pull_max_rows", 5)
-    nverse = s.get("pull_verse_texts", 12)
     spec = orec.items_setting(cfg)
     by_item = {i["key"]: i for i in spec["items"]}
     inter = cfg.setting("layer.interventions") or []
@@ -141,8 +258,8 @@ def pull(conn, cfg, L, step: str, rows: list, out_dir: pathlib.Path):
     for r in rows[:cap]:
         lid, _, _, item, gid, subject, state, oid, reason, val = r
         idef = s["items"][item]
-        dem = demanded(L, item, gid, subject)
-        sources, required = _sources(conn, s, L, sd, gid)
+        dem = demanded(L, item, gid, subject, conn)
+        sources, required = _sources(conn, s, L, sd, gid, subject)
         uses = [{"item": k, "name": by_item[k]["name"], "kinds": by_item[k]["kinds"], "bases": by_item[k]["bases"], "shared": by_item[k]["shared"],
                  "nuances": [x for x in nuances if x.get("item") == k]} for k in idef["uses"] if k in by_item]
         row = {"ledger_id": lid, "step": step, "item": item, "group": L["groups"][gid]["name"] if gid else None, "subject": subject, "asks": idef["asks"], "uses": uses,
@@ -152,19 +269,18 @@ def pull(conn, cfg, L, step: str, rows: list, out_dir: pathlib.Path):
             verses = _texts(conn, dem)
             row["definition_of_the_subgroup"] = L["groups"][gid].get("note")
             row["occurrences_total"] = len(dem)
-            row["verses_of_the_subgroup"] = {k: v for k, v in list(verses.items())[:nverse]}
-            row["verses_not_shown"] = max(0, len(verses) - nverse)
+            row["verses_of_the_subgroup"] = verses      # ALL the verses of the subgroup with their text (researcher 2026-11-24)
             strongs = sorted({o["strong"] for o in dem if o["strong"]})
             row["meaning_by_code"] = ve.meaning(cfg, conn, {c: ("NT" if c.startswith("G") else "OT") for c in strongs})
             earlier = collections.OrderedDict()
             for part in lr._chunks(sorted(_allowed(dem))):
-                for r2 in conn.execute("SELECT o.id, o.stage, o.tag, o.obs_text FROM ib_observation o JOIN ib_node n ON n.observation_id=o.id WHERE o.deleted=0 AND n.deleted=0 AND o.stage NOT IN "
-                                       "(SELECT value FROM json_each(?)) AND n.verse_lexical_id IN (SELECT value FROM json_each(?)) ORDER BY o.id", (json.dumps(sorted(set(s["stages"].values()))), json.dumps(part))):
-                    earlier.setdefault(r2[0], {"observation": r2[0], "stage": r2[1], "kind": r2[2], "text": (r2[3] or "")[:260], "action": None})
-            row["earlier_observations_for_information"] = list(earlier.values())[:30]
+                for r2 in conn.execute("SELECT o.id, o.stage, o.tag, o.obs_text, o.nature FROM ib_observation o JOIN ib_node n ON n.observation_id=o.id WHERE o.deleted=0 AND n.deleted=0 AND o.stage NOT IN "
+                                       "(SELECT value FROM json_each(?)) AND o.nature='inner_being' AND n.verse_lexical_id IN (SELECT value FROM json_each(?)) ORDER BY o.id", (json.dumps(sorted(set(s["stages"].values()))), json.dumps(part))):
+                    earlier.setdefault(r2[0], {"observation": r2[0], "stage": r2[1], "kind": r2[2], "nature": r2[4], "text": (r2[3] or ""), "action": None})
+            row["older_inner_being_observations"] = list(earlier.values())      # every one, whole: each is answered (accepted, restated, consumed, merged, deleted or deferred) with a trace to evidence (IB-07)
         if step == "3.3":
             row["shared_verses"] = _texts(conn, dem)
-        occ = [{"occurrence": o["vl_id"], "reference": o["reference"], "surface": o["surface"], "strong": o["strong"]} for o in dem][:s["pull_max_nodes"]]
+        occ = [{"occurrence": o["vl_id"], "reference": o["reference"], "surface": o["surface"], "strong": o["strong"]} for o in dem]
         row["occurrences"] = occ
         fill = {"disposition": "observed | none" if idef["none_allowed"] else "observed",
                 "findings": [{"key": "f1", "kind": "", "text": "", "basis": "stated | read", "parts": {"item": "", "grounds": ""},
@@ -237,7 +353,7 @@ def record(conn, cfg, run_id: str, data: dict, keep: bool) -> dict:
     s = lr.settings(cfg)
     name, step = data.get("collection"), data.get("step")
     sd = lr.step_def(s, step)
-    L = lr.load(conn, cfg, name, pairs=lr.needs_pairs(sd))
+    L = lr.load(conn, cfg, name, pairs=lr.needs_pairs(sd), subgroup=lr.file_scope(conn, name, step, data))
     minr = s["min_reason_chars"]
     loop = orec.loop_setting(cfg)
     ledger = {r[0]: r for r in lr._rows(conn, L["cid"], step)}
@@ -265,12 +381,12 @@ def record(conn, cfg, run_id: str, data: dict, keep: bool) -> dict:
         if disp != "observed":
             errors.append(f"{where}: disposition must be observed or none")
             continue
-        dem = demanded(L, item, gid, subject)
+        dem = demanded(L, item, gid, subject, conn)
         if not dem:
             errors.append(f"{where}: the data holds no occurrence for this aspect")
             continue
         allowed = _allowed(dem)
-        sources, required = _sources(conn, s, L, sd, gid)
+        sources, required = _sources(conn, s, L, sd, gid, subject)
         findings = fill.get("findings") or []
         if not findings:
             errors.append(f"{where}: the row is answered by findings (fill.findings): at least one, each with its kind, text, basis, parts and nodes")
@@ -320,6 +436,8 @@ def record(conn, cfg, run_id: str, data: dict, keep: bool) -> dict:
         if key_:
             errors += [f"{where}: observation {m} is neither rested on by a finding nor in {key_} with its reason" for m in sorted(required - traced_all - declared)[:20]]
             errors += [f"{where}: observation {m} is both rested on by a finding and in {key_}; keep one" for m in sorted(traced_all & declared)]
+        if step == "3.3":
+            errors += [f"{where}: observation {m} is part of this match and no finding traces it (every observation the match comes from is traced)" for m in sorted(required - traced_all)[:20]]
         if step == "3.2" and not any(isinstance(f.get("parts"), dict) and f["parts"].get("item") == "flag" and f["parts"].get("flag_type") == "discovery" for _, f in specs):
             errors.append(f"{where}: the collection shows at least one behaviour: a finding of the item flag, flag_type discovery, that gathers its element observations (or record the row as none, with the reason)")
         ex = []
@@ -332,7 +450,7 @@ def record(conn, cfg, run_id: str, data: dict, keep: bool) -> dict:
                 errors.append(f"{where}: observation {e['observation']}: a {a} needs its reason ({minr} characters or more)")
             else:
                 ex.append(e)
-        todo.append({"lrow": lrow, "disp": "observed", "specs": specs, "existing": ex, "where": where,
+        todo.append({"lrow": lrow, "disp": "observed", "specs": specs, "existing": ex, "where": where, "older": fill.get("older"),
                      "state": {"not_used": {str(k): v for k, v in decl.items()} if step == "3.1" else {}, "not_gathered": {str(k): v for k, v in decl.items()} if step == "3.2" else {},
                                "read_back": {k: v for k, v in read_back.items() if v}}})
     if errors:
@@ -342,7 +460,7 @@ def record(conn, cfg, run_id: str, data: dict, keep: bool) -> dict:
     try:
         for t in todo:   # an earlier answer of the row is withdrawn first, so that its text is not a duplicate of the new one
             lid = t["lrow"][0]
-            for (prev,) in conn.execute("SELECT id FROM ib_observation WHERE stable_key LIKE ? AND deleted=0", (f"layer:{lid}:%",)).fetchall():
+            for (prev,) in conn.execute("SELECT id FROM ib_observation WHERE stable_key >= ? AND stable_key < ? AND deleted=0", (f"layer:{lid}:", f"layer:{lid};")).fetchall():
                 for (pn,) in conn.execute("SELECT id FROM ib_node WHERE observation_id=? AND deleted=0", (prev,)).fetchall():
                     orec.delete_node(conn, pn, f"re-recorded under ledger row {lid} ({run_id})", None, run_id, WHO)
                 orec.soft_delete_observation(conn, prev, f"re-recorded under ledger row {lid} ({run_id})", None, run_id, WHO)
@@ -358,10 +476,11 @@ def record(conn, cfg, run_id: str, data: dict, keep: bool) -> dict:
         if errors:
             raise lr.LayerError("the file is refused, nothing written; problems:\n  " + "\n  ".join(errors))
         stage = s["stages"][str(sd["layer"])]
+        texts = bv.scope_texts(conn, cfg, L["cid"])
         for t in todo:
             lid = t["lrow"][0]
             if t["disp"] == "none":
-                conn.execute(f"UPDATE collection_layer_item SET state='none', observation_id=NULL, reason=?, validated=0, updated_at={lr.NOW}, run_id=? WHERE id=?", (t["reason"], run_id, lid))
+                conn.execute(f"UPDATE collection_layer_item SET answered_at={lr.NOW}, state='none', observation_id=NULL, reason=?, validated=0, updated_at={lr.NOW}, run_id=? WHERE id=?", (t["reason"], run_id, lid))
                 res["none"] += 1
                 continue
             for e in t["existing"]:
@@ -377,13 +496,17 @@ def record(conn, cfg, run_id: str, data: dict, keep: bool) -> dict:
                         orec.delete_node(conn, nx["node"], (nx.get("reason") or e["reason"]).strip(), None, run_id, WHO)
                     elif nx.get("action") == "modify":
                         orec.modify_node(cfg, conn, nx["node"], nx.get("set") or {}, (nx.get("reason") or e["reason"]).strip(), None, run_id, WHO)
-            written = orec.write(conn, t["plan"], None, run_id, stage=stage, stable_key=lambda k, lid=lid: f"layer:{lid}:{run_id}:{k}")
+            written = orec.write(conn, t["plan"], None, run_id, stage=stage, stable_key=lambda k, lid=lid: f"layer:{lid}:{run_id}:{k}", nature=s["items"][t["lrow"][3]]["nature"])
+            for w in written.values():
+                if w["new"]:
+                    errors += lr.settle_nodes(conn, s, w["observation"], run_id, sd["layer"])
+            errors += bv.settle_row(conn, cfg, s, L["cid"], [w["observation"] for w in written.values() if w["new"]], t.get("older"), run_id, texts, 99, sd["key"], {int(o["vl_id"]) for o in L["d"]["occurrences"]})
             first = min(w["observation"] for w in written.values())
             res["nodes"] += sum(len(w["nodes"]) for w in written.values())
             res["observed"] += sum(1 for w in written.values() if w["new"])
-            conn.execute(f"UPDATE collection_layer_item SET state='observed', observation_id=?, reason=?, validated=0, updated_at={lr.NOW}, run_id=? WHERE id=?",
+            conn.execute(f"UPDATE collection_layer_item SET answered_at={lr.NOW}, state='observed', observation_id=?, reason=?, validated=0, updated_at={lr.NOW}, run_id=? WHERE id=?",
                          (first, STATE + json.dumps(t["state"], ensure_ascii=False, sort_keys=True), run_id, lid))
-        L = lr.load(conn, cfg, name, pairs=lr.needs_pairs(sd))     # the grouping on the nodes is read back, so the check sees what was written
+        L = lr.load(conn, cfg, name, pairs=lr.needs_pairs(sd), subgroup=lr.file_scope(conn, name, step, data))     # the grouping on the nodes is read back, so the check sees what was written
         for t in todo:
             if t["disp"] != "observed":
                 continue
@@ -420,7 +543,7 @@ def check_row(conn, cfg, s, L, sd, r) -> str | None:
         if not idef["none_allowed"] or len((reason or "").strip()) < minr:
             return "recorded as none without a permitted reason"
         return None
-    dem = demanded(L, item, gid, subject)
+    dem = demanded(L, item, gid, subject, conn)
     if not dem:
         return "the data no longer demands this aspect (LayerOpen retires it)"
     allowed = _allowed(dem)
@@ -428,8 +551,8 @@ def check_row(conn, cfg, s, L, sd, r) -> str | None:
     stage = s["stages"][str(sd["layer"])]
     inner = _roles(cfg)
     groups = orec.node_role_groups(cfg)
-    sources, required = _sources(conn, s, L, sd, gid)
-    own = conn.execute("SELECT id, stage, tag, basis, route, parts, obs_text, stable_key FROM ib_observation WHERE deleted=0 AND stable_key LIKE ?", (f"layer:{lid}:%",)).fetchall()
+    sources, required = _sources(conn, s, L, sd, gid, subject)
+    own = conn.execute("SELECT id, stage, tag, basis, route, parts, obs_text, stable_key FROM ib_observation WHERE deleted=0 AND stable_key >= ? AND stable_key < ?", (f"layer:{lid}:", f"layer:{lid};")).fetchall()
     if not own:
         return "its observations are missing or withdrawn"
     st = {}
@@ -495,6 +618,8 @@ def check_row(conn, cfg, s, L, sd, r) -> str | None:
             return f"{len(miss)} observations are neither rested on by a finding nor declared (first: {sorted(miss)[0]}); nothing the step reads may be left out silently"
         if decl - required:
             return "it declares an observation this row does not take up"
+    if step == "3.3" and required - traced_all:
+        return f"{len(required - traced_all)} observation(s) of the match are not traced (first: {sorted(required - traced_all)[0]}); every observation the match comes from is traced"
     if step == "3.2" and not discovery:
         return "no behaviour: the collection row needs a flag finding of type discovery (or none, with its reason)"
     return None

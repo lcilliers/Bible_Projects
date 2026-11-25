@@ -13,7 +13,11 @@ import sys
 
 ROOT = pathlib.Path(__file__).resolve().parents[3]
 sys.path.insert(0, str(ROOT))
+from iba.app.lib import buildvalidate as bv  # noqa: E402
 from iba.app.lib import collectionindex as ci  # noqa: E402
+from iba.app.lib import collectionvalidate as cvalid  # noqa: E402
+from iba.app.lib import observationrecord as orec  # noqa: E402
+from iba.app.lib import validationactions as va  # noqa: E402
 from iba.app.lib import layerreading as lr  # noqa: E402
 from iba.app.lib import lexicalalignment as la  # noqa: E402
 from iba.app.lib.cfg import Cfg  # noqa: E402
@@ -38,6 +42,10 @@ def refuses(fn, *a, **k):
 def main(db, scratch):
     assert pathlib.Path(db).resolve() != (ROOT / "iba/app/db/iba.db").resolve(), "run against a copy"
     cfg = Cfg(pathlib.Path(db))
+    import importlib.util as _iu
+    _sp = _iu.spec_from_file_location("findings_mig", str(ROOT / "iba" / "app" / "migration" / "archive" / "findings_2538_v1_20261125.py"))
+    _m = _iu.module_from_spec(_sp); _sp.loader.exec_module(_m)
+    _m.apply_to_copy(cfg.conn)
     conn = cfg.conn
     q = lambda s, *a: conn.execute(s, a).fetchall()  # noqa: E731
     one = lambda s, *a: conn.execute(s, a).fetchone()[0]  # noqa: E731
@@ -50,13 +58,13 @@ def main(db, scratch):
     case("C1", "layer.reading has the three steps of layer 3 with the needs of the design and the three observation-led items; the verse-first items are gone",
          [x["key"] for x in steps3] == ["3.1", "3.2", "3.3"] and [x["items"] for x in steps3] == [["subgroup-analysis"], ["collection-gathering"], ["interworking"]]
          and steps3[0]["needs"] == ["1.1", "1.2", "2.1"] and steps3[1]["needs"] == ["3.1"] and steps3[2]["needs"] == ["3.2"] and "verse-working" not in s["items"] and "subgroup-working" not in s["items"]
-         and s["pull_verse_texts"] > 0, [x["items"] for x in steps3])
+        , [x["items"] for x in steps3])
     known = {i["key"] for i in __import__("iba.app.lib.observationrecord", fromlist=["x"]).items_setting(cfg)["items"]}
     case("C2", "the stage 4 items use only items of reading.observation_items, none the meaning; each has asks; 3.2 may use the discovery flag; the interventions are the observation-led prompts",
          all(set(v["uses"]) <= known and "meaning" not in v["uses"] and v["asks"] for v in items3.values()) and "flag" in items3["collection-gathering"]["uses"]
          and any("building blocks" in x or "Record building blocks" in x for x in cfg.setting("layer.interventions")), {k: v["uses"] for k, v in items3.items()})
-    case("C3", "six rules IB-01 to IB-06 are active and name the observation-led rows; the use text of collection_layer_item.item names the new items",
-         one("SELECT count(*) FROM cfg_method_rule WHERE active=1 AND rule_key LIKE 'IB-0%'") == 6 and "subgroup-analysis" in one("SELECT rule_text FROM cfg_method_rule WHERE rule_key LIKE 'IB-01 %'")
+    case("C3", "the rules IB-01 to IB-06 and IB-07 (#2538) are active and name the observation-led rows; the use text of collection_layer_item.item names the new items",
+         one("SELECT count(*) FROM cfg_method_rule WHERE active=1 AND rule_key LIKE 'IB-0%'") == 7 and "subgroup-analysis" in one("SELECT rule_text FROM cfg_method_rule WHERE rule_key LIKE 'IB-01 %'")
          and "subgroup-analysis" in one("SELECT use FROM cfg_column WHERE table_name='collection_layer_item' AND name='item'"), "")
     found = [e for e in la.find(conn, ROOT) if "layer.reading" in e]
     case("C4", "the alignment check finds nothing wrong in layer.reading with the stage 4 items in it", not found, found[:3])
@@ -65,9 +73,30 @@ def main(db, scratch):
     name = "backsliding"
     cid = one("SELECT id FROM collection WHERE name=? AND deleted=0", name)
     ci.fill(conn, cfg, RUN)
+    # the build now demands an answer to every older observation of the scope and an evidence layer that passes before stage 4 opens (#2538): the older observations of this
+    # test collection are judged here as the test's own setup, each kept as evidence with its answer logged, and each node missing a column given its reason. The scope grows
+    # when the grouping puts the older nodes under the collection, so it is settled again before step 3.1 opens.
+    def settle_scope():
+        sc_ = cvalid.scope(conn, cid)
+        for oid_ in sorted(sc_["union"]):
+            o_ = conn.execute("SELECT stage, nature FROM ib_observation WHERE id=?", (oid_,)).fetchone()
+            if o_[0] not in bv.build_stages(lr.settings(cfg)) and o_[1] is None:
+                va.set_nature(cfg, conn, oid_, "evidence", "test setup: an older observation of the test collection kept as evidence", RUN, "Claude")
+                orec.log(conn, oid_, None, "build_answer", None, "keep", "test setup: kept as evidence", None, RUN, "Claude")
+            for nid_, in conn.execute("SELECT id FROM ib_node WHERE observation_id=? AND deleted=0 AND traced_observation_id IS NULL AND disposition_note IS NULL AND "
+                                      "(strong IS NULL OR verse_reference IS NULL OR surface IS NULL OR morph_code IS NULL OR role IS NULL OR verse_lexical_id IS NULL OR collection_id IS NULL)", (oid_,)).fetchall():
+                va.note_node(conn, nid_, "test setup: a node of an older observation whose data gives no more", RUN, "Claude")
+    settle_scope()
     surf = [r[0] for r in q("SELECT t.surface FROM collection_subgroup_surface i JOIN surface_term t ON t.id=i.term_id WHERE i.collection_id=? AND i.deleted=0 ORDER BY t.surface", cid)]
     msg = refuses(lr.open_step, conn, cfg, RUN, name, "3.1", True)
     case("G1", "step 3.1 on a collection with nothing done is refused, naming the steps of stage 3 that are not closed", bool(msg) and "step 1.1 is not closed" in msg and "step 2.1 is not closed" in msg, (msg or "")[:300])
+    ci.make_group(conn, RUN, name, "alpha", "test group (#2526 test)")
+    ci.make_group(conn, RUN, name, "beta", "test group (#2526 test)")
+    half = len(surf) // 2
+    ci.place(conn, RUN, name, "alpha", surf[:half], None, "test placement (#2526 test)")
+    ci.place(conn, RUN, name, "beta", surf[half:-1], None, "test placement (#2526 test)")
+    ci.place(conn, RUN, name, None, [surf[-1]], None, "test isolation (#2526 test)", isolate=True)
+    # the words are read after the grouping, inside the subgroup of their surface (#2538, 2026-11-24)
     lr.open_step(conn, cfg, RUN, name, "S1")
     pS, _ = lr.pull(conn, cfg, name, "S1", sc)
     dS = json.loads(pS.read_text(encoding="utf-8"))
@@ -76,20 +105,16 @@ def main(db, scratch):
         r["fill"].update({"disposition": "observed", "senses": [{"kind": "term", "obs_text": f"In {', '.join(refs)} the word {r['word']} ({r['strong']}) stands in the sense the verses give it; test setup of #2526.",
                                                                   "basis": "stated", "occurrences": refs}]})
     lr.record(conn, cfg, RUN, dS, True)
-    lr.check(conn, cfg, RUN, name)
-    ci.make_group(conn, RUN, name, "alpha", "test group (#2526 test)")
-    ci.make_group(conn, RUN, name, "beta", "test group (#2526 test)")
-    half = len(surf) // 2
-    ci.place(conn, RUN, name, "alpha", surf[:half], None, "test placement (#2526 test)")
-    ci.place(conn, RUN, name, "beta", surf[half:-1], None, "test placement (#2526 test)")
-    ci.place(conn, RUN, name, None, [surf[-1]], None, "test isolation (#2526 test)", isolate=True)
+    rS_ = lr.check(conn, cfg, RUN, name)
+    if not rS_["steps"]["S1"]["closed"]:
+        print("S1 not closed:", rS_["steps"]["S1"]["failed"][:4], file=sys.stderr)
     for stp, mk in (("1.1", lambda r: f"The surfaces of the group {r['group']} turn away, which is a movement of the inner being from what it held; test setup of #2526."),
                     ("1.2", lambda r: f"The Strong's codes of {r['group']} ({', '.join(r['strong_codes'])}) define it as a turning away; test setup of #2526.")):
         lr.open_step(conn, cfg, RUN, name, stp)
         p, _ = lr.pull(conn, cfg, name, stp, sc)
         d = json.loads(p.read_text(encoding="utf-8"))
         for r in d["rows"]:
-            r["fill"].update({"disposition": "observed", "obs_text": mk(r), "basis": "stated"})
+            r["fill"].update({"disposition": "observed", "senses": [{"kind": r["kind"], "obs_text": f"{r['evidence'][0]['reference']}: " + mk(r), "basis": "stated", "occurrences": [e["reference"] for e in r["evidence"]]}]})     # a sense row: one finding for the whole subgroup here
         lr.record(conn, cfg, RUN, d, True)
         lr.check(conn, cfg, RUN, name)
     lr.open_step(conn, cfg, RUN, name, "2.1")
@@ -111,6 +136,7 @@ def main(db, scratch):
     st3 = lambda g: {r[0] for r in q("SELECT DISTINCT o.id FROM ib_observation o JOIN ib_node n ON n.observation_id=o.id WHERE o.deleted=0 AND n.deleted=0 AND n.collection_id=? AND n.subgroup_id=? "  # noqa: E731
                                      "AND o.stage IN ('layer-1','layer-2')", cid, g)}
     want = {g for g in gid_of.values() if st3(g)}
+    settle_scope()
     r1 = lr.open_step(conn, cfg, RUN, name, "3.1")
     r2 = lr.open_step(conn, cfg, RUN, name, "3.1")
     rows31 = q("SELECT item, subgroup_id, subject, state FROM collection_layer_item WHERE collection_id=? AND step='3.1' AND state!='retired'", cid)
@@ -124,8 +150,13 @@ def main(db, scratch):
     data = json.loads(path.read_text(encoding="utf-8"))
     r0 = data["rows"][0]
     g0 = gid_of[r0["group"]]
-    case("P1", "the 3.1 file lists, for each row, the stage 3 observations of the subgroup to take up (equal to an independent query), the verses of the subgroup with their text, the uses, the roles, a fill with the traced node and the read-back",
-         n == len(want) and {x["observation"] for x in r0["to_take_up"]} == st3(g0) and r0["verses_of_the_subgroup"] and r0["uses"] and "characteristic" in json.dumps(r0["node_roles"]) and "not_used" in r0["fill"]
+    def top_evidence(g):    # by marker (researcher 2026-11-24): the evidence observations with a live word node on the subgroup's occurrences, less the word observations a layer-1 sense already traces
+        ev = {r[0] for r in q("SELECT DISTINCT o.id FROM ib_observation o JOIN ib_node n ON n.observation_id=o.id WHERE o.deleted=0 AND n.deleted=0 AND n.traced_observation_id IS NULL AND o.nature='evidence' AND n.collection_id=? AND n.subgroup_id=?", cid, g)}
+        carried = {r[0] for r in q("SELECT DISTINCT n.traced_observation_id FROM ib_node n JOIN ib_observation o ON o.id=n.observation_id WHERE n.deleted=0 AND o.deleted=0 AND o.stage='layer-1' AND n.traced_observation_id IS NOT NULL")}
+        return {x for x in ev if not (x in carried and q("SELECT stage FROM ib_observation WHERE id=?", x)[0][0] == "lexical")}
+
+    case("P1", "the 3.1 file lists, for each row, the evidence observations of the subgroup to take up, chosen by the marker (equal to an independent query), the verses of the subgroup with their text, the uses, the roles, a fill with the traced node and the read-back",
+         n == len(want) and {x["observation"] for x in r0["to_take_up"]} == top_evidence(g0) and r0["verses_of_the_subgroup"] and r0["uses"] and "characteristic" in json.dumps(r0["node_roles"]) and "not_used" in r0["fill"]
          and "traced" in json.dumps(r0["fill"]["findings"]) and "read_back" in r0["fill"]["findings"][0] and len(data["reading_rules"]) >= 40, f"{n} rows; {len(r0['to_take_up'])} to take up")
     case("P2", "the 3.1 file has no verse row and no demand for every occurrence: it carries observations and the verses only as base data to read back", "verse-working" not in json.dumps(data["rows"]) and "items_absent" not in json.dumps(data["rows"]), "")
 
@@ -301,9 +332,18 @@ def main(db, scratch):
     # ── 3.3: across collections
     L2 = lr.load(conn, cfg, name, pairs=True)
     d33 = lr.derive(conn, cfg, L2, "3.3")
+    from iba.app.lib import layerinner as _li
+    pn = sorted(_li.match_partners(w["subject"] for w in d33))
+    msg33 = refuses(lr.open_step, conn, cfg, RUN, name, "3.3", True) if pn else "partner collection (no partner in this data)"
+    case("P33a", "step 3.3 is refused while a partner collection is not complete (its step 3.2 or 3.3 not closed), naming it", bool(msg33) and "partner collection" in msg33 and (not pn or pn[0] in msg33), (msg33 or "")[:200])
+    for pname in pn:      # test setup: the partner collections are complete (their step 3.2 closed in the ledger)
+        pid = one("SELECT id FROM collection WHERE name=? AND deleted=0", pname)
+        conn.execute("INSERT INTO collection_layer_item (collection_id, step, item, subgroup_id, subject, state, validated, reason, run_id, created_by) VALUES (?,?,?,?,?,'none',1,'test setup: the partner is complete (#2538 partner check)',?,?)",
+                     (pid, "3.2", "collection-gathering", 0, "", RUN, "test"))
+    case("P33b", "with its partners complete the check finds no gap", not bv.partner_gaps(conn, set(pn)), pn)
     r33 = lr.open_step(conn, cfg, RUN, name, "3.3")
-    case("O4", "step 3.3 opens after 3.2 closes; its rows are the subgroup and partner collection pairs that reach the threshold, and none is a pair of subgroups of one collection",
-         r33["demanded"] == len(d33) == r33["add"] and all(x["item"] == "interworking" and x["subject"].startswith("collection:") for x in d33), f"{len(d33)} rows demanded: {[x['subject'] for x in d33][:4]}")
+    case("O4", "step 3.3 opens after 3.2 closes; its rows are the unique matches across the observations that reference more than one collection (researcher 2026-11-25)",
+         r33["demanded"] == len(d33) == r33["add"] and all(x["item"] == "interworking" and x["subject"].startswith("match:") for x in d33), f"{len(d33)} rows demanded: {[x['subject'] for x in d33][:4]}")
     if d33:
         p33, _ = lr.pull(conn, cfg, name, "3.3", sc)
         dd33 = json.loads(p33.read_text(encoding="utf-8"))

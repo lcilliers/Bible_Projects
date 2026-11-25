@@ -315,10 +315,11 @@ def _group_of(conn, collection_id, surface, strong):
     return ci.subgroup_for(conn, collection_id, surface, strong)
 
 
-def write(conn, plan: list[dict], reading_id: int | None, run_id: str, stage: str | None = None, stable_key=None) -> dict:
+def write(conn, plan: list[dict], reading_id: int | None, run_id: str, stage: str | None = None, stable_key=None, nature: str | None = None) -> dict:
     """Write a checked plan. Returns {key: {"observation": id, "nodes": [ids], "new": bool}}. Caller commits.
     `stage` is what wrote the row (default: reading.observation_rules stage); `stable_key` is an optional function of a finding's key giving the stable_key of a new observation
-    (the layered reading ties an observation to its ledger row by it, #2528)."""
+    (the layered reading ties an observation to its ledger row by it, #2528). `nature` is the marker (ib_observation.nature) of each NEW observation, set at creation from the
+    item the caller answers (#2538); an existing observation keeps its own."""
     out, now = {}, _now()
     stage = stage or rules(Cfg.on(conn))["stage"]   # what wrote the row: a record of origin, never a filter
     for p in plan:
@@ -332,6 +333,8 @@ def write(conn, plan: list[dict], reading_id: int | None, run_id: str, stage: st
                 (stage, p["kind"], p["text"], p.get("meaning"), p.get("implication"), p["basis"], p.get("route"),
                  json.dumps(parts, ensure_ascii=False) if parts else None, run_id, now,
                  stable_key(p["key"]) if stable_key else None)).lastrowid
+            if nature:
+                conn.execute("UPDATE ib_observation SET nature=? WHERE id=?", (nature, oid))
             new = True
         out[p["key"]] = {"observation": oid, "nodes": [], "new": new}
     for p in plan:

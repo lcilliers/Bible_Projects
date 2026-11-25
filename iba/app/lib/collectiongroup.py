@@ -4,9 +4,9 @@ The researcher's rulings: the unit that is grouped is the SURFACE, the ESV word 
 the surface in context, recognising that a surface may carry a hidden meaning in the different Strong's codes used for it (#2526 Q3, 2026-11-21); the subgroups have nothing to do with the inner
 being, a concept (a behaviour) comes into play only in stage 4 (#2526 Q5). So:
 
-  pull(...)    writes a working file with ONE ROW FOR EACH SURFACE of the collection (never one for each Strong's code): the surface, its word family, its link in the collection, its occurrences,
-               its Strong's codes with their counts and the dictionary sense of each as a pointer, a spread of its verses with the text (the meaning in context), and, where stage 1 has been
-               recorded, the stage 1 observations of the surface.
+  pull(...)    writes a working file with ONE ROW FOR EACH SURFACE of the collection (never one for each Strong's code): the surface, its base, its link in the collection, and what the WordNet
+               tables say (its network group, its pairs with the other surfaces of the collection) with a seed grouping. It reads no verse (#2538, 2026-11-24: the grouping is made from the
+               surfaces and WordNet; the verses are read later, one subgroup at a time).
   record(...)  checks the filled file whole and writes it in one savepoint, or refuses all of it: every surface answered once; every subgroup a unique name and a definition of the meaning its
                surfaces share; every subgroup holding a surface; a surface is placed WHOLE in one subgroup (never split by code); a surface plainly not a member in meaning is set aside with its
                reason, to be moved out of the collection by the change procedure. The writes are collectionindex.make_group and place: each change a surface_event with its reason; the nodes of a
@@ -71,26 +71,42 @@ def _tiers(conn, cid: int, term_id: int) -> str:
     return ""
 
 
-def _spread(by_code: dict, n: int) -> list:
-    """Up to n occurrences, taken from the commonest code first and round and round, so that every code the surface carries is seen in a verse before one code is seen twice."""
-    order = sorted(by_code, key=lambda c: -len(by_code[c]))
-    out, i = [], 0
-    while len(out) < n and any(i < len(by_code[c]) for c in order):
-        for c in order:
-            if i < len(by_code[c]) and len(out) < n:
-                out.append((c, by_code[c][i]))
-        i += 1
-    return out
+def _wordnet(conn, term_ids: list) -> tuple[dict, dict]:
+    """What the WordNet tables say about the surfaces of the collection (researcher, 2026-11-24, #2538): {term_id: (kind, group_no, in_wordnet)} from surface_network_group, and
+    {term_id: [(other_term_id, pair_type, weight)]} for the pairs whose two ends are both in the collection (surface_relation). Two indexed reads, no scan of verse_lexical."""
+    net, rel = {}, collections.defaultdict(list)
+    marks = ",".join("?" * len(term_ids))
+    for tid, kind, gno, inw in conn.execute(f"SELECT term_id, kind, group_no, in_wordnet FROM surface_network_group WHERE deleted=0 AND term_id IN ({marks})", term_ids):
+        net[tid] = (kind, gno, inw)
+    have = set(term_ids)
+    for a, b, ptype, w in conn.execute(f"SELECT term_a_id, term_b_id, pair_type, weight FROM surface_relation WHERE deleted=0 AND term_a_id IN ({marks})", term_ids):
+        if b in have and a != b:
+            rel[a].append((b, ptype, w))
+            rel[b].append((a, ptype, w))
+    return net, rel
 
 
-def _stage1(conn, cid: int, cap: int) -> dict:
-    """The stage 1 observations of each surface of the collection (the word-sense answers of step S1), read from the ledger: {surface: [{strong, text}]}."""
-    out = collections.defaultdict(list)
-    for lid, subject in conn.execute("SELECT id, subject FROM collection_layer_item WHERE deleted=0 AND collection_id=? AND step=? AND observation_id IS NOT NULL", (cid, lr.LEXICAL_STEP)).fetchall():
-        surface, _, strong = subject.rpartition("|")
-        for (txt,) in conn.execute("SELECT obs_text FROM ib_observation WHERE deleted=0 AND stable_key LIKE ?", (f"layer:{lid}:%",)).fetchall():
-            out[surface.strip().lower()].append({"strong": strong, "text": (txt or "")[:cap]})
-    return out
+def _seeds(rows, net, rel) -> dict:
+    """The seed grouping from the WordNet tables, as a proposal for the researcher to amend by meaning: the surfaces joined by a same_base or both pair (one word family) are one seed; a
+    surface with no WordNet entry (a phrase, a surface the tables do not hold, kind no_pair or not in WordNet) is a subgroup on its own (researcher, 2026-11-24: it still goes through the
+    subgroup analysis). Returns {term_id: seed name}."""
+    parent = {r[1]: r[1] for r in rows}
+
+    def find(x):
+        while parent[x] != x:
+            parent[x] = parent[parent[x]]
+            x = parent[x]
+        return x
+    alone = {r[1] for r in rows if r[1] not in net or net[r[1]][0] == "no_pair" or not net[r[1]][2]}
+    for tid, lst in rel.items():
+        for other, ptype, _ in lst:
+            if ptype in ("same_base", "both") and tid in parent and other in parent and tid not in alone and other not in alone:
+                parent[find(tid)] = find(other)
+    names = {r[1]: r[2] for r in rows}
+    comp = collections.defaultdict(list)
+    for r in rows:
+        comp[find(r[1])].append(r[2])
+    return {r[1]: ("; ".join(sorted(comp[find(r[1])])) if r[1] not in alone else r[2]) for r in rows}
 
 
 # ══ pull ═══════════════════════════════════════════════════════════════════════════════════════
@@ -105,45 +121,26 @@ def pull(conn, cfg, name: str, out_dir: pathlib.Path) -> tuple[pathlib.Path, int
 
 
 def _pull(conn, s, cid, cname, rows, out_dir):
+    """Step S1 of the new build (researcher, 2026-11-24, #2538): the data pulled is the surfaces of the collection and what the WordNet tables say about them. It does not read verse_lexical or
+    the verses: that comes in the subgroup loop, for one subgroup at a time. One row for each surface; the file's `groups` list starts from the seed grouping (or the live subgroups, when there are some)."""
     groups = {r[0]: r[1] for r in conn.execute("SELECT id, name FROM collection_subgroup WHERE deleted=0 AND collection_id=? AND status!='retired'", (cid,))}
-    wanted = sorted({(r[2] or "").strip().lower() for r in rows})
-    occ = collections.defaultdict(lambda: collections.defaultdict(list))  # surface -> code -> [(verse_id, vl_id)]
-    for i in range(0, len(wanted), 500):  # one scan for every occurrence (a lookup for each surface would read the whole of verse_lexical each time)
-        part = wanted[i:i + 500]
-        for surf, code, vid, vlid in conn.execute("SELECT lower(trim(surface)), strong, verse_id, id FROM verse_lexical WHERE deleted=0 AND strong IS NOT NULL AND lower(trim(surface)) IN (%s) ORDER BY verse_id" % ",".join("?" * len(part)), part):
-            occ[surf][code].append((vid, vlid))
-    picks = {r[2].strip().lower(): _spread(occ[r[2].strip().lower()], s["sample_verses"]) for r in rows}
-    vids = sorted({o[1][0] for p in picks.values() for o in p})
-    verse = {}
-    for i in range(0, len(vids), 500):
-        part = vids[i:i + 500]
-        for vid, ref, text in conn.execute("SELECT id, reference, text FROM verse WHERE id IN (%s)" % ",".join("?" * len(part)), part):
-            verse[vid] = (ref, text or "")
+    tids = [r[1] for r in rows]
+    net, rel = _wordnet(conn, tids)
+    seed = _seeds(rows, net, rel)
+    name_of = {r[1]: r[2] for r in rows}
     base = {}
-    for tid, surf, bsurf in conn.execute("SELECT t.id, t.surface, b.surface FROM surface_term t LEFT JOIN surface_term b ON b.id=t.base_id WHERE t.id IN (%s)" % ",".join("?" * len(rows)), [r[1] for r in rows]):
+    for tid, surf, bsurf in conn.execute("SELECT t.id, t.surface, b.surface FROM surface_term t LEFT JOIN surface_term b ON b.id=t.base_id WHERE t.id IN (%s)" % ",".join("?" * len(tids)), tids):
         base[tid] = bsurf or surf
-    family = collections.defaultdict(list)
-    for r in rows:
-        family[base.get(r[1], r[2])].append(r[2])
-    st1 = _stage1(conn, cid, s["evidence_chars"])
     out = []
     for iid, tid, surface, strong, gid, state, reason in rows:
-        key = surface.strip().lower()
-        by_code = occ[key]
-        total = sum(len(v) for v in by_code.values())
-        ranked = sorted(by_code, key=lambda c: -len(by_code[c]))
-        codes = []
-        for c in ranked[:s["max_codes_shown"]]:
-            lx = lr._lexicon(conn, c, s["evidence_chars"])
-            codes.append({"strong": c, "occurrences": len(by_code[c]), "sense_head": lx.get("sense_head"), "meaning_range": lx.get("meaning_range")})
-        if len(ranked) > len(codes):
-            codes.append({"more_codes": len(ranked) - len(codes), "occurrences": sum(len(by_code[c]) for c in ranked[len(codes):])})
-        out.append({"surface": surface, "family": base.get(tid, surface), "family_in_collection": sorted(x for x in family[base.get(tid, surface)] if x != surface),
-                    "link": _tiers(conn, cid, tid), "occurrences": total, "codes_total": len(ranked), "codes": codes,
-                    "verses": [{"strong": c, "reference": verse.get(vid, ("", ""))[0], "text": verse.get(vid, ("", ""))[1][:s["verse_chars"]]} for c, (vid, _) in picks[key]],
-                    "stage1": st1.get(key, []), "current": {"state": state, "group": groups.get(gid)},
-                    "fill": {"group": "", "reason": "", "certainty": "decided | uncertain", "uncertain": ""}})
-    data = {"collection": cname, "pulled": _now(), "asks": s["asks"], "groups": [{"name": n, "definition": ""} for n in sorted(groups.values())], "rows": out}
+        kind, gno, inw = net.get(tid, (None, None, 0))
+        neighbours = sorted(({"surface": name_of[o], "type": pt, "weight": w} for o, pt, w in rel.get(tid, [])), key=lambda x: (-(x["weight"] or 0), x["surface"]))
+        out.append({"surface": surface, "base": base.get(tid, surface), "link": _tiers(conn, cid, tid),
+                    "wordnet": {"in_wordnet": bool(inw), "network_kind": kind, "network_group": gno, "pairs_in_collection": len(neighbours), "neighbours": neighbours[:s.get("max_neighbours", 12)]},
+                    "seed_group": seed[tid], "current": {"state": state, "group": groups.get(gid)},
+                    "fill": {"group": groups.get(gid) or seed[tid], "reason": "", "certainty": "decided | uncertain", "uncertain": ""}})
+    names = sorted(groups.values()) or sorted(set(seed.values()))
+    data = {"collection": cname, "pulled": _now(), "asks": s["asks"], "groups": [{"name": n, "definition": ""} for n in names], "rows": out}
     out_dir.mkdir(parents=True, exist_ok=True)
     path = out_dir / f"group-{cname}-{_now()[:10].replace('-', '')}.json"
     path.write_text(json.dumps(data, ensure_ascii=False, indent=1), encoding="utf-8")

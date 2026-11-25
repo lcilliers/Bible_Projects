@@ -1,0 +1,176 @@
+{
+ "collection": "thought",
+ "step": "2.1",
+ "pulled": "2026-11-24T17:00:09Z",
+ "control": {
+  "the mind's set or direction": {
+   "both": [],
+   "wordnet_only": [],
+   "verse_only": [
+    "chide",
+    "die",
+    "live",
+    "quarrel",
+    "turn"
+   ],
+   "verse_pairings": {
+    "turn": 1,
+    "chide": 1,
+    "live": 1,
+    "die": 2,
+    "quarrel": 2
+   },
+   "wordnet_pairs": {}
+  }
+ },
+ "subgroup": "the mind's set or direction",
+ "unmarked": [],
+ "delete_unmarked": [],
+ "rows": [
+  {
+   "ledger_id": 676,
+   "item": "qualifier",
+   "kind": "pairing",
+   "group": "the mind's set or direction",
+   "subject": "",
+   "existing_observations": [],
+   "asks": "Which qualifiers (negators and the words they reach, adjectives, adverbs, prepositional qualifiers) stand with this group, and what does each give it by the grammar? Adjacency is not scope: state the word the negator or qualifier reaches.",
+   "nodes_total": 2,
+   "nodes_shown": 2,
+   "strong_codes": {
+    "G5426": 1
+   },
+   "evidence": [
+    {
+     "reference": "Mar 8:33",
+     "surface": "setting your mind",
+     "strong": "G5426",
+     "as": "member",
+     "verse": "But turning and seeing his disciples, he rebuked Peter and said, “ Get behind me, Satan! For you are not setting your mind on the things of God, but on the things of man.”"
+    },
+    {
+     "reference": "Mar 8:33",
+     "surface": "not",
+     "strong": "G3756",
+     "as": "partner",
+     "verse": "But turning and seeing his disciples, he rebuked Peter and said, “ Get behind me, Satan! For you are not setting your mind on the things of God, but on the things of man.”"
+    }
+   ],
+   "fill": {
+    "disposition": "observed",
+    "obs_text": "The one qualifier that reaches a member of this group is the negator in Mar 8:33, which reaches the verb of the setting of the mind: Peter is said not to be setting his mind on what belongs to God, so the negation is of that directing and the verse then names the other direction, to what belongs to men. In Rom 8:5-6 the nouns and the verb are not negated or qualified by a word of the grammar; the direction is given by the object each verse names, the flesh or the Spirit.",
+    "basis": "stated",
+    "route": "",
+    "member_role": "lexical",
+    "partner_role": "lexical",
+    "reason": ""
+   }
+  },
+  {
+   "ledger_id": 683,
+   "item": "entity",
+   "kind": "pairing",
+   "group": "the mind's set or direction",
+   "subject": "",
+   "existing_observations": [],
+   "asks": "Which entities (divine, human, other) are named or referred to, by name or pronoun, in the verses of this group, and do they differ from those of the other groups? State who is named and how the text refers to them.",
+   "nodes_total": 4,
+   "nodes_shown": 4,
+   "strong_codes": {
+    "G5426": 1
+   },
+   "evidence": [
+    {
+     "reference": "Mar 8:33",
+     "surface": "setting your mind",
+     "strong": "G5426",
+     "as": "member",
+     "verse": "But turning and seeing his disciples, he rebuked Peter and said, “ Get behind me, Satan! For you are not setting your mind on the things of God, but on the things of man.”"
+    },
+    {
+     "reference": "Mar 8:33",
+     "surface": "disciples",
+     "strong": "G3101",
+     "as": "partner",
+     "verse": "But turning and seeing his disciples, he rebuked Peter and said, “ Get behind me, Satan! For you are not setting your mind on the things of God, but on the things of man.”"
+    },
+    {
+     "reference": "Mar 8:33",
+     "surface": "god",
+     "strong": "G2316",
+     "as": "partner",
+     "verse": "But turning and seeing his disciples, he rebuked Peter and said, “ Get behind me, Satan! For you are not setting your mind on the things of God, but on the things of man.”"
+    },
+    {
+     "reference": "Mar 8:33",
+     "surface": "man",
+     "strong": "G0444",
+     "as": "partner",
+     "verse": "But turning and seeing his disciples, he rebuked Peter and said, “ Get behind me, Satan! For you are not setting your mind on the things of God, but on the things of man.”"
+    }
+   ],
+   "fill": {
+    "disposition": "observed",
+    "obs_text": "The entities named in the verses of this group are divine and human. In Mar 8:33 the disciples are named as those Jesus turns to, Peter is addressed, God and man are the two whose concerns the mind is set on, and Satan is addressed in the rebuke; in Rom 8:5-6 the flesh and the Spirit are named, and the persons are those who live by either. The verse of Mark names the persons, and the verses of Romans name the two powers by which they live. This record does not compare the group with the others.",
+    "basis": "stated",
+    "route": "",
+    "member_role": "lexical",
+    "partner_role": "lexical",
+    "reason": ""
+   }
+  },
+  {
+   "ledger_id": 690,
+   "item": "direction",
+   "kind": "relation",
+   "group": "the mind's set or direction",
+   "subject": "",
+   "existing_observations": [],
+   "asks": "Does the direction of travel the text states (from whom to whom, by the grammar) change across the verses of this group?",
+   "nodes_total": 4,
+   "nodes_shown": 4,
+   "strong_codes": {
+    "G5426": 1
+   },
+   "evidence": [
+    {
+     "reference": "Mar 8:33",
+     "surface": "setting your mind",
+     "strong": "G5426",
+     "as": "member",
+     "verse": "But turning and seeing his disciples, he rebuked Peter and said, “ Get behind me, Satan! For you are not setting your mind on the things of God, but on the things of man.”"
+    },
+    {
+     "reference": "Mar 8:33",
+     "surface": "disciples",
+     "strong": "G3101",
+     "as": "partner",
+     "verse": "But turning and seeing his disciples, he rebuked Peter and said, “ Get behind me, Satan! For you are not setting your mind on the things of God, but on the things of man.”"
+    },
+    {
+     "reference": "Mar 8:33",
+     "surface": "god",
+     "strong": "G2316",
+     "as": "partner",
+     "verse": "But turning and seeing his disciples, he rebuked Peter and said, “ Get behind me, Satan! For you are not setting your mind on the things of God, but on the things of man.”"
+    },
+    {
+     "reference": "Mar 8:33",
+     "surface": "man",
+     "strong": "G0444",
+     "as": "partner",
+     "verse": "But turning and seeing his disciples, he rebuked Peter and said, “ Get behind me, Satan! For you are not setting your mind on the things of God, but on the things of man.”"
+    }
+   ],
+   "fill": {
+    "disposition": "observed",
+    "obs_text": "The direction of the mind's setting is stated in two ways. In Rom 8:5-6 the mind is set by persons on the flesh or on the Spirit, and the verses state the outcome of each, death or life and peace, as following from the setting. In Mar 8:33 Jesus speaks to Peter, in the second person, of the direction of his mind, from God's concerns to men's. In every verse the one whose mind is set is the human subject, and the object of the setting is what it is directed to; the direction of the telling changes (of them, to him) and the direction of the act does not.",
+    "basis": "stated",
+    "route": "",
+    "member_role": "lexical",
+    "partner_role": "lexical",
+    "reason": ""
+   }
+  }
+ ]
+}

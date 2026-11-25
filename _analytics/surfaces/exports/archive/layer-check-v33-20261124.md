@@ -1,0 +1,202 @@
+# Layered reading check: thought
+
+Generated 2026-11-24T17:13:55Z by run RUN-20261124_171350_861-COLLECTIONBUILD (`Collection-Build.ps1 -Action LayerCheck`, escalation #2505). Sets `validated` on the ledger rows it passes; nothing else is written.
+
+## Gates
+
+- stage 1 (the lexical analysis of the words, step S1): 177 rows (not closed)
+- grouping: finished (every surface placed or isolated)
+
+## Step S1: not closed
+
+177 rows; 48 validated; 129 open; 0 failed; 0 demanded by the data and not in the ledger (LayerOpen).
+
+## Step 1.1: not closed
+
+7 rows; 4 validated; 0 open; 3 failed; 0 demanded by the data and not in the ledger (LayerOpen).
+- failed: group-definition / supposing, or holding something to be so: 54 older live observation(s) on its occurrences have no answer (for example [3961, 12411, 12415, 12416, 12425])
+- failed: group-definition / attending to a matter and turning it over: 29 older live observation(s) on its occurrences have no answer (for example [4733, 12409, 12418, 12425, 12426])
+- failed: group-definition / taking account of, and reckoning as: 9 older live observation(s) on its occurrences have no answer (for example [12505, 16528, 17086, 17267, 18165])
+
+## Step 1.2: not closed
+
+7 rows; 4 validated; 0 open; 3 failed; 0 demanded by the data and not in the ledger (LayerOpen).
+- failed: strong-enrichment / supposing, or holding something to be so: 54 older live observation(s) on its occurrences have no answer (for example [3961, 12411, 12415, 12416, 12425])
+- failed: strong-enrichment / attending to a matter and turning it over: 29 older live observation(s) on its occurrences have no answer (for example [4733, 12409, 12418, 12425, 12426])
+- failed: strong-enrichment / taking account of, and reckoning as: 9 older live observation(s) on its occurrences have no answer (for example [12505, 16528, 17086, 17267, 18165])
+
+## Step 2.1: not closed
+
+132 rows; 41 validated; 0 open; 91 failed; 0 demanded by the data and not in the ledger (LayerOpen).
+- failed: pairing / supposing, or holding something to be so / anger: 3 word node(s) miss a required column with no reason on the node (for example [89156, 89157, 89158])
+- failed: pairing / supposing, or holding something to be so / believe: 5 word node(s) miss a required column with no reason on the node (for example [89164, 89165, 89166, 89167, 89168])
+- failed: pairing / supposing, or holding something to be so / bless: 3 word node(s) miss a required column with no reason on the node (for example [89173, 89174, 89175])
+- failed: pairing / supposing, or holding something to be so / call: 4 word node(s) miss a required column with no reason on the node (for example [89181, 89182, 89183, 89184])
+- failed: pairing / supposing, or holding something to be so / combat: 5 word node(s) miss a required column with no reason on the node (for example [89189, 89190, 89191, 89192, 89193])
+- failed: pairing / supposing, or holding something to be so / comfort: 4 word node(s) miss a required column with no reason on the node (for example [89197, 89198, 89199, 89200])
+- failed: pairing / supposing, or holding something to be so / command: 6 word node(s) miss a required column with no reason on the node (for example [89207, 89208, 89209, 89210, 89211])
+- failed: pairing / supposing, or holding something to be so / conceal: 3 word node(s) miss a required column with no reason on the node (for example [89216, 89217, 89218])
+- failed: pairing / supposing, or holding something to be so / condemn: 4 word node(s) miss a required column with no reason on the node (for example [89223, 89224, 89225, 89226])
+- failed: pairing / supposing, or holding something to be so / convince: 3 word node(s) miss a required column with no reason on the node (for example [89230, 89231, 89232])
+- failed: pairing / supposing, or holding something to be so / deceive: 3 word node(s) miss a required column with no reason on the node (for example [89236, 89237, 89238])
+- failed: pairing / supposing, or holding something to be so / depart: 4 word node(s) miss a required column with no reason on the node (for example [89243, 89244, 89245, 89246])
+- failed: pairing / supposing, or holding something to be so / desire: 6 word node(s) miss a required column with no reason on the node (for example [89252, 89253, 89254, 89255, 89256])
+- failed: pairing / supposing, or holding something to be so / destruction: 6 word node(s) miss a required column with no reason on the node (for example [89263, 89264, 89265, 89266, 89267])
+- failed: pairing / supposing, or holding something to be so / die: 9 word node(s) miss a required column with no reason on the node (for example [89277, 89278, 89279, 89280, 89281])
+- failed: pairing / supposing, or holding something to be so / endure: 5 word node(s) miss a required column with no reason on the node (for example [89290, 89291, 89292, 89293, 89294])
+- failed: pairing / supposing, or holding something to be so / escape: 4 word node(s) miss a required column with no reason on the node (for example [89299, 89300, 89301, 89302])
+- failed: pairing / supposing, or holding something to be so / evildoer: 6 word node(s) miss a required column with no reason on the node (for example [89311, 89312, 89313, 89314, 89315])
+- failed: pairing / supposing, or holding something to be so / fear: 8 word node(s) miss a required column with no reason on the node (for example [89325, 89326, 89327, 89328, 89329])
+- failed: pairing / supposing, or holding something to be so / folly: 6 word node(s) miss a required column with no reason on the node (for example [89339, 89340, 89341, 89342, 89343])
+- failed: pairing / supposing, or holding something to be so / guard: 4 word node(s) miss a required column with no reason on the node (for example [89349, 89350, 89351, 89352])
+- failed: pairing / supposing, or holding something to be so / hear: its nodes do not match the data: 0 occurrences missing, 12 not demanded
+- failed: pairing / supposing, or holding something to be so / heart: 14 word node(s) miss a required column with no reason on the node (for example [89384, 89385, 89386, 89387, 89388])
+- failed: pairing / supposing, or holding something to be so / honor: 7 word node(s) miss a required column with no reason on the node (for example [89405, 89406, 89407, 89408, 89409])
+- failed: pairing / supposing, or holding something to be so / intend: 6 word node(s) miss a required column with no reason on the node (for example [89418, 89419, 89420, 89421, 89422])
+- failed: pairing / supposing, or holding something to be so / kill: 9 word node(s) miss a required column with no reason on the node (for example [89430, 89431, 89432, 89433, 89434])
+- failed: pairing / supposing, or holding something to be so / know: 16 word node(s) miss a required column with no reason on the node (for example [89454, 89455, 89456, 89457, 89458])
+- failed: pairing / supposing, or holding something to be so / labor: 4 word node(s) miss a required column with no reason on the node (for example [89475, 89476, 89477, 89478])
+- failed: pairing / supposing, or holding something to be so / laugh: 4 word node(s) miss a required column with no reason on the node (for example [89484, 89485, 89486, 89487])
+- failed: pairing / supposing, or holding something to be so / live: 11 word node(s) miss a required column with no reason on the node (for example [89496, 89497, 89498, 89499, 89500])
+- failed: pairing / supposing, or holding something to be so / loyalty: its nodes do not match the data: 12 occurrences missing, 0 not demanded
+- failed: pairing / supposing, or holding something to be so / mute: 4 word node(s) miss a required column with no reason on the node (for example [89517, 89518, 89519, 89520])
+- failed: pairing / supposing, or holding something to be so / offer: 5 word node(s) miss a required column with no reason on the node (for example [89525, 89526, 89527, 89528, 89529])
+- failed: pairing / supposing, or holding something to be so / pain: 4 word node(s) miss a required column with no reason on the node (for example [89533, 89534, 89535, 89536])
+- failed: pairing / supposing, or holding something to be so / profess: 10 word node(s) miss a required column with no reason on the node (for example [89546, 89547, 89548, 89549, 89550])
+- failed: pairing / supposing, or holding something to be so / quarrel: 6 word node(s) miss a required column with no reason on the node (for example [89560, 89561, 89562, 89563, 89564])
+- failed: pairing / supposing, or holding something to be so / return: 5 word node(s) miss a required column with no reason on the node (for example [89569, 89570, 89571, 89572, 89573])
+- failed: pairing / supposing, or holding something to be so / reward: 3 word node(s) miss a required column with no reason on the node (for example [89578, 89579, 89580])
+- failed: pairing / supposing, or holding something to be so / rich: 6 word node(s) miss a required column with no reason on the node (for example [89587, 89588, 89589, 89590, 89591])
+- failed: pairing / supposing, or holding something to be so / righteous: 7 word node(s) miss a required column with no reason on the node (for example [89599, 89600, 89601, 89602, 89603])
+- failed: pairing / supposing, or holding something to be so / search: 12 word node(s) miss a required column with no reason on the node (for example [89616, 89617, 89618, 89619, 89620])
+- failed: pairing / supposing, or holding something to be so / serve: 14 word node(s) miss a required column with no reason on the node (for example [89641, 89642, 89643, 89644, 89645])
+- failed: pairing / supposing, or holding something to be so / share: 13 word node(s) miss a required column with no reason on the node (for example [89669, 89670, 89671, 89672, 89673])
+- failed: pairing / supposing, or holding something to be so / sin: 5 word node(s) miss a required column with no reason on the node (for example [89688, 89689, 89690, 89691, 89692])
+- failed: pairing / supposing, or holding something to be so / snatch: 7 word node(s) miss a required column with no reason on the node (for example [89700, 89701, 89702, 89703, 89704])
+- failed: pairing / supposing, or holding something to be so / supplication: 4 word node(s) miss a required column with no reason on the node (for example [89710, 89711, 89712, 89713])
+- failed: pairing / supposing, or holding something to be so / tribulation: 5 word node(s) miss a required column with no reason on the node (for example [89717, 89718, 89719, 89720, 89721])
+- failed: pairing / supposing, or holding something to be so / trust: 5 word node(s) miss a required column with no reason on the node (for example [89726, 89727, 89728, 89729, 89730])
+- failed: pairing / supposing, or holding something to be so / unclean: 6 word node(s) miss a required column with no reason on the node (for example [89734, 89735, 89736, 89737, 89738])
+- failed: pairing / supposing, or holding something to be so / wise: 9 word node(s) miss a required column with no reason on the node (for example [89748, 89749, 89750, 89751, 89752])
+- failed: pairing / attending to a matter and turning it over / destruction: 3 word node(s) miss a required column with no reason on the node (for example [89761, 89762, 89763])
+- failed: pairing / attending to a matter and turning it over / evildoer: 3 word node(s) miss a required column with no reason on the node (for example [89769, 89770, 89771])
+- failed: pairing / attending to a matter and turning it over / fear: 4 word node(s) miss a required column with no reason on the node (for example [89778, 89779, 89780, 89781])
+- failed: pairing / attending to a matter and turning it over / forget: 4 word node(s) miss a required column with no reason on the node (for example [89786, 89787, 89788, 89789])
+- failed: pairing / attending to a matter and turning it over / govern: 4 word node(s) miss a required column with no reason on the node (for example [89794, 89795, 89796, 89797])
+- failed: pairing / attending to a matter and turning it over / heart: 5 word node(s) miss a required column with no reason on the node (for example [89803, 89804, 89805, 89806, 89807])
+- failed: pairing / attending to a matter and turning it over / labor: 4 word node(s) miss a required column with no reason on the node (for example [89812, 89813, 89814, 89815])
+- failed: pairing / attending to a matter and turning it over / live: 4 word node(s) miss a required column with no reason on the node (for example [89821, 89822, 89823, 89824])
+- failed: pairing / attending to a matter and turning it over / love: 3 word node(s) miss a required column with no reason on the node (for example [89828, 89829, 89830])
+- failed: pairing / attending to a matter and turning it over / search: 4 word node(s) miss a required column with no reason on the node (for example [89834, 89835, 89836, 89837])
+- failed: pairing / attending to a matter and turning it over / snatch: 5 word node(s) miss a required column with no reason on the node (for example [89843, 89844, 89845, 89846, 89847])
+- failed: pairing / attending to a matter and turning it over / wise: 9 word node(s) miss a required column with no reason on the node (for example [89855, 89856, 89857, 89858, 89859])
+- failed: pairing / taking account of, and reckoning as / hear: its nodes do not match the data: 0 occurrences missing, 1 not demanded
+- failed: pairing / taking account of, and reckoning as / labor: 8 word node(s) miss a required column with no reason on the node (for example [89913, 89914, 89915, 89916, 89917])
+- failed: pairing / taking account of, and reckoning as / pride: 3 word node(s) miss a required column with no reason on the node (for example [89925, 89926, 89927])
+- failed: pairing / taking account of, and reckoning as / scoff: 3 word node(s) miss a required column with no reason on the node (for example [89931, 89932, 89933])
+- failed: qualifier / supposing, or holding something to be so: 297 word node(s) miss a required column with no reason on the node (for example [90674, 90675, 90676, 90677, 90678])
+- failed: qualifier / attending to a matter and turning it over: 60 word node(s) miss a required column with no reason on the node (for example [91004, 91005, 91006, 91007, 91008])
+- failed: qualifier / taking account of, and reckoning as: 67 word node(s) miss a required column with no reason on the node (for example [91195, 91196, 91197, 91198, 91199])
+- failed: entity / supposing, or holding something to be so: 175 word node(s) miss a required column with no reason on the node (for example [91496, 91497, 91498, 91499, 91500])
+- failed: entity / attending to a matter and turning it over: 46 word node(s) miss a required column with no reason on the node (for example [91701, 91702, 91703, 91704, 91705])
+- failed: entity / taking account of, and reckoning as: 47 word node(s) miss a required column with no reason on the node (for example [91827, 91828, 91829, 91830, 91831])
+- failed: direction / supposing, or holding something to be so: 175 word node(s) miss a required column with no reason on the node (for example [92070, 92071, 92072, 92073, 92074])
+- failed: direction / attending to a matter and turning it over: 46 word node(s) miss a required column with no reason on the node (for example [92275, 92276, 92277, 92278, 92279])
+- failed: direction / taking account of, and reckoning as: 47 word node(s) miss a required column with no reason on the node (for example [92401, 92402, 92403, 92404, 92405])
+- failed: double-meaning / supposing, or holding something to be so / imagines: 1 older live observation(s) on its occurrences have no answer (for example [15151])
+- failed: double-meaning / supposing, or holding something to be so / suppose: 1 older live observation(s) on its occurrences have no answer (for example [18120])
+- failed: double-meaning / supposing, or holding something to be so / supposing: 1 older live observation(s) on its occurrences have no answer (for example [20005])
+- failed: double-meaning / supposing, or holding something to be so / think: 13 older live observation(s) on its occurrences have no answer (for example [3961, 12416, 12425, 12435, 14664])
+- failed: double-meaning / supposing, or holding something to be so / thinking: 5 older live observation(s) on its occurrences have no answer (for example [12411, 15049, 15943, 17467, 20487])
+- failed: double-meaning / supposing, or holding something to be so / thinks: 6 older live observation(s) on its occurrences have no answer (for example [12436, 15192, 15199, 15258, 15462])
+- failed: double-meaning / supposing, or holding something to be so / thought: 29 older live observation(s) on its occurrences have no answer (for example [12415, 12416, 12432, 12435, 12443])
+- failed: double-meaning / attending to a matter and turning it over / considered: 6 older live observation(s) on its occurrences have no answer (for example [12433, 12505, 20023, 20120, 20179])
+- failed: double-meaning / attending to a matter and turning it over / meditate: 9 older live observation(s) on its occurrences have no answer (for example [12409, 12418, 12425, 15122, 15920])
+- failed: double-meaning / attending to a matter and turning it over / meditation: 5 older live observation(s) on its occurrences have no answer (for example [16254, 18986, 19578, 20304, 20463])
+- failed: double-meaning / attending to a matter and turning it over / pondering: 1 older live observation(s) on its occurrences have no answer (for example [4733])
+- failed: double-meaning / attending to a matter and turning it over / ponders: 4 older live observation(s) on its occurrences have no answer (for example [12426, 15997, 16531, 16982])
+- failed: double-meaning / attending to a matter and turning it over / weigh: 2 older live observation(s) on its occurrences have no answer (for example [21713, 21714])
+- failed: double-meaning / attending to a matter and turning it over / weighing: 2 older live observation(s) on its occurrences have no answer (for example [21715, 21716])
+- failed: double-meaning / taking account of, and reckoning as / regard: 6 older live observation(s) on its occurrences have no answer (for example [12505, 16528, 17086, 17267, 18165])
+- failed: double-meaning / taking account of, and reckoning as / regarded: 4 older live observation(s) on its occurrences have no answer (for example [12505, 18877, 19220, 20022])
+
+## Step 3.1: not closed
+
+7 rows; 3 validated; 1 open; 3 failed; 0 demanded by the data and not in the ledger (LayerOpen).
+- failed: subgroup-analysis / supposing, or holding something to be so: 1 observations are neither rested on by a finding nor declared (first: 22342); nothing the step reads may be left out silently
+- failed: subgroup-analysis / attending to a matter and turning it over: 29 older live observation(s) on its occurrences have no answer (for example [4733, 12409, 12418, 12425, 12426])
+- failed: subgroup-analysis / taking account of, and reckoning as: 4 older live observation(s) on its occurrences have no answer (for example [12505, 16528, 18165, 20021])
+
+## Step 3.2: not closed
+
+1 rows; 0 validated; 1 open; 0 failed; 0 demanded by the data and not in the ledger (LayerOpen).
+
+## Step 3.3: not closed
+
+87 rows; 0 validated; 21 open; 66 failed; 0 demanded by the data and not in the ledger (LayerOpen).
+- failed: interworking / supposing, or holding something to be so / collection:anger: observation 22582 rests on observation 22563, which this row may not rest on
+- failed: interworking / supposing, or holding something to be so / collection:believe: observation 22583 rests on observation 22564, which this row may not rest on
+- failed: interworking / supposing, or holding something to be so / collection:bless: observation 22584 rests on observation 22565, which this row may not rest on
+- failed: interworking / supposing, or holding something to be so / collection:call: observation 22585 rests on observation 22563, which this row may not rest on
+- failed: interworking / supposing, or holding something to be so / collection:combat: observation 22586 rests on observation 22563, which this row may not rest on
+- failed: interworking / supposing, or holding something to be so / collection:comfort: observation 22587 rests on observation 22563, which this row may not rest on
+- failed: interworking / supposing, or holding something to be so / collection:command: 6 word node(s) miss a required column with no reason on the node (for example [93823, 93824, 93825, 93826, 93827])
+- failed: interworking / supposing, or holding something to be so / collection:conceal: 3 word node(s) miss a required column with no reason on the node (for example [93836, 93837, 93838])
+- failed: interworking / supposing, or holding something to be so / collection:condemn: 4 word node(s) miss a required column with no reason on the node (for example [93847, 93848, 93849, 93850])
+- failed: interworking / supposing, or holding something to be so / collection:convince: 3 word node(s) miss a required column with no reason on the node (for example [93858, 93859, 93860])
+- failed: interworking / supposing, or holding something to be so / collection:deceive: observation 22592 rests on observation 22564, which this row may not rest on
+- failed: interworking / supposing, or holding something to be so / collection:depart: observation 22593 rests on observation 22565, which this row may not rest on
+- failed: interworking / supposing, or holding something to be so / collection:desire: observation 22594 rests on observation 22566, which this row may not rest on
+- failed: interworking / supposing, or holding something to be so / collection:destruction: observation 22595 rests on observation 22566, which this row may not rest on
+- failed: interworking / supposing, or holding something to be so / collection:die: observation 22596 rests on observation 22563, which this row may not rest on
+- failed: interworking / supposing, or holding something to be so / collection:endure: 5 word node(s) miss a required column with no reason on the node (for example [93941, 93942, 93943, 93944, 93945])
+- failed: interworking / supposing, or holding something to be so / collection:escape: observation 22598 rests on observation 22563, which this row may not rest on
+- failed: interworking / supposing, or holding something to be so / collection:evildoer: observation 22599 rests on observation 22563, which this row may not rest on
+- failed: interworking / supposing, or holding something to be so / collection:fear: observation 22600 rests on observation 22563, which this row may not rest on
+- failed: interworking / supposing, or holding something to be so / collection:folly: observation 22601 rests on observation 22564, which this row may not rest on
+- failed: interworking / supposing, or holding something to be so / collection:guard: 4 word node(s) miss a required column with no reason on the node (for example [94020, 94021, 94022, 94023])
+- failed: interworking / supposing, or holding something to be so / collection:hear: observation 22603 has a node on occurrence 1005455, which this row may not name
+- failed: interworking / supposing, or holding something to be so / collection:heart: observation 22604 rests on observation 22577, which this row may not rest on
+- failed: interworking / supposing, or holding something to be so / collection:honor: observation 22605 rests on observation 22604, which this row may not rest on
+- failed: interworking / supposing, or holding something to be so / collection:intend: observation 22606 rests on observation 22563, which this row may not rest on
+- failed: interworking / supposing, or holding something to be so / collection:kill: 9 word node(s) miss a required column with no reason on the node (for example [94119, 94120, 94121, 94122, 94123])
+- failed: interworking / supposing, or holding something to be so / collection:know: observation 22608 rests on observation 22578, which this row may not rest on
+- failed: interworking / supposing, or holding something to be so / collection:labor: observation 22609 rests on observation 22608, which this row may not rest on
+- failed: interworking / supposing, or holding something to be so / collection:laugh: 4 word node(s) miss a required column with no reason on the node (for example [94184, 94185, 94186, 94187])
+- failed: interworking / supposing, or holding something to be so / collection:live: observation 22611 rests on observation 22563, which this row may not rest on
+- failed: interworking / supposing, or holding something to be so / collection:loyalty: 3 word node(s) miss a required column with no reason on the node (for example [94218, 94219, 94220])
+- failed: interworking / supposing, or holding something to be so / collection:mute: 4 word node(s) miss a required column with no reason on the node (for example [94228, 94229, 94230, 94231])
+- failed: interworking / supposing, or holding something to be so / collection:offer: 5 word node(s) miss a required column with no reason on the node (for example [94239, 94240, 94241, 94242, 94243])
+- failed: interworking / supposing, or holding something to be so / collection:pain: 4 word node(s) miss a required column with no reason on the node (for example [94251, 94252, 94253, 94254])
+- failed: interworking / supposing, or holding something to be so / collection:profess: observation 22616 rests on observation 22579, which this row may not rest on
+- failed: interworking / supposing, or holding something to be so / collection:quarrel: observation 22617 rests on observation 22580, which this row may not rest on
+- failed: interworking / supposing, or holding something to be so / collection:return: 5 word node(s) miss a required column with no reason on the node (for example [94299, 94300, 94301, 94302, 94303])
+- failed: interworking / supposing, or holding something to be so / collection:reward: observation 22619 rests on observation 22604, which this row may not rest on
+- failed: interworking / supposing, or holding something to be so / collection:rich: 6 word node(s) miss a required column with no reason on the node (for example [94324, 94325, 94326, 94327, 94328])
+- failed: interworking / supposing, or holding something to be so / collection:righteous: observation 22621 rests on observation 22604, which this row may not rest on
+- failed: interworking / supposing, or holding something to be so / collection:search: observation 22622 rests on observation 22565, which this row may not rest on
+- failed: interworking / supposing, or holding something to be so / collection:serve: observation 22623 rests on observation 22566, which this row may not rest on
+- failed: interworking / supposing, or holding something to be so / collection:share: 13 word node(s) miss a required column with no reason on the node (for example [94422, 94423, 94424, 94425, 94426])
+- failed: interworking / supposing, or holding something to be so / collection:sin: 5 word node(s) miss a required column with no reason on the node (for example [94445, 94446, 94447, 94448, 94449])
+- failed: interworking / supposing, or holding something to be so / collection:snatch: observation 22626 rests on observation 22565, which this row may not rest on
+- failed: interworking / supposing, or holding something to be so / collection:supplication: 4 word node(s) miss a required column with no reason on the node (for example [94475, 94476, 94477, 94478])
+- failed: interworking / supposing, or holding something to be so / collection:tribulation: 5 word node(s) miss a required column with no reason on the node (for example [94485, 94486, 94487, 94488, 94489])
+- failed: interworking / supposing, or holding something to be so / collection:trust: 5 word node(s) miss a required column with no reason on the node (for example [94498, 94499, 94500, 94501, 94502])
+- failed: interworking / supposing, or holding something to be so / collection:unclean: observation 22630 rests on observation 22608, which this row may not rest on
+- failed: interworking / supposing, or holding something to be so / collection:wise: observation 22631 rests on observation 22564, which this row may not rest on
+- failed: interworking / attending to a matter and turning it over / collection:destruction: observation 22632 rests on observation 22567, which this row may not rest on
+- failed: interworking / attending to a matter and turning it over / collection:evildoer: observation 22633 rests on observation 22568, which this row may not rest on
+- failed: interworking / attending to a matter and turning it over / collection:fear: observation 22634 rests on observation 22568, which this row may not rest on
+- failed: interworking / attending to a matter and turning it over / collection:forget: observation 22635 rests on observation 22567, which this row may not rest on
+- failed: interworking / attending to a matter and turning it over / collection:govern: observation 22636 rests on observation 22567, which this row may not rest on
+- failed: interworking / attending to a matter and turning it over / collection:heart: observation 22637 rests on observation 22577, which this row may not rest on
+- failed: interworking / attending to a matter and turning it over / collection:labor: observation 22638 rests on observation 22567, which this row may not rest on
+- failed: interworking / attending to a matter and turning it over / collection:live: observation 22639 rests on observation 22569, which this row may not rest on
+- failed: interworking / attending to a matter and turning it over / collection:love: 3 word node(s) miss a required column with no reason on the node (for example [94642, 94643, 94644])
+- failed: interworking / attending to a matter and turning it over / collection:search: observation 22641 rests on observation 22567, which this row may not rest on
+- failed: interworking / attending to a matter and turning it over / collection:snatch: 5 word node(s) miss a required column with no reason on the node (for example [94665, 94666, 94667, 94668, 94669])
+- failed: interworking / attending to a matter and turning it over / collection:wise: observation 22643 rests on observation 22577, which this row may not rest on
+- failed: interworking / taking account of, and reckoning as / collection:hear: observation 22649 has a node on occurrence 1240110, which this row may not name
+- failed: interworking / taking account of, and reckoning as / collection:labor: observation 22650 rests on observation 22571, which this row may not rest on
+- failed: interworking / taking account of, and reckoning as / collection:pride: observation 22651 rests on observation 22571, which this row may not rest on
+- failed: interworking / taking account of, and reckoning as / collection:scoff: 3 word node(s) miss a required column with no reason on the node (for example [94786, 94787, 94788])

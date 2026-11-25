@@ -1,0 +1,2203 @@
+{
+ "collection": "thought",
+ "step": "S1",
+ "pulled": "2026-11-24T16:57:28Z",
+ "rows": [
+  {
+   "ledger_id": 922,
+   "item": "word-sense",
+   "kind": "term",
+   "word": "reasoned",
+   "strong": "G1256",
+   "subject": "reasoned|G1256",
+   "asks": "In the verses of this collection where this word stands (the surface with its lettered Strong's code), what does it mean in each, as the verse itself shows it? Write one observation for each sense the verses give it, with the occurrences it holds for (every occurrence is in some sense, none is left out): state the sense in the verse, how the verse shows it (the words it stands with, the construction, the morph) and name the verses by reference. An occurrence whose sense departs from the usual sense of the word is its own observation, of kind face. The lexicon entries are evidence to read, never text to restate (RW-04, B:131). A prompt that does not apply is not answered (RG-17).",
+   "prompts": [
+    {
+     "code": "M0.1.1",
+     "question": "In this verse, looking at this specific occurrence (its surface form and morph_code), what does this term's name/form show about its essential nature here?"
+    },
+    {
+     "code": "M0.1.2",
+     "question": "In this verse, drawing on this term's lexicon entries but grounded in how it is actually used in this occurrence, what does it mean at the definitional level?"
+    },
+    {
+     "code": "M0.1.3",
+     "question": "In this verse, what directional, relational, or constitutional implication does this term's name carry as it functions in this specific occurrence?"
+    },
+    {
+     "code": "M0.4.1",
+     "question": "What is the grammatical/stem form of this term in this verse?"
+    },
+    {
+     "code": "M0.5.1",
+     "question": "In this verse, what does this term's root meaning show about how it operates in this specific occurrence?"
+    },
+    {
+     "code": "M0.5.2",
+     "question": "In this verse, what does this occurrence's own grammatical form (per its morph_code — e.g. noun, verb, adjective, participle) show about how the term operates here?"
+    },
+    {
+     "code": "M0.5.3",
+     "question": "In this verse, given this term's known semantic range — the breadth of meaning it can carry, including idiomatic, analogical, or combinatorial senses — where does this occurrence sit within that range, and what does that show about how the term operates here?"
+    },
+    {
+     "code": "M0.5.4",
+     "question": "In this verse, does this occurrence express a specific aspect — disposition versus act, received versus given, condition versus quality? Record which, or none."
+    },
+    {
+     "code": "M0.5.5",
+     "question": "In this verse, among this term's own related terms, is there one that functions as this occurrence's structural opposite? Record it, or none."
+    },
+    {
+     "code": "M0.5.6",
+     "question": "In this verse, among this term's own related terms, is there a person-type term relevant to this occurrence — one for a person who habitually possesses or exercises it? Record it, or none."
+    },
+    {
+     "code": "M0.5.7",
+     "question": "In this verse, among this term's own related terms, is there a supplication or seeking term relevant to this occurrence — one for the act of seeking it from another? Record it, or none."
+    },
+    {
+     "code": "M0.5.8",
+     "question": "In this verse, does this term's Testament context (OT Hebrew vs. NT Greek) affect how this specific occurrence should be interpreted, and if so, how? Record none if the Testament context makes no interpretive difference here."
+    },
+    {
+     "code": "M0.5.9",
+     "question": "In this verse, if this term is newly coined in the NT period, what does that coinage show about how it functions in this occurrence? Record none if not applicable or not relevant to this occurrence."
+    },
+    {
+     "code": "M0.5.11",
+     "question": "In this verse, where this occurrence's meaning diverges from the term's usual sense elsewhere, what nuance does that divergence carry here, and how does it compare to the word's other occurrences? Pay particular attention to this occurrence's own surface form/rendering — a marked or atypical surface form is often the visible trace of the divergence itself, not a separate fact. Record none if this occurrence matches the term's usual sense."
+    }
+   ],
+   "nodes_total": 5,
+   "nodes_shown": 5,
+   "lexicon": {
+    "sense_head": "to dispute",
+    "meaning_range": "to reason, discuss, discourse; to argue, dispute; <b>to discourse, argue, reason,</b> <ref='Act.17.2, 17; 24.12'>Acts 17:2, 17; 24:12</ref>; <b>to address, speak to,</b> <ref='Heb.12.5'>Heb. 12:5;</ref> <b>to contend, dispute,</b> <ref='Mrk.9.34'>Mk. 9:34</ref>; Jude 9",
+    "lsj": "<b> διαλέγω</b>, <br /> <b>pick out,</b> [<a href=\"javascript:void(0)\" title=\" 5th c.BC: Herodotus Historicus 8.107, 113, 5th-6th c.BC: Xenophon Historicus “Oeconomicus” 8.9, etc.\">Refs 5th c.BC+</a>]; πτῶμα <b>glean</b> fallen olives, [<a href=\"javascript:void(0)\" title=\" “PFay.” 102.20 \">Refs</a>]; compare διαλέγειν· ἀνακαθαίρειν, [<a href=\"javascript:void(0)\" title=\" 5th c.AD(?): Hesychius Legal icographus \">Refs 5th c.AD+</a>]; <b>select, separate,</b> [<a href=\"javascript:void(0)\" title=\" 5th-6th c.BC: Plato Philosophus “Leges” 735b \">Refs 5th c.BC+</a>]; <b>examine, check</b> documents, [<a href=\"javascript:void(0)\" title=\" “PFay.” 11.26 (2nd c.BC), etc. \">Refs 2nd c.BC+</a>]<br /><Lev",
+    "mounce": "to reason, discuss, discourse; to argue, dispute",
+    "related": [
+     "G0483 ἀντιλέγω to dispute",
+     "G0557 ἀπελεγμός discredit",
+     "G1223 διά through/because of",
+     "G1246 διακατελέγχομαι to refute",
+     "G1258 διάλεκτος language",
+     "G1649 ἔλεγξις rebuke",
+     "G1650 ἔλεγχος rebuke",
+     "G1651 ἐλέγχω to rebuke",
+     "G1827 ἐξελέγχω to convict",
+     "G1951 ἐπιλέγω to call/choose",
+     "G2639 καταλέγω to enrol",
+     "G3004G λέγω to say: says"
+    ]
+   },
+   "existing_observations": [
+    {
+     "observation": 22422,
+     "stage": "layer-2",
+     "kind": "face",
+     "question": null,
+     "text": "The surface 'reasoned' carries two codes in two senses: G1256 (five verses, Paul reasoning with hearers in speech) and G3049 (1Cor 13:11, the reckoning of a child).",
+     "roles": [
+      "lexical"
+     ],
+     "occurrences": 5
+    }
+   ],
+   "evidence": [
+    {
+     "occurrence": 1472385,
+     "reference": "Act 17:2",
+     "surface": "reasoned",
+     "strong": "G1256",
+     "morph": "V-ADI-3S",
+     "unit": "reasoned",
+     "surface_kind": "own",
+     "negator": false,
+     "party_kind": null,
+     "gloss_consistent_in_verse": 1,
+     "verse": "And Paul went in, as was his custom, and on three Sabbath days he reasoned with them from the Scriptures,"
+    },
+    {
+     "occurrence": 1469987,
+     "reference": "Act 17:17",
+     "surface": "reasoned",
+     "strong": "G1256",
+     "morph": "V-INI-3S",
+     "unit": "reasoned",
+     "surface_kind": "own",
+     "negator": false,
+     "party_kind": null,
+     "gloss_consistent_in_verse": 1,
+     "verse": "So he reasoned in the synagogue with the Jews and the devout persons, and in the marketplace every day with those who happened to be there."
+    },
+    {
+     "occurrence": 1472390,
+     "reference": "Act 18:4",
+     "surface": "reasoned",
+     "strong": "G1256",
+     "morph": "V-INI-3S",
+     "unit": "reasoned",
+     "surface_kind": "own",
+     "negator": false,
+     "party_kind": null,
+     "gloss_consistent_in_verse": 1,
+     "verse": "And he reasoned in the synagogue every Sabbath, and tried to persuade Jews and Greeks."
+    },
+    {
+     "occurrence": 1472413,
+     "reference": "Act 18:19",
+     "surface": "reasoned",
+     "strong": "G1256",
+     "morph": "V-ADI-3S",
+     "unit": "reasoned",
+     "surface_kind": "own",
+     "negator": false,
+     "party_kind": null,
+     "gloss_consistent_in_verse": 1,
+     "verse": "And they came to Ephesus, and he left them there, but he himself went into the synagogue and reasoned with the Jews."
+    },
+    {
+     "occurrence": 1465369,
+     "reference": "Act 24:25",
+     "surface": "reasoned",
+     "strong": "G1256",
+     "morph": "V-PNP-GSM",
+     "unit": "reasoned",
+     "surface_kind": "own",
+     "negator": false,
+     "party_kind": null,
+     "gloss_consistent_in_verse": 1,
+     "verse": "And as he reasoned about righteousness and self-control and the coming judgment, Felix was alarmed and said, “ Go away for the present. When I get an opportunity I will summon you.”"
+    }
+   ],
+   "fill": {
+    "disposition": "observed",
+    "senses": [
+     {
+      "kind": "term",
+      "obs_text": "In Act 17:2, 17:17, 18:4, 18:19 and 24:25 the verb is Paul's speaking in debate: he argues from the Scriptures in the synagogue or the marketplace, and in Act 24:25 on righteousness, self-control and judgment to Felix; it is reasoning aimed at another person, with persuasion in view.",
+      "basis": "stated",
+      "occurrences": [
+       "Act 17:2",
+       "Act 17:17",
+       "Act 18:4",
+       "Act 18:19",
+       "Act 24:25"
+      ]
+     }
+    ],
+    "member_role": "lexical",
+    "reason": "",
+    "observation_id": "",
+    "older": [
+     {
+      "observation": 13008,
+      "action": "keep",
+      "nature": "inner_being",
+      "reason": "kept and marked inner being: it states how the mind or heart works in the verses it names, and rests on them"
+     },
+     {
+      "observation": 13043,
+      "action": "keep",
+      "nature": "inner_being",
+      "reason": "kept and marked inner being: it states how the mind or heart works in the verses it names, and rests on them"
+     },
+     {
+      "observation": 13673,
+      "action": "keep",
+      "nature": "inner_being",
+      "reason": "kept and marked inner being: it states how the mind or heart works in the verses it names, and rests on them"
+     },
+     {
+      "observation": 14217,
+      "action": "keep",
+      "nature": "inner_being",
+      "reason": "kept and marked inner being: it states how the mind or heart works in the verses it names, and rests on them"
+     }
+    ]
+   }
+  },
+  {
+   "ledger_id": 923,
+   "item": "word-sense",
+   "kind": "term",
+   "word": "reasoned",
+   "strong": "G3049",
+   "subject": "reasoned|G3049",
+   "asks": "In the verses of this collection where this word stands (the surface with its lettered Strong's code), what does it mean in each, as the verse itself shows it? Write one observation for each sense the verses give it, with the occurrences it holds for (every occurrence is in some sense, none is left out): state the sense in the verse, how the verse shows it (the words it stands with, the construction, the morph) and name the verses by reference. An occurrence whose sense departs from the usual sense of the word is its own observation, of kind face. The lexicon entries are evidence to read, never text to restate (RW-04, B:131). A prompt that does not apply is not answered (RG-17).",
+   "prompts": [
+    {
+     "code": "M0.1.1",
+     "question": "In this verse, looking at this specific occurrence (its surface form and morph_code), what does this term's name/form show about its essential nature here?"
+    },
+    {
+     "code": "M0.1.2",
+     "question": "In this verse, drawing on this term's lexicon entries but grounded in how it is actually used in this occurrence, what does it mean at the definitional level?"
+    },
+    {
+     "code": "M0.1.3",
+     "question": "In this verse, what directional, relational, or constitutional implication does this term's name carry as it functions in this specific occurrence?"
+    },
+    {
+     "code": "M0.4.1",
+     "question": "What is the grammatical/stem form of this term in this verse?"
+    },
+    {
+     "code": "M0.5.1",
+     "question": "In this verse, what does this term's root meaning show about how it operates in this specific occurrence?"
+    },
+    {
+     "code": "M0.5.2",
+     "question": "In this verse, what does this occurrence's own grammatical form (per its morph_code — e.g. noun, verb, adjective, participle) show about how the term operates here?"
+    },
+    {
+     "code": "M0.5.3",
+     "question": "In this verse, given this term's known semantic range — the breadth of meaning it can carry, including idiomatic, analogical, or combinatorial senses — where does this occurrence sit within that range, and what does that show about how the term operates here?"
+    },
+    {
+     "code": "M0.5.4",
+     "question": "In this verse, does this occurrence express a specific aspect — disposition versus act, received versus given, condition versus quality? Record which, or none."
+    },
+    {
+     "code": "M0.5.5",
+     "question": "In this verse, among this term's own related terms, is there one that functions as this occurrence's structural opposite? Record it, or none."
+    },
+    {
+     "code": "M0.5.6",
+     "question": "In this verse, among this term's own related terms, is there a person-type term relevant to this occurrence — one for a person who habitually possesses or exercises it? Record it, or none."
+    },
+    {
+     "code": "M0.5.7",
+     "question": "In this verse, among this term's own related terms, is there a supplication or seeking term relevant to this occurrence — one for the act of seeking it from another? Record it, or none."
+    },
+    {
+     "code": "M0.5.8",
+     "question": "In this verse, does this term's Testament context (OT Hebrew vs. NT Greek) affect how this specific occurrence should be interpreted, and if so, how? Record none if the Testament context makes no interpretive difference here."
+    },
+    {
+     "code": "M0.5.9",
+     "question": "In this verse, if this term is newly coined in the NT period, what does that coinage show about how it functions in this occurrence? Record none if not applicable or not relevant to this occurrence."
+    },
+    {
+     "code": "M0.5.11",
+     "question": "In this verse, where this occurrence's meaning diverges from the term's usual sense elsewhere, what nuance does that divergence carry here, and how does it compare to the word's other occurrences? Pay particular attention to this occurrence's own surface form/rendering — a marked or atypical surface form is often the visible trace of the divergence itself, not a separate fact. Record none if this occurrence matches the term's usual sense."
+    }
+   ],
+   "nodes_total": 1,
+   "nodes_shown": 1,
+   "lexicon": {
+    "sense_head": "to count",
+    "meaning_range": "to credit, count, reckon; regard, think, consider; (1) <i>primarily</i> <b>to count, calculate; to count, enumerate, consider</b> <ref='Mrk.15.28'>Mk. 15:28</ref>; <ref='Luk.22.37'>Lk. 22:37</ref>; <b>to set down</b> as a matter of account, <ref='1Co.13.5'>1Cor. 13:5;</ref> <ref='2Co.3.5'>2Cor. 3:5;</ref> 12:6; <b>to impute, credit, count, consider, reckon</b> <ref='Rom.4.3'>Rom. 4:3;</ref> <ref='2Co.5.19'>2Cor. 5:19;</ref> <ref='2Ti.4.16'>2Tim. 4:16;</ref> <b>to account,</b> <ref='Rom.2.26'>Rom. 2:26;</ref> 8:36; <greek>εἰς οὐδὲν λογισθῆναι</greek>, <b>to be set at nought, despised,</b> <ref='Act.19.27'>Acts 19:27;</ref> <b>to regard, deem, consider,</b> <ref='Rom.6.11'>Rom. 6:11;</ref> 14:",
+    "lsj": "<b> λογ-ίζομαι</b>, <br /> <i>Attic dialect</i> <i>future</i> -ιοῦμαι [<a href=\"javascript:void(0)\" title=\" [prev. author = 5th-6th c.BC: Aristophanes Comicus] “Ra.” 1263, 5th c.BC: Thucydides Historicus 5.87, etc.\">Refs 5th c.BC+</a>]: <i>aorist</i> ἐλογισάμην [<a href=\"javascript:void(0)\" title=\" 5th c.BC: Euripides Tragicus “Orestes” 555, 5th c.BC: Thucydides Historicus 6.31, etc.\">Refs 5th c.BC+</a>]: <i>perfect</i> λελόγισμαι [<a href=\"javascript:void(0)\" title=\" 5th c.BC: Lysias Orator 32.24,27, 4th c.BC: Demosthenes Orator 28.12 \">Refs 5th c.BC+</a>]:—<i>passive</i>, see below 111: (λόγος):—properly of numerical calculation, <b>count, reckon</b>, οὐκ ἐπισταμένους λογίζεσθαι [<a href=\"",
+    "mounce": "to credit, count, reckon; regard, think, consider",
+    "related": [
+     "G3056 λόγος word"
+    ]
+   },
+   "existing_observations": [
+    {
+     "observation": 22422,
+     "stage": "layer-2",
+     "kind": "face",
+     "question": null,
+     "text": "The surface 'reasoned' carries two codes in two senses: G1256 (five verses, Paul reasoning with hearers in speech) and G3049 (1Cor 13:11, the reckoning of a child).",
+     "roles": [
+      "lexical"
+     ],
+     "occurrences": 1
+    }
+   ],
+   "evidence": [
+    {
+     "occurrence": 1484836,
+     "reference": "1Cor 13:11",
+     "surface": "reasoned",
+     "strong": "G3049",
+     "morph": "V-INI-1S",
+     "unit": "reasoned",
+     "surface_kind": "own",
+     "negator": false,
+     "party_kind": null,
+     "gloss_consistent_in_verse": 1,
+     "verse": "When I was a child, I spoke like a child, I thought like a child, I reasoned like a child. When I became a man, I gave up childish ways."
+    }
+   ],
+   "fill": {
+    "disposition": "observed",
+    "senses": [
+     {
+      "kind": "term",
+      "obs_text": "In 1Cor 13:11 the verb is the child's way of thinking, set beside the child's speaking and thinking in the verse and given up when the man grows; it is reckoning in the mind and not argument with another.",
+      "basis": "stated",
+      "occurrences": [
+       "1Cor 13:11"
+      ]
+     }
+    ],
+    "member_role": "lexical",
+    "reason": "",
+    "observation_id": "",
+    "older": [
+     {
+      "observation": 12421,
+      "action": "keep",
+      "nature": "inner_being",
+      "reason": "kept and marked inner being: it states how the mind or heart works in the verses it names, and rests on them"
+     }
+    ]
+   }
+  },
+  {
+   "ledger_id": 924,
+   "item": "word-sense",
+   "kind": "term",
+   "word": "reasoning",
+   "strong": "G1256",
+   "subject": "reasoning|G1256",
+   "asks": "In the verses of this collection where this word stands (the surface with its lettered Strong's code), what does it mean in each, as the verse itself shows it? Write one observation for each sense the verses give it, with the occurrences it holds for (every occurrence is in some sense, none is left out): state the sense in the verse, how the verse shows it (the words it stands with, the construction, the morph) and name the verses by reference. An occurrence whose sense departs from the usual sense of the word is its own observation, of kind face. The lexicon entries are evidence to read, never text to restate (RW-04, B:131). A prompt that does not apply is not answered (RG-17).",
+   "prompts": [
+    {
+     "code": "M0.1.1",
+     "question": "In this verse, looking at this specific occurrence (its surface form and morph_code), what does this term's name/form show about its essential nature here?"
+    },
+    {
+     "code": "M0.1.2",
+     "question": "In this verse, drawing on this term's lexicon entries but grounded in how it is actually used in this occurrence, what does it mean at the definitional level?"
+    },
+    {
+     "code": "M0.1.3",
+     "question": "In this verse, what directional, relational, or constitutional implication does this term's name carry as it functions in this specific occurrence?"
+    },
+    {
+     "code": "M0.4.1",
+     "question": "What is the grammatical/stem form of this term in this verse?"
+    },
+    {
+     "code": "M0.5.1",
+     "question": "In this verse, what does this term's root meaning show about how it operates in this specific occurrence?"
+    },
+    {
+     "code": "M0.5.2",
+     "question": "In this verse, what does this occurrence's own grammatical form (per its morph_code — e.g. noun, verb, adjective, participle) show about how the term operates here?"
+    },
+    {
+     "code": "M0.5.3",
+     "question": "In this verse, given this term's known semantic range — the breadth of meaning it can carry, including idiomatic, analogical, or combinatorial senses — where does this occurrence sit within that range, and what does that show about how the term operates here?"
+    },
+    {
+     "code": "M0.5.4",
+     "question": "In this verse, does this occurrence express a specific aspect — disposition versus act, received versus given, condition versus quality? Record which, or none."
+    },
+    {
+     "code": "M0.5.5",
+     "question": "In this verse, among this term's own related terms, is there one that functions as this occurrence's structural opposite? Record it, or none."
+    },
+    {
+     "code": "M0.5.6",
+     "question": "In this verse, among this term's own related terms, is there a person-type term relevant to this occurrence — one for a person who habitually possesses or exercises it? Record it, or none."
+    },
+    {
+     "code": "M0.5.7",
+     "question": "In this verse, among this term's own related terms, is there a supplication or seeking term relevant to this occurrence — one for the act of seeking it from another? Record it, or none."
+    },
+    {
+     "code": "M0.5.8",
+     "question": "In this verse, does this term's Testament context (OT Hebrew vs. NT Greek) affect how this specific occurrence should be interpreted, and if so, how? Record none if the Testament context makes no interpretive difference here."
+    },
+    {
+     "code": "M0.5.9",
+     "question": "In this verse, if this term is newly coined in the NT period, what does that coinage show about how it functions in this occurrence? Record none if not applicable or not relevant to this occurrence."
+    },
+    {
+     "code": "M0.5.11",
+     "question": "In this verse, where this occurrence's meaning diverges from the term's usual sense elsewhere, what nuance does that divergence carry here, and how does it compare to the word's other occurrences? Pay particular attention to this occurrence's own surface form/rendering — a marked or atypical surface form is often the visible trace of the divergence itself, not a separate fact. Record none if this occurrence matches the term's usual sense."
+    }
+   ],
+   "nodes_total": 2,
+   "nodes_shown": 2,
+   "lexicon": "same code as the row of reasoned",
+   "existing_observations": [
+    {
+     "observation": 22423,
+     "stage": "layer-2",
+     "kind": "face",
+     "question": null,
+     "text": "The surface 'reasoning' carries two codes in two senses: G1261 in Luk 9:47, the reasoning inside the disciples' hearts, and G1256 in Act 19:8 and Act 19:9, Paul's reasoning aloud in the synagogue and the hall. The same w",
+     "roles": [
+      "lexical"
+     ],
+     "occurrences": 2
+    }
+   ],
+   "evidence": [
+    {
+     "occurrence": 1461836,
+     "reference": "Act 19:8",
+     "surface": "reasoning",
+     "strong": "G1256",
+     "morph": "V-PNP-NSM",
+     "unit": "reasoning",
+     "surface_kind": "own",
+     "negator": false,
+     "party_kind": null,
+     "gloss_consistent_in_verse": 1,
+     "verse": "And he entered the synagogue and for three months spoke boldly, reasoning and persuading them about the kingdom of God."
+    },
+    {
+     "occurrence": 1468173,
+     "reference": "Act 19:9",
+     "surface": "reasoning",
+     "strong": "G1256",
+     "morph": "V-PNP-NSM",
+     "unit": "reasoning",
+     "surface_kind": "own",
+     "negator": false,
+     "party_kind": null,
+     "gloss_consistent_in_verse": 1,
+     "verse": "But when some became stubborn and continued in unbelief, speaking evil of the Way before the congregation, he withdrew from them and took the disciples with him, reasoning daily in the hall of Tyrannus."
+    }
+   ],
+   "fill": {
+    "disposition": "observed",
+    "senses": [
+     {
+      "kind": "term",
+      "obs_text": "In Act 19:8 and 19:9 the participle is Paul's arguing in the synagogue and then in the hall of Tyrannus, joined in the first verse to persuading about the kingdom; as in the other uses of this code in Acts it is reasoning with hearers.",
+      "basis": "stated",
+      "occurrences": [
+       "Act 19:8",
+       "Act 19:9"
+      ]
+     }
+    ],
+    "member_role": "lexical",
+    "reason": "",
+    "observation_id": "",
+    "older": []
+   }
+  },
+  {
+   "ledger_id": 925,
+   "item": "word-sense",
+   "kind": "term",
+   "word": "reasoning",
+   "strong": "G1261",
+   "subject": "reasoning|G1261",
+   "asks": "In the verses of this collection where this word stands (the surface with its lettered Strong's code), what does it mean in each, as the verse itself shows it? Write one observation for each sense the verses give it, with the occurrences it holds for (every occurrence is in some sense, none is left out): state the sense in the verse, how the verse shows it (the words it stands with, the construction, the morph) and name the verses by reference. An occurrence whose sense departs from the usual sense of the word is its own observation, of kind face. The lexicon entries are evidence to read, never text to restate (RW-04, B:131). A prompt that does not apply is not answered (RG-17).",
+   "prompts": [
+    {
+     "code": "M0.1.1",
+     "question": "In this verse, looking at this specific occurrence (its surface form and morph_code), what does this term's name/form show about its essential nature here?"
+    },
+    {
+     "code": "M0.1.2",
+     "question": "In this verse, drawing on this term's lexicon entries but grounded in how it is actually used in this occurrence, what does it mean at the definitional level?"
+    },
+    {
+     "code": "M0.1.3",
+     "question": "In this verse, what directional, relational, or constitutional implication does this term's name carry as it functions in this specific occurrence?"
+    },
+    {
+     "code": "M0.4.1",
+     "question": "What is the grammatical/stem form of this term in this verse?"
+    },
+    {
+     "code": "M0.5.1",
+     "question": "In this verse, what does this term's root meaning show about how it operates in this specific occurrence?"
+    },
+    {
+     "code": "M0.5.2",
+     "question": "In this verse, what does this occurrence's own grammatical form (per its morph_code — e.g. noun, verb, adjective, participle) show about how the term operates here?"
+    },
+    {
+     "code": "M0.5.3",
+     "question": "In this verse, given this term's known semantic range — the breadth of meaning it can carry, including idiomatic, analogical, or combinatorial senses — where does this occurrence sit within that range, and what does that show about how the term operates here?"
+    },
+    {
+     "code": "M0.5.4",
+     "question": "In this verse, does this occurrence express a specific aspect — disposition versus act, received versus given, condition versus quality? Record which, or none."
+    },
+    {
+     "code": "M0.5.5",
+     "question": "In this verse, among this term's own related terms, is there one that functions as this occurrence's structural opposite? Record it, or none."
+    },
+    {
+     "code": "M0.5.6",
+     "question": "In this verse, among this term's own related terms, is there a person-type term relevant to this occurrence — one for a person who habitually possesses or exercises it? Record it, or none."
+    },
+    {
+     "code": "M0.5.7",
+     "question": "In this verse, among this term's own related terms, is there a supplication or seeking term relevant to this occurrence — one for the act of seeking it from another? Record it, or none."
+    },
+    {
+     "code": "M0.5.8",
+     "question": "In this verse, does this term's Testament context (OT Hebrew vs. NT Greek) affect how this specific occurrence should be interpreted, and if so, how? Record none if the Testament context makes no interpretive difference here."
+    },
+    {
+     "code": "M0.5.9",
+     "question": "In this verse, if this term is newly coined in the NT period, what does that coinage show about how it functions in this occurrence? Record none if not applicable or not relevant to this occurrence."
+    },
+    {
+     "code": "M0.5.11",
+     "question": "In this verse, where this occurrence's meaning diverges from the term's usual sense elsewhere, what nuance does that divergence carry here, and how does it compare to the word's other occurrences? Pay particular attention to this occurrence's own surface form/rendering — a marked or atypical surface form is often the visible trace of the divergence itself, not a separate fact. Record none if this occurrence matches the term's usual sense."
+    }
+   ],
+   "nodes_total": 1,
+   "nodes_shown": 1,
+   "lexicon": {
+    "sense_head": "reasoning",
+    "meaning_range": "thought, doubt; argument, dispute; <b>reasoning, thought, cogitation, purpose,</b> <ref='Mat.15.19'>Mt. 15:19</ref>; <ref='Mrk.7.21'>Mk. 7:21</ref>; <b>discourse, dispute, disputation, contention, argument </b> <ref='Luk.9.46'>Lk. 9:46</ref>; <b>doubt, hesitation, scruple,</b> <ref='Luk.24.38'>Lk. 24:38</ref>",
+    "lsj": "<b> διαλογ-ισμός</b>, ὁ, <br /> <b>balancing of accounts,</b> [<a href=\"javascript:void(0)\" title=\" 4th c.BC: Demosthenes Orator 36.23, “PRev.Laws” 17.17 (_plural_), “IG” 5(1).1432.6 (from Messene), etc.: hence, \">Refs 4th c.BC+</a>]<br /><Level2><b>__II</b></Level2> <b>calculation, consideration,</b> [<a href=\"javascript:void(0)\" title=\" 5th-6th c.BC: Plato Philosophus “Axiochus” 367a; δ. λαβεῖν περὶ σφῶν αὐτῶν 1st c.BC-1st c.AD: Strabo Geographus 5.3.7 \">Refs 5th c.BC+</a>]; ὁ δ. οὗτος this <b>consideration,</b> [<a href=\"javascript:void(0)\" title=\" 1st c.BC: Philodemus Gadarensis Epigrammaticus “D.” 1.15. \">Refs 1st c.BC+</a>]<br /><Level2><b>__III</b></Level2> <b>debate, argument, discus",
+    "mounce": "thought, doubt; argument, dispute",
+    "related": [
+     "G1260 διαλογίζομαι to discuss"
+    ]
+   },
+   "existing_observations": [
+    {
+     "observation": 22423,
+     "stage": "layer-2",
+     "kind": "face",
+     "question": null,
+     "text": "The surface 'reasoning' carries two codes in two senses: G1261 in Luk 9:47, the reasoning inside the disciples' hearts, and G1256 in Act 19:8 and Act 19:9, Paul's reasoning aloud in the synagogue and the hall. The same w",
+     "roles": [
+      "lexical"
+     ],
+     "occurrences": 1
+    }
+   ],
+   "evidence": [
+    {
+     "occurrence": 1441942,
+     "reference": "Luk 9:47",
+     "surface": "reasoning",
+     "strong": "G1261",
+     "morph": "N-ASM",
+     "unit": "reasoning",
+     "surface_kind": "own",
+     "negator": false,
+     "party_kind": null,
+     "gloss_consistent_in_verse": 1,
+     "verse": "But Jesus, knowing the reasoning of their hearts, took a child and put him by his side"
+    }
+   ],
+   "fill": {
+    "disposition": "observed",
+    "senses": [
+     {
+      "kind": "term",
+      "obs_text": "In Luk 9:47 the noun is the thought of the disciples' hearts which Jesus knows, so that it names reasoning in the heart as something hidden from the others and known to him; the verse locates it in the heart and not in speech.",
+      "basis": "stated",
+      "occurrences": [
+       "Luk 9:47"
+      ]
+     }
+    ],
+    "member_role": "lexical",
+    "reason": "",
+    "observation_id": "",
+    "older": [
+     {
+      "observation": 12407,
+      "action": "keep",
+      "nature": "inner_being",
+      "reason": "kept and marked inner being: it states how the mind or heart works in the verses it names, and rests on them"
+     },
+     {
+      "observation": 12447,
+      "action": "keep",
+      "nature": "inner_being",
+      "reason": "kept and marked inner being: it states how the mind or heart works in the verses it names, and rests on them"
+     },
+     {
+      "observation": 15963,
+      "action": "keep",
+      "nature": "inner_being",
+      "reason": "kept and marked inner being: it states how the mind or heart works in the verses it names, and rests on them"
+     },
+     {
+      "observation": 17236,
+      "action": "keep",
+      "nature": "inner_being",
+      "reason": "kept and marked inner being: it states how the mind or heart works in the verses it names, and rests on them"
+     },
+     {
+      "observation": 19290,
+      "action": "keep",
+      "nature": "inner_being",
+      "reason": "kept and marked inner being: it states how the mind or heart works in the verses it names, and rests on them"
+     },
+     {
+      "observation": 20481,
+      "action": "keep",
+      "nature": "inner_being",
+      "reason": "kept and marked inner being: it states how the mind or heart works in the verses it names, and rests on them"
+     },
+     {
+      "observation": 20565,
+      "action": "keep",
+      "nature": "inner_being",
+      "reason": "kept and marked inner being: it states how the mind or heart works in the verses it names, and rests on them"
+     }
+    ]
+   }
+  },
+  {
+   "ledger_id": 926,
+   "item": "word-sense",
+   "kind": "term",
+   "word": "reason",
+   "strong": "G0156",
+   "subject": "reason|G0156",
+   "asks": "In the verses of this collection where this word stands (the surface with its lettered Strong's code), what does it mean in each, as the verse itself shows it? Write one observation for each sense the verses give it, with the occurrences it holds for (every occurrence is in some sense, none is left out): state the sense in the verse, how the verse shows it (the words it stands with, the construction, the morph) and name the verses by reference. An occurrence whose sense departs from the usual sense of the word is its own observation, of kind face. The lexicon entries are evidence to read, never text to restate (RW-04, B:131). A prompt that does not apply is not answered (RG-17).",
+   "prompts": [
+    {
+     "code": "M0.1.1",
+     "question": "In this verse, looking at this specific occurrence (its surface form and morph_code), what does this term's name/form show about its essential nature here?"
+    },
+    {
+     "code": "M0.1.2",
+     "question": "In this verse, drawing on this term's lexicon entries but grounded in how it is actually used in this occurrence, what does it mean at the definitional level?"
+    },
+    {
+     "code": "M0.1.3",
+     "question": "In this verse, what directional, relational, or constitutional implication does this term's name carry as it functions in this specific occurrence?"
+    },
+    {
+     "code": "M0.4.1",
+     "question": "What is the grammatical/stem form of this term in this verse?"
+    },
+    {
+     "code": "M0.5.1",
+     "question": "In this verse, what does this term's root meaning show about how it operates in this specific occurrence?"
+    },
+    {
+     "code": "M0.5.2",
+     "question": "In this verse, what does this occurrence's own grammatical form (per its morph_code — e.g. noun, verb, adjective, participle) show about how the term operates here?"
+    },
+    {
+     "code": "M0.5.3",
+     "question": "In this verse, given this term's known semantic range — the breadth of meaning it can carry, including idiomatic, analogical, or combinatorial senses — where does this occurrence sit within that range, and what does that show about how the term operates here?"
+    },
+    {
+     "code": "M0.5.4",
+     "question": "In this verse, does this occurrence express a specific aspect — disposition versus act, received versus given, condition versus quality? Record which, or none."
+    },
+    {
+     "code": "M0.5.5",
+     "question": "In this verse, among this term's own related terms, is there one that functions as this occurrence's structural opposite? Record it, or none."
+    },
+    {
+     "code": "M0.5.6",
+     "question": "In this verse, among this term's own related terms, is there a person-type term relevant to this occurrence — one for a person who habitually possesses or exercises it? Record it, or none."
+    },
+    {
+     "code": "M0.5.7",
+     "question": "In this verse, among this term's own related terms, is there a supplication or seeking term relevant to this occurrence — one for the act of seeking it from another? Record it, or none."
+    },
+    {
+     "code": "M0.5.8",
+     "question": "In this verse, does this term's Testament context (OT Hebrew vs. NT Greek) affect how this specific occurrence should be interpreted, and if so, how? Record none if the Testament context makes no interpretive difference here."
+    },
+    {
+     "code": "M0.5.9",
+     "question": "In this verse, if this term is newly coined in the NT period, what does that coinage show about how it functions in this occurrence? Record none if not applicable or not relevant to this occurrence."
+    },
+    {
+     "code": "M0.5.11",
+     "question": "In this verse, where this occurrence's meaning diverges from the term's usual sense elsewhere, what nuance does that divergence carry here, and how does it compare to the word's other occurrences? Pay particular attention to this occurrence's own surface form/rendering — a marked or atypical surface form is often the visible trace of the divergence itself, not a separate fact. Record none if this occurrence matches the term's usual sense."
+    }
+   ],
+   "nodes_total": 4,
+   "nodes_shown": 4,
+   "lexicon": {
+    "sense_head": "cause/charge",
+    "meaning_range": "(legal) charge; reason, cause; <b>cause, motive, incitement; accusation, charge, crime, case</b>",
+    "lsj": "<b> αἰτί-α</b>, ἡ, <br /> <b>responsibility</b>, mostly in bad sense, <b>guilt, blame</b>, or the imputation thereof, i.e. <b>accusation</b>, first in [<a href=\"javascript:void(0)\" title=\" 5th c.BC: Pindarus Lyricus “O.” 1.35 and 5th c.BC: Herodotus Historicus, see below (8th c.BC: Homerus Epicus uses αἴτιος):\">Refs 8th c.BC+</a>] —Phrases: αἰτίαν ἔχειν bear <b>responsibility for</b>, τινός[<a href=\"javascript:void(0)\" title=\" 4th-5th c.BC: Aeschylus Tragicus “Eumenides” 579, 5th c.BC: Sophocles Tragicus “Antigone” 1312\">Refs 5th c.BC+</a>]; but usually <b>to be accused</b>, τινός <b>of</b> a crime, φόνου[<a href=\"javascript:void(0)\" title=\" 5th c.BC: Herodotus Historicus 5.70\">Refs 5th c.BC",
+    "mounce": "(legal) charge; reason, cause",
+    "related": [
+     "G0154 αἰτέω to ask",
+     "G0157 αἰτίαμα charge"
+    ]
+   },
+   "existing_observations": [
+    {
+     "observation": 4707,
+     "stage": "verse-reading",
+     "kind": "no-impact",
+     "question": "M0.5.11",
+     "text": "In Acts.10.21 aitia is used in its plain practical sense 'reason/cause' (for the men's coming) -- sitting within the base gloss with no notable divergence.",
+     "roles": [],
+     "occurrences": 1
+    },
+    {
+     "observation": 22421,
+     "stage": "layer-2",
+     "kind": "face",
+     "question": null,
+     "text": "The surface 'reason' carries eighteen codes in four senses and some small words. The ground or cause: G0156 (Act 10:21, 28:18, 28:20, 2Ti 1:6), G1223 and G5124 (Mar 12:24, 1Th 3:5, 1Th 3:7, 1Ti 1:16, 1Jo 3:8), G5484 (Eph",
+     "roles": [
+      "lexical"
+     ],
+     "occurrences": 4
+    }
+   ],
+   "evidence": [
+    {
+     "occurrence": 1464039,
+     "reference": "Act 10:21",
+     "surface": "reason",
+     "strong": "G0156",
+     "morph": "N-NSF",
+     "unit": "reason",
+     "surface_kind": "own",
+     "negator": false,
+     "party_kind": null,
+     "gloss_consistent_in_verse": 1,
+     "verse": "And Peter went down to the men and said, “ I am the one you are looking for. What is the reason for your coming?”"
+    },
+    {
+     "occurrence": 1467692,
+     "reference": "Act 28:18",
+     "surface": "reason",
+     "strong": "G0156",
+     "morph": "N-ASF",
+     "unit": "reason",
+     "surface_kind": "own",
+     "negator": false,
+     "party_kind": null,
+     "gloss_consistent_in_verse": 1,
+     "verse": "When they had examined me, they wished to set me at liberty, because there was no reason for the death penalty in my case."
+    },
+    {
+     "occurrence": 1466082,
+     "reference": "Act 28:20",
+     "surface": "reason",
+     "strong": "G0156",
+     "morph": "N-ASF",
+     "unit": "reason",
+     "surface_kind": "own",
+     "negator": false,
+     "party_kind": null,
+     "gloss_consistent_in_verse": 1,
+     "verse": "For this reason, therefore, I have asked to see you and speak with you, since it is because of the hope of Israel that I am wearing this chain.”"
+    },
+    {
+     "occurrence": 1500736,
+     "reference": "2Ti 1:6",
+     "surface": "reason",
+     "strong": "G0156",
+     "morph": "N-ASF",
+     "unit": "reason",
+     "surface_kind": "own",
+     "negator": false,
+     "party_kind": null,
+     "gloss_consistent_in_verse": 1,
+     "verse": "For this reason I remind you to fan into flame the gift of God, which is in you through the laying on of my hands,"
+    }
+   ],
+   "fill": {
+    "disposition": "observed",
+    "senses": [
+     {
+      "kind": "term",
+      "obs_text": "In Act 10:21, 28:18, 28:20 and 2Ti 1:6 the noun is a cause or ground: what lies behind a coming (Peter asks the men why they came), behind a sentence (no ground for death in Paul's case), and behind a purpose stated after it (for this cause Paul asks to see them; for this cause Timothy is reminded); it names why, and is not a faculty of the mind.",
+      "basis": "stated",
+      "occurrences": [
+       "Act 10:21",
+       "Act 28:18",
+       "Act 28:20",
+       "2Ti 1:6"
+      ]
+     }
+    ],
+    "member_role": "lexical",
+    "reason": "",
+    "observation_id": "",
+    "older": [
+     {
+      "observation": 4707,
+      "action": "keep",
+      "nature": "evidence",
+      "reason": "kept and marked evidence: it states what the verses it names show of the word or the structure, and rests on them"
+     }
+    ]
+   }
+  },
+  {
+   "ledger_id": 927,
+   "item": "word-sense",
+   "kind": "term",
+   "word": "reason",
+   "strong": "G1352",
+   "subject": "reason|G1352",
+   "asks": "In the verses of this collection where this word stands (the surface with its lettered Strong's code), what does it mean in each, as the verse itself shows it? Write one observation for each sense the verses give it, with the occurrences it holds for (every occurrence is in some sense, none is left out): state the sense in the verse, how the verse shows it (the words it stands with, the construction, the morph) and name the verses by reference. An occurrence whose sense departs from the usual sense of the word is its own observation, of kind face. The lexicon entries are evidence to read, never text to restate (RW-04, B:131). A prompt that does not apply is not answered (RG-17).",
+   "prompts": [
+    {
+     "code": "M0.1.1",
+     "question": "In this verse, looking at this specific occurrence (its surface form and morph_code), what does this term's name/form show about its essential nature here?"
+    },
+    {
+     "code": "M0.1.2",
+     "question": "In this verse, drawing on this term's lexicon entries but grounded in how it is actually used in this occurrence, what does it mean at the definitional level?"
+    },
+    {
+     "code": "M0.1.3",
+     "question": "In this verse, what directional, relational, or constitutional implication does this term's name carry as it functions in this specific occurrence?"
+    },
+    {
+     "code": "M0.4.1",
+     "question": "What is the grammatical/stem form of this term in this verse?"
+    },
+    {
+     "code": "M0.5.1",
+     "question": "In this verse, what does this term's root meaning show about how it operates in this specific occurrence?"
+    },
+    {
+     "code": "M0.5.2",
+     "question": "In this verse, what does this occurrence's own grammatical form (per its morph_code — e.g. noun, verb, adjective, participle) show about how the term operates here?"
+    },
+    {
+     "code": "M0.5.3",
+     "question": "In this verse, given this term's known semantic range — the breadth of meaning it can carry, including idiomatic, analogical, or combinatorial senses — where does this occurrence sit within that range, and what does that show about how the term operates here?"
+    },
+    {
+     "code": "M0.5.4",
+     "question": "In this verse, does this occurrence express a specific aspect — disposition versus act, received versus given, condition versus quality? Record which, or none."
+    },
+    {
+     "code": "M0.5.5",
+     "question": "In this verse, among this term's own related terms, is there one that functions as this occurrence's structural opposite? Record it, or none."
+    },
+    {
+     "code": "M0.5.6",
+     "question": "In this verse, among this term's own related terms, is there a person-type term relevant to this occurrence — one for a person who habitually possesses or exercises it? Record it, or none."
+    },
+    {
+     "code": "M0.5.7",
+     "question": "In this verse, among this term's own related terms, is there a supplication or seeking term relevant to this occurrence — one for the act of seeking it from another? Record it, or none."
+    },
+    {
+     "code": "M0.5.8",
+     "question": "In this verse, does this term's Testament context (OT Hebrew vs. NT Greek) affect how this specific occurrence should be interpreted, and if so, how? Record none if the Testament context makes no interpretive difference here."
+    },
+    {
+     "code": "M0.5.9",
+     "question": "In this verse, if this term is newly coined in the NT period, what does that coinage show about how it functions in this occurrence? Record none if not applicable or not relevant to this occurrence."
+    },
+    {
+     "code": "M0.5.11",
+     "question": "In this verse, where this occurrence's meaning diverges from the term's usual sense elsewhere, what nuance does that divergence carry here, and how does it compare to the word's other occurrences? Pay particular attention to this occurrence's own surface form/rendering — a marked or atypical surface form is often the visible trace of the divergence itself, not a separate fact. Record none if this occurrence matches the term's usual sense."
+    }
+   ],
+   "nodes_total": 1,
+   "nodes_shown": 1,
+   "lexicon": {
+    "sense_head": "therefore",
+    "meaning_range": "therefore, that is why, for this reason; inferential <i>conjunction</i>, <b>on which account, wherefore, therefore, this is why, for this reason</b> <ref='Mat.27.8'>Mt. 27:8</ref>; <ref='1Co.12.3'>1Cor. 12:3</ref>",
+    "lsj": "<b> διό</b>, <br /> <i>conjunction</i>, for δι᾽ ὅ, <b>wherefore, on which account,</b> [<a href=\"javascript:void(0)\" title=\" 5th-6th c.BC: Plato Philosophus “Respublica” 358d, etc.; διὸ δή 5th c.BC: Thucydides Historicus 2.21, 5th-6th c.BC: Plato Philosophus “Cratylus” 412a, +others\">Refs 5th c.BC+</a>]; διὸ καί, διὸ δὴ καί, [<a href=\"javascript:void(0)\" title=\" [prev. author] “Phdr.” 258e, “Smp.” 203c; διόπερ 5th c.BC: Thucydides Historicus 1.71, 120, 8.92, etc. \">Refs 5th c.BC+</a>]",
+    "mounce": "therefore, that is why, for this reason",
+    "related": [
+     "G1223 διά through/because of",
+     "G1355 διόπερ for",
+     "G3739 ὅς which"
+    ]
+   },
+   "existing_observations": [
+    {
+     "observation": 22421,
+     "stage": "layer-2",
+     "kind": "face",
+     "question": null,
+     "text": "The surface 'reason' carries eighteen codes in four senses and some small words. The ground or cause: G0156 (Act 10:21, 28:18, 28:20, 2Ti 1:6), G1223 and G5124 (Mar 12:24, 1Th 3:5, 1Th 3:7, 1Ti 1:16, 1Jo 3:8), G5484 (Eph",
+     "roles": [
+      "lexical"
+     ],
+     "occurrences": 1
+    }
+   ],
+   "evidence": [
+    {
+     "occurrence": 1479863,
+     "reference": "Rom 15:22",
+     "surface": "reason",
+     "strong": "G1352",
+     "morph": "CONJ",
+     "unit": "reason",
+     "surface_kind": "own",
+     "negator": false,
+     "party_kind": null,
+     "gloss_consistent_in_verse": 1,
+     "verse": "This is the reason why I have so often been hindered from coming to you."
+    }
+   ],
+   "fill": {
+    "disposition": "observed",
+    "senses": [
+     {
+      "kind": "term",
+      "obs_text": "In Rom 15:22 the conjunction gives the cause of an effect already stated: it is the ground of Paul's having been prevented from coming; it joins a previous matter to a result.",
+      "basis": "stated",
+      "occurrences": [
+       "Rom 15:22"
+      ]
+     }
+    ],
+    "member_role": "lexical",
+    "reason": "",
+    "observation_id": "",
+    "older": []
+   }
+  },
+  {
+   "ledger_id": 928,
+   "item": "word-sense",
+   "kind": "term",
+   "word": "reason",
+   "strong": "G2138",
+   "subject": "reason|G2138",
+   "asks": "In the verses of this collection where this word stands (the surface with its lettered Strong's code), what does it mean in each, as the verse itself shows it? Write one observation for each sense the verses give it, with the occurrences it holds for (every occurrence is in some sense, none is left out): state the sense in the verse, how the verse shows it (the words it stands with, the construction, the morph) and name the verses by reference. An occurrence whose sense departs from the usual sense of the word is its own observation, of kind face. The lexicon entries are evidence to read, never text to restate (RW-04, B:131). A prompt that does not apply is not answered (RG-17).",
+   "prompts": [
+    {
+     "code": "M0.1.1",
+     "question": "In this verse, looking at this specific occurrence (its surface form and morph_code), what does this term's name/form show about its essential nature here?"
+    },
+    {
+     "code": "M0.1.2",
+     "question": "In this verse, drawing on this term's lexicon entries but grounded in how it is actually used in this occurrence, what does it mean at the definitional level?"
+    },
+    {
+     "code": "M0.1.3",
+     "question": "In this verse, what directional, relational, or constitutional implication does this term's name carry as it functions in this specific occurrence?"
+    },
+    {
+     "code": "M0.4.1",
+     "question": "What is the grammatical/stem form of this term in this verse?"
+    },
+    {
+     "code": "M0.5.1",
+     "question": "In this verse, what does this term's root meaning show about how it operates in this specific occurrence?"
+    },
+    {
+     "code": "M0.5.2",
+     "question": "In this verse, what does this occurrence's own grammatical form (per its morph_code — e.g. noun, verb, adjective, participle) show about how the term operates here?"
+    },
+    {
+     "code": "M0.5.3",
+     "question": "In this verse, given this term's known semantic range — the breadth of meaning it can carry, including idiomatic, analogical, or combinatorial senses — where does this occurrence sit within that range, and what does that show about how the term operates here?"
+    },
+    {
+     "code": "M0.5.4",
+     "question": "In this verse, does this occurrence express a specific aspect — disposition versus act, received versus given, condition versus quality? Record which, or none."
+    },
+    {
+     "code": "M0.5.5",
+     "question": "In this verse, among this term's own related terms, is there one that functions as this occurrence's structural opposite? Record it, or none."
+    },
+    {
+     "code": "M0.5.6",
+     "question": "In this verse, among this term's own related terms, is there a person-type term relevant to this occurrence — one for a person who habitually possesses or exercises it? Record it, or none."
+    },
+    {
+     "code": "M0.5.7",
+     "question": "In this verse, among this term's own related terms, is there a supplication or seeking term relevant to this occurrence — one for the act of seeking it from another? Record it, or none."
+    },
+    {
+     "code": "M0.5.8",
+     "question": "In this verse, does this term's Testament context (OT Hebrew vs. NT Greek) affect how this specific occurrence should be interpreted, and if so, how? Record none if the Testament context makes no interpretive difference here."
+    },
+    {
+     "code": "M0.5.9",
+     "question": "In this verse, if this term is newly coined in the NT period, what does that coinage show about how it functions in this occurrence? Record none if not applicable or not relevant to this occurrence."
+    },
+    {
+     "code": "M0.5.11",
+     "question": "In this verse, where this occurrence's meaning diverges from the term's usual sense elsewhere, what nuance does that divergence carry here, and how does it compare to the word's other occurrences? Pay particular attention to this occurrence's own surface form/rendering — a marked or atypical surface form is often the visible trace of the divergence itself, not a separate fact. Record none if this occurrence matches the term's usual sense."
+    }
+   ],
+   "nodes_total": 1,
+   "nodes_shown": 1,
+   "lexicon": {
+    "sense_head": "compliant",
+    "meaning_range": "submissive, obedient, compliant; <b>easily persuaded, compliant, submissive</b> <ref='Jas.3.17'>Jas. 3:17</ref>*",
+    "lsj": "<b> εὐπειθ-ής</b>, ές, <br /> (compare εὐπιθής) <b>ready to obey, obedient</b>, τινι [<a href=\"javascript:void(0)\" title=\" 5th-6th c.BC: Plato Philosophus “Phaedrus” 254a; τοῖς νόμοις -έστατος [prev. author] “Lg.” 715c, compare 890c: with _genitive_, τῶν νόμων [prev. work] 632b \">Refs 5th c.BC+</a>]; -έστατοι πρὸς ἀρετήν[<a href=\"javascript:void(0)\" title=\" [prev. work] 718c; εἴς τι [prev. author] “Phdr.” 271d \">Refs</a>]; <b>compliant</b>, εὐ. γεγονέναι [<a href=\"javascript:void(0)\" title=\" “BGU” 1104.23 (1st c.BC), LXX.4Mac.12.6 \">LXX+1st c.BC+</a>]. etc.; of things, as of the voice, <b>under control</b>, [<a href=\"javascript:void(0)\" title=\" 4th c.BC: Aristoteles Philosophus “de Audibilib",
+    "mounce": "submissive, obedient, compliant",
+    "related": [
+     "G0374 ἀναπείθω to persuade",
+     "G0545 ἀπειθής disobedient",
+     "G2095 εὖ well/well done!",
+     "G3980 πειθαρχέω to obey",
+     "G3981 πειθός persuasive",
+     "G3982 πείθω to persuade"
+    ]
+   },
+   "existing_observations": [
+    {
+     "observation": 22421,
+     "stage": "layer-2",
+     "kind": "face",
+     "question": null,
+     "text": "The surface 'reason' carries eighteen codes in four senses and some small words. The ground or cause: G0156 (Act 10:21, 28:18, 28:20, 2Ti 1:6), G1223 and G5124 (Mar 12:24, 1Th 3:5, 1Th 3:7, 1Ti 1:16, 1Jo 3:8), G5484 (Eph",
+     "roles": [
+      "lexical"
+     ],
+     "occurrences": 1
+    }
+   ],
+   "evidence": [
+    {
+     "occurrence": 1506062,
+     "reference": "Jam 3:17",
+     "surface": "reason",
+     "strong": "G2138",
+     "morph": "A-NSF",
+     "unit": "reason",
+     "surface_kind": "own",
+     "negator": false,
+     "party_kind": null,
+     "gloss_consistent_in_verse": 1,
+     "verse": "But the wisdom from above is first pure, then peaceable, gentle, open to reason, full of mercy and good fruits, impartial and sincere."
+    }
+   ],
+   "fill": {
+    "disposition": "observed",
+    "senses": [
+     {
+      "kind": "term",
+      "obs_text": "In Jam 3:17 the adjective is a trait of the wisdom from above, one of a list of qualities; it names being open to persuasion or compliant, a stance toward others in the way the mind is used, and not a ground.",
+      "basis": "stated",
+      "occurrences": [
+       "Jam 3:17"
+      ]
+     }
+    ],
+    "member_role": "lexical",
+    "reason": "",
+    "observation_id": "",
+    "older": []
+   }
+  },
+  {
+   "ledger_id": 929,
+   "item": "word-sense",
+   "kind": "term",
+   "word": "reason",
+   "strong": "G3056",
+   "subject": "reason|G3056",
+   "asks": "In the verses of this collection where this word stands (the surface with its lettered Strong's code), what does it mean in each, as the verse itself shows it? Write one observation for each sense the verses give it, with the occurrences it holds for (every occurrence is in some sense, none is left out): state the sense in the verse, how the verse shows it (the words it stands with, the construction, the morph) and name the verses by reference. An occurrence whose sense departs from the usual sense of the word is its own observation, of kind face. The lexicon entries are evidence to read, never text to restate (RW-04, B:131). A prompt that does not apply is not answered (RG-17).",
+   "prompts": [
+    {
+     "code": "M0.1.1",
+     "question": "In this verse, looking at this specific occurrence (its surface form and morph_code), what does this term's name/form show about its essential nature here?"
+    },
+    {
+     "code": "M0.1.2",
+     "question": "In this verse, drawing on this term's lexicon entries but grounded in how it is actually used in this occurrence, what does it mean at the definitional level?"
+    },
+    {
+     "code": "M0.1.3",
+     "question": "In this verse, what directional, relational, or constitutional implication does this term's name carry as it functions in this specific occurrence?"
+    },
+    {
+     "code": "M0.4.1",
+     "question": "What is the grammatical/stem form of this term in this verse?"
+    },
+    {
+     "code": "M0.5.1",
+     "question": "In this verse, what does this term's root meaning show about how it operates in this specific occurrence?"
+    },
+    {
+     "code": "M0.5.2",
+     "question": "In this verse, what does this occurrence's own grammatical form (per its morph_code — e.g. noun, verb, adjective, participle) show about how the term operates here?"
+    },
+    {
+     "code": "M0.5.3",
+     "question": "In this verse, given this term's known semantic range — the breadth of meaning it can carry, including idiomatic, analogical, or combinatorial senses — where does this occurrence sit within that range, and what does that show about how the term operates here?"
+    },
+    {
+     "code": "M0.5.4",
+     "question": "In this verse, does this occurrence express a specific aspect — disposition versus act, received versus given, condition versus quality? Record which, or none."
+    },
+    {
+     "code": "M0.5.5",
+     "question": "In this verse, among this term's own related terms, is there one that functions as this occurrence's structural opposite? Record it, or none."
+    },
+    {
+     "code": "M0.5.6",
+     "question": "In this verse, among this term's own related terms, is there a person-type term relevant to this occurrence — one for a person who habitually possesses or exercises it? Record it, or none."
+    },
+    {
+     "code": "M0.5.7",
+     "question": "In this verse, among this term's own related terms, is there a supplication or seeking term relevant to this occurrence — one for the act of seeking it from another? Record it, or none."
+    },
+    {
+     "code": "M0.5.8",
+     "question": "In this verse, does this term's Testament context (OT Hebrew vs. NT Greek) affect how this specific occurrence should be interpreted, and if so, how? Record none if the Testament context makes no interpretive difference here."
+    },
+    {
+     "code": "M0.5.9",
+     "question": "In this verse, if this term is newly coined in the NT period, what does that coinage show about how it functions in this occurrence? Record none if not applicable or not relevant to this occurrence."
+    },
+    {
+     "code": "M0.5.11",
+     "question": "In this verse, where this occurrence's meaning diverges from the term's usual sense elsewhere, what nuance does that divergence carry here, and how does it compare to the word's other occurrences? Pay particular attention to this occurrence's own surface form/rendering — a marked or atypical surface form is often the visible trace of the divergence itself, not a separate fact. Record none if this occurrence matches the term's usual sense."
+    }
+   ],
+   "nodes_total": 1,
+   "nodes_shown": 1,
+   "lexicon": {
+    "sense_head": "word",
+    "meaning_range": "word, spoken or written, often with a focus on the content of a communication (note the many contextual translations in NIV); matter, thing. \"The Word\" is a title of Christ (<ref='Jhn.1.1'>Jn 1:1</ref>), emphasizing his own deity and communication of who God is and what he is like; <b>a word, a thing uttered,</b> <ref='Mat.12.32, 37'>Mt. 12:32, 37</ref>; <ref='1Co.14.19'>1Cor. 14:19;</ref> <b>speech, language, talk,</b> <ref='Mat.22.15'>Mt. 22:15</ref>; <ref='Luk.20.20'>Lk. 20:20</ref>; <ref='2Co.10.10'>2Cor. 10:10;</ref> <ref='Jas.3.2'>Jas. 3:2;</ref> <b>converse,</b> <ref='Luk.24.17'>Lk. 24:17</ref>; mere <b>talk, wordy show,</b> <ref='1Co.4.19, 20'>1Cor. 4:19, 20</ref>; <ref='Col.2.23'>Co",
+    "lsj": "<b> λόγος</b>, ὁ, <br /> verbal noun of λέγω (B), with senses corresponding to λέγω (B) II and III (on the various senses of the word see [<a href=\"javascript:void(0)\" title=\" 2nd c.AD: Theon Smyrnaeus Philosophus pp.72,73 H., “Anecdota Graeca - MSS. Bibl. Oxon.” 4.327): common in all periods in Prose and Verse, exc. Epic, in which it is found in signification derived from λέγω (B)\">Refs 2nd c.AD+</a>] 111, compareinfr. VI. 1 a: <br /><Level2><b>__I</b></Level2> <b>computation, reckoning</b> (compare λέγω (B) II). <br /><Level3><b>__I.1</b></Level3> <b>account</b> of money handled, σανίδες εἰς ἃς τὸν λ. ἀναγράφομεν [<a href=\"javascript:void(0)\" title=\" “IG” 12.374.191; ἐδίδοσαν τὸν λ. [prev.",
+    "mounce": "word, spoken or written, often with a focus on the content of a communication; matter, thing. \"The Word\" is a title of Christ (<ref='Jhn.1.1'>Jn 1:1</ref>), emphasizing his own deity and communication of who God is and what he is like",
+    "related": [
+     "G0945 βαττολογέω to babble",
+     "G1351 δίλογος insincere",
+     "G3004G λέγω to say: says",
+     "G3004H λέγω to say: name",
+     "G3050 λογικός spiritual",
+     "G3051 λόγιον oracles",
+     "G3052 λόγιος learned",
+     "G3053 λογισμός thought",
+     "G4180 πολυλογία wordiness"
+    ]
+   },
+   "existing_observations": [
+    {
+     "observation": 22421,
+     "stage": "layer-2",
+     "kind": "face",
+     "question": null,
+     "text": "The surface 'reason' carries eighteen codes in four senses and some small words. The ground or cause: G0156 (Act 10:21, 28:18, 28:20, 2Ti 1:6), G1223 and G5124 (Mar 12:24, 1Th 3:5, 1Th 3:7, 1Ti 1:16, 1Jo 3:8), G5484 (Eph",
+     "roles": [
+      "lexical"
+     ],
+     "occurrences": 1
+    }
+   ],
+   "evidence": [
+    {
+     "occurrence": 1508012,
+     "reference": "1Pe 3:15",
+     "surface": "reason",
+     "strong": "G3056",
+     "morph": "N-ASM",
+     "unit": "reason",
+     "surface_kind": "own",
+     "negator": false,
+     "party_kind": null,
+     "gloss_consistent_in_verse": 1,
+     "verse": "but in your hearts honor Christ the Lord as holy, always being prepared to make a defense to anyone who asks you for a reason for the hope that is in you; yet do it with gentleness and respect,"
+    }
+   ],
+   "fill": {
+    "disposition": "observed",
+    "senses": [
+     {
+      "kind": "term",
+      "obs_text": "In 1Pe 3:15 the noun is the account asked of believers for their hope; it is a ground to be given when someone asks, so that the word is the reasoned explanation of a hope and not the mind's own faculty.",
+      "basis": "stated",
+      "occurrences": [
+       "1Pe 3:15"
+      ]
+     }
+    ],
+    "member_role": "lexical",
+    "reason": "",
+    "observation_id": "",
+    "older": [
+     {
+      "observation": 17102,
+      "action": "keep",
+      "nature": "inner_being",
+      "reason": "kept and marked inner being: it states how the mind or heart works in the verses it names, and rests on them"
+     }
+    ]
+   }
+  },
+  {
+   "ledger_id": 930,
+   "item": "word-sense",
+   "kind": "term",
+   "word": "reason",
+   "strong": "H1697M",
+   "subject": "reason|H1697M",
+   "asks": "In the verses of this collection where this word stands (the surface with its lettered Strong's code), what does it mean in each, as the verse itself shows it? Write one observation for each sense the verses give it, with the occurrences it holds for (every occurrence is in some sense, none is left out): state the sense in the verse, how the verse shows it (the words it stands with, the construction, the morph) and name the verses by reference. An occurrence whose sense departs from the usual sense of the word is its own observation, of kind face. The lexicon entries are evidence to read, never text to restate (RW-04, B:131). A prompt that does not apply is not answered (RG-17).",
+   "prompts": [
+    {
+     "code": "M0.1.1",
+     "question": "In this verse, looking at this specific occurrence (its surface form and morph_code), what does this term's name/form show about its essential nature here?"
+    },
+    {
+     "code": "M0.1.2",
+     "question": "In this verse, drawing on this term's lexicon entries but grounded in how it is actually used in this occurrence, what does it mean at the definitional level?"
+    },
+    {
+     "code": "M0.1.3",
+     "question": "In this verse, what directional, relational, or constitutional implication does this term's name carry as it functions in this specific occurrence?"
+    },
+    {
+     "code": "M0.4.1",
+     "question": "What is the grammatical/stem form of this term in this verse?"
+    },
+    {
+     "code": "M0.5.1",
+     "question": "In this verse, what does this term's root meaning show about how it operates in this specific occurrence?"
+    },
+    {
+     "code": "M0.5.2",
+     "question": "In this verse, what does this occurrence's own grammatical form (per its morph_code — e.g. noun, verb, adjective, participle) show about how the term operates here?"
+    },
+    {
+     "code": "M0.5.3",
+     "question": "In this verse, given this term's known semantic range — the breadth of meaning it can carry, including idiomatic, analogical, or combinatorial senses — where does this occurrence sit within that range, and what does that show about how the term operates here?"
+    },
+    {
+     "code": "M0.5.4",
+     "question": "In this verse, does this occurrence express a specific aspect — disposition versus act, received versus given, condition versus quality? Record which, or none."
+    },
+    {
+     "code": "M0.5.5",
+     "question": "In this verse, among this term's own related terms, is there one that functions as this occurrence's structural opposite? Record it, or none."
+    },
+    {
+     "code": "M0.5.6",
+     "question": "In this verse, among this term's own related terms, is there a person-type term relevant to this occurrence — one for a person who habitually possesses or exercises it? Record it, or none."
+    },
+    {
+     "code": "M0.5.7",
+     "question": "In this verse, among this term's own related terms, is there a supplication or seeking term relevant to this occurrence — one for the act of seeking it from another? Record it, or none."
+    },
+    {
+     "code": "M0.5.8",
+     "question": "In this verse, does this term's Testament context (OT Hebrew vs. NT Greek) affect how this specific occurrence should be interpreted, and if so, how? Record none if the Testament context makes no interpretive difference here."
+    },
+    {
+     "code": "M0.5.9",
+     "question": "In this verse, if this term is newly coined in the NT period, what does that coinage show about how it functions in this occurrence? Record none if not applicable or not relevant to this occurrence."
+    },
+    {
+     "code": "M0.5.11",
+     "question": "In this verse, where this occurrence's meaning diverges from the term's usual sense elsewhere, what nuance does that divergence carry here, and how does it compare to the word's other occurrences? Pay particular attention to this occurrence's own surface form/rendering — a marked or atypical surface form is often the visible trace of the divergence itself, not a separate fact. Record none if this occurrence matches the term's usual sense."
+    }
+   ],
+   "nodes_total": 2,
+   "nodes_shown": 2,
+   "lexicon": {
+    "sense_head": "because",
+    "meaning_range": "1) speech, word, speaking, thing; 1a) speech; 1b) saying, utterance; 1c) word, words; 1d) business, occupation, acts, matter, case, something, manner (by extension)",
+    "lsj": "",
+    "mounce": "",
+    "related": [
+     "H1682 דְּבוֹרָה bee",
+     "H1683G דְּבוֹרָה Deborah",
+     "H1683H דְּבוֹרָה Deborah",
+     "H1687 דְּבִיר sanctuary",
+     "H1688A דְּבִיר Debir",
+     "H1688B לִדְבִר Debir",
+     "H1688G דְּבִיר Debir",
+     "H1688H דְּבִיר Debir",
+     "H1696G דָבַר to speak: speak",
+     "H1696H דָבַר to speak: subdue",
+     "H1696I דָבַר to speak: promise",
+     "H1697G דָּבָר word"
+    ]
+   },
+   "existing_observations": [
+    {
+     "observation": 22421,
+     "stage": "layer-2",
+     "kind": "face",
+     "question": null,
+     "text": "The surface 'reason' carries eighteen codes in four senses and some small words. The ground or cause: G0156 (Act 10:21, 28:18, 28:20, 2Ti 1:6), G1223 and G5124 (Mar 12:24, 1Th 3:5, 1Th 3:7, 1Ti 1:16, 1Jo 3:8), G5484 (Eph",
+     "roles": [
+      "lexical"
+     ],
+     "occurrences": 2
+    }
+   ],
+   "evidence": [
+    {
+     "occurrence": 1093383,
+     "reference": "Jos 5:4",
+     "surface": "reason",
+     "strong": "H1697M",
+     "morph": "HNcmsa",
+     "unit": "reason",
+     "surface_kind": "own",
+     "negator": false,
+     "party_kind": null,
+     "gloss_consistent_in_verse": 1,
+     "verse": "And this is the reason why Joshua circumcised them: all the males of the people who came out of Egypt, all the men of war, had died in the wilderness on the way after they had come out of Egypt."
+    },
+    {
+     "occurrence": 1156194,
+     "reference": "1Ki 11:27",
+     "surface": "reason",
+     "strong": "H1697M",
+     "morph": "HNcmsa",
+     "unit": "reason",
+     "surface_kind": "own",
+     "negator": false,
+     "party_kind": null,
+     "gloss_consistent_in_verse": 1,
+     "verse": "And this was the reason why he lifted up his hand against the king. Solomon built the Millo, and closed up the breach of the city of David his father."
+    }
+   ],
+   "fill": {
+    "disposition": "observed",
+    "senses": [
+     {
+      "kind": "term",
+      "obs_text": "In Jos 5:4 and 1Ki 11:27 the noun introduces the cause of an action by a person: the reason for the circumcision of the new generation and the reason for Jeroboam's lifting his hand against the king; it names the ground that is then stated.",
+      "basis": "stated",
+      "occurrences": [
+       "Jos 5:4",
+       "1Ki 11:27"
+      ]
+     }
+    ],
+    "member_role": "lexical",
+    "reason": "",
+    "observation_id": "",
+    "older": []
+   }
+  },
+  {
+   "ledger_id": 931,
+   "item": "word-sense",
+   "kind": "term",
+   "word": "reason",
+   "strong": "H1961",
+   "subject": "reason|H1961",
+   "asks": "In the verses of this collection where this word stands (the surface with its lettered Strong's code), what does it mean in each, as the verse itself shows it? Write one observation for each sense the verses give it, with the occurrences it holds for (every occurrence is in some sense, none is left out): state the sense in the verse, how the verse shows it (the words it stands with, the construction, the morph) and name the verses by reference. An occurrence whose sense departs from the usual sense of the word is its own observation, of kind face. The lexicon entries are evidence to read, never text to restate (RW-04, B:131). A prompt that does not apply is not answered (RG-17).",
+   "prompts": [
+    {
+     "code": "M0.1.1",
+     "question": "In this verse, looking at this specific occurrence (its surface form and morph_code), what does this term's name/form show about its essential nature here?"
+    },
+    {
+     "code": "M0.1.2",
+     "question": "In this verse, drawing on this term's lexicon entries but grounded in how it is actually used in this occurrence, what does it mean at the definitional level?"
+    },
+    {
+     "code": "M0.1.3",
+     "question": "In this verse, what directional, relational, or constitutional implication does this term's name carry as it functions in this specific occurrence?"
+    },
+    {
+     "code": "M0.4.1",
+     "question": "What is the grammatical/stem form of this term in this verse?"
+    },
+    {
+     "code": "M0.5.1",
+     "question": "In this verse, what does this term's root meaning show about how it operates in this specific occurrence?"
+    },
+    {
+     "code": "M0.5.2",
+     "question": "In this verse, what does this occurrence's own grammatical form (per its morph_code — e.g. noun, verb, adjective, participle) show about how the term operates here?"
+    },
+    {
+     "code": "M0.5.3",
+     "question": "In this verse, given this term's known semantic range — the breadth of meaning it can carry, including idiomatic, analogical, or combinatorial senses — where does this occurrence sit within that range, and what does that show about how the term operates here?"
+    },
+    {
+     "code": "M0.5.4",
+     "question": "In this verse, does this occurrence express a specific aspect — disposition versus act, received versus given, condition versus quality? Record which, or none."
+    },
+    {
+     "code": "M0.5.5",
+     "question": "In this verse, among this term's own related terms, is there one that functions as this occurrence's structural opposite? Record it, or none."
+    },
+    {
+     "code": "M0.5.6",
+     "question": "In this verse, among this term's own related terms, is there a person-type term relevant to this occurrence — one for a person who habitually possesses or exercises it? Record it, or none."
+    },
+    {
+     "code": "M0.5.7",
+     "question": "In this verse, among this term's own related terms, is there a supplication or seeking term relevant to this occurrence — one for the act of seeking it from another? Record it, or none."
+    },
+    {
+     "code": "M0.5.8",
+     "question": "In this verse, does this term's Testament context (OT Hebrew vs. NT Greek) affect how this specific occurrence should be interpreted, and if so, how? Record none if the Testament context makes no interpretive difference here."
+    },
+    {
+     "code": "M0.5.9",
+     "question": "In this verse, if this term is newly coined in the NT period, what does that coinage show about how it functions in this occurrence? Record none if not applicable or not relevant to this occurrence."
+    },
+    {
+     "code": "M0.5.11",
+     "question": "In this verse, where this occurrence's meaning diverges from the term's usual sense elsewhere, what nuance does that divergence carry here, and how does it compare to the word's other occurrences? Pay particular attention to this occurrence's own surface form/rendering — a marked or atypical surface form is often the visible trace of the divergence itself, not a separate fact. Record none if this occurrence matches the term's usual sense."
+    }
+   ],
+   "nodes_total": 1,
+   "nodes_shown": 1,
+   "lexicon": {
+    "sense_head": "to be",
+    "meaning_range": "1) to be, become, come to pass, exist, happen, fall out; 1a) (Qal); 1a1) ---; 1a1a) to happen, fall out, occur, take place, come about, come to pass; 1a1b) to come about, come to pass; 1a2) to come into being, become; 1a2a) to arise, appear, come; 1a2b) to become; 1a2b1) to become; 1a2b2) to become like; 1a2b3) to be instituted, be established; 1a3) to be; 1a3a) to exist, be in existence; 1a3b) to abide, remain, continue (with word of place or time); 1a3c) to stand, lie, be in, be at, be situated (with word of locality); 1a3d) to accompany, be with; 1b) (Niphal); 1b1) to occur, come to pass, be done, be brought about; 1b2) to be done, be finished, be gone",
+    "lsj": "",
+    "mounce": "",
+    "related": [
+     "H1933A הָוָא to fall",
+     "H1933B הָוָה to be"
+    ]
+   },
+   "existing_observations": [
+    {
+     "observation": 22421,
+     "stage": "layer-2",
+     "kind": "face",
+     "question": null,
+     "text": "The surface 'reason' carries eighteen codes in four senses and some small words. The ground or cause: G0156 (Act 10:21, 28:18, 28:20, 2Ti 1:6), G1223 and G5124 (Mar 12:24, 1Th 3:5, 1Th 3:7, 1Ti 1:16, 1Jo 3:8), G5484 (Eph",
+     "roles": [
+      "lexical"
+     ],
+     "occurrences": 1
+    }
+   ],
+   "evidence": [
+    {
+     "occurrence": 1369520,
+     "reference": "Eze 19:10",
+     "surface": "reason",
+     "strong": "H1961",
+     "morph": "HVqp3fs",
+     "unit": "reason",
+     "surface_kind": "own",
+     "negator": false,
+     "party_kind": null,
+     "gloss_consistent_in_verse": 1,
+     "verse": "Your mother was like a vine in a vineyard planted by the water, fruitful and full of branches by reason of abundant water."
+    }
+   ],
+   "fill": {
+    "disposition": "observed",
+    "senses": [
+     {
+      "kind": "term",
+      "obs_text": "In Eze 19:10 the verb stands in the figure of the vine and means that the vine was fruitful through abundant water; the translated reason names the cause of its fruitfulness, and the verse is not about reasoning.",
+      "basis": "stated",
+      "occurrences": [
+       "Eze 19:10"
+      ]
+     }
+    ],
+    "member_role": "lexical",
+    "reason": "",
+    "observation_id": "",
+    "older": []
+   }
+  },
+  {
+   "ledger_id": 932,
+   "item": "word-sense",
+   "kind": "term",
+   "word": "reason",
+   "strong": "H2600",
+   "subject": "reason|H2600",
+   "asks": "In the verses of this collection where this word stands (the surface with its lettered Strong's code), what does it mean in each, as the verse itself shows it? Write one observation for each sense the verses give it, with the occurrences it holds for (every occurrence is in some sense, none is left out): state the sense in the verse, how the verse shows it (the words it stands with, the construction, the morph) and name the verses by reference. An occurrence whose sense departs from the usual sense of the word is its own observation, of kind face. The lexicon entries are evidence to read, never text to restate (RW-04, B:131). A prompt that does not apply is not answered (RG-17).",
+   "prompts": [
+    {
+     "code": "M0.1.1",
+     "question": "In this verse, looking at this specific occurrence (its surface form and morph_code), what does this term's name/form show about its essential nature here?"
+    },
+    {
+     "code": "M0.1.2",
+     "question": "In this verse, drawing on this term's lexicon entries but grounded in how it is actually used in this occurrence, what does it mean at the definitional level?"
+    },
+    {
+     "code": "M0.1.3",
+     "question": "In this verse, what directional, relational, or constitutional implication does this term's name carry as it functions in this specific occurrence?"
+    },
+    {
+     "code": "M0.4.1",
+     "question": "What is the grammatical/stem form of this term in this verse?"
+    },
+    {
+     "code": "M0.5.1",
+     "question": "In this verse, what does this term's root meaning show about how it operates in this specific occurrence?"
+    },
+    {
+     "code": "M0.5.2",
+     "question": "In this verse, what does this occurrence's own grammatical form (per its morph_code — e.g. noun, verb, adjective, participle) show about how the term operates here?"
+    },
+    {
+     "code": "M0.5.3",
+     "question": "In this verse, given this term's known semantic range — the breadth of meaning it can carry, including idiomatic, analogical, or combinatorial senses — where does this occurrence sit within that range, and what does that show about how the term operates here?"
+    },
+    {
+     "code": "M0.5.4",
+     "question": "In this verse, does this occurrence express a specific aspect — disposition versus act, received versus given, condition versus quality? Record which, or none."
+    },
+    {
+     "code": "M0.5.5",
+     "question": "In this verse, among this term's own related terms, is there one that functions as this occurrence's structural opposite? Record it, or none."
+    },
+    {
+     "code": "M0.5.6",
+     "question": "In this verse, among this term's own related terms, is there a person-type term relevant to this occurrence — one for a person who habitually possesses or exercises it? Record it, or none."
+    },
+    {
+     "code": "M0.5.7",
+     "question": "In this verse, among this term's own related terms, is there a supplication or seeking term relevant to this occurrence — one for the act of seeking it from another? Record it, or none."
+    },
+    {
+     "code": "M0.5.8",
+     "question": "In this verse, does this term's Testament context (OT Hebrew vs. NT Greek) affect how this specific occurrence should be interpreted, and if so, how? Record none if the Testament context makes no interpretive difference here."
+    },
+    {
+     "code": "M0.5.9",
+     "question": "In this verse, if this term is newly coined in the NT period, what does that coinage show about how it functions in this occurrence? Record none if not applicable or not relevant to this occurrence."
+    },
+    {
+     "code": "M0.5.11",
+     "question": "In this verse, where this occurrence's meaning diverges from the term's usual sense elsewhere, what nuance does that divergence carry here, and how does it compare to the word's other occurrences? Pay particular attention to this occurrence's own surface form/rendering — a marked or atypical surface form is often the visible trace of the divergence itself, not a separate fact. Record none if this occurrence matches the term's usual sense."
+    }
+   ],
+   "nodes_total": 2,
+   "nodes_shown": 2,
+   "lexicon": {
+    "sense_head": "for nothing",
+    "meaning_range": "1) freely, for nothing, without cause; 1a) gratis, gratuitously, for nothing; 1b) for no purpose, in vain; 1c) gratuitously, without cause, undeservedly",
+    "lsj": "",
+    "mounce": "",
+    "related": [
+     "H2433 חִין beauty",
+     "H2580 חֵן favor",
+     "H2581 חֵן Hen",
+     "H2582G חֵנָדָד Henadad",
+     "H2582H חֵנָדָד Henadad",
+     "H2582I חֵנָדָד Henadad",
+     "H2584 חַנָּה Hannah",
+     "H2586G חָנוּן Hanun",
+     "H2586H חָנוּן Hanun",
+     "H2586I חָנוּן Hanun",
+     "H2587 חַנּוּן gracious",
+     "H2592G חַנִּיאֵל Hanniel"
+    ]
+   },
+   "existing_observations": [
+    {
+     "observation": 22421,
+     "stage": "layer-2",
+     "kind": "face",
+     "question": null,
+     "text": "The surface 'reason' carries eighteen codes in four senses and some small words. The ground or cause: G0156 (Act 10:21, 28:18, 28:20, 2Ti 1:6), G1223 and G5124 (Mar 12:24, 1Th 3:5, 1Th 3:7, 1Ti 1:16, 1Jo 3:8), G5484 (Eph",
+     "roles": [
+      "lexical"
+     ],
+     "occurrences": 2
+    }
+   ],
+   "evidence": [
+    {
+     "occurrence": 1236012,
+     "reference": "Job 1:9",
+     "surface": "reason",
+     "strong": "H2600",
+     "morph": "HD",
+     "unit": "reason",
+     "surface_kind": "own",
+     "negator": false,
+     "party_kind": null,
+     "gloss_consistent_in_verse": 1,
+     "verse": "Then Satan answered the Lord and said, “Does Job fear God for no reason?"
+    },
+    {
+     "occurrence": 1276385,
+     "reference": "Pro 3:30",
+     "surface": "reason",
+     "strong": "H2600",
+     "morph": "HD",
+     "unit": "reason",
+     "surface_kind": "own",
+     "negator": false,
+     "party_kind": null,
+     "gloss_consistent_in_verse": 1,
+     "verse": "Do not contend with a man for no reason, when he has done you no harm."
+    }
+   ],
+   "fill": {
+    "disposition": "observed",
+    "senses": [
+     {
+      "kind": "term",
+      "obs_text": "In Job 1:9 and Pro 3:30 the word is the adverb for nothing, without cause; Satan asks whether Job fears God without a reason and the proverb forbids quarrelling with a man for no reason, so the sense is the absence of a cause.",
+      "basis": "stated",
+      "occurrences": [
+       "Job 1:9",
+       "Pro 3:30"
+      ]
+     }
+    ],
+    "member_role": "lexical",
+    "reason": "",
+    "observation_id": "",
+    "older": []
+   }
+  },
+  {
+   "ledger_id": 933,
+   "item": "word-sense",
+   "kind": "term",
+   "word": "reason",
+   "strong": "H3198",
+   "subject": "reason|H3198",
+   "asks": "In the verses of this collection where this word stands (the surface with its lettered Strong's code), what does it mean in each, as the verse itself shows it? Write one observation for each sense the verses give it, with the occurrences it holds for (every occurrence is in some sense, none is left out): state the sense in the verse, how the verse shows it (the words it stands with, the construction, the morph) and name the verses by reference. An occurrence whose sense departs from the usual sense of the word is its own observation, of kind face. The lexicon entries are evidence to read, never text to restate (RW-04, B:131). A prompt that does not apply is not answered (RG-17).",
+   "prompts": [
+    {
+     "code": "M0.1.1",
+     "question": "In this verse, looking at this specific occurrence (its surface form and morph_code), what does this term's name/form show about its essential nature here?"
+    },
+    {
+     "code": "M0.1.2",
+     "question": "In this verse, drawing on this term's lexicon entries but grounded in how it is actually used in this occurrence, what does it mean at the definitional level?"
+    },
+    {
+     "code": "M0.1.3",
+     "question": "In this verse, what directional, relational, or constitutional implication does this term's name carry as it functions in this specific occurrence?"
+    },
+    {
+     "code": "M0.4.1",
+     "question": "What is the grammatical/stem form of this term in this verse?"
+    },
+    {
+     "code": "M0.5.1",
+     "question": "In this verse, what does this term's root meaning show about how it operates in this specific occurrence?"
+    },
+    {
+     "code": "M0.5.2",
+     "question": "In this verse, what does this occurrence's own grammatical form (per its morph_code — e.g. noun, verb, adjective, participle) show about how the term operates here?"
+    },
+    {
+     "code": "M0.5.3",
+     "question": "In this verse, given this term's known semantic range — the breadth of meaning it can carry, including idiomatic, analogical, or combinatorial senses — where does this occurrence sit within that range, and what does that show about how the term operates here?"
+    },
+    {
+     "code": "M0.5.4",
+     "question": "In this verse, does this occurrence express a specific aspect — disposition versus act, received versus given, condition versus quality? Record which, or none."
+    },
+    {
+     "code": "M0.5.5",
+     "question": "In this verse, among this term's own related terms, is there one that functions as this occurrence's structural opposite? Record it, or none."
+    },
+    {
+     "code": "M0.5.6",
+     "question": "In this verse, among this term's own related terms, is there a person-type term relevant to this occurrence — one for a person who habitually possesses or exercises it? Record it, or none."
+    },
+    {
+     "code": "M0.5.7",
+     "question": "In this verse, among this term's own related terms, is there a supplication or seeking term relevant to this occurrence — one for the act of seeking it from another? Record it, or none."
+    },
+    {
+     "code": "M0.5.8",
+     "question": "In this verse, does this term's Testament context (OT Hebrew vs. NT Greek) affect how this specific occurrence should be interpreted, and if so, how? Record none if the Testament context makes no interpretive difference here."
+    },
+    {
+     "code": "M0.5.9",
+     "question": "In this verse, if this term is newly coined in the NT period, what does that coinage show about how it functions in this occurrence? Record none if not applicable or not relevant to this occurrence."
+    },
+    {
+     "code": "M0.5.11",
+     "question": "In this verse, where this occurrence's meaning diverges from the term's usual sense elsewhere, what nuance does that divergence carry here, and how does it compare to the word's other occurrences? Pay particular attention to this occurrence's own surface form/rendering — a marked or atypical surface form is often the visible trace of the divergence itself, not a separate fact. Record none if this occurrence matches the term's usual sense."
+    }
+   ],
+   "nodes_total": 1,
+   "nodes_shown": 1,
+   "lexicon": {
+    "sense_head": "to rebuke",
+    "meaning_range": "1) to prove, decide, judge, rebuke, reprove, correct, be right; 1a) (Hiphil); 1a1) to decide, judge; 1a2) to adjudge, appoint; 1a3) to show to be right, prove; 1a4) to convince, convict; 1a5) to reprove, chide; 1a6) to correct, rebuke; 1b) (Hophal) to be chastened; 1c) (Niphal) to reason, reason together; 1d) (Hithpael) to argue",
+    "lsj": "",
+    "mounce": "",
+    "related": [
+     "H8433A תּוֹכֵחָה rebuke",
+     "H8433B תּוֹכַ֫חַת argument"
+    ]
+   },
+   "existing_observations": [
+    {
+     "observation": 22421,
+     "stage": "layer-2",
+     "kind": "face",
+     "question": null,
+     "text": "The surface 'reason' carries eighteen codes in four senses and some small words. The ground or cause: G0156 (Act 10:21, 28:18, 28:20, 2Ti 1:6), G1223 and G5124 (Mar 12:24, 1Th 3:5, 1Th 3:7, 1Ti 1:16, 1Jo 3:8), G5484 (Eph",
+     "roles": [
+      "lexical"
+     ],
+     "occurrences": 1
+    }
+   ],
+   "evidence": [
+    {
+     "occurrence": 1299563,
+     "reference": "Isa 1:18",
+     "surface": "reason",
+     "strong": "H3198",
+     "morph": "HVNc1cp",
+     "unit": "reason",
+     "surface_kind": "own",
+     "negator": false,
+     "party_kind": null,
+     "gloss_consistent_in_verse": 1,
+     "verse": "“ Come now, let us reason together, says the Lord: though your sins are like scarlet, they shall be as white as snow; though they are red like crimson, they shall become like wool."
+    }
+   ],
+   "fill": {
+    "disposition": "observed",
+    "senses": [
+     {
+      "kind": "term",
+      "obs_text": "In Isa 1:18 the verb is the Lord's call to settle a matter together, a legal and moral case between him and the people in which their sins are named; it is reasoning in the sense of arguing out a case, here by one who is both judge and party.",
+      "basis": "stated",
+      "occurrences": [
+       "Isa 1:18"
+      ]
+     }
+    ],
+    "member_role": "lexical",
+    "reason": "",
+    "observation_id": "",
+    "older": []
+   }
+  },
+  {
+   "ledger_id": 934,
+   "item": "word-sense",
+   "kind": "term",
+   "word": "reason",
+   "strong": "H3651C",
+   "subject": "reason|H3651C",
+   "asks": "In the verses of this collection where this word stands (the surface with its lettered Strong's code), what does it mean in each, as the verse itself shows it? Write one observation for each sense the verses give it, with the occurrences it holds for (every occurrence is in some sense, none is left out): state the sense in the verse, how the verse shows it (the words it stands with, the construction, the morph) and name the verses by reference. An occurrence whose sense departs from the usual sense of the word is its own observation, of kind face. The lexicon entries are evidence to read, never text to restate (RW-04, B:131). A prompt that does not apply is not answered (RG-17).",
+   "prompts": [
+    {
+     "code": "M0.1.1",
+     "question": "In this verse, looking at this specific occurrence (its surface form and morph_code), what does this term's name/form show about its essential nature here?"
+    },
+    {
+     "code": "M0.1.2",
+     "question": "In this verse, drawing on this term's lexicon entries but grounded in how it is actually used in this occurrence, what does it mean at the definitional level?"
+    },
+    {
+     "code": "M0.1.3",
+     "question": "In this verse, what directional, relational, or constitutional implication does this term's name carry as it functions in this specific occurrence?"
+    },
+    {
+     "code": "M0.4.1",
+     "question": "What is the grammatical/stem form of this term in this verse?"
+    },
+    {
+     "code": "M0.5.1",
+     "question": "In this verse, what does this term's root meaning show about how it operates in this specific occurrence?"
+    },
+    {
+     "code": "M0.5.2",
+     "question": "In this verse, what does this occurrence's own grammatical form (per its morph_code — e.g. noun, verb, adjective, participle) show about how the term operates here?"
+    },
+    {
+     "code": "M0.5.3",
+     "question": "In this verse, given this term's known semantic range — the breadth of meaning it can carry, including idiomatic, analogical, or combinatorial senses — where does this occurrence sit within that range, and what does that show about how the term operates here?"
+    },
+    {
+     "code": "M0.5.4",
+     "question": "In this verse, does this occurrence express a specific aspect — disposition versus act, received versus given, condition versus quality? Record which, or none."
+    },
+    {
+     "code": "M0.5.5",
+     "question": "In this verse, among this term's own related terms, is there one that functions as this occurrence's structural opposite? Record it, or none."
+    },
+    {
+     "code": "M0.5.6",
+     "question": "In this verse, among this term's own related terms, is there a person-type term relevant to this occurrence — one for a person who habitually possesses or exercises it? Record it, or none."
+    },
+    {
+     "code": "M0.5.7",
+     "question": "In this verse, among this term's own related terms, is there a supplication or seeking term relevant to this occurrence — one for the act of seeking it from another? Record it, or none."
+    },
+    {
+     "code": "M0.5.8",
+     "question": "In this verse, does this term's Testament context (OT Hebrew vs. NT Greek) affect how this specific occurrence should be interpreted, and if so, how? Record none if the Testament context makes no interpretive difference here."
+    },
+    {
+     "code": "M0.5.9",
+     "question": "In this verse, if this term is newly coined in the NT period, what does that coinage show about how it functions in this occurrence? Record none if not applicable or not relevant to this occurrence."
+    },
+    {
+     "code": "M0.5.11",
+     "question": "In this verse, where this occurrence's meaning diverges from the term's usual sense elsewhere, what nuance does that divergence carry here, and how does it compare to the word's other occurrences? Pay particular attention to this occurrence's own surface form/rendering — a marked or atypical surface form is often the visible trace of the divergence itself, not a separate fact. Record none if this occurrence matches the term's usual sense."
+    }
+   ],
+   "nodes_total": 1,
+   "nodes_shown": 1,
+   "lexicon": {
+    "sense_head": "so",
+    "meaning_range": "adv; 1) so, therefore, thus; 1a) thus, so; 1b) just so; 1c) therefore; 1d) so...as (paired with adv); 1e) then; 1f) forasmuch as (in phrase); 1g) (with prep); 1g1) therefore, this being so (specific); 1g2) hitherto; 1g3) therefore, on this ground (general); 1g4) afterwards; 1g5) in such case; Aramaic equivalent: <i>ken</i> (כֵּן \"thus\" H3652)",
+    "lsj": "",
+    "mounce": "",
+    "related": [
+     "H0403 אָכֵן surely",
+     "H0518A אִם if",
+     "H0518H אִם if: surely no",
+     "H0518I אִם if: surely yes",
+     "H0518J אִם if: until",
+     "H3559A כּוּן to establish: prepare",
+     "H3559B נָכוֹן blow",
+     "H3559H כּוּן to establish: establish",
+     "H3559I כּוּן to establish: make",
+     "H3559J כּוּן to establish: commit",
+     "H3559K כּוּן to establish: right",
+     "H3588A כִּי for"
+    ]
+   },
+   "existing_observations": [
+    {
+     "observation": 22421,
+     "stage": "layer-2",
+     "kind": "face",
+     "question": null,
+     "text": "The surface 'reason' carries eighteen codes in four senses and some small words. The ground or cause: G0156 (Act 10:21, 28:18, 28:20, 2Ti 1:6), G1223 and G5124 (Mar 12:24, 1Th 3:5, 1Th 3:7, 1Ti 1:16, 1Jo 3:8), G5484 (Eph",
+     "roles": [
+      "lexical"
+     ],
+     "occurrences": 1
+    }
+   ],
+   "evidence": [
+    {
+     "occurrence": 1126224,
+     "reference": "1Sa 20:29",
+     "surface": "reason",
+     "strong": "H3651C",
+     "morph": "HD",
+     "unit": "reason",
+     "surface_kind": "shared",
+     "negator": false,
+     "party_kind": null,
+     "gloss_consistent_in_verse": 1,
+     "verse": "He said, ‘Let me go, for our clan holds a sacrifice in the city, and my brother has commanded me to be there. So now, if I have found favor in your eyes, let me get away and see my brothers.’ For this reason he has not come to the king’s table.”"
+    }
+   ],
+   "fill": {
+    "disposition": "observed",
+    "senses": [
+     {
+      "kind": "term",
+      "obs_text": "In 1Sa 20:29 the word is a short adverb that gathers up the preceding cause (the clan's sacrifice and the brother's order) and leads to the request; the translated reason is carried by the particle of inference and names a ground for the request.",
+      "basis": "stated",
+      "occurrences": [
+       "1Sa 20:29"
+      ]
+     }
+    ],
+    "member_role": "lexical",
+    "reason": "",
+    "observation_id": "",
+    "older": []
+   }
+  },
+  {
+   "ledger_id": 935,
+   "item": "word-sense",
+   "kind": "term",
+   "word": "reason",
+   "strong": "H4486",
+   "subject": "reason|H4486",
+   "asks": "In the verses of this collection where this word stands (the surface with its lettered Strong's code), what does it mean in each, as the verse itself shows it? Write one observation for each sense the verses give it, with the occurrences it holds for (every occurrence is in some sense, none is left out): state the sense in the verse, how the verse shows it (the words it stands with, the construction, the morph) and name the verses by reference. An occurrence whose sense departs from the usual sense of the word is its own observation, of kind face. The lexicon entries are evidence to read, never text to restate (RW-04, B:131). A prompt that does not apply is not answered (RG-17).",
+   "prompts": [
+    {
+     "code": "M0.1.1",
+     "question": "In this verse, looking at this specific occurrence (its surface form and morph_code), what does this term's name/form show about its essential nature here?"
+    },
+    {
+     "code": "M0.1.2",
+     "question": "In this verse, drawing on this term's lexicon entries but grounded in how it is actually used in this occurrence, what does it mean at the definitional level?"
+    },
+    {
+     "code": "M0.1.3",
+     "question": "In this verse, what directional, relational, or constitutional implication does this term's name carry as it functions in this specific occurrence?"
+    },
+    {
+     "code": "M0.4.1",
+     "question": "What is the grammatical/stem form of this term in this verse?"
+    },
+    {
+     "code": "M0.5.1",
+     "question": "In this verse, what does this term's root meaning show about how it operates in this specific occurrence?"
+    },
+    {
+     "code": "M0.5.2",
+     "question": "In this verse, what does this occurrence's own grammatical form (per its morph_code — e.g. noun, verb, adjective, participle) show about how the term operates here?"
+    },
+    {
+     "code": "M0.5.3",
+     "question": "In this verse, given this term's known semantic range — the breadth of meaning it can carry, including idiomatic, analogical, or combinatorial senses — where does this occurrence sit within that range, and what does that show about how the term operates here?"
+    },
+    {
+     "code": "M0.5.4",
+     "question": "In this verse, does this occurrence express a specific aspect — disposition versus act, received versus given, condition versus quality? Record which, or none."
+    },
+    {
+     "code": "M0.5.5",
+     "question": "In this verse, among this term's own related terms, is there one that functions as this occurrence's structural opposite? Record it, or none."
+    },
+    {
+     "code": "M0.5.6",
+     "question": "In this verse, among this term's own related terms, is there a person-type term relevant to this occurrence — one for a person who habitually possesses or exercises it? Record it, or none."
+    },
+    {
+     "code": "M0.5.7",
+     "question": "In this verse, among this term's own related terms, is there a supplication or seeking term relevant to this occurrence — one for the act of seeking it from another? Record it, or none."
+    },
+    {
+     "code": "M0.5.8",
+     "question": "In this verse, does this term's Testament context (OT Hebrew vs. NT Greek) affect how this specific occurrence should be interpreted, and if so, how? Record none if the Testament context makes no interpretive difference here."
+    },
+    {
+     "code": "M0.5.9",
+     "question": "In this verse, if this term is newly coined in the NT period, what does that coinage show about how it functions in this occurrence? Record none if not applicable or not relevant to this occurrence."
+    },
+    {
+     "code": "M0.5.11",
+     "question": "In this verse, where this occurrence's meaning diverges from the term's usual sense elsewhere, what nuance does that divergence carry here, and how does it compare to the word's other occurrences? Pay particular attention to this occurrence's own surface form/rendering — a marked or atypical surface form is often the visible trace of the divergence itself, not a separate fact. Record none if this occurrence matches the term's usual sense."
+    }
+   ],
+   "nodes_total": 2,
+   "nodes_shown": 2,
+   "lexicon": {
+    "sense_head": "knowledge",
+    "meaning_range": "knowledge, power of knowing; Aramaic of <i>mad.da</i> (מַדָּע \"knowledge\" H4093)",
+    "lsj": "",
+    "mounce": "",
+    "related": [
+     "H3046 יְדַע to know",
+     "H4093 מַדָּע knowledge"
+    ]
+   },
+   "existing_observations": [
+    {
+     "observation": 22421,
+     "stage": "layer-2",
+     "kind": "face",
+     "question": null,
+     "text": "The surface 'reason' carries eighteen codes in four senses and some small words. The ground or cause: G0156 (Act 10:21, 28:18, 28:20, 2Ti 1:6), G1223 and G5124 (Mar 12:24, 1Th 3:5, 1Th 3:7, 1Ti 1:16, 1Jo 3:8), G5484 (Eph",
+     "roles": [
+      "lexical"
+     ],
+     "occurrences": 2
+    }
+   ],
+   "evidence": [
+    {
+     "occurrence": 1383059,
+     "reference": "Dan 4:34",
+     "surface": "reason",
+     "strong": "H4486",
+     "morph": "ANcbsc",
+     "unit": "reason",
+     "surface_kind": "own",
+     "negator": false,
+     "party_kind": null,
+     "gloss_consistent_in_verse": 1,
+     "verse": "At the end of the days I, Nebuchadnezzar, lifted my eyes to heaven, and my reason returned to me, and I blessed the Most High, and praised and honored him who lives forever, for his dominion is an everlasting dominion, and his kingdom endures from generation to generation;"
+    },
+    {
+     "occurrence": 1380829,
+     "reference": "Dan 4:36",
+     "surface": "reason",
+     "strong": "H4486",
+     "morph": "ANcbsc",
+     "unit": "reason",
+     "surface_kind": "own",
+     "negator": false,
+     "party_kind": null,
+     "gloss_consistent_in_verse": 1,
+     "verse": "At the same time my reason returned to me, and for the glory of my kingdom, my majesty and splendor returned to me. My counselors and my lords sought me, and I was established in my kingdom, and still more greatness was added to me."
+    }
+   ],
+   "fill": {
+    "disposition": "observed",
+    "senses": [
+     {
+      "kind": "term",
+      "obs_text": "In Dan 4:34 and 4:36 the noun is Nebuchadnezzar's understanding, which returns to him after the humbling; it names the mind's faculty of knowing as a thing lost and given back, in two verses that report the same restoration.",
+      "basis": "stated",
+      "occurrences": [
+       "Dan 4:34",
+       "Dan 4:36"
+      ]
+     }
+    ],
+    "member_role": "lexical",
+    "reason": "",
+    "observation_id": "",
+    "older": [
+     {
+      "observation": 18844,
+      "action": "keep",
+      "nature": "inner_being",
+      "reason": "kept and marked inner being: it states how the mind or heart works in the verses it names, and rests on them"
+     },
+     {
+      "observation": 20193,
+      "action": "keep",
+      "nature": "inner_being",
+      "reason": "kept and marked inner being: it states how the mind or heart works in the verses it names, and rests on them"
+     },
+     {
+      "observation": 20207,
+      "action": "keep",
+      "nature": "inner_being",
+      "reason": "kept and marked inner being: it states how the mind or heart works in the verses it names, and rests on them"
+     }
+    ]
+   }
+  },
+  {
+   "ledger_id": 936,
+   "item": "word-sense",
+   "kind": "term",
+   "word": "reason",
+   "strong": "H6440I",
+   "subject": "reason|H6440I",
+   "asks": "In the verses of this collection where this word stands (the surface with its lettered Strong's code), what does it mean in each, as the verse itself shows it? Write one observation for each sense the verses give it, with the occurrences it holds for (every occurrence is in some sense, none is left out): state the sense in the verse, how the verse shows it (the words it stands with, the construction, the morph) and name the verses by reference. An occurrence whose sense departs from the usual sense of the word is its own observation, of kind face. The lexicon entries are evidence to read, never text to restate (RW-04, B:131). A prompt that does not apply is not answered (RG-17).",
+   "prompts": [
+    {
+     "code": "M0.1.1",
+     "question": "In this verse, looking at this specific occurrence (its surface form and morph_code), what does this term's name/form show about its essential nature here?"
+    },
+    {
+     "code": "M0.1.2",
+     "question": "In this verse, drawing on this term's lexicon entries but grounded in how it is actually used in this occurrence, what does it mean at the definitional level?"
+    },
+    {
+     "code": "M0.1.3",
+     "question": "In this verse, what directional, relational, or constitutional implication does this term's name carry as it functions in this specific occurrence?"
+    },
+    {
+     "code": "M0.4.1",
+     "question": "What is the grammatical/stem form of this term in this verse?"
+    },
+    {
+     "code": "M0.5.1",
+     "question": "In this verse, what does this term's root meaning show about how it operates in this specific occurrence?"
+    },
+    {
+     "code": "M0.5.2",
+     "question": "In this verse, what does this occurrence's own grammatical form (per its morph_code — e.g. noun, verb, adjective, participle) show about how the term operates here?"
+    },
+    {
+     "code": "M0.5.3",
+     "question": "In this verse, given this term's known semantic range — the breadth of meaning it can carry, including idiomatic, analogical, or combinatorial senses — where does this occurrence sit within that range, and what does that show about how the term operates here?"
+    },
+    {
+     "code": "M0.5.4",
+     "question": "In this verse, does this occurrence express a specific aspect — disposition versus act, received versus given, condition versus quality? Record which, or none."
+    },
+    {
+     "code": "M0.5.5",
+     "question": "In this verse, among this term's own related terms, is there one that functions as this occurrence's structural opposite? Record it, or none."
+    },
+    {
+     "code": "M0.5.6",
+     "question": "In this verse, among this term's own related terms, is there a person-type term relevant to this occurrence — one for a person who habitually possesses or exercises it? Record it, or none."
+    },
+    {
+     "code": "M0.5.7",
+     "question": "In this verse, among this term's own related terms, is there a supplication or seeking term relevant to this occurrence — one for the act of seeking it from another? Record it, or none."
+    },
+    {
+     "code": "M0.5.8",
+     "question": "In this verse, does this term's Testament context (OT Hebrew vs. NT Greek) affect how this specific occurrence should be interpreted, and if so, how? Record none if the Testament context makes no interpretive difference here."
+    },
+    {
+     "code": "M0.5.9",
+     "question": "In this verse, if this term is newly coined in the NT period, what does that coinage show about how it functions in this occurrence? Record none if not applicable or not relevant to this occurrence."
+    },
+    {
+     "code": "M0.5.11",
+     "question": "In this verse, where this occurrence's meaning diverges from the term's usual sense elsewhere, what nuance does that divergence carry here, and how does it compare to the word's other occurrences? Pay particular attention to this occurrence's own surface form/rendering — a marked or atypical surface form is often the visible trace of the divergence itself, not a separate fact. Record none if this occurrence matches the term's usual sense."
+    }
+   ],
+   "nodes_total": 2,
+   "nodes_shown": 2,
+   "lexicon": {
+    "sense_head": "because",
+    "meaning_range": "1) face; 1a) face, faces; 1b) presence, person; 1c) face (of seraphim or cherubim); 1d) face (of animals); 1e) face, surface (of ground); 1f) as adv of loc/temp; 1f1) before and behind, toward, in front of, forward, formerly, from beforetime, before; 1g) with prep; 1g1) in front of, before, to the front of, in the presence of, in the face of, at the face or front of, from the presence of, from before, from before the face of",
+    "lsj": "",
+    "mounce": "",
+    "related": [
+     "H3312G יְפֻנֶּה Jephunneh",
+     "H3312H יְפֻנֶּה Jephunneh",
+     "H6437G פָּנָה to turn",
+     "H6437H פָּנָה Corner [Gate]",
+     "H6439G פְּנוּאֵל Peniel",
+     "H6439H פְּנוּאֵל Penuel",
+     "H6439I פְּנוּאֵל Penuel",
+     "H6440G פָּנֶה face: before",
+     "H6440H פָּנֶה face",
+     "H6440J פָּנֶה face: surface",
+     "H6440K פָּנֶה face: east",
+     "H6440L פָּנֶה face of"
+    ]
+   },
+   "existing_observations": [
+    {
+     "observation": 22421,
+     "stage": "layer-2",
+     "kind": "face",
+     "question": null,
+     "text": "The surface 'reason' carries eighteen codes in four senses and some small words. The ground or cause: G0156 (Act 10:21, 28:18, 28:20, 2Ti 1:6), G1223 and G5124 (Mar 12:24, 1Th 3:5, 1Th 3:7, 1Ti 1:16, 1Jo 3:8), G5484 (Eph",
+     "roles": [
+      "lexical"
+     ],
+     "occurrences": 2
+    }
+   ],
+   "evidence": [
+    {
+     "occurrence": 996256,
+     "reference": "Gen 41:31",
+     "surface": "reason",
+     "strong": "H6440I",
+     "morph": "HNcmpc",
+     "unit": "reason",
+     "surface_kind": "own",
+     "negator": false,
+     "party_kind": null,
+     "gloss_consistent_in_verse": 1,
+     "verse": "and the plenty will be unknown in the land by reason of the famine that will follow, for it will be very severe."
+    },
+    {
+     "occurrence": 1000202,
+     "reference": "Gen 47:13",
+     "surface": "reason",
+     "strong": "H6440I",
+     "morph": "HNcmpc",
+     "unit": "reason",
+     "surface_kind": "own",
+     "negator": false,
+     "party_kind": null,
+     "gloss_consistent_in_verse": 1,
+     "verse": "Now there was no food in all the land, for the famine was very severe, so that the land of Egypt and the land of Canaan languished by reason of the famine."
+    }
+   ],
+   "fill": {
+    "disposition": "observed",
+    "senses": [
+     {
+      "kind": "term",
+      "obs_text": "In Gen 41:31 and 47:13 the phrase translated by reason of is the cause of a state: the famine that makes the plenty unknown in Egypt and the cause of the land's languishing; it names what causes, as in the other uses of the surface.",
+      "basis": "stated",
+      "occurrences": [
+       "Gen 41:31",
+       "Gen 47:13"
+      ]
+     }
+    ],
+    "member_role": "lexical",
+    "reason": "",
+    "observation_id": "",
+    "older": []
+   }
+  }
+ ]
+}

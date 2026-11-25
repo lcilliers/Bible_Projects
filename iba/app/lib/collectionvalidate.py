@@ -67,13 +67,16 @@ def scope(conn, cid: int) -> dict:
     for ch in _chunks(verses):
         b |= {r[0] for r in conn.execute(f"SELECT DISTINCT n.observation_id FROM ib_node n {live_obs} WHERE n.deleted=0 AND n.verse_reference IN ({_qm(ch)})", ch)}
     pairs = []
-    for (subj,) in conn.execute("SELECT DISTINCT subject FROM collection_layer_item WHERE collection_id=? AND step='S1' AND item='word-lexical' AND deleted=0", (cid,)):
+    for (subj,) in conn.execute("SELECT DISTINCT subject FROM collection_layer_item WHERE collection_id=? AND item='word-sense' AND state!='retired' AND deleted=0", (cid,)):
         s, _, k = subj.partition("|")
         if s and k:
             pairs.append((s, k))
     c = set()
-    for s, k in pairs:
-        c |= {r[0] for r in conn.execute(f"SELECT DISTINCT n.observation_id FROM ib_node n {live_obs} WHERE n.deleted=0 AND n.strong=? AND n.surface=?", (k, s))}
+    if pairs:       # one join of the pairs with idx_ib_node_strong_surface, not one statement for each pair (B:71)
+        conn.execute("CREATE TEMP TABLE IF NOT EXISTS _vpairs (strong TEXT, surface TEXT)")
+        conn.execute("DELETE FROM _vpairs")
+        conn.executemany("INSERT INTO _vpairs VALUES (?,?)", [(k, s) for s, k in pairs])
+        c = {r[0] for r in conn.execute(f"SELECT DISTINCT n.observation_id FROM _vpairs CROSS JOIN ib_node n INDEXED BY idx_ib_node_strong_surface ON n.strong=_vpairs.strong AND n.surface=_vpairs.surface {live_obs} WHERE n.deleted=0")}
     pair_strongs = {k for _, k in pairs}
     orphans = conn.execute("SELECT o.id, o.strong FROM ib_observation o WHERE o.deleted=0 AND NOT EXISTS "
                            "(SELECT 1 FROM ib_node n WHERE n.observation_id=o.id AND n.deleted=0)").fetchall()
@@ -203,11 +206,14 @@ def check(conn, cfg, cid: int) -> dict:
     ev_fail = {"unmarked": f.get("unmarked", []), "no_node": f.get("no_node", []), "word_missing": [x[0] for x in f.get("word_missing", [])],
                "traced_dead": [x[0] for x in f.get("traced_dead", [])], "duplicate_text": [g for g in f.get("duplicate_text", [])]}
     deferred = {}
-    for oid in obs:
-        for r in conn.execute("SELECT c.new_value FROM ib_observation_change c WHERE c.observation_id=? AND c.column_name='deferred_to' AND c.id=("
-                              "SELECT MAX(c2.id) FROM ib_observation_change c2 WHERE c2.observation_id=c.observation_id AND c2.column_name IN ('deferred_to','deferral_closed') "
-                              "AND c2.new_value=c.new_value)", (oid,)):
-            deferred.setdefault(oid, set()).add(r[0])
+    last = {}                                       # (observation, collection) -> the latest of deferred_to / deferral_closed
+    for ch in _chunks(list(obs)):
+        for r in conn.execute(f"SELECT observation_id, new_value, column_name FROM ib_observation_change WHERE observation_id IN ({_qm(ch)}) "
+                              "AND column_name IN ('deferred_to','deferral_closed') ORDER BY id", ch):
+            last[(r[0], r[1])] = r[2]
+    for (oid, val), col in last.items():
+        if col == "deferred_to":
+            deferred.setdefault(oid, set()).add(val)
     open_ev = {k: v for k, v in ev_fail.items() if v}
     evidence_passes = not open_ev
     gaps = va.trace_gaps(conn, list(obs))

@@ -1,0 +1,1595 @@
+{
+ "collection": "thought",
+ "pulled": "2026-11-25T11:53:48Z",
+ "asks": "Place each surface, whole, in the subgroup of its meaning. The file gives, for each surface, its base and what the WordNet tables say of it (its network group and its pairs with the other surfaces of the collection) and a seed grouping; no verse is read at this step. Start from the seed (surfaces of one word family stay together unless their forms differ in meaning) and amend it by meaning. A surface that WordNet does not hold (a phrase, or a surface with no pair) is a subgroup on its own and still goes through the subgroup analysis. Name each subgroup for the kind of meaning its surfaces share and define it in a sentence. Membership of the collection is settled: set a surface aside only where it is plainly not a member in meaning, with the reason, and the change procedure moves it out. A surface is never split by Strong's code. Mark a placement that is open as uncertain and say what is unsettled. Nothing here judges what a word does for the inner being: a concept (a behaviour) comes into play only in stage 4.",
+ "groups": [
+  {
+   "name": "meditating and pondering",
+   "definition": "Turning a matter over in the mind at length, quietly and with attention: meditate, muse, ponder."
+  },
+  {
+   "name": "reasoning",
+   "definition": "Working something out by giving or weighing grounds: reason, reasoned, reasoning."
+  },
+  {
+   "name": "weighing and taking account of",
+   "definition": "Weighing a matter and coming to hold it as of a certain worth or standing: weigh, consider, regard."
+  },
+  {
+   "name": "supposing and imagining",
+   "definition": "Forming in the mind what is not given: supposing something to be so, imagining it, the imagination."
+  },
+  {
+   "name": "thinking and thought",
+   "definition": "The mind's thinking and what it thinks: think, thought, conceive, opinion."
+  },
+  {
+   "name": "conflicting thoughts",
+   "definition": "The phrase 'conflicting thoughts': thoughts that are at odds."
+  },
+  {
+   "name": "giving thought",
+   "definition": "The phrase 'gives thought': attending to a matter."
+  },
+  {
+   "name": "the mind on",
+   "definition": "The phrases 'mind on' and 'minds on': the mind directed to something."
+  },
+  {
+   "name": "once regarded",
+   "definition": "The phrase 'once regarded': an earlier holding of someone or something as such."
+  },
+  {
+   "name": "setting your mind",
+   "definition": "The phrase 'setting your mind': resolving the mind on something."
+  }
+ ],
+ "rows": [
+  {
+   "surface": "conceive",
+   "base": "conceive",
+   "link": "synonym",
+   "wordnet": {
+    "in_wordnet": true,
+    "network_kind": "main",
+    "network_group": 1,
+    "pairs_in_collection": 5,
+    "neighbours": [
+     {
+      "surface": "considered",
+      "type": "synonym",
+      "weight": 1
+     },
+     {
+      "surface": "think",
+      "type": "synonym",
+      "weight": 1
+     },
+     {
+      "surface": "thinking",
+      "type": "synonym",
+      "weight": 1
+     },
+     {
+      "surface": "thinks",
+      "type": "synonym",
+      "weight": 1
+     },
+     {
+      "surface": "thought",
+      "type": "synonym",
+      "weight": 1
+     }
+    ]
+   },
+   "seed_group": "conceive",
+   "current": {
+    "state": "placed",
+    "group": "devising and forming within"
+   },
+   "fill": {
+    "group": "thinking and thought",
+    "reason": "WordNet's core of the collection: think, thinking, thinks, thought and thoughts are one family; conceive pairs with thought and think, and opinion pairs only with thought and thoughts.",
+    "certainty": "uncertain",
+    "uncertain": "Placed with the thinking family on WordNet's links; the verses may show a different sense (to form, to bear): settle in step 1.1."
+   }
+  },
+  {
+   "surface": "conflicting thoughts",
+   "base": "conflicting thoughts",
+   "link": "phrase",
+   "wordnet": {
+    "in_wordnet": false,
+    "network_kind": null,
+    "network_group": null,
+    "pairs_in_collection": 0,
+    "neighbours": []
+   },
+   "seed_group": "conflicting thoughts",
+   "current": {
+    "state": "placed",
+    "group": "what the mind holds or produces: a thought, view or device"
+   },
+   "fill": {
+    "group": "conflicting thoughts",
+    "reason": "A phrase WordNet does not hold: a subgroup on its own.",
+    "certainty": "decided",
+    "uncertain": ""
+   }
+  },
+  {
+   "surface": "considered",
+   "base": "consider",
+   "link": "synonym",
+   "wordnet": {
+    "in_wordnet": true,
+    "network_kind": "main",
+    "network_group": 1,
+    "pairs_in_collection": 9,
+    "neighbours": [
+     {
+      "surface": "regard",
+      "type": "synonym",
+      "weight": 2
+     },
+     {
+      "surface": "regarded",
+      "type": "synonym",
+      "weight": 2
+     },
+     {
+      "surface": "conceive",
+      "type": "synonym",
+      "weight": 1
+     },
+     {
+      "surface": "think",
+      "type": "synonym",
+      "weight": 1
+     },
+     {
+      "surface": "thinking",
+      "type": "synonym",
+      "weight": 1
+     },
+     {
+      "surface": "thinks",
+      "type": "synonym",
+      "weight": 1
+     },
+     {
+      "surface": "thought",
+      "type": "synonym",
+      "weight": 1
+     },
+     {
+      "surface": "weigh",
+      "type": "synonym",
+      "weight": 1
+     },
+     {
+      "surface": "weighing",
+      "type": "synonym",
+      "weight": 1
+     }
+    ]
+   },
+   "seed_group": "considered",
+   "current": {
+    "state": "placed",
+    "group": "attending to a matter and turning it over"
+   },
+   "fill": {
+    "group": "weighing and taking account of",
+    "reason": "WordNet pairs considered with weigh and weighing and with regard and regarded, and the two families each stay together.",
+    "certainty": "uncertain",
+    "uncertain": "Placed with weigh and regard on WordNet's links alone; its verses (H2803 and others) may show it belongs elsewhere: settle in step 1.1."
+   }
+  },
+  {
+   "surface": "gives thought",
+   "base": "gives thought",
+   "link": "phrase",
+   "wordnet": {
+    "in_wordnet": false,
+    "network_kind": null,
+    "network_group": null,
+    "pairs_in_collection": 0,
+    "neighbours": []
+   },
+   "seed_group": "gives thought",
+   "current": {
+    "state": "placed",
+    "group": "attending to a matter and turning it over"
+   },
+   "fill": {
+    "group": "giving thought",
+    "reason": "A phrase WordNet does not hold: a subgroup on its own.",
+    "certainty": "decided",
+    "uncertain": ""
+   }
+  },
+  {
+   "surface": "imagination",
+   "base": "imagine",
+   "link": "synonym",
+   "wordnet": {
+    "in_wordnet": true,
+    "network_kind": "main",
+    "network_group": 1,
+    "pairs_in_collection": 3,
+    "neighbours": [
+     {
+      "surface": "imagine",
+      "type": "derivational",
+      "weight": 1
+     },
+     {
+      "surface": "imagines",
+      "type": "derivational",
+      "weight": 1
+     },
+     {
+      "surface": "imagining",
+      "type": "derivational",
+      "weight": 1
+     }
+    ]
+   },
+   "seed_group": "imagination",
+   "current": {
+    "state": "placed",
+    "group": "what the mind holds or produces: a thought, view or device"
+   },
+   "fill": {
+    "group": "supposing and imagining",
+    "reason": "WordNet pairs suppose and supposing with imagine, imagines and imagining, and the imagine family with imagination; the families stay together.",
+    "certainty": "uncertain",
+    "uncertain": "Placed with the imagine family on WordNet's links; the noun may belong with thought: settle in step 1.1."
+   }
+  },
+  {
+   "surface": "imagine",
+   "base": "imagine",
+   "link": "synonym",
+   "wordnet": {
+    "in_wordnet": true,
+    "network_kind": "main",
+    "network_group": 1,
+    "pairs_in_collection": 9,
+    "neighbours": [
+     {
+      "surface": "imagines",
+      "type": "same_base",
+      "weight": 2
+     },
+     {
+      "surface": "imagining",
+      "type": "same_base",
+      "weight": 2
+     },
+     {
+      "surface": "imagination",
+      "type": "derivational",
+      "weight": 1
+     },
+     {
+      "surface": "suppose",
+      "type": "synonym",
+      "weight": 1
+     },
+     {
+      "surface": "supposing",
+      "type": "synonym",
+      "weight": 1
+     },
+     {
+      "surface": "think",
+      "type": "synonym",
+      "weight": 1
+     },
+     {
+      "surface": "thinking",
+      "type": "synonym",
+      "weight": 1
+     },
+     {
+      "surface": "thinks",
+      "type": "synonym",
+      "weight": 1
+     },
+     {
+      "surface": "thought",
+      "type": "synonym",
+      "weight": 1
+     }
+    ]
+   },
+   "seed_group": "imagine; imagines; imagining",
+   "current": {
+    "state": "placed",
+    "group": "devising and forming within"
+   },
+   "fill": {
+    "group": "supposing and imagining",
+    "reason": "WordNet pairs suppose and supposing with imagine, imagines and imagining, and the imagine family with imagination; the families stay together.",
+    "certainty": "decided",
+    "uncertain": ""
+   }
+  },
+  {
+   "surface": "imagines",
+   "base": "imagine",
+   "link": "synonym",
+   "wordnet": {
+    "in_wordnet": true,
+    "network_kind": "main",
+    "network_group": 1,
+    "pairs_in_collection": 9,
+    "neighbours": [
+     {
+      "surface": "imagine",
+      "type": "same_base",
+      "weight": 2
+     },
+     {
+      "surface": "imagining",
+      "type": "same_base",
+      "weight": 2
+     },
+     {
+      "surface": "imagination",
+      "type": "derivational",
+      "weight": 1
+     },
+     {
+      "surface": "suppose",
+      "type": "synonym",
+      "weight": 1
+     },
+     {
+      "surface": "supposing",
+      "type": "synonym",
+      "weight": 1
+     },
+     {
+      "surface": "think",
+      "type": "synonym",
+      "weight": 1
+     },
+     {
+      "surface": "thinking",
+      "type": "synonym",
+      "weight": 1
+     },
+     {
+      "surface": "thinks",
+      "type": "synonym",
+      "weight": 1
+     },
+     {
+      "surface": "thought",
+      "type": "synonym",
+      "weight": 1
+     }
+    ]
+   },
+   "seed_group": "imagine; imagines; imagining",
+   "current": {
+    "state": "placed",
+    "group": "supposing, or holding something to be so"
+   },
+   "fill": {
+    "group": "supposing and imagining",
+    "reason": "WordNet pairs suppose and supposing with imagine, imagines and imagining, and the imagine family with imagination; the families stay together.",
+    "certainty": "decided",
+    "uncertain": ""
+   }
+  },
+  {
+   "surface": "imagining",
+   "base": "imagine",
+   "link": "synonym",
+   "wordnet": {
+    "in_wordnet": true,
+    "network_kind": "main",
+    "network_group": 1,
+    "pairs_in_collection": 9,
+    "neighbours": [
+     {
+      "surface": "imagine",
+      "type": "same_base",
+      "weight": 2
+     },
+     {
+      "surface": "imagines",
+      "type": "same_base",
+      "weight": 2
+     },
+     {
+      "surface": "imagination",
+      "type": "derivational",
+      "weight": 1
+     },
+     {
+      "surface": "suppose",
+      "type": "synonym",
+      "weight": 1
+     },
+     {
+      "surface": "supposing",
+      "type": "synonym",
+      "weight": 1
+     },
+     {
+      "surface": "think",
+      "type": "synonym",
+      "weight": 1
+     },
+     {
+      "surface": "thinking",
+      "type": "synonym",
+      "weight": 1
+     },
+     {
+      "surface": "thinks",
+      "type": "synonym",
+      "weight": 1
+     },
+     {
+      "surface": "thought",
+      "type": "synonym",
+      "weight": 1
+     }
+    ]
+   },
+   "seed_group": "imagine; imagines; imagining",
+   "current": {
+    "state": "placed",
+    "group": "supposing, or holding something to be so"
+   },
+   "fill": {
+    "group": "supposing and imagining",
+    "reason": "WordNet pairs suppose and supposing with imagine, imagines and imagining, and the imagine family with imagination; the families stay together.",
+    "certainty": "decided",
+    "uncertain": ""
+   }
+  },
+  {
+   "surface": "meditate",
+   "base": "meditate",
+   "link": "synonym",
+   "wordnet": {
+    "in_wordnet": true,
+    "network_kind": "main",
+    "network_group": 1,
+    "pairs_in_collection": 5,
+    "neighbours": [
+     {
+      "surface": "meditates",
+      "type": "same_base",
+      "weight": 2
+     },
+     {
+      "surface": "meditation",
+      "type": "derivational",
+      "weight": 1
+     },
+     {
+      "surface": "musing",
+      "type": "synonym",
+      "weight": 1
+     },
+     {
+      "surface": "pondering",
+      "type": "synonym",
+      "weight": 1
+     },
+     {
+      "surface": "ponders",
+      "type": "synonym",
+      "weight": 1
+     }
+    ]
+   },
+   "seed_group": "meditate; meditates",
+   "current": {
+    "state": "placed",
+    "group": "attending to a matter and turning it over"
+   },
+   "fill": {
+    "group": "meditating and pondering",
+    "reason": "WordNet joins these six in one cluster: each is a neighbour of the others (meditate, meditates, meditation, musing, pondering, ponders), and the word families meditate/meditates and pondering/ponders stay together.",
+    "certainty": "decided",
+    "uncertain": ""
+   }
+  },
+  {
+   "surface": "meditates",
+   "base": "meditate",
+   "link": "synonym",
+   "wordnet": {
+    "in_wordnet": true,
+    "network_kind": "main",
+    "network_group": 1,
+    "pairs_in_collection": 5,
+    "neighbours": [
+     {
+      "surface": "meditate",
+      "type": "same_base",
+      "weight": 2
+     },
+     {
+      "surface": "meditation",
+      "type": "derivational",
+      "weight": 1
+     },
+     {
+      "surface": "musing",
+      "type": "synonym",
+      "weight": 1
+     },
+     {
+      "surface": "pondering",
+      "type": "synonym",
+      "weight": 1
+     },
+     {
+      "surface": "ponders",
+      "type": "synonym",
+      "weight": 1
+     }
+    ]
+   },
+   "seed_group": "meditate; meditates",
+   "current": {
+    "state": "placed",
+    "group": "attending to a matter and turning it over"
+   },
+   "fill": {
+    "group": "meditating and pondering",
+    "reason": "WordNet joins these six in one cluster: each is a neighbour of the others (meditate, meditates, meditation, musing, pondering, ponders), and the word families meditate/meditates and pondering/ponders stay together.",
+    "certainty": "decided",
+    "uncertain": ""
+   }
+  },
+  {
+   "surface": "meditation",
+   "base": "meditate",
+   "link": "synonym",
+   "wordnet": {
+    "in_wordnet": true,
+    "network_kind": "main",
+    "network_group": 1,
+    "pairs_in_collection": 2,
+    "neighbours": [
+     {
+      "surface": "meditate",
+      "type": "derivational",
+      "weight": 1
+     },
+     {
+      "surface": "meditates",
+      "type": "derivational",
+      "weight": 1
+     }
+    ]
+   },
+   "seed_group": "meditation",
+   "current": {
+    "state": "placed",
+    "group": "attending to a matter and turning it over"
+   },
+   "fill": {
+    "group": "meditating and pondering",
+    "reason": "WordNet joins these six in one cluster: each is a neighbour of the others (meditate, meditates, meditation, musing, pondering, ponders), and the word families meditate/meditates and pondering/ponders stay together.",
+    "certainty": "decided",
+    "uncertain": ""
+   }
+  },
+  {
+   "surface": "mind on",
+   "base": "mind on",
+   "link": "phrase",
+   "wordnet": {
+    "in_wordnet": false,
+    "network_kind": null,
+    "network_group": null,
+    "pairs_in_collection": 0,
+    "neighbours": []
+   },
+   "seed_group": "mind on",
+   "current": {
+    "state": "placed",
+    "group": "the mind's set or direction"
+   },
+   "fill": {
+    "group": "the mind on",
+    "reason": "Phrases WordNet does not hold; the two forms of one phrase stay together.",
+    "certainty": "decided",
+    "uncertain": ""
+   }
+  },
+  {
+   "surface": "minds on",
+   "base": "minds on",
+   "link": "phrase",
+   "wordnet": {
+    "in_wordnet": false,
+    "network_kind": null,
+    "network_group": null,
+    "pairs_in_collection": 0,
+    "neighbours": []
+   },
+   "seed_group": "minds on",
+   "current": {
+    "state": "placed",
+    "group": "the mind's set or direction"
+   },
+   "fill": {
+    "group": "the mind on",
+    "reason": "Phrases WordNet does not hold; the two forms of one phrase stay together.",
+    "certainty": "decided",
+    "uncertain": ""
+   }
+  },
+  {
+   "surface": "musing",
+   "base": "muse",
+   "link": "synonym",
+   "wordnet": {
+    "in_wordnet": true,
+    "network_kind": "main",
+    "network_group": 1,
+    "pairs_in_collection": 4,
+    "neighbours": [
+     {
+      "surface": "pondering",
+      "type": "synonym",
+      "weight": 2
+     },
+     {
+      "surface": "meditate",
+      "type": "synonym",
+      "weight": 1
+     },
+     {
+      "surface": "meditates",
+      "type": "synonym",
+      "weight": 1
+     },
+     {
+      "surface": "ponders",
+      "type": "synonym",
+      "weight": 1
+     }
+    ]
+   },
+   "seed_group": "musing",
+   "current": {
+    "state": "placed",
+    "group": "attending to a matter and turning it over"
+   },
+   "fill": {
+    "group": "meditating and pondering",
+    "reason": "WordNet joins these six in one cluster: each is a neighbour of the others (meditate, meditates, meditation, musing, pondering, ponders), and the word families meditate/meditates and pondering/ponders stay together.",
+    "certainty": "decided",
+    "uncertain": ""
+   }
+  },
+  {
+   "surface": "once regarded",
+   "base": "once regarded",
+   "link": "phrase",
+   "wordnet": {
+    "in_wordnet": false,
+    "network_kind": null,
+    "network_group": null,
+    "pairs_in_collection": 0,
+    "neighbours": []
+   },
+   "seed_group": "once regarded",
+   "current": {
+    "state": "placed",
+    "group": "taking account of, and reckoning as"
+   },
+   "fill": {
+    "group": "once regarded",
+    "reason": "A phrase WordNet does not hold: a subgroup on its own.",
+    "certainty": "decided",
+    "uncertain": ""
+   }
+  },
+  {
+   "surface": "opinion",
+   "base": "opine",
+   "link": "synonym",
+   "wordnet": {
+    "in_wordnet": true,
+    "network_kind": "main",
+    "network_group": 1,
+    "pairs_in_collection": 2,
+    "neighbours": [
+     {
+      "surface": "thought",
+      "type": "synonym",
+      "weight": 1
+     },
+     {
+      "surface": "thoughts",
+      "type": "synonym",
+      "weight": 1
+     }
+    ]
+   },
+   "seed_group": "opinion",
+   "current": {
+    "state": "placed",
+    "group": "what the mind holds or produces: a thought, view or device"
+   },
+   "fill": {
+    "group": "thinking and thought",
+    "reason": "WordNet's core of the collection: think, thinking, thinks, thought and thoughts are one family; conceive pairs with thought and think, and opinion pairs only with thought and thoughts.",
+    "certainty": "uncertain",
+    "uncertain": "Placed with thought on WordNet's links alone; settle in step 1.1."
+   }
+  },
+  {
+   "surface": "pondering",
+   "base": "ponder",
+   "link": "synonym",
+   "wordnet": {
+    "in_wordnet": true,
+    "network_kind": "main",
+    "network_group": 1,
+    "pairs_in_collection": 4,
+    "neighbours": [
+     {
+      "surface": "musing",
+      "type": "synonym",
+      "weight": 2
+     },
+     {
+      "surface": "meditate",
+      "type": "synonym",
+      "weight": 1
+     },
+     {
+      "surface": "meditates",
+      "type": "synonym",
+      "weight": 1
+     },
+     {
+      "surface": "ponders",
+      "type": "same_base",
+      "weight": 1
+     }
+    ]
+   },
+   "seed_group": "pondering; ponders",
+   "current": {
+    "state": "placed",
+    "group": "attending to a matter and turning it over"
+   },
+   "fill": {
+    "group": "meditating and pondering",
+    "reason": "WordNet joins these six in one cluster: each is a neighbour of the others (meditate, meditates, meditation, musing, pondering, ponders), and the word families meditate/meditates and pondering/ponders stay together.",
+    "certainty": "decided",
+    "uncertain": ""
+   }
+  },
+  {
+   "surface": "ponders",
+   "base": "ponder",
+   "link": "synonym",
+   "wordnet": {
+    "in_wordnet": true,
+    "network_kind": "main",
+    "network_group": 1,
+    "pairs_in_collection": 4,
+    "neighbours": [
+     {
+      "surface": "meditate",
+      "type": "synonym",
+      "weight": 1
+     },
+     {
+      "surface": "meditates",
+      "type": "synonym",
+      "weight": 1
+     },
+     {
+      "surface": "musing",
+      "type": "synonym",
+      "weight": 1
+     },
+     {
+      "surface": "pondering",
+      "type": "same_base",
+      "weight": 1
+     }
+    ]
+   },
+   "seed_group": "pondering; ponders",
+   "current": {
+    "state": "placed",
+    "group": "attending to a matter and turning it over"
+   },
+   "fill": {
+    "group": "meditating and pondering",
+    "reason": "WordNet joins these six in one cluster: each is a neighbour of the others (meditate, meditates, meditation, musing, pondering, ponders), and the word families meditate/meditates and pondering/ponders stay together.",
+    "certainty": "decided",
+    "uncertain": ""
+   }
+  },
+  {
+   "surface": "reason",
+   "base": "reason",
+   "link": "synonym",
+   "wordnet": {
+    "in_wordnet": true,
+    "network_kind": "main",
+    "network_group": 1,
+    "pairs_in_collection": 2,
+    "neighbours": [
+     {
+      "surface": "reasoned",
+      "type": "same_base",
+      "weight": 4
+     },
+     {
+      "surface": "reasoning",
+      "type": "same_base",
+      "weight": 4
+     }
+    ]
+   },
+   "seed_group": "reason; reasoned; reasoning",
+   "current": {
+    "state": "placed",
+    "group": "reasoning and giving grounds"
+   },
+   "fill": {
+    "group": "reasoning",
+    "reason": "One word family; WordNet pairs the three forms only with each other (and reasoning with thinking).",
+    "certainty": "decided",
+    "uncertain": ""
+   }
+  },
+  {
+   "surface": "reasoned",
+   "base": "reason",
+   "link": "synonym",
+   "wordnet": {
+    "in_wordnet": true,
+    "network_kind": "main",
+    "network_group": 1,
+    "pairs_in_collection": 2,
+    "neighbours": [
+     {
+      "surface": "reason",
+      "type": "same_base",
+      "weight": 4
+     },
+     {
+      "surface": "reasoning",
+      "type": "same_base",
+      "weight": 4
+     }
+    ]
+   },
+   "seed_group": "reason; reasoned; reasoning",
+   "current": {
+    "state": "placed",
+    "group": "reasoning and giving grounds"
+   },
+   "fill": {
+    "group": "reasoning",
+    "reason": "One word family; WordNet pairs the three forms only with each other (and reasoning with thinking).",
+    "certainty": "decided",
+    "uncertain": ""
+   }
+  },
+  {
+   "surface": "reasoning",
+   "base": "reason",
+   "link": "synonym",
+   "wordnet": {
+    "in_wordnet": true,
+    "network_kind": "main",
+    "network_group": 1,
+    "pairs_in_collection": 3,
+    "neighbours": [
+     {
+      "surface": "reason",
+      "type": "same_base",
+      "weight": 4
+     },
+     {
+      "surface": "reasoned",
+      "type": "same_base",
+      "weight": 4
+     },
+     {
+      "surface": "thinking",
+      "type": "synonym",
+      "weight": 1
+     }
+    ]
+   },
+   "seed_group": "reason; reasoned; reasoning",
+   "current": {
+    "state": "placed",
+    "group": "reasoning and giving grounds"
+   },
+   "fill": {
+    "group": "reasoning",
+    "reason": "One word family; WordNet pairs the three forms only with each other (and reasoning with thinking).",
+    "certainty": "decided",
+    "uncertain": ""
+   }
+  },
+  {
+   "surface": "regard",
+   "base": "regard",
+   "link": "gathered",
+   "wordnet": {
+    "in_wordnet": true,
+    "network_kind": "main",
+    "network_group": 1,
+    "pairs_in_collection": 2,
+    "neighbours": [
+     {
+      "surface": "regarded",
+      "type": "same_base",
+      "weight": 4
+     },
+     {
+      "surface": "considered",
+      "type": "synonym",
+      "weight": 2
+     }
+    ]
+   },
+   "seed_group": "regard; regarded",
+   "current": {
+    "state": "placed",
+    "group": "taking account of, and reckoning as"
+   },
+   "fill": {
+    "group": "weighing and taking account of",
+    "reason": "WordNet pairs considered with weigh and weighing and with regard and regarded, and the two families each stay together.",
+    "certainty": "decided",
+    "uncertain": ""
+   }
+  },
+  {
+   "surface": "regarded",
+   "base": "regard",
+   "link": "gathered",
+   "wordnet": {
+    "in_wordnet": true,
+    "network_kind": "main",
+    "network_group": 1,
+    "pairs_in_collection": 2,
+    "neighbours": [
+     {
+      "surface": "regard",
+      "type": "same_base",
+      "weight": 4
+     },
+     {
+      "surface": "considered",
+      "type": "synonym",
+      "weight": 2
+     }
+    ]
+   },
+   "seed_group": "regard; regarded",
+   "current": {
+    "state": "placed",
+    "group": "taking account of, and reckoning as"
+   },
+   "fill": {
+    "group": "weighing and taking account of",
+    "reason": "WordNet pairs considered with weigh and weighing and with regard and regarded, and the two families each stay together.",
+    "certainty": "decided",
+    "uncertain": ""
+   }
+  },
+  {
+   "surface": "setting your mind",
+   "base": "setting your mind",
+   "link": "phrase",
+   "wordnet": {
+    "in_wordnet": false,
+    "network_kind": null,
+    "network_group": null,
+    "pairs_in_collection": 0,
+    "neighbours": []
+   },
+   "seed_group": "setting your mind",
+   "current": {
+    "state": "placed",
+    "group": "the mind's set or direction"
+   },
+   "fill": {
+    "group": "setting your mind",
+    "reason": "A phrase WordNet does not hold: a subgroup on its own.",
+    "certainty": "decided",
+    "uncertain": ""
+   }
+  },
+  {
+   "surface": "suppose",
+   "base": "suppose",
+   "link": "gathered",
+   "wordnet": {
+    "in_wordnet": true,
+    "network_kind": "main",
+    "network_group": 1,
+    "pairs_in_collection": 8,
+    "neighbours": [
+     {
+      "surface": "supposing",
+      "type": "same_base",
+      "weight": 5
+     },
+     {
+      "surface": "imagine",
+      "type": "synonym",
+      "weight": 1
+     },
+     {
+      "surface": "imagines",
+      "type": "synonym",
+      "weight": 1
+     },
+     {
+      "surface": "imagining",
+      "type": "synonym",
+      "weight": 1
+     },
+     {
+      "surface": "think",
+      "type": "synonym",
+      "weight": 1
+     },
+     {
+      "surface": "thinking",
+      "type": "synonym",
+      "weight": 1
+     },
+     {
+      "surface": "thinks",
+      "type": "synonym",
+      "weight": 1
+     },
+     {
+      "surface": "thought",
+      "type": "synonym",
+      "weight": 1
+     }
+    ]
+   },
+   "seed_group": "suppose; supposing",
+   "current": {
+    "state": "placed",
+    "group": "supposing, or holding something to be so"
+   },
+   "fill": {
+    "group": "supposing and imagining",
+    "reason": "WordNet pairs suppose and supposing with imagine, imagines and imagining, and the imagine family with imagination; the families stay together.",
+    "certainty": "decided",
+    "uncertain": ""
+   }
+  },
+  {
+   "surface": "supposing",
+   "base": "suppose",
+   "link": "gathered",
+   "wordnet": {
+    "in_wordnet": true,
+    "network_kind": "main",
+    "network_group": 1,
+    "pairs_in_collection": 8,
+    "neighbours": [
+     {
+      "surface": "suppose",
+      "type": "same_base",
+      "weight": 5
+     },
+     {
+      "surface": "imagine",
+      "type": "synonym",
+      "weight": 1
+     },
+     {
+      "surface": "imagines",
+      "type": "synonym",
+      "weight": 1
+     },
+     {
+      "surface": "imagining",
+      "type": "synonym",
+      "weight": 1
+     },
+     {
+      "surface": "think",
+      "type": "synonym",
+      "weight": 1
+     },
+     {
+      "surface": "thinking",
+      "type": "synonym",
+      "weight": 1
+     },
+     {
+      "surface": "thinks",
+      "type": "synonym",
+      "weight": 1
+     },
+     {
+      "surface": "thought",
+      "type": "synonym",
+      "weight": 1
+     }
+    ]
+   },
+   "seed_group": "suppose; supposing",
+   "current": {
+    "state": "placed",
+    "group": "supposing, or holding something to be so"
+   },
+   "fill": {
+    "group": "supposing and imagining",
+    "reason": "WordNet pairs suppose and supposing with imagine, imagines and imagining, and the imagine family with imagination; the families stay together.",
+    "certainty": "decided",
+    "uncertain": ""
+   }
+  },
+  {
+   "surface": "think",
+   "base": "think",
+   "link": "synonym",
+   "wordnet": {
+    "in_wordnet": true,
+    "network_kind": "main",
+    "network_group": 1,
+    "pairs_in_collection": 11,
+    "neighbours": [
+     {
+      "surface": "thinks",
+      "type": "same_base",
+      "weight": 15
+     },
+     {
+      "surface": "thinking",
+      "type": "same_base",
+      "weight": 14
+     },
+     {
+      "surface": "thought",
+      "type": "same_base",
+      "weight": 14
+     },
+     {
+      "surface": "conceive",
+      "type": "synonym",
+      "weight": 1
+     },
+     {
+      "surface": "considered",
+      "type": "synonym",
+      "weight": 1
+     },
+     {
+      "surface": "imagine",
+      "type": "synonym",
+      "weight": 1
+     },
+     {
+      "surface": "imagines",
+      "type": "synonym",
+      "weight": 1
+     },
+     {
+      "surface": "imagining",
+      "type": "synonym",
+      "weight": 1
+     },
+     {
+      "surface": "suppose",
+      "type": "synonym",
+      "weight": 1
+     },
+     {
+      "surface": "supposing",
+      "type": "synonym",
+      "weight": 1
+     },
+     {
+      "surface": "thoughts",
+      "type": "derivational",
+      "weight": 1
+     }
+    ]
+   },
+   "seed_group": "think; thinking; thinks; thought; thoughts",
+   "current": {
+    "state": "placed",
+    "group": "supposing, or holding something to be so"
+   },
+   "fill": {
+    "group": "thinking and thought",
+    "reason": "WordNet's core of the collection: think, thinking, thinks, thought and thoughts are one family; conceive pairs with thought and think, and opinion pairs only with thought and thoughts.",
+    "certainty": "decided",
+    "uncertain": ""
+   }
+  },
+  {
+   "surface": "thinking",
+   "base": "think",
+   "link": "synonym",
+   "wordnet": {
+    "in_wordnet": true,
+    "network_kind": "main",
+    "network_group": 1,
+    "pairs_in_collection": 12,
+    "neighbours": [
+     {
+      "surface": "thought",
+      "type": "same_base",
+      "weight": 15
+     },
+     {
+      "surface": "think",
+      "type": "same_base",
+      "weight": 14
+     },
+     {
+      "surface": "thinks",
+      "type": "same_base",
+      "weight": 14
+     },
+     {
+      "surface": "thoughts",
+      "type": "synonym",
+      "weight": 2
+     },
+     {
+      "surface": "conceive",
+      "type": "synonym",
+      "weight": 1
+     },
+     {
+      "surface": "considered",
+      "type": "synonym",
+      "weight": 1
+     },
+     {
+      "surface": "imagine",
+      "type": "synonym",
+      "weight": 1
+     },
+     {
+      "surface": "imagines",
+      "type": "synonym",
+      "weight": 1
+     },
+     {
+      "surface": "imagining",
+      "type": "synonym",
+      "weight": 1
+     },
+     {
+      "surface": "reasoning",
+      "type": "synonym",
+      "weight": 1
+     },
+     {
+      "surface": "suppose",
+      "type": "synonym",
+      "weight": 1
+     },
+     {
+      "surface": "supposing",
+      "type": "synonym",
+      "weight": 1
+     }
+    ]
+   },
+   "seed_group": "think; thinking; thinks; thought; thoughts",
+   "current": {
+    "state": "placed",
+    "group": "supposing, or holding something to be so"
+   },
+   "fill": {
+    "group": "thinking and thought",
+    "reason": "WordNet's core of the collection: think, thinking, thinks, thought and thoughts are one family; conceive pairs with thought and think, and opinion pairs only with thought and thoughts.",
+    "certainty": "decided",
+    "uncertain": ""
+   }
+  },
+  {
+   "surface": "thinks",
+   "base": "think",
+   "link": "synonym",
+   "wordnet": {
+    "in_wordnet": true,
+    "network_kind": "main",
+    "network_group": 1,
+    "pairs_in_collection": 11,
+    "neighbours": [
+     {
+      "surface": "think",
+      "type": "same_base",
+      "weight": 15
+     },
+     {
+      "surface": "thinking",
+      "type": "same_base",
+      "weight": 14
+     },
+     {
+      "surface": "thought",
+      "type": "same_base",
+      "weight": 14
+     },
+     {
+      "surface": "conceive",
+      "type": "synonym",
+      "weight": 1
+     },
+     {
+      "surface": "considered",
+      "type": "synonym",
+      "weight": 1
+     },
+     {
+      "surface": "imagine",
+      "type": "synonym",
+      "weight": 1
+     },
+     {
+      "surface": "imagines",
+      "type": "synonym",
+      "weight": 1
+     },
+     {
+      "surface": "imagining",
+      "type": "synonym",
+      "weight": 1
+     },
+     {
+      "surface": "suppose",
+      "type": "synonym",
+      "weight": 1
+     },
+     {
+      "surface": "supposing",
+      "type": "synonym",
+      "weight": 1
+     },
+     {
+      "surface": "thoughts",
+      "type": "derivational",
+      "weight": 1
+     }
+    ]
+   },
+   "seed_group": "think; thinking; thinks; thought; thoughts",
+   "current": {
+    "state": "placed",
+    "group": "supposing, or holding something to be so"
+   },
+   "fill": {
+    "group": "thinking and thought",
+    "reason": "WordNet's core of the collection: think, thinking, thinks, thought and thoughts are one family; conceive pairs with thought and think, and opinion pairs only with thought and thoughts.",
+    "certainty": "decided",
+    "uncertain": ""
+   }
+  },
+  {
+   "surface": "thought",
+   "base": "thought",
+   "link": "core",
+   "wordnet": {
+    "in_wordnet": true,
+    "network_kind": "main",
+    "network_group": 1,
+    "pairs_in_collection": 12,
+    "neighbours": [
+     {
+      "surface": "thinking",
+      "type": "same_base",
+      "weight": 15
+     },
+     {
+      "surface": "think",
+      "type": "same_base",
+      "weight": 14
+     },
+     {
+      "surface": "thinks",
+      "type": "same_base",
+      "weight": 14
+     },
+     {
+      "surface": "thoughts",
+      "type": "same_base",
+      "weight": 5
+     },
+     {
+      "surface": "conceive",
+      "type": "synonym",
+      "weight": 1
+     },
+     {
+      "surface": "considered",
+      "type": "synonym",
+      "weight": 1
+     },
+     {
+      "surface": "imagine",
+      "type": "synonym",
+      "weight": 1
+     },
+     {
+      "surface": "imagines",
+      "type": "synonym",
+      "weight": 1
+     },
+     {
+      "surface": "imagining",
+      "type": "synonym",
+      "weight": 1
+     },
+     {
+      "surface": "opinion",
+      "type": "synonym",
+      "weight": 1
+     },
+     {
+      "surface": "suppose",
+      "type": "synonym",
+      "weight": 1
+     },
+     {
+      "surface": "supposing",
+      "type": "synonym",
+      "weight": 1
+     }
+    ]
+   },
+   "seed_group": "think; thinking; thinks; thought; thoughts",
+   "current": {
+    "state": "placed",
+    "group": "supposing, or holding something to be so"
+   },
+   "fill": {
+    "group": "thinking and thought",
+    "reason": "WordNet's core of the collection: think, thinking, thinks, thought and thoughts are one family; conceive pairs with thought and think, and opinion pairs only with thought and thoughts.",
+    "certainty": "decided",
+    "uncertain": ""
+   }
+  },
+  {
+   "surface": "thoughts",
+   "base": "thought",
+   "link": "synonym",
+   "wordnet": {
+    "in_wordnet": true,
+    "network_kind": "main",
+    "network_group": 1,
+    "pairs_in_collection": 5,
+    "neighbours": [
+     {
+      "surface": "thought",
+      "type": "same_base",
+      "weight": 5
+     },
+     {
+      "surface": "thinking",
+      "type": "synonym",
+      "weight": 2
+     },
+     {
+      "surface": "opinion",
+      "type": "synonym",
+      "weight": 1
+     },
+     {
+      "surface": "think",
+      "type": "derivational",
+      "weight": 1
+     },
+     {
+      "surface": "thinks",
+      "type": "derivational",
+      "weight": 1
+     }
+    ]
+   },
+   "seed_group": "think; thinking; thinks; thought; thoughts",
+   "current": {
+    "state": "placed",
+    "group": "what the mind holds or produces: a thought, view or device"
+   },
+   "fill": {
+    "group": "thinking and thought",
+    "reason": "WordNet's core of the collection: think, thinking, thinks, thought and thoughts are one family; conceive pairs with thought and think, and opinion pairs only with thought and thoughts.",
+    "certainty": "decided",
+    "uncertain": ""
+   }
+  },
+  {
+   "surface": "weigh",
+   "base": "weigh",
+   "link": "synonym",
+   "wordnet": {
+    "in_wordnet": true,
+    "network_kind": "main",
+    "network_group": 1,
+    "pairs_in_collection": 2,
+    "neighbours": [
+     {
+      "surface": "weighing",
+      "type": "same_base",
+      "weight": 6
+     },
+     {
+      "surface": "considered",
+      "type": "synonym",
+      "weight": 1
+     }
+    ]
+   },
+   "seed_group": "weigh; weighing",
+   "current": {
+    "state": "placed",
+    "group": "attending to a matter and turning it over"
+   },
+   "fill": {
+    "group": "weighing and taking account of",
+    "reason": "WordNet pairs considered with weigh and weighing and with regard and regarded, and the two families each stay together.",
+    "certainty": "decided",
+    "uncertain": ""
+   }
+  },
+  {
+   "surface": "weighing",
+   "base": "weigh",
+   "link": "synonym",
+   "wordnet": {
+    "in_wordnet": true,
+    "network_kind": "main",
+    "network_group": 1,
+    "pairs_in_collection": 2,
+    "neighbours": [
+     {
+      "surface": "weigh",
+      "type": "same_base",
+      "weight": 6
+     },
+     {
+      "surface": "considered",
+      "type": "synonym",
+      "weight": 1
+     }
+    ]
+   },
+   "seed_group": "weigh; weighing",
+   "current": {
+    "state": "placed",
+    "group": "attending to a matter and turning it over"
+   },
+   "fill": {
+    "group": "weighing and taking account of",
+    "reason": "WordNet pairs considered with weigh and weighing and with regard and regarded, and the two families each stay together.",
+    "certainty": "decided",
+    "uncertain": ""
+   }
+  }
+ ]
+}

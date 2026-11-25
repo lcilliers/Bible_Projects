@@ -1,0 +1,464 @@
+# Layered reading check: thought
+
+Generated 2026-11-25T13:30:22Z by run RUN-20261125_133019_696-COLLECTIONBUILD (`Collection-Build.ps1 -Action LayerCheck`, escalation #2505). Sets `validated` on the ledger rows it passes; nothing else is written.
+
+## Gates
+
+- stage 1 (the lexical analysis of the words, step S1): 177 rows (closed)
+- grouping: finished (every surface placed or isolated)
+
+## Step S1: closed
+
+358 rows; 358 validated; 0 open; 0 failed; 0 demanded by the data and not in the ledger (LayerOpen).
+
+## Step 1.1: not closed
+
+37 rows; 30 validated; 0 open; 7 failed; 0 demanded by the data and not in the ledger (LayerOpen).
+- failed: group-definition / group 11: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: group-definition / group 12: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: group-definition / group 13: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: group-definition / group 14: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: group-definition / group 15: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: group-definition / group 16: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: group-definition / group 17: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+
+## Step 1.2: not closed
+
+7 rows; 0 validated; 0 open; 7 failed; 10 demanded by the data and not in the ledger (LayerOpen).
+- failed: strong-enrichment / group 11: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: strong-enrichment / group 12: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: strong-enrichment / group 13: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: strong-enrichment / group 14: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: strong-enrichment / group 15: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: strong-enrichment / group 16: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: strong-enrichment / group 17: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- missing: strong-enrichment / meditating and pondering
+- missing: strong-enrichment / reasoning
+- missing: strong-enrichment / weighing and taking account of
+- missing: strong-enrichment / supposing and imagining
+- missing: strong-enrichment / thinking and thought
+- missing: strong-enrichment / conflicting thoughts
+- missing: strong-enrichment / giving thought
+- missing: strong-enrichment / the mind on
+- missing: strong-enrichment / once regarded
+- missing: strong-enrichment / setting your mind
+
+## Step 2.1: not closed
+
+132 rows; 0 validated; 0 open; 132 failed; 392 demanded by the data and not in the ledger (LayerOpen).
+- failed: pairing / group 11 / anger: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: pairing / group 11 / believe: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: pairing / group 11 / bless: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: pairing / group 11 / call: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: pairing / group 11 / combat: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: pairing / group 11 / comfort: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: pairing / group 11 / command: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: pairing / group 11 / conceal: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: pairing / group 11 / condemn: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: pairing / group 11 / convince: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: pairing / group 11 / deceive: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: pairing / group 11 / depart: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: pairing / group 11 / desire: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: pairing / group 11 / destruction: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: pairing / group 11 / die: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: pairing / group 11 / endure: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: pairing / group 11 / escape: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: pairing / group 11 / evildoer: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: pairing / group 11 / fear: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: pairing / group 11 / folly: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: pairing / group 11 / guard: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: pairing / group 11 / hear: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: pairing / group 11 / heart: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: pairing / group 11 / honor: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: pairing / group 11 / intend: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: pairing / group 11 / kill: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: pairing / group 11 / know: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: pairing / group 11 / labor: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: pairing / group 11 / laugh: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: pairing / group 11 / live: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: pairing / group 11 / loyalty: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: pairing / group 11 / mute: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: pairing / group 11 / offer: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: pairing / group 11 / pain: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: pairing / group 11 / profess: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: pairing / group 11 / quarrel: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: pairing / group 11 / return: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: pairing / group 11 / reward: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: pairing / group 11 / rich: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: pairing / group 11 / righteous: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: pairing / group 11 / search: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: pairing / group 11 / serve: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: pairing / group 11 / share: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: pairing / group 11 / sin: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: pairing / group 11 / snatch: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: pairing / group 11 / supplication: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: pairing / group 11 / tribulation: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: pairing / group 11 / trust: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: pairing / group 11 / unclean: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: pairing / group 11 / wise: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: pairing / group 12 / destruction: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: pairing / group 12 / evildoer: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: pairing / group 12 / fear: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: pairing / group 12 / forget: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: pairing / group 12 / govern: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: pairing / group 12 / heart: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: pairing / group 12 / labor: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: pairing / group 12 / live: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: pairing / group 12 / love: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: pairing / group 12 / search: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: pairing / group 12 / snatch: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: pairing / group 12 / wise: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: pairing / group 13 / believe: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: pairing / group 13 / continual: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: pairing / group 13 / endure: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: pairing / group 13 / know: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: pairing / group 13 / sin: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: pairing / group 15 / hear: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: pairing / group 15 / labor: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: pairing / group 15 / pride: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: pairing / group 15 / scoff: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: pairing / group 16 / change: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: pairing / group 16 / evildoer: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: pairing / group 16 / fear: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: pairing / group 16 / heart: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: pairing / group 16 / intend: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: pairing / group 16 / know: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: pairing / group 16 / labor: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: pairing / group 16 / live: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: pairing / group 16 / preach: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: pairing / group 16 / profess: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: pairing / group 16 / rich: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: pairing / group 16 / righteous: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: pairing / group 16 / teach: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: pairing / group 16 / wise: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: pairing / group 17 / call: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: pairing / group 17 / endure: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: qualifier / group 11: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: qualifier / group 12: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: qualifier / group 13: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: qualifier / group 14: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: qualifier / group 15: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: qualifier / group 16: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: qualifier / group 17: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: entity / group 11: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: entity / group 12: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: entity / group 13: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: entity / group 14: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: entity / group 15: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: entity / group 16: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- missing: pairing / meditating and pondering amazement
+- missing: pairing / meditating and pondering care
+- missing: pairing / meditating and pondering compassion
+- missing: pairing / meditating and pondering delight
+- missing: pairing / meditating and pondering depart
+- missing: pairing / meditating and pondering destruction
+- missing: pairing / meditating and pondering evildoer
+- missing: pairing / meditating and pondering faint
+- missing: pairing / meditating and pondering fear
+- missing: pairing / meditating and pondering forget
+- missing: pairing / meditating and pondering gladden
+- missing: pairing / meditating and pondering govern
+- missing: pairing / meditating and pondering heart
+- missing: pairing / meditating and pondering labor
+- missing: pairing / meditating and pondering lament
+- missing: pairing / meditating and pondering laugh
+- missing: pairing / meditating and pondering love
+- missing: pairing / meditating and pondering majesty
+- missing: pairing / meditating and pondering mighty
+- missing: pairing / meditating and pondering pain
+- missing: pairing / meditating and pondering plot
+- missing: pairing / meditating and pondering profess
+- missing: pairing / meditating and pondering promise
+- missing: pairing / meditating and pondering real
+- missing: pairing / meditating and pondering refresh
+- missing: pairing / meditating and pondering reject
+- missing: pairing / meditating and pondering rich
+- missing: pairing / meditating and pondering righteous
+- missing: pairing / meditating and pondering roar
+- missing: pairing / meditating and pondering scoff
+- missing: pairing / meditating and pondering search
+- missing: pairing / meditating and pondering serve
+- missing: pairing / meditating and pondering watch
+- missing: pairing / meditating and pondering wise
+- missing: pairing / reasoning abase
+- missing: pairing / reasoning ask
+- missing: pairing / reasoning believe
+- missing: pairing / reasoning benefit
+- missing: pairing / reasoning blaspheme
+- missing: pairing / reasoning bless
+- missing: pairing / reasoning bold
+- missing: pairing / reasoning bondage
+- missing: pairing / reasoning cleanse
+- missing: pairing / reasoning combat
+- missing: pairing / reasoning comfort
+- missing: pairing / reasoning command
+- missing: pairing / reasoning commend
+- missing: pairing / reasoning compassion
+- missing: pairing / reasoning continual
+- missing: pairing / reasoning convince
+- missing: pairing / reasoning crime
+- missing: pairing / reasoning cruel
+- missing: pairing / reasoning delight
+- missing: pairing / reasoning desire
+- missing: pairing / reasoning destruction
+- missing: pairing / reasoning die
+- missing: pairing / reasoning earnest
+- missing: pairing / reasoning endure
+- missing: pairing / reasoning entice
+- missing: pairing / reasoning evildoer
+- missing: pairing / reasoning faint
+- missing: pairing / reasoning fear
+- missing: pairing / reasoning fill
+- missing: pairing / reasoning firm
+- missing: pairing / reasoning follow
+- missing: pairing / reasoning forget
+- missing: pairing / reasoning forgive
+- missing: pairing / reasoning godly
+- missing: pairing / reasoning heart
+- missing: pairing / reasoning honor
+- missing: pairing / reasoning hope
+- missing: pairing / reasoning impartial
+- missing: pairing / reasoning know
+- missing: pairing / reasoning labor
+- missing: pairing / reasoning live
+- missing: pairing / reasoning majesty
+- missing: pairing / reasoning offer
+- missing: pairing / reasoning open
+- missing: pairing / reasoning pride
+- missing: pairing / reasoning profess
+- missing: pairing / reasoning quarrel
+- missing: pairing / reasoning ready
+- missing: pairing / reasoning reject
+- missing: pairing / reasoning return
+- missing: pairing / reasoning rich
+- missing: pairing / reasoning righteous
+- missing: pairing / reasoning search
+- missing: pairing / reasoning self-control
+- missing: pairing / reasoning share
+- missing: pairing / reasoning sin
+- missing: pairing / reasoning snatch
+- missing: pairing / reasoning tribulation
+- missing: pairing / reasoning willful
+- missing: pairing / reasoning wise
+- missing: pairing / weighing and taking account of anger
+- missing: pairing / weighing and taking account of beauty
+- missing: pairing / weighing and taking account of believe
+- missing: pairing / weighing and taking account of benefit
+- missing: pairing / weighing and taking account of bless
+- missing: pairing / weighing and taking account of build
+
+## Step 3.1: not closed
+
+7 rows; 0 validated; 0 open; 7 failed; 10 demanded by the data and not in the ledger (LayerOpen).
+- failed: subgroup-analysis / group 11: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: subgroup-analysis / group 12: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: subgroup-analysis / group 13: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: subgroup-analysis / group 14: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: subgroup-analysis / group 15: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: subgroup-analysis / group 16: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: subgroup-analysis / group 17: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- missing: subgroup-analysis / meditating and pondering
+- missing: subgroup-analysis / reasoning
+- missing: subgroup-analysis / weighing and taking account of
+- missing: subgroup-analysis / supposing and imagining
+- missing: subgroup-analysis / thinking and thought
+- missing: subgroup-analysis / conflicting thoughts
+- missing: subgroup-analysis / giving thought
+- missing: subgroup-analysis / the mind on
+- missing: subgroup-analysis / once regarded
+- missing: subgroup-analysis / setting your mind
+
+## Step 3.2: not closed
+
+1 rows; 0 validated; 1 open; 0 failed; 0 demanded by the data and not in the ledger (LayerOpen).
+
+## Step 3.3: not closed
+
+87 rows; 0 validated; 0 open; 87 failed; 1123 demanded by the data and not in the ledger (LayerOpen).
+- failed: interworking / group 11 / collection:anger: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: interworking / group 11 / collection:believe: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: interworking / group 11 / collection:bless: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: interworking / group 11 / collection:call: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: interworking / group 11 / collection:combat: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: interworking / group 11 / collection:comfort: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: interworking / group 11 / collection:command: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: interworking / group 11 / collection:conceal: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: interworking / group 11 / collection:condemn: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: interworking / group 11 / collection:convince: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: interworking / group 11 / collection:deceive: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: interworking / group 11 / collection:depart: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: interworking / group 11 / collection:desire: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: interworking / group 11 / collection:destruction: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: interworking / group 11 / collection:die: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: interworking / group 11 / collection:endure: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: interworking / group 11 / collection:escape: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: interworking / group 11 / collection:evildoer: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: interworking / group 11 / collection:fear: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: interworking / group 11 / collection:folly: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: interworking / group 11 / collection:guard: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: interworking / group 11 / collection:hear: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: interworking / group 11 / collection:heart: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: interworking / group 11 / collection:honor: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: interworking / group 11 / collection:intend: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: interworking / group 11 / collection:kill: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: interworking / group 11 / collection:know: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: interworking / group 11 / collection:labor: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: interworking / group 11 / collection:laugh: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: interworking / group 11 / collection:live: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: interworking / group 11 / collection:loyalty: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: interworking / group 11 / collection:mute: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: interworking / group 11 / collection:offer: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: interworking / group 11 / collection:pain: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: interworking / group 11 / collection:profess: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: interworking / group 11 / collection:quarrel: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: interworking / group 11 / collection:return: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: interworking / group 11 / collection:reward: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: interworking / group 11 / collection:rich: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: interworking / group 11 / collection:righteous: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: interworking / group 11 / collection:search: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: interworking / group 11 / collection:serve: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: interworking / group 11 / collection:share: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: interworking / group 11 / collection:sin: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: interworking / group 11 / collection:snatch: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: interworking / group 11 / collection:supplication: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: interworking / group 11 / collection:tribulation: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: interworking / group 11 / collection:trust: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: interworking / group 11 / collection:unclean: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: interworking / group 11 / collection:wise: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: interworking / group 12 / collection:destruction: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: interworking / group 12 / collection:evildoer: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: interworking / group 12 / collection:fear: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: interworking / group 12 / collection:forget: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: interworking / group 12 / collection:govern: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: interworking / group 12 / collection:heart: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: interworking / group 12 / collection:labor: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: interworking / group 12 / collection:live: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: interworking / group 12 / collection:love: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: interworking / group 12 / collection:search: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: interworking / group 12 / collection:snatch: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: interworking / group 12 / collection:wise: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: interworking / group 13 / collection:believe: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: interworking / group 13 / collection:continual: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: interworking / group 13 / collection:endure: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: interworking / group 13 / collection:know: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: interworking / group 13 / collection:sin: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: interworking / group 15 / collection:hear: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: interworking / group 15 / collection:labor: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: interworking / group 15 / collection:pride: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: interworking / group 15 / collection:scoff: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: interworking / group 16 / collection:change: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: interworking / group 16 / collection:evildoer: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: interworking / group 16 / collection:fear: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: interworking / group 16 / collection:heart: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: interworking / group 16 / collection:intend: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: interworking / group 16 / collection:know: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: interworking / group 16 / collection:labor: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: interworking / group 16 / collection:live: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: interworking / group 16 / collection:preach: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: interworking / group 16 / collection:profess: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: interworking / group 16 / collection:rich: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: interworking / group 16 / collection:righteous: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: interworking / group 16 / collection:teach: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: interworking / group 16 / collection:wise: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: interworking / group 17 / collection:call: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- failed: interworking / group 17 / collection:endure: its group is retired or missing (the grouping changed; open the step again for the subgroups)
+- missing: interworking /  match:200|H3967~beauty:beautiful|H2896A
+- missing: interworking /  match:50|H2572~beauty:beautiful|H2896A
+- missing: interworking /  match:above|G0509~cleanse:pure|G0053
+- missing: interworking /  match:above|G0509~compassion:gentle|G1933
+- missing: interworking /  match:above|G0509~earnest:sincere|G0505
+- missing: interworking /  match:above|G0509~impartial:impartial|G0087
+- missing: interworking /  match:above|G0509~quarrel:peaceable|G1516
+- missing: interworking /  match:active|G1756~wise:discerning|G2924
+- missing: interworking /  match:after|H0310A~faithless:treacherous|H0901
+- missing: interworking /  match:after|H0310A~guard:fortified|H1219
+- missing: interworking /  match:after|H0310A~offer:presence|H5048
+- missing: interworking /  match:again|G3825~wise:wise|G4680
+- missing: interworking /  match:again|H5750~die:death|H0996G
+- missing: interworking /  match:again|H5750~live:lives|H2416A
+- missing: interworking /  match:all|G3956~honor:worthy|G0514
+- missing: interworking /  match:all|G3956~love:beloved|G0027
+- missing: interworking /  match:all|G3956~sin:sinners|G0268
+- missing: interworking /  match:along|G3825~love:beloved|G0027
+- missing: interworking /  match:also|H5750~wise:wise|H2450
+- missing: interworking /  match:and a|H0259~beauty:beautiful|H2896A
+- missing: interworking /  match:another|H0317~mighty:great things|H7260
+- missing: interworking /  match:anyone|G3956~continual:always|G0104
+- missing: interworking /  match:anyone|G3956~ready:prepared|G2092
+- missing: interworking /  match:anyone’s|G3762~real:true|G0227
+- missing: interworking /  match:any|G3956~wise:discerning|G2924
+- missing: interworking /  match:arise|H6965B~call:arise|H6965B
+- missing: interworking /  match:arise|H6965B~die:arise|H6965B
+- missing: interworking /  match:asleep|H3463~roar:aloud|H1419A
+- missing: interworking /  match:as|G3779~ready:ready|G2092
+- missing: interworking /  match:a|H0259~beauty:beautiful|H2896A
+- missing: interworking /  match:before|H5048~hear:surely|H0389
+- missing: interworking /  match:between|H0996G~die:death|H0996G
+- missing: interworking /  match:between|H0996G~live:lives|H2416A
+- missing: interworking /  match:branches|H6058~rich:abundant|H7227A
+- missing: interworking /  match:briefly|G3641~loyalty:faithful|G4103
+- missing: interworking /  match:briefly|G3641~real:true|G0227
+- missing: interworking /  match:but|G3361~unclean:unclean|G2839G
+- missing: interworking /  match:but|H0199~die:death|H0996G
+- missing: interworking /  match:but|H0199~live:lives|H2416A
+- missing: interworking /  match:color|H2122~change:changed|H8133
+- missing: interworking /  match:color|H2122~change:color|H2122
+- missing: interworking /  match:color|H2122~change:matter|H4406
+- missing: interworking /  match:color|H2122~fear:alarmed|H0927
+- missing: interworking /  match:color|H2122~fear:color|H2122
+- missing: interworking /  match:color|H2122~fear:matter|H4406
+- missing: interworking /  match:color|H2122~heart:color|H2122
+- missing: interworking /  match:color|H2122~heart:heart|H3821
+- missing: interworking /  match:color|H2122~heart:matter|H4406
+- missing: interworking /  match:color|H2122~remove:color|H2122
+- missing: interworking /  match:color|H2122~remove:kept|H5202
+- missing: interworking /  match:color|H2122~remove:matter|H4406
+- missing: interworking /  match:come in|H3808~blind:blind|H5787
+- missing: interworking /  match:come upon|H3808~endure:come upon|H3808
+- missing: interworking /  match:come upon|H3808~endure:come upon|H5927G
+- missing: interworking /  match:come upon|H3808~save:come upon|H3808
+- missing: interworking /  match:come upon|H3808~save:come upon|H5927G
+- missing: interworking /  match:come upon|H5927G~endure:come upon|H3808
+- missing: interworking /  match:come upon|H5927G~endure:come upon|H5927G
+- missing: interworking /  match:come upon|H5927G~save:come upon|H3808
+- missing: interworking /  match:come upon|H5927G~save:come upon|H5927G
+- missing: interworking /  match:commendable|G2163~cleanse:pure|G0053
+- missing: interworking /  match:commendable|G2163~real:true|G0227
+- missing: interworking /  match:commendable|G2163~righteous:honorable|G4586
+- missing: interworking /  match:commendable|G2163~righteous:just|G1342
+- missing: interworking /  match:conceive|G1722~call:call|G2564G
+- missing: interworking /  match:conceive|G1722~endure:bear|G5088
+- missing: interworking /  match:conceive|G2192~call:call|G2564G
+- missing: interworking /  match:conceive|G2192~endure:bear|G5088
+- missing: interworking /  match:conceive|G2602~loyalty:faithful|G4103
+- missing: interworking /  match:conceive|G4690G~loyalty:faithful|G4103
+- missing: interworking /  match:conceive|G4815~call:call|G2564G
+- missing: interworking /  match:conceive|G4815~endure:bear|G5088
+- missing: interworking /  match:conceive|H2029~dry:barren|H6135
+- missing: interworking /  match:conceive|H2029~endure:bear|H3205
+- missing: interworking /  match:conceive|H2030A~call:call|H7121H
+- missing: interworking /  match:conceive|H2030A~endure:bear|H3205
+- missing: interworking /  match:conceive|H2232~unclean:clean|H2889
+- missing: interworking /  match:conflicting thoughts|G3053~heart:conscience|G4893
+- missing: interworking /  match:conflicting thoughts|G3053~heart:hearts|G2588
+- missing: interworking /  match:conflicting thoughts|G3053~heart:law|G3551
+- missing: interworking /  match:conflicting thoughts|G3053~labor:work|G2041
+- missing: interworking /  match:considered|G1380~govern:exercise authority|G2715
+- missing: interworking /  match:considered|G1760~fear:fear|G5399
+- missing: interworking /  match:considered|G1760~godly:holy|G0040G
+- missing: interworking /  match:considered|G1760~snatch:take|G3880
+- missing: interworking /  match:considered|G2233~loyalty:faithful|G4103
+- missing: interworking /  match:considered|G2657~live:dead|G3499
+- missing: interworking /  match:considered|G3049~live:dead|G3498
+- missing: interworking /  match:considered|G3049~skill:able|G1415
+- missing: interworking /  match:considered|G3756~live:dead|G3499
+- missing: interworking /  match:considered|H1934~mighty:great things|H7260
+- missing: interworking /  match:considered|H2803H~faithless:reliable|H0539
+- missing: interworking /  match:considered|H2803J~folly:fool|H0191
+- missing: interworking /  match:considered|H2803J~wise:intelligent|H0995
+- missing: interworking /  match:considered|H2803J~wise:wise|H2450
+- missing: interworking /  match:considered|H3820A~destruction:destroy|H1104
+- missing: interworking /  match:considered|H3820A~evildoer:evil|H7451B
+- missing: interworking /  match:considered|H3820A~fear:fears|H3373
+- missing: interworking /  match:considered|H3820A~innocent:blameless|H8535
+- missing: interworking /  match:considered|H3820A~mute:still|H5750

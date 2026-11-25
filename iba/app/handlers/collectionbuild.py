@@ -325,15 +325,17 @@ def _layer_args(ctx: Ctx):
 
 
 def layer_open(ctx: Ctx) -> Outcome:
-    """Open a step of the layered reading for a collection: the gates (the grouping finished, the previous step closed; step 1.1 needs the lexical analysis S1 closed), then the ledger rows the data demands. -Check previews."""
+    """Open a step of the layered reading for a collection: the gates (the grouping finished, the previous step closed; step 1.1 opens once the grouping is finished; -Subgroup opens it for one subgroup), then the ledger rows the data demands. -Check previews."""
     from ..lib import layerreading as lr
     conn = ctx.cfg.conn
     coll, step = _layer_args(ctx)
     try:
-        r = lr.open_step(conn, ctx.cfg, ctx.run_id, coll, step, dry=_flag(ctx, "Check"))
+        r = lr.open_step(conn, ctx.cfg, ctx.run_id, coll, step, dry=_flag(ctx, "Check"), subgroup=str(ctx.params.get("Subgroup", "")).strip() or None)
     except lr.LayerError as exc:
         return fail("refused", str(exc))
     line = f"step {r['step']} of {r['collection']}: the data demands {r['demanded']} aspects; {r['add']} added to the ledger, {r['retire']} retired, {r['revive']} reopened"
+    if r.get("legacy") or r.get("superseded"):
+        line += f"; superseded by the subgroup's new reading: {r.get('legacy', 0)} whole-collection word rows retired, {r.get('superseded', 0)} rows of later steps read again (their observations withdrawn)"
     if _flag(ctx, "Check"):
         return ok("PREVIEW (nothing written): " + line, **{k: v for k, v in r.items() if isinstance(v, int)})
     conn.commit()
@@ -349,9 +351,10 @@ def layer_pull(ctx: Ctx) -> Outcome:
     if not root:
         return fail("refused", "cfg_setting layer.working_dir is missing")
     try:
-        path, n = lr.pull(conn, ctx.cfg, coll, step, pathlib.Path(root))
+        path, n = lr.pull(conn, ctx.cfg, coll, step, pathlib.Path(root), subgroup=str(ctx.params.get("Subgroup", "")).strip() or None)
     except lr.LayerError as exc:
         return fail("refused", str(exc))
+    conn.commit()
     return ok(f"working file with {n} rows: {path.as_posix()}. Fill each row (disposition, obs_text, basis; route where asked), then Collection-Build.ps1 -Action LayerRecord -File <file> -Check", rows=n)
 
 
@@ -376,6 +379,31 @@ def layer_record(ctx: Ctx) -> Outcome:
     return ok(line + ". Next: Collection-Build.ps1 -Action LayerCheck", **r)
 
 
+def layer_next(ctx: Ctx) -> Outcome:
+    """Say what to do next in the layered reading of a collection, from the ledger alone: the subgroup in flight, the step, its state and the verbs (lib/layerloop.py; escalation #2538)."""
+    from ..lib import layerloop as ll
+    from ..lib import layerreading as lr
+    coll = str(ctx.params.get("Collection", "")).strip()
+    if not coll:
+        return fail("refused", "-Collection is required")
+    try:
+        r = ll.next_action(ctx.cfg.conn, ctx.cfg, coll)
+    except (lr.LayerError, ValueError) as exc:
+        return fail("refused", str(exc))
+    lines = ["progress (closed means every live row answered and validated):"] + ["  " + x for x in r["progress"]]
+    lines.append("collection steps: " + ", ".join(f"{k}={v}" for k, v in r["collection_steps"].items()))
+    if r.get("step"):
+        who = f"subgroup {r['subgroup']!r}" if r.get("subgroup") else "the collection"
+        lines.append(f"NEXT: {who}, step {r['step']} ({r['state']}): {r['what']}")
+        lines += ["  " + c for c in r["commands"]]
+        if r.get("others_waiting"):
+            lines.append("waiting (their loop starts or continues only after this one is finished): " + ", ".join(r["others_waiting"]))
+    else:
+        lines.append(r["what"])
+        lines += ["  " + c for c in r["commands"]]
+    return ok(chr(10).join(lines), **{k: r[k] for k in ("subgroup", "step", "state") if k in r})
+
+
 def layer_check(ctx: Ctx) -> Outcome:
     """Validate every answered row of a collection against the tables, set `validated`, and write the findings as a versioned Markdown report (cfg_setting layer.check_name)."""
     import datetime
@@ -387,7 +415,7 @@ def layer_check(ctx: Ctx) -> Outcome:
     if not root or not stem:
         return fail("refused", "cfg_setting surfaces.exports_root or layer.check_name is missing")
     try:
-        rep = lr.check(conn, ctx.cfg, ctx.run_id, coll)
+        rep = lr.check(conn, ctx.cfg, ctx.run_id, coll, subgroup=str(ctx.params.get("Subgroup", "")).strip() or None)
         archive = ctx.cfg.required_setting("governance.oneoff_report_archive_dir")
     except (lr.LayerError, ValueError) as exc:
         return fail("refused", str(exc))
@@ -439,7 +467,7 @@ def group_pull(ctx: Ctx) -> Outcome:
         path, n = cg.pull(conn, ctx.cfg, coll, pathlib.Path(root))
     except (cg.GroupError, ValueError) as exc:
         return fail("refused", str(exc))
-    return ok(f"working file with {n} rows (one for each surface): {path.as_posix()}. Judge each surface from its meaning in context (its verses, its codes, stage 1 where recorded): the subgroup of its meaning, placed whole, or set_aside with the reason where it is plainly not a member; list the subgroups with the meaning each holds; then "
+    return ok(f"working file with {n} rows (one for each surface): {path.as_posix()}. The file holds each surface with what WordNet says of it and a seed grouping (a surface with no WordNet entry is a subgroup on its own); no verse is read here. Place each surface whole in the subgroup of its meaning, or set_aside with the reason where it is plainly not a member; define each subgroup in a sentence; then "
               f"Collection-Build.ps1 -Action GroupRecord -File <file> -Check", rows=n)
 
 
