@@ -38,4 +38,4 @@ Developer Mode session on #2538. The researcher ordered a complete specification
 
 ## 6. Git
 
-(to be written after the first commit)
+Branch `main`. First commit `187ff693` ("session 20261125: analytic phases 1-4 spec v5, code to the rulings, thought regrouped and read part way, LayerNext and order gate, close"). Push output: `To https://github.com/lcilliers/Bible_Projects.git   0130fb3a..187ff693  main -> main`. Not committed by design: `iba/app/db/archive/*.db` (two database copies) and `iba/app/db/dataset/` (the subgroup dataset files), which are working copies.
