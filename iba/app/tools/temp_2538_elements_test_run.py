@@ -1,6 +1,7 @@
 """temp_2538_elements_test_run.py -- the test plan of ReadElements / RecordElements, step 3.1 (escalation #2538; lib/readcommands.py; B:46).
 
-Runs on a COPY of iba.db with elements_2538_v1_20261126.py applied, never the live database: a copy of live, where "reasoning" is through 2.1 with its sweep and evidence validation.
+Runs on a COPY of iba.db with elements_2538_v1_20261126.py applied, never the live database. Where every subgroup is through 3.1 (live since 2026-11-26), back_to_31 first puts
+"reasoning" back to 3.1 not yet read on the copy, so the cases test the state they describe whatever the state of live.
 The 3.1 reading itself is the researcher-approved live run, not a test. The record is tested with refused answers and with one minimal answer (case X12 on), written here as
 scaffolding on the copy: one finding resting on one sense, every other observation declared not used with a test reason, the older inner-being observations kept, the earlier
 readings left. It proves the record, the check and the loop moving on; it is not a reading.
@@ -45,6 +46,28 @@ def counts(conn):
     return {t: conn.execute(f"SELECT count(*) FROM {t}").fetchone()[0] for t in ("ib_observation", "ib_node", "ib_observation_change", "collection_layer_item")}
 
 
+def back_to_31(conn, cfg, name, sub, run_id):
+    """Test state on the copy (not a method): when no subgroup of the collection is still in its loop (every one through 3.1, as live is since 2026-11-26), put `sub` back to
+    "3.1 not yet read": the observations under its 3.1 row are removed through observationrecord (nodes deleted, traces released, each change logged) and the row retired, so
+    that ReadElements opens 3.1 again. The tests of the loop then run on the state they test, whatever the state of live (#2538). Returns what it did."""
+    from iba.app.lib import layerloop as ll_, layerreading as lr_, observationrecord as orec_
+    p = ll_.progress(conn, cfg, name)
+    if any(not g["complete"] for g in p["subgroups"]):
+        return "a subgroup is already in its loop: copy used as it is"
+    cid, _ = lr_.ci._collection(conn, name)
+    gid = next(g["id"] for g in p["subgroups"] if g["name"].lower() == sub.lower())
+    n = 0
+    for (lid,) in conn.execute("SELECT id FROM collection_layer_item WHERE collection_id=? AND subgroup_id=? AND step='3.1' AND deleted=0 AND state!='retired'", (cid, gid)).fetchall():
+        for (oid,) in conn.execute("SELECT id FROM ib_observation WHERE stable_key >= ? AND stable_key < ? AND deleted=0", (f"layer:{lid}:", f"layer:{lid};")).fetchall():
+            for (nid,) in conn.execute("SELECT id FROM ib_node WHERE observation_id=? AND deleted=0", (oid,)).fetchall():
+                orec_.delete_node(conn, nid, "test state on a copy", None, run_id, "Claude")
+            orec_.soft_delete_observation(conn, oid, "test state on a copy", None, run_id, "Claude")
+            n += 1
+        conn.execute("UPDATE collection_layer_item SET state='retired', validated=0, reason='test state on a copy' WHERE id=?", (lid,))
+    conn.commit()
+    return f"{sub!r} put back to 3.1 not yet read on the copy ({n} observations removed)"
+
+
 def main(db, name="thought", sub="reasoning"):
     if pathlib.Path(db).resolve() == LIVE.resolve():
         sys.exit("refused: this test runs on a copy, never the live database")
@@ -56,6 +79,7 @@ def main(db, name="thought", sub="reasoning"):
     rt, lim = st["elements"], st["limits"]
     s = lr.settings(cfg)
     cid, gid, gname = rc._subgroup(conn, name, sub)
+    print(back_to_31(conn, cfg, name, gname, "TEST-X-STATE"), file=sys.stderr)
 
     ins = rc.instruction(conn, rt)
     case("X1", "the instruction carries what, read, write, and the text of every rule it keeps, read live", len(ins["keep"]) == len(rt["rules"]) and all(k["text"] for k in ins["keep"]), [k["rule"] for k in ins["keep"]])

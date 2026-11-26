@@ -1,10 +1,10 @@
 # Session close (#1875, rebuilt #2173)
 
-> Generated 2026-11-26T09:25:11Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
+> Generated 2026-11-26T09:29:05Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
 
 - session: `760131f7-a5d4-44b5-92a0-7c28ca0a4683` (CLAUDE_CODE_SESSION_ID); started 2026-11-25T16:27:19Z; window base commit `cbd46aa8dcb46fb95e5ee10283311450498641a6`
 - compliance file: `Logs/compliance/COMPLIANCE-20261125-760131f7.md`; session log: `Logs/SESSION-LOG-20261126-read-commands-and-thought-through-3-1.md`
-- **open findings: 0**; cleared by disposition: 29
+- **open findings: 0**; cleared by disposition: 30
 
 
 ## Contents
@@ -69,6 +69,7 @@ Summar" -- disposition: no record needed: not the researcher's words (an app con
 Summar" -- disposition: no record needed: not the researcher's words (an app continuation summary)
 - cleared `SC3:b4eaa8db`: researcher message 2026-11-26T08:33 is too short to be matched; name where it is recorded: "Yes, close it" -- disposition: recorded in #2576 v5
 - cleared `SC3:1547af1c`: researcher message 2026-11-26T08:47 is in no escalation comment written this session: "2538 is still running? what does that mean." -- disposition: no record needed: a question about the state of #2538, answered in the chat from LayerNext; the state it asked about is recorded on #2538 v87 to v94
+- cleared `SC3:a17a9397`: researcher message 2026-11-26T09:27 is too short to be matched; name where it is recorded: "Yes, fix them" -- disposition: recorded in #2538 v95
 
 <a id="sc4-open-items-in-the-register"></a>
 ## SC4 Open items in the register
