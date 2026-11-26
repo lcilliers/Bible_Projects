@@ -95,6 +95,42 @@ def main(db, scratch):
     occ_nodes = [n["occurrence"] for n in fx["nodes"] if "occurrence" in n]
     case("V7 rests_on with role expands, an exception left out", {"traced": 15159} in fx["nodes"] and set(occ_nodes) == cov - {min(cov)}
          and all(n.get("role") == "characteristic" for n in fx["nodes"] if "occurrence" in n) and "rests_on" not in fx, fx)
+
+    # C1: a text that names its verse by the OSIS book name (Ps, Jas, Zeph) ties it as well as the package's form
+    mig2 = next(p_ for p_ in [ROOT / "iba" / "app" / "migration" / n / "encode_2637_g3_c4_v1_20261126.py" for n in ("", "archive")] if p_.exists())
+    o2 = subprocess.run([sys.executable, str(mig2), "--db", db], capture_output=True, text=True).stdout
+    case("V8 G3/C4 migration applies", "write(s)" in o2, o2)
+    cfg = Cfg(pathlib.Path(db))
+    conn = cfg.conn
+    differ = 0
+    for row_, w in zip(rows, pkg["words"]):
+        osis = sorted({"{} {}:{}".format(*o["osis"].rsplit(".", 2)) for o in w["occurrences"] if o.get("osis")} if "osis" in w["occurrences"][0] else set())
+        if not osis:
+            osis = sorted({o["reference"] for o in w["occurrences"]})
+        differ += sum(1 for o in w["occurrences"] if o.get("osis") and o["osis"].split(".")[0] != o["reference"].split(" ")[0])
+        row_["older"] = [{"observation": x["observation"], "action": "keep", "nature": "evidence", "reason": "it states what the verse shows of the word, tied to its verse"} for x in w["older"]]
+        row_["readings"][0]["obs_text"] = f"In {', '.join(osis)} the word {w['word'].split('|')[0]} ({w['strong']}) names a trait listed among others in a catalogue of conduct."
+    f.write_text(json.dumps(ans), encoding="utf-8")
+    o = h.check_answer(ctx(cfg, "collection.check_answer", File=str(f)))
+    case("V9 C1 verses named in the OSIS form tie the text", "names none of them" not in o.message, f"{differ} occurrence(s) where the forms differ; " + o.message[:400])
+
+    # C4: two live observations with different texts merge (the reader judges the same meaning); rolled back
+    a_, b_ = [r_[0] for r_ in conn.execute("SELECT id FROM ib_observation WHERE deleted=0 AND obs_text IS NOT NULL ORDER BY id LIMIT 2")]
+    conn.execute("SAVEPOINT c4")
+    try:
+        li.orec.merge_observation(conn, a_, b_, "the reader judges they say the same thing in other words", None, "TEST-C4", "Claude")
+        merged = True
+    except li.orec.Refused as exc:
+        merged = str(exc)
+    conn.execute("ROLLBACK TO c4")
+    conn.execute("RELEASE c4")
+    case("V10 C4 a merge of different texts is accepted", merged is True, merged)
+
+    # G3: the partner words of the 2.1 qualifier observations of boast / boasting (through 2.1 on live) are offered to a qualification
+    g = conn.execute("SELECT s.id, c.id FROM collection_subgroup s JOIN collection c ON c.id=s.collection_id WHERE lower(c.name)='boast' AND lower(s.name)='boasting' AND s.deleted=0").fetchone()
+    qp = li._qualifier_partners(conn, g[1], g[0]) if g else set()
+    n21 = conn.execute("SELECT count(*) FROM collection_layer_item WHERE collection_id=? AND subgroup_id=? AND step='2.1' AND item='qualifier' AND deleted=0", (g[1], g[0])).fetchone()[0] if g else 0
+    case("V11 G3 the qualifier partners of a subgroup through 2.1 are found", n21 == 0 or len(qp) > 0, (n21, len(qp)))
     return done()
 
 

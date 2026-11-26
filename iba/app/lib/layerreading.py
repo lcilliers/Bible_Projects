@@ -858,7 +858,8 @@ def _text_rules(cfg, conn, s, idef, text: str, basis, grounds, nodes, where: str
     errors += [f"{b} is not the ESV's wording (quote check)" for b in sr._quote_check(conn, cfg, [text], where)]
     if idef.get("tie_to_verse") and nodes:
         refs = {x[0]["reference"] for x in nodes}
-        if not any(rf in text for rf in refs):
+        osis = {"{} {}:{}".format(*str(x[0].get("osis")).rsplit(".", 2)) for x in nodes if str(x[0].get("osis") or "").count(".") >= 2}
+        if not any(rf in text for rf in refs | osis):      # the package's form (Zep 1:2) or the OSIS book name (Zeph 1:2; #2637 C1)
             errors.append(f"{where}: B:131 an observation is tied to its verses: the text names none of them ({sorted(refs)[:3]})")
     if basis == "read":
         g = (grounds or "").strip()

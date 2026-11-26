@@ -245,6 +245,15 @@ def _cover_map(conn, ids) -> dict:
     return out
 
 
+def _qualifier_partners(conn, cid: int, gid) -> set:
+    """#2637 G3 (researcher, #2637 v7): the occurrences on the live nodes of the subgroup's 2.1 qualifier observations -- the partner words that
+    qualify it. A 3.1 qualification finding may hold them, where the reading judges the qualifier bears on the working (IB-02)."""
+    if not gid:
+        return set()
+    lids = [r[0] for r in conn.execute("SELECT id FROM collection_layer_item WHERE collection_id=? AND subgroup_id=? AND step='2.1' AND item='qualifier' AND deleted=0", (cid, gid))]
+    return _covered(conn, _written_under(conn, lids)) if lids else set()
+
+
 def _expand_nodes(conn, f, sources: set, allowed: set):
     """#2637 X2, the judgement-only form: a finding may name `rests_on` (the observations it rests on) and `role` (the role of the words those
     observations cover, with `roles` {occurrence: role, or "" to leave one out} for the exceptions) in place of writing its nodes. The recorder
@@ -431,6 +440,7 @@ def record(conn, cfg, run_id: str, data: dict, keep: bool, collect: bool = False
             errors.append(f"{where}: the data holds no occurrence for this aspect")
             continue
         allowed = _allowed(dem)
+        qpart = _qualifier_partners(conn, L["cid"], gid) if step == "3.1" else set()
         sources, required = _sources(conn, s, L, sd, gid, subject)
         findings = fill.get("findings") or []
         if not findings:
@@ -444,8 +454,9 @@ def record(conn, cfg, run_id: str, data: dict, keep: bool, collect: bool = False
             if not key or key in keys or ":" in key:
                 errors.append(f"{fw}: `key` is a short name unique in the row (no colon)")
             keys.add(key)
-            f = _expand_nodes(conn, f, sources, allowed)
-            f2 = _norm_nodes(conn, f, allowed, fw, errors)
+            alw = allowed | qpart if isinstance(f, dict) and f.get("kind") == "qualification" else allowed      # G3: a qualifier's partner words
+            f = _expand_nodes(conn, f, sources, alw)
+            f2 = _norm_nodes(conn, f, alw, fw, errors)
             if f2.get("route") in ("", None):    # an empty route is no route (a route is held only on a party or link finding)
                 f2.pop("route", None)
             if isinstance(f2.get("parts"), dict) and f2["parts"].get("item") not in idef["uses"]:
@@ -610,6 +621,7 @@ def check_row(conn, cfg, s, L, sd, r) -> str | None:
     if not dem:
         return "the data no longer demands this aspect (LayerOpen retires it)"
     allowed = _allowed(dem)
+    qpart = _qualifier_partners(conn, L["cid"], gid) if step == "3.1" else set()
     osis_of = {int(o["vl_id"]): o["osis"] for o in dem}
     stage = lr.stage_of(s, sd)
     inner = _roles(cfg)
@@ -653,7 +665,7 @@ def check_row(conn, cfg, s, L, sd, r) -> str | None:
         cov = _covered(conn, traced) if step != "3.3" else set()
         rbv = {e.get("verse") for e in read_back.get(str(ob[7]).rsplit(":", 1)[-1]) or []}
         for n in real:
-            if n[0] not in allowed:
+            if n[0] not in allowed and not (ob[2] == "qualification" and n[0] in qpart):
                 return f"observation {ob[0]} has a node on occurrence {n[0]}, which this row may not name"
             if n[1] not in inner:
                 return f"observation {ob[0]} has a node with no valid stage 4 role ({n[1]!r})"

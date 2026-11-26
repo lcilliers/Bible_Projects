@@ -120,7 +120,7 @@ def main(db, scratch):
         a["rows"][1]["readings"][0]["obs_text"] = f"In {pkg['words'][1]['occurrences'][0]['reference']}: " + " ".join(v[:10])
         for row in a["rows"]:
             if row["older"]:
-                row["older"][0] = {"observation": row["older"][0]["observation"], "action": "merge", "into": other,
+                row["older"][0] = {"observation": row["older"][0]["observation"], "action": "merge", "into": 999999999,
                                    "reason": "it says the same as the observation it is merged into"}
                 break
     f2 = answer(pkg, scratch, "two-stages", two_stage)
@@ -129,9 +129,10 @@ def main(db, scratch):
     chk = h.check_answer(ctx(cfg, "collection.check_answer", File=str(f2)))
     after = counts(conn)
     case("C7", "RecordWords -Check on a two-stage answer stops at the first stage: it names the copied text [RW-04] and not the merge",
-         rec.condition == "refused" and "RW-04" in keys(rec.message) and "a merge is for the same description" not in rec.message, rec.message[:400])
-    case("C8", "CheckAnswer on the same answer lists both stages in one refusal: the copied text [RW-04] and the merge of different texts [RW-03]",
-         chk.condition == "refused" and "RW-04" in keys(chk.message) and "a merge is for the same description" in chk.message and "RW-03" in keys(chk.message), chk.message[:600])
+         rec.condition == "refused" and "RW-04" in keys(rec.message) and "different live observations" not in rec.message, rec.message[:400])
+    case("C8", "CheckAnswer on the same answer lists both stages in one refusal: the copied text [RW-04] and the merge into no live observation",
+         chk.condition == "refused" and "RW-04" in keys(chk.message) and any("merge" in ln and ln.strip().startswith("[") for ln in chk.message.split(chr(10))),
+         chk.message.replace(chr(10), " / ")[:600])
     case("C9", "CheckAnswer writes nothing: observations, nodes, change log and ledger states as before", before == after, (before[:3], after[:3]))
     unkeyed_lines = [ln for ln in chk.message.split("\n")[1:] if ln.strip() and not ln.strip().startswith("[")]
     case("C10", "every problem line of the CheckAnswer refusal carries its rule key", not unkeyed_lines, unkeyed_lines[:4])

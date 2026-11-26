@@ -37,6 +37,7 @@
       LayerNext -Collection <name>   say what to do next in the layered reading, from the ledger alone: the subgroup in flight, the step, its state and the verbs; a step of a subgroup is refused while another subgroup is further through its loop and not finished (escalation #2538)
       ReadWords -Collection <name> -Subgroup <name>   the package of the next words of one subgroup to read (step S1): the instruction of this read from cfg_setting layer.read_types, only these words' occurrences, verses and lexicon, and the answer to fill; opens S1 for the subgroup if needed (escalation #2538)
       CheckAnswer -File <answer>          every check of the answer's Record command at once, each problem with its rule; nothing written (#2637 X3)
+      Cycle -Collection <name> [-Subgroup <name>] [-Since <ISO time>]   the reading cycle and the B:138 audit of a run, as a report (#2637 X6, X7)
       RecordWords -File <answer> [-Check]   check a filled ReadWords answer whole, write it through the recorder, validate the subgroup's rows and print the next command (escalation #2538)
       ReadSenses -Collection <name> -Subgroup <name>   the package of the senses of one subgroup (step 1.1): the instruction, every B1 observation of the subgroup with its occurrences, the sense head and meaning range of each code, the older observations, and the answer to fill; opens 1.1 for the subgroup if needed (escalation #2538)
       RecordSenses -File <answer> [-Check]   check a filled ReadSenses answer whole (each B1 observation carried by one sense), write it through the recorder, validate the subgroup's 1.1 row and print the next command (escalation #2538)
@@ -89,7 +90,7 @@
 [CmdletBinding()]
 param(
     [Parameter(Mandatory = $true)]
-    [ValidateSet('Status', 'Links', 'Show', 'Export', 'ExportMembers', 'ExportSurfaces', 'Evidence', 'Set', 'Merge', 'Seed', 'Ask', 'Gather', 'AttachPhrases', 'Index', 'Subgroup', 'IndexCheck', 'LayerOpen', 'LayerPull', 'LayerRecord', 'LayerCheck', 'LayerNext', 'ReadWords', 'RecordWords', 'ReadSenses', 'RecordSenses', 'ReadEnrichment', 'RecordEnrichment', 'ReadStructure', 'RecordStructure', 'ReadSweep', 'RecordSweep', 'ReadEvidence', 'RecordEvidence', 'ReadElements', 'RecordElements', 'SweepSuperseded', 'ReadBehaviours', 'RecordBehaviours', 'CheckAnswer', 'ReleaseDeadTraces', 'NodeGroups', 'GroupPull', 'GroupRecord', 'ValidatePull', 'ValidateRecord', 'ValidateCheck')]
+    [ValidateSet('Status', 'Links', 'Show', 'Export', 'ExportMembers', 'ExportSurfaces', 'Evidence', 'Set', 'Merge', 'Seed', 'Ask', 'Gather', 'AttachPhrases', 'Index', 'Subgroup', 'IndexCheck', 'LayerOpen', 'LayerPull', 'LayerRecord', 'LayerCheck', 'LayerNext', 'ReadWords', 'RecordWords', 'ReadSenses', 'RecordSenses', 'ReadEnrichment', 'RecordEnrichment', 'ReadStructure', 'RecordStructure', 'ReadSweep', 'RecordSweep', 'ReadEvidence', 'RecordEvidence', 'ReadElements', 'RecordElements', 'SweepSuperseded', 'ReadBehaviours', 'RecordBehaviours', 'CheckAnswer', 'Cycle', 'ReleaseDeadTraces', 'NodeGroups', 'GroupPull', 'GroupRecord', 'ValidatePull', 'ValidateRecord', 'ValidateCheck')]
     [string] $Action,
     [string[]] $Collection,
     [string] $Verse,
@@ -106,6 +107,7 @@ param(
     [string] $Subgroup,
     [string] $Item,
     [string] $File,
+    [string] $Since,
     [switch] $Isolate,
     [switch] $Check,
     [switch] $Trace
@@ -120,12 +122,12 @@ $RepoRoot = Split-Path -Parent (Split-Path -Parent (Split-Path -Parent $PSScript
 Set-Location $RepoRoot
 . $PSScriptRoot\_lib\Notify.ps1
 
-$stepMap = @{ Status = 'collection.status'; Links = 'collection.links'; Show = 'collection.show'; Export = 'collection.export'; ExportMembers = 'collection.export_members'; ExportSurfaces = 'collection.export_surfaces'; Evidence = 'collection.evidence'; Set = 'collection.set'; Merge = 'collection.merge'; Seed = 'collection.seed'; Ask = 'collection.ask'; Gather = 'collection.gather'; AttachPhrases = 'collection.attach_phrases'; Index = 'collection.index'; Subgroup = 'collection.subgroup'; IndexCheck = 'collection.index_check'; LayerOpen = 'collection.layer_open'; LayerPull = 'collection.layer_pull'; LayerRecord = 'collection.layer_record'; LayerCheck = 'collection.layer_check'; LayerNext = 'collection.layer_next'; ReadWords = 'collection.read_words'; RecordWords = 'collection.record_words'; ReadSenses = 'collection.read_senses'; RecordSenses = 'collection.record_senses'; ReadEnrichment = 'collection.read_enrichment'; RecordEnrichment = 'collection.record_enrichment'; ReadStructure = 'collection.read_structure'; RecordStructure = 'collection.record_structure'; ReadSweep = 'collection.read_sweep'; RecordSweep = 'collection.record_sweep'; ReadEvidence = 'collection.read_evidence'; RecordEvidence = 'collection.record_evidence'; ReadElements = 'collection.read_elements'; RecordElements = 'collection.record_elements'; SweepSuperseded = 'collection.sweep_superseded'; ReadBehaviours = 'collection.read_behaviours'; RecordBehaviours = 'collection.record_behaviours'; CheckAnswer = 'collection.check_answer'; ReleaseDeadTraces = 'collection.release_dead_traces'; NodeGroups = 'collection.node_groups'; GroupPull = 'collection.group_pull'; GroupRecord = 'collection.group_record'; ValidatePull = 'collection.validate_pull'; ValidateRecord = 'collection.validate_record'; ValidateCheck = 'collection.validate_check' }
+$stepMap = @{ Status = 'collection.status'; Links = 'collection.links'; Show = 'collection.show'; Export = 'collection.export'; ExportMembers = 'collection.export_members'; ExportSurfaces = 'collection.export_surfaces'; Evidence = 'collection.evidence'; Set = 'collection.set'; Merge = 'collection.merge'; Seed = 'collection.seed'; Ask = 'collection.ask'; Gather = 'collection.gather'; AttachPhrases = 'collection.attach_phrases'; Index = 'collection.index'; Subgroup = 'collection.subgroup'; IndexCheck = 'collection.index_check'; LayerOpen = 'collection.layer_open'; LayerPull = 'collection.layer_pull'; LayerRecord = 'collection.layer_record'; LayerCheck = 'collection.layer_check'; LayerNext = 'collection.layer_next'; ReadWords = 'collection.read_words'; RecordWords = 'collection.record_words'; ReadSenses = 'collection.read_senses'; RecordSenses = 'collection.record_senses'; ReadEnrichment = 'collection.read_enrichment'; RecordEnrichment = 'collection.record_enrichment'; ReadStructure = 'collection.read_structure'; RecordStructure = 'collection.record_structure'; ReadSweep = 'collection.read_sweep'; RecordSweep = 'collection.record_sweep'; ReadEvidence = 'collection.read_evidence'; RecordEvidence = 'collection.record_evidence'; ReadElements = 'collection.read_elements'; RecordElements = 'collection.record_elements'; SweepSuperseded = 'collection.sweep_superseded'; ReadBehaviours = 'collection.read_behaviours'; RecordBehaviours = 'collection.record_behaviours'; CheckAnswer = 'collection.check_answer'; Cycle = 'collection.cycle'; ReleaseDeadTraces = 'collection.release_dead_traces'; NodeGroups = 'collection.node_groups'; GroupPull = 'collection.group_pull'; GroupRecord = 'collection.group_record'; ValidatePull = 'collection.validate_pull'; ValidateRecord = 'collection.validate_record'; ValidateCheck = 'collection.validate_check' }
 $stepId = $stepMap[$Action]
 $runId = "RUN-$(Get-Date -Format 'yyyyMMdd_HHmmss_fff')-COLLECTIONBUILD"
 
 $paramArgs = @()
-foreach ($p in @('Collection', 'Verse', 'Word', 'Name', 'Surface', 'Limit', 'Status', 'Reason', 'From', 'Into', 'Strong', 'Step', 'Subgroup', 'Item', 'File')) {
+foreach ($p in @('Collection', 'Verse', 'Word', 'Name', 'Surface', 'Limit', 'Status', 'Reason', 'From', 'Into', 'Strong', 'Step', 'Subgroup', 'Item', 'File', 'Since')) {
     if ($PSBoundParameters.ContainsKey($p)) { $paramArgs += @('--param', "$p=$($PSBoundParameters[$p] -join ',')") }
 }
 if ($Check) { $paramArgs += @('--param', 'Check=true') }
