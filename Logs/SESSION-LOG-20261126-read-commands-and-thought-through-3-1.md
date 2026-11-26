@@ -50,3 +50,5 @@ Claude's self-correctable fixes, made and closed:
 - Not committed: two untracked database copies in `iba/app/db/archive/` (`iba-pre-rollback-thought-rerun-20261125.db`, `iba-restore-point-20261124T152322Z.db`, about 1 GB each, made before this session, over the GitHub file size limit; left out as the earlier commits left them).
 
 - After the close (2026-11-26): branch main, commit 42a8d247 "#2618, #2576, #2538: every hand repair of the session encoded into the packages; rule 137", pushed: `7bda2981..42a8d247  main -> main`.
+
+- After the close (2026-11-26): branch main, commit 47677db6 "#2538: the analytic process described as one path of methods (USER-GUIDE.md 8.20), held by a check", pushed: `   e2fef088..47677db6  main -> main`.
