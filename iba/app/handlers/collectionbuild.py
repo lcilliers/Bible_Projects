@@ -18,6 +18,53 @@ from ..lib import reportkit
 from .base import Ctx, Outcome, fail, ok
 
 
+# ══ #2637 X8: every refusal or crash of a read or record command is kept in read_failure, for learning ═══════════════════════════
+_RULE_KEY = re.compile(r"\b(?:B:\d+|[A-Z]{2}-\d{2}|RO\d+)\b")
+
+
+def _log_failure(ctx: Ctx, kind: str, problems: str) -> None:
+    """One read_failure row: the step, the collection and subgroup of the command or of its answer file, the file, the full message and the
+    rule keys it names. Written on its own commit after a rollback of the command's work (a refusal wrote nothing; a crash keeps nothing). A
+    failure of this log never replaces the command's own outcome."""
+    conn = ctx.cfg.conn
+    coll, sub = str(ctx.params.get("Collection", "") or "").strip() or None, str(ctx.params.get("Subgroup", "") or "").strip() or None
+    file = str(ctx.params.get("File", "") or "").strip() or None
+    if file and not coll:
+        try:
+            d = _answer_of(json.loads(pathlib.Path(file).read_text(encoding="utf-8")))
+            coll, sub = (str(d.get("collection") or "").strip() or None), (str(d.get("subgroup") or "").strip() or None)
+        except Exception:       # an unreadable file is itself the problem the message names
+            pass
+    keys = ",".join(sorted(set(_RULE_KEY.findall(problems or "")))) or None
+    try:
+        conn.rollback()
+        conn.execute("INSERT INTO read_failure (run_id, step, collection, subgroup, kind, file, problems, rule_keys) VALUES (?,?,?,?,?,?,?,?)",
+                     (ctx.run_id, ctx.step_id or "", coll, sub, kind, file, problems or "", keys))
+        conn.commit()
+    except Exception as exc:     # never mask the command's own outcome
+        import sys
+        print(f"[WARN] read_failure not written: {exc!r}", file=sys.stderr)
+
+
+def _logged(fn):
+    """A read or record handler whose refusals and crashes are kept in read_failure (#2637 X8). A refusal stays a usage outcome
+    (cfg_on_fail refused, report-continue); a crash is logged and re-raised, so run.py still raises its escalation."""
+    import functools
+    import traceback
+
+    @functools.wraps(fn)
+    def wrapper(ctx: Ctx) -> Outcome:
+        try:
+            out = fn(ctx)
+        except Exception as exc:
+            _log_failure(ctx, "crash", f"{exc!r}\n{traceback.format_exc()}")
+            raise
+        if out.condition == "refused":
+            _log_failure(ctx, "refused", out.message)
+        return out
+    return wrapper
+
+
 def _export_target(ctx: Ctx, view: str) -> tuple[pathlib.Path, pathlib.Path]:
     """(the new file's path, the base path of its stem) of one CSV export (#2413). The stem is cfg_setting collection.export_names[view], the folder
     surfaces.exports_root; the version is the next one over the live and archived files (reportkit.next_versioned_path). Raises ValueError, routed as
@@ -379,6 +426,7 @@ def layer_record(ctx: Ctx) -> Outcome:
     return ok(line + ". Next: Collection-Build.ps1 -Action LayerCheck", **r)
 
 
+@_logged
 def layer_next(ctx: Ctx) -> Outcome:
     """Say what to do next in the layered reading of a collection, from the ledger alone: the subgroup in flight, the step, its state and the verbs (lib/layerloop.py; escalation #2538)."""
     from ..lib import layerloop as ll
@@ -404,6 +452,7 @@ def layer_next(ctx: Ctx) -> Outcome:
     return ok(chr(10).join(lines), **{k: r[k] for k in ("subgroup", "step", "state") if k in r})
 
 
+@_logged
 def read_words(ctx: Ctx) -> Outcome:
     """ReadWords: the package of the next words of one subgroup to read (step S1): the instruction of this read, only these words' occurrences, verses and lexicon, and the answer
     template (lib/readcommands.py; escalation #2538). Opens S1 for the subgroup if it is not open; the order and grouping gates apply."""
@@ -418,6 +467,9 @@ def read_words(ctx: Ctx) -> Outcome:
         return fail("refused", "cfg_setting layer.working_dir is missing")
     try:
         r = rc.read_words(ctx.cfg.conn, ctx.cfg, ctx.run_id, coll, sub, pathlib.Path(root))
+    except rc.ReadNext as exc:
+        ctx.cfg.conn.commit()       # not a fault: the unit is read or has nothing to read; the message names the next command (#2637 X5)
+        return ok(str(exc))
     except (rc.ReadError, lr.LayerError, sg.ScanBudgetExceeded) as exc:
         return fail("refused", str(exc))
     ctx.cfg.conn.commit()
@@ -426,6 +478,7 @@ def read_words(ctx: Ctx) -> Outcome:
               f"Read it and fill its `answer`, then: Collection-Build.ps1 -Action RecordWords -File <answer file> (-Check to preview)", words=r["words"], left=r["left"])
 
 
+@_logged
 def record_words(ctx: Ctx) -> Outcome:
     """RecordWords: check a filled ReadWords answer whole, write it through the recorder of the layered reading, validate the subgroup's rows and name the next command. -Check previews."""
     from ..lib import readcommands as rc
@@ -438,6 +491,9 @@ def record_words(ctx: Ctx) -> Outcome:
         r = rc.record_words(conn, ctx.cfg, ctx.run_id, data, keep=not _flag(ctx, "Check"))
     except (OSError, ValueError) as exc:
         return fail("refused", f"cannot read {file}: {exc}")
+    except rc.ReadNext as exc:
+        ctx.cfg.conn.commit()       # not a fault: the unit is read or has nothing to read; the message names the next command (#2637 X5)
+        return ok(str(exc))
     except rc.ReadError as exc:
         return fail("refused", str(exc))
     line = f"{r['observed']} observations written with {r['nodes']} nodes for {r['rows']} word(s)"
@@ -453,6 +509,7 @@ def _answer_of(data):
     return data["answer"] if isinstance(data, dict) and isinstance(data.get("answer"), dict) and "instruction" in data else data
 
 
+@_logged
 def read_senses(ctx: Ctx) -> Outcome:
     """ReadSenses: the package of the senses of one subgroup (step 1.1): the instruction of this read, every B1 observation of the subgroup with the occurrences it holds, the sense head
     and meaning range of each code, the older observations to answer, and the answer template (lib/readcommands.py; escalation #2538). Opens 1.1 for the subgroup if it is not open."""
@@ -467,6 +524,9 @@ def read_senses(ctx: Ctx) -> Outcome:
         return fail("refused", "cfg_setting layer.working_dir is missing")
     try:
         r = rc.read_senses(ctx.cfg.conn, ctx.cfg, ctx.run_id, coll, sub, pathlib.Path(root))
+    except rc.ReadNext as exc:
+        ctx.cfg.conn.commit()       # not a fault: the unit is read or has nothing to read; the message names the next command (#2637 X5)
+        return ok(str(exc))
     except (rc.ReadError, lr.LayerError, sg.ScanBudgetExceeded) as exc:
         return fail("refused", str(exc))
     ctx.cfg.conn.commit()
@@ -475,6 +535,7 @@ def read_senses(ctx: Ctx) -> Outcome:
               f"{r['path'].as_posix()}. Read it and fill its `answer`, then: Collection-Build.ps1 -Action RecordSenses -File <answer file> (-Check to preview)", readings=r["readings"])
 
 
+@_logged
 def record_senses(ctx: Ctx) -> Outcome:
     """RecordSenses: check a filled ReadSenses answer whole, write it through the recorder of the layered reading, validate the subgroup's 1.1 row and name the next command. -Check previews."""
     from ..lib import readcommands as rc
@@ -487,6 +548,9 @@ def record_senses(ctx: Ctx) -> Outcome:
         r = rc.record_senses(conn, ctx.cfg, ctx.run_id, data, keep=not _flag(ctx, "Check"))
     except (OSError, ValueError) as exc:
         return fail("refused", f"cannot read {file}: {exc}")
+    except rc.ReadNext as exc:
+        ctx.cfg.conn.commit()       # not a fault: the unit is read or has nothing to read; the message names the next command (#2637 X5)
+        return ok(str(exc))
     except rc.ReadError as exc:
         return fail("refused", str(exc))
     line = f"{r['observed']} observations written with {r['nodes']} nodes for {r['senses']} sense(s)"
@@ -497,6 +561,7 @@ def record_senses(ctx: Ctx) -> Outcome:
     return ok(line + tail + f". Next: {r['next']}", observed=r["observed"], nodes=r["nodes"], validated=r["validated"])
 
 
+@_logged
 def read_enrichment(ctx: Ctx) -> Outcome:
     """ReadEnrichment: the package of the enrichment of one subgroup (step 1.2): the instruction of this read, every 1.1 sense of the subgroup with its codes and occurrences, the lexicon
     of every code, the older observations to answer, and the answer template (lib/readcommands.py; escalation #2538). Opens 1.2 for the subgroup if it is not open."""
@@ -511,6 +576,9 @@ def read_enrichment(ctx: Ctx) -> Outcome:
         return fail("refused", "cfg_setting layer.working_dir is missing")
     try:
         r = rc.read_enrichment(ctx.cfg.conn, ctx.cfg, ctx.run_id, coll, sub, pathlib.Path(root))
+    except rc.ReadNext as exc:
+        ctx.cfg.conn.commit()       # not a fault: the unit is read or has nothing to read; the message names the next command (#2637 X5)
+        return ok(str(exc))
     except (rc.ReadError, lr.LayerError, sg.ScanBudgetExceeded) as exc:
         return fail("refused", str(exc))
     ctx.cfg.conn.commit()
@@ -519,6 +587,7 @@ def read_enrichment(ctx: Ctx) -> Outcome:
               f"{r['path'].as_posix()}. Read it and fill its `answer`, then: Collection-Build.ps1 -Action RecordEnrichment -File <answer file> (-Check to preview)", senses=r["senses"])
 
 
+@_logged
 def record_enrichment(ctx: Ctx) -> Outcome:
     """RecordEnrichment: check a filled ReadEnrichment answer whole, write it through the recorder of the layered reading, validate the subgroup's 1.2 row and name the next command. -Check previews."""
     from ..lib import readcommands as rc
@@ -531,6 +600,9 @@ def record_enrichment(ctx: Ctx) -> Outcome:
         r = rc.record_enrichment(conn, ctx.cfg, ctx.run_id, data, keep=not _flag(ctx, "Check"))
     except (OSError, ValueError) as exc:
         return fail("refused", f"cannot read {file}: {exc}")
+    except rc.ReadNext as exc:
+        ctx.cfg.conn.commit()       # not a fault: the unit is read or has nothing to read; the message names the next command (#2637 X5)
+        return ok(str(exc))
     except rc.ReadError as exc:
         return fail("refused", str(exc))
     line = f"{r['observed']} observations written with {r['nodes']} nodes for {r['enrichments']} enrichment(s)"
@@ -540,6 +612,7 @@ def record_enrichment(ctx: Ctx) -> Outcome:
     tail = "; check: validated" if r["validated"] else f"; check: NOT validated ({r['reason']})"
     return ok(line + tail + f". Next: {r['next']}", observed=r["observed"], nodes=r["nodes"], validated=r["validated"])
 
+@_logged
 def read_structure(ctx: Ctx) -> Outcome:
     """ReadStructure: the package of the next rows of step 2.1 of one subgroup, one item at a time (-Item to choose): what each row asks, its occurrences, the WordNet control of a
     pairing, the older observations, the verses with their stored structure, the subgroup's 1.1 senses, and the answer template (lib/readcommands.py; escalation #2538). Opens 2.1 for
@@ -556,6 +629,9 @@ def read_structure(ctx: Ctx) -> Outcome:
         return fail("refused", "cfg_setting layer.working_dir is missing")
     try:
         r = rc.read_structure(ctx.cfg.conn, ctx.cfg, ctx.run_id, coll, sub, pathlib.Path(root), item)
+    except rc.ReadNext as exc:
+        ctx.cfg.conn.commit()       # not a fault: the unit is read or has nothing to read; the message names the next command (#2637 X5)
+        return ok(str(exc))
     except (rc.ReadError, lr.LayerError, sg.ScanBudgetExceeded) as exc:
         return fail("refused", str(exc))
     ctx.cfg.conn.commit()
@@ -564,6 +640,7 @@ def read_structure(ctx: Ctx) -> Outcome:
               f"{r['path'].as_posix()}. Read it and fill its `answer`, then: Collection-Build.ps1 -Action RecordStructure -File <answer file> (-Check to preview)", rows=r["rows"], left=r["left"])
 
 
+@_logged
 def record_structure(ctx: Ctx) -> Outcome:
     """RecordStructure: check a filled ReadStructure answer whole, write it through the recorder of the layered reading, validate the subgroup's rows and name the next command. -Check previews."""
     from ..lib import readcommands as rc
@@ -576,6 +653,9 @@ def record_structure(ctx: Ctx) -> Outcome:
         r = rc.record_structure(conn, ctx.cfg, ctx.run_id, data, keep=not _flag(ctx, "Check"))
     except (OSError, ValueError) as exc:
         return fail("refused", f"cannot read {file}: {exc}")
+    except rc.ReadNext as exc:
+        ctx.cfg.conn.commit()       # not a fault: the unit is read or has nothing to read; the message names the next command (#2637 X5)
+        return ok(str(exc))
     except rc.ReadError as exc:
         return fail("refused", str(exc))
     line = f"{r['observed']} observations written with {r['nodes']} nodes for {r['rows']} row(s)"
@@ -597,6 +677,9 @@ def _read_gate(ctx: Ctx, fn_name: str, what: str) -> Outcome:
         return fail("refused", "cfg_setting layer.working_dir is missing")
     try:
         r = getattr(rc, fn_name)(ctx.cfg.conn, ctx.cfg, ctx.run_id, coll, sub, pathlib.Path(root))
+    except rc.ReadNext as exc:
+        ctx.cfg.conn.commit()       # not a fault: the unit is read or has nothing to read; the message names the next command (#2637 X5)
+        return ok(str(exc))
     except rc.ReadError as exc:
         ctx.cfg.conn.commit()       # a gate answered from the tables (nothing left to sweep or to read) is kept; the message names the next command
         return fail("refused", str(exc))
@@ -606,12 +689,14 @@ def _read_gate(ctx: Ctx, fn_name: str, what: str) -> Outcome:
     return ok(", ".join(f"{k} {v}" for k, v in r.items() if k != "path") + f": {r['path'].as_posix()}. Read it and fill its `answer`, then the Record command (-Check to preview)")
 
 
+@_logged
 def read_sweep(ctx: Ctx) -> Outcome:
     """ReadSweep: the sweep (B4) of one subgroup after its 2.1 rows: the package of its older observations still unmarked, to judge by content (lib/readcommands.py; escalation #2538).
     With nothing left to sweep, the sweep row is answered as such and the next command is named."""
     return _read_gate(ctx, "read_sweep", "the sweep")
 
 
+@_logged
 def read_evidence(ctx: Ctx) -> Outcome:
     """ReadEvidence: the evidence validation (B5) of one subgroup after its sweep: the code checks and the package of the next evidence observations not yet read, to judge for truth and
     coherence (lib/readcommands.py; escalation #2538). With every observation read and the checks passing, the row is answered and the next command is named."""
@@ -629,6 +714,9 @@ def _record_gate(ctx: Ctx, fn_name: str, what: str) -> Outcome:
         r = getattr(rc, fn_name)(conn, ctx.cfg, ctx.run_id, data, keep=not _flag(ctx, "Check"))
     except (OSError, ValueError) as exc:
         return fail("refused", f"cannot read {file}: {exc}")
+    except rc.ReadNext as exc:
+        ctx.cfg.conn.commit()       # not a fault: the unit is read or has nothing to read; the message names the next command (#2637 X5)
+        return ok(str(exc))
     except rc.ReadError as exc:
         return fail("refused", str(exc))
     line = ", ".join(f"{k} {v}" for k, v in r.items() if k not in ("preview", "next"))
@@ -638,6 +726,7 @@ def _record_gate(ctx: Ctx, fn_name: str, what: str) -> Outcome:
     return ok(line + f". Next: {r['next']}")
 
 
+@_logged
 def release_dead_traces(ctx: Ctx) -> Outcome:
     """ReleaseDeadTraces: every live trace node that points at a deleted observation, across the database, dropped with its reason, logged on its
     holder (lib/validationactions.release_dead_traces; #2618). The deletes made since #2618 release their traces themselves and ReadEvidence
@@ -656,27 +745,32 @@ def release_dead_traces(ctx: Ctx) -> Outcome:
     return ok(f"released: {line}; named snapshot {snap}", nodes=r["nodes"], observations=r["observations"])
 
 
+@_logged
 def record_sweep(ctx: Ctx) -> Outcome:
     """RecordSweep: check a filled ReadSweep answer whole and write it; validate the sweep row; name the next command. -Check previews."""
     return _record_gate(ctx, "record_sweep", "ReadSweep")
 
 
+@_logged
 def record_evidence(ctx: Ctx) -> Outcome:
     """RecordEvidence: check a filled ReadEvidence answer whole, write its repairs and log each observation read; validate the evidence-validation row when all is read; name the next
     command. -Check previews."""
     return _record_gate(ctx, "record_evidence", "ReadEvidence")
 
 
+@_logged
 def read_elements(ctx: Ctx) -> Outcome:
     """ReadElements: the package of step 3.1 of one subgroup (C1): the evidence observations to take up and those it may rest on, the older inner-being observations to answer, the
     definition, the meaning by code, every verse, and the answer (lib/readcommands.py; escalation #2538). Opens 3.1 for the subgroup if it is not open."""
     return _read_gate(ctx, "read_elements", "the elements")
 
 
+@_logged
 def record_elements(ctx: Ctx) -> Outcome:
     """RecordElements: check a filled ReadElements answer whole and write it through the recorder of stage 4; validate the 3.1 row; name the next command. -Check previews."""
     return _record_gate(ctx, "record_elements", "ReadElements")
 
+@_logged
 def sweep_superseded(ctx: Ctx) -> Outcome:
     """SweepSuperseded: the sweep that closes 3.1 for a collection: every live ledger row of a deleted subgroup retired and the observations written under it removed (nodes
     deleted, traces released, each change kept with its reason; lib/layerreading.sweep_superseded; researcher 2026-11-26, #2538). Refused while a current subgroup is not through
@@ -702,6 +796,7 @@ def sweep_superseded(ctx: Ctx) -> Outcome:
               rows=r["rows"], observations=r["observations"])
 
 
+@_logged
 def read_behaviours(ctx: Ctx) -> Outcome:
     """ReadBehaviours: the package of step 3.2 of a collection (C2): every inner-being observation of the collection to take up, each with its subgroups and occurrences, the subgroups
     with their definitions, and the answer (lib/readcommands.py; escalation #2538). Opens 3.2 if it is not open. -Collection only: 3.2 is the collection's own step."""
@@ -716,6 +811,9 @@ def read_behaviours(ctx: Ctx) -> Outcome:
         return fail("refused", "cfg_setting layer.working_dir is missing")
     try:
         r = rc.read_behaviours(ctx.cfg.conn, ctx.cfg, ctx.run_id, coll, pathlib.Path(root))
+    except rc.ReadNext as exc:
+        ctx.cfg.conn.commit()       # not a fault: the unit is read or has nothing to read; the message names the next command (#2637 X5)
+        return ok(str(exc))
     except rc.ReadError as exc:
         return fail("refused", str(exc))
     except (lr.LayerError, sg.ScanBudgetExceeded) as exc:
@@ -724,6 +822,7 @@ def read_behaviours(ctx: Ctx) -> Outcome:
     return ok(", ".join(f"{k} {v}" for k, v in r.items() if k != "path") + f": {r['path'].as_posix()}. Read it and fill its `answer`, then RecordBehaviours -File <answer> (-Check to preview)")
 
 
+@_logged
 def record_behaviours(ctx: Ctx) -> Outcome:
     """RecordBehaviours: check a filled ReadBehaviours answer whole and write it through the recorder of stage 4; validate the 3.2 row; name the next command. -Check previews."""
     return _record_gate(ctx, "record_behaviours", "ReadBehaviours")

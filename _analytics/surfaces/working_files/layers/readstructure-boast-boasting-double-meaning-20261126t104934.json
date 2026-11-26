@@ -1,0 +1,1218 @@
+{
+ "command": "ReadStructure",
+ "collection": "boast",
+ "subgroup": "boasting",
+ "step": "2.1",
+ "item": "double-meaning",
+ "made": "2026-11-26T10:49:34Z",
+ "batch": {
+  "rows": 4,
+  "rows_left_after_this": 72
+ },
+ "instruction": {
+  "what": "Step 2.1, the structure of one subgroup (stage 1, B3): what stands with the subgroup's words in each verse, read from the stored structure. One item at a time: double-meaning (a surface with more than one code), qualifier (negators and the word each reaches, adjectives, adverbs, prepositional qualifiers), entity (who is named or referred to), direction (from whom to whom, by the grammar), pairing (one row for each partner collection: its words in the verses shared with the subgroup). Nothing here says what anything does for the inner being; that begins at step 3.1.",
+  "read": [
+   "Take one row at a time (`rows`): what it asks, its occurrences (`as`: member, the subgroup's word; partner, the other word), and its verses.",
+   "Read each verse (`verses`) from its stored structure, one line for each word: * marks an occurrence of the subgroup; then the position, surface, Strong's code and morph, and what the pairing makes of the word (its type, the qualifier it carries, a negator, a party, the collections of a word of another collection). Nothing is evaluated that is not stored.",
+   "Where each word stands: its side and distance from the subgroup's word, from the positions. Adjacency is not scope: a negator or qualifier is read for the word it reaches by the grammar.",
+   "A pairing row shows the WordNet control for its partner collection: a pairing WordNet gives and the verses do not show is one to look for; a pairing only the verses show has no control.",
+   "Differences in meaning are read from the base data (the Strong's code, the morph, the construction), not from the English alone. The subgroup's 1.1 senses (`senses`) are what the findings build on."
+  ],
+  "write": [
+   "Fill `answer.rows`: for each row, disposition observed with its `findings`, or none with its `reason` (where the row allows none: nothing of the item stands with the subgroup in its verses).",
+   "One finding for each distinct thing the structure shows; the same finding in several verses is ONE finding naming all its occurrences; a verse that shows something different is its own finding. Together the findings name every occurrence of the row (occurrence ids or verse references), each in one finding.",
+   "kind: as the template gives it (pairing; relation for direction; face for double-meaning). obs_text: concise; names the verses it holds in, as the package writes the references (for example Act 18:4); states what the structure shows (which word, where it stands, what it reaches or gives by the grammar); never a verse restated, never what it does for the inner being.",
+   "basis: stated (the verse says it) or read (read from the structure), with `grounds`: words copied exactly from the verses it is tied to (the record checks them).",
+   "Each subgroup's surface has its own finding; none joins two subgroups. A data error is named in grounds, not fixed.",
+   "`older`: answer each older observation shown under the row, once: keep (with `nature`), restate (with `nature`, `new_text`, `checked`), merge (with `into`), consume (with `carriers` [\"this\"] or observation ids, and `mapping`), delete_neither (with `reason`), carry (with `to` and `reason`), defer (with `collection`, `nature`, `finding`). One listed under another row is answered there.",
+   "Then: Collection-Build.ps1 -Action RecordStructure -File <the answer file> (-Check to preview). The record refuses the whole file on any fault and lists every fault."
+  ],
+  "keep": [
+   {
+    "rule": "RG-14 morph-read",
+    "text": "Morph is read, not carried: where occurrences of a word show different stems or voices, record whether the subject does, undergoes or causes the act."
+   },
+   {
+    "rule": "RG-16 homonym-and-data-error",
+    "text": "A word that is only a homonym or a name, with no meaningful context, is recorded as such (tag no-human-context) and left. Data errors found while reading are flagged (tag data-error), not fixed in the reading."
+   },
+   {
+    "rule": "RG-21 grain",
+    "text": "A word is read per its lettered Strong's code (its grain), never the bare lemma (B:113). The occurrences of a word with several senses are related per grain and never aggregated across grains: related verses are same-grain occurrences."
+   },
+   {
+    "rule": "RO11 one-row-per-code",
+    "text": "One observation per finding, never a duplicate description; a finding applying to several verses or words carries several nodes, each with the word's role in it."
+   },
+   {
+    "rule": "RW-03 no-duplicates-multi-node",
+    "text": "One observation per finding: the same description is never written twice. Applied to another verse, word or scope it gains a node on the existing observation."
+   },
+   {
+    "rule": "RW-04 concise-verse-specific",
+    "text": "Observation text is concise and tied to this verse's content, never a restatement of the word's dictionary sense. A transliteration is never given without its gloss."
+   },
+   {
+    "rule": "RW-08 slants-own-rows",
+    "text": "Where the evidence points to more than one reading, each is its own observation with its own evidence."
+   },
+   {
+    "rule": "RW-09 reread-builds-on-prior",
+    "text": "A re-read includes the observations already recorded for the verse, so the reading sees prior findings and builds on them."
+   },
+   {
+    "rule": "RW-11 missing-is-named",
+    "text": "Missing data in the base extract is named as a gap, never substituted from memory or outside knowledge."
+   },
+   {
+    "rule": "RW-13 older-observations-answered-at-record",
+    "text": "Every older live observation with a live node on an occurrence of the row (a stage that is not the build's own) is answered in fill.older when the row is recorded, once: keep or restate (each with its marker), merge into a named observation, consume (live observations carry its meaning, stated in words, verified before it is deleted), delete as neither (comment first), or defer to a named collection (marked now; only the finding is left to that collection). An observation already marked by the validation, answered in a build or deferred is not asked again. A new observation whose text equals that of another live observation of the collection is refused, the other named. LayerCheck re-derives both from the tables. The end state of a collection's build is that every observation of its scope is marked and fixed or deleted, every word node complete or with its reason, and each deferral owned by a named collection."
+   },
+   {
+    "rule": "RS-04 existing-checked-accept-modify-delete",
+    "text": "When a verse is worked, every existing observation and node on it, of any stage, is checked against the verse by its wording. The stage is not an indication of the nature of an observation and is never used to filter. Each observation is accepted, modified (changed in place; the old value, the new value and the reason are kept in ib_observation_change), soft deleted (the `deleted` column, with the reason), merged (a duplicate description, into the observation that is kept) or, when its wording shows it is not verse understanding, left exactly as it is with the reason. The check's fixes are part of it and need no separate approval. Nothing is physically deleted."
+   },
+   {
+    "rule": "LR-02 nodes-are-built-from-the-data",
+    "text": "The nodes of a layer observation are the occurrences the aspect demands (a word's occurrences, the group's occurrences, the partner's occurrences in the verses they share), written by the recorder with the collection and the subgroup of each surface; they are never typed. An item answered by senses (word-sense) names, for each sense, the occurrences it holds for, and together the senses cover every occurrence; the recorder checks them against the data. The interpretation is the observation text, founded in what the evidence shows (basis stated or read, B:131) and tied to its verses (the text names them and does not restate them): the items of every step (S1, 1.1, 1.2, 2.1) state what the dictionary, the verses and the stored structure show of a word and never what a word does for the inner being; their nodes carry the role lexical and no route. The whole file is checked and written in one transaction; any problem refuses all of it. A row answered again withdraws its earlier observations with the reason."
+   },
+   {
+    "rule": "LR-03 none-needs-a-permitted-reason",
+    "text": "An aspect is recorded as none only where its item allows it (cfg_setting layer.reading none_allowed) and with its reason in words. A group definition and a group's Strong's enrichment are always observed."
+   },
+   {
+    "rule": "DA-02 a-node-per-occurrence-with-its-surfaces-collection",
+    "text": "A node is on one occurrence (verse_lexical_id) and carries the collection of its surface (a supportive node, the collection of the surface it supports); a node already on the observation for the same occurrence is not written twice, and takes the role. A node with no collection to carry, or on a verse out of scope (B:130), is not written and is listed."
+   },
+   {
+    "rule": "VA-03 consumption-is-verified-before-deletion",
+    "text": "An older observation is deleted as consumed only when live observations carry its meaning: every word occurrence of it is on a live node of a carrier or named as not carried with its reason, the mapping is stated in words (what the old says, which carrier states each part), the traces to it are re-pointed or replaced, and the consumption is kept as `consumed_by`. An observation that holds more than one finding is split first."
+   },
+   {
+    "rule": "VA-04 neither-evidence-nor-inner-being-is-deleted",
+    "text": "An observation that is neither evidence nor inner being contributes nothing to the purposes of the observations (researcher, 2026-11-22): it is commented with its reason and the word occurrences no other live observation holds, then deleted. An observation already marked, or one another observation traces, is not deleted this way."
+   }
+  ],
+  "not_in_this_read": ""
+ },
+ "senses": [
+  {
+   "sense": 23683,
+   "text": "Boasting: speaking with pride of a ground one claims, as verb and as noun. It holds whatever the ground is: one's own work or standing (2Cor 10:8, Rom 2:17), wealth and might (Psa 49:6, Jer 9:23), evil (Psa 52:1), idols (Psa 97:7), the flesh (Gal 6:13), tomorrow (Pro 27:1, Jam 4:16), another church (2Cor 9:2), weakness (2Cor 12:9); and the boast that is excluded (Rom 3:27, 1Cor 1:29) or denied of love (1Cor 13:4).",
+   "verses": [
+    "Ps.10.3",
+    "2Cor.11.12",
+    "2Cor.10.16",
+    "2Cor.12.1",
+    "1Cor.5.6",
+    "2Cor.9.3",
+    "2Cor.7.14",
+    "2Cor.8.24",
+    "2Cor.11.10",
+    "Rom.3.27",
+    "Jas.4.16",
+    "Jas.3.5",
+    "Prov.20.14",
+    "Prov.25.14",
+    "Rom.2.17",
+    "Rom.2.23",
+    "1Cor.1.29",
+    "1Cor.3.21",
+    "1Cor.4.7",
+    "Eph.2.9",
+    "2Cor.5.12",
+    "2Cor.11.18",
+    "Gal.6.13",
+    "2Cor.9.2",
+    "2Thess.1.4",
+    "2Cor.10.8",
+    "2Cor.10.13",
+    "2Cor.10.15",
+    "2Cor.11.16",
+    "2Cor.12.5",
+    "2Cor.12.6",
+    "2Cor.12.9",
+    "2Cor.11.30",
+    "1Cor.13.4",
+    "2Cor.11.21",
+    "1Kgs.20.11",
+    "Prov.27.1",
+    "Jer.9.23",
+    "Ps.49.6",
+    "Jer.49.4",
+    "Ps.52.1",
+    "Ps.97.7"
+   ]
+  },
+  {
+   "sense": 23684,
+   "text": "The ground of the boast: the noun names the thing gloried in rather than the act, a person, a work or a state that is one's boast: the Corinthians and Paul to one another (2Cor 1:14, 1Th 2:19), the testimony of conscience (2Cor 1:12), a ground Paul will not lose (1Cor 9:15), the reason in one's own tested work (Gal 6:4), the hope held fast (Heb 3:6), Egypt as Judah's glory (Isa 20:5).",
+   "verses": [
+    "1Cor.9.15",
+    "1Cor.9.16",
+    "Heb.3.6",
+    "1Thess.2.19",
+    "2Cor.5.12",
+    "2Cor.1.14",
+    "Gal.6.4",
+    "2Cor.1.12",
+    "Isa.20.5"
+   ]
+  },
+  {
+   "sense": 23685,
+   "text": "Magnifying oneself over another: verbs of making great or glorifying oneself, with 'over' or 'against', rendered 'boast': Moab and Ammon over God's people and land (Zep 2:8, Zep 2:10), enemies over a man who slips (Psa 38:16), Edom over Judah (Obd 12), Israel over the Lord and the axe over the hewer (Judg 7:2, Isa 10:15), superiority with jealousy (Jam 3:14), the boastful and the lifted horn (Psa 75:4).",
+   "verses": [
+    "Zeph.2.10",
+    "Zeph.2.8",
+    "Jas.3.14",
+    "Ps.38.16",
+    "Obad.1.12",
+    "Ps.75.4",
+    "Judg.7.2",
+    "Isa.10.15"
+   ]
+  },
+  {
+   "sense": 23686,
+   "text": "Boastful talk: words of the mouth named as boasts, where the codes say speech, mouth or empty talk and the context makes them inflated or hollow: the mouth speaking swollen things (Jude 16), Moab's false boasts (Jer 48:30), the sayings people approve (Psa 49:13), the evildoers' speech beside arrogant words (Psa 94:4).",
+   "verses": [
+    "Jude.1.16",
+    "Jer.48.30",
+    "Ps.49.13",
+    "Ps.94.4"
+   ]
+  },
+  {
+   "sense": 23687,
+   "text": "Glorying in God or in what he gives: the boast made in the Lord, his cross or his gift, with gladness and praise: in God continually beside thanks (Psa 44:8), the soul's boast in the Lord (Psa 34:2), knowing the Lord (Jer 9:24), boast in the Lord (1Cor 1:31, 2Cor 10:17), only in the cross (Gal 6:14), the lowly in his exaltation (Jam 1:9), entering into the nations' glory (Isa 61:6).",
+   "verses": [
+    "Ps.44.8",
+    "1Cor.1.31",
+    "2Cor.10.17",
+    "Jer.9.24",
+    "Gal.6.14",
+    "Jas.1.9",
+    "Ps.34.2",
+    "Isa.61.6"
+   ]
+  }
+ ],
+ "verses": [
+  {
+   "reference": "Psa 10:3",
+   "text": "For the wicked boasts of the desires of his soul, and the one greedy for gain curses and renounces the Lord.",
+   "words": [
+    " 0 wicked H7563 HNcmsa | word of another collection; collections evildoer",
+    "*1 boasts H1984H HVpp3ms | member of this collection",
+    "*1 boasts H3588A HTc | member of this collection",
+    " 2 desires H8378 HNcfsc | word of another collection; collections desire",
+    " 2 desires H5921A HR | word of another collection; collections desire",
+    " 3 soul H5315G HNcfsc",
+    " 4 greedy H1214I HVqrmsa | word of another collection; collections greed",
+    " 4 his H9023 HSp3ms",
+    " 5 gain H1288 HVpp3ms | word of another collection; collections benefit",
+    " 6 renounces H5006 HVpp3ms | word of another collection; collections reject",
+    " 7 lord H3068G HNpt | entity (divine); party divine"
+   ]
+  },
+  {
+   "reference": "Psa 44:8",
+   "text": "In God we have boasted continually, and we will give thanks to your name forever. Selah",
+   "words": [
+    " 0 in H9003 HR",
+    " 1 god H0430G HNcmpa | entity (divine); party divine",
+    "*2 boasted H1984H HVpp1cp | member of this collection",
+    " 3 continually H3605 HNcmsc | word of another collection; collections continual",
+    " 3 continually H3117K HNcmsa | word of another collection; collections continual",
+    " 4 give thanks H3034 HVhi1cp | word of another collection; collections thank",
+    " 5 name H8034 HNcmsc",
+    " 5 and H9002 HC | connective",
+    " 5 [the] H9009 HTd",
+    " 6 forever H5769G HNcmsa",
+    " 6 to/for H9005 HR",
+    " 6 your H9021 HSp2ms",
+    " 7 selah H5542 HTj"
+   ]
+  },
+  {
+   "reference": "Psa 49:13",
+   "text": "This is the path of those who have foolish confidence; yet after them people approve of their boasts. Selah",
+   "words": [
+    " 0 this H2088 HTm",
+    " 1 path H1870G HNcbsc",
+    " 2 foolish H3689 HNcmsa | word of another collection; collections folly",
+    " 2 their H9028 HSp3mp",
+    " 3 after them H0310A HAcmpc | qualifier candidate; qualifier morph: adjective",
+    " 3 and H9002 HC | connective",
+    " 3 to/for H9005 HR",
+    " 3 them H9038 HSp3mp",
+    " 4 approve H7521 HVqi3mp | word of another collection; collections commend",
+    " 4 their H9028 HSp3mp",
+    "*5 boasts H6310I HNcmsc | member of this collection",
+    " 5 in/on/with H9003 HR",
+    " 5 them H9038 HSp3mp",
+    " 6 selah H5542 HTj"
+   ]
+  },
+  {
+   "reference": "Pro 20:14",
+   "text": "“ Bad, bad,” says the buyer, but when he goes away, then he boasts.",
+   "words": [
+    " 0 bad H7451A HAamsa | qualifier candidate; qualifier qualifier subgroup: Bad (a quality of something); morph: adjective",
+    " 1 bad H7451A HAamsa | qualifier candidate; qualifier qualifier subgroup: Bad (a quality of something); morph: adjective",
+    " 2 says H0559 HVqi3ms",
+    " 3 buyer H7069 HVqrmsa",
+    " 3 [the] H9009 HTd",
+    " 4 goes H0235 HVqrmsa",
+    " 5 then H0227A HD | qualifier candidate; qualifier morph: adverb",
+    " 5 to/for H9005 HR",
+    " 5 him H9033 HSp3ms",
+    "*6 boasts H1984H HVti3ms | member of this collection"
+   ]
+  },
+  {
+   "reference": "Pro 25:14",
+   "text": "Like clouds and wind without rain is a man who boasts of a gift he does not give.",
+   "words": [
+    " 0 clouds H5387B HNcmpa",
+    " 1 wind H7307H HNcfsa",
+    " 1 and H9002 HC | connective",
+    " 2 without H0369 HNcmsa",
+    " 3 rain H1653 HNcmsa",
+    " 3 and H9002 HC | connective",
+    " 4 man H0376G HNcmsa | entity (human); party human",
+    "*5 boasts H1984H HVtrmsa | member of this collection",
+    " 6 gift H4991 HNcfsc",
+    " 6 in/on/with H9003 HR",
+    " 7 give H8267 HNcmsa | word of another collection; collections share"
+   ]
+  },
+  {
+   "reference": "Jer 9:24",
+   "text": "but let him who boasts boast in this, that he understands and knows me, that I am the Lord who practices steadfast love, justice, and righteousness in the earth. For in these things I delight, declares the Lord.”",
+   "words": [
+    " 0 but H3588B HTc | connective",
+    " 0 but H0518B HTc | connective",
+    "*1 boasts H1984H HVti3ms | member of this collection",
+    "*2 boast H1984H HVtrmsa | member of this collection",
+    " 2 [the] H9009 HTd",
+    " 3 this H2063 HTm",
+    " 3 in/on/with H9003 HR",
+    " 4 understands H7919A HVhaa | word of another collection; collections wise",
+    " 5 knows H3045 HVqaa | word of another collection; collections know",
+    " 6 that H3588A HTc | connective",
+    " 6 that H0853 HTo",
+    " 6 me H9030 HSp1bs",
+    " 7 i H0589 HPp1bs",
+    " 8 lord H3068G HNpt | entity (divine); party divine",
+    " 9 practices H6213A HVqrmsa",
+    " 10 steadfast love H2617A HNcmsa | word of another collection; collections loyalty",
+    " 11 justice H4941H HNcmsa | word of another collection; collections impartial",
+    " 12 righteousness H6666 HNcfsa | word of another collection; collections righteous",
+    " 12 and H9002 HC | connective",
+    " 13 earth H0776G HNcfsa",
+    " 13 in/on/with H9003 HRd",
+    " 14 for H3588A HTc | connective",
+    " 15 these H0428 HTm",
+    " 15 in/on/with H9003 HR",
+    " 16 delight H2654A HVqp1cs | word of another collection; collections delight",
+    " 17 declares H5002 HNcmsc | word of another collection; collections preach",
+    " 18 lord H3068G HNpt | entity (divine); party divine"
+   ]
+  },
+  {
+   "reference": "Jer 48:30",
+   "text": "I know his insolence, declares the Lord; his boasts are false, his deeds are false.",
+   "words": [
+    " 0 i H0589 HPp1bs",
+    " 1 know H3045 HVqp1cs | word of another collection; collections know",
+    " 2 insolence H5678 HNcfsc | word of another collection; collections pride",
+    " 3 declares H5002 HNcmsc | word of another collection; collections preach",
+    " 4 lord H3068G HNpt | entity (divine); party divine",
+    "*5 boasts H0907 HNcmpc | member of this collection",
+    " 6 false H3808 HTn | negator; qualifier negator; negator",
+    " 6 and H9002 HC | connective",
+    " 6 his H9023 HSp3ms",
+    " 6 false H3651A HAamsa | word of another collection; qualifier morph: adjective; collections real",
+    " 7 deeds H6213A HVqp3cp",
+    " 8 false H3808 HTn | negator; qualifier negator; negator",
+    " 8 his H9023 HSp3ms",
+    " 8 false H3651A HAamsa | word of another collection; qualifier morph: adjective; collections real"
+   ]
+  },
+  {
+   "reference": "Zep 2:8",
+   "text": "“I have heard the taunts of Moab and the revilings of the Ammonites, how they have taunted my people and made boasts against their territory.",
+   "words": [
+    " 0 heard H8085G HVqp1cs | word of another collection; collections hear",
+    " 1 taunts H2781 HNcfsc | word of another collection; collections scoff",
+    " 2 moab H4124G HNpl",
+    " 3 revilings H1421 HNcmpc",
+    " 3 and H9002 HC | connective",
+    " 4 ammonites H1121G HNcmpc",
+    " 4 ammonites H5983 HNpm",
+    " 5 how H0834A HTr | connective",
+    " 6 taunted H2778A HVpp3cp | word of another collection; collections scoff",
+    " 7 people H5971A HNcmsc",
+    " 7 people H0853 HTo",
+    "*8 boasts H1431 HVhw3mp | member of this collection",
+    " 8 my H9020 HSp1bs",
+    " 9 their H9028 HSp3mp",
+    " 10 territory H1366H HNcmsc",
+    " 10 territory H5921A HR"
+   ]
+  },
+  {
+   "reference": "Zep 2:10",
+   "text": "This shall be their lot in return for their pride, because they taunted and boasted against the people of the Lord of hosts.",
+   "words": [
+    " 0 this H2063 HTm",
+    " 1 return H8478H HNcmsc | word of another collection; collections return",
+    " 1 to/for H9005 HR",
+    " 1 them H9038 HSp3mp",
+    " 2 pride H1347 HNcmsc | word of another collection; collections pride",
+    " 3 because H3588A HTc | connective",
+    " 3 their H9028 HSp3mp",
+    " 4 taunted H2778A HVpp3cp | word of another collection; collections scoff",
+    "*5 boasted H1431 HVhw3mp | member of this collection",
+    " 6 against H5921A HR",
+    " 7 people H5971A HNcmsc",
+    " 8 lord H3068G HNpt | entity (divine); party divine",
+    " 9 hosts H6635B HNcfpa"
+   ]
+  },
+  {
+   "reference": "Rom 3:27",
+   "text": "Then what becomes of our boasting? It is excluded. By what kind of law? By a law of works? No, but by the law of faith.",
+   "words": [
+    " 0 then G3767 CONJ | connective",
+    " 1 what G4226 ADV-I | qualifier candidate; qualifier morph: adverb",
+    "*2 boasting G2746 N-NSF | member of this collection",
+    " 3 excluded G1576 V-API-3S | word of another collection; collections reject",
+    " 4 by G1223 PREP | connective",
+    " 5 what kind G4169 I-GSM",
+    " 6 law G3551 N-GSM",
+    " 7 works G2041 N-GPN | word of another collection; collections labor",
+    " 8 no G3780 PRT-N | negator; qualifier negator; negator",
+    " 9 but G0235 CONJ | connective",
+    " 10 by G1223 PREP | connective",
+    " 11 law G3551 N-GSM",
+    " 12 faith G4102G N-GSF | word of another collection; collections believe"
+   ]
+  },
+  {
+   "reference": "1Cor 1:31",
+   "text": "so that, as it is written, “Let the one who boasts, boast in the Lord.”",
+   "words": [
+    " 0 that G2443 CONJ | connective",
+    " 1 as G2531 CONJ | connective",
+    " 2 written G1125 V-RPI-3S",
+    "*3 boasts G2744 V-PNP-NSM | member of this collection",
+    "*4 boast G2744 V-PNM-3S | member of this collection",
+    " 5 in G1722 PREP",
+    " 6 lord G2962G N-DSM-T | entity (divine); party divine"
+   ]
+  },
+  {
+   "reference": "1Cor 5:6",
+   "text": "Your boasting is not good. Do you not know that a little leaven leavens the whole lump?",
+   "words": [
+    " 0 your G5216 P-2GP",
+    "*1 boasting G2745 N-NSN | member of this collection",
+    " 2 not G3756 PRT-N | negator; qualifier negator; negator",
+    " 3 good G2570G A-NSN | qualifier candidate; qualifier qualifier subgroup: Good, better, right (a quality of something); morph: adjective",
+    " 4 you G6063 V-RAI-2P",
+    " 5 not G3756 PRT-N | negator; qualifier negator; negator",
+    " 6 that G3754G CONJ | connective",
+    " 7 little G3398 A-NSF | qualifier candidate; qualifier morph: adjective",
+    " 8 leaven G2219 N-NSF",
+    " 9 leavens G2220 V-PAI-3S",
+    " 10 whole G3650 A-ASN | qualifier candidate; qualifier morph: adjective",
+    " 11 lump G5445 N-ASN"
+   ]
+  },
+  {
+   "reference": "1Cor 9:15",
+   "text": "But I have made no use of any of these rights, nor am I writing these things to secure any such provision. For I would rather die than have anyone deprive me of my ground for boasting.",
+   "words": [
+    " 0 but G1161 CONJ | connective",
+    " 1 i G1473 None",
+    " 2 no G3762 A-DSM | qualifier candidate; qualifier morph: adjective",
+    " 3 use G5530 V-RNI-1S",
+    " 4 nor G3756 PRT-N | negator; qualifier negator; negator",
+    " 5 i G1698 P-1DS",
+    " 6 writing G1125 V-2AAI-1S",
+    " 7 things G3778 None",
+    " 8 to G2443 CONJ | connective",
+    " 9 such G3779 ADV | qualifier candidate; qualifier morph: adverb",
+    " 10 for G1063 CONJ | connective",
+    " 11 rather G3123H ADV | qualifier candidate; qualifier morph: adverb",
+    " 12 die G0599 V-2AAN | word of another collection; collections die",
+    " 13 than G2228 CONJ | connective",
+    " 14 deprive G2758 V-FAI-3S",
+    " 15 my G3450 P-1GS",
+    "*16 boasting G2745 N-ASN | member of this collection"
+   ]
+  },
+  {
+   "reference": "1Cor 9:16",
+   "text": "For if I preach the gospel, that gives me no ground for boasting. For necessity is laid upon me. Woe to me if I do not preach the gospel!",
+   "words": [
+    " 0 for G1063 CONJ | connective",
+    " 1 if G1437 COND | connective",
+    " 2 preach the gospel G2097 V-PMS-1S | word of another collection; collections preach",
+    " 3 gives G1510 V-PAI-3S | word of another collection; collections share",
+    " 4 me G3427 P-1DS",
+    " 5 no G3756 PRT-N | negator; qualifier negator; negator",
+    "*6 boasting G2745 N-NSN | member of this collection",
+    " 7 for G1063 CONJ | connective",
+    " 8 necessity G0318 N-NSF",
+    " 9 laid upon G1945 V-PNI-3S",
+    " 10 me G3427 P-1DS",
+    " 11 woe G3759 INJ | word of another collection; collections tribulation",
+    " 12 to G1510 V-PAI-3S",
+    " 13 me G3427 P-1DS",
+    " 14 not G3362 COND | connective",
+    " 15 preach the gospel G2097 V-AMS-1S | word of another collection; collections preach"
+   ]
+  },
+  {
+   "reference": "2Cor 7:14",
+   "text": "For whatever boasts I made to him about you, I was not put to shame. But just as everything we said to you was true, so also our boasting before Titus has proved true.",
+   "words": [
+    " 0 for G3754H CONJ | connective",
+    " 1 whatever G1487G COND",
+    " 1 whatever G5100 X-ASN",
+    "*2 boasts G2744 V-RNI-1S | member of this collection",
+    " 3 him G0846 P-DSM",
+    " 4 about G5228 PREP",
+    " 5 you G5216 P-2GP",
+    " 6 not G3756 PRT-N | negator; qualifier negator; negator",
+    " 7 put to shame G2617 V-API-1S | word of another collection; collections honor",
+    " 8 but G0235 CONJ | connective",
+    " 9 as G5613 PRT | connective",
+    " 10 everything G3956 A-APN | qualifier candidate; qualifier morph: adjective",
+    " 11 said G2980 V-AAI-1P",
+    " 12 you G5213 P-2DP",
+    " 13 was G1722 PREP",
+    " 14 true G0225 N-DSF | word of another collection; collections real",
+    " 15 so G3779 ADV | qualifier candidate; qualifier morph: adverb",
+    " 16 also G2532 CONJ | connective",
+    " 17 our G2257 P-1GP",
+    "*18 boasting G2746 N-NSF | member of this collection",
+    " 19 before G1909 PREP",
+    " 20 titus G5103 N-GSM-P",
+    " 21 proved G1096 V-2AOI-3S",
+    " 22 true G0225 N-NSF | word of another collection; collections real"
+   ]
+  },
+  {
+   "reference": "2Cor 8:24",
+   "text": "So give proof before the churches of your love and of our boasting about you to these men.",
+   "words": [
+    " 0 so G3767 CONJ | connective",
+    " 1 give G1731 V-PMP-NPM | word of another collection; collections share",
+    " 2 proof G1732 N-ASF | word of another collection; collections justify",
+    " 3 before G1519 PREP",
+    " 3 before G4383 N-ASN",
+    " 4 churches G1577 N-GPF",
+    " 4 churches G1732 N-ASF",
+    " 5 your G5216 P-2GP",
+    " 6 love G0026 N-GSF | word of another collection; collections love",
+    " 7 and G2532 CONJ | connective",
+    " 8 our G2257 P-1GP",
+    "*9 boasting G2746 N-GSF | member of this collection",
+    " 10 about G5228 PREP",
+    " 11 you G5216 P-2GP",
+    " 12 to G1519 PREP",
+    " 13 men G0846 P-APM"
+   ]
+  },
+  {
+   "reference": "2Cor 9:3",
+   "text": "But I am sending the brothers so that our boasting about you may not prove empty in this matter, so that you may be ready, as I said you would be.",
+   "words": [
+    " 0 but G1161 CONJ | connective",
+    " 1 sending G3992 V-AAI-1S",
+    " 2 brothers G0080 N-APM | entity (human); party human",
+    " 3 that G3363 CONJ | connective",
+    " 4 our G2257 P-1GP",
+    "*5 boasting G2745 N-NSN | member of this collection",
+    " 6 about G5228 PREP",
+    " 7 you G5216 P-2GP",
+    " 8 prove empty G2758 V-APS-3S",
+    " 9 in G1722 PREP",
+    " 10 this G3778 D-DSN",
+    " 11 matter G3313 N-DSN",
+    " 12 that G2443 CONJ | connective",
+    " 13 ready G3903 V-RMP-NPM | word of another collection; collections ready",
+    " 14 as G2531 CONJ | connective",
+    " 15 said G3004G V-IAI-1S",
+    " 16 be G1510 V-PAS-2P"
+   ]
+  },
+  {
+   "reference": "2Cor 10:16",
+   "text": "so that we may preach the gospel in lands beyond you, without boasting of work already done in another’s area of influence.",
+   "words": [
+    " 0 that G1519 PREP",
+    " 1 preach the gospel G2097 V-AMN | word of another collection; collections preach",
+    " 2 lands beyond G5238 PREP",
+    " 3 you G5216 P-2GP",
+    " 4 without G3756 PRT-N | negator; qualifier negator; negator",
+    "*5 boasting G2744 V-ADN | member of this collection",
+    " 6 of G1519 PREP",
+    " 7 already done G2092 A-APN | qualifier candidate; qualifier morph: adjective",
+    " 8 in G1722 PREP",
+    " 9 another’s G0245 A-DSM | qualifier candidate; qualifier morph: adjective",
+    " 10 influence G2583 N-DSM"
+   ]
+  },
+  {
+   "reference": "2Cor 10:17",
+   "text": "“Let the one who boasts, boast in the Lord.”",
+   "words": [
+    "*0 boasts G2744 V-PNP-NSM | member of this collection",
+    "*1 boast G2744 V-PNM-3S | member of this collection",
+    " 2 in G1722 PREP",
+    " 3 lord G2962G N-DSM-T | entity (divine); party divine"
+   ]
+  },
+  {
+   "reference": "2Cor 11:10",
+   "text": "As the truth of Christ is in me, this boasting of mine will not be silenced in the regions of Achaia.",
+   "words": [
+    " 0 as G3754G CONJ | connective",
+    " 1 truth G0225 N-NSF | word of another collection; collections righteous",
+    " 2 christ G5547 N-GSM-T | entity (divine); party divine",
+    " 3 is G1510 V-PAI-3S",
+    " 4 in G1722 PREP",
+    " 5 me G1698 P-1DS",
+    " 6 this G3778 D-NSF",
+    "*7 boasting G2746 N-NSF | member of this collection",
+    " 8 mine G1691 P-1AS",
+    " 9 not G3756 PRT-N | negator; qualifier negator; negator",
+    " 10 silenced G4972 V-2FPI-3S | word of another collection; collections mute",
+    " 11 in G1722 PREP",
+    " 12 regions G2824 N-DPN",
+    " 13 achaia G0882 N-GSF-L"
+   ]
+  },
+  {
+   "reference": "2Cor 11:12",
+   "text": "And what I am doing I will continue to do, in order to undermine the claim of those who would like to claim that in their boasted mission they work on the same terms as we do.",
+   "words": [
+    " 0 and G1161 CONJ | connective",
+    " 1 what G3739 R-ASN",
+    " 2 am doing G4160G V-PAI-1S",
+    " 3 continue G2532 CONJ | word of another collection; collections endure",
+    " 4 do G4160G V-FAI-1S | word of another collection; collections serve",
+    " 5 order G2443 CONJ | word of another collection; collections command",
+    " 6 undermine G1581 V-AAS-1S",
+    " 7 claim G0874 N-ASF",
+    " 8 like G2309 V-PAP-GPM",
+    " 9 claim G0874 N-ASF",
+    " 10 that G2443 CONJ | connective",
+    " 11 in G1722 PREP",
+    " 12 their G3739 R-DSN",
+    "*13 boasted G2744 V-PNI-3P | member of this collection",
+    " 14 work G2147 V-APS-3P | word of another collection; collections labor",
+    " 15 same G2531 CONJ | connective",
+    " 16 as G2532 CONJ | connective",
+    " 17 we G2249 P-1NP"
+   ]
+  },
+  {
+   "reference": "2Cor 12:1",
+   "text": "I must go on boasting. Though there is nothing to be gained by it, I will go on to visions and revelations of the Lord.",
+   "words": [
+    " 0 must G1163 V-PAI-3S | word of another collection; collections compel",
+    "*1 boasting G2744 V-PNN | member of this collection",
+    " 2 though G3303 PRT | connective",
+    " 3 nothing G3756 PRT-N | negator; qualifier negator; negator",
+    " 4 gained G4851 V-PAP-NSN | word of another collection; collections benefit",
+    " 5 go on G2064 V-FDI-1S",
+    " 6 to G1519 PREP",
+    " 7 visions G3701 N-APF",
+    " 8 and G2532 CONJ | connective",
+    " 9 revelations G0602 N-APF",
+    " 10 lord G2962G N-GSM-T | entity (divine); party divine"
+   ]
+  },
+  {
+   "reference": "1Th 2:19",
+   "text": "For what is our hope or joy or crown of boasting before our Lord Jesus at his coming? Is it not you?",
+   "words": [
+    " 0 for G1063 CONJ | connective",
+    " 1 what G5101 I-NSF",
+    " 2 our G2257 P-1GP",
+    " 3 hope G1680 N-NSF | word of another collection; collections hope",
+    " 4 or G2228 CONJ | connective",
+    " 5 joy G5479 N-NSF | word of another collection; collections delight",
+    " 6 or G2228 CONJ | connective",
+    " 7 crown G4735 N-NSM",
+    "*8 boasting G2746 N-GSF | member of this collection",
+    " 9 before G1715 PREP",
+    " 10 our G2257 P-1GP",
+    " 11 lord G2962G N-GSM-T | entity (divine); party divine",
+    " 12 jesus G2424G N-GSM-P | entity (divine); party divine",
+    " 13 at G1722 PREP",
+    " 14 his G0846 P-GSM",
+    " 15 coming G3952 N-DSF",
+    " 16 is G2532 CONJ | connective",
+    " 17 not G3780 PRT-N | negator; qualifier negator; negator",
+    " 18 you G5210 P-2NP"
+   ]
+  },
+  {
+   "reference": "Heb 3:6",
+   "text": "but Christ is faithful over God’s house as a son. And we are his house, if indeed we hold fast our confidence and our boasting in our hope.",
+   "words": [
+    " 0 but G1161 CONJ | connective",
+    " 1 christ G5547 N-NSM-T | entity (divine); party divine",
+    " 2 over G1909 PREP",
+    " 3 god’s G0846 P-GSM",
+    " 4 house G3624H N-ASM",
+    " 5 as G5613 PRT | connective",
+    " 6 son G5207 N-NSM",
+    " 7 we G2249 P-1NP",
+    " 8 are G1510 V-PAI-1P",
+    " 9 his G3739 R-GSM",
+    " 10 house G3624H N-NSM",
+    " 11 if G1437 CONJ | connective",
+    " 12 indeed G4007 COND",
+    " 13 hold fast G2722 V-2AAS-1P | word of another collection; collections fast",
+    " 14 confidence G3954 N-ASF | word of another collection; collections believe",
+    " 15 and G2532 CONJ | connective",
+    "*16 boasting G2745 N-ASN | member of this collection",
+    " 17 hope G1680 N-GSF | word of another collection; collections hope"
+   ]
+  },
+  {
+   "reference": "Jam 3:5",
+   "text": "So also the tongue is a small member, yet it boasts of great things. How great a forest is set ablaze by such a small fire!",
+   "words": [
+    " 0 so G3779 ADV | qualifier candidate; qualifier morph: adverb",
+    " 1 also G2532 CONJ | connective",
+    " 2 tongue G1100 N-NSF",
+    " 3 is G1510 V-PAI-3S",
+    " 4 small G3398 A-NSN | qualifier candidate; qualifier morph: adjective",
+    " 5 member G3196 N-NSN",
+    " 6 yet G2532 CONJ | connective",
+    "*7 boasts G6094 V-PAI-3S | member of this collection",
+    " 8 great things G3173 A-APN | word of another collection; qualifier morph: adjective; collections mighty",
+    " 9 how G2400 INJ",
+    " 10 great G2245 I-ASF",
+    " 11 forest G5208 N-ASF",
+    " 12 ablaze G0381 V-PAI-3S",
+    " 13 small G3641 I-NSN",
+    " 14 fire G4442 N-NSN"
+   ]
+  },
+  {
+   "reference": "Jam 4:16",
+   "text": "As it is, you boast in your arrogance. All such boasting is evil.",
+   "words": [
+    " 0 is G3568 ADV | qualifier candidate; qualifier morph: adverb",
+    " 0 is G1161 CONJ | connective",
+    "*1 boast G2744 V-PNI-2P | member of this collection",
+    " 2 in G1722 PREP",
+    " 3 your G5216 P-2GP",
+    " 4 arrogance G0212 N-DPF | word of another collection; collections pride",
+    " 5 all G3956 A-NSF | qualifier candidate; qualifier morph: adjective",
+    " 6 such G5108 D-NSF",
+    "*7 boasting G2746 N-NSF | member of this collection",
+    " 8 is G1510 V-PAI-3S",
+    " 9 evil G4190 A-NSF | word of another collection; qualifier qualifier subgroup: Bad (a quality of something); morph: adjective; collections evildoer"
+   ]
+  },
+  {
+   "reference": "Jude 16",
+   "text": "These are grumblers, malcontents, following their own sinful desires; they are loud-mouthed boasters, showing favoritism to gain advantage.",
+   "words": [
+    " 0 these G3778 D-NPM",
+    " 1 are G1526 V-PAI-3P",
+    " 2 grumblers G1113 N-NPM",
+    " 3 malcontents G3202 A-NPM | qualifier candidate; qualifier morph: adjective",
+    " 4 following G4198 V-PNP-NPM",
+    " 4 following G2596 PREP",
+    " 5 their G0846 F-3GPM",
+    " 6 desires G1939 N-APF | word of another collection; collections desire",
+    " 7 they G2532 CONJ | connective",
+    " 8 loud-mouthed G4750 N-NSN",
+    "*9 boasters G2980 V-PAI-3S | member of this collection",
+    "*9 boasters G5246 A-APN | member of this collection; qualifier morph: adjective",
+    " 10 showing favoritism G2296 V-PAP-NPM | word of another collection; collections impartial",
+    " 10 showing favoritism G4383 N-APN | word of another collection; collections impartial",
+    " 11 to gain G5484 PREP",
+    " 12 advantage G5622 N-GSF | word of another collection; collections benefit"
+   ]
+  }
+ ],
+ "rows": [
+  {
+   "ledger_id": 2112,
+   "item": "double-meaning",
+   "subject": "boasted",
+   "asks": "Does this surface carry a different Strong's code or sense in different verses (the faces of the word)? State the codes and the verses.",
+   "none_allowed": true,
+   "verses": [
+    "Psa 44:8",
+    "Zep 2:10",
+    "2Cor 11:12"
+   ],
+   "occurrences": [
+    {
+     "occurrence": 1252573,
+     "reference": "Psa 44:8",
+     "surface": "boasted",
+     "strong": "H1984H",
+     "as": "member"
+    },
+    {
+     "occurrence": 1397594,
+     "reference": "Zep 2:10",
+     "surface": "boasted",
+     "strong": "H1431",
+     "as": "member"
+    },
+    {
+     "occurrence": 1487303,
+     "reference": "2Cor 11:12",
+     "surface": "boasted",
+     "strong": "G2744",
+     "as": "member"
+    }
+   ],
+   "older": []
+  },
+  {
+   "ledger_id": 2113,
+   "item": "double-meaning",
+   "subject": "boasters",
+   "asks": "Does this surface carry a different Strong's code or sense in different verses (the faces of the word)? State the codes and the verses.",
+   "none_allowed": true,
+   "verses": [
+    "Jude 16"
+   ],
+   "occurrences": [
+    {
+     "occurrence": 1512258,
+     "reference": "Jude 16",
+     "surface": "boasters",
+     "strong": "G2980",
+     "as": "member"
+    },
+    {
+     "occurrence": 1512259,
+     "reference": "Jude 16",
+     "surface": "boasters",
+     "strong": "G5246",
+     "as": "member"
+    }
+   ],
+   "older": []
+  },
+  {
+   "ledger_id": 2114,
+   "item": "double-meaning",
+   "subject": "boasting",
+   "asks": "Does this surface carry a different Strong's code or sense in different verses (the faces of the word)? State the codes and the verses.",
+   "none_allowed": true,
+   "verses": [
+    "Rom 3:27",
+    "1Cor 5:6",
+    "1Cor 9:15",
+    "1Cor 9:16",
+    "2Cor 7:14",
+    "2Cor 8:24",
+    "2Cor 9:3",
+    "2Cor 10:16",
+    "2Cor 11:10",
+    "2Cor 12:1",
+    "1Th 2:19",
+    "Heb 3:6",
+    "Jam 4:16"
+   ],
+   "occurrences": [
+    {
+     "occurrence": 1475846,
+     "reference": "Rom 3:27",
+     "surface": "boasting",
+     "strong": "G2746",
+     "as": "member"
+    },
+    {
+     "occurrence": 1481291,
+     "reference": "1Cor 5:6",
+     "surface": "boasting",
+     "strong": "G2745",
+     "as": "member"
+    },
+    {
+     "occurrence": 1481318,
+     "reference": "1Cor 9:15",
+     "surface": "boasting",
+     "strong": "G2745",
+     "as": "member"
+    },
+    {
+     "occurrence": 1481325,
+     "reference": "1Cor 9:16",
+     "surface": "boasting",
+     "strong": "G2745",
+     "as": "member"
+    },
+    {
+     "occurrence": 1487195,
+     "reference": "2Cor 7:14",
+     "surface": "boasting",
+     "strong": "G2746",
+     "as": "member"
+    },
+    {
+     "occurrence": 1487462,
+     "reference": "2Cor 8:24",
+     "surface": "boasting",
+     "strong": "G2746",
+     "as": "member"
+    },
+    {
+     "occurrence": 1487410,
+     "reference": "2Cor 9:3",
+     "surface": "boasting",
+     "strong": "G2745",
+     "as": "member"
+    },
+    {
+     "occurrence": 1487280,
+     "reference": "2Cor 10:16",
+     "surface": "boasting",
+     "strong": "G2744",
+     "as": "member"
+    },
+    {
+     "occurrence": 1486896,
+     "reference": "2Cor 11:10",
+     "surface": "boasting",
+     "strong": "G2746",
+     "as": "member"
+    },
+    {
+     "occurrence": 1487342,
+     "reference": "2Cor 12:1",
+     "surface": "boasting",
+     "strong": "G2744",
+     "as": "member"
+    },
+    {
+     "occurrence": 1496871,
+     "reference": "1Th 2:19",
+     "surface": "boasting",
+     "strong": "G2746",
+     "as": "member"
+    },
+    {
+     "occurrence": 1501954,
+     "reference": "Heb 3:6",
+     "surface": "boasting",
+     "strong": "G2745",
+     "as": "member"
+    },
+    {
+     "occurrence": 1506215,
+     "reference": "Jam 4:16",
+     "surface": "boasting",
+     "strong": "G2746",
+     "as": "member"
+    }
+   ],
+   "older": []
+  },
+  {
+   "ledger_id": 2115,
+   "item": "double-meaning",
+   "subject": "boasts",
+   "asks": "Does this surface carry a different Strong's code or sense in different verses (the faces of the word)? State the codes and the verses.",
+   "none_allowed": true,
+   "verses": [
+    "Psa 10:3",
+    "Psa 49:13",
+    "Pro 20:14",
+    "Pro 25:14",
+    "Jer 9:24",
+    "Jer 48:30",
+    "Zep 2:8",
+    "1Cor 1:31",
+    "2Cor 7:14",
+    "2Cor 10:17",
+    "Jam 3:5"
+   ],
+   "occurrences": [
+    {
+     "occurrence": 1248500,
+     "reference": "Psa 10:3",
+     "surface": "boasts",
+     "strong": "H1984H",
+     "as": "member"
+    },
+    {
+     "occurrence": 1248501,
+     "reference": "Psa 10:3",
+     "surface": "boasts",
+     "strong": "H3588A",
+     "as": "member"
+    },
+    {
+     "occurrence": 1262869,
+     "reference": "Psa 49:13",
+     "surface": "boasts",
+     "strong": "H6310I",
+     "as": "member"
+    },
+    {
+     "occurrence": 1276933,
+     "reference": "Pro 20:14",
+     "surface": "boasts",
+     "strong": "H1984H",
+     "as": "member"
+    },
+    {
+     "occurrence": 1276941,
+     "reference": "Pro 25:14",
+     "surface": "boasts",
+     "strong": "H1984H",
+     "as": "member"
+    },
+    {
+     "occurrence": 1322562,
+     "reference": "Jer 9:24",
+     "surface": "boasts",
+     "strong": "H1984H",
+     "as": "member"
+    },
+    {
+     "occurrence": 1317040,
+     "reference": "Jer 48:30",
+     "surface": "boasts",
+     "strong": "H0907",
+     "as": "member"
+    },
+    {
+     "occurrence": 1397581,
+     "reference": "Zep 2:8",
+     "surface": "boasts",
+     "strong": "H1431",
+     "as": "member"
+    },
+    {
+     "occurrence": 1481260,
+     "reference": "1Cor 1:31",
+     "surface": "boasts",
+     "strong": "G2744",
+     "as": "member"
+    },
+    {
+     "occurrence": 1487179,
+     "reference": "2Cor 7:14",
+     "surface": "boasts",
+     "strong": "G2744",
+     "as": "member"
+    },
+    {
+     "occurrence": 1487286,
+     "reference": "2Cor 10:17",
+     "surface": "boasts",
+     "strong": "G2744",
+     "as": "member"
+    },
+    {
+     "occurrence": 1506349,
+     "reference": "Jam 3:5",
+     "surface": "boasts",
+     "strong": "G6094",
+     "as": "member"
+    }
+   ],
+   "older": []
+  }
+ ],
+ "answer": {
+  "command": "ReadStructure",
+  "collection": "boast",
+  "subgroup": "boasting",
+  "rows": [
+   {
+    "ledger_id": 2112,
+    "item": "double-meaning",
+    "subject": "boasted",
+    "disposition": "observed",
+    "findings": [
+     {
+      "kind": "face",
+      "basis": "read",
+      "grounds": "In God we have boasted continually",
+      "occurrences": [
+       1252573
+      ],
+      "obs_text": "The surface boasted carries three codes in three verses: in Psa 44:8 H1984H in the Piel, praise made in God; in Zep 2:10 H1431, a making great over God's people; in 2Cor 11:12 G2744, the opponents' boast in their work. This finding is the face of Psa 44:8, the boast that is praise."
+     },
+     {
+      "kind": "face",
+      "basis": "read",
+      "grounds": "taunted and boasted against the people",
+      "occurrences": [
+       1397594
+      ],
+      "obs_text": "In Zep 2:10 the surface boasted carries H1431, a verb of making great with against: the face of boasted that is self-magnifying over another people, apart from its use in Psa 44:8 and 2Cor 11:12."
+     },
+     {
+      "kind": "face",
+      "basis": "read",
+      "grounds": "in their boasted mission",
+      "occurrences": [
+       1487303
+      ],
+      "obs_text": "In 2Cor 11:12 the surface boasted carries G2744 as a finite verb the ESV turns into an adjective: the face of boasted that is a claim made for one's own work, apart from Psa 44:8 and Zep 2:10."
+     }
+    ],
+    "reason": "",
+    "older": []
+   },
+   {
+    "ledger_id": 2113,
+    "item": "double-meaning",
+    "subject": "boasters",
+    "disposition": "observed",
+    "findings": [
+     {
+      "kind": "face",
+      "basis": "read",
+      "grounds": "they are loud-mouthed boasters",
+      "occurrences": [
+       1512258,
+       1512259
+      ],
+      "obs_text": "In Jude 16 the surface boasters spans two codes in one verse: G2980, the verb to speak with the mouth as subject, and G5246, the swollen things spoken. The English noun for persons stands on a Greek clause about inflated speech; the surface has no other verse."
+     }
+    ],
+    "reason": "",
+    "older": []
+   },
+   {
+    "ledger_id": 2114,
+    "item": "double-meaning",
+    "subject": "boasting",
+    "disposition": "observed",
+    "findings": [
+     {
+      "kind": "face",
+      "basis": "read",
+      "grounds": "no ground for boasting",
+      "occurrences": [
+       1481318,
+       1481325,
+       1501954,
+       1496871
+      ],
+      "obs_text": "The surface boasting carries the noun of the thing gloried in, G2745 in 1Cor 9:15, 1Cor 9:16 and Heb 3:6 and G2746 in 1Th 2:19: a ground for boasting, the boasting held with hope, the crown of boasting. This is its face as the matter boasted of."
+     },
+     {
+      "kind": "face",
+      "basis": "read",
+      "grounds": "All such boasting is evil",
+      "occurrences": [
+       1475846,
+       1487195,
+       1487462,
+       1486896,
+       1506215,
+       1481291,
+       1487410
+      ],
+      "obs_text": "The surface boasting carries the noun of the act, G2746 in Rom 3:27, 2Cor 7:14, 2Cor 8:24, 2Cor 11:10 and Jam 4:16, and G2745 in the same use in 1Cor 5:6 and 2Cor 9:3: boasting as something made, said and judged. This is its face as the act."
+     },
+     {
+      "kind": "face",
+      "basis": "read",
+      "grounds": "I must go on boasting",
+      "occurrences": [
+       1487280,
+       1487342
+      ],
+      "obs_text": "In 2Cor 10:16 and 2Cor 12:1 the surface boasting carries the verb G2744 as an infinitive (aorist and present): the face of boasting as Paul's own act, refused in another's area and continued under necessity."
+     }
+    ],
+    "reason": "",
+    "older": []
+   },
+   {
+    "ledger_id": 2115,
+    "item": "double-meaning",
+    "subject": "boasts",
+    "disposition": "observed",
+    "findings": [
+     {
+      "kind": "face",
+      "basis": "read",
+      "grounds": "boasts of a gift he does not give",
+      "occurrences": [
+       1248500,
+       1276933,
+       1276941,
+       1322562
+      ],
+      "obs_text": "The surface boasts carries H1984H in Psa 10:3, Pro 20:14, Pro 25:14 and Jer 9:24, the Hebrew verb of boasting in Piel and Hithpael: the face of boasts as the act, of craving, of a bargain, of a gift not given, and of knowing the Lord."
+     },
+     {
+      "kind": "face",
+      "basis": "read",
+      "grounds": "the wicked boasts of the desires",
+      "occurrences": [
+       1248501
+      ],
+      "obs_text": "In Psa 10:3 the surface boasts is also stored on H3588A, the conjunction for or that, which opens the verse: a word of no boasting meaning carried by the surface, a data error in the tagging of the surface (data-error)."
+     },
+     {
+      "kind": "face",
+      "basis": "read",
+      "grounds": "people approve of their boasts",
+      "occurrences": [
+       1262869,
+       1317040
+      ],
+      "obs_text": "In Psa 49:13 and Jer 48:30 the surface boasts carries nouns of speech, H6310I mouth and H0907 empty talk: the face of boasts as words said, approved by those after them or declared false."
+     },
+     {
+      "kind": "face",
+      "basis": "read",
+      "grounds": "made boasts against their territory",
+      "occurrences": [
+       1397581
+      ],
+      "obs_text": "In Zep 2:8 the surface boasts carries H1431, the verb of making great with against: the face of boasts as self-magnifying over the land of another people."
+     },
+     {
+      "kind": "face",
+      "basis": "read",
+      "grounds": "yet it boasts of great things",
+      "occurrences": [
+       1481260,
+       1487179,
+       1487286,
+       1506349
+      ],
+      "obs_text": "In 1Cor 1:31, 2Cor 7:14 and 2Cor 10:17 the surface boasts carries G2744 and in Jam 3:5 G6094: the Greek verbs of boasting, the one who boasts in the Lord, a boast made to Titus, and the tongue boasting of great things."
+     }
+    ],
+    "reason": "",
+    "older": []
+   }
+  ]
+ },
+ "measured": {
+  "package_chars": 40052,
+  "seconds": 0.02
+ }
+}

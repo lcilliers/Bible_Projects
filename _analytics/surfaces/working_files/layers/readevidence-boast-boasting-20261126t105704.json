@@ -1,0 +1,1447 @@
+{
+ "command": "ReadEvidence",
+ "collection": "boast",
+ "subgroup": "boasting",
+ "step": "2.1",
+ "item": "evidence-validation",
+ "made": "2026-11-26T10:57:04Z",
+ "batch": {
+  "observations": 40,
+  "left_after_this": 182,
+  "evidence_in_scope": 263,
+  "observations_in_scope": 273
+ },
+ "code_checks": {
+  "passes": true,
+  "findings": {
+   "unmarked": [],
+   "no_node": [],
+   "word_missing": [],
+   "traced_dead": [],
+   "duplicate_text": [],
+   "b1_not_traced_by_a_sense": [],
+   "sense_not_traced_by_2_1": [],
+   "older_open": []
+  }
+ },
+ "instruction": {
+  "what": "The evidence validation (B5) of one subgroup, after its sweep, the gate before 3.1: the code checks of its observations (shown in `code_checks`), and the reading of every evidence observation of the subgroup (its own of S1 to 2.1, and the older ones on its occurrences kept as evidence) for whether it is true, founded and coherent with the others. Inner being is not judged here; the two validations are never run together.",
+  "read": [
+   "Read the code checks first: a failing check names observations to repair (unmarked, no node, a word node missing a column without its reason, a trace to a deleted observation, two of one text, a B1 observation no sense traces, a sense the 2.1 observations on its occurrences do not trace, an older observation left open).",
+   "Take one observation at a time (`observations`, in the order of the steps): its text, basis and grounds against its verses (`verses`) and the observations it traces. Is it true of those verses? Does it say more than they show? Does it contradict another observation of the subgroup?"
+  ],
+  "write": [
+   "Fill `answer.observations`, one entry for each observation of the package: verdict true, with `why` (what in the verses and the data bears it out); or verdict repair, with `why` (what is wrong) and `actions`: the actions of the validation that repair it (cfg_setting validate.reading actions, each with its parameters, for example {\"action\": \"restate\", \"oid\": id, \"new_text\": ..., \"checked\": ..., \"reason\": ...}, or delete_neither, complete_node, add_trace).",
+   "A repair is checked as it is written; an observation that cannot be made true is deleted with its reason.",
+   "Then: Collection-Build.ps1 -Action RecordEvidence -File <the answer file> (-Check to preview), and ReadEvidence again until every evidence observation is read; the gate passes when all are read and the code checks pass."
+  ],
+  "keep": [
+   {
+    "rule": "VA-01 a-sheet-is-one-checked-transaction",
+    "text": "A sheet of validation actions is checked whole (every action named, its parameters complete) and written in one transaction: any action the tables refuse refuses the whole sheet and nothing is kept. -Check runs every action and rolls back. Every change is kept in ib_observation_change with its reason (RW-01); nothing is physically deleted."
+   },
+   {
+    "rule": "VA-02 repair-first-and-every-finding-acted-on",
+    "text": "A finding of the validation is repaired first: a wording that is untrue or stronger than its verse is restated and the restatement checked against the base data; a node missing a column is completed, or the reason the data cannot give it is recorded; a duplicate is consolidated; a node is deleted only when another live node carries its occurrence or it supports no finding of its observation. A finding is left open only when a named collection's validation will touch the observation: the deferral to that collection and the finding are recorded, and the check accepts it as deferred. A finding with no named owner is closed in the validation."
+   },
+   {
+    "rule": "VA-03 consumption-is-verified-before-deletion",
+    "text": "An older observation is deleted as consumed only when live observations carry its meaning: every word occurrence of it is on a live node of a carrier or named as not carried with its reason, the mapping is stated in words (what the old says, which carrier states each part), the traces to it are re-pointed or replaced, and the consumption is kept as `consumed_by`. An observation that holds more than one finding is split first."
+   },
+   {
+    "rule": "VA-04 neither-evidence-nor-inner-being-is-deleted",
+    "text": "An observation that is neither evidence nor inner being contributes nothing to the purposes of the observations (researcher, 2026-11-22): it is commented with its reason and the word occurrences no other live observation holds, then deleted. An observation already marked, or one another observation traces, is not deleted this way."
+   },
+   {
+    "rule": "VA-05 the-marker-follows-content-not-stage",
+    "text": "Evidence states what the data are or show, tied to a verse. Inner being states how something works in the inner being, based on evidence, a building block of the stage 5 claims. The marker (ib_observation.nature) follows the content and purpose of the observation, never its stage (RS-04): an observation of any stage may be inner being when it traces to evidence. One that states both is split. The marker is set when the observation is created, by the item that is answered (cfg_setting layer.reading items.<item>.nature); a finding file never sets it; the validation changes it only where the content shows the item's nature does not hold."
+   },
+   {
+    "rule": "VA-06 evidence-validation-gates-inner-being-validation",
+    "text": "The validation runs in two layers, never concurrently: evidence first, then inner being. The inner-being layer is judged only when the evidence layer passes (every in-scope observation marked, none without a live node, no word node missing a required column without its reason, no live trace to a deleted observation, no two of one meaning). A later evidence change reopens only the inner-being rows it touches. In the build this gate is: step 3.1 does not open before the evidence layer passes, and step 3.3 does not close before both layers pass (cfg_setting layer.reading open_gate and closing_gate)."
+   },
+   {
+    "rule": "RW-01 changed-only-by-reading",
+    "text": "No observation is changed except by a reading, and every change is recorded with its reason. An observation no longer supported by the verse is soft-deleted, with the reason."
+   },
+   {
+    "rule": "RW-03 no-duplicates-multi-node",
+    "text": "One observation per finding: the same description is never written twice. Applied to another verse, word or scope it gains a node on the existing observation."
+   },
+   {
+    "rule": "RW-04 concise-verse-specific",
+    "text": "Observation text is concise and tied to this verse's content, never a restatement of the word's dictionary sense. A transliteration is never given without its gloss."
+   },
+   {
+    "rule": "RW-06 resolved-fresh-on-evidence",
+    "text": "Verse references are resolved fresh at write time, never taken from the text written. Relations are recorded only on evidence."
+   },
+   {
+    "rule": "RW-11 missing-is-named",
+    "text": "Missing data in the base extract is named as a gap, never substituted from memory or outside knowledge."
+   }
+  ],
+  "not_in_this_read": ""
+ },
+ "observations": [
+  {
+   "observation": 23671,
+   "step": "S1",
+   "item": "word-sense",
+   "kind": "face",
+   "text": "In Psa 38:16 and Obd 12 the verb of making great is rendered 'boast': enemies make themselves great over the psalmist when his foot slips (Psa 38:16), and Edom is told not to do so over Judah in the day of distress (Obd 12). Both are a magnifying of oneself over one who falls.",
+   "basis": "read",
+   "grounds": "who boast against me",
+   "traces": [],
+   "verses": [
+    "Obd 12",
+    "Psa 38:16"
+   ]
+  },
+  {
+   "observation": 23672,
+   "step": "S1",
+   "item": "word-sense",
+   "kind": "face",
+   "text": "In Psa 75:4 the code is the verb of being foolish or acting madly, rendered 'boastful' and 'Do not boast': God tells the boastful not to boast, in parallel with telling the wicked not to lift up the horn.",
+   "basis": "read",
+   "grounds": "I say to the boastful, Do not boast",
+   "traces": [],
+   "verses": [
+    "Psa 75:4"
+   ]
+  },
+  {
+   "observation": 23673,
+   "step": "S1",
+   "item": "word-sense",
+   "kind": "term",
+   "text": "In 1Ki 20:11 and Pro 27:1 the jussive is negated: a boast made before the outcome is forbidden, of the man arming himself as though he had already taken his armour off (1Ki 20:11), and of tomorrow, which no one knows (Pro 27:1).",
+   "basis": "stated",
+   "grounds": "Do not boast about tomorrow",
+   "traces": [],
+   "verses": [
+    "1Ki 20:11",
+    "Pro 27:1"
+   ]
+  },
+  {
+   "observation": 23674,
+   "step": "S1",
+   "item": "word-sense",
+   "kind": "term",
+   "text": "In Jer 9:23 the jussive is negated three times, each with its own ground: the wise man in his wisdom, the mighty in his might, the rich in his riches. Each ground is a real possession, and each is set aside as a ground for a boast.",
+   "basis": "stated",
+   "grounds": "Let not the wise man boast in his wisdom",
+   "traces": [],
+   "verses": [
+    "Jer 9:23"
+   ]
+  },
+  {
+   "observation": 23675,
+   "step": "S1",
+   "item": "word-sense",
+   "kind": "term",
+   "text": "In Psa 49:6 and Jer 49:4 the boast rests on wealth that is trusted: the abundance of riches (Psa 49:6), and the valleys and treasures of the faithless daughter, who says no one will come against her (Jer 49:4).",
+   "basis": "stated",
+   "grounds": "boast of the abundance of their riches",
+   "traces": [],
+   "verses": [
+    "Jer 49:4",
+    "Psa 49:6"
+   ]
+  },
+  {
+   "observation": 23676,
+   "step": "S1",
+   "item": "word-sense",
+   "kind": "term",
+   "text": "In Psa 52:1 the question to the mighty man asks why he boasts of evil, and the verse answers with God's steadfast love that endures all day.",
+   "basis": "stated",
+   "grounds": "Why do you boast of evil",
+   "traces": [],
+   "verses": [
+    "Psa 52:1"
+   ]
+  },
+  {
+   "observation": 23677,
+   "step": "S1",
+   "item": "word-sense",
+   "kind": "term",
+   "text": "In Psa 97:7 the participle names those who make their boast in worthless idols, the worshippers of images who are put to shame.",
+   "basis": "stated",
+   "grounds": "who make their boast in worthless idols",
+   "traces": [],
+   "verses": [
+    "Psa 97:7"
+   ]
+  },
+  {
+   "observation": 23678,
+   "step": "S1",
+   "item": "word-sense",
+   "kind": "term",
+   "text": "In Psa 34:2 and Jer 9:24 the boast is made in the Lord: the psalmist's soul boasts in him and the humble hear and are glad (Psa 34:2), and the one who boasts is to boast that he understands and knows the Lord (Jer 9:24).",
+   "basis": "stated",
+   "grounds": "My soul makes its boast in the Lord",
+   "traces": [],
+   "verses": [
+    "Jer 9:24",
+    "Psa 34:2"
+   ]
+  },
+  {
+   "observation": 23679,
+   "step": "S1",
+   "item": "word-sense",
+   "kind": "face",
+   "text": "In Isa 61:6 the code is the verb of exchanging (here: to enter into, to be changed into), rendered 'you shall boast' of the nations' glory. The Hebrew may say the people come into the nations' glory; the ESV reads it as a boast. Both readings are open; I read the ESV's as its rendering of entering into that glory.",
+   "basis": "read",
+   "grounds": "in their glory you shall boast",
+   "traces": [],
+   "verses": [
+    "Isa 61:6"
+   ]
+  },
+  {
+   "observation": 23680,
+   "step": "S1",
+   "item": "word-sense",
+   "kind": "term",
+   "text": "In Judg 7:2 and Isa 10:15 the verb (to glorify oneself) is a claim over the one who did the work: Israel would glorify itself over the Lord, saying its own hand saved it (Judg 7:2), and the axe would glorify itself over the one who hews with it (Isa 10:15).",
+   "basis": "stated",
+   "grounds": "lest Israel boast over me",
+   "traces": [],
+   "verses": [
+    "Isa 10:15",
+    "Judg 7:2"
+   ]
+  },
+  {
+   "observation": 23681,
+   "step": "S1",
+   "item": "word-sense",
+   "kind": "face",
+   "text": "In Obd 12 the noun is 'mouth', joined with the verb of making great (boast|H1431 in this subgroup): Edom is told not to make its mouth great over Judah in the day of distress. The ESV renders the two words together as 'boast'.",
+   "basis": "read",
+   "grounds": "do not boast in the day of distress",
+   "traces": [],
+   "verses": [
+    "Obd 12"
+   ]
+  },
+  {
+   "observation": 23682,
+   "step": "S1",
+   "item": "word-sense",
+   "kind": "face",
+   "text": "In Isa 20:5 the noun of beauty or glory is rendered 'boast': Egypt was what Judah gloried in, set beside Cush its hope, and both end in dismay and shame.",
+   "basis": "read",
+   "grounds": "Egypt their boast",
+   "traces": [],
+   "verses": [
+    "Isa 20:5"
+   ]
+  },
+  {
+   "observation": 23683,
+   "step": "1.1",
+   "item": "group-definition",
+   "kind": "group",
+   "text": "Boasting: speaking with pride of a ground one claims, as verb and as noun. It holds whatever the ground is: one's own work or standing (2Cor 10:8, Rom 2:17), wealth and might (Psa 49:6, Jer 9:23), evil (Psa 52:1), idols (Psa 97:7), the flesh (Gal 6:13), tomorrow (Pro 27:1, Jam 4:16), another church (2Cor 9:2), weakness (2Cor 12:9); and the boast that is excluded (Rom 3:27, 1Cor 1:29) or denied of love (1Cor 13:4).",
+   "basis": "read",
+   "grounds": "to boast, brag about",
+   "traces": [
+    23631,
+    23636,
+    23637,
+    23639,
+    23641,
+    23642,
+    23643,
+    23644,
+    23647,
+    23648,
+    23651,
+    23652,
+    23657,
+    23658,
+    23659,
+    23660,
+    23661,
+    23662,
+    23664,
+    23668,
+    23669,
+    23673,
+    23674,
+    23675,
+    23676,
+    23677
+   ],
+   "verses": [
+    "1Cor 13:4",
+    "1Cor 1:29",
+    "1Cor 3:21",
+    "1Cor 4:7",
+    "1Cor 5:6",
+    "1Ki 20:11",
+    "2Cor 10:13",
+    "2Cor 10:15",
+    "2Cor 10:16",
+    "2Cor 10:8",
+    "2Cor 11:10",
+    "2Cor 11:12",
+    "2Cor 11:16",
+    "2Cor 11:18",
+    "2Cor 11:21",
+    "2Cor 11:30",
+    "2Cor 12:1",
+    "2Cor 12:5",
+    "2Cor 12:6",
+    "2Cor 12:9",
+    "2Cor 5:12",
+    "2Cor 7:14",
+    "2Cor 8:24",
+    "2Cor 9:2",
+    "2Cor 9:3",
+    "2Th 1:4",
+    "Eph 2:9",
+    "Gal 6:13",
+    "Jam 3:5",
+    "Jam 4:16",
+    "Jer 49:4",
+    "Jer 9:23",
+    "Pro 20:14",
+    "Pro 25:14",
+    "Pro 27:1",
+    "Psa 10:3",
+    "Psa 49:6",
+    "Psa 52:1",
+    "Psa 97:7",
+    "Rom 2:17",
+    "Rom 2:23",
+    "Rom 3:27"
+   ]
+  },
+  {
+   "observation": 23684,
+   "step": "1.1",
+   "item": "group-definition",
+   "kind": "group",
+   "text": "The ground of the boast: the noun names the thing gloried in rather than the act, a person, a work or a state that is one's boast: the Corinthians and Paul to one another (2Cor 1:14, 1Th 2:19), the testimony of conscience (2Cor 1:12), a ground Paul will not lose (1Cor 9:15), the reason in one's own tested work (Gal 6:4), the hope held fast (Heb 3:6), Egypt as Judah's glory (Isa 20:5).",
+   "basis": "read",
+   "grounds": "something to boast about",
+   "traces": [
+    23638,
+    23640,
+    23645,
+    23665,
+    23666,
+    23667,
+    23682
+   ],
+   "verses": [
+    "1Cor 9:15",
+    "1Cor 9:16",
+    "1Th 2:19",
+    "2Cor 1:12",
+    "2Cor 1:14",
+    "2Cor 5:12",
+    "Gal 6:4",
+    "Heb 3:6",
+    "Isa 20:5"
+   ]
+  },
+  {
+   "observation": 23685,
+   "step": "1.1",
+   "item": "group-definition",
+   "kind": "group",
+   "text": "Magnifying oneself over another: verbs of making great or glorifying oneself, with 'over' or 'against', rendered 'boast': Moab and Ammon over God's people and land (Zep 2:8, Zep 2:10), enemies over a man who slips (Psa 38:16), Edom over Judah (Obd 12), Israel over the Lord and the axe over the hewer (Judg 7:2, Isa 10:15), superiority with jealousy (Jam 3:14), the boastful and the lifted horn (Psa 75:4).",
+   "basis": "read",
+   "grounds": "to magnify oneself",
+   "traces": [
+    23632,
+    23650,
+    23655,
+    23671,
+    23672,
+    23680,
+    23681
+   ],
+   "verses": [
+    "Isa 10:15",
+    "Jam 3:14",
+    "Judg 7:2",
+    "Obd 12",
+    "Psa 38:16",
+    "Psa 75:4",
+    "Zep 2:10",
+    "Zep 2:8"
+   ]
+  },
+  {
+   "observation": 23686,
+   "step": "1.1",
+   "item": "group-definition",
+   "kind": "group",
+   "text": "Boastful talk: words of the mouth named as boasts, where the codes say speech, mouth or empty talk and the context makes them inflated or hollow: the mouth speaking swollen things (Jude 16), Moab's false boasts (Jer 48:30), the sayings people approve (Psa 49:13), the evildoers' speech beside arrogant words (Psa 94:4).",
+   "basis": "read",
+   "grounds": "empty talk, idle talk",
+   "traces": [
+    23634,
+    23635,
+    23649,
+    23654,
+    23670
+   ],
+   "verses": [
+    "Jer 48:30",
+    "Jude 16",
+    "Psa 49:13",
+    "Psa 94:4"
+   ]
+  },
+  {
+   "observation": 23687,
+   "step": "1.1",
+   "item": "group-definition",
+   "kind": "group",
+   "text": "Glorying in God or in what he gives: the boast made in the Lord, his cross or his gift, with gladness and praise: in God continually beside thanks (Psa 44:8), the soul's boast in the Lord (Psa 34:2), knowing the Lord (Jer 9:24), boast in the Lord (1Cor 1:31, 2Cor 10:17), only in the cross (Gal 6:14), the lowly in his exaltation (Jam 1:9), entering into the nations' glory (Isa 61:6).",
+   "basis": "read",
+   "grounds": "to rejoice in, glory in",
+   "traces": [
+    23633,
+    23646,
+    23653,
+    23656,
+    23663,
+    23678,
+    23679
+   ],
+   "verses": [
+    "1Cor 1:31",
+    "2Cor 10:17",
+    "Gal 6:14",
+    "Isa 61:6",
+    "Jam 1:9",
+    "Jer 9:24",
+    "Psa 34:2",
+    "Psa 44:8"
+   ]
+  },
+  {
+   "observation": 23688,
+   "step": "1.2",
+   "item": "strong-enrichment",
+   "kind": "enrichment",
+   "text": "Boasting is borne out by G2744 (to boast, brag about, glory in; proper or improper by its object) with its nouns G2745 and G2746, by G6094 and G4068 (to boast, brag, vaunt oneself; Jam 3:5, 1Cor 13:4) and by H1984H in the Hithpael (to boast, make one's boast; Psa 52:1, Jer 9:23). G2745 adds the thing boasted of where G2746 is the act (1Cor 5:6 beside Rom 3:27). Two codes do not bear the sense out: G5111 is to dare (2Cor 11:21), the boast supplied by the context, and H3588A is the conjunction 'for' at Psa 10:3, not a word of boasting.",
+   "basis": "read",
+   "grounds": "to boast, brag about",
+   "traces": [
+    23683
+   ],
+   "verses": [
+    "1Cor 13:4",
+    "1Cor 1:29",
+    "1Cor 3:21",
+    "1Cor 4:7",
+    "1Cor 5:6",
+    "1Ki 20:11",
+    "2Cor 10:13",
+    "2Cor 10:15",
+    "2Cor 10:16",
+    "2Cor 10:8",
+    "2Cor 11:10",
+    "2Cor 11:12",
+    "2Cor 11:16",
+    "2Cor 11:18",
+    "2Cor 11:21",
+    "2Cor 11:30",
+    "2Cor 12:1",
+    "2Cor 12:5",
+    "2Cor 12:6",
+    "2Cor 12:9",
+    "2Cor 5:12",
+    "2Cor 7:14",
+    "2Cor 8:24",
+    "2Cor 9:2",
+    "2Cor 9:3",
+    "2Th 1:4",
+    "Eph 2:9",
+    "Gal 6:13",
+    "Jam 3:5",
+    "Jam 4:16",
+    "Jer 49:4",
+    "Jer 9:23",
+    "Pro 20:14",
+    "Pro 25:14",
+    "Pro 27:1",
+    "Psa 10:3",
+    "Psa 49:6",
+    "Psa 52:1",
+    "Psa 97:7",
+    "Rom 2:17",
+    "Rom 2:23",
+    "Rom 3:27"
+   ]
+  },
+  {
+   "observation": 23689,
+   "step": "1.2",
+   "item": "strong-enrichment",
+   "kind": "enrichment",
+   "text": "The ground of the boast is borne out by G2745, the thing to boast about, a ground or matter of glorying (1Cor 9:15, Gal 6:4, 2Cor 1:14), with G2746 in the same use where the noun names what is boasted of (2Cor 1:12, 1Th 2:19), and by H8597, beauty, glory, which includes glorying and boasting (Isa 20:5). The Greek nouns name what is gloried in; the Hebrew names its splendour.",
+   "basis": "read",
+   "grounds": "something to boast about",
+   "traces": [
+    23684
+   ],
+   "verses": [
+    "1Cor 9:15",
+    "1Cor 9:16",
+    "1Th 2:19",
+    "2Cor 1:12",
+    "2Cor 1:14",
+    "2Cor 5:12",
+    "Gal 6:4",
+    "Heb 3:6",
+    "Isa 20:5"
+   ]
+  },
+  {
+   "observation": 23690,
+   "step": "1.2",
+   "item": "strong-enrichment",
+   "kind": "enrichment",
+   "text": "Magnifying oneself over another is borne out by H1431 in the Hiphil and Hithpael (to make great, to magnify oneself; Zep 2:8, Psa 38:16), by H6286A in the Hithpael (to glorify oneself, get glory to oneself; Judg 7:2, Isa 10:15) and by G2620 (to boast against, glory over, assume superiority over; Jam 3:14). H6310G is the mouth made great with H1431 at Obd 12. H1984C is to act madly, act like a madman (Psa 75:4): the lexicon gives folly, not magnifying, and the sense rests there on the parallel of the lifted horn.",
+   "basis": "read",
+   "grounds": "to magnify oneself",
+   "traces": [
+    23685
+   ],
+   "verses": [
+    "Isa 10:15",
+    "Jam 3:14",
+    "Judg 7:2",
+    "Obd 12",
+    "Psa 38:16",
+    "Psa 75:4",
+    "Zep 2:10",
+    "Zep 2:8"
+   ]
+  },
+  {
+   "observation": 23691,
+   "step": "1.2",
+   "item": "strong-enrichment",
+   "kind": "enrichment",
+   "text": "Boastful talk is borne out by H0907, empty talk, idle talk, lie (Jer 48:30), by H0559 in the Hithpael, to boast, to act proudly, on a verb of saying (Psa 94:4), and by G5246, swelling, pompous, boastful, with G2980, to speak (Jude 16). H6310I is the mouth as organ of speech (Psa 49:13): the lexicon names speech, and the boast is the ESV's rendering of it.",
+   "basis": "read",
+   "grounds": "empty talk, idle talk",
+   "traces": [
+    23686
+   ],
+   "verses": [
+    "Jer 48:30",
+    "Jude 16",
+    "Psa 49:13",
+    "Psa 94:4"
+   ]
+  },
+  {
+   "observation": 23692,
+   "step": "1.2",
+   "item": "strong-enrichment",
+   "kind": "enrichment",
+   "text": "Glorying in God is borne out by G2744 in its other range, to rejoice in, glory in, rejoice, exult (1Cor 1:31, Gal 6:14, Jam 1:9), and by H1984H in the Piel, to praise, beside the Hithpael to glory, make one's boast (Psa 44:8, Psa 34:2, Jer 9:24). H3235 is to exchange, in the Hithpael to enter into (Isa 61:6): the lexicon does not give boasting, and the sense rests there on the ESV's rendering.",
+   "basis": "read",
+   "grounds": "to rejoice in, glory in",
+   "traces": [
+    23687
+   ],
+   "verses": [
+    "1Cor 1:31",
+    "2Cor 10:17",
+    "Gal 6:14",
+    "Isa 61:6",
+    "Jam 1:9",
+    "Jer 9:24",
+    "Psa 34:2",
+    "Psa 44:8"
+   ]
+  },
+  {
+   "observation": 23693,
+   "step": "2.1",
+   "item": "double-meaning",
+   "kind": "face",
+   "text": "The surface boast carries the codes of boasting proper: G2744 in the New Testament (Rom 2:17, 1Cor 1:31, 2Cor 10:13, Jam 4:16), G4068 (1Cor 13:4) and G2620, boasting against (Jam 3:14); and H1984H in the Hithpael in the Old (Psa 52:1, Jer 9:23, Pro 27:1). These are one face: the word as the act of boasting, its ground named by the preposition that follows (in, of, about, against).",
+   "basis": "read",
+   "grounds": "Let not the wise man boast",
+   "traces": [
+    23683,
+    23685,
+    23687
+   ],
+   "verses": [
+    "1Cor 13:4",
+    "1Cor 1:29",
+    "1Cor 1:31",
+    "1Cor 3:21",
+    "1Cor 4:7",
+    "1Ki 20:11",
+    "2Cor 10:13",
+    "2Cor 10:15",
+    "2Cor 10:17",
+    "2Cor 10:8",
+    "2Cor 11:16",
+    "2Cor 11:18",
+    "2Cor 11:30",
+    "2Cor 12:5",
+    "2Cor 12:6",
+    "2Cor 12:9",
+    "2Cor 5:12",
+    "2Cor 9:2",
+    "2Th 1:4",
+    "Eph 2:9",
+    "Gal 6:13",
+    "Gal 6:14",
+    "Jam 1:9",
+    "Jam 3:14",
+    "Jam 4:16",
+    "Jer 49:4",
+    "Jer 9:23",
+    "Jer 9:24",
+    "Pro 27:1",
+    "Psa 34:2",
+    "Psa 49:6",
+    "Psa 52:1",
+    "Psa 97:7",
+    "Rom 2:17",
+    "Rom 2:23"
+   ]
+  },
+  {
+   "observation": 23694,
+   "step": "2.1",
+   "item": "double-meaning",
+   "kind": "face",
+   "text": "In 2Cor 1:14, 2Cor 5:12 and Gal 6:4 the surface boast carries G2745, in 2Cor 1:12 G2746 and in Isa 20:5 H8597: a noun for the thing gloried in, not the act; Isa 20:5 names a nation as the boast, beside its hope.",
+   "basis": "read",
+   "grounds": "Egypt their boast",
+   "traces": [
+    23684
+   ],
+   "verses": [
+    "2Cor 1:12",
+    "2Cor 1:14",
+    "2Cor 5:12",
+    "Gal 6:4",
+    "Isa 20:5"
+   ]
+  },
+  {
+   "observation": 23695,
+   "step": "2.1",
+   "item": "double-meaning",
+   "kind": "face",
+   "text": "In Psa 38:16, Obd 12, Judg 7:2 and Isa 10:15 the surface boast carries verbs of making great or glorifying oneself (H1431, H6286A) and, at Obd 12, the noun mouth (H6310G) with H1431: the face is a self-magnifying over another, marked by over or against.",
+   "basis": "read",
+   "grounds": "lest Israel boast over me",
+   "traces": [
+    23685
+   ],
+   "verses": [
+    "Isa 10:15",
+    "Judg 7:2",
+    "Obd 12",
+    "Psa 38:16"
+   ]
+  },
+  {
+   "observation": 23696,
+   "step": "2.1",
+   "item": "double-meaning",
+   "kind": "face",
+   "text": "In Psa 94:4 the surface boast carries H0559, a verb of saying (Hithpael): the face is speech about oneself, set beside the arrogant words poured out.",
+   "basis": "read",
+   "grounds": "all the evildoers boast",
+   "traces": [
+    23686
+   ],
+   "verses": [
+    "Psa 94:4"
+   ]
+  },
+  {
+   "observation": 23697,
+   "step": "2.1",
+   "item": "double-meaning",
+   "kind": "face",
+   "text": "In Psa 75:4 the surface boast carries H1984C, the verb of acting madly or foolishly: the face is folly, set in parallel with lifting the horn.",
+   "basis": "read",
+   "grounds": "I say to the boastful",
+   "traces": [
+    23685
+   ],
+   "verses": [
+    "Psa 75:4"
+   ]
+  },
+  {
+   "observation": 23698,
+   "step": "2.1",
+   "item": "double-meaning",
+   "kind": "face",
+   "text": "In Isa 61:6 the surface boast carries H3235, to exchange or to enter into: the face is coming into the nations' glory, which the ESV renders as boasting.",
+   "basis": "read",
+   "grounds": "in their glory you shall boast",
+   "traces": [
+    23687
+   ],
+   "verses": [
+    "Isa 61:6"
+   ]
+  },
+  {
+   "observation": 23699,
+   "step": "2.1",
+   "item": "double-meaning",
+   "kind": "face",
+   "text": "In 2Cor 11:21 the surface boast stands where the code is G5111, to dare, twice: the face is daring, and the boast is supplied by the English from 11:16-18.",
+   "basis": "read",
+   "grounds": "I also dare to boast of",
+   "traces": [
+    23683
+   ],
+   "verses": [
+    "2Cor 11:21"
+   ]
+  },
+  {
+   "observation": 23700,
+   "step": "2.1",
+   "item": "double-meaning",
+   "kind": "face",
+   "text": "The surface boasted carries three codes in three verses: in Psa 44:8 H1984H in the Piel, praise made in God; in Zep 2:10 H1431, a making great over God's people; in 2Cor 11:12 G2744, the opponents' boast in their work. This finding is the face of Psa 44:8, the boast that is praise.",
+   "basis": "read",
+   "grounds": "In God we have boasted continually",
+   "traces": [
+    23687
+   ],
+   "verses": [
+    "Psa 44:8"
+   ]
+  },
+  {
+   "observation": 23701,
+   "step": "2.1",
+   "item": "double-meaning",
+   "kind": "face",
+   "text": "In Zep 2:10 the surface boasted carries H1431, a verb of making great with against: the face of boasted that is self-magnifying over another people, apart from its use in Psa 44:8 and 2Cor 11:12.",
+   "basis": "read",
+   "grounds": "taunted and boasted against the people",
+   "traces": [
+    23685
+   ],
+   "verses": [
+    "Zep 2:10"
+   ]
+  },
+  {
+   "observation": 23702,
+   "step": "2.1",
+   "item": "double-meaning",
+   "kind": "face",
+   "text": "In 2Cor 11:12 the surface boasted carries G2744 as a finite verb the ESV turns into an adjective: the face of boasted that is a claim made for one's own work, apart from Psa 44:8 and Zep 2:10.",
+   "basis": "read",
+   "grounds": "in their boasted mission",
+   "traces": [
+    23683
+   ],
+   "verses": [
+    "2Cor 11:12"
+   ]
+  },
+  {
+   "observation": 23703,
+   "step": "2.1",
+   "item": "double-meaning",
+   "kind": "face",
+   "text": "In Jude 16 the surface boasters spans two codes in one verse: G2980, the verb to speak with the mouth as subject, and G5246, the swollen things spoken. The English noun for persons stands on a Greek clause about inflated speech; the surface has no other verse.",
+   "basis": "read",
+   "grounds": "they are loud-mouthed boasters",
+   "traces": [
+    23686
+   ],
+   "verses": [
+    "Jude 16"
+   ]
+  },
+  {
+   "observation": 23704,
+   "step": "2.1",
+   "item": "double-meaning",
+   "kind": "face",
+   "text": "The surface boasting carries the noun of the thing gloried in, G2745 in 1Cor 9:15, 1Cor 9:16 and Heb 3:6 and G2746 in 1Th 2:19: a ground for boasting, the boasting held with hope, the crown of boasting. This is its face as the matter boasted of.",
+   "basis": "read",
+   "grounds": "no ground for boasting",
+   "traces": [
+    23684
+   ],
+   "verses": [
+    "1Cor 9:15",
+    "1Cor 9:16",
+    "1Th 2:19",
+    "Heb 3:6"
+   ]
+  },
+  {
+   "observation": 23705,
+   "step": "2.1",
+   "item": "double-meaning",
+   "kind": "face",
+   "text": "The surface boasting carries the noun of the act, G2746 in Rom 3:27, 2Cor 7:14, 2Cor 8:24, 2Cor 11:10 and Jam 4:16, and G2745 in the same use in 1Cor 5:6 and 2Cor 9:3: boasting as something made, said and judged. This is its face as the act.",
+   "basis": "read",
+   "grounds": "All such boasting is evil",
+   "traces": [
+    23683
+   ],
+   "verses": [
+    "1Cor 5:6",
+    "2Cor 11:10",
+    "2Cor 7:14",
+    "2Cor 8:24",
+    "2Cor 9:3",
+    "Jam 4:16",
+    "Rom 3:27"
+   ]
+  },
+  {
+   "observation": 23706,
+   "step": "2.1",
+   "item": "double-meaning",
+   "kind": "face",
+   "text": "In 2Cor 10:16 and 2Cor 12:1 the surface boasting carries the verb G2744 as an infinitive (aorist and present): the face of boasting as Paul's own act, refused in another's area and continued under necessity.",
+   "basis": "read",
+   "grounds": "I must go on boasting",
+   "traces": [
+    23683
+   ],
+   "verses": [
+    "2Cor 10:16",
+    "2Cor 12:1"
+   ]
+  },
+  {
+   "observation": 23707,
+   "step": "2.1",
+   "item": "double-meaning",
+   "kind": "face",
+   "text": "The surface boasts carries H1984H in Psa 10:3, Pro 20:14, Pro 25:14 and Jer 9:24, the Hebrew verb of boasting in Piel and Hithpael: the face of boasts as the act, of craving, of a bargain, of a gift not given, and of knowing the Lord.",
+   "basis": "read",
+   "grounds": "boasts of a gift he does not give",
+   "traces": [
+    23683,
+    23687
+   ],
+   "verses": [
+    "Jer 9:24",
+    "Pro 20:14",
+    "Pro 25:14",
+    "Psa 10:3"
+   ]
+  },
+  {
+   "observation": 23708,
+   "step": "2.1",
+   "item": "double-meaning",
+   "kind": "face",
+   "text": "In Psa 10:3 the surface boasts is also stored on H3588A, the conjunction for or that, which opens the verse: a word of no boasting meaning carried by the surface, a data error in the tagging of the surface (data-error).",
+   "basis": "read",
+   "grounds": "the wicked boasts of the desires",
+   "traces": [
+    23683
+   ],
+   "verses": [
+    "Psa 10:3"
+   ]
+  },
+  {
+   "observation": 23709,
+   "step": "2.1",
+   "item": "double-meaning",
+   "kind": "face",
+   "text": "In Psa 49:13 and Jer 48:30 the surface boasts carries nouns of speech, H6310I mouth and H0907 empty talk: the face of boasts as words said, approved by those after them or declared false.",
+   "basis": "read",
+   "grounds": "people approve of their boasts",
+   "traces": [
+    23686
+   ],
+   "verses": [
+    "Jer 48:30",
+    "Psa 49:13"
+   ]
+  },
+  {
+   "observation": 23710,
+   "step": "2.1",
+   "item": "double-meaning",
+   "kind": "face",
+   "text": "In Zep 2:8 the surface boasts carries H1431, the verb of making great with against: the face of boasts as self-magnifying over the land of another people.",
+   "basis": "read",
+   "grounds": "made boasts against their territory",
+   "traces": [
+    23685
+   ],
+   "verses": [
+    "Zep 2:8"
+   ]
+  }
+ ],
+ "verses": [
+  {
+   "reference": "Psa 94:4",
+   "text": "They pour out their arrogant words; all the evildoers boast."
+  },
+  {
+   "reference": "Jam 3:14",
+   "text": "But if you have bitter jealousy and selfish ambition in your hearts, do not boast and be false to the truth."
+  },
+  {
+   "reference": "Psa 10:3",
+   "text": "For the wicked boasts of the desires of his soul, and the one greedy for gain curses and renounces the Lord."
+  },
+  {
+   "reference": "Jer 48:30",
+   "text": "I know his insolence, declares the Lord; his boasts are false, his deeds are false."
+  },
+  {
+   "reference": "2Th 1:4",
+   "text": "Therefore we ourselves boast about you in the churches of God for your steadfastness and faith in all your persecutions and in the afflictions that you are enduring."
+  },
+  {
+   "reference": "Obd 12",
+   "text": "But do not gloat over the day of your brother in the day of his misfortune; do not rejoice over the people of Judah in the day of their ruin; do not boast in the day of distress."
+  },
+  {
+   "reference": "2Cor 11:10",
+   "text": "As the truth of Christ is in me, this boasting of mine will not be silenced in the regions of Achaia."
+  },
+  {
+   "reference": "2Cor 12:9",
+   "text": "But he said to me, “ My grace is sufficient for you, for my power is made perfect in weakness.” Therefore I will boast all the more gladly of my weaknesses, so that the power of Christ may rest upon me."
+  },
+  {
+   "reference": "Gal 6:14",
+   "text": "But far be it from me to boast except in the cross of our Lord Jesus Christ, by which the world has been crucified to me, and I to the world."
+  },
+  {
+   "reference": "Heb 3:6",
+   "text": "but Christ is faithful over God’s house as a son. And we are his house, if indeed we hold fast our confidence and our boasting in our hope."
+  },
+  {
+   "reference": "Isa 20:5",
+   "text": "Then they shall be dismayed and ashamed because of Cush their hope and of Egypt their boast."
+  },
+  {
+   "reference": "Jam 4:16",
+   "text": "As it is, you boast in your arrogance. All such boasting is evil."
+  },
+  {
+   "reference": "Rom 2:17",
+   "text": "But if you call yourself a Jew and rely on the law and boast in God"
+  },
+  {
+   "reference": "Rom 2:23",
+   "text": "You who boast in the law dishonor God by breaking the law."
+  },
+  {
+   "reference": "1Cor 1:29",
+   "text": "so that no human being might boast in the presence of God."
+  },
+  {
+   "reference": "1Cor 1:31",
+   "text": "so that, as it is written, “Let the one who boasts, boast in the Lord.”"
+  },
+  {
+   "reference": "1Cor 3:21",
+   "text": "So let no one boast in men. For all things are yours,"
+  },
+  {
+   "reference": "1Cor 4:7",
+   "text": "For who sees anything different in you? What do you have that you did not receive? If then you received it, why do you boast as if you did not receive it?"
+  },
+  {
+   "reference": "2Cor 5:12",
+   "text": "We are not commending ourselves to you again but giving you cause to boast about us, so that you may be able to answer those who boast about outward appearance and not about what is in the heart."
+  },
+  {
+   "reference": "2Cor 7:14",
+   "text": "For whatever boasts I made to him about you, I was not put to shame. But just as everything we said to you was true, so also our boasting before Titus has proved true."
+  },
+  {
+   "reference": "2Cor 9:2",
+   "text": "for I know your readiness, of which I boast about you to the people of Macedonia, saying that Achaia has been ready since last year. And your zeal has stirred up most of them."
+  },
+  {
+   "reference": "2Cor 10:8",
+   "text": "For even if I boast a little too much of our authority, which the Lord gave for building you up and not for destroying you, I will not be ashamed."
+  },
+  {
+   "reference": "2Cor 10:13",
+   "text": "But we will not boast beyond limits, but will boast only with regard to the area of influence God assigned to us, to reach even to you."
+  },
+  {
+   "reference": "2Cor 10:15",
+   "text": "We do not boast beyond limit in the labors of others. But our hope is that as your faith increases, our area of influence among you may be greatly enlarged,"
+  },
+  {
+   "reference": "2Cor 10:16",
+   "text": "so that we may preach the gospel in lands beyond you, without boasting of work already done in another’s area of influence."
+  },
+  {
+   "reference": "2Cor 10:17",
+   "text": "“Let the one who boasts, boast in the Lord.”"
+  },
+  {
+   "reference": "2Cor 11:12",
+   "text": "And what I am doing I will continue to do, in order to undermine the claim of those who would like to claim that in their boasted mission they work on the same terms as we do."
+  },
+  {
+   "reference": "2Cor 11:16",
+   "text": "I repeat, let no one think me foolish. But even if you do, accept me as a fool, so that I too may boast a little."
+  },
+  {
+   "reference": "2Cor 11:18",
+   "text": "Since many boast according to the flesh, I too will boast."
+  },
+  {
+   "reference": "2Cor 11:30",
+   "text": "If I must boast, I will boast of the things that show my weakness."
+  },
+  {
+   "reference": "2Cor 12:1",
+   "text": "I must go on boasting. Though there is nothing to be gained by it, I will go on to visions and revelations of the Lord."
+  },
+  {
+   "reference": "2Cor 12:5",
+   "text": "On behalf of this man I will boast, but on my own behalf I will not boast, except of my weaknesses —"
+  },
+  {
+   "reference": "2Cor 12:6",
+   "text": "though if I should wish to boast, I would not be a fool, for I would be speaking the truth; but I refrain from it, so that no one may think more of me than he sees in me or hears from me."
+  },
+  {
+   "reference": "Gal 6:13",
+   "text": "For even those who are circumcised do not themselves keep the law, but they desire to have you circumcised that they may boast in your flesh."
+  },
+  {
+   "reference": "Eph 2:9",
+   "text": "not a result of works, so that no one may boast."
+  },
+  {
+   "reference": "Jam 1:9",
+   "text": "Let the lowly brother boast in his exaltation,"
+  },
+  {
+   "reference": "1Cor 5:6",
+   "text": "Your boasting is not good. Do you not know that a little leaven leavens the whole lump?"
+  },
+  {
+   "reference": "1Cor 9:15",
+   "text": "But I have made no use of any of these rights, nor am I writing these things to secure any such provision. For I would rather die than have anyone deprive me of my ground for boasting."
+  },
+  {
+   "reference": "1Cor 9:16",
+   "text": "For if I preach the gospel, that gives me no ground for boasting. For necessity is laid upon me. Woe to me if I do not preach the gospel!"
+  },
+  {
+   "reference": "2Cor 1:14",
+   "text": "just as you did partially understand us — that on the day of our Lord Jesus you will boast of us as we will boast of you."
+  },
+  {
+   "reference": "2Cor 9:3",
+   "text": "But I am sending the brothers so that our boasting about you may not prove empty in this matter, so that you may be ready, as I said you would be."
+  },
+  {
+   "reference": "Gal 6:4",
+   "text": "But let each one test his own work, and then his reason to boast will be in himself alone and not in his neighbor."
+  },
+  {
+   "reference": "Rom 3:27",
+   "text": "Then what becomes of our boasting? It is excluded. By what kind of law? By a law of works? No, but by the law of faith."
+  },
+  {
+   "reference": "2Cor 1:12",
+   "text": "For our boast is this, the testimony of our conscience, that we behaved in the world with simplicity and godly sincerity, not by earthly wisdom but by the grace of God, and supremely so toward you."
+  },
+  {
+   "reference": "2Cor 8:24",
+   "text": "So give proof before the churches of your love and of our boasting about you to these men."
+  },
+  {
+   "reference": "1Th 2:19",
+   "text": "For what is our hope or joy or crown of boasting before our Lord Jesus at his coming? Is it not you?"
+  },
+  {
+   "reference": "2Cor 11:21",
+   "text": "To my shame, I must say, we were too weak for that! But whatever anyone else dares to boast of —I am speaking as a fool — I also dare to boast of that."
+  },
+  {
+   "reference": "1Cor 13:4",
+   "text": "Love is patient and kind; love does not envy or boast; it is not arrogant"
+  },
+  {
+   "reference": "Jude 16",
+   "text": "These are grumblers, malcontents, following their own sinful desires; they are loud-mouthed boasters, showing favoritism to gain advantage."
+  },
+  {
+   "reference": "Jam 3:5",
+   "text": "So also the tongue is a small member, yet it boasts of great things. How great a forest is set ablaze by such a small fire!"
+  },
+  {
+   "reference": "Psa 38:16",
+   "text": "For I said, “Only let them not rejoice over me, who boast against me when my foot slips!”"
+  },
+  {
+   "reference": "Isa 10:15",
+   "text": "Shall the axe boast over him who hews with it, or the saw magnify itself against him who wields it? As if a rod should wield him who lifts it, or as if a staff should lift him who is not wood!"
+  },
+  {
+   "reference": "Zep 2:8",
+   "text": "“I have heard the taunts of Moab and the revilings of the Ammonites, how they have taunted my people and made boasts against their territory."
+  },
+  {
+   "reference": "Zep 2:10",
+   "text": "This shall be their lot in return for their pride, because they taunted and boasted against the people of the Lord of hosts."
+  },
+  {
+   "reference": "1Ki 20:11",
+   "text": "And the king of Israel answered, “ Tell him, ‘Let not him who straps on his armor boast himself as he who takes it off.’”"
+  },
+  {
+   "reference": "Psa 75:4",
+   "text": "I say to the boastful, ‘Do not boast,’ and to the wicked, ‘Do not lift up your horn;"
+  },
+  {
+   "reference": "Psa 34:2",
+   "text": "My soul makes its boast in the Lord; let the humble hear and be glad."
+  },
+  {
+   "reference": "Psa 44:8",
+   "text": "In God we have boasted continually, and we will give thanks to your name forever. Selah"
+  },
+  {
+   "reference": "Psa 49:6",
+   "text": "those who trust in their wealth and boast of the abundance of their riches?"
+  },
+  {
+   "reference": "Psa 52:1",
+   "text": "To the choirmaster. A Maskil of David, when Doeg, the Edomite, came and told Saul, “ David has come to the house of Ahimelech.” Why do you boast of evil, O mighty man? The steadfast love of God endures all the day."
+  },
+  {
+   "reference": "Psa 97:7",
+   "text": "All worshipers of images are put to shame, who make their boast in worthless idols; worship him, all you gods!"
+  },
+  {
+   "reference": "Pro 20:14",
+   "text": "“ Bad, bad,” says the buyer, but when he goes away, then he boasts."
+  },
+  {
+   "reference": "Pro 25:14",
+   "text": "Like clouds and wind without rain is a man who boasts of a gift he does not give."
+  },
+  {
+   "reference": "Pro 27:1",
+   "text": "Do not boast about tomorrow, for you do not know what a day may bring."
+  },
+  {
+   "reference": "Jer 9:23",
+   "text": "Thus says the Lord: “Let not the wise man boast in his wisdom, let not the mighty man boast in his might, let not the rich man boast in his riches,"
+  },
+  {
+   "reference": "Jer 9:24",
+   "text": "but let him who boasts boast in this, that he understands and knows me, that I am the Lord who practices steadfast love, justice, and righteousness in the earth. For in these things I delight, declares the Lord.”"
+  },
+  {
+   "reference": "Jer 49:4",
+   "text": "Why do you boast of your valleys, O faithless daughter, who trusted in her treasures, saying, ‘ Who will come against me?’"
+  },
+  {
+   "reference": "Isa 61:6",
+   "text": "but you shall be called the priests of the Lord; they shall speak of you as the ministers of our God; you shall eat the wealth of the nations, and in their glory you shall boast."
+  },
+  {
+   "reference": "Judg 7:2",
+   "text": "The Lord said to Gideon, “The people with you are too many for me to give the Midianites into their hand, lest Israel boast over me, saying, ‘My own hand has saved me.’"
+  },
+  {
+   "reference": "Psa 49:13",
+   "text": "This is the path of those who have foolish confidence; yet after them people approve of their boasts. Selah"
+  }
+ ],
+ "answer": {
+  "command": "ReadEvidence",
+  "collection": "boast",
+  "subgroup": "boasting",
+  "observations": [
+   {
+    "observation": 23671,
+    "verdict": "true",
+    "why": "Psa 38:16 who boast against me when my foot slips (H1431, Hiphil perfect); Obd 12 do not boast in the day of distress, Edom addressed over Judah.",
+    "actions": []
+   },
+   {
+    "observation": 23672,
+    "verdict": "true",
+    "why": "Psa 75:4: H1984C is to act madly or foolishly; the verse says to the boastful do not boast, and to the wicked do not lift up your horn.",
+    "actions": []
+   },
+   {
+    "observation": 23673,
+    "verdict": "true",
+    "why": "1Ki 20:11 let not him who straps on his armour boast as he who takes it off; Pro 27:1 do not boast about tomorrow, you do not know; both negated jussives (HVtj).",
+    "actions": []
+   },
+   {
+    "observation": 23674,
+    "verdict": "true",
+    "why": "Jer 9:23 forbids three boasts, the wise man in his wisdom, the mighty in his might, the rich in his riches; each ground is named as his own.",
+    "actions": []
+   },
+   {
+    "observation": 23675,
+    "verdict": "true",
+    "why": "Psa 49:6 those who trust in their wealth and boast of the abundance of their riches; Jer 49:4 boast of your valleys, faithless daughter, who trusted in her treasures, who will come against me.",
+    "actions": []
+   },
+   {
+    "observation": 23676,
+    "verdict": "true",
+    "why": "Psa 52:1 why do you boast of evil, O mighty man? The steadfast love of God endures all the day.",
+    "actions": []
+   },
+   {
+    "observation": 23677,
+    "verdict": "true",
+    "why": "Psa 97:7 all worshipers of images are put to shame, who make their boast in worthless idols (participle).",
+    "actions": []
+   },
+   {
+    "observation": 23678,
+    "verdict": "true",
+    "why": "Psa 34:2 my soul makes its boast in the Lord, let the humble hear and be glad; Jer 9:24 boast in this, that he understands and knows me.",
+    "actions": []
+   },
+   {
+    "observation": 23679,
+    "verdict": "true",
+    "why": "Isa 61:6: H3235 is to exchange, Hithpael to enter into; the ESV renders in their glory you shall boast; both readings are stated as open and the choice marked I read.",
+    "actions": []
+   },
+   {
+    "observation": 23680,
+    "verdict": "true",
+    "why": "Judg 7:2 lest Israel boast over me, saying my own hand has saved me; Isa 10:15 shall the axe boast over him who hews with it; H6286A Hithpael, to glorify oneself.",
+    "actions": []
+   },
+   {
+    "observation": 23681,
+    "verdict": "true",
+    "why": "Obd 12: H6310G mouth and H1431 together are rendered do not boast, in the day of distress, after gloat and rejoice over Judah.",
+    "actions": []
+   },
+   {
+    "observation": 23682,
+    "verdict": "true",
+    "why": "Isa 20:5: H8597 is beauty, glory; they shall be dismayed and ashamed because of Cush their hope and Egypt their boast.",
+    "actions": []
+   },
+   {
+    "observation": 23683,
+    "verdict": "true",
+    "why": "The sense gathers the S1 readings whose meaning in context is boasting of a claimed ground, as each verse named shows; its grounds are words of the G2744 meaning range.",
+    "actions": []
+   },
+   {
+    "observation": 23684,
+    "verdict": "true",
+    "why": "The sense gathers the readings where the noun names the thing gloried in (1Cor 9:15, 2Cor 1:12, 2Cor 1:14, Gal 6:4, Heb 3:6, Isa 20:5, 1Th 2:19), as each verse shows.",
+    "actions": []
+   },
+   {
+    "observation": 23685,
+    "verdict": "true",
+    "why": "The sense gathers verbs of making great or glorifying oneself over another (Zep 2:8, 2:10, Psa 38:16, Obd 12, Judg 7:2, Isa 10:15) with Jam 3:14 and Psa 75:4, as each verse shows.",
+    "actions": []
+   },
+   {
+    "observation": 23686,
+    "verdict": "true",
+    "why": "The sense gathers speech named as boasts (Jude 16, Jer 48:30, Psa 49:13, Psa 94:4); each code is a word of speech or empty talk, as stated.",
+    "actions": []
+   },
+   {
+    "observation": 23687,
+    "verdict": "repair",
+    "why": "The definition says the boast is made with gladness and praise; gladness is in Psa 34:2 and thanks in Psa 44:8, but Isa 61:6, Gal 6:14, 1Cor 1:31 and 2Cor 10:17 do not state it, so the definition says more than its verses show.",
+    "actions": [
+     {
+      "action": "restate",
+      "oid": 23687,
+      "new_text": "Glorying in God or in what he gives: the boast made in the Lord, his cross or his gift: in God continually beside thanks (Psa 44:8), the soul's boast in the Lord with the humble glad (Psa 34:2), knowing the Lord (Jer 9:24), boast in the Lord (1Cor 1:31, 2Cor 10:17), only in the cross (Gal 6:14), the lowly in his exaltation (Jam 1:9), entering into the nations' glory (Isa 61:6).",
+      "checked": "Psa 44:8, Psa 34:2, Jer 9:24, 1Cor 1:31, 2Cor 10:17, Gal 6:14, Jam 1:9, Isa 61:6 as they stand in the verse table; G2744 meaning range (to rejoice in, glory in).",
+      "reason": "Gladness and praise stated for all its verses; restated so each is named only where its verse says it."
+     }
+    ]
+   },
+   {
+    "observation": 23688,
+    "verdict": "true",
+    "why": "Each code is quoted from its lexicon entry (G2744, G2745, G2746, G6094, G4068, H1984H Hithpael), and the two codes that do not bear out boasting (G5111 dare, H3588A for) are named as such.",
+    "actions": []
+   },
+   {
+    "observation": 23689,
+    "verdict": "true",
+    "why": "G2745 is something to boast about, a ground or matter of glorying; G2746 boasting, glorying in; H8597 beauty, glory, glorying; the verses named use them for the thing gloried in.",
+    "actions": []
+   },
+   {
+    "observation": 23690,
+    "verdict": "true",
+    "why": "H1431 Hiphil and Hithpael (magnify oneself), H6286A Hithpael (glorify oneself), G2620 (glory over, assume superiority over) are quoted from the lexicon; H1984C is named as acting madly, not magnifying.",
+    "actions": []
+   },
+   {
+    "observation": 23691,
+    "verdict": "true",
+    "why": "H0907 empty talk, idle talk, lie; H0559 Hithpael to boast, to act proudly; G5246 swelling, pompous, boastful; G2980 to speak; H6310I mouth: each as the lexicon gives it.",
+    "actions": []
+   },
+   {
+    "observation": 23692,
+    "verdict": "true",
+    "why": "G2744 to rejoice in, glory in; H1984H Piel to praise, Hithpael to glory; H3235 to exchange, enter into, named as not giving boasting: each as the lexicon gives it.",
+    "actions": []
+   },
+   {
+    "observation": 23693,
+    "verdict": "true",
+    "why": "The verses named carry the surface boast on G2744, G4068, G2620 and H1984H, each the act of boasting with a preposition naming its ground.",
+    "actions": []
+   },
+   {
+    "observation": 23694,
+    "verdict": "true",
+    "why": "2Cor 1:14, 2Cor 5:12 and Gal 6:4 carry boast on G2745, 2Cor 1:12 on G2746, Isa 20:5 on H8597 (Egypt their boast beside Cush their hope).",
+    "actions": []
+   },
+   {
+    "observation": 23695,
+    "verdict": "true",
+    "why": "Psa 38:16 and Obd 12 carry boast on H1431, Judg 7:2 and Isa 10:15 on H6286A, Obd 12 also on H6310G; each has over or against.",
+    "actions": []
+   },
+   {
+    "observation": 23696,
+    "verdict": "true",
+    "why": "Psa 94:4 carries boast on H0559 in the Hithpael, beside they pour out their arrogant words.",
+    "actions": []
+   },
+   {
+    "observation": 23697,
+    "verdict": "true",
+    "why": "Psa 75:4 carries boast on H1984C (act madly), beside do not lift up your horn.",
+    "actions": []
+   },
+   {
+    "observation": 23698,
+    "verdict": "true",
+    "why": "Isa 61:6 carries boast on H3235 (exchange, enter into), after in their glory.",
+    "actions": []
+   },
+   {
+    "observation": 23699,
+    "verdict": "true",
+    "why": "2Cor 11:21 carries boast on G5111, to dare, twice, with I am speaking as a fool between.",
+    "actions": []
+   },
+   {
+    "observation": 23700,
+    "verdict": "true",
+    "why": "The surface boasted is on H1984H in Psa 44:8, H1431 in Zep 2:10 and G2744 in 2Cor 11:12; Psa 44:8 sets it beside thanks to God's name.",
+    "actions": []
+   },
+   {
+    "observation": 23701,
+    "verdict": "true",
+    "why": "Zep 2:10 carries boasted on H1431 with against the people of the Lord.",
+    "actions": []
+   },
+   {
+    "observation": 23702,
+    "verdict": "true",
+    "why": "2Cor 11:12 carries boasted on G2744 (V-PNI-3P), a finite verb rendered as an adjective on mission.",
+    "actions": []
+   },
+   {
+    "observation": 23703,
+    "verdict": "true",
+    "why": "Jude 16 carries boasters on G2980 (speak) and G5246 (swollen things); the surface has no other verse in the subgroup.",
+    "actions": []
+   },
+   {
+    "observation": 23704,
+    "verdict": "true",
+    "why": "1Cor 9:15, 9:16 and Heb 3:6 carry boasting on G2745, 1Th 2:19 on G2746, each naming the ground or matter boasted of.",
+    "actions": []
+   },
+   {
+    "observation": 23705,
+    "verdict": "true",
+    "why": "Rom 3:27, 2Cor 7:14, 8:24, 11:10, Jam 4:16 carry boasting on G2746, 1Cor 5:6 and 2Cor 9:3 on G2745, each the boast as made or judged.",
+    "actions": []
+   },
+   {
+    "observation": 23706,
+    "verdict": "true",
+    "why": "2Cor 10:16 (V-ADN) and 2Cor 12:1 (V-PNN) carry boasting on the infinitive of G2744.",
+    "actions": []
+   },
+   {
+    "observation": 23707,
+    "verdict": "true",
+    "why": "Psa 10:3 (Piel), Pro 20:14, Pro 25:14 and Jer 9:24 (Hithpael) carry boasts on H1984H, each as named.",
+    "actions": []
+   },
+   {
+    "observation": 23708,
+    "verdict": "true",
+    "why": "Psa 10:3 has a second occurrence of the surface boasts stored on H3588A, the conjunction for, which opens the verse; the observation flags it as a data error and does not fix it (RG-16).",
+    "actions": []
+   },
+   {
+    "observation": 23709,
+    "verdict": "true",
+    "why": "Psa 49:13 carries boasts on H6310I (mouth), Jer 48:30 on H0907 (empty talk); approved after them, and declared false.",
+    "actions": []
+   },
+   {
+    "observation": 23710,
+    "verdict": "true",
+    "why": "Zep 2:8 carries boasts on H1431 with against their territory.",
+    "actions": []
+   }
+  ]
+ },
+ "measured": {
+  "package_chars": 42228,
+  "seconds": 0.03
+ }
+}

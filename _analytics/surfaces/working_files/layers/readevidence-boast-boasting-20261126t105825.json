@@ -1,0 +1,1098 @@
+{
+ "command": "ReadEvidence",
+ "collection": "boast",
+ "subgroup": "boasting",
+ "step": "2.1",
+ "item": "evidence-validation",
+ "made": "2026-11-26T10:58:25Z",
+ "batch": {
+  "observations": 40,
+  "left_after_this": 62,
+  "evidence_in_scope": 263,
+  "observations_in_scope": 273
+ },
+ "code_checks": {
+  "passes": true,
+  "findings": {
+   "unmarked": [],
+   "no_node": [],
+   "word_missing": [],
+   "traced_dead": [],
+   "duplicate_text": [],
+   "b1_not_traced_by_a_sense": [],
+   "sense_not_traced_by_2_1": [],
+   "older_open": []
+  }
+ },
+ "instruction": {
+  "what": "The evidence validation (B5) of one subgroup, after its sweep, the gate before 3.1: the code checks of its observations (shown in `code_checks`), and the reading of every evidence observation of the subgroup (its own of S1 to 2.1, and the older ones on its occurrences kept as evidence) for whether it is true, founded and coherent with the others. Inner being is not judged here; the two validations are never run together.",
+  "read": [
+   "Read the code checks first: a failing check names observations to repair (unmarked, no node, a word node missing a column without its reason, a trace to a deleted observation, two of one text, a B1 observation no sense traces, a sense the 2.1 observations on its occurrences do not trace, an older observation left open).",
+   "Take one observation at a time (`observations`, in the order of the steps): its text, basis and grounds against its verses (`verses`) and the observations it traces. Is it true of those verses? Does it say more than they show? Does it contradict another observation of the subgroup?"
+  ],
+  "write": [
+   "Fill `answer.observations`, one entry for each observation of the package: verdict true, with `why` (what in the verses and the data bears it out); or verdict repair, with `why` (what is wrong) and `actions`: the actions of the validation that repair it (cfg_setting validate.reading actions, each with its parameters, for example {\"action\": \"restate\", \"oid\": id, \"new_text\": ..., \"checked\": ..., \"reason\": ...}, or delete_neither, complete_node, add_trace).",
+   "A repair is checked as it is written; an observation that cannot be made true is deleted with its reason.",
+   "Then: Collection-Build.ps1 -Action RecordEvidence -File <the answer file> (-Check to preview), and ReadEvidence again until every evidence observation is read; the gate passes when all are read and the code checks pass."
+  ],
+  "keep": [
+   {
+    "rule": "VA-01 a-sheet-is-one-checked-transaction",
+    "text": "A sheet of validation actions is checked whole (every action named, its parameters complete) and written in one transaction: any action the tables refuse refuses the whole sheet and nothing is kept. -Check runs every action and rolls back. Every change is kept in ib_observation_change with its reason (RW-01); nothing is physically deleted."
+   },
+   {
+    "rule": "VA-02 repair-first-and-every-finding-acted-on",
+    "text": "A finding of the validation is repaired first: a wording that is untrue or stronger than its verse is restated and the restatement checked against the base data; a node missing a column is completed, or the reason the data cannot give it is recorded; a duplicate is consolidated; a node is deleted only when another live node carries its occurrence or it supports no finding of its observation. A finding is left open only when a named collection's validation will touch the observation: the deferral to that collection and the finding are recorded, and the check accepts it as deferred. A finding with no named owner is closed in the validation."
+   },
+   {
+    "rule": "VA-03 consumption-is-verified-before-deletion",
+    "text": "An older observation is deleted as consumed only when live observations carry its meaning: every word occurrence of it is on a live node of a carrier or named as not carried with its reason, the mapping is stated in words (what the old says, which carrier states each part), the traces to it are re-pointed or replaced, and the consumption is kept as `consumed_by`. An observation that holds more than one finding is split first."
+   },
+   {
+    "rule": "VA-04 neither-evidence-nor-inner-being-is-deleted",
+    "text": "An observation that is neither evidence nor inner being contributes nothing to the purposes of the observations (researcher, 2026-11-22): it is commented with its reason and the word occurrences no other live observation holds, then deleted. An observation already marked, or one another observation traces, is not deleted this way."
+   },
+   {
+    "rule": "VA-05 the-marker-follows-content-not-stage",
+    "text": "Evidence states what the data are or show, tied to a verse. Inner being states how something works in the inner being, based on evidence, a building block of the stage 5 claims. The marker (ib_observation.nature) follows the content and purpose of the observation, never its stage (RS-04): an observation of any stage may be inner being when it traces to evidence. One that states both is split. The marker is set when the observation is created, by the item that is answered (cfg_setting layer.reading items.<item>.nature); a finding file never sets it; the validation changes it only where the content shows the item's nature does not hold."
+   },
+   {
+    "rule": "VA-06 evidence-validation-gates-inner-being-validation",
+    "text": "The validation runs in two layers, never concurrently: evidence first, then inner being. The inner-being layer is judged only when the evidence layer passes (every in-scope observation marked, none without a live node, no word node missing a required column without its reason, no live trace to a deleted observation, no two of one meaning). A later evidence change reopens only the inner-being rows it touches. In the build this gate is: step 3.1 does not open before the evidence layer passes, and step 3.3 does not close before both layers pass (cfg_setting layer.reading open_gate and closing_gate)."
+   },
+   {
+    "rule": "RW-01 changed-only-by-reading",
+    "text": "No observation is changed except by a reading, and every change is recorded with its reason. An observation no longer supported by the verse is soft-deleted, with the reason."
+   },
+   {
+    "rule": "RW-03 no-duplicates-multi-node",
+    "text": "One observation per finding: the same description is never written twice. Applied to another verse, word or scope it gains a node on the existing observation."
+   },
+   {
+    "rule": "RW-04 concise-verse-specific",
+    "text": "Observation text is concise and tied to this verse's content, never a restatement of the word's dictionary sense. A transliteration is never given without its gloss."
+   },
+   {
+    "rule": "RW-06 resolved-fresh-on-evidence",
+    "text": "Verse references are resolved fresh at write time, never taken from the text written. Relations are recorded only on evidence."
+   },
+   {
+    "rule": "RW-11 missing-is-named",
+    "text": "Missing data in the base extract is named as a gap, never substituted from memory or outside knowledge."
+   }
+  ],
+  "not_in_this_read": ""
+ },
+ "observations": [
+  {
+   "observation": 23791,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In 1Cor 13:4 envy (jealous) stands two words before boast, joined by or under one not: envy and boasting are denied of love together.",
+   "basis": "read",
+   "grounds": "love does not envy or boast",
+   "traces": [
+    23683
+   ],
+   "verses": [
+    "1Cor 13:4"
+   ]
+  },
+  {
+   "observation": 23792,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In Jam 3:14 jealousy (jealous) stands seven words before boast, qualified by bitter, in the condition under which the boast is forbidden.",
+   "basis": "read",
+   "grounds": "if you have bitter jealousy",
+   "traces": [
+    23685
+   ],
+   "verses": [
+    "Jam 3:14"
+   ]
+  },
+  {
+   "observation": 23793,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In 2Cor 8:24 proof (justify) stands seven words before boasting and governs it with love: the Corinthians are to give proof of their love and of Paul's boast about them.",
+   "basis": "read",
+   "grounds": "So give proof before the churches",
+   "traces": [
+    23683
+   ],
+   "verses": [
+    "2Cor 8:24"
+   ]
+  },
+  {
+   "observation": 23794,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In Pro 27:1 know (know) stands four words after boast, negated, in the reason clause: the boast about tomorrow is forbidden because the day is not known.",
+   "basis": "read",
+   "grounds": "for you do not know what a day may bring",
+   "traces": [
+    23683
+   ],
+   "verses": [
+    "Pro 27:1"
+   ]
+  },
+  {
+   "observation": 23795,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In Jer 9:24 knows (know) stands three words after the boast as its content: knowing the Lord is what the boast is to be in.",
+   "basis": "read",
+   "grounds": "that he understands and knows me",
+   "traces": [
+    23687
+   ],
+   "verses": [
+    "Jer 9:24"
+   ]
+  },
+  {
+   "observation": 23796,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In Jer 48:30 and 2Cor 9:2 know (know) opens the verse before the boast, the speaker's own knowing: the Lord knows Moab's insolence and declares its boasts false (Jer 48:30); Paul knows the Corinthians' readiness, of which he boasts (2Cor 9:2).",
+   "basis": "read",
+   "grounds": "I know his insolence",
+   "traces": [
+    23683,
+    23686
+   ],
+   "verses": [
+    "2Cor 9:2",
+    "Jer 48:30"
+   ]
+  },
+  {
+   "observation": 23797,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In Rom 3:27 and Eph 2:9 works (labor) stand before or after the boast as what does not ground it: a law of works does not exclude boasting, faith does (Rom 3:27); salvation is not a result of works, so no one boasts (Eph 2:9).",
+   "basis": "read",
+   "grounds": "not a result of works",
+   "traces": [
+    23683
+   ],
+   "verses": [
+    "Eph 2:9",
+    "Rom 3:27"
+   ]
+  },
+  {
+   "observation": 23798,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In 2Cor 10:15 and 2Cor 11:12 labour or work (labor) stands next to the boast as the ground claimed: others' labours, which Paul will not boast in (10:15), and the opponents' claim to work on the same terms in their boasted mission (11:12).",
+   "basis": "read",
+   "grounds": "in the labors of others",
+   "traces": [
+    23683
+   ],
+   "verses": [
+    "2Cor 10:15",
+    "2Cor 11:12"
+   ]
+  },
+  {
+   "observation": 23799,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In Gal 6:4 work (labor) stands three words before boast as the thing tested: one's own tested work gives the reason to boast in oneself.",
+   "basis": "read",
+   "grounds": "let each one test his own work",
+   "traces": [
+    23684
+   ],
+   "verses": [
+    "Gal 6:4"
+   ]
+  },
+  {
+   "observation": 23800,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In 1Cor 13:4 love (love) is the subject twice, the second time four words before boast: boasting is among what love is said not to do.",
+   "basis": "read",
+   "grounds": "love does not envy or boast",
+   "traces": [
+    23683
+   ],
+   "verses": [
+    "1Cor 13:4"
+   ]
+  },
+  {
+   "observation": 23801,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In 2Cor 8:24 love (love) stands three words before boasting, joined to it by and as objects of the proof the Corinthians are to give.",
+   "basis": "read",
+   "grounds": "of your love and of our boasting",
+   "traces": [
+    23683
+   ],
+   "verses": [
+    "2Cor 8:24"
+   ]
+  },
+  {
+   "observation": 23802,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In Psa 52:1 and Jer 9:24 steadfast love (loyalty) is God's and stands a few words after the boast: it answers the boast of evil (Psa 52:1), and it is what the Lord practises, the content of the right boast (Jer 9:24).",
+   "basis": "read",
+   "grounds": "The steadfast love of God endures",
+   "traces": [
+    23683,
+    23687
+   ],
+   "verses": [
+    "Jer 9:24",
+    "Psa 52:1"
+   ]
+  },
+  {
+   "observation": 23803,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In 2Th 1:4 steadfastness (loyalty) stands eight words after boast as its ground: the Thessalonians' steadfastness in persecution is what Paul boasts of.",
+   "basis": "read",
+   "grounds": "for your steadfastness and faith",
+   "traces": [
+    23683
+   ],
+   "verses": [
+    "2Th 1:4"
+   ]
+  },
+  {
+   "observation": 23804,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In Isa 10:15 magnify (magnify) stands five words after boast in a parallel question: the axe boasting over the hewer and the saw magnifying itself against the one who wields it are one figure.",
+   "basis": "read",
+   "grounds": "the saw magnify itself against him",
+   "traces": [
+    23685
+   ],
+   "verses": [
+    "Isa 10:15"
+   ]
+  },
+  {
+   "observation": 23805,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In 2Cor 10:15 enlarged (magnify) closes the verse, sixteen words after the refused boast: the hoped-for enlarging of Paul's area comes through the church's growing faith, not by boasting in others' labours.",
+   "basis": "read",
+   "grounds": "may be greatly enlarged",
+   "traces": [
+    23683
+   ],
+   "verses": [
+    "2Cor 10:15"
+   ]
+  },
+  {
+   "observation": 23806,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In Isa 61:6 glory (majesty) stands just before the boast, after in: the nations' glory is what the people come into or boast in.",
+   "basis": "read",
+   "grounds": "in their glory you shall boast",
+   "traces": [
+    23687
+   ],
+   "verses": [
+    "Isa 61:6"
+   ]
+  },
+  {
+   "observation": 23807,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In Jer 9:23 might (mighty) stands right after the second boast as its ground: the mighty man is not to boast in his might.",
+   "basis": "read",
+   "grounds": "the mighty man boast in his might",
+   "traces": [
+    23683
+   ],
+   "verses": [
+    "Jer 9:23"
+   ]
+  },
+  {
+   "observation": 23808,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In Jam 3:5 great things (mighty) stands right after boasts as its object, set against the small member that boasts.",
+   "basis": "read",
+   "grounds": "yet it boasts of great things",
+   "traces": [
+    23683
+   ],
+   "verses": [
+    "Jam 3:5"
+   ]
+  },
+  {
+   "observation": 23809,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In 2Cor 11:10 silenced (mute) stands three words after boasting and is negated: Paul's boasting will not be stopped in Achaia.",
+   "basis": "read",
+   "grounds": "will not be silenced",
+   "traces": [
+    23683
+   ],
+   "verses": [
+    "2Cor 11:10"
+   ]
+  },
+  {
+   "observation": 23810,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In 2Cor 12:9 rest (mute) closes the verse, nine words after boast, in the purpose clause: the power of Christ resting on Paul is what the boast in weakness is for; a word of the mute collection with no silence in the verse.",
+   "basis": "read",
+   "grounds": "may rest upon me",
+   "traces": [
+    23683
+   ],
+   "verses": [
+    "2Cor 12:9"
+   ]
+  },
+  {
+   "observation": 23811,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In 1Cor 1:29 presence (offer) stands right after boast: before God no human being may boast; the word of the offer collection marks the place, before him.",
+   "basis": "read",
+   "grounds": "in the presence of God",
+   "traces": [
+    23683
+   ],
+   "verses": [
+    "1Cor 1:29"
+   ]
+  },
+  {
+   "observation": 23812,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In Jam 3:14 bitter (pain) stands eight words before boast and qualifies jealousy in the condition under which the boast is forbidden.",
+   "basis": "read",
+   "grounds": "if you have bitter jealousy",
+   "traces": [
+    23685
+   ],
+   "verses": [
+    "Jam 3:14"
+   ]
+  },
+  {
+   "observation": 23813,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In Jer 9:24 and Jer 48:30 declares (preach) marks the Lord's word that frames the boast: it closes the command on the right boast (Jer 9:24), and stands just before the boasts declared false (Jer 48:30).",
+   "basis": "read",
+   "grounds": "declares the Lord",
+   "traces": [
+    23686,
+    23687
+   ],
+   "verses": [
+    "Jer 48:30",
+    "Jer 9:24"
+   ]
+  },
+  {
+   "observation": 23814,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In 1Cor 9:16 and 2Cor 10:16 preach the gospel (preach) stands a few words before boasting: preaching gives Paul no ground for boasting, being laid on him (1Cor 9:16), and he would preach beyond without boasting of another's work (2Cor 10:16).",
+   "basis": "read",
+   "grounds": "For if I preach the gospel",
+   "traces": [
+    23683,
+    23684
+   ],
+   "verses": [
+    "1Cor 9:16",
+    "2Cor 10:16"
+   ]
+  },
+  {
+   "observation": 23815,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In Psa 94:4 and Jer 48:30 arrogant or insolence (pride) stands a few words before the boast, on the speech of the same subject: arrogant words poured out beside the evildoers' boasting (Psa 94:4), Moab's insolence known before its boasts are declared false (Jer 48:30).",
+   "basis": "read",
+   "grounds": "They pour out their arrogant words",
+   "traces": [
+    23686
+   ],
+   "verses": [
+    "Jer 48:30",
+    "Psa 94:4"
+   ]
+  },
+  {
+   "observation": 23816,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In Zep 2:10 pride (pride) stands three words before boasted, as what the lot is in return for; the taunting and boasting against the Lord's people follow as its showing.",
+   "basis": "read",
+   "grounds": "in return for their pride",
+   "traces": [
+    23685
+   ],
+   "verses": [
+    "Zep 2:10"
+   ]
+  },
+  {
+   "observation": 23817,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In 1Cor 13:4 and Jam 4:16 arrogant or arrogance (pride) stands a few words from the boast: denied of love next to boasting (1Cor 13:4), and the very ground in which the boast is made (Jam 4:16).",
+   "basis": "read",
+   "grounds": "you boast in your arrogance",
+   "traces": [
+    23683
+   ],
+   "verses": [
+    "1Cor 13:4",
+    "Jam 4:16"
+   ]
+  },
+  {
+   "observation": 23818,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In 1Ki 20:11 answered (profess) stands four words before boast: the king's answer carries the saying that forbids a boast before the battle.",
+   "basis": "read",
+   "grounds": "the king of Israel answered",
+   "traces": [
+    23683
+   ],
+   "verses": [
+    "1Ki 20:11"
+   ]
+  },
+  {
+   "observation": 23819,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In 2Cor 5:12 answer (profess) stands between the two boasts: the cause to boast about Paul is given so the church can answer those who boast of appearance.",
+   "basis": "read",
+   "grounds": "so that you may be able to answer",
+   "traces": [
+    23683,
+    23684
+   ],
+   "verses": [
+    "2Cor 5:12"
+   ]
+  },
+  {
+   "observation": 23820,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In 2Cor 9:2 and 2Cor 9:3 readiness or ready (ready) stands with the boast as its content and its test: Paul boasts of the Corinthians' readiness (9:2), and sends the brothers so they will be ready and the boast not empty (9:3).",
+   "basis": "read",
+   "grounds": "so that you may be ready",
+   "traces": [
+    23683
+   ],
+   "verses": [
+    "2Cor 9:2",
+    "2Cor 9:3"
+   ]
+  },
+  {
+   "observation": 23821,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In Jer 48:30 and Jam 3:14 false (real) stands right after the boast: Moab's boasts are false, and so are his deeds (Jer 48:30); to boast with jealousy is to be false to the truth (Jam 3:14).",
+   "basis": "read",
+   "grounds": "his boasts are false",
+   "traces": [
+    23685,
+    23686
+   ],
+   "verses": [
+    "Jam 3:14",
+    "Jer 48:30"
+   ]
+  },
+  {
+   "observation": 23822,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In 2Cor 7:14 true (real) stands twice after the boasts: what Paul said was true, and his boasting before Titus has proved true.",
+   "basis": "read",
+   "grounds": "has proved true",
+   "traces": [
+    23683
+   ],
+   "verses": [
+    "2Cor 7:14"
+   ]
+  },
+  {
+   "observation": 23823,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In Psa 10:3 renounces (reject) closes the verse, five words after boasts, with the Lord as object, in the clause parallel to the boast.",
+   "basis": "read",
+   "grounds": "curses and renounces the Lord",
+   "traces": [
+    23683
+   ],
+   "verses": [
+    "Psa 10:3"
+   ]
+  },
+  {
+   "observation": 23824,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In Rom 3:27 excluded (reject) stands right after boasting, the answer to what becomes of it: it is shut out.",
+   "basis": "read",
+   "grounds": "It is excluded",
+   "traces": [
+    23683
+   ],
+   "verses": [
+    "Rom 3:27"
+   ]
+  },
+  {
+   "observation": 23825,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In 2Cor 11:16 accept (reject) stands six words before boast: Paul asks to be accepted as a fool so that he may boast a little.",
+   "basis": "read",
+   "grounds": "accept me as a fool",
+   "traces": [
+    23683
+   ],
+   "verses": [
+    "2Cor 11:16"
+   ]
+  },
+  {
+   "observation": 23826,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In Gal 6:13 keep (remove) stands seven words before boast, negated: those who would boast in others' flesh do not themselves keep the law.",
+   "basis": "read",
+   "grounds": "do not themselves keep the law",
+   "traces": [
+    23683
+   ],
+   "verses": [
+    "Gal 6:13"
+   ]
+  },
+  {
+   "observation": 23827,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In Zep 2:10 return (return) stands four words before boasted, as in return for: the lot is the repayment for the pride shown in taunting and boasting; a word of the return collection used as a preposition of exchange.",
+   "basis": "read",
+   "grounds": "This shall be their lot in return",
+   "traces": [
+    23685
+   ],
+   "verses": [
+    "Zep 2:10"
+   ]
+  },
+  {
+   "observation": 23828,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In Psa 97:7 worship (reverence) stands two words after boast, a command to the gods to worship the Lord, set against the boast in worthless idols.",
+   "basis": "read",
+   "grounds": "worship him, all you gods",
+   "traces": [
+    23683
+   ],
+   "verses": [
+    "Psa 97:7"
+   ]
+  },
+  {
+   "observation": 23829,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In Psa 49:6 and Jer 9:23 wealth and riches (rich) are the ground of the boast: trusted wealth and abundant riches (Psa 49:6), and the rich man's riches, the third boast forbidden (Jer 9:23).",
+   "basis": "read",
+   "grounds": "the abundance of their riches",
+   "traces": [
+    23683
+   ],
+   "verses": [
+    "Jer 9:23",
+    "Psa 49:6"
+   ]
+  },
+  {
+   "observation": 23830,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In Isa 61:6 wealth (rich) stands three words before the boast: the nations' wealth eaten is set beside their glory boasted in.",
+   "basis": "read",
+   "grounds": "you shall eat the wealth of the nations",
+   "traces": [
+    23687
+   ],
+   "verses": [
+    "Isa 61:6"
+   ]
+  }
+ ],
+ "verses": [
+  {
+   "reference": "Psa 94:4",
+   "text": "They pour out their arrogant words; all the evildoers boast."
+  },
+  {
+   "reference": "Jam 3:14",
+   "text": "But if you have bitter jealousy and selfish ambition in your hearts, do not boast and be false to the truth."
+  },
+  {
+   "reference": "Psa 10:3",
+   "text": "For the wicked boasts of the desires of his soul, and the one greedy for gain curses and renounces the Lord."
+  },
+  {
+   "reference": "Jer 48:30",
+   "text": "I know his insolence, declares the Lord; his boasts are false, his deeds are false."
+  },
+  {
+   "reference": "2Th 1:4",
+   "text": "Therefore we ourselves boast about you in the churches of God for your steadfastness and faith in all your persecutions and in the afflictions that you are enduring."
+  },
+  {
+   "reference": "2Cor 11:10",
+   "text": "As the truth of Christ is in me, this boasting of mine will not be silenced in the regions of Achaia."
+  },
+  {
+   "reference": "2Cor 12:9",
+   "text": "But he said to me, “ My grace is sufficient for you, for my power is made perfect in weakness.” Therefore I will boast all the more gladly of my weaknesses, so that the power of Christ may rest upon me."
+  },
+  {
+   "reference": "Jam 4:16",
+   "text": "As it is, you boast in your arrogance. All such boasting is evil."
+  },
+  {
+   "reference": "1Cor 1:29",
+   "text": "so that no human being might boast in the presence of God."
+  },
+  {
+   "reference": "2Cor 5:12",
+   "text": "We are not commending ourselves to you again but giving you cause to boast about us, so that you may be able to answer those who boast about outward appearance and not about what is in the heart."
+  },
+  {
+   "reference": "2Cor 7:14",
+   "text": "For whatever boasts I made to him about you, I was not put to shame. But just as everything we said to you was true, so also our boasting before Titus has proved true."
+  },
+  {
+   "reference": "2Cor 9:2",
+   "text": "for I know your readiness, of which I boast about you to the people of Macedonia, saying that Achaia has been ready since last year. And your zeal has stirred up most of them."
+  },
+  {
+   "reference": "2Cor 10:15",
+   "text": "We do not boast beyond limit in the labors of others. But our hope is that as your faith increases, our area of influence among you may be greatly enlarged,"
+  },
+  {
+   "reference": "2Cor 10:16",
+   "text": "so that we may preach the gospel in lands beyond you, without boasting of work already done in another’s area of influence."
+  },
+  {
+   "reference": "2Cor 11:12",
+   "text": "And what I am doing I will continue to do, in order to undermine the claim of those who would like to claim that in their boasted mission they work on the same terms as we do."
+  },
+  {
+   "reference": "2Cor 11:16",
+   "text": "I repeat, let no one think me foolish. But even if you do, accept me as a fool, so that I too may boast a little."
+  },
+  {
+   "reference": "Gal 6:13",
+   "text": "For even those who are circumcised do not themselves keep the law, but they desire to have you circumcised that they may boast in your flesh."
+  },
+  {
+   "reference": "Eph 2:9",
+   "text": "not a result of works, so that no one may boast."
+  },
+  {
+   "reference": "1Cor 9:16",
+   "text": "For if I preach the gospel, that gives me no ground for boasting. For necessity is laid upon me. Woe to me if I do not preach the gospel!"
+  },
+  {
+   "reference": "2Cor 9:3",
+   "text": "But I am sending the brothers so that our boasting about you may not prove empty in this matter, so that you may be ready, as I said you would be."
+  },
+  {
+   "reference": "Gal 6:4",
+   "text": "But let each one test his own work, and then his reason to boast will be in himself alone and not in his neighbor."
+  },
+  {
+   "reference": "Rom 3:27",
+   "text": "Then what becomes of our boasting? It is excluded. By what kind of law? By a law of works? No, but by the law of faith."
+  },
+  {
+   "reference": "2Cor 8:24",
+   "text": "So give proof before the churches of your love and of our boasting about you to these men."
+  },
+  {
+   "reference": "1Cor 13:4",
+   "text": "Love is patient and kind; love does not envy or boast; it is not arrogant"
+  },
+  {
+   "reference": "Jam 3:5",
+   "text": "So also the tongue is a small member, yet it boasts of great things. How great a forest is set ablaze by such a small fire!"
+  },
+  {
+   "reference": "Isa 10:15",
+   "text": "Shall the axe boast over him who hews with it, or the saw magnify itself against him who wields it? As if a rod should wield him who lifts it, or as if a staff should lift him who is not wood!"
+  },
+  {
+   "reference": "Zep 2:10",
+   "text": "This shall be their lot in return for their pride, because they taunted and boasted against the people of the Lord of hosts."
+  },
+  {
+   "reference": "1Ki 20:11",
+   "text": "And the king of Israel answered, “ Tell him, ‘Let not him who straps on his armor boast himself as he who takes it off.’”"
+  },
+  {
+   "reference": "Psa 49:6",
+   "text": "those who trust in their wealth and boast of the abundance of their riches?"
+  },
+  {
+   "reference": "Psa 52:1",
+   "text": "To the choirmaster. A Maskil of David, when Doeg, the Edomite, came and told Saul, “ David has come to the house of Ahimelech.” Why do you boast of evil, O mighty man? The steadfast love of God endures all the day."
+  },
+  {
+   "reference": "Psa 97:7",
+   "text": "All worshipers of images are put to shame, who make their boast in worthless idols; worship him, all you gods!"
+  },
+  {
+   "reference": "Pro 27:1",
+   "text": "Do not boast about tomorrow, for you do not know what a day may bring."
+  },
+  {
+   "reference": "Jer 9:23",
+   "text": "Thus says the Lord: “Let not the wise man boast in his wisdom, let not the mighty man boast in his might, let not the rich man boast in his riches,"
+  },
+  {
+   "reference": "Jer 9:24",
+   "text": "but let him who boasts boast in this, that he understands and knows me, that I am the Lord who practices steadfast love, justice, and righteousness in the earth. For in these things I delight, declares the Lord.”"
+  },
+  {
+   "reference": "Isa 61:6",
+   "text": "but you shall be called the priests of the Lord; they shall speak of you as the ministers of our God; you shall eat the wealth of the nations, and in their glory you shall boast."
+  }
+ ],
+ "answer": {
+  "command": "ReadEvidence",
+  "collection": "boast",
+  "subgroup": "boasting",
+  "observations": [
+   {
+    "observation": 23791,
+    "verdict": "true",
+    "why": "1Cor 13:4: envy at 5, boast at 7, both under love does not, joined by or.",
+    "actions": []
+   },
+   {
+    "observation": 23792,
+    "verdict": "true",
+    "why": "Jam 3:14: bitter jealousy at 3-4, boast at 11, in the condition if you have.",
+    "actions": []
+   },
+   {
+    "observation": 23793,
+    "verdict": "true",
+    "why": "2Cor 8:24: proof at 2 governs of your love and of our boasting about you.",
+    "actions": []
+   },
+   {
+    "observation": 23794,
+    "verdict": "true",
+    "why": "Pro 27:1: know at 5, negated, after boast at 1, in for you do not know.",
+    "actions": []
+   },
+   {
+    "observation": 23795,
+    "verdict": "true",
+    "why": "Jer 9:24: knows at 5, after the boast at 1-2, in that he understands and knows me.",
+    "actions": []
+   },
+   {
+    "observation": 23796,
+    "verdict": "true",
+    "why": "Jer 48:30 I know his insolence opens the verse; 2Cor 9:2 for I know your readiness opens it; each before the boast.",
+    "actions": []
+   },
+   {
+    "observation": 23797,
+    "verdict": "true",
+    "why": "Rom 3:27 by a law of works? No, but by the law of faith; Eph 2:9 not a result of works, so that no one may boast.",
+    "actions": []
+   },
+   {
+    "observation": 23798,
+    "verdict": "true",
+    "why": "2Cor 10:15 in the labors of others; 2Cor 11:12 they work on the same terms as we do.",
+    "actions": []
+   },
+   {
+    "observation": 23799,
+    "verdict": "true",
+    "why": "Gal 6:4: work at 4, boast at 7; let each one test his own work.",
+    "actions": []
+   },
+   {
+    "observation": 23800,
+    "verdict": "true",
+    "why": "1Cor 13:4: love at 0 and 3, boast at 7.",
+    "actions": []
+   },
+   {
+    "observation": 23801,
+    "verdict": "true",
+    "why": "2Cor 8:24: love at 6 and boasting at 9, joined by and.",
+    "actions": []
+   },
+   {
+    "observation": 23802,
+    "verdict": "true",
+    "why": "Psa 52:1 the steadfast love of God endures; Jer 9:24 the Lord who practices steadfast love; both after the boast.",
+    "actions": []
+   },
+   {
+    "observation": 23803,
+    "verdict": "true",
+    "why": "2Th 1:4: steadfastness at 11, boast at 3; for your steadfastness and faith.",
+    "actions": []
+   },
+   {
+    "observation": 23804,
+    "verdict": "true",
+    "why": "Isa 10:15: magnify at 6, boast at 1; or the saw magnify itself against him.",
+    "actions": []
+   },
+   {
+    "observation": 23805,
+    "verdict": "true",
+    "why": "2Cor 10:15: enlarged at 17, boast at 1; our area of influence may be greatly enlarged.",
+    "actions": []
+   },
+   {
+    "observation": 23806,
+    "verdict": "true",
+    "why": "Isa 61:6: glory at 9 after in, boast at 10.",
+    "actions": []
+   },
+   {
+    "observation": 23807,
+    "verdict": "true",
+    "why": "Jer 9:23: might at 10 after the second boast at 9.",
+    "actions": []
+   },
+   {
+    "observation": 23808,
+    "verdict": "true",
+    "why": "Jam 3:5: great things at 8 right after boasts at 7.",
+    "actions": []
+   },
+   {
+    "observation": 23809,
+    "verdict": "true",
+    "why": "2Cor 11:10: silenced at 10, negated; boasting at 7.",
+    "actions": []
+   },
+   {
+    "observation": 23810,
+    "verdict": "true",
+    "why": "2Cor 12:9: rest at 23 in so that the power of Christ may rest upon me; boast at 14.",
+    "actions": []
+   },
+   {
+    "observation": 23811,
+    "verdict": "true",
+    "why": "1Cor 1:29: presence at 4 right after boast at 3; in the presence of God.",
+    "actions": []
+   },
+   {
+    "observation": 23812,
+    "verdict": "true",
+    "why": "Jam 3:14: bitter at 3 qualifies jealousy; boast at 11.",
+    "actions": []
+   },
+   {
+    "observation": 23813,
+    "verdict": "true",
+    "why": "Jer 9:24 declares the Lord closes the verse; Jer 48:30 declares the Lord stands before his boasts are false.",
+    "actions": []
+   },
+   {
+    "observation": 23814,
+    "verdict": "true",
+    "why": "1Cor 9:16 if I preach the gospel, that gives me no ground for boasting; 2Cor 10:16 preach the gospel in lands beyond you, without boasting.",
+    "actions": []
+   },
+   {
+    "observation": 23815,
+    "verdict": "true",
+    "why": "Psa 94:4 arrogant words at 1, boast at 5; Jer 48:30 insolence at 2, boasts at 5.",
+    "actions": []
+   },
+   {
+    "observation": 23816,
+    "verdict": "true",
+    "why": "Zep 2:10: pride at 2, boasted at 5; in return for their pride, because they taunted and boasted.",
+    "actions": []
+   },
+   {
+    "observation": 23817,
+    "verdict": "true",
+    "why": "1Cor 13:4 it is not arrogant after boast; Jam 4:16 you boast in your arrogance.",
+    "actions": []
+   },
+   {
+    "observation": 23818,
+    "verdict": "true",
+    "why": "1Ki 20:11: answered at 2, boast at 6; the king's reply is the saying about the one who straps on his armour.",
+    "actions": []
+   },
+   {
+    "observation": 23819,
+    "verdict": "true",
+    "why": "2Cor 5:12: answer at 14 between boast at 9 and boast at 15.",
+    "actions": []
+   },
+   {
+    "observation": 23820,
+    "verdict": "true",
+    "why": "2Cor 9:2 readiness, of which I boast; 2Cor 9:3 so that you may be ready, the boasting not empty.",
+    "actions": []
+   },
+   {
+    "observation": 23821,
+    "verdict": "true",
+    "why": "Jer 48:30 his boasts are false, his deeds are false; Jam 3:14 do not boast and be false to the truth.",
+    "actions": []
+   },
+   {
+    "observation": 23822,
+    "verdict": "true",
+    "why": "2Cor 7:14: true at 14 and 22; everything we said was true, our boasting has proved true.",
+    "actions": []
+   },
+   {
+    "observation": 23823,
+    "verdict": "true",
+    "why": "Psa 10:3: renounces at 6 with the Lord, boasts at 1.",
+    "actions": []
+   },
+   {
+    "observation": 23824,
+    "verdict": "true",
+    "why": "Rom 3:27: excluded at 3 right after boasting at 2.",
+    "actions": []
+   },
+   {
+    "observation": 23825,
+    "verdict": "true",
+    "why": "2Cor 11:16: accept at 9, boast at 15; accept me as a fool so that I too may boast.",
+    "actions": []
+   },
+   {
+    "observation": 23826,
+    "verdict": "true",
+    "why": "Gal 6:13: keep at 4, negated, boast at 11; do not themselves keep the law.",
+    "actions": []
+   },
+   {
+    "observation": 23827,
+    "verdict": "true",
+    "why": "Zep 2:10: return at 1 in in return for, boasted at 5.",
+    "actions": []
+   },
+   {
+    "observation": 23828,
+    "verdict": "true",
+    "why": "Psa 97:7: worship at 6, boast at 4; worship him, all you gods.",
+    "actions": []
+   },
+   {
+    "observation": 23829,
+    "verdict": "true",
+    "why": "Psa 49:6 trust in their wealth, boast of the abundance of their riches; Jer 9:23 the rich man boast in his riches.",
+    "actions": []
+   },
+   {
+    "observation": 23830,
+    "verdict": "true",
+    "why": "Isa 61:6: wealth at 7, boast at 10; you shall eat the wealth of the nations.",
+    "actions": []
+   }
+  ]
+ },
+ "measured": {
+  "package_chars": 30482,
+  "seconds": 0.03
+ }
+}

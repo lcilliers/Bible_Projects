@@ -1,0 +1,685 @@
+{
+ "command": "ReadWords",
+ "collection": "boast",
+ "subgroup": "boasting",
+ "step": "S1",
+ "made": "2026-11-26T10:46:28Z",
+ "batch": {
+  "words": 5,
+  "words_left_after_this": 0
+ },
+ "instruction": {
+  "what": "Step S1, the words of one subgroup (stage 1, the lexical analysis): each word -- a surface with its lettered Strong's code -- read in the verse of each of its occurrences, for what it is and how it is used there. Nothing here says what a word does for the inner being; that begins at step 3.1.",
+  "read": [
+   "Take one word at a time, and within it one occurrence at a time, in the verse of that occurrence.",
+   "Read the evidence in this order: the verse text and the occurrence's stored structure (morph, unit, surface_kind, negator, party_kind, narrative); then the meaning sources for the code read together (sense_head, meaning_range, lsj, mounce), none picked and the others dropped; then the English rendering against the literal sense: does the English add or hide?",
+   "Judge the meaning in context from the Strong's code and the verse, not from the English surface alone. Where occurrences show different stems or voices, say whether the subject does, undergoes or causes the act.",
+   "The prompts are areas to explore; a prompt that does not apply is not answered."
+  ],
+  "write": [
+   "Fill `answer.rows`: for each word, its `readings`. One reading for each distinct way the word is used: the occurrences where it is used the same way are listed together in that reading's `occurrences` (occurrence ids or verse references); an occurrence used differently is its own reading.",
+   "kind: term; face where the use in a verse departs from the word's usual sense.",
+   "obs_text: concise; names the verse or verses; states what the word is and how it is used there (its object, setting, construction, what the morph shows); never the dictionary range, never the verse restated.",
+   "basis: stated (the verse says it) or read (read from the structure or the context). grounds: what in the verse shows it.",
+   "Every occurrence of the word is in exactly one reading; none is left out. A homonym or a name is recorded as such; a data error is named in grounds, not fixed.",
+   "`older`: the older observations on the word's occurrences. Read each with the word (they are what was recorded before) and answer each in the row's `older`, once: keep (with `nature` evidence or inner_being: it stands as it is); restate (with `nature`, `new_text` and `checked`: what in the base data the new text was checked against); merge (with `into`: a live observation saying the same); consume (with `carriers`, [\"this\"] for this row's readings or observation ids, and `mapping`: what the old one says and which carrier states each part); delete_neither (with `reason`: it is neither evidence nor inner being); carry (with `to` a later step, 1.1 or 2.1, and `reason`: what that step is to consider); defer (with `collection`, `nature` and `finding`: another collection owns the rest). An older observation listed under another word is answered there.",
+   "Then: Collection-Build.ps1 -Action RecordWords -File <the answer file> (-Check to preview). The record refuses the whole file on any fault and lists every fault."
+  ],
+  "keep": [
+   {
+    "rule": "RG-08 the-original",
+    "text": "For every word that names an inner or bodily act, look at the original: the root's range in all three meaning sources read together, never one picked and the others dropped; the ESV renderings across its verses; whether the English adds or hides; the literal sense beside the rendering. Where more than one reading is open, record each, and mark the choice 'I read'."
+   },
+   {
+    "rule": "RG-14 morph-read",
+    "text": "Morph is read, not carried: where occurrences of a word show different stems or voices, record whether the subject does, undergoes or causes the act."
+   },
+   {
+    "rule": "RG-16 homonym-and-data-error",
+    "text": "A word that is only a homonym or a name, with no meaningful context, is recorded as such (tag no-human-context) and left. Data errors found while reading are flagged (tag data-error), not fixed in the reading."
+   },
+   {
+    "rule": "RG-17 catalogue-as-prompts",
+    "text": "The question catalogue's questions are prompts for the areas to explore. A question that does not apply is not answered, and no answer is manufactured beyond what the verse shows."
+   },
+   {
+    "rule": "RG-21 grain",
+    "text": "A word is read per its lettered Strong's code (its grain), never the bare lemma (B:113). The occurrences of a word with several senses are related per grain and never aggregated across grains: related verses are same-grain occurrences."
+   },
+   {
+    "rule": "RG-22 content-words-carry-impact",
+    "text": "Content words carry the inner-being impact and are read even when no cluster tags them. Function words (particles, prepositions, conjunctions, suffixes, pronouns) get no observation of their own, except negators and connectives, which are read for what they do (RG-07). A T2 word never stands alone: it is read as the qualifier of what it binds to."
+   },
+   {
+    "rule": "RW-03 no-duplicates-multi-node",
+    "text": "One observation per finding: the same description is never written twice. Applied to another verse, word or scope it gains a node on the existing observation."
+   },
+   {
+    "rule": "RW-04 concise-verse-specific",
+    "text": "Observation text is concise and tied to this verse's content, never a restatement of the word's dictionary sense. A transliteration is never given without its gloss."
+   },
+   {
+    "rule": "RW-08 slants-own-rows",
+    "text": "Where the evidence points to more than one reading, each is its own observation with its own evidence."
+   },
+   {
+    "rule": "RW-09 reread-builds-on-prior",
+    "text": "A re-read includes the observations already recorded for the verse, so the reading sees prior findings and builds on them."
+   },
+   {
+    "rule": "RW-13 older-observations-answered-at-record",
+    "text": "Every older live observation with a live node on an occurrence of the row (a stage that is not the build's own) is answered in fill.older when the row is recorded, once: keep or restate (each with its marker), merge into a named observation, consume (live observations carry its meaning, stated in words, verified before it is deleted), delete as neither (comment first), or defer to a named collection (marked now; only the finding is left to that collection). An observation already marked by the validation, answered in a build or deferred is not asked again. A new observation whose text equals that of another live observation of the collection is refused, the other named. LayerCheck re-derives both from the tables. The end state of a collection's build is that every observation of its scope is marked and fixed or deleted, every word node complete or with its reason, and each deferral owned by a named collection."
+   },
+   {
+    "rule": "RS-04 existing-checked-accept-modify-delete",
+    "text": "When a verse is worked, every existing observation and node on it, of any stage, is checked against the verse by its wording. The stage is not an indication of the nature of an observation and is never used to filter. Each observation is accepted, modified (changed in place; the old value, the new value and the reason are kept in ib_observation_change), soft deleted (the `deleted` column, with the reason), merged (a duplicate description, into the observation that is kept) or, when its wording shows it is not verse understanding, left exactly as it is with the reason. The check's fixes are part of it and need no separate approval. Nothing is physically deleted."
+   },
+   {
+    "rule": "VA-03 consumption-is-verified-before-deletion",
+    "text": "An older observation is deleted as consumed only when live observations carry its meaning: every word occurrence of it is on a live node of a carrier or named as not carried with its reason, the mapping is stated in words (what the old says, which carrier states each part), the traces to it are re-pointed or replaced, and the consumption is kept as `consumed_by`. An observation that holds more than one finding is split first."
+   },
+   {
+    "rule": "VA-04 neither-evidence-nor-inner-being-is-deleted",
+    "text": "An observation that is neither evidence nor inner being contributes nothing to the purposes of the observations (researcher, 2026-11-22): it is commented with its reason and the word occurrences no other live observation holds, then deleted. An observation already marked, or one another observation traces, is not deleted this way."
+   }
+  ],
+  "not_in_this_read": ""
+ },
+ "prompts": [
+  {
+   "code": "M0.1.1",
+   "question": "In this verse, looking at this specific occurrence (its surface form and morph_code), what does this term's name/form show about its essential nature here?"
+  },
+  {
+   "code": "M0.1.2",
+   "question": "In this verse, drawing on this term's lexicon entries but grounded in how it is actually used in this occurrence, what does it mean at the definitional level?"
+  },
+  {
+   "code": "M0.1.3",
+   "question": "In this verse, what directional, relational, or constitutional implication does this term's name carry as it functions in this specific occurrence?"
+  },
+  {
+   "code": "M0.4.1",
+   "question": "What is the grammatical/stem form of this term in this verse?"
+  },
+  {
+   "code": "M0.5.1",
+   "question": "In this verse, what does this term's root meaning show about how it operates in this specific occurrence?"
+  },
+  {
+   "code": "M0.5.2",
+   "question": "In this verse, what does this occurrence's own grammatical form (per its morph_code — e.g. noun, verb, adjective, participle) show about how the term operates here?"
+  },
+  {
+   "code": "M0.5.3",
+   "question": "In this verse, given this term's known semantic range — the breadth of meaning it can carry, including idiomatic, analogical, or combinatorial senses — where does this occurrence sit within that range, and what does that show about how the term operates here?"
+  },
+  {
+   "code": "M0.5.4",
+   "question": "In this verse, does this occurrence express a specific aspect — disposition versus act, received versus given, condition versus quality? Record which, or none."
+  },
+  {
+   "code": "M0.5.5",
+   "question": "In this verse, among this term's own related terms, is there one that functions as this occurrence's structural opposite? Record it, or none."
+  },
+  {
+   "code": "M0.5.6",
+   "question": "In this verse, among this term's own related terms, is there a person-type term relevant to this occurrence — one for a person who habitually possesses or exercises it? Record it, or none."
+  },
+  {
+   "code": "M0.5.7",
+   "question": "In this verse, among this term's own related terms, is there a supplication or seeking term relevant to this occurrence — one for the act of seeking it from another? Record it, or none."
+  },
+  {
+   "code": "M0.5.8",
+   "question": "In this verse, does this term's Testament context (OT Hebrew vs. NT Greek) affect how this specific occurrence should be interpreted, and if so, how? Record none if the Testament context makes no interpretive difference here."
+  },
+  {
+   "code": "M0.5.9",
+   "question": "In this verse, if this term is newly coined in the NT period, what does that coinage show about how it functions in this occurrence? Record none if not applicable or not relevant to this occurrence."
+  },
+  {
+   "code": "M0.5.11",
+   "question": "In this verse, where this occurrence's meaning diverges from the term's usual sense elsewhere, what nuance does that divergence carry here, and how does it compare to the word's other occurrences? Pay particular attention to this occurrence's own surface form/rendering — a marked or atypical surface form is often the visible trace of the divergence itself, not a separate fact. Record none if this occurrence matches the term's usual sense."
+  }
+ ],
+ "words": [
+  {
+   "ledger_id": 1981,
+   "word": "boast",
+   "strong": "H1984H",
+   "lexicon": {
+    "sense_head": "boast",
+    "meaning_range": "1) to praise, boast, be boastful; 1a) (Qal); 1a1) to be boastful; 1a2) boastful ones, boasters (participle); 1b) (Piel); 1b1) to praise; 1b2) to boast, make a boast; 1c) (Pual); 1c1) to be praised, be made praiseworthy, be commended, be worthy of praise; 1d) (Hithpael) to boast, glory, make one's boast",
+    "lsj": "",
+    "mounce": "",
+    "related": [
+     "H1947 הוֹלֵלָה madness",
+     "H1948 הוֹלֵלוּת madness",
+     "H1974 הִלּוּל praise",
+     "H1984A הָלַל to shine",
+     "H1984B הָלַל to boast: praise",
+     "H1984C הָלַל to be foolish",
+     "H1984I הָלַל to boast: rave madly",
+     "H1985 הִלֵּל Hillel",
+     "H3094G יְהַלֶּלְאֵל Jehallelel",
+     "H3094H יְהַלֶּלְאֵל Jehallelel",
+     "H4110 מַהֲלָל praise",
+     "H4111G מַהֲלַלְאֵל Mahalalel"
+    ]
+   },
+   "occurrences": [
+    {
+     "occurrence": 1153871,
+     "reference": "1Ki 20:11",
+     "morph": "HVtj3ms",
+     "unit": "boast",
+     "surface_kind": "own",
+     "negator": false,
+     "party_kind": null,
+     "narrative": null,
+     "verse": "And the king of Israel answered, “ Tell him, ‘Let not him who straps on his armor boast himself as he who takes it off.’”"
+    },
+    {
+     "occurrence": 1252564,
+     "reference": "Psa 34:2",
+     "morph": "HVti3fs",
+     "unit": "boast",
+     "surface_kind": "own",
+     "negator": false,
+     "party_kind": null,
+     "narrative": null,
+     "verse": "My soul makes its boast in the Lord; let the humble hear and be glad."
+    },
+    {
+     "occurrence": 1252588,
+     "reference": "Psa 49:6",
+     "morph": "HVti3mp",
+     "unit": "boast",
+     "surface_kind": "own",
+     "negator": false,
+     "party_kind": null,
+     "narrative": null,
+     "verse": "those who trust in their wealth and boast of the abundance of their riches?"
+    },
+    {
+     "occurrence": 1252617,
+     "reference": "Psa 52:1",
+     "morph": "HVti2ms",
+     "unit": "boast",
+     "surface_kind": "own",
+     "negator": false,
+     "party_kind": null,
+     "narrative": null,
+     "verse": "To the choirmaster. A Maskil of David, when Doeg, the Edomite, came and told Saul, “ David has come to the house of Ahimelech.” Why do you boast of evil, O mighty man? The steadfast love of God endures all the day."
+    },
+    {
+     "occurrence": 1252642,
+     "reference": "Psa 97:7",
+     "morph": "HVtrmpa",
+     "unit": "boast",
+     "surface_kind": "own",
+     "negator": false,
+     "party_kind": null,
+     "narrative": null,
+     "verse": "All worshipers of images are put to shame, who make their boast in worthless idols; worship him, all you gods!"
+    },
+    {
+     "occurrence": 1276946,
+     "reference": "Pro 27:1",
+     "morph": "HVtj2ms",
+     "unit": "boast",
+     "surface_kind": "own",
+     "negator": false,
+     "party_kind": null,
+     "narrative": null,
+     "verse": "Do not boast about tomorrow, for you do not know what a day may bring."
+    },
+    {
+     "occurrence": 1322542,
+     "reference": "Jer 9:23",
+     "morph": "HVtj3ms",
+     "unit": "boast",
+     "surface_kind": "own",
+     "negator": false,
+     "party_kind": null,
+     "narrative": null,
+     "verse": "Thus says the Lord: “Let not the wise man boast in his wisdom, let not the mighty man boast in his might, let not the rich man boast in his riches,"
+    },
+    {
+     "occurrence": 1322550,
+     "reference": "Jer 9:23",
+     "morph": "HVtj3ms",
+     "unit": "boast",
+     "surface_kind": "own",
+     "negator": false,
+     "party_kind": null,
+     "narrative": null,
+     "verse": "Thus says the Lord: “Let not the wise man boast in his wisdom, let not the mighty man boast in his might, let not the rich man boast in his riches,"
+    },
+    {
+     "occurrence": 1322556,
+     "reference": "Jer 9:23",
+     "morph": "HVtj3ms",
+     "unit": "boast",
+     "surface_kind": "own",
+     "negator": false,
+     "party_kind": null,
+     "narrative": null,
+     "verse": "Thus says the Lord: “Let not the wise man boast in his wisdom, let not the mighty man boast in his might, let not the rich man boast in his riches,"
+    },
+    {
+     "occurrence": 1322563,
+     "reference": "Jer 9:24",
+     "morph": "HVtrmsa",
+     "unit": "boast",
+     "surface_kind": "own",
+     "negator": false,
+     "party_kind": null,
+     "narrative": null,
+     "verse": "but let him who boasts boast in this, that he understands and knows me, that I am the Lord who practices steadfast love, justice, and righteousness in the earth. For in these things I delight, declares the Lord.”"
+    },
+    {
+     "occurrence": 1322588,
+     "reference": "Jer 49:4",
+     "morph": "HVti2fs",
+     "unit": "boast",
+     "surface_kind": "own",
+     "negator": false,
+     "party_kind": null,
+     "narrative": null,
+     "verse": "Why do you boast of your valleys, O faithless daughter, who trusted in her treasures, saying, ‘ Who will come against me?’"
+    }
+   ],
+   "older": [
+    {
+     "observation": 15177,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "nature": null,
+     "text": "The three things. \"Let not the wise man boast in his wisdom, let not the mighty man boast in his might, let not the rich man boast in his riches\" (Jer 9:23). Each is a standing that is real. Each is set aside as a ground for boasting.",
+     "verses": [
+      "Jer.9.23"
+     ]
+    },
+    {
+     "observation": 15178,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "nature": null,
+     "text": "Wealth, and trust in it: \"those who trust in their wealth and boast of the abundance of their riches? Truly no man can ransom another, or give to God the price of his life\" (Psa 49:6–7). The boast is joined to trust, and both are measured against the life that wealth cannot buy; \"Why do you boast of your valleys, O faithless daughter, who trusted in her treasures, saying, 'Who will come against me?'\" (Jer 49:4). This is the same \"who will\" as Obd 3 (batch 2).",
+     "verses": [
+      "Ps.49.6",
+      "Ps.49.7",
+      "Jer.49.4"
+     ]
+    },
+    {
+     "observation": 15186,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "nature": null,
+     "text": "In idols. \"All worshipers of images are put to shame, who make their boast in worthless idols\", beside \"you, O Lord, are most high over all the earth\" (Psa 97:7, 9).",
+     "verses": [
+      "Ps.97.7",
+      "Ps.97.9"
+     ]
+    },
+    {
+     "observation": 15298,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "nature": null,
+     "text": "No verse makes God the subject of a boast. He is the one boasted in (Jer 9:24).",
+     "verses": [
+      "Jer.9.24"
+     ]
+    },
+    {
+     "observation": 15385,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "nature": null,
+     "text": "The humble hear what God did for another, and are glad: \"My soul makes its boast in the Lord; let the humble hear and be glad\" (Psa 34:2). David's own deliverance follows: \"I sought the Lord, and he answered me\" (34:4). The superscription sets it after \"he changed his behavior before Abimelech\"; \"When the humble see it they will be glad\" (Psa 69:32). \"It\" is the deliverance of the speaker, who has said \"I am afflicted and in pain\" (69:29); I read: in both psalms, one man's boast is in the Lord, not in himself, and the humble are those who are glad at it. Their gladness is at what God did for someone else.",
+     "verses": [
+      "Ps.34.2",
+      "Ps.34.4",
+      "Ps.69.32",
+      "Ps.69.29"
+     ]
+    },
+    {
+     "observation": 16692,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "nature": null,
+     "text": "Good boast: \"My soul makes its boast in the Lord; let the humble hear and be glad\" (Psa 34:2).",
+     "verses": [
+      "Ps.34.2"
+     ]
+    }
+   ]
+  },
+  {
+   "ledger_id": 1982,
+   "word": "boast",
+   "strong": "H3235",
+   "lexicon": {
+    "sense_head": "to exchange",
+    "meaning_range": "1) to exchange; 1a) (Hiphil) to exchange; 1b) (Hithpael) to enter into, be changed into; 2) (TWOT) to promise",
+    "lsj": "",
+    "mounce": "",
+    "related": [
+     "H3236 יִמְרָה Imrah"
+    ]
+   },
+   "occurrences": [
+    {
+     "occurrence": 1296737,
+     "reference": "Isa 61:6",
+     "morph": "HVti2mp",
+     "unit": "boast",
+     "surface_kind": "own",
+     "negator": false,
+     "party_kind": null,
+     "narrative": null,
+     "verse": "but you shall be called the priests of the Lord; they shall speak of you as the ministers of our God; you shall eat the wealth of the nations, and in their glory you shall boast."
+    }
+   ],
+   "older": []
+  },
+  {
+   "ledger_id": 1983,
+   "word": "boast",
+   "strong": "H6286A",
+   "lexicon": {
+    "sense_head": "to beautify",
+    "meaning_range": "1) to glorify, beautify, adorn; 1a) (Piel) to glorify, beautify; 1b) (Hithpael); 1b1) to glorify oneself; 1b2) to get glory to oneself, be glorified",
+    "lsj": "",
+    "mounce": "",
+    "related": [
+     "H6286B פִּאֵר to re-harvest",
+     "H6287 פְּאֵר headdress",
+     "H6288A פֹּארָה bough",
+     "H6288B פּוּרָה bough",
+     "H6289 פָּארוּר pale",
+     "H8597 תִּפְאָרָה beauty"
+    ]
+   },
+   "occurrences": [
+    {
+     "occurrence": 1102510,
+     "reference": "Judg 7:2",
+     "morph": "HVti3ms",
+     "unit": "boast",
+     "surface_kind": "own",
+     "negator": false,
+     "party_kind": null,
+     "narrative": null,
+     "verse": "The Lord said to Gideon, “The people with you are too many for me to give the Midianites into their hand, lest Israel boast over me, saying, ‘My own hand has saved me.’"
+    },
+    {
+     "occurrence": 1295710,
+     "reference": "Isa 10:15",
+     "morph": "HVti3ms",
+     "unit": "boast",
+     "surface_kind": "own",
+     "negator": false,
+     "party_kind": null,
+     "narrative": null,
+     "verse": "Shall the axe boast over him who hews with it, or the saw magnify itself against him who wields it? As if a rod should wield him who lifts it, or as if a staff should lift him who is not wood!"
+    }
+   ],
+   "older": []
+  },
+  {
+   "ledger_id": 1984,
+   "word": "boast",
+   "strong": "H6310G",
+   "lexicon": {
+    "sense_head": "lip/mouth",
+    "meaning_range": "peh; 1) mouth; 1a) mouth (of man); 1b) mouth (as organ of speech); 1c) mouth (of animals); 1d) mouth, opening, orifice (of a well, river, etc); 1e) extremity, end pim; 2) a weight equal to one third of a shekel, occurs only in <ref=\"1Sa.13.21\">1Sa 13:21</ref>",
+    "lsj": "",
+    "mounce": "",
+    "related": [
+     "H6284 פָּאָה to cleave",
+     "H6310H פֶּה lip: edge",
+     "H6310I פֶּה lip: word",
+     "H6310J פֶּה lip: opening",
+     "H6310K פֶּה lip: according",
+     "H6310L פֶּה lip: one third",
+     "H6366 פֵּיָה two-edged",
+     "H6374 פִּיפִיָּה tooth",
+     "H6433 פֻּם mouth"
+    ]
+   },
+   "occurrences": [
+    {
+     "occurrence": 1392139,
+     "reference": "Obd 12",
+     "morph": "HNcmsc",
+     "unit": "boast",
+     "surface_kind": "shared",
+     "negator": false,
+     "party_kind": null,
+     "narrative": null,
+     "verse": "But do not gloat over the day of your brother in the day of his misfortune; do not rejoice over the people of Judah in the day of their ruin; do not boast in the day of distress."
+    }
+   ],
+   "older": []
+  },
+  {
+   "ledger_id": 1985,
+   "word": "boast",
+   "strong": "H8597",
+   "lexicon": {
+    "sense_head": "beauty",
+    "meaning_range": "1) beauty, splendour, glory; 1a) beauty, finery (of garments, jewels); 1b) glory; 1b1) of rank, renown; 1b2) as attribute of God; 1c) honour (or nation Israel); 1d) glorying, boasting (of individual)",
+    "lsj": "",
+    "mounce": "",
+    "related": [
+     "H6286A פָּאַר to beautify",
+     "H6286B פִּאֵר to re-harvest",
+     "H6287 פְּאֵר headdress"
+    ]
+   },
+   "occurrences": [
+    {
+     "occurrence": 1294482,
+     "reference": "Isa 20:5",
+     "morph": "HNcfsc",
+     "unit": "boast",
+     "surface_kind": "own",
+     "negator": false,
+     "party_kind": null,
+     "narrative": null,
+     "verse": "Then they shall be dismayed and ashamed because of Cush their hope and of Egypt their boast."
+    }
+   ],
+   "older": []
+  }
+ ],
+ "answer": {
+  "command": "ReadWords",
+  "collection": "boast",
+  "subgroup": "boasting",
+  "rows": [
+   {
+    "ledger_id": 1981,
+    "word": "boast|H1984H",
+    "readings": [
+     {
+      "kind": "term",
+      "obs_text": "In 1Ki 20:11 and Pro 27:1 the jussive is negated: a boast made before the outcome is forbidden, of the man arming himself as though he had already taken his armour off (1Ki 20:11), and of tomorrow, which no one knows (Pro 27:1).",
+      "basis": "stated",
+      "grounds": "Do not boast about tomorrow",
+      "occurrences": [
+       1153871,
+       1276946
+      ]
+     },
+     {
+      "kind": "term",
+      "obs_text": "In Jer 9:23 the jussive is negated three times, each with its own ground: the wise man in his wisdom, the mighty in his might, the rich in his riches. Each ground is a real possession, and each is set aside as a ground for a boast.",
+      "basis": "stated",
+      "grounds": "Let not the wise man boast in his wisdom",
+      "occurrences": [
+       1322542,
+       1322550,
+       1322556
+      ]
+     },
+     {
+      "kind": "term",
+      "obs_text": "In Psa 49:6 and Jer 49:4 the boast rests on wealth that is trusted: the abundance of riches (Psa 49:6), and the valleys and treasures of the faithless daughter, who says no one will come against her (Jer 49:4).",
+      "basis": "stated",
+      "grounds": "boast of the abundance of their riches",
+      "occurrences": [
+       1252588,
+       1322588
+      ]
+     },
+     {
+      "kind": "term",
+      "obs_text": "In Psa 52:1 the question to the mighty man asks why he boasts of evil, and the verse answers with God's steadfast love that endures all day.",
+      "basis": "stated",
+      "grounds": "Why do you boast of evil",
+      "occurrences": [
+       1252617
+      ]
+     },
+     {
+      "kind": "term",
+      "obs_text": "In Psa 97:7 the participle names those who make their boast in worthless idols, the worshippers of images who are put to shame.",
+      "basis": "stated",
+      "grounds": "who make their boast in worthless idols",
+      "occurrences": [
+       1252642
+      ]
+     },
+     {
+      "kind": "term",
+      "obs_text": "In Psa 34:2 and Jer 9:24 the boast is made in the Lord: the psalmist's soul boasts in him and the humble hear and are glad (Psa 34:2), and the one who boasts is to boast that he understands and knows the Lord (Jer 9:24).",
+      "basis": "stated",
+      "grounds": "My soul makes its boast in the Lord",
+      "occurrences": [
+       1252564,
+       1322563
+      ]
+     }
+    ],
+    "older": [
+     {
+      "observation": 15177,
+      "action": "keep",
+      "nature": "evidence",
+      "reason": "It quotes Jer 9:23 and states that each of the three is a real standing set aside as a ground for boasting; it stands as evidence."
+     },
+     {
+      "observation": 15178,
+      "action": "keep",
+      "nature": "evidence",
+      "reason": "It reads Psa 49:6-7 and Jer 49:4, the boast joined to trust in wealth and measured against the life wealth cannot buy; it stands as evidence."
+     },
+     {
+      "observation": 15186,
+      "action": "keep",
+      "nature": "evidence",
+      "reason": "It quotes Psa 97:7 with 97:9, the boast in idols set against the Lord most high; it stands as evidence."
+     },
+     {
+      "observation": 15298,
+      "action": "keep",
+      "nature": "evidence",
+      "reason": "It states, with Jer 9:24, that God is the one boasted in and not the one who boasts; it stands as evidence."
+     },
+     {
+      "observation": 15385,
+      "action": "keep",
+      "nature": "evidence",
+      "reason": "It reads Psa 34:2-4 and Psa 69:29-32: one man's boast is in the Lord and the humble are glad at what God did for him; the reading is tied to the verses, so it stands as evidence."
+     },
+     {
+      "observation": 16692,
+      "action": "consume",
+      "carriers": [
+       "this",
+       15385
+      ],
+      "mapping": "16692 is a label ('Good boast') with Psa 34:2, the soul's boast in the Lord and the humble glad at it. The reading of Psa 34:2 in this row states the boast made in the Lord and the gladness of the humble, and 15385 quotes the same words of Psa 34:2 and reads them.",
+      "reason": "Its meaning is carried whole by this row's reading of Psa 34:2 and by observation 15385."
+     }
+    ]
+   },
+   {
+    "ledger_id": 1982,
+    "word": "boast|H3235",
+    "readings": [
+     {
+      "kind": "face",
+      "obs_text": "In Isa 61:6 the code is the verb of exchanging (here: to enter into, to be changed into), rendered 'you shall boast' of the nations' glory. The Hebrew may say the people come into the nations' glory; the ESV reads it as a boast. Both readings are open; I read the ESV's as its rendering of entering into that glory.",
+      "basis": "read",
+      "grounds": "in their glory you shall boast",
+      "occurrences": [
+       1296737
+      ]
+     }
+    ],
+    "older": []
+   },
+   {
+    "ledger_id": 1983,
+    "word": "boast|H6286A",
+    "readings": [
+     {
+      "kind": "term",
+      "obs_text": "In Judg 7:2 and Isa 10:15 the verb (to glorify oneself) is a claim over the one who did the work: Israel would glorify itself over the Lord, saying its own hand saved it (Judg 7:2), and the axe would glorify itself over the one who hews with it (Isa 10:15).",
+      "basis": "stated",
+      "grounds": "lest Israel boast over me",
+      "occurrences": [
+       1102510,
+       1295710
+      ]
+     }
+    ],
+    "older": []
+   },
+   {
+    "ledger_id": 1984,
+    "word": "boast|H6310G",
+    "readings": [
+     {
+      "kind": "face",
+      "obs_text": "In Obd 12 the noun is 'mouth', joined with the verb of making great (boast|H1431 in this subgroup): Edom is told not to make its mouth great over Judah in the day of distress. The ESV renders the two words together as 'boast'.",
+      "basis": "read",
+      "grounds": "do not boast in the day of distress",
+      "occurrences": [
+       1392139
+      ]
+     }
+    ],
+    "older": []
+   },
+   {
+    "ledger_id": 1985,
+    "word": "boast|H8597",
+    "readings": [
+     {
+      "kind": "face",
+      "obs_text": "In Isa 20:5 the noun of beauty or glory is rendered 'boast': Egypt was what Judah gloried in, set beside Cush its hope, and both end in dismay and shame.",
+      "basis": "read",
+      "grounds": "Egypt their boast",
+      "occurrences": [
+       1294482
+      ]
+     }
+    ],
+    "older": []
+   }
+  ]
+ },
+ "measured": {
+  "package_chars": 23545,
+  "seconds": 0.02
+ }
+}

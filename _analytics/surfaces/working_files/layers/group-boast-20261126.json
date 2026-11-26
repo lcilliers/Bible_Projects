@@ -1,0 +1,314 @@
+{
+  "collection": "boast",
+  "pulled": "2026-11-26T10:32:56Z",
+  "asks": "Place each surface, whole, in the subgroup of its meaning. The file gives, for each surface, its base and what the WordNet tables say of it (its network group and its pairs with the other surfaces of the collection) and a seed grouping; no verse is read at this step. Start from the seed (surfaces of one word family stay together unless their forms differ in meaning) and amend it by meaning. A surface that WordNet does not hold (a phrase, or a surface with no pair) is a subgroup on its own and still goes through the subgroup analysis. Name each subgroup for the kind of meaning its surfaces share and define it in a sentence. Membership of the collection is settled: set a surface aside only where it is plainly not a member in meaning, with the reason, and the change procedure moves it out. A surface is never split by Strong's code. Mark a placement that is open as uncertain and say what is unsettled. Nothing here judges what a word does for the inner being: a concept (a behaviour) comes into play only in stage 4.",
+  "groups": [
+    {
+      "name": "boasting",
+      "definition": "Speaking with pride of oneself or of what one has, does or relies on, or glorying in something; the surfaces name the act (boast, boasted, boasting, boasts) and those who do it (boasters)."
+    },
+    {
+      "name": "boastful",
+      "definition": "Given to boasting: the adjective that describes a person, or speech, marked by boasting."
+    },
+    {
+      "name": "boast about",
+      "definition": "To boast with respect to a named thing: the verb with its object, the thing that is spoken of with pride."
+    },
+    {
+      "name": "loud boasts",
+      "definition": "Boasts uttered aloud and openly: the noun boasts with loud, marking that they are spoken loudly."
+    }
+  ],
+  "rows": [
+    {
+      "surface": "boast",
+      "base": "boast",
+      "link": "core",
+      "wordnet": {
+        "in_wordnet": true,
+        "network_kind": "main",
+        "network_group": 1,
+        "pairs_in_collection": 4,
+        "neighbours": [
+          {
+            "surface": "boasting",
+            "type": "same_base",
+            "weight": 4
+          },
+          {
+            "surface": "boasts",
+            "type": "same_base",
+            "weight": 4
+          },
+          {
+            "surface": "boasted",
+            "type": "same_base",
+            "weight": 3
+          },
+          {
+            "surface": "boasters",
+            "type": "derivational",
+            "weight": 1
+          }
+        ]
+      },
+      "seed_group": "boast; boasted; boasting; boasts",
+      "current": {
+        "state": "unplaced",
+        "group": null
+      },
+      "fill": {
+        "group": "boasting",
+        "reason": "Word family of boast (same_base pairs in WordNet); the forms differ in tense and number, not in meaning.",
+        "certainty": "decided",
+        "uncertain": ""
+      }
+    },
+    {
+      "surface": "boast about",
+      "base": "boast about",
+      "link": "phrase",
+      "wordnet": {
+        "in_wordnet": false,
+        "network_kind": null,
+        "network_group": null,
+        "pairs_in_collection": 0,
+        "neighbours": []
+      },
+      "seed_group": "boast about",
+      "current": {
+        "state": "unplaced",
+        "group": null
+      },
+      "fill": {
+        "group": "boast about",
+        "reason": "A phrase WordNet does not hold, so a subgroup of its own as the pull asks.",
+        "certainty": "decided",
+        "uncertain": ""
+      }
+    },
+    {
+      "surface": "boasted",
+      "base": "boast",
+      "link": "synonym",
+      "wordnet": {
+        "in_wordnet": true,
+        "network_kind": "main",
+        "network_group": 1,
+        "pairs_in_collection": 4,
+        "neighbours": [
+          {
+            "surface": "boast",
+            "type": "same_base",
+            "weight": 3
+          },
+          {
+            "surface": "boasting",
+            "type": "same_base",
+            "weight": 3
+          },
+          {
+            "surface": "boasts",
+            "type": "same_base",
+            "weight": 3
+          },
+          {
+            "surface": "boasters",
+            "type": "derivational",
+            "weight": 1
+          }
+        ]
+      },
+      "seed_group": "boast; boasted; boasting; boasts",
+      "current": {
+        "state": "unplaced",
+        "group": null
+      },
+      "fill": {
+        "group": "boasting",
+        "reason": "Word family of boast (same_base pairs in WordNet); the forms differ in tense and number, not in meaning.",
+        "certainty": "decided",
+        "uncertain": ""
+      }
+    },
+    {
+      "surface": "boasters",
+      "base": "boast",
+      "link": "synonym",
+      "wordnet": {
+        "in_wordnet": true,
+        "network_kind": "main",
+        "network_group": 1,
+        "pairs_in_collection": 4,
+        "neighbours": [
+          {
+            "surface": "boast",
+            "type": "derivational",
+            "weight": 1
+          },
+          {
+            "surface": "boasted",
+            "type": "derivational",
+            "weight": 1
+          },
+          {
+            "surface": "boasting",
+            "type": "derivational",
+            "weight": 1
+          },
+          {
+            "surface": "boasts",
+            "type": "derivational",
+            "weight": 1
+          }
+        ]
+      },
+      "seed_group": "boasters",
+      "current": {
+        "state": "unplaced",
+        "group": null
+      },
+      "fill": {
+        "group": "boasting",
+        "reason": "Agent noun of the same word family (base boast, derivational pairs with boast, boasted, boasting, boasts): the ones who boast; the form differs, the meaning does not differ in kind.",
+        "certainty": "decided",
+        "uncertain": ""
+      }
+    },
+    {
+      "surface": "boastful",
+      "base": "boast",
+      "link": "synonym",
+      "wordnet": {
+        "in_wordnet": true,
+        "network_kind": "main",
+        "network_group": 1,
+        "pairs_in_collection": 0,
+        "neighbours": []
+      },
+      "seed_group": "boastful",
+      "current": {
+        "state": "unplaced",
+        "group": null
+      },
+      "fill": {
+        "group": "boastful",
+        "reason": "In WordNet with no pair to another surface of the collection, so a subgroup of its own as the pull asks.",
+        "certainty": "uncertain",
+        "uncertain": "Same word family as boasting (base boast); held apart only because WordNet gives it no pair in the collection. Joining it to boasting is open for the researcher."
+      }
+    },
+    {
+      "surface": "boasting",
+      "base": "boast",
+      "link": "synonym",
+      "wordnet": {
+        "in_wordnet": true,
+        "network_kind": "main",
+        "network_group": 1,
+        "pairs_in_collection": 4,
+        "neighbours": [
+          {
+            "surface": "boast",
+            "type": "same_base",
+            "weight": 4
+          },
+          {
+            "surface": "boasts",
+            "type": "same_base",
+            "weight": 4
+          },
+          {
+            "surface": "boasted",
+            "type": "same_base",
+            "weight": 3
+          },
+          {
+            "surface": "boasters",
+            "type": "derivational",
+            "weight": 1
+          }
+        ]
+      },
+      "seed_group": "boast; boasted; boasting; boasts",
+      "current": {
+        "state": "unplaced",
+        "group": null
+      },
+      "fill": {
+        "group": "boasting",
+        "reason": "Word family of boast (same_base pairs in WordNet); the forms differ in tense and number, not in meaning.",
+        "certainty": "decided",
+        "uncertain": ""
+      }
+    },
+    {
+      "surface": "boasts",
+      "base": "boast",
+      "link": "synonym",
+      "wordnet": {
+        "in_wordnet": true,
+        "network_kind": "main",
+        "network_group": 1,
+        "pairs_in_collection": 4,
+        "neighbours": [
+          {
+            "surface": "boast",
+            "type": "same_base",
+            "weight": 4
+          },
+          {
+            "surface": "boasting",
+            "type": "same_base",
+            "weight": 4
+          },
+          {
+            "surface": "boasted",
+            "type": "same_base",
+            "weight": 3
+          },
+          {
+            "surface": "boasters",
+            "type": "derivational",
+            "weight": 1
+          }
+        ]
+      },
+      "seed_group": "boast; boasted; boasting; boasts",
+      "current": {
+        "state": "unplaced",
+        "group": null
+      },
+      "fill": {
+        "group": "boasting",
+        "reason": "Word family of boast (same_base pairs in WordNet); the forms differ in tense and number, not in meaning.",
+        "certainty": "decided",
+        "uncertain": ""
+      }
+    },
+    {
+      "surface": "loud boasts",
+      "base": "loud boasts",
+      "link": "phrase",
+      "wordnet": {
+        "in_wordnet": false,
+        "network_kind": null,
+        "network_group": null,
+        "pairs_in_collection": 0,
+        "neighbours": []
+      },
+      "seed_group": "loud boasts",
+      "current": {
+        "state": "unplaced",
+        "group": null
+      },
+      "fill": {
+        "group": "loud boasts",
+        "reason": "A phrase WordNet does not hold, so a subgroup of its own as the pull asks.",
+        "certainty": "decided",
+        "uncertain": ""
+      }
+    }
+  ]
+}

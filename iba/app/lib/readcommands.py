@@ -35,6 +35,11 @@ class ReadError(Exception):
     """A usage or limit problem; routed as 'refused' and nothing is written."""
 
 
+class ReadNext(ReadError):
+    """Not a fault: the unit is read (or has nothing to read, or comes after another step) and the message names the next command. The handlers
+    return it as ok and keep what the gate answered; it is never a refusal and never logged in read_failure (#2637 X5, catalogue K7)."""
+
+
 def settings(cfg) -> dict:
     v = cfg.required_setting("layer.read_types")
     return json.loads(v) if isinstance(v, str) else v
@@ -102,7 +107,7 @@ def read_words(conn, cfg, run_id: str, name: str, subgroup: str, out_dir: pathli
         rows = _word_rows(conn, cid, gid, step, item)
     todo = [r for r in rows if r[6] == "open" or (r[6] == "observed" and not r[9])]
     if not todo:
-        raise ReadError(f"every word of {gname!r} is read and validated ({len(rows)} rows); next: " + next_after_words(conn, cid, gid, name, gname, step))
+        raise ReadNext(f"every word of {gname!r} is read and validated ({len(rows)} rows); next: " + next_after_words(conn, cid, gid, name, gname, step))
     pulled = {}
     for part in sg.chunks([r[0] for r in todo], cfg):
         pulled.update(dict(conn.execute(f"SELECT id, pulled_at FROM collection_layer_item WHERE id IN ({','.join('?' * len(part))})", part).fetchall()))
@@ -312,7 +317,7 @@ def read_senses(conn, cfg, run_id: str, name: str, subgroup: str, out_dir: pathl
         rows = _word_rows(conn, cid, gid, step, item)
     todo = [r for r in rows if r[6] == "open" or (r[6] == "observed" and not r[9])]
     if not todo:
-        raise ReadError(f"the senses of {gname!r} are read and validated; next: " + next_after_senses(conn, cid, gid, name, gname, step))
+        raise ReadNext(f"the senses of {gname!r} are read and validated; next: " + next_after_senses(conn, cid, gid, name, gname, step))
     r = todo[0]
     L = lr.load(conn, cfg, name, pairs=False, subgroup=gname)
     with sg.budget(conn, cfg, "ReadSenses"):
@@ -414,7 +419,7 @@ def read_enrichment(conn, cfg, run_id: str, name: str, subgroup: str, out_dir: p
         rows = _word_rows(conn, cid, gid, step, item)
     todo = [r for r in rows if r[6] == "open" or (r[6] == "observed" and not r[9])]
     if not todo:
-        raise ReadError(f"the enrichment of {gname!r} is read and validated; next: " + next_after_enrichment(conn, cid, gid, name, gname, step))
+        raise ReadNext(f"the enrichment of {gname!r} is read and validated; next: " + next_after_enrichment(conn, cid, gid, name, gname, step))
     r = todo[0]
     L = lr.load(conn, cfg, name, pairs=False, subgroup=gname)
     with sg.budget(conn, cfg, "ReadEnrichment"):
@@ -559,7 +564,7 @@ def read_structure(conn, cfg, run_id: str, name: str, subgroup: str, out_dir: pa
     if not todo:
         if item and any(r[6] == "open" or (r[6] == "observed" and not r[9]) for r in rows):
             raise ReadError(f"no {item} row of {gname!r} is open; other items are: run ReadStructure without -Item")
-        raise ReadError(f"the structure of {gname!r} is read and validated ({len(rows)} rows); next: " + next_after_structure(conn, cid, gid, name, gname, step))
+        raise ReadNext(f"the structure of {gname!r} is read and validated ({len(rows)} rows); next: " + next_after_structure(conn, cid, gid, name, gname, step))
     pulled = {}
     for part in sg.chunks([r[0] for r in todo], cfg):
         pulled.update(dict(conn.execute(f"SELECT id, pulled_at FROM collection_layer_item WHERE id IN ({','.join('?' * len(part))})", part).fetchall()))
@@ -743,7 +748,7 @@ def read_sweep(conn, cfg, run_id: str, name: str, subgroup: str, out_dir: pathli
             conn.execute(f"UPDATE collection_layer_item SET state='observed', answered_at={lr.NOW}, reason=?, updated_at={lr.NOW}, run_id=? WHERE id=?",
                          ("swept: no older observation on the subgroup's occurrences is left unmarked after B1 to B3, and none is carried to the sweep", run_id, row[0]))
             _check_written(conn, cfg, run_id, name, gname)
-        raise ReadError(f"the sweep of {gname!r} has nothing to read: no older observation is left unmarked; the sweep row is answered as such. Next: "
+        raise ReadNext(f"the sweep of {gname!r} has nothing to read: no older observation is left unmarked; the sweep row is answered as such. Next: "
                         + next_after_gate(conn, cid, gid, name, gname))
     occ = {o["vl_id"] for o in L["d"]["occurrences"] if o["group"] == gid}
     olds = []
@@ -976,7 +981,7 @@ def read_evidence(conn, cfg, run_id: str, name: str, subgroup: str, out_dir: pat
                          (f"validated: the code checks pass and all {len(ev)} evidence observations are read", run_id, row[0]))
             _check_written(conn, cfg, run_id, name, gname)
         what = "every evidence observation is read" + ("" if chk["passes"] else "; the code checks do NOT pass: " + "; ".join(f"{k} {v[:5]}" for k, v in chk["findings"].items() if v))
-        raise ReadError(f"the evidence validation of {gname!r}: {what}. Next: " + next_after_gate(conn, cid, gid, name, gname))
+        raise (ReadNext if chk["passes"] else ReadError)(f"the evidence validation of {gname!r}: {what}. Next: " + next_after_gate(conn, cid, gid, name, gname))
     traced = {}
     for r in _ids_in(conn, "SELECT observation_id, traced_observation_id FROM ib_node WHERE deleted=0 AND traced_observation_id IS NOT NULL AND observation_id IN ({ids})", unread, cfg):
         traced.setdefault(r[0], []).append(r[1])
@@ -1147,7 +1152,7 @@ def read_elements(conn, cfg, run_id: str, name: str, subgroup: str, out_dir: pat
     if row is None:
         raise ReadError(f"step 3.1 has no row for {gname!r}: the subgroup has no evidence observation on its occurrences")
     if row[6] in ("observed", "none") and row[9]:
-        raise ReadError(f"the elements of {gname!r} are read and validated; next: " + next_after_elements(conn, cfg, name, gname))
+        raise ReadNext(f"the elements of {gname!r} are read and validated; next: " + next_after_elements(conn, cfg, name, gname))
     L = lr.load(conn, cfg, name, pairs=False, subgroup=gname)
     sd = lr.step_def(s, "3.1")
     idef = s["items"][ELEMENTS_ITEM]
@@ -1316,7 +1321,7 @@ def read_behaviours(conn, cfg, run_id: str, name: str, out_dir: pathlib.Path) ->
     if row is None:
         raise ReadError(f"step 3.2 has no row for {cname!r}: the collection has no grouped occurrence")
     if row[6] in ("observed", "none") and row[9]:
-        raise ReadError(f"the behaviours of {cname!r} are read and validated; next: " + next_after_behaviours(cname))
+        raise ReadNext(f"the behaviours of {cname!r} are read and validated; next: " + next_after_behaviours(cname))
     L = lr.load(conn, cfg, cname, pairs=False)
     sd = lr.step_def(s, "3.2")
     idef = s["items"][BEHAVIOURS_ITEM]

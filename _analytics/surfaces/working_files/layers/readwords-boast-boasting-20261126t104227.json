@@ -1,0 +1,1336 @@
+{
+ "command": "ReadWords",
+ "collection": "boast",
+ "subgroup": "boasting",
+ "step": "S1",
+ "made": "2026-11-26T10:42:27Z",
+ "batch": {
+  "words": 12,
+  "words_left_after_this": 16
+ },
+ "instruction": {
+  "what": "Step S1, the words of one subgroup (stage 1, the lexical analysis): each word -- a surface with its lettered Strong's code -- read in the verse of each of its occurrences, for what it is and how it is used there. Nothing here says what a word does for the inner being; that begins at step 3.1.",
+  "read": [
+   "Take one word at a time, and within it one occurrence at a time, in the verse of that occurrence.",
+   "Read the evidence in this order: the verse text and the occurrence's stored structure (morph, unit, surface_kind, negator, party_kind, narrative); then the meaning sources for the code read together (sense_head, meaning_range, lsj, mounce), none picked and the others dropped; then the English rendering against the literal sense: does the English add or hide?",
+   "Judge the meaning in context from the Strong's code and the verse, not from the English surface alone. Where occurrences show different stems or voices, say whether the subject does, undergoes or causes the act.",
+   "The prompts are areas to explore; a prompt that does not apply is not answered."
+  ],
+  "write": [
+   "Fill `answer.rows`: for each word, its `readings`. One reading for each distinct way the word is used: the occurrences where it is used the same way are listed together in that reading's `occurrences` (occurrence ids or verse references); an occurrence used differently is its own reading.",
+   "kind: term; face where the use in a verse departs from the word's usual sense.",
+   "obs_text: concise; names the verse or verses; states what the word is and how it is used there (its object, setting, construction, what the morph shows); never the dictionary range, never the verse restated.",
+   "basis: stated (the verse says it) or read (read from the structure or the context). grounds: what in the verse shows it.",
+   "Every occurrence of the word is in exactly one reading; none is left out. A homonym or a name is recorded as such; a data error is named in grounds, not fixed.",
+   "`older`: the older observations on the word's occurrences. Read each with the word (they are what was recorded before) and answer each in the row's `older`, once: keep (with `nature` evidence or inner_being: it stands as it is); restate (with `nature`, `new_text` and `checked`: what in the base data the new text was checked against); merge (with `into`: a live observation saying the same); consume (with `carriers`, [\"this\"] for this row's readings or observation ids, and `mapping`: what the old one says and which carrier states each part); delete_neither (with `reason`: it is neither evidence nor inner being); carry (with `to` a later step, 1.1 or 2.1, and `reason`: what that step is to consider); defer (with `collection`, `nature` and `finding`: another collection owns the rest). An older observation listed under another word is answered there.",
+   "Then: Collection-Build.ps1 -Action RecordWords -File <the answer file> (-Check to preview). The record refuses the whole file on any fault and lists every fault."
+  ],
+  "keep": [
+   {
+    "rule": "RG-08 the-original",
+    "text": "For every word that names an inner or bodily act, look at the original: the root's range in all three meaning sources read together, never one picked and the others dropped; the ESV renderings across its verses; whether the English adds or hides; the literal sense beside the rendering. Where more than one reading is open, record each, and mark the choice 'I read'."
+   },
+   {
+    "rule": "RG-14 morph-read",
+    "text": "Morph is read, not carried: where occurrences of a word show different stems or voices, record whether the subject does, undergoes or causes the act."
+   },
+   {
+    "rule": "RG-16 homonym-and-data-error",
+    "text": "A word that is only a homonym or a name, with no meaningful context, is recorded as such (tag no-human-context) and left. Data errors found while reading are flagged (tag data-error), not fixed in the reading."
+   },
+   {
+    "rule": "RG-17 catalogue-as-prompts",
+    "text": "The question catalogue's questions are prompts for the areas to explore. A question that does not apply is not answered, and no answer is manufactured beyond what the verse shows."
+   },
+   {
+    "rule": "RG-21 grain",
+    "text": "A word is read per its lettered Strong's code (its grain), never the bare lemma (B:113). The occurrences of a word with several senses are related per grain and never aggregated across grains: related verses are same-grain occurrences."
+   },
+   {
+    "rule": "RG-22 content-words-carry-impact",
+    "text": "Content words carry the inner-being impact and are read even when no cluster tags them. Function words (particles, prepositions, conjunctions, suffixes, pronouns) get no observation of their own, except negators and connectives, which are read for what they do (RG-07). A T2 word never stands alone: it is read as the qualifier of what it binds to."
+   },
+   {
+    "rule": "RW-03 no-duplicates-multi-node",
+    "text": "One observation per finding: the same description is never written twice. Applied to another verse, word or scope it gains a node on the existing observation."
+   },
+   {
+    "rule": "RW-04 concise-verse-specific",
+    "text": "Observation text is concise and tied to this verse's content, never a restatement of the word's dictionary sense. A transliteration is never given without its gloss."
+   },
+   {
+    "rule": "RW-08 slants-own-rows",
+    "text": "Where the evidence points to more than one reading, each is its own observation with its own evidence."
+   },
+   {
+    "rule": "RW-09 reread-builds-on-prior",
+    "text": "A re-read includes the observations already recorded for the verse, so the reading sees prior findings and builds on them."
+   },
+   {
+    "rule": "RW-13 older-observations-answered-at-record",
+    "text": "Every older live observation with a live node on an occurrence of the row (a stage that is not the build's own) is answered in fill.older when the row is recorded, once: keep or restate (each with its marker), merge into a named observation, consume (live observations carry its meaning, stated in words, verified before it is deleted), delete as neither (comment first), or defer to a named collection (marked now; only the finding is left to that collection). An observation already marked by the validation, answered in a build or deferred is not asked again. A new observation whose text equals that of another live observation of the collection is refused, the other named. LayerCheck re-derives both from the tables. The end state of a collection's build is that every observation of its scope is marked and fixed or deleted, every word node complete or with its reason, and each deferral owned by a named collection."
+   },
+   {
+    "rule": "RS-04 existing-checked-accept-modify-delete",
+    "text": "When a verse is worked, every existing observation and node on it, of any stage, is checked against the verse by its wording. The stage is not an indication of the nature of an observation and is never used to filter. Each observation is accepted, modified (changed in place; the old value, the new value and the reason are kept in ib_observation_change), soft deleted (the `deleted` column, with the reason), merged (a duplicate description, into the observation that is kept) or, when its wording shows it is not verse understanding, left exactly as it is with the reason. The check's fixes are part of it and need no separate approval. Nothing is physically deleted."
+   },
+   {
+    "rule": "VA-03 consumption-is-verified-before-deletion",
+    "text": "An older observation is deleted as consumed only when live observations carry its meaning: every word occurrence of it is on a live node of a carrier or named as not carried with its reason, the mapping is stated in words (what the old says, which carrier states each part), the traces to it are re-pointed or replaced, and the consumption is kept as `consumed_by`. An observation that holds more than one finding is split first."
+   },
+   {
+    "rule": "VA-04 neither-evidence-nor-inner-being-is-deleted",
+    "text": "An observation that is neither evidence nor inner being contributes nothing to the purposes of the observations (researcher, 2026-11-22): it is commented with its reason and the word occurrences no other live observation holds, then deleted. An observation already marked, or one another observation traces, is not deleted this way."
+   }
+  ],
+  "not_in_this_read": ""
+ },
+ "prompts": [
+  {
+   "code": "M0.1.1",
+   "question": "In this verse, looking at this specific occurrence (its surface form and morph_code), what does this term's name/form show about its essential nature here?"
+  },
+  {
+   "code": "M0.1.2",
+   "question": "In this verse, drawing on this term's lexicon entries but grounded in how it is actually used in this occurrence, what does it mean at the definitional level?"
+  },
+  {
+   "code": "M0.1.3",
+   "question": "In this verse, what directional, relational, or constitutional implication does this term's name carry as it functions in this specific occurrence?"
+  },
+  {
+   "code": "M0.4.1",
+   "question": "What is the grammatical/stem form of this term in this verse?"
+  },
+  {
+   "code": "M0.5.1",
+   "question": "In this verse, what does this term's root meaning show about how it operates in this specific occurrence?"
+  },
+  {
+   "code": "M0.5.2",
+   "question": "In this verse, what does this occurrence's own grammatical form (per its morph_code — e.g. noun, verb, adjective, participle) show about how the term operates here?"
+  },
+  {
+   "code": "M0.5.3",
+   "question": "In this verse, given this term's known semantic range — the breadth of meaning it can carry, including idiomatic, analogical, or combinatorial senses — where does this occurrence sit within that range, and what does that show about how the term operates here?"
+  },
+  {
+   "code": "M0.5.4",
+   "question": "In this verse, does this occurrence express a specific aspect — disposition versus act, received versus given, condition versus quality? Record which, or none."
+  },
+  {
+   "code": "M0.5.5",
+   "question": "In this verse, among this term's own related terms, is there one that functions as this occurrence's structural opposite? Record it, or none."
+  },
+  {
+   "code": "M0.5.6",
+   "question": "In this verse, among this term's own related terms, is there a person-type term relevant to this occurrence — one for a person who habitually possesses or exercises it? Record it, or none."
+  },
+  {
+   "code": "M0.5.7",
+   "question": "In this verse, among this term's own related terms, is there a supplication or seeking term relevant to this occurrence — one for the act of seeking it from another? Record it, or none."
+  },
+  {
+   "code": "M0.5.8",
+   "question": "In this verse, does this term's Testament context (OT Hebrew vs. NT Greek) affect how this specific occurrence should be interpreted, and if so, how? Record none if the Testament context makes no interpretive difference here."
+  },
+  {
+   "code": "M0.5.9",
+   "question": "In this verse, if this term is newly coined in the NT period, what does that coinage show about how it functions in this occurrence? Record none if not applicable or not relevant to this occurrence."
+  },
+  {
+   "code": "M0.5.11",
+   "question": "In this verse, where this occurrence's meaning diverges from the term's usual sense elsewhere, what nuance does that divergence carry here, and how does it compare to the word's other occurrences? Pay particular attention to this occurrence's own surface form/rendering — a marked or atypical surface form is often the visible trace of the divergence itself, not a separate fact. Record none if this occurrence matches the term's usual sense."
+  }
+ ],
+ "words": [
+  {
+   "ledger_id": 1958,
+   "word": "boasted",
+   "strong": "G2744",
+   "lexicon": {
+    "sense_head": "to boast",
+    "meaning_range": "to boast, brag about; to rejoice in, glory in; this can refer to proper or improper boasting, depending on the object of the boast; <b>to glory, boast,</b> <ref='Rom.2.17, 23'>Rom. 2:17, 23</ref>; <greek>ὑπέρ τινος</greek>, <b>to boast of</b> a person or thing, <b>to undertake a complimentary testimony to,</b> <ref='2Co.12.5'>2Cor. 12:5;</ref> <b>to rejoice, exult,</b> <ref='Rom.5.2, 3, 11'>Rom. 5:2, 3, 11</ref>",
+    "lsj": "<b> καυχ-άομαι</b>, <br /> <i>Doric dialect</i> <b>καυχέομαι</b> [<a href=\"javascript:void(0)\" title=\" 3rd c.BC: Theocritus Poeta Bucolicus 5.77 \">Refs 3rd c.BC+</a>]; <i>2nd pers.</i> <i>singular</i> καυχᾶσαι in late Gr., as [<a href=\"javascript:void(0)\" title=\" NT.Rom.2.17, 23, etc.\">NT</a>]: <i>future</i> -ήσομαι [<a href=\"javascript:void(0)\" title=\" 5th c.BC: Herodotus Historicus 7.39, 5th c.BC: Eupolis Comicus 134, 4th c.BC: Epicrates Comicus 6 \">Refs 5th c.BC+</a>]: <i>aorist</i> ἐκαυχησάμην [<a href=\"javascript:void(0)\" title=\" 4th c.BC: Aristoteles Philosophus “Politica” 1311b4 \">Refs 4th c.BC+</a>]; <i>Aeolic dialect</i> <i>optative</i> καυχάσαιτο [<a href=\"javascript:void(0)\" title",
+    "mounce": "to boast, brag about; to rejoice in, glory in; this can refer to proper or improper boasting, depending on the object of the boast",
+    "related": [
+     "G2172 εὔχομαι to pray/wish for",
+     "G2620 κατακαυχάομαι to boast",
+     "G2745 καύχημα pride",
+     "G2746 καύχησις pride",
+     "G3166 μεγαλαυχέω to boast"
+    ]
+   },
+   "occurrences": [
+    {
+     "occurrence": 1487303,
+     "reference": "2Cor 11:12",
+     "morph": "V-PNI-3P",
+     "unit": "boasted",
+     "surface_kind": "own",
+     "negator": false,
+     "party_kind": null,
+     "narrative": null,
+     "verse": "And what I am doing I will continue to do, in order to undermine the claim of those who would like to claim that in their boasted mission they work on the same terms as we do."
+    }
+   ],
+   "older": [
+    {
+     "observation": 15184,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "nature": null,
+     "text": "The flesh and appearance: \"those who want to make a good showing in the flesh ... that they may boast in your flesh\" (Gal 6:12–13); \"Since many boast according to the flesh\" (2Co 11:18); \"those who boast about outward appearance and not about what is in the heart\" (2Co 5:12); \"their boasted mission\" (2Co 11:12), of men \"disguising themselves as apostles of Christ\" (11:13).",
+     "verses": [
+      "Gal.6.12",
+      "Gal.6.13",
+      "2Cor.11.18",
+      "2Cor.5.12",
+      "2Cor.11.12",
+      "2Cor.11.13"
+     ]
+    }
+   ]
+  },
+  {
+   "ledger_id": 1959,
+   "word": "boasted",
+   "strong": "H1431",
+   "lexicon": {
+    "sense_head": "to magnify",
+    "meaning_range": "1) to grow, become great or important, promote, make powerful, praise, magnify, do great things; 1a) (Qal); 1a1) to grow up; 1a2) to become great; 1a3) to be magnified; 1b) (Piel); 1b1) to cause to grow; 1b2) to make great, powerful; 1b3) to magnify; 1c) (Pual) to be brought up; 1d) (Hiphil); 1d1) to make great; 1d2) to magnify; 1d3) to do great things; 1e) (Hithpael) to magnify oneself",
+    "lsj": "",
+    "mounce": "",
+    "related": [
+     "H1419A גָּדוֹל great: large",
+     "H1419B גָּדוֹל Haggedolim",
+     "H1419J גָּדוֹל Great [Sea]",
+     "H1419K גָּדוֹל great: old",
+     "H1420 גְּדוּלָּה greatness",
+     "H1432 גָּדֵל growing",
+     "H1433 גֹּ֫דֶל greatness",
+     "H1434 גְּדִלִים tassel",
+     "H1435G גִּדֵּל Giddel",
+     "H1435H גִּדֵּל Giddel",
+     "H1436A גְּדַלְיָה Gedaliah",
+     "H1436B גְּדַלְיָ֫הוּ Gedaliah"
+    ]
+   },
+   "occurrences": [
+    {
+     "occurrence": 1397594,
+     "reference": "Zep 2:10",
+     "morph": "HVhw3mp",
+     "unit": "boasted",
+     "surface_kind": "own",
+     "negator": false,
+     "party_kind": null,
+     "narrative": "wayyiqtol",
+     "verse": "This shall be their lot in return for their pride, because they taunted and boasted against the people of the Lord of hosts."
+    }
+   ],
+   "older": [
+    {
+     "observation": 15088,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "nature": null,
+     "text": "In these verses pride is not alone. It stands over someone weaker or someone righteous: The poor:; \"In arrogance the wicked hotly pursue the poor\" (Psa 10:2); Sodom's guilt was \"pride, excess of food, and prosperous ease, but did not aid the poor and needy\" (Eze 16:49). Pride is listed with plenty and ease, and with what was not done for others; The widow: \"The Lord tears down the house of the proud but maintains the widow's boundaries\" (Pro 15:25). Pride's house is set against the boundary of the one without defence; The righteous:; Lips \"which speak insolently against the righteous in pride and contempt\" (Psa 31:18); \"The arrogant have hidden a trap for me\" (Psa 140:5); \"Let not the foot of arrogance come upon me\" (Psa 36:11). Pride is pictured as a foot that treads; The heart closed to pity. \"They close their hearts to pity; with their mouths they speak arrogantly\" (Psa 17:10). A closed heart and an arrogant mouth sit side by side; The one who bears it; \"Our soul has had more than enough of the scorn of those who are at ease, of the contempt of the proud\" (Psa 123:4); The psalm's answer is the eyes of a servant looking to the master's hand \"till he has mercy upon us\" (123:2); This is pride as it is felt by the one under it; Another's fall in one's mouth. \"Was not your sister Sodom a byword in your mouth in the day of your pride, before your wickedness was uncovered?\" (Eze 16:56–57). In the day of its pride, Jerusalem talked of Sodom's fall while its own wickedness was still covered; Taunting God's people. Moab and Ammon's lot comes \"in return for their pride, because they taunted and boasted against the people of the Lord\" (Zep 2:10); Repaid. \"repay to the proud what they deserve\" (Psa 94:2). The proud \"pour out their arrogant words\" and \"crush your people\" (94:4–5). \"The Lord preserves the faithful but abundantly repays the one who acts in pride\" (Psa 31:23). \"let them be trapped in their pride\" (Psa 59:12); Carried from M09: Isa 13:11 (\"the pomp of the arrogant\") and Job 22:29.",
+     "verses": [
+      "Ps.10.2",
+      "Ezek.16.49",
+      "Prov.15.25",
+      "Ps.31.18",
+      "Ps.140.5",
+      "Ps.36.11",
+      "Ps.17.10",
+      "Ps.123.4",
+      "Ps.123.2",
+      "Ezek.16.56",
+      "Ezek.16.57",
+      "Zeph.2.10",
+      "Ps.94.2",
+      "Ps.94.4",
+      "Ps.94.5",
+      "Ps.31.23",
+      "Ps.59.12",
+      "Isa.13.11",
+      "Job.22.29"
+     ]
+    }
+   ]
+  },
+  {
+   "ledger_id": 1960,
+   "word": "boasted",
+   "strong": "H1984H",
+   "lexicon": {
+    "sense_head": "boast",
+    "meaning_range": "1) to praise, boast, be boastful; 1a) (Qal); 1a1) to be boastful; 1a2) boastful ones, boasters (participle); 1b) (Piel); 1b1) to praise; 1b2) to boast, make a boast; 1c) (Pual); 1c1) to be praised, be made praiseworthy, be commended, be worthy of praise; 1d) (Hithpael) to boast, glory, make one's boast",
+    "lsj": "",
+    "mounce": "",
+    "related": [
+     "H1947 הוֹלֵלָה madness",
+     "H1948 הוֹלֵלוּת madness",
+     "H1974 הִלּוּל praise",
+     "H1984A הָלַל to shine",
+     "H1984B הָלַל to boast: praise",
+     "H1984C הָלַל to be foolish",
+     "H1984I הָלַל to boast: rave madly",
+     "H1985 הִלֵּל Hillel",
+     "H3094G יְהַלֶּלְאֵל Jehallelel",
+     "H3094H יְהַלֶּלְאֵל Jehallelel",
+     "H4110 מַהֲלָל praise",
+     "H4111G מַהֲלַלְאֵל Mahalalel"
+    ]
+   },
+   "occurrences": [
+    {
+     "occurrence": 1252573,
+     "reference": "Psa 44:8",
+     "morph": "HVpp1cp",
+     "unit": "boasted",
+     "surface_kind": "own",
+     "negator": false,
+     "party_kind": null,
+     "narrative": null,
+     "verse": "In God we have boasted continually, and we will give thanks to your name forever. Selah"
+    }
+   ],
+   "older": []
+  },
+  {
+   "ledger_id": 1961,
+   "word": "boasters",
+   "strong": "G2980",
+   "lexicon": {
+    "sense_head": "to speak",
+    "meaning_range": "to speak, talk; <b>to make vocal utterance; to babble, to talk;</b>, in NT <i>absolute</i> <b>to exercise the faculty of speech,</b> <ref='Mat.9.33'>Mt. 9:33</ref>; <b>to speak,</b> <ref='Mat.10.20'>Mt. 10:20</ref>; <b>to hold converse with, to talk with,</b> <ref='Mat.12.46'>Mt. 12:46</ref>; <ref='Mrk.6.50'>Mk. 6:50</ref>; <ref='Rev.1.12'>Rev. 1:12;</ref> <b>to discourse, to make an address,</b> <ref='Luk.11.37'>Lk. 11:37</ref>; <ref='Act.11.20'>Acts 11:20;</ref> 21:39; <b>to make announcement, to make a declaration,</b> <ref='Luk.1.55'>Lk. 1:55</ref>; <b>to make mention,</b> <ref='Jhn.12.41'>Jn. 12:41</ref>; <ref='Act.2.31'>Acts 2:31;</ref> <ref='Heb.4.8'>Heb. 4:8;</ref> <ref='2Pe.3.16'>2P",
+    "lsj": "<b> λᾰλ-έω</b>, <br /> <b>talk, chat, prattle</b>, ἕπου καὶ μὴ λάλει [<a href=\"javascript:void(0)\" title=\" 5th-6th c.BC: Aristophanes Comicus “Ecclesiazusae” 1058, compare “V.” 1135; ἡ μὲν χελιδὼν τὸ θέρος.. λαλεῖ 4th-3rd c.BC: Philemo Comicus 208; λαλεῖς.. ἀμελήσας ἀποκρίνασθαι 5th-6th c.BC: Plato Philosophus “Euthydemus” 287d \">Refs 5th c.BC+</a>]: with <i>dative</i>, <b>talk to</b> one, λαλῶν ἐν ταῖς ὁδοῖς σεαυτῷ [<a href=\"javascript:void(0)\" title=\" 5th-6th c.BC: Aristophanes Comicus “Equites” 348; αὑτοῖς 4th-3rd c.BC: Philemo Comicus 11; πρὸς αὑτούς 2nd c.AD: Alexander Rhetor 9.10; λ. περί τινος 5th c.BC: Pherecrates Comicus 2, 5th-6th c.BC: Aristophanes Comicus “Lysistrata” 627; ὑπέρ τ",
+    "mounce": "to speak, talk",
+    "related": [
+     "G0215 ἀλάλητος inexpressible",
+     "G0216 ἄλαλος mute",
+     "G2981 λαλιά speech",
+     "G3004G λέγω to say: says",
+     "G3004H λέγω to say: name"
+    ]
+   },
+   "occurrences": [
+    {
+     "occurrence": 1512258,
+     "reference": "Jude 16",
+     "morph": "V-PAI-3S",
+     "unit": "boasters",
+     "surface_kind": "shared",
+     "negator": false,
+     "party_kind": null,
+     "narrative": null,
+     "verse": "These are grumblers, malcontents, following their own sinful desires; they are loud-mouthed boasters, showing favoritism to gain advantage."
+    }
+   ],
+   "older": []
+  },
+  {
+   "ledger_id": 1962,
+   "word": "boasters",
+   "strong": "G5246",
+   "lexicon": {
+    "sense_head": "boastful",
+    "meaning_range": "<i>primarily</i> <b>swollen, overgrown;</b> of language, <b>swelling, pompous, boastful, bombastic</b> <ref='2Pe.2.18'>2Pet. 2:18;</ref> Jude 16*",
+    "lsj": "<b> ὑπέρογκ-ος</b>, ον, <br /> <b>of excessive bulk</b> or <b>size,</b> γενομένης τῆς κνήμης ὑ. <b>swelled to a great size,</b> [<a href=\"javascript:void(0)\" title=\" 5th-6th c.BC: Xenophon Historicus “Historia Graeca (Hellenica)” 5.4.58; [μαστοὶ] οἱ ὑ. 2nd c.AD: Soranus Medicus 1.88; πιμελὴς καὶ ὑ. 2nd c.AD: Lucianus Sophista \">Refs 5th c.BC+</a>]<b>tim.</b>15; δύναμις ὑ., opposed to ταπεινή, [<a href=\"javascript:void(0)\" title=\" 4th c.BC: Demosthenes Orator 4.23; τὰ ὑ. τῶν βελῶν 4th c.BC: Aristoteles Philosophus “de Audibilibus” 802b34. \">Refs 4th c.BC+</a>]<br /><Level3><b>__2</b></Level3> <b>immoderate, excessive,</b> οὐσίαι [<a href=\"javascript:void(0)\" title=\" 5th-6th c.BC: Plato Philos",
+    "mounce": "boastful, bombastic",
+    "related": [
+     "G3591 ὄγκος impediment",
+     "G5228 ὑπέρ above/for"
+    ]
+   },
+   "occurrences": [
+    {
+     "occurrence": 1512259,
+     "reference": "Jude 16",
+     "morph": "A-APN",
+     "unit": "boasters",
+     "surface_kind": "shared",
+     "negator": false,
+     "party_kind": null,
+     "narrative": null,
+     "verse": "These are grumblers, malcontents, following their own sinful desires; they are loud-mouthed boasters, showing favoritism to gain advantage."
+    }
+   ],
+   "older": [
+    {
+     "observation": 15183,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "nature": null,
+     "text": "To draw others: \"speaking loud boasts of folly, they entice by sensual passions\" (2Pe 2:18); \"loud-mouthed boasters, showing favoritism to gain advantage\" (Jude 16); The boast is used to pull others in.",
+     "verses": [
+      "2Pet.2.18",
+      "Jude.1.16"
+     ]
+    }
+   ]
+  },
+  {
+   "ledger_id": 1963,
+   "word": "boasting",
+   "strong": "G2744",
+   "lexicon": {
+    "sense_head": "to boast",
+    "meaning_range": "to boast, brag about; to rejoice in, glory in; this can refer to proper or improper boasting, depending on the object of the boast; <b>to glory, boast,</b> <ref='Rom.2.17, 23'>Rom. 2:17, 23</ref>; <greek>ὑπέρ τινος</greek>, <b>to boast of</b> a person or thing, <b>to undertake a complimentary testimony to,</b> <ref='2Co.12.5'>2Cor. 12:5;</ref> <b>to rejoice, exult,</b> <ref='Rom.5.2, 3, 11'>Rom. 5:2, 3, 11</ref>",
+    "lsj": "<b> καυχ-άομαι</b>, <br /> <i>Doric dialect</i> <b>καυχέομαι</b> [<a href=\"javascript:void(0)\" title=\" 3rd c.BC: Theocritus Poeta Bucolicus 5.77 \">Refs 3rd c.BC+</a>]; <i>2nd pers.</i> <i>singular</i> καυχᾶσαι in late Gr., as [<a href=\"javascript:void(0)\" title=\" NT.Rom.2.17, 23, etc.\">NT</a>]: <i>future</i> -ήσομαι [<a href=\"javascript:void(0)\" title=\" 5th c.BC: Herodotus Historicus 7.39, 5th c.BC: Eupolis Comicus 134, 4th c.BC: Epicrates Comicus 6 \">Refs 5th c.BC+</a>]: <i>aorist</i> ἐκαυχησάμην [<a href=\"javascript:void(0)\" title=\" 4th c.BC: Aristoteles Philosophus “Politica” 1311b4 \">Refs 4th c.BC+</a>]; <i>Aeolic dialect</i> <i>optative</i> καυχάσαιτο [<a href=\"javascript:void(0)\" title",
+    "mounce": "to boast, brag about; to rejoice in, glory in; this can refer to proper or improper boasting, depending on the object of the boast",
+    "related": [
+     "G2172 εὔχομαι to pray/wish for",
+     "G2620 κατακαυχάομαι to boast",
+     "G2745 καύχημα pride",
+     "G2746 καύχησις pride",
+     "G3166 μεγαλαυχέω to boast"
+    ]
+   },
+   "occurrences": [
+    {
+     "occurrence": 1487280,
+     "reference": "2Cor 10:16",
+     "morph": "V-ADN",
+     "unit": "boasting",
+     "surface_kind": "own",
+     "negator": false,
+     "party_kind": null,
+     "narrative": null,
+     "verse": "so that we may preach the gospel in lands beyond you, without boasting of work already done in another’s area of influence."
+    },
+    {
+     "occurrence": 1487342,
+     "reference": "2Cor 12:1",
+     "morph": "V-PNN",
+     "unit": "boasting",
+     "surface_kind": "own",
+     "negator": false,
+     "party_kind": null,
+     "narrative": null,
+     "verse": "I must go on boasting. Though there is nothing to be gained by it, I will go on to visions and revelations of the Lord."
+    }
+   ],
+   "older": [
+    {
+     "observation": 15193,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "nature": null,
+     "text": "Within the measure: \"we will not boast beyond limits, but will boast only with regard to the area of influence God assigned to us\" (2Co 10:13); \"We do not boast beyond limit in the labors of others ... without boasting of work already done in another's area of influence\" (10:15–16); The other side is \"when they measure themselves by one another and compare themselves with one another, they are without understanding\" (10:12).",
+     "verses": [
+      "2Cor.10.13",
+      "2Cor.10.15",
+      "2Cor.10.16",
+      "2Cor.10.12"
+     ]
+    },
+    {
+     "observation": 15282,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "nature": null,
+     "text": "Verses with no other M-code (96). Most are height as a measure: Exo 25 to 38, 1Ki 6 to 7, Eze 40 to 42, and Goliath in 1Sa 17:4. Others are central to the cluster: Paul's boasting: Rom 15:17, Gal 6:14, 1Co 1:31, 2Co 10:17, 2Co 12:1, Eph 2:9; Jam 3:5, the tongue that \"boasts of great things\"; Isa 3:16, the daughters of Zion \"haughty\"; the mocking of Jesus: Mat 27:31, Mat 27:41, Mar 15:20, Luk 23:36; 2Ki 2:23, the boys who jeered Elisha.",
+     "verses": [
+      "1Cor.1.31",
+      "2Cor.10.17",
+      "2Cor.12.1",
+      "Jas.3.5",
+      "Isa.3.16"
+     ]
+    }
+   ]
+  },
+  {
+   "ledger_id": 1964,
+   "word": "boasting",
+   "strong": "G2745",
+   "lexicon": {
+    "sense_head": "pride",
+    "meaning_range": "something to boast about, boasting; pride, joy; <b>a glorying, boasting,</b> <ref='1Co.5.6'>1Cor. 5:6;</ref> <b>a ground</b> or <b>matter of glorying</b> or <b>boasting,</b> <ref='Rom.4.2'>Rom. 4:2;</ref> <b>joy, exultation,</b> <ref='Php.1.26'>Phil. 1:26;</ref> <b>complimentary testimony,</b> <ref='1Co.9.15, 16'>1Cor. 9:15, 16</ref>; <ref='2Co.9.3'>2Cor. 9:3</ref>",
+    "lsj": "<b> καύχ-ημα</b>, <br /> <i>Doric dialect</i> <b>καύχ-ᾱμα</b>, ατος, τό, <b>a boast, vaunt</b>, [<a href=\"javascript:void(0)\" title=\" 5th c.BC: Pindarus Lyricus “I.” 5(4).51. \">Refs 5th c.BC+</a>]<br /><Level3><b>__2</b></Level3> <b>subject of boasting</b>, [<a href=\"javascript:void(0)\" title=\" 2nd c.AD: Lesbonax Rhetor 3.4 (_plural_), NT.Rom.4.2. \">NT+2nd c.AD+</a>]",
+    "mounce": "something to boast about, boasting; pride, joy",
+    "related": [
+     "G2744 καυχάομαι to boast"
+    ]
+   },
+   "occurrences": [
+    {
+     "occurrence": 1481291,
+     "reference": "1Cor 5:6",
+     "morph": "N-NSN",
+     "unit": "boasting",
+     "surface_kind": "own",
+     "negator": false,
+     "party_kind": null,
+     "narrative": null,
+     "verse": "Your boasting is not good. Do you not know that a little leaven leavens the whole lump?"
+    },
+    {
+     "occurrence": 1481318,
+     "reference": "1Cor 9:15",
+     "morph": "N-ASN",
+     "unit": "boasting",
+     "surface_kind": "own",
+     "negator": false,
+     "party_kind": null,
+     "narrative": null,
+     "verse": "But I have made no use of any of these rights, nor am I writing these things to secure any such provision. For I would rather die than have anyone deprive me of my ground for boasting."
+    },
+    {
+     "occurrence": 1481325,
+     "reference": "1Cor 9:16",
+     "morph": "N-NSN",
+     "unit": "boasting",
+     "surface_kind": "own",
+     "negator": false,
+     "party_kind": null,
+     "narrative": null,
+     "verse": "For if I preach the gospel, that gives me no ground for boasting. For necessity is laid upon me. Woe to me if I do not preach the gospel!"
+    },
+    {
+     "occurrence": 1487410,
+     "reference": "2Cor 9:3",
+     "morph": "N-NSN",
+     "unit": "boasting",
+     "surface_kind": "own",
+     "negator": false,
+     "party_kind": null,
+     "narrative": null,
+     "verse": "But I am sending the brothers so that our boasting about you may not prove empty in this matter, so that you may be ready, as I said you would be."
+    },
+    {
+     "occurrence": 1501954,
+     "reference": "Heb 3:6",
+     "morph": "N-ASN",
+     "unit": "boasting",
+     "surface_kind": "own",
+     "negator": false,
+     "party_kind": null,
+     "narrative": null,
+     "verse": "but Christ is faithful over God’s house as a son. And we are his house, if indeed we hold fast our confidence and our boasting in our hope."
+    }
+   ],
+   "older": [
+    {
+     "observation": 15187,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "nature": null,
+     "text": "In a church. \"Your boasting is not good. Do you not know that a little leaven leavens the whole lump?\" (1Co 5:6). They boasted while the sin of 5:1 stood among them; batch 3 has 5:2, \"Ought you not rather to mourn?\".",
+     "verses": [
+      "1Cor.5.6"
+     ]
+    },
+    {
+     "observation": 15194,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "nature": null,
+     "text": "The ground for boasting: \"I would rather die than have anyone deprive me of my ground for boasting. For if I preach the gospel, that gives me no ground for boasting. For necessity is laid upon me\" (1Co 9:15–16); The preaching itself is no ground, because it is laid on him. The ground is that he preached \"free of charge\" (9:18).",
+     "verses": [
+      "1Cor.9.15",
+      "1Cor.9.16",
+      "1Cor.9.18"
+     ]
+    },
+    {
+     "observation": 15197,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "nature": null,
+     "text": "Paul's most frequent boast is in other people: \"I have great pride in you; I am filled with comfort. In all our affliction, I am overflowing with joy\" (2Co 7:4); His boasts to Titus about them \"proved true\" (7:14). He asks them to \"give proof ... of our boasting about you\" (8:24). He sends brothers \"so that our boasting about you may not prove empty\" (9:3), or \"we would be humiliated\" (9:4). The boast puts Paul's own standing at risk on the conduct of others; \"your readiness, of which I boast about you ... your zeal has stirred up most of them\" (9:2); At Christ's coming; \"what is our hope or joy or crown of boasting before our Lord Jesus at his coming? Is it not you?\" (1Th 2:19); \"on the day of our Lord Jesus you will boast of us as we will boast of you\" (2Co 1:14); \"so that in the day of Christ I may be proud that I did not run in vain\" (Php 2:16); \"we ourselves boast about you in the churches of God for your steadfastness and faith in all your persecutions\" (2Th 1:4); \"so that in me you may have ample cause to glory in Christ Jesus\" (Php 1:26); His work, which is Christ's. \"I have reason to be proud of my work for God. For I will not venture to speak of anything except what Christ has accomplished through me\" (Rom 15:17–18). The pride is in a work he credits to Christ; \"by my pride in you, which I have in Christ Jesus our Lord, I die every day!\" (1Co 15:31); \"Let the lowly brother boast in his exaltation, and the rich in his humiliation\" (Jam 1:9–10, carried).",
+     "verses": [
+      "2Cor.7.4",
+      "2Cor.7.14",
+      "2Cor.8.24",
+      "2Cor.9.3",
+      "2Cor.9.4",
+      "2Cor.9.2",
+      "1Thess.2.19",
+      "2Cor.1.14",
+      "Phil.2.16",
+      "2Thess.1.4",
+      "Phil.1.26",
+      "Rom.15.17",
+      "Rom.15.18",
+      "1Cor.15.31",
+      "Jas.1.9",
+      "Jas.1.10"
+     ]
+    },
+    {
+     "observation": 19057,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "nature": null,
+     "text": "The verses: *\"Am I not free?\"* (9:1); *\"Do we not have the right to eat and drink? … to take along a believing wife … to refrain from working for a living?\"* (9:4–6); *\"Nevertheless, we have not made use of this right, but we endure anything rather than put an obstacle in the way of the gospel of Christ\"* (9:12); *\"I would rather die than have anyone deprive me of my ground for boasting\"* (9:15); *\"For if I do this of my own will, I have a reward\"* (9:17); *\"present the gospel free of charge, so as not to make full use of my right in the gospel\"* (9:18); *\"For though I am free from all, I have made myself a servant to all, that I might win more of them\"* (9:19)",
+     "verses": [
+      "1Cor.9.5",
+      "1Cor.9.6",
+      "1Cor.9.12",
+      "1Cor.9.15",
+      "1Cor.9.18",
+      "1Cor.9.19"
+     ]
+    }
+   ]
+  },
+  {
+   "ledger_id": 1965,
+   "word": "boasting",
+   "strong": "G2746",
+   "lexicon": {
+    "sense_head": "pride",
+    "meaning_range": "boasting, pride;; <b>boasting, pride, glorying in; this can refer to proper or improper boasting, depending on the object of the boast; </b> a later equivalent to <greek>καύχημαι</greek>, <ref='Rom.3.27'>Rom. 3:27;</ref> <ref='2Co.7.4, 14; 11.10'>2Cor. 7:4, 14; 11:10</ref>",
+    "lsj": "<b> καύχ-ησις</b>, εως, ἡ, <br /> <b>boasting</b>, [<a href=\"javascript:void(0)\" title=\" 4th-3rd c.BC: Epicurus Philosophus “Fragmenta” 93, LXX.1Ch.29.13, +others, 1st c.BC: Philodemus Philosophus “περὶ κακιῶν ί” p.27 1st c.AD: Josephus Historicus, 1st c.AD: Philo Judaeus 1.534, NT.Rom.15.17. \">NT+4th c.BC+</a>]",
+    "mounce": "boasting, pride;",
+    "related": [
+     "G2744 καυχάομαι to boast"
+    ]
+   },
+   "occurrences": [
+    {
+     "occurrence": 1475846,
+     "reference": "Rom 3:27",
+     "morph": "N-NSF",
+     "unit": "boasting",
+     "surface_kind": "own",
+     "negator": false,
+     "party_kind": null,
+     "narrative": null,
+     "verse": "Then what becomes of our boasting? It is excluded. By what kind of law? By a law of works? No, but by the law of faith."
+    },
+    {
+     "occurrence": 1487195,
+     "reference": "2Cor 7:14",
+     "morph": "N-NSF",
+     "unit": "boasting",
+     "surface_kind": "own",
+     "negator": false,
+     "party_kind": null,
+     "narrative": null,
+     "verse": "For whatever boasts I made to him about you, I was not put to shame. But just as everything we said to you was true, so also our boasting before Titus has proved true."
+    },
+    {
+     "occurrence": 1487462,
+     "reference": "2Cor 8:24",
+     "morph": "N-GSF",
+     "unit": "boasting",
+     "surface_kind": "own",
+     "negator": false,
+     "party_kind": null,
+     "narrative": null,
+     "verse": "So give proof before the churches of your love and of our boasting about you to these men."
+    },
+    {
+     "occurrence": 1486896,
+     "reference": "2Cor 11:10",
+     "morph": "N-NSF",
+     "unit": "boasting",
+     "surface_kind": "own",
+     "negator": false,
+     "party_kind": null,
+     "narrative": null,
+     "verse": "As the truth of Christ is in me, this boasting of mine will not be silenced in the regions of Achaia."
+    },
+    {
+     "occurrence": 1496871,
+     "reference": "1Th 2:19",
+     "morph": "N-GSF",
+     "unit": "boasting",
+     "surface_kind": "own",
+     "negator": false,
+     "party_kind": null,
+     "narrative": null,
+     "verse": "For what is our hope or joy or crown of boasting before our Lord Jesus at his coming? Is it not you?"
+    },
+    {
+     "occurrence": 1506215,
+     "reference": "Jam 4:16",
+     "morph": "N-NSF",
+     "unit": "boasting",
+     "surface_kind": "own",
+     "negator": false,
+     "party_kind": null,
+     "narrative": null,
+     "verse": "As it is, you boast in your arrogance. All such boasting is evil."
+    }
+   ],
+   "older": [
+    {
+     "observation": 15167,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "nature": null,
+     "text": "Boasting about tomorrow. \"you do not know what tomorrow will bring ... Instead you ought to say, 'If the Lord wills, we will live and do this or that.' As it is, you boast in your arrogance. All such boasting is evil\" (Jam 4:14–16). The arrogance is planning as if life were one's own.",
+     "verses": [
+      "Jas.4.14",
+      "Jas.4.15",
+      "Jas.4.16"
+     ]
+    },
+    {
+     "observation": 15188,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "nature": null,
+     "text": "Nothing to boast of before God: God chose \"what is low and despised in the world ... so that no human being might boast in the presence of God\" (1Co 1:28–29); \"For by grace you have been saved through faith. And this is not your own doing; it is the gift of God, not a result of works, so that no one may boast. For we are his workmanship\" (Eph 2:8–10); \"Then what becomes of our boasting? It is excluded ... by the law of faith\" (Rom 3:27); \"if Abraham was justified by works, he has something to boast about, but not before God\" (Rom 4:2); The ground of the exclusion is stated each time: a gift, a choosing of the low, faith.",
+     "verses": [
+      "1Cor.1.28",
+      "1Cor.1.29",
+      "Eph.2.8",
+      "Eph.2.9",
+      "Rom.3.27",
+      "Rom.4.2"
+     ]
+    },
+    {
+     "observation": 15201,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "nature": null,
+     "text": "Boasting of others (V) is a relationship face. It bears on 10.10, and on M51 love (\"give proof ... of your love and of our boasting\", 2Co 8:24).",
+     "verses": [
+      "2Cor.8.24"
+     ]
+    },
+    {
+     "observation": 15309,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "nature": null,
+     "text": "Boasting is excluded by grace. \"not a result of works, so that no one may boast\" (Eph 2:9); \"It is excluded\" (Rom 3:27).",
+     "verses": [
+      "Eph.2.9",
+      "Rom.3.27"
+     ]
+    },
+    {
+     "observation": 15323,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "nature": null,
+     "text": "10.7, new section Presumption: What: presumption, and boasting about tomorrow (Jam 4:13–16; Pro 27:1) beside Planning.",
+     "verses": [
+      "Jas.4.16"
+     ]
+    }
+   ],
+   "older_answered_under_another_word": [
+    {
+     "observation": 15197,
+     "answered_under": "boasting|G2745"
+    }
+   ]
+  },
+  {
+   "ledger_id": 1966,
+   "word": "boasts",
+   "strong": "G2744",
+   "lexicon": {
+    "sense_head": "to boast",
+    "meaning_range": "to boast, brag about; to rejoice in, glory in; this can refer to proper or improper boasting, depending on the object of the boast; <b>to glory, boast,</b> <ref='Rom.2.17, 23'>Rom. 2:17, 23</ref>; <greek>ὑπέρ τινος</greek>, <b>to boast of</b> a person or thing, <b>to undertake a complimentary testimony to,</b> <ref='2Co.12.5'>2Cor. 12:5;</ref> <b>to rejoice, exult,</b> <ref='Rom.5.2, 3, 11'>Rom. 5:2, 3, 11</ref>",
+    "lsj": "<b> καυχ-άομαι</b>, <br /> <i>Doric dialect</i> <b>καυχέομαι</b> [<a href=\"javascript:void(0)\" title=\" 3rd c.BC: Theocritus Poeta Bucolicus 5.77 \">Refs 3rd c.BC+</a>]; <i>2nd pers.</i> <i>singular</i> καυχᾶσαι in late Gr., as [<a href=\"javascript:void(0)\" title=\" NT.Rom.2.17, 23, etc.\">NT</a>]: <i>future</i> -ήσομαι [<a href=\"javascript:void(0)\" title=\" 5th c.BC: Herodotus Historicus 7.39, 5th c.BC: Eupolis Comicus 134, 4th c.BC: Epicrates Comicus 6 \">Refs 5th c.BC+</a>]: <i>aorist</i> ἐκαυχησάμην [<a href=\"javascript:void(0)\" title=\" 4th c.BC: Aristoteles Philosophus “Politica” 1311b4 \">Refs 4th c.BC+</a>]; <i>Aeolic dialect</i> <i>optative</i> καυχάσαιτο [<a href=\"javascript:void(0)\" title",
+    "mounce": "to boast, brag about; to rejoice in, glory in; this can refer to proper or improper boasting, depending on the object of the boast",
+    "related": [
+     "G2172 εὔχομαι to pray/wish for",
+     "G2620 κατακαυχάομαι to boast",
+     "G2745 καύχημα pride",
+     "G2746 καύχησις pride",
+     "G3166 μεγαλαυχέω to boast"
+    ]
+   },
+   "occurrences": [
+    {
+     "occurrence": 1481260,
+     "reference": "1Cor 1:31",
+     "morph": "V-PNP-NSM",
+     "unit": "boasts",
+     "surface_kind": "own",
+     "negator": false,
+     "party_kind": null,
+     "narrative": null,
+     "verse": "so that, as it is written, “Let the one who boasts, boast in the Lord.”"
+    },
+    {
+     "occurrence": 1487179,
+     "reference": "2Cor 7:14",
+     "morph": "V-RNI-1S",
+     "unit": "boasts",
+     "surface_kind": "own",
+     "negator": false,
+     "party_kind": null,
+     "narrative": null,
+     "verse": "For whatever boasts I made to him about you, I was not put to shame. But just as everything we said to you was true, so also our boasting before Titus has proved true."
+    },
+    {
+     "occurrence": 1487286,
+     "reference": "2Cor 10:17",
+     "morph": "V-PNP-NSM",
+     "unit": "boasts",
+     "surface_kind": "own",
+     "negator": false,
+     "party_kind": null,
+     "narrative": null,
+     "verse": "“Let the one who boasts, boast in the Lord.”"
+    }
+   ],
+   "older": [
+    {
+     "observation": 15279,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "nature": null,
+     "text": "This is where the change-of-character reading (#1919) would start. No reading has been done: H1347 gāʾôn: human \"pride\" (25) versus God's \"majesty\" (9) versus \"the thicket of the Jordan\" (3); H1361 gābah: \"proud\" and \"haughty\" (Eze 28:2, 5; 2Ch 26:16; 32:25) versus \"towered\" and \"higher\" (physical) versus \"exalted\" of God (Isa 5:16) and of the servant (Isa 52:13); H1364 gābōah and H1363 gōbah: high walls and tall men versus \"haughty eyes\" and \"a haughty spirit\" (Pro 16:18); G2744 kauchaomai: \"boast\" versus \"rejoice\" (Rom 5:2–3, 11). Boasting in oneself versus \"let the one who boasts, boast in the Lord\" (1Co 1:31; 2Co 10:17); H1984H hālal: \"boast\" versus \"glory\" and \"exult\" (Jer 9:24, \"let him who boasts boast in this\"); G1702 empaizō: Jesus \"mocked\" in the passion accounts versus Herod \"tricked\" by the magi (Mat 2:16); H7292 rāhab: \"insolent\" (Isa 3:5) versus \"plead urgently\" (Pro 6:3) versus \"overwhelm\" (Song 6:5).",
+     "verses": [
+      "Ezek.28.2",
+      "Ezek.28.5",
+      "2Chr.32.25",
+      "Isa.5.16",
+      "Isa.52.13",
+      "Prov.16.18",
+      "Rom.5.2",
+      "Rom.5.3",
+      "Rom.5.11",
+      "1Cor.1.31",
+      "2Cor.10.17",
+      "Jer.9.24",
+      "Matt.2.16",
+      "Isa.3.5",
+      "Prov.6.3",
+      "Song.6.5"
+     ]
+    },
+    {
+     "observation": 15468,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "nature": null,
+     "text": "A reversal, and a boast turned around: \"Let the lowly brother boast in his exaltation, and the rich in his humiliation, because like a flower of the grass he will pass away\" (Jam 1:9–10); \"God chose what is low and despised in the world, even things that are not, to bring to nothing things that are, so that no human being might boast in the presence of God … 'Let the one who boasts, boast in the Lord'\" (1Cor 1:28–31); I read: in both, the low is where God's choosing and lifting are seen. The boast is moved from what one has to what God does. The rich man's \"humiliation\" is something to boast in, because it tells him the truth: he passes like grass.",
+     "verses": [
+      "Jas.1.9",
+      "Jas.1.10",
+      "1Cor.1.28",
+      "1Cor.1.29",
+      "1Cor.1.31"
+     ]
+    }
+   ],
+   "older_answered_under_another_word": [
+    {
+     "observation": 15197,
+     "answered_under": "boasting|G2745"
+    },
+    {
+     "observation": 15282,
+     "answered_under": "boasting|G2744"
+    }
+   ]
+  },
+  {
+   "ledger_id": 1967,
+   "word": "boasts",
+   "strong": "G6094",
+   "lexicon": {
+    "sense_head": "to boast",
+    "meaning_range": "<b>to boast</b> <ref='Jas.3.5.'>Jas.3:5.</ref>",
+    "lsj": "<b> αὐχέω</b>, <br /> chiefly <i>present</i> and <i>imperfect</i> ηὔχουν, <i>future</i> αὐχήσω[<a href=\"javascript:void(0)\" title=\" 5th c.BC: Euripides Tragicus “Fragmenta” 857, 2nd c.AD: Lucianus Sophista “DMort.” 22.2, “Anthologia Graeca” 7.373 (Thall.): \">Refs 5th c.BC+</a>]<i>aorist</i> ηὔχησα[<a href=\"javascript:void(0)\" title=\" [prev. work] 6.283, 15.4, 2nd c.AD: Apollodorus Damascenus Mechanicus 2.4.3\">Refs 2nd c.AD+</a>]: (αὔχη):—<b>boast, plume oneself,</b> ἐπί τινι on a thing, [<a href=\"javascript:void(0)\" title=\" Batrachomyomachia 57, “Anthologia Graeca” 6.283; τινί 5th c.BC: Euripides Tragicus “Iphigenia Aulidensis” 412\">Refs 5th c.BC+</a>]: with <i>neuter</i> <i>adjective</i>, τ",
+    "mounce": "",
+    "related": [
+     "G3166 μεγαλαυχέω to boast",
+     "G6094 αὐχέω to boast"
+    ]
+   },
+   "occurrences": [
+    {
+     "occurrence": 1506349,
+     "reference": "Jam 3:5",
+     "morph": "V-PAI-3S",
+     "unit": "boasts",
+     "surface_kind": "own",
+     "negator": false,
+     "party_kind": null,
+     "narrative": null,
+     "verse": "So also the tongue is a small member, yet it boasts of great things. How great a forest is set ablaze by such a small fire!"
+    }
+   ],
+   "older": [
+    {
+     "observation": 15182,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "nature": null,
+     "text": "The tongue. \"the tongue is a small member, yet it boasts of great things. How great a forest is set ablaze by such a small fire!\" (Jam 3:5).",
+     "verses": [
+      "Jas.3.5"
+     ]
+    }
+   ],
+   "older_answered_under_another_word": [
+    {
+     "observation": 15282,
+     "answered_under": "boasting|G2744"
+    }
+   ]
+  },
+  {
+   "ledger_id": 1968,
+   "word": "boasts",
+   "strong": "H0907",
+   "lexicon": {
+    "sense_head": "bluster",
+    "meaning_range": "empty talk, idle talk, liar, lie",
+    "lsj": "",
+    "mounce": "",
+    "related": [
+     "H0908 בָּדָא to devise",
+     "H0911 בְּדַד Bedad",
+     "H0912 בֵּֽדְיָה Bedeiah"
+    ]
+   },
+   "occurrences": [
+    {
+     "occurrence": 1317040,
+     "reference": "Jer 48:30",
+     "morph": "HNcmpc",
+     "unit": "boasts",
+     "surface_kind": "own",
+     "negator": false,
+     "party_kind": null,
+     "narrative": null,
+     "verse": "I know his insolence, declares the Lord; his boasts are false, his deeds are false."
+    }
+   ],
+   "older": []
+  },
+  {
+   "ledger_id": 1969,
+   "word": "boasts",
+   "strong": "H1431",
+   "lexicon": {
+    "sense_head": "to magnify",
+    "meaning_range": "1) to grow, become great or important, promote, make powerful, praise, magnify, do great things; 1a) (Qal); 1a1) to grow up; 1a2) to become great; 1a3) to be magnified; 1b) (Piel); 1b1) to cause to grow; 1b2) to make great, powerful; 1b3) to magnify; 1c) (Pual) to be brought up; 1d) (Hiphil); 1d1) to make great; 1d2) to magnify; 1d3) to do great things; 1e) (Hithpael) to magnify oneself",
+    "lsj": "",
+    "mounce": "",
+    "related": [
+     "H1419A גָּדוֹל great: large",
+     "H1419B גָּדוֹל Haggedolim",
+     "H1419J גָּדוֹל Great [Sea]",
+     "H1419K גָּדוֹל great: old",
+     "H1420 גְּדוּלָּה greatness",
+     "H1432 גָּדֵל growing",
+     "H1433 גֹּ֫דֶל greatness",
+     "H1434 גְּדִלִים tassel",
+     "H1435G גִּדֵּל Giddel",
+     "H1435H גִּדֵּל Giddel",
+     "H1436A גְּדַלְיָה Gedaliah",
+     "H1436B גְּדַלְיָ֫הוּ Gedaliah"
+    ]
+   },
+   "occurrences": [
+    {
+     "occurrence": 1397581,
+     "reference": "Zep 2:8",
+     "morph": "HVhw3mp",
+     "unit": "boasts",
+     "surface_kind": "own",
+     "negator": false,
+     "party_kind": null,
+     "narrative": "wayyiqtol",
+     "verse": "“I have heard the taunts of Moab and the revilings of the Ammonites, how they have taunted my people and made boasts against their territory."
+    }
+   ],
+   "older": []
+  }
+ ],
+ "answer": {
+  "command": "ReadWords",
+  "collection": "boast",
+  "subgroup": "boasting",
+  "rows": [
+   {
+    "ledger_id": 1958,
+    "word": "boasted|G2744",
+    "readings": [
+     {
+      "kind": "face",
+      "obs_text": "In 2Cor 11:12 the verb is present middle, third plural, and its subject is the opponents Paul means to undermine: what they boast of is their work, claimed to be on the same terms as his. The ESV turns the finite verb into the adjective 'boasted' on 'mission', so the English hides that the boasting is their own present act.",
+      "basis": "read",
+      "grounds": "their boasted mission",
+      "occurrences": [
+       1487303
+      ]
+     }
+    ],
+    "older": [
+     {
+      "observation": 15184,
+      "action": "keep",
+      "nature": "evidence",
+      "reason": "It gathers the verses where the boast rests on the flesh or the outward appearance (Gal 6:12-13, 2Cor 5:12, 11:12, 11:18) and states what they show; it stands as evidence."
+     }
+    ]
+   },
+   {
+    "ledger_id": 1959,
+    "word": "boasted|H1431",
+    "readings": [
+     {
+      "kind": "face",
+      "obs_text": "In Zep 2:10 the Hiphil of the verb of making great (wayyiqtol, third plural) is rendered 'boasted'. With 'against the people of the Lord' and beside 'taunted', it says Moab and Ammon made themselves great over God's people; the English narrows a verb of magnifying to speech.",
+      "basis": "read",
+      "grounds": "taunted and boasted against the people",
+      "occurrences": [
+       1397594
+      ]
+     }
+    ],
+    "older": [
+     {
+      "observation": 15088,
+      "action": "keep",
+      "nature": "evidence",
+      "reason": "A collation of the verses where pride stands over the poor, the widow, the righteous and God's people (Zeph 2:10 among them), each quoted with what it shows; it stands as evidence."
+     }
+    ]
+   },
+   {
+    "ledger_id": 1960,
+    "word": "boasted|H1984H",
+    "readings": [
+     {
+      "kind": "term",
+      "obs_text": "In Psa 44:8 the Piel perfect (first plural) has God as the ground of the boast ('in God'), and it stands parallel to giving thanks to his name forever: the people's boast here is praise of God, made continually.",
+      "basis": "stated",
+      "grounds": "In God we have boasted continually; give thanks to your name",
+      "occurrences": [
+       1252573
+      ]
+     }
+    ],
+    "older": []
+   },
+   {
+    "ledger_id": 1961,
+    "word": "boasters|G2980",
+    "readings": [
+     {
+      "kind": "face",
+      "obs_text": "In Jude 16 the verb of speaking (present active, third singular) has the mouth as its subject; it is part of the Greek phrase the ESV renders 'loud-mouthed boasters'. The Greek says the mouth speaks swollen things; the English makes a noun for a kind of person out of a verb of speech.",
+      "basis": "read",
+      "grounds": "loud-mouthed boasters",
+      "occurrences": [
+       1512258
+      ]
+     }
+    ],
+    "older": []
+   },
+   {
+    "ledger_id": 1962,
+    "word": "boasters|G5246",
+    "readings": [
+     {
+      "kind": "face",
+      "obs_text": "In Jude 16 the adjective (accusative plural neuter) is the object of the verb of speaking: what the mouth utters is swollen, oversized. Joined to that verb it is rendered 'loud-mouthed boasters'; the literal sense is words inflated beyond their size, and the ESV moves it from the words to the speakers.",
+      "basis": "read",
+      "grounds": "loud-mouthed boasters",
+      "occurrences": [
+       1512259
+      ]
+     }
+    ],
+    "older": [
+     {
+      "observation": 15183,
+      "action": "keep",
+      "nature": "evidence",
+      "reason": "It states, from 2Pet 2:18 and Jude 16, that the boasting goes with enticing and with showing favour for gain; both are said in the verses, so it stands as evidence."
+     }
+    ]
+   },
+   {
+    "ledger_id": 1963,
+    "word": "boasting|G2744",
+    "readings": [
+     {
+      "kind": "term",
+      "obs_text": "In 2Cor 10:16 the aorist infinitive is negated by 'without': Paul's purpose is to preach beyond the Corinthians and not to boast of work already done in another's area of influence. The object of the boast is another's labour, and it is what he refuses.",
+      "basis": "stated",
+      "grounds": "without boasting of work already done",
+      "occurrences": [
+       1487280
+      ]
+     },
+     {
+      "kind": "term",
+      "obs_text": "In 2Cor 12:1 the present infinitive depends on 'I must': Paul's boasting goes on under necessity, though he says nothing is gained by it, and it leads into visions and revelations of the Lord.",
+      "basis": "stated",
+      "grounds": "I must go on boasting",
+      "occurrences": [
+       1487342
+      ]
+     }
+    ],
+    "older": [
+     {
+      "observation": 15193,
+      "action": "keep",
+      "nature": "evidence",
+      "reason": "It quotes 2Cor 10:12-16 and states the measure the boast keeps to and its contrast with self-comparison; it stands as evidence."
+     },
+     {
+      "observation": 15282,
+      "action": "delete_neither",
+      "reason": "A coverage note about the verses of an M-code cluster that carry no other M-code, listing references; clusters are history and the note holds no finding of its own about these verses."
+     }
+    ]
+   },
+   {
+    "ledger_id": 1964,
+    "word": "boasting|G2745",
+    "readings": [
+     {
+      "kind": "term",
+      "obs_text": "In 1Cor 9:15 and 9:16 the noun names the ground or matter of boasting: Paul would rather die than lose it (9:15), and preaching itself gives him none, because necessity is laid on him (9:16).",
+      "basis": "stated",
+      "grounds": "my ground for boasting; no ground for boasting; necessity is laid upon me",
+      "occurrences": [
+       1481318,
+       1481325
+      ]
+     },
+     {
+      "kind": "term",
+      "obs_text": "In 1Cor 5:6 and 2Cor 9:3 the noun names the boast as made and held: the Corinthians' boast, judged not good beside the leaven that leavens the lump (1Cor 5:6), and Paul's boast about the Corinthians, which he fears may prove empty (2Cor 9:3).",
+      "basis": "stated",
+      "grounds": "Your boasting is not good; our boasting about you may not prove empty",
+      "occurrences": [
+       1481291,
+       1487410
+      ]
+     },
+     {
+      "kind": "face",
+      "obs_text": "In Heb 3:6 the noun stands with 'confidence' as what the believers hold fast, and its object is 'our hope': the boast is something kept and possessed, the condition of being God's house.",
+      "basis": "stated",
+      "grounds": "hold fast our confidence and our boasting in our hope",
+      "occurrences": [
+       1501954
+      ]
+     }
+    ],
+    "older": [
+     {
+      "observation": 15187,
+      "action": "keep",
+      "nature": "evidence",
+      "reason": "It ties 1Cor 5:6 to the sin of 5:1 and to 5:2; the verses state it, so it stands as evidence."
+     },
+     {
+      "observation": 15194,
+      "action": "keep",
+      "nature": "evidence",
+      "reason": "It quotes 1Cor 9:15-16 and states, from 9:18, what the ground of the boast is and is not; it stands as evidence."
+     },
+     {
+      "observation": 15197,
+      "action": "keep",
+      "nature": "evidence",
+      "reason": "It gathers the verses where Paul boasts in other people (2Cor 7-9, 1Thess 2:19, Phil 1-2, 2Thess 1:4, Rom 15:17-18, 1Cor 15:31) with what each states; it stands as evidence."
+     },
+     {
+      "observation": 19057,
+      "action": "delete_neither",
+      "reason": "A list of quotations from 1Cor 9 on Paul's freedom and rights, with no statement of its own; the boast of 9:15 is read in this row."
+     }
+    ]
+   },
+   {
+    "ledger_id": 1965,
+    "word": "boasting|G2746",
+    "readings": [
+     {
+      "kind": "term",
+      "obs_text": "In 2Cor 7:14 and 8:24 the noun is Paul's boasting about the Corinthians made before Titus and the brothers; it is tested by their conduct: before Titus it proved true (7:14), and the Corinthians are asked to give proof of it (8:24).",
+      "basis": "stated",
+      "grounds": "our boasting before Titus has proved true; give proof ... of our boasting about you",
+      "occurrences": [
+       1487195,
+       1487462
+      ]
+     },
+     {
+      "kind": "term",
+      "obs_text": "In 2Cor 11:10 the noun is Paul's own boasting, bound to the truth of Christ in him; he states that no one will stop it in Achaia.",
+      "basis": "stated",
+      "grounds": "this boasting of mine will not be silenced",
+      "occurrences": [
+       1486896
+      ]
+     },
+     {
+      "kind": "term",
+      "obs_text": "In Rom 3:27 the noun is 'our boasting', asked after and declared excluded, not by a law of works but by the law of faith.",
+      "basis": "stated",
+      "grounds": "what becomes of our boasting? It is excluded; the law of faith",
+      "occurrences": [
+       1475846
+      ]
+     },
+     {
+      "kind": "term",
+      "obs_text": "In Jam 4:16 the noun gathers the boasting just named, a boast made in arrogance about plans for tomorrow, and judges all of it evil.",
+      "basis": "stated",
+      "grounds": "you boast in your arrogance. All such boasting is evil",
+      "occurrences": [
+       1506215
+      ]
+     },
+     {
+      "kind": "face",
+      "obs_text": "In 1Th 2:19 the noun is in the genitive after 'crown': a crown of boasting before the Lord at his coming, and the answer to 'what is' it is the Thessalonians themselves. The boast is a person, held up before the Lord.",
+      "basis": "stated",
+      "grounds": "crown of boasting; at his coming; Is it not you",
+      "occurrences": [
+       1496871
+      ]
+     }
+    ],
+    "older": [
+     {
+      "observation": 15167,
+      "action": "keep",
+      "nature": "evidence",
+      "reason": "It quotes Jas 4:14-16 and states what the boast is about (tomorrow) and what the verse sets against it; it stands as evidence."
+     },
+     {
+      "observation": 15188,
+      "action": "keep",
+      "nature": "evidence",
+      "reason": "It gathers 1Cor 1:28-29, Eph 2:8-10, Rom 3:27 and 4:2, where boasting before God is excluded, and states the ground each verse gives; it stands as evidence."
+     },
+     {
+      "observation": 15201,
+      "action": "delete_neither",
+      "reason": "A pointer note: it names a face and the chapter and cluster codes it bears on (10.10, M51) and holds no finding of its own about 2Cor 8:24, which this row reads."
+     },
+     {
+      "observation": 15309,
+      "action": "consume",
+      "carriers": [
+       15188
+      ],
+      "mapping": "15309 says boasting is excluded by grace, citing Eph 2:9 (not of works, so that no one may boast) and Rom 3:27 (it is excluded). 15188 states both: Eph 2:8-9 with the gift not of works so that no one may boast, and Rom 3:27 with boasting excluded by the law of faith.",
+      "reason": "Its meaning is carried whole by observation 15188."
+     },
+     {
+      "observation": 15323,
+      "action": "delete_neither",
+      "reason": "A planning note for a section of the narrative (10.7, Presumption); it holds no finding about Jas 4:16, which this row reads."
+     }
+    ]
+   },
+   {
+    "ledger_id": 1966,
+    "word": "boasts|G2744",
+    "readings": [
+     {
+      "kind": "term",
+      "obs_text": "In 1Cor 1:31 and 2Cor 10:17 the present participle with the article names 'the one who boasts', and the same verb then commands where that boast is to be made: in the Lord. Both are a citation ('as it is written').",
+      "basis": "stated",
+      "grounds": "the one who boasts, boast in the Lord",
+      "occurrences": [
+       1481260,
+       1487286
+      ]
+     },
+     {
+      "kind": "term",
+      "obs_text": "In 2Cor 7:14 the perfect (first singular) is a boast Paul has made to Titus about the Corinthians, and he states he was not put to shame by it.",
+      "basis": "stated",
+      "grounds": "whatever boasts I made to him",
+      "occurrences": [
+       1487179
+      ]
+     }
+    ],
+    "older": [
+     {
+      "observation": 15279,
+      "action": "keep",
+      "nature": "evidence",
+      "reason": "It sets out, for several codes, the renderings that diverge (boast against rejoice for G2744; boast against glory for H1984H), with their verses; it states what the renderings show and stands as evidence."
+     },
+     {
+      "observation": 15468,
+      "action": "keep",
+      "nature": "evidence",
+      "reason": "It quotes Jas 1:9-10 and 1Cor 1:28-31 and reads from them that the boast is moved from what one has to what God does; that reading is tied to the verses, so it stands as evidence."
+     }
+    ]
+   },
+   {
+    "ledger_id": 1967,
+    "word": "boasts|G6094",
+    "readings": [
+     {
+      "kind": "term",
+      "obs_text": "In Jam 3:5 the verb (present active, third singular) has the tongue as its subject and 'great things' as its object; the verse sets the small member against what it boasts of, and against the fire that sets a forest ablaze.",
+      "basis": "stated",
+      "grounds": "yet it boasts of great things",
+      "occurrences": [
+       1506349
+      ]
+     }
+    ],
+    "older": [
+     {
+      "observation": 15182,
+      "action": "delete_neither",
+      "reason": "It repeats Jas 3:5 with a heading and states nothing of its own; the use of the word in this verse is read in this row."
+     }
+    ]
+   },
+   {
+    "ledger_id": 1968,
+    "word": "boasts|H0907",
+    "readings": [
+     {
+      "kind": "face",
+      "obs_text": "In Jer 48:30 the noun (masculine plural, construct with 'his') is rendered 'boasts'; its sense is empty or idle talk. The Lord declares Moab's boasts false and pairs them with his deeds and his insolence, so the boast is talk with nothing behind it.",
+      "basis": "read",
+      "grounds": "his boasts are false",
+      "occurrences": [
+       1317040
+      ]
+     }
+    ],
+    "older": []
+   },
+   {
+    "ledger_id": 1969,
+    "word": "boasts|H1431",
+    "readings": [
+     {
+      "kind": "face",
+      "obs_text": "In Zep 2:8 the Hiphil of the verb of making great (wayyiqtol, third plural) with 'against their territory' is rendered 'made boasts': Moab and Ammon magnified themselves over the land of God's people. The verse sets it beside taunts and revilings the Lord has heard.",
+      "basis": "read",
+      "grounds": "made boasts against their territory",
+      "occurrences": [
+       1397581
+      ]
+     }
+    ],
+    "older": []
+   }
+  ]
+ },
+ "measured": {
+  "package_chars": 49122,
+  "seconds": 0.16
+ }
+}

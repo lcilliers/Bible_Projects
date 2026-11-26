@@ -1,0 +1,674 @@
+{
+ "command": "ReadEnrichment",
+ "collection": "boast",
+ "subgroup": "boasting",
+ "step": "1.2",
+ "made": "2026-11-26T10:48:11Z",
+ "unit": {
+  "ledger_id": 2036,
+  "senses": 5,
+  "occurrences": 85,
+  "codes": 20,
+  "older": 0
+ },
+ "instruction": {
+  "what": "Step 1.2, the enrichment of one subgroup (stage 1, B2): for each sense of step 1.1, what the Strong's codes of its occurrences say. The lexicon is the point of this read. Nothing here says what a sense does for the inner being; that begins at step 3.1.",
+  "read": [
+   "Take one sense at a time (`senses`: its text from step 1.1, its codes, words and occurrences).",
+   "Read the lexicon of each of its codes (`codes`: sense_head, meaning_range, lsj, mounce, related), the three meaning sources read together, none picked and the others dropped.",
+   "Validate the sense against its codes: do the lexicon entries bear out the meaning the sense names? Where they do not, say so in the enrichment; the sense is not changed here.",
+   "Where one surface carries several codes in the sense, read what each code adds."
+  ],
+  "write": [
+   "Fill `answer.enrichments`: one entry for each sense, named by `sense` (the id of its 1.1 observation); every sense has exactly one. The enrichment takes the sense's occurrences.",
+   "kind: enrichment. obs_text: a short definition from the lexicon entries; names the codes that link the sense to its usage and what different codes of one surface add; names verses the sense holds in, as the package writes the references (for example Psa 77:6); concise; never the lexicon copied whole, never a verse restated, never what the sense does for the inner being.",
+   "basis: read, with `grounds`: words copied exactly from the lexicon of a code of the sense (sense_head, meaning_range, lsj or mounce; the record checks them); or stated, where a verse says it.",
+   "Where the lexicon does not bear out the sense, the enrichment says so with its grounds; a missing lexicon entry is named, never filled from memory (RW-11).",
+   "`older`: answer each older observation shown, once: keep (with `nature`), restate (with `nature`, `new_text`, `checked`), merge (with `into`), consume (with `carriers` [\"this\"] for this answer's enrichments or observation ids, and `mapping`), delete_neither (with `reason`), carry (with `to` 2.1 and `reason`), defer (with `collection`, `nature`, `finding`).",
+   "Then: Collection-Build.ps1 -Action RecordEnrichment -File <the answer file> (-Check to preview). The record refuses the whole file on any fault and lists every fault."
+  ],
+  "keep": [
+   {
+    "rule": "RG-08 the-original",
+    "text": "For every word that names an inner or bodily act, look at the original: the root's range in all three meaning sources read together, never one picked and the others dropped; the ESV renderings across its verses; whether the English adds or hides; the literal sense beside the rendering. Where more than one reading is open, record each, and mark the choice 'I read'."
+   },
+   {
+    "rule": "RG-21 grain",
+    "text": "A word is read per its lettered Strong's code (its grain), never the bare lemma (B:113). The occurrences of a word with several senses are related per grain and never aggregated across grains: related verses are same-grain occurrences."
+   },
+   {
+    "rule": "RO11 one-row-per-code",
+    "text": "One observation per finding, never a duplicate description; a finding applying to several verses or words carries several nodes, each with the word's role in it."
+   },
+   {
+    "rule": "RW-03 no-duplicates-multi-node",
+    "text": "One observation per finding: the same description is never written twice. Applied to another verse, word or scope it gains a node on the existing observation."
+   },
+   {
+    "rule": "RW-04 concise-verse-specific",
+    "text": "Observation text is concise and tied to this verse's content, never a restatement of the word's dictionary sense. A transliteration is never given without its gloss."
+   },
+   {
+    "rule": "RW-09 reread-builds-on-prior",
+    "text": "A re-read includes the observations already recorded for the verse, so the reading sees prior findings and builds on them."
+   },
+   {
+    "rule": "RW-11 missing-is-named",
+    "text": "Missing data in the base extract is named as a gap, never substituted from memory or outside knowledge."
+   },
+   {
+    "rule": "RW-13 older-observations-answered-at-record",
+    "text": "Every older live observation with a live node on an occurrence of the row (a stage that is not the build's own) is answered in fill.older when the row is recorded, once: keep or restate (each with its marker), merge into a named observation, consume (live observations carry its meaning, stated in words, verified before it is deleted), delete as neither (comment first), or defer to a named collection (marked now; only the finding is left to that collection). An observation already marked by the validation, answered in a build or deferred is not asked again. A new observation whose text equals that of another live observation of the collection is refused, the other named. LayerCheck re-derives both from the tables. The end state of a collection's build is that every observation of its scope is marked and fixed or deleted, every word node complete or with its reason, and each deferral owned by a named collection."
+   },
+   {
+    "rule": "RS-04 existing-checked-accept-modify-delete",
+    "text": "When a verse is worked, every existing observation and node on it, of any stage, is checked against the verse by its wording. The stage is not an indication of the nature of an observation and is never used to filter. Each observation is accepted, modified (changed in place; the old value, the new value and the reason are kept in ib_observation_change), soft deleted (the `deleted` column, with the reason), merged (a duplicate description, into the observation that is kept) or, when its wording shows it is not verse understanding, left exactly as it is with the reason. The check's fixes are part of it and need no separate approval. Nothing is physically deleted."
+   },
+   {
+    "rule": "LR-02 nodes-are-built-from-the-data",
+    "text": "The nodes of a layer observation are the occurrences the aspect demands (a word's occurrences, the group's occurrences, the partner's occurrences in the verses they share), written by the recorder with the collection and the subgroup of each surface; they are never typed. An item answered by senses (word-sense) names, for each sense, the occurrences it holds for, and together the senses cover every occurrence; the recorder checks them against the data. The interpretation is the observation text, founded in what the evidence shows (basis stated or read, B:131) and tied to its verses (the text names them and does not restate them): the items of every step (S1, 1.1, 1.2, 2.1) state what the dictionary, the verses and the stored structure show of a word and never what a word does for the inner being; their nodes carry the role lexical and no route. The whole file is checked and written in one transaction; any problem refuses all of it. A row answered again withdraws its earlier observations with the reason."
+   },
+   {
+    "rule": "VA-03 consumption-is-verified-before-deletion",
+    "text": "An older observation is deleted as consumed only when live observations carry its meaning: every word occurrence of it is on a live node of a carrier or named as not carried with its reason, the mapping is stated in words (what the old says, which carrier states each part), the traces to it are re-pointed or replaced, and the consumption is kept as `consumed_by`. An observation that holds more than one finding is split first."
+   },
+   {
+    "rule": "VA-04 neither-evidence-nor-inner-being-is-deleted",
+    "text": "An observation that is neither evidence nor inner being contributes nothing to the purposes of the observations (researcher, 2026-11-22): it is commented with its reason and the word occurrences no other live observation holds, then deleted. An observation already marked, or one another observation traces, is not deleted this way."
+   }
+  ],
+  "not_in_this_read": ""
+ },
+ "prompts": [],
+ "senses": [
+  {
+   "sense": 23683,
+   "text": "Boasting: speaking with pride of a ground one claims, as verb and as noun. It holds whatever the ground is: one's own work or standing (2Cor 10:8, Rom 2:17), wealth and might (Psa 49:6, Jer 9:23), evil (Psa 52:1), idols (Psa 97:7), the flesh (Gal 6:13), tomorrow (Pro 27:1, Jam 4:16), another church (2Cor 9:2), weakness (2Cor 12:9); and the boast that is excluded (Rom 3:27, 1Cor 1:29) or denied of love (1Cor 13:4).",
+   "codes": [
+    "G2744",
+    "G2745",
+    "G2746",
+    "G4068",
+    "G5111",
+    "G6094",
+    "H1984H",
+    "H3588A"
+   ],
+   "words": [
+    "boasted|G2744",
+    "boasting|G2744",
+    "boasting|G2745",
+    "boasting|G2746",
+    "boasts|G2744",
+    "boasts|G6094",
+    "boasts|H1984H",
+    "boasts|H3588A",
+    "boast|G2744",
+    "boast|G4068",
+    "boast|G5111",
+    "boast|H1984H"
+   ],
+   "occurrences": [
+    "Psa 10:3",
+    "Psa 10:3",
+    "2Th 1:4",
+    "2Cor 11:10",
+    "2Cor 12:9",
+    "Jam 4:16",
+    "Jam 4:16",
+    "Rom 2:17",
+    "Rom 2:23",
+    "1Cor 1:29",
+    "1Cor 3:21",
+    "1Cor 4:7",
+    "2Cor 5:12",
+    "2Cor 7:14",
+    "2Cor 7:14",
+    "2Cor 9:2",
+    "2Cor 10:8",
+    "2Cor 10:13",
+    "2Cor 10:15",
+    "2Cor 10:16",
+    "2Cor 11:12",
+    "2Cor 11:16",
+    "2Cor 11:18",
+    "2Cor 11:18",
+    "2Cor 11:30",
+    "2Cor 11:30",
+    "2Cor 12:1",
+    "2Cor 12:5",
+    "2Cor 12:5",
+    "2Cor 12:6",
+    "Gal 6:13",
+    "Eph 2:9",
+    "1Cor 5:6",
+    "2Cor 9:3",
+    "Rom 3:27",
+    "2Cor 8:24",
+    "2Cor 11:21",
+    "2Cor 11:21",
+    "1Cor 13:4",
+    "Jam 3:5",
+    "1Ki 20:11",
+    "Psa 49:6",
+    "Psa 52:1",
+    "Psa 97:7",
+    "Pro 20:14",
+    "Pro 25:14",
+    "Pro 27:1",
+    "Jer 9:23",
+    "Jer 9:23",
+    "Jer 9:23",
+    "Jer 49:4"
+   ]
+  },
+  {
+   "sense": 23684,
+   "text": "The ground of the boast: the noun names the thing gloried in rather than the act, a person, a work or a state that is one's boast: the Corinthians and Paul to one another (2Cor 1:14, 1Th 2:19), the testimony of conscience (2Cor 1:12), a ground Paul will not lose (1Cor 9:15), the reason in one's own tested work (Gal 6:4), the hope held fast (Heb 3:6), Egypt as Judah's glory (Isa 20:5).",
+   "codes": [
+    "G2745",
+    "G2746",
+    "H8597"
+   ],
+   "words": [
+    "boasting|G2745",
+    "boasting|G2746",
+    "boast|G2745",
+    "boast|G2746",
+    "boast|H8597"
+   ],
+   "occurrences": [
+    "Heb 3:6",
+    "Isa 20:5",
+    "2Cor 5:12",
+    "1Cor 9:15",
+    "1Cor 9:16",
+    "2Cor 1:14",
+    "Gal 6:4",
+    "2Cor 1:12",
+    "1Th 2:19"
+   ]
+  },
+  {
+   "sense": 23685,
+   "text": "Magnifying oneself over another: verbs of making great or glorifying oneself, with 'over' or 'against', rendered 'boast': Moab and Ammon over God's people and land (Zep 2:8, Zep 2:10), enemies over a man who slips (Psa 38:16), Edom over Judah (Obd 12), Israel over the Lord and the axe over the hewer (Judg 7:2, Isa 10:15), superiority with jealousy (Jam 3:14), the boastful and the lifted horn (Psa 75:4).",
+   "codes": [
+    "G2620",
+    "H1431",
+    "H1984C",
+    "H6286A",
+    "H6310G"
+   ],
+   "words": [
+    "boasted|H1431",
+    "boasts|H1431",
+    "boast|G2620",
+    "boast|H1431",
+    "boast|H1984C",
+    "boast|H6286A",
+    "boast|H6310G"
+   ],
+   "occurrences": [
+    "Jam 3:14",
+    "Obd 12",
+    "Obd 12",
+    "Psa 38:16",
+    "Isa 10:15",
+    "Zep 2:8",
+    "Zep 2:10",
+    "Psa 75:4",
+    "Judg 7:2"
+   ]
+  },
+  {
+   "sense": 23686,
+   "text": "Boastful talk: words of the mouth named as boasts, where the codes say speech, mouth or empty talk and the context makes them inflated or hollow: the mouth speaking swollen things (Jude 16), Moab's false boasts (Jer 48:30), the sayings people approve (Psa 49:13), the evildoers' speech beside arrogant words (Psa 94:4).",
+   "codes": [
+    "G2980",
+    "G5246",
+    "H0559",
+    "H0907",
+    "H6310I"
+   ],
+   "words": [
+    "boasters|G2980",
+    "boasters|G5246",
+    "boasts|H0907",
+    "boasts|H6310I",
+    "boast|H0559"
+   ],
+   "occurrences": [
+    "Psa 94:4",
+    "Jer 48:30",
+    "Jude 16",
+    "Jude 16",
+    "Psa 49:13"
+   ]
+  },
+  {
+   "sense": 23687,
+   "text": "Glorying in God or in what he gives: the boast made in the Lord, his cross or his gift, with gladness and praise: in God continually beside thanks (Psa 44:8), the soul's boast in the Lord (Psa 34:2), knowing the Lord (Jer 9:24), boast in the Lord (1Cor 1:31, 2Cor 10:17), only in the cross (Gal 6:14), the lowly in his exaltation (Jam 1:9), entering into the nations' glory (Isa 61:6).",
+   "codes": [
+    "G2744",
+    "H1984H",
+    "H3235"
+   ],
+   "words": [
+    "boasted|H1984H",
+    "boasts|G2744",
+    "boasts|H1984H",
+    "boast|G2744",
+    "boast|H1984H",
+    "boast|H3235"
+   ],
+   "occurrences": [
+    "Gal 6:14",
+    "1Cor 1:31",
+    "1Cor 1:31",
+    "2Cor 10:17",
+    "2Cor 10:17",
+    "Jam 1:9",
+    "Psa 34:2",
+    "Psa 44:8",
+    "Jer 9:24",
+    "Jer 9:24",
+    "Isa 61:6"
+   ]
+  }
+ ],
+ "occurrences_in_no_sense": [],
+ "codes": {
+  "G2620": {
+   "surfaces": [
+    "boast"
+   ],
+   "sense_head": "to boast",
+   "meaning_range": "to boast about; to triumphglory over; <b>to boast, glory over, assume superiority over, triumph over</b> <ref='Rom.11.18'>Rom. 11:18</ref> (2x); <ref='Jas.2.13'>Jas. 2:13;</ref> 3:14*",
+   "lsj": "<b> κατακαυχάομαι</b>, <br /> <b>boast against</b> one, <b>exult over</b> him, τινος [<a href=\"javascript:void(0)\" title=\" NT.Rom.11.18, Eust.ad 2nd c.AD: Dionysius Periegeta “Prooem.” p.67 5th c.BC: Bacchylides Lyricus; κατά τινος NT.Jam.3.14: _metaphorically_, -καυχᾶται ἔλεος κρίσεως [prev. work] 2.13 \">NT+5th c.BC+</a>]; κ. ἔν τινι <b>to glory</b> in it, [<a href=\"javascript:void(0)\" title=\" LXX.Zech.10.12. \">LXX</a>]",
+   "mounce": "to boast about; to triumphglory over",
+   "related": [
+    "G2596 κατά according to",
+    "G2744 καυχάομαι to boast"
+   ]
+  },
+  "G2744": {
+   "surfaces": [
+    "boast",
+    "boasted",
+    "boasting",
+    "boasts"
+   ],
+   "sense_head": "to boast",
+   "meaning_range": "to boast, brag about; to rejoice in, glory in; this can refer to proper or improper boasting, depending on the object of the boast; <b>to glory, boast,</b> <ref='Rom.2.17, 23'>Rom. 2:17, 23</ref>; <greek>ὑπέρ τινος</greek>, <b>to boast of</b> a person or thing, <b>to undertake a complimentary testimony to,</b> <ref='2Co.12.5'>2Cor. 12:5;</ref> <b>to rejoice, exult,</b> <ref='Rom.5.2, 3, 11'>Rom. 5:2, 3, 11</ref>",
+   "lsj": "<b> καυχ-άομαι</b>, <br /> <i>Doric dialect</i> <b>καυχέομαι</b> [<a href=\"javascript:void(0)\" title=\" 3rd c.BC: Theocritus Poeta Bucolicus 5.77 \">Refs 3rd c.BC+</a>]; <i>2nd pers.</i> <i>singular</i> καυχᾶσαι in late Gr., as [<a href=\"javascript:void(0)\" title=\" NT.Rom.2.17, 23, etc.\">NT</a>]: <i>future</i> -ήσομαι [<a href=\"javascript:void(0)\" title=\" 5th c.BC: Herodotus Historicus 7.39, 5th c.BC: Eupolis Comicus 134, 4th c.BC: Epicrates Comicus 6 \">Refs 5th c.BC+</a>]: <i>aorist</i> ἐκαυχησάμην [<a href=\"javascript:void(0)\" title=\" 4th c.BC: Aristoteles Philosophus “Politica” 1311b4 \">Refs 4th c.BC+</a>]; <i>Aeolic dialect</i> <i>optative</i> καυχάσαιτο [<a href=\"javascript:void(0)\" title",
+   "mounce": "to boast, brag about; to rejoice in, glory in; this can refer to proper or improper boasting, depending on the object of the boast",
+   "related": [
+    "G2172 εὔχομαι to pray/wish for",
+    "G2620 κατακαυχάομαι to boast",
+    "G2745 καύχημα pride",
+    "G2746 καύχησις pride",
+    "G3166 μεγαλαυχέω to boast"
+   ]
+  },
+  "G2745": {
+   "surfaces": [
+    "boast",
+    "boasting"
+   ],
+   "sense_head": "pride",
+   "meaning_range": "something to boast about, boasting; pride, joy; <b>a glorying, boasting,</b> <ref='1Co.5.6'>1Cor. 5:6;</ref> <b>a ground</b> or <b>matter of glorying</b> or <b>boasting,</b> <ref='Rom.4.2'>Rom. 4:2;</ref> <b>joy, exultation,</b> <ref='Php.1.26'>Phil. 1:26;</ref> <b>complimentary testimony,</b> <ref='1Co.9.15, 16'>1Cor. 9:15, 16</ref>; <ref='2Co.9.3'>2Cor. 9:3</ref>",
+   "lsj": "<b> καύχ-ημα</b>, <br /> <i>Doric dialect</i> <b>καύχ-ᾱμα</b>, ατος, τό, <b>a boast, vaunt</b>, [<a href=\"javascript:void(0)\" title=\" 5th c.BC: Pindarus Lyricus “I.” 5(4).51. \">Refs 5th c.BC+</a>]<br /><Level3><b>__2</b></Level3> <b>subject of boasting</b>, [<a href=\"javascript:void(0)\" title=\" 2nd c.AD: Lesbonax Rhetor 3.4 (_plural_), NT.Rom.4.2. \">NT+2nd c.AD+</a>]",
+   "mounce": "something to boast about, boasting; pride, joy",
+   "related": [
+    "G2744 καυχάομαι to boast"
+   ]
+  },
+  "G2746": {
+   "surfaces": [
+    "boast",
+    "boasting"
+   ],
+   "sense_head": "pride",
+   "meaning_range": "boasting, pride;; <b>boasting, pride, glorying in; this can refer to proper or improper boasting, depending on the object of the boast; </b> a later equivalent to <greek>καύχημαι</greek>, <ref='Rom.3.27'>Rom. 3:27;</ref> <ref='2Co.7.4, 14; 11.10'>2Cor. 7:4, 14; 11:10</ref>",
+   "lsj": "<b> καύχ-ησις</b>, εως, ἡ, <br /> <b>boasting</b>, [<a href=\"javascript:void(0)\" title=\" 4th-3rd c.BC: Epicurus Philosophus “Fragmenta” 93, LXX.1Ch.29.13, +others, 1st c.BC: Philodemus Philosophus “περὶ κακιῶν ί” p.27 1st c.AD: Josephus Historicus, 1st c.AD: Philo Judaeus 1.534, NT.Rom.15.17. \">NT+4th c.BC+</a>]",
+   "mounce": "boasting, pride;",
+   "related": [
+    "G2744 καυχάομαι to boast"
+   ]
+  },
+  "G2980": {
+   "surfaces": [
+    "boasters"
+   ],
+   "sense_head": "to speak",
+   "meaning_range": "to speak, talk; <b>to make vocal utterance; to babble, to talk;</b>, in NT <i>absolute</i> <b>to exercise the faculty of speech,</b> <ref='Mat.9.33'>Mt. 9:33</ref>; <b>to speak,</b> <ref='Mat.10.20'>Mt. 10:20</ref>; <b>to hold converse with, to talk with,</b> <ref='Mat.12.46'>Mt. 12:46</ref>; <ref='Mrk.6.50'>Mk. 6:50</ref>; <ref='Rev.1.12'>Rev. 1:12;</ref> <b>to discourse, to make an address,</b> <ref='Luk.11.37'>Lk. 11:37</ref>; <ref='Act.11.20'>Acts 11:20;</ref> 21:39; <b>to make announcement, to make a declaration,</b> <ref='Luk.1.55'>Lk. 1:55</ref>; <b>to make mention,</b> <ref='Jhn.12.41'>Jn. 12:41</ref>; <ref='Act.2.31'>Acts 2:31;</ref> <ref='Heb.4.8'>Heb. 4:8;</ref> <ref='2Pe.3.16'>2P",
+   "lsj": "<b> λᾰλ-έω</b>, <br /> <b>talk, chat, prattle</b>, ἕπου καὶ μὴ λάλει [<a href=\"javascript:void(0)\" title=\" 5th-6th c.BC: Aristophanes Comicus “Ecclesiazusae” 1058, compare “V.” 1135; ἡ μὲν χελιδὼν τὸ θέρος.. λαλεῖ 4th-3rd c.BC: Philemo Comicus 208; λαλεῖς.. ἀμελήσας ἀποκρίνασθαι 5th-6th c.BC: Plato Philosophus “Euthydemus” 287d \">Refs 5th c.BC+</a>]: with <i>dative</i>, <b>talk to</b> one, λαλῶν ἐν ταῖς ὁδοῖς σεαυτῷ [<a href=\"javascript:void(0)\" title=\" 5th-6th c.BC: Aristophanes Comicus “Equites” 348; αὑτοῖς 4th-3rd c.BC: Philemo Comicus 11; πρὸς αὑτούς 2nd c.AD: Alexander Rhetor 9.10; λ. περί τινος 5th c.BC: Pherecrates Comicus 2, 5th-6th c.BC: Aristophanes Comicus “Lysistrata” 627; ὑπέρ τ",
+   "mounce": "to speak, talk",
+   "related": [
+    "G0215 ἀλάλητος inexpressible",
+    "G0216 ἄλαλος mute",
+    "G2981 λαλιά speech",
+    "G3004G λέγω to say: says",
+    "G3004H λέγω to say: name"
+   ]
+  },
+  "G4068": {
+   "surfaces": [
+    "boast"
+   ],
+   "sense_head": "to boast",
+   "meaning_range": "to boast, brag; <b>to vaunt one's self, brag</b> <ref='1Co.13.4'>1Cor. 13:4</ref>*",
+   "lsj": "<b> περπερ-εύομαι</b>, <br /> <b>boast, brag</b>, [<a href=\"javascript:void(0)\" title=\" NT.1Cor.13.4, 2nd c.AD: Marcus Antoninus Imperator 5.5. \">NT+2nd c.AD+</a>]",
+   "mounce": "to boast, brag",
+   "related": [
+    "G4008 πέραν other side"
+   ]
+  },
+  "G5111": {
+   "surfaces": [
+    "boast"
+   ],
+   "sense_head": "be bold",
+   "meaning_range": "to dare, be bold, courageous; <b>to assume resolution</b>, to do a thing, <ref='Mrk.15.43'>Mk. 15:43</ref>; <ref='Rom.5.7'>Rom. 5:7;</ref> <ref='Php.1.14'>Phil. 1:14;</ref> <b>to make up the mind,</b> <ref='2Co.10.12'>2Cor. 10:12;</ref> <b>to dare,</b> <ref='Act.5.13'>Acts 5:13;</ref> 7:32; <b>to presume,</b> <ref='Mat.22.46'>Mt. 22:46</ref>; <ref='Mrk.12.34'>Mk. 12:34</ref>; <ref='Luk.20.40'>Lk. 20:40</ref>; <ref='Jhn.21.12'>Jn. 21:12</ref>; <ref='Rom.15.18'>Rom. 15:18;</ref> Jude 9; <b>to have the face,</b> <ref='1Co.6.1'>1Cor. 6:1;</ref> <i>absolute</i> <b>to assume a bold bearing, courageous,</b> <ref='2Co.10.2'>2Cor. 10:2;</ref> 11:21*",
+   "lsj": "<b> τολμ-άω</b>, <br /> <i>Ionic dialect</i> <b>τολμέω</b> [<a href=\"javascript:void(0)\" title=\" 5th c.BC: Herodotus Historicus 8.77 \">Refs 5th c.BC+</a>]; <i>Doric dialect</i> <i>2nd pers.</i> <i>singular</i> τολμῇς [<a href=\"javascript:void(0)\" title=\" 3rd c.BC: Theocritus Poeta Bucolicus 5.35 \">Refs 3rd c.BC+</a>]: <i>future</i> τολμήσω [<a href=\"javascript:void(0)\" title=\" 5th c.BC: Sophocles Tragicus “Electra” 471 \">Refs 5th c.BC+</a>], <i>Doric dialect</i> <b>-ᾱσῶ</b>[<a href=\"javascript:void(0)\" title=\" 3rd c.BC: Theocritus Poeta Bucolicus 14.67 \">Refs 3rd c.BC+</a>]: <i>perfect</i> τετόλμηκα [<a href=\"javascript:void(0)\" title=\" 4th-5th c.BC: Aeschylus Tragicus “Prometheus Vinctus” 3",
+   "mounce": "to dare, be bold, courageous",
+   "related": [
+    "G0662 ἀποτολμάω be bold",
+    "G3954 παρρησία boldness",
+    "G3955 παρρησιάζομαι to preach boldly",
+    "G5112 τολμηρότερον more boldly",
+    "G5113 τολμητής bold man"
+   ]
+  },
+  "G5246": {
+   "surfaces": [
+    "boasters"
+   ],
+   "sense_head": "boastful",
+   "meaning_range": "<i>primarily</i> <b>swollen, overgrown;</b> of language, <b>swelling, pompous, boastful, bombastic</b> <ref='2Pe.2.18'>2Pet. 2:18;</ref> Jude 16*",
+   "lsj": "<b> ὑπέρογκ-ος</b>, ον, <br /> <b>of excessive bulk</b> or <b>size,</b> γενομένης τῆς κνήμης ὑ. <b>swelled to a great size,</b> [<a href=\"javascript:void(0)\" title=\" 5th-6th c.BC: Xenophon Historicus “Historia Graeca (Hellenica)” 5.4.58; [μαστοὶ] οἱ ὑ. 2nd c.AD: Soranus Medicus 1.88; πιμελὴς καὶ ὑ. 2nd c.AD: Lucianus Sophista \">Refs 5th c.BC+</a>]<b>tim.</b>15; δύναμις ὑ., opposed to ταπεινή, [<a href=\"javascript:void(0)\" title=\" 4th c.BC: Demosthenes Orator 4.23; τὰ ὑ. τῶν βελῶν 4th c.BC: Aristoteles Philosophus “de Audibilibus” 802b34. \">Refs 4th c.BC+</a>]<br /><Level3><b>__2</b></Level3> <b>immoderate, excessive,</b> οὐσίαι [<a href=\"javascript:void(0)\" title=\" 5th-6th c.BC: Plato Philos",
+   "mounce": "boastful, bombastic",
+   "related": [
+    "G3591 ὄγκος impediment",
+    "G5228 ὑπέρ above/for"
+   ]
+  },
+  "G6094": {
+   "surfaces": [
+    "boasts"
+   ],
+   "sense_head": "to boast",
+   "meaning_range": "<b>to boast</b> <ref='Jas.3.5.'>Jas.3:5.</ref>",
+   "lsj": "<b> αὐχέω</b>, <br /> chiefly <i>present</i> and <i>imperfect</i> ηὔχουν, <i>future</i> αὐχήσω[<a href=\"javascript:void(0)\" title=\" 5th c.BC: Euripides Tragicus “Fragmenta” 857, 2nd c.AD: Lucianus Sophista “DMort.” 22.2, “Anthologia Graeca” 7.373 (Thall.): \">Refs 5th c.BC+</a>]<i>aorist</i> ηὔχησα[<a href=\"javascript:void(0)\" title=\" [prev. work] 6.283, 15.4, 2nd c.AD: Apollodorus Damascenus Mechanicus 2.4.3\">Refs 2nd c.AD+</a>]: (αὔχη):—<b>boast, plume oneself,</b> ἐπί τινι on a thing, [<a href=\"javascript:void(0)\" title=\" Batrachomyomachia 57, “Anthologia Graeca” 6.283; τινί 5th c.BC: Euripides Tragicus “Iphigenia Aulidensis” 412\">Refs 5th c.BC+</a>]: with <i>neuter</i> <i>adjective</i>, τ",
+   "mounce": "",
+   "related": [
+    "G3166 μεγαλαυχέω to boast",
+    "G6094 αὐχέω to boast"
+   ]
+  },
+  "H0559": {
+   "surfaces": [
+    "boast"
+   ],
+   "sense_head": "to say",
+   "meaning_range": "1) to say, speak, utter; 1a) (Qal) to say, to answer, to say in one's heart, to think, to command, to promise, to intend; 1b) (Niphal) to be told, to be said, to be called; 1c) (Hithpael) to boast, to act proudly; 1d) (Hiphil) to avow, to avouch; Aramaic equivalent: <i>a.mar</i> (אֲמַר \"to say\" H0560)",
+   "lsj": "",
+   "mounce": "",
+   "related": [
+    "H0201 אוֹמָר Omar",
+    "H0204 אֹן On",
+    "H0534 אָמִיר top",
+    "H0560 אֲמַר to say",
+    "H0561 אֵמֶר word",
+    "H0562 אֹמֶר word",
+    "H0564G אִמֵּר Immer",
+    "H0564H אִמֵּר Immer",
+    "H0564I אִמֵּר Immer",
+    "H0564J אִמֵּר Immer",
+    "H0565A אִמְרָה word",
+    "H0565B אֶמְרָה threat"
+   ]
+  },
+  "H0907": {
+   "surfaces": [
+    "boasts"
+   ],
+   "sense_head": "bluster",
+   "meaning_range": "empty talk, idle talk, liar, lie",
+   "lsj": "",
+   "mounce": "",
+   "related": [
+    "H0908 בָּדָא to devise",
+    "H0911 בְּדַד Bedad",
+    "H0912 בֵּֽדְיָה Bedeiah"
+   ]
+  },
+  "H1431": {
+   "surfaces": [
+    "boast",
+    "boasted",
+    "boasts"
+   ],
+   "sense_head": "to magnify",
+   "meaning_range": "1) to grow, become great or important, promote, make powerful, praise, magnify, do great things; 1a) (Qal); 1a1) to grow up; 1a2) to become great; 1a3) to be magnified; 1b) (Piel); 1b1) to cause to grow; 1b2) to make great, powerful; 1b3) to magnify; 1c) (Pual) to be brought up; 1d) (Hiphil); 1d1) to make great; 1d2) to magnify; 1d3) to do great things; 1e) (Hithpael) to magnify oneself",
+   "lsj": "",
+   "mounce": "",
+   "related": [
+    "H1419A גָּדוֹל great: large",
+    "H1419B גָּדוֹל Haggedolim",
+    "H1419J גָּדוֹל Great [Sea]",
+    "H1419K גָּדוֹל great: old",
+    "H1420 גְּדוּלָּה greatness",
+    "H1432 גָּדֵל growing",
+    "H1433 גֹּ֫דֶל greatness",
+    "H1434 גְּדִלִים tassel",
+    "H1435G גִּדֵּל Giddel",
+    "H1435H גִּדֵּל Giddel",
+    "H1436A גְּדַלְיָה Gedaliah",
+    "H1436B גְּדַלְיָ֫הוּ Gedaliah"
+   ]
+  },
+  "H1984C": {
+   "surfaces": [
+    "boast"
+   ],
+   "sense_head": "to be foolish",
+   "meaning_range": "1) (Poel) to make a fool of, make into a fool; 1f) (Hithpoel) to act madly, act like a madman",
+   "lsj": "",
+   "mounce": "",
+   "related": [
+    "H1947 הוֹלֵלָה madness",
+    "H1948 הוֹלֵלוּת madness",
+    "H1974 הִלּוּל praise",
+    "H1984A הָלַל to shine",
+    "H1984B הָלַל to boast: praise",
+    "H1984H הָלַל to boast: boast",
+    "H1984I הָלַל to boast: rave madly",
+    "H1985 הִלֵּל Hillel",
+    "H3094G יְהַלֶּלְאֵל Jehallelel",
+    "H3094H יְהַלֶּלְאֵל Jehallelel",
+    "H4110 מַהֲלָל praise",
+    "H4111G מַהֲלַלְאֵל Mahalalel"
+   ]
+  },
+  "H1984H": {
+   "surfaces": [
+    "boast",
+    "boasted",
+    "boasts"
+   ],
+   "sense_head": "boast",
+   "meaning_range": "1) to praise, boast, be boastful; 1a) (Qal); 1a1) to be boastful; 1a2) boastful ones, boasters (participle); 1b) (Piel); 1b1) to praise; 1b2) to boast, make a boast; 1c) (Pual); 1c1) to be praised, be made praiseworthy, be commended, be worthy of praise; 1d) (Hithpael) to boast, glory, make one's boast",
+   "lsj": "",
+   "mounce": "",
+   "related": [
+    "H1947 הוֹלֵלָה madness",
+    "H1948 הוֹלֵלוּת madness",
+    "H1974 הִלּוּל praise",
+    "H1984A הָלַל to shine",
+    "H1984B הָלַל to boast: praise",
+    "H1984C הָלַל to be foolish",
+    "H1984I הָלַל to boast: rave madly",
+    "H1985 הִלֵּל Hillel",
+    "H3094G יְהַלֶּלְאֵל Jehallelel",
+    "H3094H יְהַלֶּלְאֵל Jehallelel",
+    "H4110 מַהֲלָל praise",
+    "H4111G מַהֲלַלְאֵל Mahalalel"
+   ]
+  },
+  "H3235": {
+   "surfaces": [
+    "boast"
+   ],
+   "sense_head": "to exchange",
+   "meaning_range": "1) to exchange; 1a) (Hiphil) to exchange; 1b) (Hithpael) to enter into, be changed into; 2) (TWOT) to promise",
+   "lsj": "",
+   "mounce": "",
+   "related": [
+    "H3236 יִמְרָה Imrah"
+   ]
+  },
+  "H3588A": {
+   "surfaces": [
+    "boasts"
+   ],
+   "sense_head": "for",
+   "meaning_range": "1) that, for, because, when, as though, as, because that, but, then, certainly, except, surely, since; 1a) that; 1a1) yea, indeed; 1b) when (of time); 1b1) when, if, though (with a concessive force); 1c) because, since (causal connection); 1d) but (after negative); 1e) that if, for if, indeed if, for though, but if; 1f) but rather, but; 1g) except that; 1h) only, nevertheless; 1i) surely; 1j) that is; 1k) but if; 1l) for though; 1m) forasmuch as, for therefore",
+   "lsj": "",
+   "mounce": "",
+   "related": [
+    "H0518A אִם if",
+    "H0518H אִם if: surely no",
+    "H0518I אִם if: surely yes",
+    "H0518J אִם if: until",
+    "H3588B כִּי [אם] that if: except",
+    "H3588C כִּי [עַל כֵּן] for as that: since",
+    "H3589 כִּיד ruin",
+    "H3651A כֵּן right",
+    "H3651C כֵּן so",
+    "H5921A עַל upon",
+    "H5921B [כִּי] עַל [כֵּן] as"
+   ]
+  },
+  "H6286A": {
+   "surfaces": [
+    "boast"
+   ],
+   "sense_head": "to beautify",
+   "meaning_range": "1) to glorify, beautify, adorn; 1a) (Piel) to glorify, beautify; 1b) (Hithpael); 1b1) to glorify oneself; 1b2) to get glory to oneself, be glorified",
+   "lsj": "",
+   "mounce": "",
+   "related": [
+    "H6286B פִּאֵר to re-harvest",
+    "H6287 פְּאֵר headdress",
+    "H6288A פֹּארָה bough",
+    "H6288B פּוּרָה bough",
+    "H6289 פָּארוּר pale",
+    "H8597 תִּפְאָרָה beauty"
+   ]
+  },
+  "H6310G": {
+   "surfaces": [
+    "boast"
+   ],
+   "sense_head": "lip/mouth",
+   "meaning_range": "peh; 1) mouth; 1a) mouth (of man); 1b) mouth (as organ of speech); 1c) mouth (of animals); 1d) mouth, opening, orifice (of a well, river, etc); 1e) extremity, end pim; 2) a weight equal to one third of a shekel, occurs only in <ref=\"1Sa.13.21\">1Sa 13:21</ref>",
+   "lsj": "",
+   "mounce": "",
+   "related": [
+    "H6284 פָּאָה to cleave",
+    "H6310H פֶּה lip: edge",
+    "H6310I פֶּה lip: word",
+    "H6310J פֶּה lip: opening",
+    "H6310K פֶּה lip: according",
+    "H6310L פֶּה lip: one third",
+    "H6366 פֵּיָה two-edged",
+    "H6374 פִּיפִיָּה tooth",
+    "H6433 פֻּם mouth"
+   ]
+  },
+  "H6310I": {
+   "surfaces": [
+    "boasts"
+   ],
+   "sense_head": "word/command",
+   "meaning_range": "peh; 1) mouth; 1a) mouth (of man); 1b) mouth (as organ of speech); 1c) mouth (of animals); 1d) mouth, opening, orifice (of a well, river, etc); 1e) extremity, end pim; 2) a weight equal to one third of a shekel, occurs only in <ref=\"1Sa.13.21\">1Sa 13:21</ref>",
+   "lsj": "",
+   "mounce": "",
+   "related": [
+    "H6284 פָּאָה to cleave",
+    "H6310G פֶּה lip",
+    "H6310H פֶּה lip: edge",
+    "H6310J פֶּה lip: opening",
+    "H6310K פֶּה lip: according",
+    "H6310L פֶּה lip: one third",
+    "H6366 פֵּיָה two-edged",
+    "H6374 פִּיפִיָּה tooth",
+    "H6433 פֻּם mouth"
+   ]
+  },
+  "H8597": {
+   "surfaces": [
+    "boast"
+   ],
+   "sense_head": "beauty",
+   "meaning_range": "1) beauty, splendour, glory; 1a) beauty, finery (of garments, jewels); 1b) glory; 1b1) of rank, renown; 1b2) as attribute of God; 1c) honour (or nation Israel); 1d) glorying, boasting (of individual)",
+   "lsj": "",
+   "mounce": "",
+   "related": [
+    "H6286A פָּאַר to beautify",
+    "H6286B פִּאֵר to re-harvest",
+    "H6287 פְּאֵר headdress"
+   ]
+  }
+ },
+ "older": [],
+ "answer": {
+  "command": "ReadEnrichment",
+  "collection": "boast",
+  "subgroup": "boasting",
+  "ledger_id": 2036,
+  "enrichments": [
+   {
+    "sense": 23683,
+    "kind": "enrichment",
+    "basis": "read",
+    "grounds": "to boast, brag about",
+    "obs_text": "Boasting is borne out by G2744 (to boast, brag about, glory in; proper or improper by its object) with its nouns G2745 and G2746, by G6094 and G4068 (to boast, brag, vaunt oneself; Jam 3:5, 1Cor 13:4) and by H1984H in the Hithpael (to boast, make one's boast; Psa 52:1, Jer 9:23). G2745 adds the thing boasted of where G2746 is the act (1Cor 5:6 beside Rom 3:27). Two codes do not bear the sense out: G5111 is to dare (2Cor 11:21), the boast supplied by the context, and H3588A is the conjunction 'for' at Psa 10:3, not a word of boasting."
+   },
+   {
+    "sense": 23684,
+    "kind": "enrichment",
+    "basis": "read",
+    "grounds": "something to boast about",
+    "obs_text": "The ground of the boast is borne out by G2745, the thing to boast about, a ground or matter of glorying (1Cor 9:15, Gal 6:4, 2Cor 1:14), with G2746 in the same use where the noun names what is boasted of (2Cor 1:12, 1Th 2:19), and by H8597, beauty, glory, which includes glorying and boasting (Isa 20:5). The Greek nouns name what is gloried in; the Hebrew names its splendour."
+   },
+   {
+    "sense": 23685,
+    "kind": "enrichment",
+    "basis": "read",
+    "grounds": "to magnify oneself",
+    "obs_text": "Magnifying oneself over another is borne out by H1431 in the Hiphil and Hithpael (to make great, to magnify oneself; Zep 2:8, Psa 38:16), by H6286A in the Hithpael (to glorify oneself, get glory to oneself; Judg 7:2, Isa 10:15) and by G2620 (to boast against, glory over, assume superiority over; Jam 3:14). H6310G is the mouth made great with H1431 at Obd 12. H1984C is to act madly, act like a madman (Psa 75:4): the lexicon gives folly, not magnifying, and the sense rests there on the parallel of the lifted horn."
+   },
+   {
+    "sense": 23686,
+    "kind": "enrichment",
+    "basis": "read",
+    "grounds": "empty talk, idle talk",
+    "obs_text": "Boastful talk is borne out by H0907, empty talk, idle talk, lie (Jer 48:30), by H0559 in the Hithpael, to boast, to act proudly, on a verb of saying (Psa 94:4), and by G5246, swelling, pompous, boastful, with G2980, to speak (Jude 16). H6310I is the mouth as organ of speech (Psa 49:13): the lexicon names speech, and the boast is the ESV's rendering of it."
+   },
+   {
+    "sense": 23687,
+    "kind": "enrichment",
+    "basis": "read",
+    "grounds": "to rejoice in, glory in",
+    "obs_text": "Glorying in God is borne out by G2744 in its other range, to rejoice in, glory in, rejoice, exult (1Cor 1:31, Gal 6:14, Jam 1:9), and by H1984H in the Piel, to praise, beside the Hithpael to glory, make one's boast (Psa 44:8, Psa 34:2, Jer 9:24). H3235 is to exchange, in the Hithpael to enter into (Isa 61:6): the lexicon does not give boasting, and the sense rests there on the ESV's rendering."
+   }
+  ],
+  "older": []
+ },
+ "measured": {
+  "package_chars": 28849,
+  "seconds": 0.09
+ }
+}
