@@ -42,3 +42,6 @@ Session id: 44fa45e5-b886-40b6-9928-2c435d1a9f56 (Developer Mode)
 
 ## 6. Git
 
+- branch: main
+- commit: 121746ee70f9af35c9b1cdff25ad962c1809d21d (session 20261126: #2637 v20 strive-run findings K1-K7; session log); earlier commits of this session: 1ee1f6e6f75f93236f60e533be0a2e3fea13f6a3, d0d846bb9dbb9fc44bfdb18935540ca98678cdc1, 288f5c9f15beceedbdb32d247f420b0437f5d712
+- push:    69a558f7..121746ee  main -> main
