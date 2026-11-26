@@ -46,4 +46,7 @@ Session id: `1dc61df3-3564-4325-94ae-0a36c7540ce9` (Developer Mode, declared at 
 
 ## 6. Git
 
-_(written after the first commit)_
+- Branch: `main`.
+- Commit: `c1b3df7d` (session 20261126: Developer Mode -- #2637 done-test as rule 138, build plan v3 and known-failures catalogue, read refusals kept in read_failure (no escalation), session log).
+- Push: first attempt failed (`Could not resolve host: github.com`); retried: `f52dac6c..c1b3df7d  main -> main` to `https://github.com/lcilliers/Bible_Projects.git`.
+- Not committed: `iba/app/db/archive/iba-pre-rollback-thought-rerun-20261125.db` and `iba/app/db/archive/iba-restore-point-20261124T152322Z.db` (each about 1 GB, left by an earlier session; over GitHub's file limit).
