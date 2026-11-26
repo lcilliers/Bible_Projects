@@ -1,0 +1,361 @@
+# ReadStructure -- boast / boastful -- step 2.1
+
+## What to do
+
+Step 2.1, the structure of one subgroup (stage 1, B3): what stands with the subgroup's words in each verse, read from the stored structure. One item at a time: double-meaning (a surface with more than one code), qualifier (negators and the word each reaches, adjectives, adverbs, prepositional qualifiers), entity (who is named or referred to), direction (from whom to whom, by the grammar), pairing (one row for each partner collection: its words in the verses shared with the subgroup). Nothing here says what anything does for the inner being; that begins at step 3.1.
+
+Read:
+- Take one row at a time (`rows`): what it asks, its occurrences (`as`: member, the subgroup's word; partner, the other word), and its verses.
+- Read each verse (`verses`) from its stored structure, one line for each word: * marks an occurrence of the subgroup; then the position, surface, Strong's code and morph, and what the pairing makes of the word (its type, the qualifier it carries, a negator, a party, the collections of a word of another collection). Nothing is evaluated that is not stored.
+- Where each word stands: its side and distance from the subgroup's word, from the positions. Adjacency is not scope: a negator or qualifier is read for the word it reaches by the grammar.
+- A pairing row shows the WordNet control for its partner collection: a pairing WordNet gives and the verses do not show is one to look for; a pairing only the verses show has no control.
+- Differences in meaning are read from the base data (the Strong's code, the morph, the construction), not from the English alone. The subgroup's 1.1 senses (`senses`) are what the findings build on.
+
+Write:
+- Fill `answer.rows`: for each row, disposition observed with its `findings`, or none with its `reason` (where the row allows none: nothing of the item stands with the subgroup in its verses).
+- One finding for each distinct thing the structure shows; the same finding in several verses is ONE finding naming all its occurrences; a verse that shows something different is its own finding. Together the findings name every occurrence of the row (occurrence ids or verse references), each in one finding.
+- kind: as the template gives it (pairing; relation for direction; face for double-meaning). obs_text: concise; names the verses it holds in, as the package writes the references (for example Act 18:4); states what the structure shows (which word, where it stands, what it reaches or gives by the grammar); never a verse restated, never what it does for the inner being.
+- basis: stated (the verse says it) or read (read from the structure), with `grounds`: words copied exactly from the verses it is tied to (the record checks them).
+- Each subgroup's surface has its own finding; none joins two subgroups. A data error is named in grounds, not fixed.
+- `older`: answer each older observation shown under the row, once: keep (with `nature`), restate (with `nature`, `new_text`, `checked`), merge (with `into`), consume (with `carriers` ["this"] or observation ids, and `mapping`), delete_neither (with `reason`), carry (with `to` and `reason`), defer (with `collection`, `nature`, `finding`). One listed under another row is answered there.
+- Where a reading, sense, enrichment or finding holds every occurrence of the row's subject, `occurrences` may be "all": the recorder names them.
+- Then: Collection-Build.ps1 -Action CheckAnswer -File <the answer file>: every problem at once, each with its rule, nothing written; correct the answer until it finds none, then -Action RecordStructure -File <the answer file>. The record refuses the whole file on any fault and lists every fault.
+
+## Refused when (by rule)
+
+- DA-02: belongs to collection; the nodes do not carry the collections
+- IB-07: is not marked evidence: an inner-being observation traces to evidence; an observation does not trace itself
+- LR-01: is not closed (every row answered
+- LR-02: the text names none of them; names its grounds in the words of the verse; are not words of the lexicon entries; are not words of the verses; the data holds no occurrence for this aspect; names the occurrences it is about; names no occurrence (fill occurrences; are already in another sense; are in no sense; no occurrence to adopt for
+- LR-03: cannot be recorded as none; none needs its reason
+- PC-01: is not a step of the layered reading; is not a live subgroup of; no live collection; has no live subgroup; -Item must be one of; cannot read ;  are required;  is required
+- PC-02: answer (its `command` must be; is a list of {observation, action, reason; the answer holds no ; (fill.senses): at least one; this is not the answer of a read
+- PC-03: not a ledger row of; is not a 2.1 row of subgroup; occurrences that are not occurrences of; is not an older live observation on the occurrences of this row; is not an open old observation of this subgroup; adopt names a live observation; a deferral names a live collection; has no matching live verse_lexical row; both must be different live observations;  is not an occurrence of ; is not a live observation; is not a live node; does not exist;  is not a ; merge names a live observation to keep; defer names a live collection
+- PC-04: kind must be one of; basis must be one of; role must be one of; route must be one of; tag must be one of; stage must be one of; nature must be one of; disposition must be observed; is not a node role; cannot be modified (allowed:; not in live cfg_enum ib_observation; , the item takes ; action is one of; names its marker, nature one of
+- PC-05: only an open or an unvalidated row is recorded;  row is answered by its own command; the evidence validation of ; has no open row; is open; other items are; its group is retired or missing; carry names a LATER step of; the loop is for one subgroup at a time; partner collection 
+- PC-06:  took more than 
+- PC-07: cfg_setting layer.reading is missing; cfg_setting layer.scan; layer.reading step ; (apply iba/app/migration/archive/; the code is ahead of the config; have no nature in cfg_setting layer.reading; the read names rule(s) not active; is empty: run install_nature; are not ib_observation.tag values;  is missing
+- RG-06: carries its route; this item takes no route
+- RW-01: needs its reason, in words; say in words what was checked; say what it states that the existing record does not; state the finding the collection is to close; say in words which words it relies on; say in words why the word supports no finding; is the last word node of observation; already holds that occurrence: drop the node instead; its occurrence is on no live node of; carry gives its reason in words
+- RW-03: is already live as observation; the same text as; a merge is for the same description
+- RW-04: restates the verse; the observation text is missing or under; is a bare negation with no actual content; is not the ESV's wording
+- RW-09: adopt needs its reason in words
+- RW-12: morph_code is empty but; ) has no 
+- RW-13: are still open in the ledger; have no answer in fill.older; its fate is not recorded; is not in the change log of observation; the change log does not show it
+- RW-14: the statement used more than
+- VA-03: name the carrying observations; the mapping is stated in words; occurrence(s) are on no node of; not carried needs its reason
+- VA-04: only an observation that is neither is deleted here; repair those traces first
+- VA-05: is an inner-being finding (its nodes carry an inner-being role); a deferred observation is marked now
+
+## The rules
+
+- RG-14 morph-read: Morph is read, not carried: where occurrences of a word show different stems or voices, record whether the subject does, undergoes or causes the act.
+- RG-16 homonym-and-data-error: A word that is only a homonym or a name, with no meaningful context, is recorded as such (tag no-human-context) and left. Data errors found while reading are flagged (tag data-error), not fixed in the reading.
+- RG-21 grain: A word is read per its lettered Strong's code (its grain), never the bare lemma (B:113). The occurrences of a word with several senses are related per grain and never aggregated across grains: related verses are same-grain occurrences.
+- RO11 one-row-per-code: One observation per finding, never a duplicate description; a finding applying to several verses or words carries several nodes, each with the word's role in it.
+- RW-03 no-duplicates-multi-node: One observation per finding: the same description is never written twice. Applied to another verse, word or scope it gains a node on the existing observation.
+- RW-04 concise-verse-specific: Observation text is concise and tied to this verse's content, never a restatement of the word's dictionary sense. A transliteration is never given without its gloss.
+- RW-08 slants-own-rows: Where the evidence points to more than one reading, each is its own observation with its own evidence.
+- RW-09 reread-builds-on-prior: A re-read includes the observations already recorded for the verse, so the reading sees prior findings and builds on them.
+- RW-11 missing-is-named: Missing data in the base extract is named as a gap, never substituted from memory or outside knowledge.
+- RW-13 older-observations-answered-at-record: Every older live observation with a live node on an occurrence of the row (a stage that is not the build's own) is answered in fill.older when the row is recorded, once: keep or restate (each with its marker), merge into a named observation, consume (live observations carry its meaning, stated in words, verified before it is deleted), delete as neither (comment first), or defer to a named collection (marked now; only the finding is left to that collection). An observation already marked by the validation, answered in a build or deferred is not asked again. A new observation whose text equals that of another live observation of the collection is refused, the other named. LayerCheck re-derives both from the tables. The end state of a collection's build is that every observation of its scope is marked and fixed or deleted, every word node complete or with its reason, and each deferral owned by a named collection.
+- RS-04 existing-checked-accept-modify-delete: When a verse is worked, every existing observation and node on it, of any stage, is checked against the verse by its wording. The stage is not an indication of the nature of an observation and is never used to filter. Each observation is accepted, modified (changed in place; the old value, the new value and the reason are kept in ib_observation_change), soft deleted (the `deleted` column, with the reason), merged (a duplicate description, into the observation that is kept) or, when its wording shows it is not verse understanding, left exactly as it is with the reason. The check's fixes are part of it and need no separate approval. Nothing is physically deleted.
+- LR-02 nodes-are-built-from-the-data: The nodes of a layer observation are the occurrences the aspect demands (a word's occurrences, the group's occurrences, the partner's occurrences in the verses they share), written by the recorder with the collection and the subgroup of each surface; they are never typed. An item answered by senses (word-sense) names, for each sense, the occurrences it holds for, and together the senses cover every occurrence; the recorder checks them against the data. The interpretation is the observation text, founded in what the evidence shows (basis stated or read, B:131) and tied to its verses (the text names them and does not restate them): the items of every step (S1, 1.1, 1.2, 2.1) state what the dictionary, the verses and the stored structure show of a word and never what a word does for the inner being; their nodes carry the role lexical and no route. The whole file is checked and written in one transaction; any problem refuses all of it. A row answered again withdraws its earlier observations with the reason.
+- LR-03 none-needs-a-permitted-reason: An aspect is recorded as none only where its item allows it (cfg_setting layer.reading none_allowed) and with its reason in words. A group definition and a group's Strong's enrichment are always observed.
+- DA-02 a-node-per-occurrence-with-its-surfaces-collection: A node is on one occurrence (verse_lexical_id) and carries the collection of its surface (a supportive node, the collection of the surface it supports); a node already on the observation for the same occurrence is not written twice, and takes the role. A node with no collection to carry, or on a verse out of scope (B:130), is not written and is listed.
+- VA-03 consumption-is-verified-before-deletion: An older observation is deleted as consumed only when live observations carry its meaning: every word occurrence of it is on a live node of a carrier or named as not carried with its reason, the mapping is stated in words (what the old says, which carrier states each part), the traces to it are re-pointed or replaced, and the consumption is kept as `consumed_by`. An observation that holds more than one finding is split first.
+- VA-04 neither-evidence-nor-inner-being-is-deleted: An observation that is neither evidence nor inner being contributes nothing to the purposes of the observations (researcher, 2026-11-22): it is commented with its reason and the word occurrences no other live observation holds, then deleted. An observation already marked, or one another observation traces, is not deleted this way.
+- IB-07 inner-being-observations-trace-to-evidence: Every live observation marked inner_being holds at least one live traced node on a live observation marked evidence, or on a live inner-being observation that itself traces to evidence (the trace chain of stage 4: a 3.2 behaviour traces the 3.1 elements it gathers, a 3.3 match the 3.1 and 3.2 observations it comes from; at most three links), unless it is recorded self-evidencing: it quotes its verse in full and holds a word node for every word it relies on. A traced node never points at a deleted observation. A trace points first at existing evidence; an evidence observation is created only when none states the fact and it states what the nodes and the quotation do not. An inner-being observation traced to evidence not yet marked is pending, not failed.
+- LR-01 a-step-opens-on-gates-and-derives-its-ledger: A step of the layered reading opens only when the grouping is finished (every surface placed in a subgroup or isolated with its reason, every subgroup holding a surface) and the previous step is closed; with -Subgroup the needs and gates are judged for that subgroup alone (#2538). Step S1 is read after the grouping; step 1.1 needs step S1 closed: every word of the subgroup (surface and lettered Strong's code) answered and validated. Opening derives one ledger row for each aspect the data demands (cfg_setting layer.reading); an aspect the data no longer demands is retired, a new one is added, and a second open changes nothing.
+- PC-01 the-command-names-a-live-unit: A read or record command names a live collection, a live subgroup of it where the read is by subgroup, and a step or item the layered reading knows. A command that names one that does not exist is refused and writes nothing.
+- PC-02 the-answer-is-the-packet-form: An answer is the output form its read wrote: the `command` of that read; every entry an object, or a list, where the form has one; each field in its place with its type (a key unique in the answer, a text, a reason in words); each item answered once; and at least one entry where the form asks for entries. A file in another shape is refused whole and nothing is written.
+- PC-03 names-are-those-the-packet-offers: Every ledger row, occurrence, observation, sense, node, verse and collection an answer names is one the packet offered for this unit, or a key the answer itself defines, and is live in the database. A name outside them is refused.
+- PC-04 values-from-the-allowed-lists: Every coded value of an answer (kind, basis, item, part, role, route, mode, polarity, flag type, disposition, verdict, action, nature, stage, status) is one of the values the configuration allows for it (cfg_enum, cfg_setting layer.reading, reading.observation_items, validate.reading), as the packet lists them. Any other value is refused.
+- PC-05 the-unit-is-at-its-step: A read or record runs only where the ledger has its unit at that step: the row open, or answered and not yet validated, and the steps before it closed (S1 before 1.1; the 2.1 rows before the sweep; the sweep before the evidence validation; its gate before 3.1; every subgroup through 3.1 before 3.2). Out of order it is refused, and the message names what comes first.
+- PC-06 within-the-configured-limits: A read writes its packet within the time and size the configuration sets (cfg_setting layer.read_types: limits, package_max_chars, read_max_seconds). A read that would exceed them is refused, nothing is written, and the limit is named.
+- PC-07 the-config-the-code-needs-is-present: The code of the reading runs only where the configuration it reads is in place (the settings, steps, items, natures, enums and rules it names). Where the code is ahead of the configuration, the command is refused and names what is missing.
+- RG-06 parties-and-route: Record the parties: who bears the act, who causes it, who is acted on (source, target, impact, purpose), and the route (cfg_enum observation_route), whose meaning is cfg_behaviour_rule 72 (route-verses-hib-other-beings-data-only): A another being in its own right, B another being with the human inner being, C no bearing, data only; a verse may take A and B. A non-human being is never itself a HIB; a collective stays one HIB; an implied party is named as referential, never asserted.
+- RW-01 changed-only-by-reading: No observation is changed except by a reading, and every change is recorded with its reason. An observation no longer supported by the verse is soft-deleted, with the reason.
+- RW-12 marker-and-node-columns-at-creation: An observation is created with its marker (ib_observation.nature, from the item answered, cfg_setting layer.reading items.<item>.nature; a finding file never sets it) and every word node with the columns of layer.reading node_required. A column the data cannot give (layer.reading node_gap_columns: an empty morph in the source row, a surface with no placement in the collection index) is left empty and its reason is kept on the node (disposition_note); any other missing column refuses the whole file and nothing is written. A trace to a deleted observation is refused (IB-07).
+- RW-14 every-lookup-is-pinpointed: A lookup of related data in the build or the validation is by an indexed column and takes a chunk of ids (cfg_setting layer.scan chunk); none runs once for each item of a list, and a statement that uses more work than layer.scan max_vm_ops is stopped and named, nothing written (lib/scanguard.py). The tests refuse a statement of the build whose query plan scans a table (layer.scan scan_ok lists the temporary tables a statement may scan).
+- VA-05 the-marker-follows-content-not-stage: Evidence states what the data are or show, tied to a verse. Inner being states how something works in the inner being, based on evidence, a building block of the stage 5 claims. The marker (ib_observation.nature) follows the content and purpose of the observation, never its stage (RS-04): an observation of any stage may be inner being when it traces to evidence. One that states both is split. The marker is set when the observation is created, by the item that is answered (cfg_setting layer.reading items.<item>.nature); a finding file never sets it; the validation changes it only where the content shows the item's nature does not hold.
+
+## item
+
+pairing
+
+## made
+
+2026-11-26T15:07:54Z
+
+## batch
+
+- rows: 11
+- rows_left_after_this: 0
+
+## senses
+
+- sense: 23877; text: The boastful as a kind of person: a noun or a participle used as a noun names those given to boasting, listed among the ungodly or set beside evildoers and the wicked (Rom 1:30, Psa 5:5, Psa 75:4).; verses: ["Rom.1.30", "Ps.5.5", "Ps.75.4"]
+- sense: 23878; text: Boasting as the quality of an act or a look: the noun gives its character to something else, the confidence Paul speaks with (2Cor 11:17) and the height of the king of Assyria's eyes (Isa 10:12).; verses: ["2Cor.11.17", "Isa.10.12"]
+
+## verses
+
+- reference: Psa 5:5; text: The boastful shall not stand before your eyes; you hate all evildoers.; words: ["*0 boastful H1984C HVqrmpa | member of this collection", " 1 not H3808 HTn | negator; qualifier negator; negator", " 2 stand H3320 HVti3mp", " 3 before H5048 HAcmsc | qualifier candidate; qualifier morph: adjective", " 3 to/for H9005 HR", " 4 eyes H5869A HNcfdc", " 5 you H9021 HSp2ms", " 6 hate H8130 HVqp2ms | word of another collection; collections love", " 7 all H3605 HNcmsc", " 8 evildoers H6466 HVqrmpc | word of another collection; collections evildoer", " 8 evildoers H0205G HNcmsa | word of another collection; collections evildoer"]
+- reference: Psa 75:4; text: I say to the boastful, ‘Do not boast,’ and to the wicked, ‘Do not lift up your horn;; words: [" 0 say H0559 HVqp1cs", "*1 boastful H1984C HVqrmpa | member of this collection", " 1 to/for H9005 HRd", " 2 not H0408 HTn | negator; qualifier negator; negator", " 3 boast H1984C HVqj2mp | member of this collection", " 4 wicked H7563 HNcmpa | word of another collection; collections evildoer", " 4 and H9002 HC | connective", " 4 to/for H9005 HRd", " 5 not H0408 HTn | negator; qualifier negator; negator", " 6 lift up H7311A HVhi2mp", " 7 horn H7161A HNcfsa"]
+- reference: Isa 10:12; text: When the Lord has finished all his work on Mount Zion and on Jerusalem, he will punish the speech of the arrogant heart of the king of Assyria and the boastful look in his eyes.; words: [" 0 when H3588A HTc | connective", " 0 when H1961 HVqq3ms", " 1 lord H0136 HNpt", " 2 finished H1214H HVpi3ms | word of another collection; collections fulfill", " 3 all H3605 HNcmsc", " 3 all H0853 HTo", " 4 work H4639G HNcmsc | word of another collection; collections labor", " 5 mount H2022G HNcmsc", " 5 in/on/with H9003 HR", " 5 his H9023 HSp3ms", " 6 zion H6726 HNpl", " 7 jerusalem H3389 HNpl", " 7 and H9002 HC | connective", " 7 in/on/with H9003 HR", " 8 punish H6485H HVqi1cs | word of another collection; collections condemn", " 9 speech H6529 HNcmsc", " 9 speech H5921A HR", " 10 arrogant H1433 HNcmsc | word of another collection; collections pride", " 11 heart H3824 HNcmsc | word of another collection; collections heart", " 12 king H4428G HNcmsc", " 13 assyria H0804G HNpl", "*14 boastful H7312 HNcmsc | member of this collection", " 15 look H8597 HNcfsc", " 15 look H5921A HR", " 15 and H9002 HC | connective", " 16 his H9023 HSp3ms", " 17 eyes H5869A HNcfdc"]
+- reference: Rom 1:30; text: slanderers, haters of God, insolent, haughty, boastful, inventors of evil, disobedient to parents,; words: [" 0 slanderers G2637 A-APM | word of another collection; qualifier morph: adjective; collections scoff", " 1 god G2319 A-APM | qualifier candidate; qualifier morph: adjective", " 2 insolent G5197 N-APM", " 3 haughty G5244 A-APM | word of another collection; qualifier morph: adjective; collections pride", "*4 boastful G0213 N-APM | member of this collection", " 5 inventors G2182 N-APM", " 6 evil G2556G A-GPN | word of another collection; qualifier qualifier subgroup: Bad (a quality of something); morph: adjective; collections evildoer", " 7 disobedient G0545 A-APM | word of another collection; qualifier morph: adjective; collections rebel", " 8 parents G1118 N-DPM"]
+- reference: 2Cor 11:17; text: What I am saying with this boastful confidence, I say not as the Lord would but as a fool.; words: [" 0 what G3739 R-ASN", " 1 saying G2980 V-PAI-1S", " 2 with G1722 PREP", " 3 this G3778 D-DSF", "*4 boastful G2746 N-GSF | member of this collection", " 5 confidence G5287 N-DSF | word of another collection; collections believe", " 6 say G2980 V-PAI-1S", " 7 not G3756 PRT-N | negator; qualifier negator; negator", " 8 as G2596 PREP", " 9 lord G2962G N-ASM-T | entity (divine); party divine", " 10 but G0235 CONJ | connective", " 11 as G5613 PRT | connective", " 12 fool G0877 N-DSF | word of another collection; collections folly"]
+
+## rows
+
+- ledger_id: 2173; item: pairing; subject: believe; asks: Which words of this partner collection stand with the subgroup's surfaces in the verses they share, where does each stand (side and distance, from the stored structure), and which stand out? The WordNet control for this collection is shown. Write one finding for each distinct thing the structure shows; a finding holds the verses it holds in as its nodes.; none_allowed: true; verses: ["2Cor 11:17"]; occurrences: [{"occurrence": 1487488, "reference": "2Cor 11:17", "surface": "boastful", "strong": "G2746", "as": "member"}, {"occurrence": 1487489, "reference": "2Cor 11:17", "surface": "confidence", "strong": "G5287", "as": "partner"}]; older: []; wordnet_control: WordNet relates no surface of the subgroup to this collection (a verse-only pairing: no control)
+- ledger_id: 2174; item: pairing; subject: condemn; asks: Which words of this partner collection stand with the subgroup's surfaces in the verses they share, where does each stand (side and distance, from the stored structure), and which stand out? The WordNet control for this collection is shown. Write one finding for each distinct thing the structure shows; a finding holds the verses it holds in as its nodes.; none_allowed: true; verses: ["Isa 10:12"]; occurrences: [{"occurrence": 1297279, "reference": "Isa 10:12", "surface": "boastful", "strong": "H7312", "as": "member"}, {"occurrence": 1297272, "reference": "Isa 10:12", "surface": "punish", "strong": "H6485H", "as": "partner"}]; older: []; wordnet_control: WordNet relates no surface of the subgroup to this collection (a verse-only pairing: no control)
+- ledger_id: 2175; item: pairing; subject: evildoer; asks: Which words of this partner collection stand with the subgroup's surfaces in the verses they share, where does each stand (side and distance, from the stored structure), and which stand out? The WordNet control for this collection is shown. Write one finding for each distinct thing the structure shows; a finding holds the verses it holds in as its nodes.; none_allowed: true; verses: ["Psa 5:5", "Psa 75:4", "Rom 1:30"]; occurrences: [{"occurrence": 1246590, "reference": "Psa 5:5", "surface": "boastful", "strong": "H1984C", "as": "member"}, {"occurrence": 1252553, "reference": "Psa 75:4", "surface": "boastful", "strong": "H1984C", "as": "member"}, {"occurrence": 1475775, "reference": "Rom 1:30", "surface": "boastful", "strong": "G0213", "as": "member"}, {"occurrence": 1246599, "reference": "Psa 5:5", "surface": "evildoers", "strong": "H6466", "as": "partner"}, {"occurrence": 1246600, "reference": "Psa 5:5", "surface": "evildoers", "strong": "H0205G", "as": "partner"}, {"occurrence": 1252557, "reference": "Psa 75:4", "surface": "wicked", "strong": "H7563", "as": "partner"}, {"occurrence": 1475777, "reference": "Rom 1:30", "surface": "evil", "strong": "G2556G", "as": "partner"}]; older: []; wordnet_control: WordNet relates no surface of the subgroup to this collection (a verse-only pairing: no control)
+- ledger_id: 2176; item: pairing; subject: folly; asks: Which words of this partner collection stand with the subgroup's surfaces in the verses they share, where does each stand (side and distance, from the stored structure), and which stand out? The WordNet control for this collection is shown. Write one finding for each distinct thing the structure shows; a finding holds the verses it holds in as its nodes.; none_allowed: true; verses: ["2Cor 11:17"]; occurrences: [{"occurrence": 1487488, "reference": "2Cor 11:17", "surface": "boastful", "strong": "G2746", "as": "member"}, {"occurrence": 1487496, "reference": "2Cor 11:17", "surface": "fool", "strong": "G0877", "as": "partner"}]; older: []; wordnet_control: WordNet relates no surface of the subgroup to this collection (a verse-only pairing: no control)
+- ledger_id: 2177; item: pairing; subject: fulfill; asks: Which words of this partner collection stand with the subgroup's surfaces in the verses they share, where does each stand (side and distance, from the stored structure), and which stand out? The WordNet control for this collection is shown. Write one finding for each distinct thing the structure shows; a finding holds the verses it holds in as its nodes.; none_allowed: true; verses: ["Isa 10:12"]; occurrences: [{"occurrence": 1297279, "reference": "Isa 10:12", "surface": "boastful", "strong": "H7312", "as": "member"}, {"occurrence": 1297261, "reference": "Isa 10:12", "surface": "finished", "strong": "H1214H", "as": "partner"}]; older: []; wordnet_control: WordNet relates no surface of the subgroup to this collection (a verse-only pairing: no control)
+- ledger_id: 2178; item: pairing; subject: heart; asks: Which words of this partner collection stand with the subgroup's surfaces in the verses they share, where does each stand (side and distance, from the stored structure), and which stand out? The WordNet control for this collection is shown. Write one finding for each distinct thing the structure shows; a finding holds the verses it holds in as its nodes.; none_allowed: true; verses: ["Isa 10:12"]; occurrences: [{"occurrence": 1297279, "reference": "Isa 10:12", "surface": "boastful", "strong": "H7312", "as": "member"}, {"occurrence": 1297276, "reference": "Isa 10:12", "surface": "heart", "strong": "H3824", "as": "partner"}]; older: [{"observation": 14665, "stage": "prior-capture", "kind": "statement", "nature": null, "text": "How it co-exists: Pride: \"proudly exulting\" (13:3); \"the arrogant heart of the king of Assyria\" (10:12); Excess beyond the commission: \"you showed them no mercy\" (47:6).", "verses": ["Isa.13.3", "Isa.10.12", "Isa.47.6"]}, {"observation": 14666, "stage": "prior-capture", "kind": "statement", "nature": null, "text": "What it leads to. The agent is judged in turn: \"he will punish the speech of the arrogant heart of the king of Assyria\" (Isa 10:12); Babylon: \"I set a snare for you and you were taken, O Babylon, and you did not know it … because you opposed the Lord\" (Jer 50:24).", "verses": ["Isa.10.12", "Jer.50.24"]}, {"observation": 14919, "stage": "prior-capture", "kind": "statement", "nature": null, "text": "(v2) Isa 10:5 (UA): Context seat: Isa 10:12 \"the arrogant heart of the king of Assyria\"; Whose · check: Assyria's · genuine; Already read in: D v2 §9.1; F v4 §12.1; G v3 §12.2; H v1 §1.2; §: §37.", "verses": ["Isa.10.12"]}, {"observation": 16039, "stage": "prior-capture", "kind": "statement", "nature": null, "text": "0. Data notes (short): No pre-filter applies. There is no M42, M61 or M72 in this batch.; Death — v3 note (replaces the v1 note). In v1 and v2 the death words were filed outside the M-codes (\"die\" in T3, \"death\" in T10), so §1–§13 read the life side only. After #1880 both also carry M25. The death side is read in §16, and the earlier sections carry Revisit (delta) notes where it bears on them.; Tags that would mislead in the delta: \"the heart of the seas\" (Eze 28:8) = midst; the \"flesh\" of an ox (Exo 21:28) and the \"meat\" pots (Exo 16:3).; Not misleading, but lexically marked (kept, read in §16): *nephesh* = dead body (Lev 21:11; Num 6:6; 19:11, 13, 18); *nephesh* = \"willing\" (Gen 23:8); the sea's \"living things\" (Rev 8:9; 16:3); \"heart\" as the ESV surface for *nephesh* (Pro 19:18; 1Sa 2:33).; Tags that would mislead a reading (noted, and not read as the cluster's sense): \"alive / living\" (M25); = \"raw\" flesh (Lev 13:10–24; 1Sa 2:15); = \"fresh [living] water\" (Lev 15:13); = \"wild beasts\" (Psa 79:2; Hos 13:8; Eze 39:17; Lev 5:2); Generic verbs in M23: \"multiply\" (H7235), \"be able / can\" (H3201); \"meet / toward / against\" (H7122) in M37: ordinary encounter, not foreknowledge; M71 surfaces used in other senses: \"greatness\" = arrogance of heart (Isa 9:9; 10:12); \"descendants\" (1Sa 2:33); \"proceeds\" (Act 5:3); \"color\" (Dan 7:28); \"bring / lead\" (G5342, M70): Mar 9:17, 20; Act 5:16; \"heart\" = \"midst\": \"the heart of the seas\" (Eze 27:27); \"in the heart of the oak\" (2Sa 18:14)", "verses": ["Ezek.28.8", "Exod.21.28", "Exod.16.3", "Lev.21.11", "Num.6.6", "Num.19.11", "Num.19.13", "Num.19.18", "Gen.23.8", "Rev.8.9", "Rev.16.3", "Prov.19.18", "1Sam.2.33", "Lev.13.10", "Lev.13.14", "Lev.13.15", "Lev.13.16", "Lev.13.24", "Lev.15.13", "Ps.79.2", "Isa.9.9", "Isa.10.12", "Acts.5.3", "Dan.7.28", "Ezek.27.27", "2Sam.18.14"]}, {"observation": 16150, "stage": "prior-capture", "kind": "statement", "nature": null, "text": "12.2 \"Greatness\" of heart — God's and man's: \"according to your own heart, you have brought about all this greatness\" (2Sa 7:21; 1Ch 17:19); \"who say in pride and in arrogance [*greatness*] of heart\" (Isa 9:9); \"the speech of the arrogant [*great*] heart of the king of Assyria\" (Isa 10:12; Batch F §12.1); [lexical; Claude reading] The same noun family [verify] names the greatness God's heart brings about for David and the arrogance of the human heart. Greatness is right when it comes from God's heart. It is arrogance when the human heart claims it.", "verses": ["2Sam.7.21", "1Chr.17.19", "Isa.9.9", "Isa.10.12"]}, {"observation": 16686, "stage": "prior-capture", "kind": "statement", "nature": null, "text": "9.1 The proud / lifted-up heart (*gāvah lēv*): \"The pride of your heart has deceived you\" (Obd 3; Jer 49:16) — pride → self-deception (§4.3); \"Before destruction a man's heart is haughty\" (Pro 18:12); \"Everyone who is arrogant in heart is an abomination\" (Pro 16:5); \"Haughty eyes and a proud heart\" (Pro 21:4); \"in pride and in arrogance of heart\" (Isa 9:9); \"the arrogant heart of the king of Assyria\" (Isa 10:12); \"who say in your heart, 'I am, and there is no one besides me'\" (Isa 47:8)", "verses": ["Obad.1.3", "Jer.49.16", "Prov.18.12", "Prov.16.5", "Prov.21.4", "Isa.9.9", "Isa.10.12", "Isa.47.8"]}, {"observation": 16735, "stage": "prior-capture", "kind": "statement", "nature": null, "text": "1.2 The heart that claims a throne: \"You said in your heart, 'I will ascend to heaven … I will set my throne on high'\" (Isa 14:13); \"in his own mind he shall become great … he shall even rise up against the Prince of princes\" (Dan 8:25); \"in her heart she says, 'I sit as a queen, I am no widow'\" (Rev 18:7); \"the arrogant heart of the king of Assyria\" (Isa 10:12); \"Your heart was proud because of your beauty … I exposed you before kings\" (Eze 28:17); \"when his heart was lifted up and his spirit was hardened … he was brought down from his kingly throne\" (Dan 5:20). Then \"his mind was made like that of a beast … until he knew that the Most High God rules the kingdom of mankind\" (5:21). See Batch G §14.10.", "verses": ["Isa.14.13", "Dan.8.25", "Rev.18.7", "Isa.10.12", "Ezek.28.17", "Dan.5.20", "Dan.5.21"]}]; wordnet_control: WordNet relates no surface of the subgroup to this collection (a verse-only pairing: no control)
+- ledger_id: 2179; item: pairing; subject: labor; asks: Which words of this partner collection stand with the subgroup's surfaces in the verses they share, where does each stand (side and distance, from the stored structure), and which stand out? The WordNet control for this collection is shown. Write one finding for each distinct thing the structure shows; a finding holds the verses it holds in as its nodes.; none_allowed: true; verses: ["Isa 10:12"]; occurrences: [{"occurrence": 1297279, "reference": "Isa 10:12", "surface": "boastful", "strong": "H7312", "as": "member"}, {"occurrence": 1297264, "reference": "Isa 10:12", "surface": "work", "strong": "H4639G", "as": "partner"}]; older: []; wordnet_control: WordNet relates no surface of the subgroup to this collection (a verse-only pairing: no control)
+- ledger_id: 2180; item: pairing; subject: love; asks: Which words of this partner collection stand with the subgroup's surfaces in the verses they share, where does each stand (side and distance, from the stored structure), and which stand out? The WordNet control for this collection is shown. Write one finding for each distinct thing the structure shows; a finding holds the verses it holds in as its nodes.; none_allowed: true; verses: ["Psa 5:5"]; occurrences: [{"occurrence": 1246590, "reference": "Psa 5:5", "surface": "boastful", "strong": "H1984C", "as": "member"}, {"occurrence": 1246597, "reference": "Psa 5:5", "surface": "hate", "strong": "H8130", "as": "partner"}]; older: []; wordnet_control: WordNet relates no surface of the subgroup to this collection (a verse-only pairing: no control)
+- ledger_id: 2181; item: pairing; subject: pride; asks: Which words of this partner collection stand with the subgroup's surfaces in the verses they share, where does each stand (side and distance, from the stored structure), and which stand out? The WordNet control for this collection is shown. Write one finding for each distinct thing the structure shows; a finding holds the verses it holds in as its nodes.; none_allowed: true; verses: ["Isa 10:12", "Rom 1:30"]; occurrences: [{"occurrence": 1297279, "reference": "Isa 10:12", "surface": "boastful", "strong": "H7312", "as": "member"}, {"occurrence": 1475775, "reference": "Rom 1:30", "surface": "boastful", "strong": "G0213", "as": "member"}, {"occurrence": 1297275, "reference": "Isa 10:12", "surface": "arrogant", "strong": "H1433", "as": "partner"}, {"occurrence": 1475774, "reference": "Rom 1:30", "surface": "haughty", "strong": "G5244", "as": "partner"}]; older: []; older_answered_under_another_row: [{"observation": 14665, "answered_under": 2178}, {"observation": 14666, "answered_under": 2178}, {"observation": 14919, "answered_under": 2178}, {"observation": 16150, "answered_under": 2178}, {"observation": 16686, "answered_under": 2178}, {"observation": 16735, "answered_under": 2178}]; wordnet_control: {"pairs": 1, "types": {"similar": 1}, "examples": [{"surface": "boastful", "partner_surface": "proud", "type": "similar", "weight": 1}]}
+- ledger_id: 2182; item: pairing; subject: rebel; asks: Which words of this partner collection stand with the subgroup's surfaces in the verses they share, where does each stand (side and distance, from the stored structure), and which stand out? The WordNet control for this collection is shown. Write one finding for each distinct thing the structure shows; a finding holds the verses it holds in as its nodes.; none_allowed: true; verses: ["Rom 1:30"]; occurrences: [{"occurrence": 1475775, "reference": "Rom 1:30", "surface": "boastful", "strong": "G0213", "as": "member"}, {"occurrence": 1475778, "reference": "Rom 1:30", "surface": "disobedient", "strong": "G0545", "as": "partner"}]; older: []; wordnet_control: WordNet relates no surface of the subgroup to this collection (a verse-only pairing: no control)
+- ledger_id: 2183; item: pairing; subject: scoff; asks: Which words of this partner collection stand with the subgroup's surfaces in the verses they share, where does each stand (side and distance, from the stored structure), and which stand out? The WordNet control for this collection is shown. Write one finding for each distinct thing the structure shows; a finding holds the verses it holds in as its nodes.; none_allowed: true; verses: ["Rom 1:30"]; occurrences: [{"occurrence": 1475775, "reference": "Rom 1:30", "surface": "boastful", "strong": "G0213", "as": "member"}, {"occurrence": 1475771, "reference": "Rom 1:30", "surface": "slanderers", "strong": "G2637", "as": "partner"}]; older: []; wordnet_control: WordNet relates no surface of the subgroup to this collection (a verse-only pairing: no control)
+
+## measured
+
+- package_chars: 44757
+- seconds: 0.01
+
+## The answer form (fill it in the JSON file, `answer`)
+
+```json
+{
+ "command": "ReadStructure",
+ "collection": "boast",
+ "subgroup": "boastful",
+ "rows": [
+  {
+   "ledger_id": 2173,
+   "item": "pairing",
+   "subject": "believe",
+   "disposition": "observed | none",
+   "findings": [
+    {
+     "kind": "pairing",
+     "obs_text": "",
+     "basis": "read | stated",
+     "grounds": "",
+     "occurrences": []
+    }
+   ],
+   "reason": "",
+   "older": []
+  },
+  {
+   "ledger_id": 2174,
+   "item": "pairing",
+   "subject": "condemn",
+   "disposition": "observed | none",
+   "findings": [
+    {
+     "kind": "pairing",
+     "obs_text": "",
+     "basis": "read | stated",
+     "grounds": "",
+     "occurrences": []
+    }
+   ],
+   "reason": "",
+   "older": []
+  },
+  {
+   "ledger_id": 2175,
+   "item": "pairing",
+   "subject": "evildoer",
+   "disposition": "observed | none",
+   "findings": [
+    {
+     "kind": "pairing",
+     "obs_text": "",
+     "basis": "read | stated",
+     "grounds": "",
+     "occurrences": []
+    }
+   ],
+   "reason": "",
+   "older": []
+  },
+  {
+   "ledger_id": 2176,
+   "item": "pairing",
+   "subject": "folly",
+   "disposition": "observed | none",
+   "findings": [
+    {
+     "kind": "pairing",
+     "obs_text": "",
+     "basis": "read | stated",
+     "grounds": "",
+     "occurrences": []
+    }
+   ],
+   "reason": "",
+   "older": []
+  },
+  {
+   "ledger_id": 2177,
+   "item": "pairing",
+   "subject": "fulfill",
+   "disposition": "observed | none",
+   "findings": [
+    {
+     "kind": "pairing",
+     "obs_text": "",
+     "basis": "read | stated",
+     "grounds": "",
+     "occurrences": []
+    }
+   ],
+   "reason": "",
+   "older": []
+  },
+  {
+   "ledger_id": 2178,
+   "item": "pairing",
+   "subject": "heart",
+   "disposition": "observed | none",
+   "findings": [
+    {
+     "kind": "pairing",
+     "obs_text": "",
+     "basis": "read | stated",
+     "grounds": "",
+     "occurrences": []
+    }
+   ],
+   "reason": "",
+   "older": [
+    {
+     "observation": 14665,
+     "action": "keep | restate | merge | consume | delete_neither | defer | carry",
+     "reason": ""
+    },
+    {
+     "observation": 14666,
+     "action": "keep | restate | merge | consume | delete_neither | defer | carry",
+     "reason": ""
+    },
+    {
+     "observation": 14919,
+     "action": "keep | restate | merge | consume | delete_neither | defer | carry",
+     "reason": ""
+    },
+    {
+     "observation": 16039,
+     "action": "keep | restate | merge | consume | delete_neither | defer | carry",
+     "reason": ""
+    },
+    {
+     "observation": 16150,
+     "action": "keep | restate | merge | consume | delete_neither | defer | carry",
+     "reason": ""
+    },
+    {
+     "observation": 16686,
+     "action": "keep | restate | merge | consume | delete_neither | defer | carry",
+     "reason": ""
+    },
+    {
+     "observation": 16735,
+     "action": "keep | restate | merge | consume | delete_neither | defer | carry",
+     "reason": ""
+    }
+   ]
+  },
+  {
+   "ledger_id": 2179,
+   "item": "pairing",
+   "subject": "labor",
+   "disposition": "observed | none",
+   "findings": [
+    {
+     "kind": "pairing",
+     "obs_text": "",
+     "basis": "read | stated",
+     "grounds": "",
+     "occurrences": []
+    }
+   ],
+   "reason": "",
+   "older": []
+  },
+  {
+   "ledger_id": 2180,
+   "item": "pairing",
+   "subject": "love",
+   "disposition": "observed | none",
+   "findings": [
+    {
+     "kind": "pairing",
+     "obs_text": "",
+     "basis": "read | stated",
+     "grounds": "",
+     "occurrences": []
+    }
+   ],
+   "reason": "",
+   "older": []
+  },
+  {
+   "ledger_id": 2181,
+   "item": "pairing",
+   "subject": "pride",
+   "disposition": "observed | none",
+   "findings": [
+    {
+     "kind": "pairing",
+     "obs_text": "",
+     "basis": "read | stated",
+     "grounds": "",
+     "occurrences": []
+    }
+   ],
+   "reason": "",
+   "older": []
+  },
+  {
+   "ledger_id": 2182,
+   "item": "pairing",
+   "subject": "rebel",
+   "disposition": "observed | none",
+   "findings": [
+    {
+     "kind": "pairing",
+     "obs_text": "",
+     "basis": "read | stated",
+     "grounds": "",
+     "occurrences": []
+    }
+   ],
+   "reason": "",
+   "older": []
+  },
+  {
+   "ledger_id": 2183,
+   "item": "pairing",
+   "subject": "scoff",
+   "disposition": "observed | none",
+   "findings": [
+    {
+     "kind": "pairing",
+     "obs_text": "",
+     "basis": "read | stated",
+     "grounds": "",
+     "occurrences": []
+    }
+   ],
+   "reason": "",
+   "older": []
+  }
+ ]
+}
+```

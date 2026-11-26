@@ -1,0 +1,242 @@
+# ReadElements -- boast / boastful -- step 3.1
+
+## What to do
+
+Step 3.1, the elements of one subgroup (stage 4, C1; the end of the loop for the subgroup): what the evidence of the subgroup shows of the elements of a behaviour of the inner being. The input is the evidence observations of the subgroup by marker (`to_take_up`, the senses first, then the 2.1 findings and the older evidence), not the verses; the verses are kept for an occasional read-back. A finding is a building block, never a claim about the behaviour as a whole (that is stage 5).
+
+Read:
+- Read the observations to take up, in order: the senses (1.1) and their enrichments (1.2) first, then the 2.1 findings (pairings, qualifiers, entities, direction, double meanings), then the older evidence. The inner-being workings work more with the senses than with the surfaces, so findings rest on the senses first.
+- For each item a finding may use (`uses`): what is done and its mode (operation, with its chain), whether a refusal or a pursuit (polarity), what it is directed at (object), the outward act (enactment), the other party with the route (party), the circumstance, and what a qualifier or a variation of the word gives the working (role, the dimension). Never the meaning of the word (stage 1).
+- Read the older inner-being observations (`older_inner_being`) with them: each is considered first, accepted with a trace to evidence, restated where it says more than the evidence, consumed where a finding says the same, merged, or deleted where it cannot be made true.
+- Go back to a verse (`verses`) only where the evidence does not settle the question, and say why.
+
+Write:
+- Fill `answer.findings`: each one observation, with a `key` unique in the answer, `kind` (of the item's kinds), `text`, `basis` (stated or read), `parts` with `item` (one of `uses`) and what the item needs (with `grounds`), and `nodes`: a `traced` node on each observation it rests on (from `to_take_up` or `may_rest_on_besides`) and an `occurrence` node, with its `role` chosen from the verse (characteristic, qualifier, object, relational target, enactment or standalone), on the occurrences those observations cover.
+- An occurrence outside the observations a finding rests on is allowed only with a `read_back` entry on the finding: {verse: the osis id, why}.
+- `not_used`: {observation id: reason} for every observation to take up that no finding rests on. Every one is rested on or declared, never both.
+- `older`: answer, once, each older inner-being observation (`older_inner_being`) that has a node on an occurrence your findings name (RW-13; the record lists any it misses, and refuses an answer to one on no named occurrence: those are shown, not demanded, IB-05): keep (with nature inner_being: it stands, traced to evidence), restate, merge, consume (carriers ["this"] or ids, mapping), delete_neither, or defer (collection, nature, finding).
+- `existing`: answer every earlier reading (`earlier_readings`: inner being of an earlier grouping on these occurrences) with accept, modify, delete, merge or leave, and its reason.
+- The text says what the evidence shows of the element; it names its verses; it never restates a verse and never states the behaviour as a whole.
+- In place of writing `nodes`, a finding may name `rests_on` (the observations it rests on) and `role` (the node role of the words they cover; `roles` {occurrence: role, or "" to leave one out} for the exceptions): the recorder writes a traced node on each and an occurrence node on each occurrence they cover (each observation's `covers` or `occurrences` lists them). Nodes written by hand are kept.
+- Then: Collection-Build.ps1 -Action CheckAnswer -File <the answer file>: every problem at once, each with its rule, nothing written; correct the answer until it finds none, then -Action RecordElements -File <the answer file>. The record refuses the whole file on any fault and lists every fault.
+
+## Refused when (by rule)
+
+- DA-02: is not a word of a collection; is in no collection: name the occurrence it supports; word node(s) carry no collection; names collection ; belongs to collection; has a node with no collection; the nodes do not carry the collections
+- IB-02: are outside the observations the finding rests on; a finding rests on observations; rests on no observation (a traced node on each); which this row may not rest on; outside the observations it rests on; gives no reason in words
+- IB-03: names its grounds in the words of the verse (parts.grounds; at least one node (what the finding applies to); only a term finding applies to a word with no verse
+- IB-04: names an observation this row must take up; is neither rested on by a finding nor in; is both rested on by a finding and in; is part of this match and no finding traces it; without a reason in words; are neither rested on by a finding nor declared; declares an observation this row does not take up; of the match are not traced
+- IB-06: its observations are missing or withdrawn; records are not readable; which this row does not use;  has stage ; has no node on an occurrence
+- IB-07: is not marked evidence: an inner-being observation traces to evidence; an observation does not trace itself
+- IB-08: the collection shows at least one behaviour; no behaviour: the collection row needs a flag finding
+- LR-01: is not closed (every row answered
+- LR-02: the data holds no occurrence for this aspect
+- LR-03: cannot be recorded as none; none needs its reason; recorded as none without a permitted reason
+- PC-01: is not a step of the layered reading; is not a live subgroup of; no live collection; has no live subgroup; cannot read ;  are required;  is required
+- PC-02: answer (its `command` must be; a node is an object; a finding is an object; parts is an object with; is a list of {observation, action, reason; a unique key is required; is a short name unique in the row; text is required; a read_back entry is ;  is {observation id: reason}; `traced` is the id of an observation; a node names the occurrence id of the word; a node names the word (strong); an `existing` entry names a live observation and an action; the row is answered by findings; this is not the answer of a read
+- PC-03: nothing written:
+  ledger ; not a ledger row of; is not an occurrence this row may name; is neither a live observation nor a finding key; are not observations this row may rest on; is not an older live observation on the occurrences of this row; is not an open old observation of this subgroup; a deferral names a live collection; has no matching live verse_lexical row; both must be different live observations; is not a live occurrence of;  is not an occurrence of ; is not a live observation; is not a live node; does not exist;  is not a ; merge names a live observation to keep; defer names a live collection; which this row may not name
+- PC-04: kind must be one of; basis must be one of; role must be one of; route must be one of; tag must be one of; stage must be one of; nature must be one of; parts.item is one of; are not among; is written as a finding of the kind; has the basis; gives parts.polarity; gives parts.mode; gives parts.flag_type; disposition must be observed; cannot be modified (allowed:; not in live cfg_enum ib_observation; action is one of; names its marker, nature one of
+- PC-05: only an open or an unvalidated row is recorded; the evidence validation of ; has no row for; has no open row; its group is retired or missing; carry names a LATER step of; the loop is for one subgroup at a time; the data no longer demands this aspect; partner collection 
+- PC-06:  s, more than ;  characters, more than 
+- PC-07: cfg_setting layer.reading is missing; cfg_setting layer.scan; layer.reading step ; (apply iba/app/migration/archive/; the code is ahead of the config; have no nature in cfg_setting layer.reading; the read names rule(s) not active; is empty: run install_nature; are not ib_observation.tag values;  is missing
+- RG-03: every node it holds bears on an act; has a node with no valid stage 4 role
+- RG-04: a qualification finding applies to its qualifier
+- RG-06: carries its route; is held only on a party or link finding
+- RS-04: earlier reading(s) of the subg;  needs its reason (
+- RW-01: needs its reason, in words; say in words what was checked; say what it states that the existing record does not; state the finding the collection is to close; say in words which words it relies on; say in words why the word supports no finding; is the last word node of observation; already holds that occurrence: drop the node instead; its occurrence is on no live node of; carry gives its reason in words
+- RW-03: is already live as observation; the same text as; an existing finding takes nodes only; a merge is for the same description
+- RW-04: restates the verse; is a bare negation with no actual content
+- RW-13: are still open in the ledger; have no answer in fill.older; its fate is not recorded; is not in the change log of observation; the change log does not show it
+- RW-14: the statement used more than
+- VA-03: name the carrying observations; the mapping is stated in words; occurrence(s) are on no node of; not carried needs its reason
+- VA-04: only an observation that is neither is deleted here; repair those traces first
+- VA-05: a deferred observation is marked now
+
+## The rules
+
+- IB-02 stage-4-starts-from-the-observations: Stage 4 starts from the observations, not the verses (researcher, #2526 Q7, 2026-11-21): the subgroups and the stage 3 observations on them are the input, the behaviours are discovered from analysing them, and the base data is read back into only occasionally. Every finding of step 3.1 or 3.2 rests on named observations (a traced node on each, with an occurrence node as well) and its occurrence nodes lie within the occurrences those observations cover; an occurrence outside them is allowed only where the finding records a read-back (the verse and why). Each node has a role from reading.node_roles other than lexical, chosen by the reading. A 3.3 finding carries nodes on the occurrences of both sides in the shared verses. In 3.1 a qualification finding may also hold, with the role qualifier, the occurrences of the partner words the subgroup's 2.1 qualifier observations name, where the reading judges the qualifier bears on the working; a qualifier that does not bear on it is declared in not_used with its reason, never forced into a finding.
+- IB-03 findings-follow-the-observation-rules: A finding of a stage 4 row is checked by the rules of observationrecord.check and check_item_parts (kind, text, basis, route, parts.item and what the item needs, node roles, collection of each node) and by RG, RW and RS, which are not restated here: one observation for each finding, never a duplicate, with a node on each word it applies to (RO11, RW-03); founded in the observations and never a restatement of the verse (B:131); parts.item is one of the items the row's item uses (cfg_setting layer.reading). An observation whose nodes all bear on an act is refused: those words are nodes of the observation of the act. A finding is a building block of a behaviour and never a claim (stage 5).
+- IB-04 nothing-is-lost-on-the-way-to-stage-5: Nothing the step reads is lost on the way to stage 5. Step 3.1: every stage 3 observation of the subgroup is rested on by a finding or declared in not_used with its reason in words. Step 3.2: every 3.1 observation of the collection is gathered into a behaviour (a traced node on it from a flag finding of type discovery) or declared in not_gathered with its reason, and the row has at least one behaviour unless it is recorded as none with its reason. A behaviour names and gathers; it makes no claim about what the behaviour is.
+- IB-05 earlier-observations-are-shown-not-demanded: An earlier inner-being observation with a node on the occurrences of a 3.1 row (any stage but those of the build: lexical, layer-1, layer-2, layer-3.1 to layer-3.3, and layer-3 before 2026-11-26) is shown in the pull for information and may be actioned in `existing`: accepted, modified, deleted, merged or left, each with its reason, through observationrecord (RW-01, RW-09); nothing is demanded of it, and it counts for nothing in the check. A row answered again withdraws its earlier observations with the reason. Every older live observation with a node on an occurrence of the row is answered in fill.older at the record of the row (RW-13); this rule's `existing` actions of stage 4 are unchanged.
+- IB-07 inner-being-observations-trace-to-evidence: Every live observation marked inner_being holds at least one live traced node on a live observation marked evidence, or on a live inner-being observation that itself traces to evidence (the trace chain of stage 4: a 3.2 behaviour traces the 3.1 elements it gathers, a 3.3 match the 3.1 and 3.2 observations it comes from; at most three links), unless it is recorded self-evidencing: it quotes its verse in full and holds a word node for every word it relies on. A traced node never points at a deleted observation. A trace points first at existing evidence; an evidence observation is created only when none states the fact and it states what the nodes and the quotation do not. An inner-being observation traced to evidence not yet marked is pending, not failed.
+- RG-03 role-per-occurrence: Find the main inner-being operation, and give every word that bears on it its role in this finding (cfg_setting reading.node_roles): characteristic, qualifier and what it gives the characteristic, object or content, relational target, or enactment. A word read in the verse that holds nothing for the inner being is standalone. The role comes from this verse, never from the cluster tag. Where a standalone word proves to qualify a characteristic, it is a qualifier of it.
+- RG-04 qualifier-binding: A qualifier gets no separate account of itself, but what it gives the characteristic it binds to is evaluated for its value and recorded as a qualification finding, applied by its nodes to the qualifier (role qualifier) and the characteristic (role characteristic). What it gives can vary widely: grade, nature, impact, size, relation, a measure, strengthening, ground, cause, object, setting or bait are examples, not a list (#2273 D9). A qualifier whose usage varies across contexts may earn its own reading later.
+- RG-06 parties-and-route: Record the parties: who bears the act, who causes it, who is acted on (source, target, impact, purpose), and the route (cfg_enum observation_route), whose meaning is cfg_behaviour_rule 72 (route-verses-hib-other-beings-data-only): A another being in its own right, B another being with the human inner being, C no bearing, data only; a verse may take A and B. A non-human being is never itself a HIB; a collective stays one HIB; an implied party is named as referential, never asserted.
+- RG-10 never-not-x: Never close a verse or item on 'not X'. A role label is never a verdict; the close records what the verse is. Silence about the inner being is a finding, recorded as data with its reason.
+- RG-11 hidden-behind-act: A phenomenon hidden behind a stated or refrained act may be named, with the verb, clause or stated silence that grounds it, and whether it is stated or read.
+- RG-13 source-vs-enablement: Keep the source of an interior state apart from the source of an enablement to act.
+- RG-24 adverbial-qualifier: A tagged word that works adverbially in an occurrence (a noun with a preposition qualifying the predicate, as 'in the counsel of the wicked') is a qualifier there, not the verse's characteristic. The role is per occurrence: the same word may be the characteristic elsewhere.
+- RG-25 simile-tenor: In a simile, the predicates of the vehicle (the tree that yields, does not wither) are read for what they say of the one compared (the tenor), not as the vehicle's own acts.
+- RO11 one-row-per-code: One observation per finding, never a duplicate description; a finding applying to several verses or words carries several nodes, each with the word's role in it.
+- RW-03 no-duplicates-multi-node: One observation per finding: the same description is never written twice. Applied to another verse, word or scope it gains a node on the existing observation.
+- RW-04 concise-verse-specific: Observation text is concise and tied to this verse's content, never a restatement of the word's dictionary sense. A transliteration is never given without its gloss.
+- RW-12 marker-and-node-columns-at-creation: An observation is created with its marker (ib_observation.nature, from the item answered, cfg_setting layer.reading items.<item>.nature; a finding file never sets it) and every word node with the columns of layer.reading node_required. A column the data cannot give (layer.reading node_gap_columns: an empty morph in the source row, a surface with no placement in the collection index) is left empty and its reason is kept on the node (disposition_note); any other missing column refuses the whole file and nothing is written. A trace to a deleted observation is refused (IB-07).
+- VA-05 the-marker-follows-content-not-stage: Evidence states what the data are or show, tied to a verse. Inner being states how something works in the inner being, based on evidence, a building block of the stage 5 claims. The marker (ib_observation.nature) follows the content and purpose of the observation, never its stage (RS-04): an observation of any stage may be inner being when it traces to evidence. One that states both is split. The marker is set when the observation is created, by the item that is answered (cfg_setting layer.reading items.<item>.nature); a finding file never sets it; the validation changes it only where the content shows the item's nature does not hold.
+- B:72 route-verses-hib-other-beings-data-only: The study's primary focus is the human inner being (HIB). Each verse read is routed by what it shows, and the route is recorded in its observation. (A) Other beings in their own right: a word used of God, angels, other spirits or nature (non-HIB) is routed to Ch 13 "Other beings" (13.1 Divine, 13.2 Angels, 13.3 Other spirits, 13.4 Nature), read for what the verses say that being is and does; for God, also how his character passed to the HIB through creation in his image, held open (#1984). (B) Another being interacting with the HIB is fully in HIB scope. A verse may take A and B, described from different angles. (C) A verse with no inner-being and no other-being bearing is still assessed and recorded as data, and does not enter the narrative.
+- DA-02 a-node-per-occurrence-with-its-surfaces-collection: A node is on one occurrence (verse_lexical_id) and carries the collection of its surface (a supportive node, the collection of the surface it supports); a node already on the observation for the same occurrence is not written twice, and takes the role. A node with no collection to carry, or on a verse out of scope (B:130), is not written and is listed.
+- IB-06 stage-4-check-rederives-from-the-tables: LayerCheck validates a stage 4 row from the tables alone: the demanded occurrences and the observations the row may rest on are re-derived; at least one live observation of the stage of its step (layer-3.1, layer-3.2 or layer-3.3) with its stable_key on the row; each observation's parts still valid and its item one the row uses; each live node has a valid role, a collection and its subgroup; each observation has a traced node on an observation the row may rest on; in 3.1 and 3.2 each occurrence node lies in the occurrences of the observations it rests on or its verse is in the recorded read-back; the completeness of IB-04 (not_used, not_gathered, the behaviour of 3.2); no observation restates a run of the verse longer than reading.observation_items max_verse_words_copied. A row that fails is unvalidated and its step is not closed.
+- IB-08 what-a-behaviour-is: A behaviour (step 3.2) is one working of the inner being: one core operation, who or what does what, shown by several element observations of 3.1. Elements that show the same operation belong to one behaviour, whatever their mode, polarity, object, party or circumstance, and in whatever subgroup they sit; those differences are written as relating findings (operation, chain, party, circumstance, role). Different operations linked in sequence are a chain between behaviours, not one behaviour. A group that holds two operations is split; two groups that hold one operation are joined. An element that shows no working of a human inner being (another being in its own right, route A of B:72; a word that is not an act of the mind) is declared not gathered with its reason. A behaviour is named by what is done, never by what it means for the inner being (stage 5).
+- LR-01 a-step-opens-on-gates-and-derives-its-ledger: A step of the layered reading opens only when the grouping is finished (every surface placed in a subgroup or isolated with its reason, every subgroup holding a surface) and the previous step is closed; with -Subgroup the needs and gates are judged for that subgroup alone (#2538). Step S1 is read after the grouping; step 1.1 needs step S1 closed: every word of the subgroup (surface and lettered Strong's code) answered and validated. Opening derives one ledger row for each aspect the data demands (cfg_setting layer.reading); an aspect the data no longer demands is retired, a new one is added, and a second open changes nothing.
+- LR-02 nodes-are-built-from-the-data: The nodes of a layer observation are the occurrences the aspect demands (a word's occurrences, the group's occurrences, the partner's occurrences in the verses they share), written by the recorder with the collection and the subgroup of each surface; they are never typed. An item answered by senses (word-sense) names, for each sense, the occurrences it holds for, and together the senses cover every occurrence; the recorder checks them against the data. The interpretation is the observation text, founded in what the evidence shows (basis stated or read, B:131) and tied to its verses (the text names them and does not restate them): the items of every step (S1, 1.1, 1.2, 2.1) state what the dictionary, the verses and the stored structure show of a word and never what a word does for the inner being; their nodes carry the role lexical and no route. The whole file is checked and written in one transaction; any problem refuses all of it. A row answered again withdraws its earlier observations with the reason.
+- LR-03 none-needs-a-permitted-reason: An aspect is recorded as none only where its item allows it (cfg_setting layer.reading none_allowed) and with its reason in words. A group definition and a group's Strong's enrichment are always observed.
+- PC-01 the-command-names-a-live-unit: A read or record command names a live collection, a live subgroup of it where the read is by subgroup, and a step or item the layered reading knows. A command that names one that does not exist is refused and writes nothing.
+- PC-02 the-answer-is-the-packet-form: An answer is the output form its read wrote: the `command` of that read; every entry an object, or a list, where the form has one; each field in its place with its type (a key unique in the answer, a text, a reason in words); each item answered once; and at least one entry where the form asks for entries. A file in another shape is refused whole and nothing is written.
+- PC-03 names-are-those-the-packet-offers: Every ledger row, occurrence, observation, sense, node, verse and collection an answer names is one the packet offered for this unit, or a key the answer itself defines, and is live in the database. A name outside them is refused.
+- PC-04 values-from-the-allowed-lists: Every coded value of an answer (kind, basis, item, part, role, route, mode, polarity, flag type, disposition, verdict, action, nature, stage, status) is one of the values the configuration allows for it (cfg_enum, cfg_setting layer.reading, reading.observation_items, validate.reading), as the packet lists them. Any other value is refused.
+- PC-05 the-unit-is-at-its-step: A read or record runs only where the ledger has its unit at that step: the row open, or answered and not yet validated, and the steps before it closed (S1 before 1.1; the 2.1 rows before the sweep; the sweep before the evidence validation; its gate before 3.1; every subgroup through 3.1 before 3.2). Out of order it is refused, and the message names what comes first.
+- PC-06 within-the-configured-limits: A read writes its packet within the time and size the configuration sets (cfg_setting layer.read_types: limits, package_max_chars, read_max_seconds). A read that would exceed them is refused, nothing is written, and the limit is named.
+- PC-07 the-config-the-code-needs-is-present: The code of the reading runs only where the configuration it reads is in place (the settings, steps, items, natures, enums and rules it names). Where the code is ahead of the configuration, the command is refused and names what is missing.
+- RS-04 existing-checked-accept-modify-delete: When a verse is worked, every existing observation and node on it, of any stage, is checked against the verse by its wording. The stage is not an indication of the nature of an observation and is never used to filter. Each observation is accepted, modified (changed in place; the old value, the new value and the reason are kept in ib_observation_change), soft deleted (the `deleted` column, with the reason), merged (a duplicate description, into the observation that is kept) or, when its wording shows it is not verse understanding, left exactly as it is with the reason. The check's fixes are part of it and need no separate approval. Nothing is physically deleted.
+- RW-01 changed-only-by-reading: No observation is changed except by a reading, and every change is recorded with its reason. An observation no longer supported by the verse is soft-deleted, with the reason.
+- RW-13 older-observations-answered-at-record: Every older live observation with a live node on an occurrence of the row (a stage that is not the build's own) is answered in fill.older when the row is recorded, once: keep or restate (each with its marker), merge into a named observation, consume (live observations carry its meaning, stated in words, verified before it is deleted), delete as neither (comment first), or defer to a named collection (marked now; only the finding is left to that collection). An observation already marked by the validation, answered in a build or deferred is not asked again. A new observation whose text equals that of another live observation of the collection is refused, the other named. LayerCheck re-derives both from the tables. The end state of a collection's build is that every observation of its scope is marked and fixed or deleted, every word node complete or with its reason, and each deferral owned by a named collection.
+- RW-14 every-lookup-is-pinpointed: A lookup of related data in the build or the validation is by an indexed column and takes a chunk of ids (cfg_setting layer.scan chunk); none runs once for each item of a list, and a statement that uses more work than layer.scan max_vm_ops is stopped and named, nothing written (lib/scanguard.py). The tests refuse a statement of the build whose query plan scans a table (layer.scan scan_ok lists the temporary tables a statement may scan).
+- VA-03 consumption-is-verified-before-deletion: An older observation is deleted as consumed only when live observations carry its meaning: every word occurrence of it is on a live node of a carrier or named as not carried with its reason, the mapping is stated in words (what the old says, which carrier states each part), the traces to it are re-pointed or replaced, and the consumption is kept as `consumed_by`. An observation that holds more than one finding is split first.
+- VA-04 neither-evidence-nor-inner-being-is-deleted: An observation that is neither evidence nor inner being contributes nothing to the purposes of the observations (researcher, 2026-11-22): it is commented with its reason and the word occurrences no other live observation holds, then deleted. An observation already marked, or one another observation traces, is not deleted this way.
+
+## made
+
+2026-11-26T15:10:13Z
+
+## unit
+
+- ledger_id: 2195
+- to_take_up: 28
+- may_rest_on_besides: 4
+- older_inner_being: 2
+- earlier_readings: 0
+- occurrences: 5
+- verses: 5
+
+## asks
+
+What do the stage 3 observations of this subgroup (its definition, its Strong's enrichment, its pairings, qualifiers, entities, direction, relations and double meanings, with the stage 1 senses) show of the elements of a behaviour of the inner being: what is done and its mode, whether a refusal or a pursuit, what it is directed at, the outward act, the other party with the route, the circumstance, the chain of operations, and the dimensions of the working (what a qualifier or a variation of the word gives it, from the lexical variation the stage 3 observations record)? Each finding is one observation that rests on named observations (a traced node on each) and carries nodes on the occurrences those observations cover, with the role each has; an occurrence outside them is allowed only with a read-back (the verse and why). Every stage 3 observation of the subgroup is rested on by a finding or declared not used, with the reason. A finding is a building block and never a claim about the behaviour as a whole (stage 5).
+
+## uses
+
+- item: role; name: its role: the qualifier and what it gives the characteristic; kinds: ["qualification", "statement"]; bases: ["stated", "read"]
+- item: polarity; name: whether the act is a refusal or a pursuit; kinds: ["statement"]; bases: ["stated", "read"]
+- item: object; name: what the act is directed at or against; kinds: ["statement"]; bases: ["stated", "read"]
+- item: enactment; name: the outward act the inner act produces, where the verse states one; kinds: ["statement"]; bases: ["stated", "read"]
+- item: party; name: the other party and the sequence, with the route; kinds: ["party"]; bases: ["stated", "read"]
+- item: circumstance; name: how it appears here: the circumstance of the verse; kinds: ["statement"]; bases: ["stated"]
+- item: operation; name: the operation as an action description (who or what does what), its mode, the primary one; kinds: ["statement"]; bases: ["stated", "read"]
+- item: chain; name: the chain of operations the verse links in sequence; kinds: ["link"]; bases: ["stated", "read"]
+- item: flag; name: a typed flag: data-quality, or discovery for the claims process; kinds: ["statement"]; bases: ["stated", "read"]
+
+## node_roles
+
+- relevant: ["characteristic", "qualifier"]
+- bears_on: ["object", "relational_target", "enactment"]
+- recognised: ["standalone"]
+- lexical: ["lexical"]
+
+## definition_of_the_subgroup
+
+null
+
+## meaning_by_code
+
+- G0213: {"sense_head": "braggart", "meaning_range": "boaster, braggart; <b>prideful, arrogant, boasting,</b> <ref='Rom.1.30'>Rom. 1:30;</ref> <ref='2Ti.3.2'>2Tim. 3:2</ref>*"}
+- G2746: {"sense_head": "pride", "meaning_range": "boasting, pride;; <b>boasting, pride, glorying in; this can refer to proper or improper boasting, depending on the object of the boast; </b> a later equivalent to <greek>καύχημαι</greek>, <ref='Rom.3.27'>Rom. 3:27;</ref> <ref='2Co.7.4, 14; 11.10'>2Cor. 7:4, 14; 11:10</ref>"}
+- H1984C: {"sense_head": "to be foolish", "meaning_range": "1) (Poel) to make a fool of, make into a fool; 1f) (Hithpoel) to act madly, act like a madman"}
+- H7312: {"sense_head": "height", "meaning_range": "1) haughtiness, height, elevation; 1a) height, loftiness; 1b) haughtiness; Aramaic equivalent: <i>rum</i> (רוּם \"height\" H7314)"}
+
+## to_take_up
+
+- observation: 23877; stage: layer-1; kind: group; item: group-definition; text: The boastful as a kind of person: a noun or a participle used as a noun names those given to boasting, listed among the ungodly or set beside evildoers and the wicked (Rom 1:30, Psa 5:5, Psa 75:4).; basis: read; verses: ["Rom.1.30", "Ps.5.5", "Ps.75.4"]; covers: [1246590, 1252553, 1475775]
+- observation: 23878; stage: layer-1; kind: group; item: group-definition; text: Boasting as the quality of an act or a look: the noun gives its character to something else, the confidence Paul speaks with (2Cor 11:17) and the height of the king of Assyria's eyes (Isa 10:12).; basis: read; verses: ["2Cor.11.17", "Isa.10.12"]; covers: [1297279, 1487488]
+- observation: 23879; stage: layer-1; kind: enrichment; item: strong-enrichment; text: The boastful as a kind of person is borne out by G0213 at Rom 1:30, boaster, braggart, whose older senses in LSJ are a wanderer, then a charlatan or quack, then a braggart. H1984C at Psa 5:5 and Psa 75:4 does not give boasting: its lexicon is acting madly, and the boastful rests there on the ESV's rendering, the related H1984H and H1984I being the codes of boasting.; basis: read; verses: ["Ps.5.5", "Ps.75.4", "Rom.1.30"]; covers: [1246590, 1252553, 1475775]
+- observation: 23880; stage: layer-1; kind: enrichment; item: strong-enrichment; text: Boasting as a quality is borne out by G2746 at 2Cor 11:17, boasting, glorying in, which gives its character to the confidence named, and by H7312 at Isa 10:12, haughtiness, height, elevation, the height of the eyes; the Hebrew gives the look its height, the Greek gives the speech its boasting.; basis: read; verses: ["Isa.10.12", "2Cor.11.17"]; covers: [1297279, 1487488]
+- observation: 23881; stage: layer-2; kind: face; item: double-meaning; text: The surface boastful names persons in Rom 1:30 (G0213, a noun in a list of vices) and in Psa 5:5 and Psa 75:4 (H1984C, a participle used as a noun): the face of the word as a kind of person, standing first in Psa 5:5 and after say to in Psa 75:4.; basis: read; verses: ["Rom.1.30", "Ps.5.5", "Ps.75.4"]; covers: [1246590, 1252553, 1475775]
+- observation: 23882; stage: layer-2; kind: face; item: double-meaning; text: In 2Cor 11:17 the surface boastful carries G2746, a genitive noun that stands right before confidence and gives it its character: the face of the word as a quality of speech.; basis: read; verses: ["2Cor.11.17"]; covers: [1487488]
+- observation: 23883; stage: layer-2; kind: face; item: double-meaning; text: In Isa 10:12 the surface boastful carries H7312, height, in construct with look and his eyes: the face of the word as the height of a look, set after the speech of the arrogant heart.; basis: read; verses: ["Isa.10.12"]; covers: [1297279]
+- observation: 23884; stage: layer-2; kind: pairing; item: qualifier; text: In Psa 5:5 the negator not stands right after boastful and reaches stand, the verb of which the boastful are the subject; before, with your eyes, gives the place where they shall not stand.; basis: read; verses: ["Ps.5.5"]; covers: [1246590]
+- observation: 23885; stage: layer-2; kind: pairing; item: qualifier; text: In Psa 75:4 the boastful are the ones addressed after say to; the first not reaches the verb boast that follows, the second reaches lift up, said to the wicked: both negators fall on the acts, not on the word boastful.; basis: read; verses: ["Ps.75.4"]; covers: [1252553]
+- observation: 23886; stage: layer-2; kind: pairing; item: qualifier; text: In Rom 1:30 boastful stands in a list of descriptors of the same persons, with slanderers, haters of God and haughty before it and inventors of evil and disobedient after it; the words qualify the persons side by side and none governs boastful.; basis: read; verses: ["Rom.1.30"]; covers: [1475775]
+- observation: 23887; stage: layer-2; kind: pairing; item: qualifier; text: In 2Cor 11:17 the negator not stands three words after boastful and reaches as the Lord would: it denies the manner of the saying, not the boasting confidence, which is then set as a fool's.; basis: read; verses: ["2Cor.11.17"]; covers: [1487488]
+- observation: 23888; stage: layer-2; kind: pairing; item: entity; text: In 2Cor 11:17 the Lord is named five words after boastful, as the one whose way of speaking Paul's boasting confidence is not: the Lord stands as the measure the boast does not meet, set against the fool.; basis: read; verses: ["2Cor.11.17"]; covers: [1487488]
+- observation: 23889; stage: layer-2; kind: relation; item: direction; text: In 2Cor 11:17 the direction runs from Paul, the speaker, to his hearers, and the Lord is named only as the standard of a way of saying: the boasting confidence goes out from Paul and is measured against how the Lord would speak, not addressed to him.; basis: read; verses: ["2Cor.11.17"]; covers: [1487488]
+- observation: 23890; stage: layer-2; kind: pairing; item: pairing; text: In 2Cor 11:17 confidence (believe) stands right after boastful, which qualifies it as a genitive: the confidence is a confidence of boasting, the thing Paul speaks with.; basis: read; verses: ["2Cor.11.17"]; covers: [1487488]
+- observation: 23891; stage: layer-2; kind: pairing; item: pairing; text: In Isa 10:12 punish (condemn) stands six words before boastful, with the Lord as subject: the boastful look of the king's eyes is one of the two objects the Lord will punish.; basis: read; verses: ["Isa.10.12"]; covers: [1297279]
+- observation: 23892; stage: layer-2; kind: pairing; item: pairing; text: In Psa 5:5 and Psa 75:4 evildoers or the wicked (evildoer) stand in the parallel line with the boastful: the Lord hates all evildoers after the boastful shall not stand (Psa 5:5), and the wicked are told not to lift the horn after the boastful are told not to boast (Psa 75:4).; basis: read; verses: ["Ps.5.5", "Ps.75.4"]; covers: [1246590, 1252553]
+- observation: 23893; stage: layer-2; kind: pairing; item: pairing; text: In Rom 1:30 evil (evildoer) stands two words after boastful, in inventors of evil, the next item of the same list of persons.; basis: read; verses: ["Rom.1.30"]; covers: [1475775]
+- observation: 23894; stage: layer-2; kind: pairing; item: pairing; text: In 2Cor 11:17 fool (folly) closes the verse, eight words after boastful: the boasting confidence is spoken as a fool, set against as the Lord would.; basis: read; verses: ["2Cor.11.17"]; covers: [1487488]
+- observation: 23895; stage: layer-2; kind: pairing; item: pairing; text: In Isa 10:12 finished (fulfill) stands twelve words before boastful, in the time clause: when the Lord has finished his work on Zion, then comes the punishment of the boastful look; a word of time, not of the boast.; basis: read; verses: ["Isa.10.12"]; covers: [1297279]
+- observation: 23896; stage: layer-2; kind: pairing; item: pairing; text: In Isa 10:12 heart (heart) stands three words before boastful, in the parallel object: the speech of the arrogant heart and the boastful look of the eyes are the two things of the king the Lord will punish, heart and eyes side by side.; basis: read; verses: ["Isa.10.12"]; covers: [1297279]
+- observation: 23897; stage: layer-2; kind: pairing; item: pairing; text: In Isa 10:12 work (labor) stands ten words before boastful and is the Lord's work on Zion and Jerusalem, finished before the punishment; the work is the Lord's, not the king's.; basis: read; verses: ["Isa.10.12"]; covers: [1297279]
+- observation: 23898; stage: layer-2; kind: pairing; item: pairing; text: In Psa 5:5 hate (love) stands six words after the boastful, with the Lord as subject and all evildoers as object, in the line parallel to the boastful not standing before him.; basis: read; verses: ["Ps.5.5"]; covers: [1246590]
+- observation: 23899; stage: layer-2; kind: pairing; item: pairing; text: In Isa 10:12 arrogant (pride) stands four words before boastful, on the heart, in the parallel object: an arrogant heart and a boastful look are named together. The WordNet control pairs boastful with proud (similar), and the verse bears it out.; basis: read; verses: ["Isa.10.12"]; covers: [1297279]
+- observation: 23900; stage: layer-2; kind: pairing; item: pairing; text: In Rom 1:30 haughty (pride) stands right before boastful in the same list of persons, the two words side by side, as the WordNet pairing of boastful with proud has it.; basis: read; verses: ["Rom.1.30"]; covers: [1475775]
+- observation: 23901; stage: layer-2; kind: pairing; item: pairing; text: In Rom 1:30 disobedient (rebel) stands three words after boastful, the last item of the list, with to parents: disobedience to parents is named among the same persons as the braggart.; basis: read; verses: ["Rom.1.30"]; covers: [1475775]
+- observation: 23902; stage: layer-2; kind: pairing; item: pairing; text: In Rom 1:30 slanderers (scoff) opens the verse, four words before boastful, the first of the list in which the braggart stands.; basis: read; verses: ["Rom.1.30"]; covers: [1475775]
+- observation: 15116; stage: prior-capture; kind: statement; item: null; text: It speaks of its own hand: The king of Assyria: "the speech of the arrogant heart of the king of Assyria and the boastful look in his eyes. For he says: 'By the strength of my hand I have done it, and by my wisdom, for I have understanding'" (Isa 10:12–13); In the same passage he is the Lord's rod (10:5, 15). I read: pride credits itself with what it was used for.; basis: read; verses: ["Isa.10.12", "Isa.10.13"]; covers: [1297279]
+- observation: 15159; stage: prior-capture; kind: statement; item: null; text: After not acknowledging God. "since they did not see fit to acknowledge God, God gave them up to a debased mind ... insolent, haughty, boastful" (Rom 1:28–30).; basis: stated; verses: ["Rom.1.28", "Rom.1.30"]; covers: [1475775]
+
+## may_rest_on_besides
+
+- observation: 23873; stage: lexical; kind: term; item: word-sense; text: In Rom 1:30 the noun (accusative plural) names a kind of person, the braggart, in the list of those God gave up to a debased mind, standing between haughty and inventors of evil; the ESV renders the noun as the adjective boastful.; basis: read; verses: ["Rom.1.30"]; covers: [1475775]
+- observation: 23874; stage: lexical; kind: face; item: word-sense; text: In 2Cor 11:17 the noun of boasting (genitive singular) qualifies the confidence Paul speaks with: it is a confidence of boasting, which he says he speaks as a fool and not as the Lord would. The ESV turns the genitive noun into the adjective boastful.; basis: read; verses: ["2Cor.11.17"]; covers: [1487488]
+- observation: 23875; stage: lexical; kind: face; item: word-sense; text: In Psa 5:5 and Psa 75:4 the participle (masculine plural) is a noun for a kind of person, rendered the boastful, under a code whose lexicon gives acting madly or foolishly: they shall not stand before the Lord's eyes, beside all evildoers (Psa 5:5), and they are told not to boast, beside the wicked told not to lift the horn (Psa 75:4).; basis: read; verses: ["Ps.5.5", "Ps.75.4"]; covers: [1246590, 1252553]
+- observation: 23876; stage: lexical; kind: face; item: word-sense; text: In Isa 10:12 the noun is height or haughtiness (construct, with eyes): the king of Assyria's eyes are lifted high, which the ESV renders as the boastful look in his eyes, set beside the speech of his arrogant heart; the Lord will punish both.; basis: read; verses: ["Isa.10.12"]; covers: [1297279]
+
+## older_inner_being
+
+- observation: 19926; stage: prior-capture; kind: statement; text: 3.8 Isa 10:12–15, in 10.13 *Those who carry it out*: Extend the Assyria bullet: > … (Isaiah 10:5, 7). He boasts, *"By the strength of my hand I have done it, and by my wisdom"* (10:13), and the Lord *"will punish the speech of the arrogant heart of the king of Assyria and the boastful look in his eyes"* (10:12). *"Shall the axe boast over him who hews with it …?"* (10:15).; answered_before: true
+- observation: 15196; stage: prior-capture; kind: statement; text: Corinthians 10–12 is one long passage in which Paul is forced to boast, and he turns the boast round: As a fool. "accept me as a fool, so that I too may boast a little. What I am saying with this boastful confidence, I say not as the Lord would but as a fool" (2Co 11:16–17). He names the boast foolish while he makes it; Weakness. "If I must boast, I will boast of the things that show my weakness" (11:30). What follows is being let down a wall in a basket (11:32–33); Visions. "I must go on boasting. Though there is nothing to be gained by it, I will go on to visions and revelations" (12:1). Then "On behalf of this man I will boast, but on my own behalf I will not boast, except of my weaknesses" (12:5); No more than is seen. "if I should wish to boast, I would not be a fool, for I would be speaking the truth; but I refrain from it, so that no one may think more of me than he sees in me or hears from me" (12:6); I read: this is the opposite of pride's assumed standing. He holds back even a true boast so that his standing in others' eyes is no higher than what is so; Power in weakness. "I will boast all the more gladly of my weaknesses, so that the power of Christ may rest upon me ... For when I am weak, then I am strong" (12:9–10); Authority given. "if I boast a little too much of our authority, which the Lord gave for building you up and not for destroying you" (2Co 10:8). The authority is given, and it is given for others; "this boasting of mine will not be silenced": that he served them without burdening them (2Co 11:9–10).; answered_before: true
+
+## earlier_readings
+
+
+## occurrences
+
+- occurrence: 1246590; reference: Psa 5:5; osis: Ps.5.5; surface: boastful; strong: H1984C
+- occurrence: 1252553; reference: Psa 75:4; osis: Ps.75.4; surface: boastful; strong: H1984C
+- occurrence: 1297279; reference: Isa 10:12; osis: Isa.10.12; surface: boastful; strong: H7312
+- occurrence: 1475775; reference: Rom 1:30; osis: Rom.1.30; surface: boastful; strong: G0213
+- occurrence: 1487488; reference: 2Cor 11:17; osis: 2Cor.11.17; surface: boastful; strong: G2746
+
+## verses
+
+- reference: 2Cor.11.17; text: What I am saying with this boastful confidence, I say not as the Lord would but as a fool.
+- reference: Isa.10.12; text: When the Lord has finished all his work on Mount Zion and on Jerusalem, he will punish the speech of the arrogant heart of the king of Assyria and the boastful look in his eyes.
+- reference: Ps.5.5; text: The boastful shall not stand before your eyes; you hate all evildoers.
+- reference: Ps.75.4; text: I say to the boastful, ‘Do not boast,’ and to the wicked, ‘Do not lift up your horn;
+- reference: Rom.1.30; text: slanderers, haters of God, insolent, haughty, boastful, inventors of evil, disobedient to parents,
+
+## measured
+
+- package_chars: 49499
+- seconds: 0.08
+
+## The answer form (fill it in the JSON file, `answer`)
+
+```json
+{
+ "command": "ReadElements",
+ "collection": "boast",
+ "subgroup": "boastful",
+ "ledger_id": 2195,
+ "findings": [
+  {
+   "key": "f1",
+   "kind": "",
+   "text": "",
+   "basis": "read | stated",
+   "parts": {
+    "item": "role | polarity | object | enactment | party | circumstance | operation | chain | flag",
+    "grounds": ""
+   },
+   "rests_on": [
+    "<ids of the observations it rests on>"
+   ],
+   "role": "<the node role of the words they cover>",
+   "roles": {},
+   "read_back": []
+  }
+ ],
+ "not_used": {},
+ "older": [],
+ "existing": []
+}
+```
