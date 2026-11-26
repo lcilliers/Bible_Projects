@@ -131,6 +131,11 @@ def main(db, scratch):
     qp = li._qualifier_partners(conn, g[1], g[0]) if g else set()
     n21 = conn.execute("SELECT count(*) FROM collection_layer_item WHERE collection_id=? AND subgroup_id=? AND step='2.1' AND item='qualifier' AND deleted=0", (g[1], g[0])).fetchone()[0] if g else 0
     case("V11 G3 the qualifier partners of a subgroup through 2.1 are found", n21 == 0 or len(qp) > 0, (n21, len(qp)))
+    av = li.orec.allowed_values(cfg)
+    case("V12 #2637 v17 the packet's allowed values of polarity, mode, flag_type, route and basis are all filled",
+         all(av.get(k) for k in ("polarity", "mode", "flag_type", "route", "basis")), av)
+    v = rc.view(conn, {"command": "ReadElements", "collection": "c", "step": "3.1", "instruction": {}, "to_take_up": [{"observation": 1, "text": "t", "covers": [5, 6]}], "answer": {}})
+    case("V13 #2637 v17 a row of the view puts one field to a line", "- observation: 1" + chr(10) + "  text: t" + chr(10) + "  covers: [5, 6]" in "".join(v), "".join(v)[-300:])
     return done()
 
 

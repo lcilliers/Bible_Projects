@@ -87,6 +87,14 @@ def loop_setting(cfg) -> dict:
     return json.loads(v) if isinstance(v, str) else v
 
 
+def allowed_values(cfg) -> dict:
+    """#2637 v17 (G5, G6): the allowed values of the coded parts of a finding, from the settings check_item_parts checks them against, for the
+    packet (PC-04): polarity, mode, flag_type, route (its meaning is B:72) and basis."""
+    spec, loop = items_setting(cfg), loop_setting(cfg)
+    return {"polarity": loop["polarity"], "mode": spec["modes"], "flag_type": spec["flag_types"], "route": cfg.enum("observation_route"),
+            "basis": cfg.enum("ib_observation.basis")}
+
+
 def items_setting(cfg) -> dict:
     """The nine items of an observation (cfg_setting reading.observation_items, #2329)."""
     v = cfg.required_setting("reading.observation_items")

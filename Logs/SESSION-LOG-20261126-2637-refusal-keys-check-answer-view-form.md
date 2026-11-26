@@ -8,9 +8,10 @@ Session id: 44fa45e5-b886-40b6-9928-2c435d1a9f56 (Developer Mode)
 
 ## 2. Escalations
 
-- #2637: updated v12 (X4 live), v13 (X3 live), v14 (X1, X2, #2628, #2621, B:20), v15 (the researcher's messages verbatim; the B:138 run question), v16 (approval; Cycle, B:138, G3, C4, C1). Stays in-progress with Claude.
+- #2637: updated v12 (X4 live), v13 (X3 live), v14 (X1, X2, #2628, #2621, B:20), v15 (the researcher's messages verbatim; the B:138 run question), v16 (approval; Cycle, B:138, G3, C4, C1), v19 (the two points of v17 fixed). Stays in-progress with Claude.
 - #2628: fixed; approved by the Researcher, completed.
 - #2621: fixed; approved by the Researcher, completed.
+- #2620: completed in the researcher's standard session (boastful read on the rebuilt code, Cycle audit PASS; #2637 v17).
 
 ## 3. Files
 
@@ -19,7 +20,7 @@ Session id: 44fa45e5-b886-40b6-9928-2c435d1a9f56 (Developer Mode)
 - iba/app/handlers/collectionbuild.py, iba/app/ps/Collection-Build.ps1
 - iba/app/migration/archive/encode_2637_refusal_keys_v1_20261126.py, iba/app/migration/archive/encode_2637_check_answer_v1_20261126.py, iba/app/migration/archive/encode_2637_cheaper_route_v1_20261126.py, iba/app/migration/archive/encode_2637_view_and_form_v1_20261126.py, iba/app/migration/archive/encode_2637_cycle_v1_20261126.py, iba/app/migration/archive/encode_2637_g3_c4_v1_20261126.py
 - iba/app/tools/temp_2637_refusal_keys_test_run.py, iba/app/tools/temp_2637_check_answer_test_run.py, iba/app/tools/temp_2637_view_form_test_run.py, iba/app/tools/temp_2637_cycle_test_run.py
-- iba/app/BUILD.md (600, 601, 602, 603), iba/app/USER-GUIDE.md (8.20), iba/app/GOVERNANCE.md (section 2)
+- iba/app/BUILD.md (600, 601, 602, 603, 604); iba/app/lib/observationrecord.py, iba/app/USER-GUIDE.md (8.20), iba/app/GOVERNANCE.md (section 2)
 - Logs/compliance/COMPLIANCE-20261126-44fa45e5.md
 
 ## 4. Decisions
@@ -30,15 +31,13 @@ Session id: 44fa45e5-b886-40b6-9928-2c435d1a9f56 (Developer Mode)
 - Claude, self-correctable: the archived X4 migration writes the registry only where it is absent, after a re-run on a copy undid the X3 registry (iba/app/migration/archive/encode_2637_refusal_keys_v1_20261126.py, #2637 v13).
 - Researcher: "All approved, proceed with 2637": #2628 and #2621 approved; the B:138 run may be the live reading of the unit (cfg_behaviour_rule 138, #2637 v16).
 - Claude, within the approved plan: G3 as decided (#2637 v7) and C4 conformed (cfg_method_rule IB-02; cfg_setting reading.observation_rules; #2637 v16).
+- Researcher: "pick up on the new items to fix in 2637": the allowed values in the stage 4 packets and a view of one field to a line (iba/app/lib/observationrecord.py, iba/app/lib/readcommands.py, #2637 v19).
 - Claude: #2628 fixed at the shared function (iba/app/lib/buildvalidate.py); #2621 fixed in iba/app/lib/layerloop.py.
 
 ## 5. Open items
 
 - #2637 (Claude): the B:138 run, the live standard-session reading of boast / boastful audited by Cycle; not built: C6, C7, C8, E1, E4, F2, F3, the K10 retry (#2637 v16); the 3.1/3.2 limit of CheckAnswer (#2637 v13).
-- #2620 (Claude): waits for #2637. #2619 (Claude): on hold behind its gate.
+- #2619 (Claude): on hold behind its gate.
 
 ## 6. Git
 
-- branch: main
-- commit: d0d846bb9dbb9fc44bfdb18935540ca98678cdc1 (session 20261126: Developer Mode -- #2637 X6/X7 Cycle view and B:138 audit, B:138 amended, X9: G3, C4, C1; session log); the earlier commit of this session: 1ee1f6e6f75f93236f60e533be0a2e3fea13f6a3
-- push:    178f1ec5..d0d846bb  main -> main

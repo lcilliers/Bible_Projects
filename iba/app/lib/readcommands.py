@@ -116,8 +116,12 @@ def view(conn, pkg: dict) -> list[str]:
             continue
         lines.append(f"\n## {k}\n\n")
         if isinstance(v, list):
-            for it in v:
-                lines.append("- " + ("; ".join(f"{x}: {_cell(y)}" for x, y in it.items()) if isinstance(it, dict) else _cell(it)) + "\n")
+            for it in v:      # one field to a line: a read tool cuts a long line (#2637 v17)
+                if isinstance(it, dict) and it:
+                    fields = list(it.items())
+                    lines.append(f"- {fields[0][0]}: {_cell(fields[0][1])}\n" + "".join(f"  {x}: {_cell(y)}\n" for x, y in fields[1:]))
+                else:
+                    lines.append(f"- {_cell(it)}\n")
         elif isinstance(v, dict):
             lines += [f"- {x}: {_cell(y)}\n" for x, y in v.items()]
         else:
@@ -1294,7 +1298,7 @@ def read_elements(conn, cfg, run_id: str, name: str, subgroup: str, out_dir: pat
            "made": datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
            "unit": {"ledger_id": row[0], "to_take_up": len(take), "may_rest_on_besides": len(besides), "older_inner_being": len(older), "earlier_readings": len(earlier),
                     "occurrences": len(occ), "verses": len(verses)},
-           "instruction": instruction(conn, rt), "asks": idef["asks"], "uses": uses, "node_roles": lr.orec.node_role_groups(cfg),
+           "instruction": instruction(conn, rt), "asks": idef["asks"], "uses": uses, "node_roles": lr.orec.node_role_groups(cfg), "allowed_values": lr.orec.allowed_values(cfg),
            "definition_of_the_subgroup": L["groups"][gid].get("note"), "meaning_by_code": meaning,
            "to_take_up": take, "may_rest_on_besides": besides, "older_inner_being": older, "earlier_readings": earlier, "occurrences": occ, "verses": verses,
            "answer": {"command": "ReadElements", "collection": L["name"], "subgroup": gname, "ledger_id": row[0],
@@ -1449,7 +1453,7 @@ def read_behaviours(conn, cfg, run_id: str, name: str, out_dir: pathlib.Path) ->
     pkg = {"command": "ReadBehaviours", "collection": cname, "step": "3.2",
            "made": datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
            "unit": {"ledger_id": row[0], "to_take_up": len(take), "subgroups": len(subs), "older_unsettled": len(older), "occurrences": len(dem)},
-           "instruction": instruction(conn, rt), "asks": idef["asks"], "uses": uses, "node_roles": lr.orec.node_role_groups(cfg),
+           "instruction": instruction(conn, rt), "asks": idef["asks"], "uses": uses, "node_roles": lr.orec.node_role_groups(cfg), "allowed_values": lr.orec.allowed_values(cfg),
            "subgroups": [{"name": v["name"], "definition": v["definition"], "observations": by_sub.get(v["name"], [])} for v in subs.values()],
            "to_take_up": take, "older_unsettled": older,
            "answer": {"command": "ReadBehaviours", "collection": cname, "ledger_id": row[0], "disposition": "observed | none", "reason": "",
