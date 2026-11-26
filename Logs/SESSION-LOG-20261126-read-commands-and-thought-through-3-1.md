@@ -52,3 +52,5 @@ Claude's self-correctable fixes, made and closed:
 - After the close (2026-11-26): branch main, commit 42a8d247 "#2618, #2576, #2538: every hand repair of the session encoded into the packages; rule 137", pushed: `7bda2981..42a8d247  main -> main`.
 
 - After the close (2026-11-26): branch main, commit 47677db6 "#2538: the analytic process described as one path of methods (USER-GUIDE.md 8.20), held by a check", pushed: `   e2fef088..47677db6  main -> main`.
+
+- After the close (2026-11-26): branch main, commit 07dd8cfc "#2538: step 3.2 as a read command (ReadBehaviours/RecordBehaviours, IB-08); SweepSuperseded closes 3.1; thought 3.2 recorded", pushed: `   8bda5e6c..07dd8cfc  main -> main`.
