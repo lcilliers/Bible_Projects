@@ -62,3 +62,5 @@ Claude's self-correctable fixes, made and closed:
 - After the close (2026-11-26): branch main, commit a241e54f "#2538: IB-07 follows the stage-4 trace chain; the sweep that closes 3.1 runs by itself", pushed: `   f4051017..a241e54f  main -> main`.
 
 - After the close (2026-11-26): branch main, commit a7e5b109 "#2538: index on ib_node(traced_observation_id); validation-actions suite state-independent; temp_2323 retired", pushed: `   3a5fd6da..a7e5b109  main -> main`.
+
+- After the close (2026-11-26): branch main, commit 607fb34a "#2538: validation runs once and targeted; the trace index made partial", pushed: `   f8bf1b98..607fb34a  main -> main`.
