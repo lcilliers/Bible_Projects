@@ -1,4 +1,8 @@
-"""temp_2323_deleted_and_fixes_test_run.py -- escalation #2323 test plan, on a COPY of the live iba.db (never the live DB): the
+"""HISTORY (retired 2026-11-26, #2538, BUILD.md 595): this suite drove the reading steps reading.open, observe and record, which are retired (inactive in
+cfg_step), on a snapshot of 2026-10-27 that predates verse_lexical.unit_surface; it could no longer run. Its cases of live functions (merge refused for
+different texts, modify_node, delete_node, no withdrawn live test) moved to temp_2538_validation_actions_test_run.py T13. Kept for the record only.
+
+temp_2323_deleted_and_fixes_test_run.py -- escalation #2323 test plan, on a COPY of the live iba.db (never the live DB): the
 deleted columns of ib_observation and ib_node, and the fixes the check of the existing observations proposes and applies
 (merge a duplicate description, delete the silence kind, standalone nodes), on the real data of Gen 43:27 (the 19 observations
 of the earlier m21-asking-test reading) and Gen 24:47 (the node 19107 a reading deleted through disposition), and the per-verse
