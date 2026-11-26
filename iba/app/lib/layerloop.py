@@ -106,7 +106,7 @@ def next_action(conn, cfg, name: str) -> dict:
         left = lr.superseded(conn, p["cid"])
         if left["rows"]:      # 3.1 closes with the sweep of what deleted subgroups left behind (researcher 2026-11-26, #2538)
             out.update({"subgroup": None, "step": "3.1", "state": "sweep", "what": f"the close of 3.1: {len(left['rows'])} live ledger row(s) of deleted subgroups hold {len(left['observations'])} observation(s) that are no longer valid",
-                        "commands": [f"{ps} -Action SweepSuperseded -Collection {coll} -Check", f"{ps} -Action SweepSuperseded -Collection {coll}"]})
+                        "commands": [f"{ps} -Action SweepSuperseded -Collection {coll} -Check   (preview)", f"{ps} -Action ReadBehaviours -Collection {coll}   (runs the sweep, then writes the 3.2 package)"]})
             return out
         for s in COLLECTION_STEPS:
             stt = p["collection_steps"][s]

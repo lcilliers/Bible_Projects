@@ -6,7 +6,7 @@
 | --- | --- |
 | database | iba |
 | config_version | app-0.1.0 |
-| generated_at | 2026-11-26T09:37:35Z |
+| generated_at | 2026-11-26T09:45:00Z |
 | current_seed_hash | bootstrap:configuration-maintenance-2026-07-21 |
 
 ## Contents
@@ -149,7 +149,7 @@ _(none)_
 <a id="2-utilities-registry"></a>
 ## 2. Utilities registry
 
-**1177** registered module(s) — **694** declared `config_exempt` (a legitimate zero for config-setting/enum usage, not a completeness gap), **995** inactive (module removed/merged). See §0 "Low config-density utilities" for any NON-exempt module still flagged.
+**1178** registered module(s) — **695** declared `config_exempt` (a legitimate zero for config-setting/enum usage, not a completeness gap), **996** inactive (module removed/merged). See §0 "Low config-density utilities" for any NON-exempt module still flagged.
 
 | module | file | purpose | active | exempt | exempt reason |
 | --- | --- | --- | --- | --- | --- |
@@ -415,6 +415,7 @@ _(none)_
 | cfgload | iba/app/lib/archive/cfgload.py | cfgload.py — load the JSON SEEDS into the config tables in the DATABASE. |  | ✓ | writes the seed INTO the cfg_* tables (creates + populates them) — same class as migration/ scripts, already excluded from usage-checks for the same reason. |
 | cfgquality | iba/app/lib/cfgquality.py | cfgquality.py — shared config-quality checks, used by BOTH handlers/configmaint.py (the | ✓ | ✓ | works directly against a raw sqlite3.Connection (not a Cfg wrapper), by design — usable from both configmaint.py (has a Cfg) and cfgreport.py (doesn't); queries cfg_setting/cfg_enum via raw SQL, not Cfg's convenience methods. Found 2026-07-30 only after fixing this same check's own text-collision false negative for this file — same class of legitimate zero as the other 11, not an oversight. |
 | cfgreport | iba/app/lib/cfgreport.py | cfgreport.py — full-visibility config report, generated FROM the config store. | ✓ | ✓ | generates reports by querying cfg_* tables directly; the paths it needs (out_path/db_path) are resolved by its caller (configmaint.report), not read here. |
+| chain_2538_v1_20261126 | iba/app/migration/archive/chain_2538_v1_20261126.py | migration of #2538: IB-07 names the trace chain of stage 4 |  | ✓ | a one-off migration; its values are the config it writes |
 | charanswergenerate | iba/app/lib/archive/charanswergenerate.py | Retired (#2507): not in a utility or module. Was iba/app/lib/charanswergenerate.py. charanswergenerate.py — the LLM-calling half of `cluster.answer` (the `char-answers` stage, |  |  |  |
 | charreadinggenerate | iba/app/lib/archive/charreadinggenerate.py | Retired (#2507): not in a utility or module. Was iba/app/lib/charreadinggenerate.py. charreadinggenerate.py — the LLM-calling half of `cluster.reading` (the `char-reading` stage, |  |  |  |
 | claude_md_rules_to_config_v1_20261021 | iba/app/migration/archive/claude_md_rules_to_config_v1_20261021.py | ONE-OFF migration -- escalation #2181: moves the rules CLAUDE.md held with no cfg_* home into config, every cfg_* write through configmaint.apply_logged under run_id DEVMODE-2181-CLAUDE-MD-RULES-20261021. inactive=1 once applied. |  | ✓ | one-off migration script -- writes cfg_* rows through configmaint.apply_logged, same class as the other Developer Mode migrations |

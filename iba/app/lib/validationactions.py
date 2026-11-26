@@ -272,7 +272,7 @@ def mark_self_evidencing(conn, oid: int, reason: str, run_id: str, who: str) -> 
     orec.log(conn, oid, None, "self_evidencing", None, 1, reason, None, run_id, who)
 
 
-def trace_gaps(conn, ids: list[int]) -> dict:
+def trace_gaps(conn, ids: list[int], _depth: int = 3) -> dict:
     """IB-07 over `ids`: `no_trace` are inner-being observations with no live trace at all and not recorded self-evidencing; `pending`
     are those whose live traces point at observations not yet marked (the marking of the target's own scope is still to come, so
     they are not failed); `dead_trace` are live traced nodes that point at a deleted observation. Three statements for each chunk of ids,
@@ -299,6 +299,19 @@ def trace_gaps(conn, ids: list[int]) -> dict:
                         pending.append(oid)
                     else:
                         gaps.append(oid)
+    # the trace chain of stage 4 (specification v5: C2 to C1, C3 to C1 and C2; #2538, 2026-11-26): an inner-being observation that traces a live inner-being observation which
+    # itself traces to evidence (directly or along the chain, at most _depth links) is traced; the 3.2 behaviours gather the 3.1 elements, never the evidence itself
+    if gaps and _depth > 0:
+        up: dict = {}
+        for ch in _chunks(gaps):
+            for oid, tid in conn.execute(f"SELECT n.observation_id, t.id FROM ib_node n JOIN ib_observation t ON t.id=n.traced_observation_id WHERE n.deleted=0 AND t.deleted=0 "
+                                         f"AND t.nature='inner_being' AND n.observation_id IN ({_qm(len(ch))})", ch):
+                up.setdefault(oid, set()).add(tid)
+        if up:
+            sub = trace_gaps(conn, sorted(set().union(*up.values()) - set(up)), _depth - 1)
+            bad = set(sub["no_trace"]) | set(sub["pending"])
+            rescued = {oid for oid, ts in up.items() if ts - bad - set(up)}
+            gaps = [g for g in gaps if g not in rescued]
     return {"no_trace": gaps, "pending": pending, "dead_trace": dead}
 
 

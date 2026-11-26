@@ -1229,7 +1229,13 @@ def record_elements(conn, cfg, run_id: str, data: dict, keep: bool) -> dict:
         return {**out, "preview": True}
     lr.check(conn, cfg, run_id, name, subgroup=gname)
     r2 = _elements_row(conn, cid, gid)
-    return {**out, "validated": bool(r2[9]), "reason": (r2[8] or "")[:300] if not r2[9] else "", "next": next_after_elements(conn, cfg, name, gname)}
+    res = {**out, "validated": bool(r2[9]), "reason": (r2[8] or "")[:300] if not r2[9] else "", "next": next_after_elements(conn, cfg, name, gname)}
+    if r2[9] and lr.superseded(conn, cid)["rows"]:      # the last subgroup through 3.1 closes 3.1 for the collection: the sweep runs here (researcher 2026-11-26, #2538)
+        from . import layerloop
+        if all(g["complete"] for g in layerloop.progress(conn, cfg, name)["subgroups"]):
+            sw = lr.sweep_superseded(conn, cfg, run_id, name)
+            res["swept"] = f"3.1 closed for the collection: {sw['rows']} row(s) of deleted subgroups retired, {sw['observations']} observation(s) removed"
+    return res
 
 
 # ══ ReadBehaviours / RecordBehaviours: step 3.2, the behaviours of the collection (stage 4, C2; #2538) ═════════════════════════════
@@ -1288,10 +1294,12 @@ def read_behaviours(conn, cfg, run_id: str, name: str, out_dir: pathlib.Path) ->
     rt, lim = st["behaviours"], st["limits"]
     s = lr.settings(cfg)
     cid, cname = _collection_of(conn, name)
-    left = lr.superseded(conn, cid)
-    if left["rows"]:      # 3.1 closes with the sweep of what deleted subgroups left behind (researcher 2026-11-26, #2538)
-        raise ReadError(f"3.1 is not closed for {cname!r}: {len(left['rows'])} live ledger row(s) of deleted subgroups hold {len(left['observations'])} observation(s); "
-                        f"run .\\iba\\app\\ps\\Collection-Build.ps1 -Action SweepSuperseded -Collection {cname} (-Check to preview) first")
+    swept = None
+    if lr.superseded(conn, cid)["rows"]:      # 3.1 closes with the sweep of what deleted subgroups left behind, run here by the method (researcher 2026-11-26, #2538)
+        try:
+            swept = lr.sweep_superseded(conn, cfg, run_id, cname)
+        except lr.LayerError as exc:
+            raise ReadError(f"3.1 is not closed for {cname!r}: {exc}")
     row = _behaviours_row(conn, cid)
     opened = None
     if row is None:
@@ -1346,7 +1354,10 @@ def read_behaviours(conn, cfg, run_id: str, name: str, out_dir: pathlib.Path) ->
     out_dir.mkdir(parents=True, exist_ok=True)
     path = out_dir / f"readbehaviours-{_slug(cname)}-{datetime.datetime.now().strftime('%Y%m%dt%H%M%S')}.json"
     path.write_text(json.dumps(pkg, ensure_ascii=False, indent=1), encoding="utf-8")
-    return {"path": path, "to_take_up": len(take), "subgroups": len(subs), "older": len(older), "chars": chars, "seconds": secs, "opened": opened}
+    out = {"path": path, "to_take_up": len(take), "subgroups": len(subs), "older": len(older), "chars": chars, "seconds": secs, "opened": opened}
+    if swept:
+        out["swept"] = f"{swept['rows']} row(s) of deleted subgroups retired, {swept['observations']} observation(s) removed"
+    return out
 
 
 def record_behaviours(conn, cfg, run_id: str, data: dict, keep: bool) -> dict:
