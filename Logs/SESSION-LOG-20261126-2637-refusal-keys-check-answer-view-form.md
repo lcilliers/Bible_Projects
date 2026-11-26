@@ -41,3 +41,6 @@ Session id: 44fa45e5-b886-40b6-9928-2c435d1a9f56 (Developer Mode)
 
 ## 6. Git
 
+- branch: main
+- commit: 288f5c9f15beceedbdb32d247f420b0437f5d712 (session 20261126: #2637 v17 points; project map; session log); earlier commits of this session: 1ee1f6e6f75f93236f60e533be0a2e3fea13f6a3, d0d846bb9dbb9fc44bfdb18935540ca98678cdc1
+- push:    754b7dbb..288f5c9f  main -> main
