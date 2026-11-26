@@ -1,0 +1,3120 @@
+{
+ "command": "ReadStructure",
+ "collection": "thought",
+ "subgroup": "weighing and taking account of",
+ "step": "2.1",
+ "item": "qualifier",
+ "made": "2026-11-26T05:43:38Z",
+ "batch": {
+  "rows": 1,
+  "rows_left_after_this": 83
+ },
+ "instruction": {
+  "what": "Step 2.1, the structure of one subgroup (stage 1, B3): what stands with the subgroup's words in each verse, read from the stored structure. One item at a time: double-meaning (a surface with more than one code), qualifier (negators and the word each reaches, adjectives, adverbs, prepositional qualifiers), entity (who is named or referred to), direction (from whom to whom, by the grammar), pairing (one row for each partner collection: its words in the verses shared with the subgroup). Nothing here says what anything does for the inner being; that begins at step 3.1.",
+  "read": [
+   "Take one row at a time (`rows`): what it asks, its occurrences (`as`: member, the subgroup's word; partner, the other word), and its verses.",
+   "Read each verse (`verses`) from its stored structure, one line for each word: * marks an occurrence of the subgroup; then the position, surface, Strong's code and morph, and what the pairing makes of the word (its type, the qualifier it carries, a negator, a party, the collections of a word of another collection). Nothing is evaluated that is not stored.",
+   "Where each word stands: its side and distance from the subgroup's word, from the positions. Adjacency is not scope: a negator or qualifier is read for the word it reaches by the grammar.",
+   "A pairing row shows the WordNet control for its partner collection: a pairing WordNet gives and the verses do not show is one to look for; a pairing only the verses show has no control.",
+   "Differences in meaning are read from the base data (the Strong's code, the morph, the construction), not from the English alone. The subgroup's 1.1 senses (`senses`) are what the findings build on."
+  ],
+  "write": [
+   "Fill `answer.rows`: for each row, disposition observed with its `findings`, or none with its `reason` (where the row allows none: nothing of the item stands with the subgroup in its verses).",
+   "One finding for each distinct thing the structure shows; the same finding in several verses is ONE finding naming all its occurrences; a verse that shows something different is its own finding. Together the findings name every occurrence of the row (occurrence ids or verse references), each in one finding.",
+   "kind: as the template gives it (pairing; relation for direction; face for double-meaning). obs_text: concise; names the verses it holds in, as the package writes the references (for example Act 18:4); states what the structure shows (which word, where it stands, what it reaches or gives by the grammar); never a verse restated, never what it does for the inner being.",
+   "basis: stated (the verse says it) or read (read from the structure), with `grounds`: words copied exactly from the verses it is tied to (the record checks them).",
+   "Each subgroup's surface has its own finding; none joins two subgroups. A data error is named in grounds, not fixed.",
+   "`older`: answer each older observation shown under the row, once: keep (with `nature`), restate (with `nature`, `new_text`, `checked`), merge (with `into`), consume (with `carriers` [\"this\"] or observation ids, and `mapping`), delete_neither (with `reason`), carry (with `to` and `reason`), defer (with `collection`, `nature`, `finding`). One listed under another row is answered there.",
+   "Then: Collection-Build.ps1 -Action RecordStructure -File <the answer file> (-Check to preview). The record refuses the whole file on any fault and lists every fault."
+  ],
+  "keep": [
+   {
+    "rule": "RG-14 morph-read",
+    "text": "Morph is read, not carried: where occurrences of a word show different stems or voices, record whether the subject does, undergoes or causes the act."
+   },
+   {
+    "rule": "RG-16 homonym-and-data-error",
+    "text": "A word that is only a homonym or a name, with no meaningful context, is recorded as such (tag no-human-context) and left. Data errors found while reading are flagged (tag data-error), not fixed in the reading."
+   },
+   {
+    "rule": "RG-21 grain",
+    "text": "A word is read per its lettered Strong's code (its grain), never the bare lemma (B:113). The occurrences of a word with several senses are related per grain and never aggregated across grains: related verses are same-grain occurrences."
+   },
+   {
+    "rule": "RO11 one-row-per-code",
+    "text": "One observation per finding, never a duplicate description; a finding applying to several verses or words carries several nodes, each with the word's role in it."
+   },
+   {
+    "rule": "RW-03 no-duplicates-multi-node",
+    "text": "One observation per finding: the same description is never written twice. Applied to another verse, word or scope it gains a node on the existing observation."
+   },
+   {
+    "rule": "RW-04 concise-verse-specific",
+    "text": "Observation text is concise and tied to this verse's content, never a restatement of the word's dictionary sense. A transliteration is never given without its gloss."
+   },
+   {
+    "rule": "RW-08 slants-own-rows",
+    "text": "Where the evidence points to more than one reading, each is its own observation with its own evidence."
+   },
+   {
+    "rule": "RW-09 reread-builds-on-prior",
+    "text": "A re-read includes the observations already recorded for the verse, so the reading sees prior findings and builds on them."
+   },
+   {
+    "rule": "RW-11 missing-is-named",
+    "text": "Missing data in the base extract is named as a gap, never substituted from memory or outside knowledge."
+   },
+   {
+    "rule": "RW-13 older-observations-answered-at-record",
+    "text": "Every older live observation with a live node on an occurrence of the row (a stage that is not the build's own) is answered in fill.older when the row is recorded, once: keep or restate (each with its marker), merge into a named observation, consume (live observations carry its meaning, stated in words, verified before it is deleted), delete as neither (comment first), or defer to a named collection (marked now; only the finding is left to that collection). An observation already marked by the validation, answered in a build or deferred is not asked again. A new observation whose text equals that of another live observation of the collection is refused, the other named. LayerCheck re-derives both from the tables. The end state of a collection's build is that every observation of its scope is marked and fixed or deleted, every word node complete or with its reason, and each deferral owned by a named collection."
+   },
+   {
+    "rule": "RS-04 existing-checked-accept-modify-delete",
+    "text": "When a verse is worked, every existing observation and node on it, of any stage, is checked against the verse by its wording. The stage is not an indication of the nature of an observation and is never used to filter. Each observation is accepted, modified (changed in place; the old value, the new value and the reason are kept in ib_observation_change), soft deleted (the `deleted` column, with the reason), merged (a duplicate description, into the observation that is kept) or, when its wording shows it is not verse understanding, left exactly as it is with the reason. The check's fixes are part of it and need no separate approval. Nothing is physically deleted."
+   },
+   {
+    "rule": "LR-02 nodes-are-built-from-the-data",
+    "text": "The nodes of a layer observation are the occurrences the aspect demands (a word's occurrences, the group's occurrences, the partner's occurrences in the verses they share), written by the recorder with the collection and the subgroup of each surface; they are never typed. An item answered by senses (word-sense) names, for each sense, the occurrences it holds for, and together the senses cover every occurrence; the recorder checks them against the data. The interpretation is the observation text, founded in what the evidence shows (basis stated or read, B:131) and tied to its verses (the text names them and does not restate them): the items of every step (S1, 1.1, 1.2, 2.1) state what the dictionary, the verses and the stored structure show of a word and never what a word does for the inner being; their nodes carry the role lexical and no route. The whole file is checked and written in one transaction; any problem refuses all of it. A row answered again withdraws its earlier observations with the reason."
+   },
+   {
+    "rule": "LR-03 none-needs-a-permitted-reason",
+    "text": "An aspect is recorded as none only where its item allows it (cfg_setting layer.reading none_allowed) and with its reason in words. A group definition and a group's Strong's enrichment are always observed."
+   },
+   {
+    "rule": "DA-02 a-node-per-occurrence-with-its-surfaces-collection",
+    "text": "A node is on one occurrence (verse_lexical_id) and carries the collection of its surface (a supportive node, the collection of the surface it supports); a node already on the observation for the same occurrence is not written twice, and takes the role. A node with no collection to carry, or on a verse out of scope (B:130), is not written and is listed."
+   },
+   {
+    "rule": "VA-03 consumption-is-verified-before-deletion",
+    "text": "An older observation is deleted as consumed only when live observations carry its meaning: every word occurrence of it is on a live node of a carrier or named as not carried with its reason, the mapping is stated in words (what the old says, which carrier states each part), the traces to it are re-pointed or replaced, and the consumption is kept as `consumed_by`. An observation that holds more than one finding is split first."
+   },
+   {
+    "rule": "VA-04 neither-evidence-nor-inner-being-is-deleted",
+    "text": "An observation that is neither evidence nor inner being contributes nothing to the purposes of the observations (researcher, 2026-11-22): it is commented with its reason and the word occurrences no other live observation holds, then deleted. An observation already marked, or one another observation traces, is not deleted this way."
+   }
+  ],
+  "not_in_this_read": ""
+ },
+ "senses": [
+  {
+   "sense": 22886,
+   "text": "Considering a matter: turning attention and thought to it, looking it over, setting the heart on it. The Lord asks Satan whether he has fixed on Job, the observer sets his heart on the field and takes instruction, the Preacher looks over all his works, the generation gives no thought to the servant's being cut off, the sinner sees his transgressions and turns, the seer contemplates the horns, Joseph turns over what he resolved, and Abraham fixes his attention on his own body without his faith weakening. In each the consideration is an act of the mind taking in a matter, usually before a turn or a conclusion. Verses: Job 1:8, Job 2:3, Pro 24:32, Ecc 2:11, Isa 53:8, Eze 18:28, Dan 7:8, Mat 1:20, Rom 4:19.",
+   "verses": [
+    "Job.1.8",
+    "Job.2.3",
+    "Prov.24.32",
+    "Eccl.2.11",
+    "Isa.53.8",
+    "Ezek.18.28",
+    "Dan.7.8",
+    "Matt.1.20",
+    "Rom.4.19"
+   ]
+  },
+  {
+   "sense": 22887,
+   "text": "Reckoning something or someone as a certain thing: how a person or thing is counted, judged or esteemed. Sarah counts the promiser faithful, Abraham concludes that God can raise the dead, Moses counts the reproach of Christ greater than treasure, rulers are held to be rulers, the silent fool is held wise, silver is counted as nothing, the men are counted reliable, the people are counted as foreigners, as sheep, as pots, the laws as strange, the potter as clay, the disciples dispute who is held greatest, the uncircumcised is counted as circumcised, servants are counted as masters worthy of honor, the Lord counts the exiles good. The word is a reckoning or valuation, the standing given by a judgment. Verses: 1Ki 10:21, 2Ch 9:20, Neh 13:13, Pro 17:28, Mar 10:42, Heb 11:11, Heb 11:19, Heb 11:26, Lev 19:23, 1Sa 1:16, Jer 24:5, 1Cor 4:1, 2Th 3:15, 1Ti 6:1, 1Pe 5:12, Gen 31:15, Psa 44:22, Isa 29:16, Isa 29:17, Lam 4:2, Hos 8:12, Luk 22:24, Rom 2:26, Rom 8:36.",
+   "verses": [
+    "1Kgs.10.21",
+    "2Chr.9.20",
+    "Neh.13.13",
+    "Prov.17.28",
+    "Mark.10.42",
+    "Heb.11.11",
+    "Heb.11.19",
+    "Heb.11.26",
+    "Lev.19.23",
+    "1Sam.1.16",
+    "Jer.24.5",
+    "1Cor.4.1",
+    "2Thess.3.15",
+    "1Tim.6.1",
+    "1Pet.5.12",
+    "Gen.31.15",
+    "Ps.44.22",
+    "Isa.29.16",
+    "Isa.29.17",
+    "Lam.4.2",
+    "Hos.8.12",
+    "Luke.22.24",
+    "Rom.2.26",
+    "Rom.8.36"
+   ]
+  },
+  {
+   "sense": 22888,
+   "text": "Having regard: giving notice and heed to someone or something, or refusing it. The Lord has no regard for Cain's offering, the psalmist asks God to have regard for the covenant and the vine, the wicked do not regard the Lord's works, God does not regard those wise in their own conceit, Levi disregards his kin, the righteous have regard for the life of the beast, the Medes have no regard for silver, and none is shown to the priests. The word is attention that turns toward a person or matter with favor or care, or is withheld. Verses: Gen 4:5, Exo 5:9, Deu 9:27, Deu 33:9, 1Sa 25:25, 2Ki 3:14, 2Ch 5:11, 2Ch 6:19, Job 9:21, Job 34:27, Job 35:13, Job 37:24, Psa 28:5, Psa 74:20, Psa 80:14, Psa 119:117, Psa 144:3, Pro 12:10, Isa 5:12, Isa 13:17, Isa 33:8, Lam 4:16.",
+   "verses": [
+    "Gen.4.5",
+    "Exod.5.9",
+    "Deut.9.27",
+    "Deut.33.9",
+    "1Sam.25.25",
+    "2Kgs.3.14",
+    "2Chr.5.11",
+    "2Chr.6.19",
+    "Job.9.21",
+    "Job.34.27",
+    "Job.35.13",
+    "Job.37.24",
+    "Ps.28.5",
+    "Ps.74.20",
+    "Ps.80.14",
+    "Ps.119.117",
+    "Ps.144.3",
+    "Prov.12.10",
+    "Isa.5.12",
+    "Isa.13.17",
+    "Isa.33.8",
+    "Lam.4.16"
+   ]
+  },
+  {
+   "sense": 22889,
+   "text": "'With regard to' as a linking phrase of respect: it marks the matter spoken of, a festival or a sect or the children of man or the Philistines. The words are prepositions and nouns of concern and carry no act of thinking. Verses: Judg 15:3, Ecc 3:18, Act 28:22, Col 2:16.",
+   "verses": [
+    "Judg.15.3",
+    "Eccl.3.18",
+    "Acts.28.22",
+    "Col.2.16"
+   ]
+  },
+  {
+   "sense": 22890,
+   "text": "Regarding by a standard: Paul says he knew and took account of Christ once by the standard of the flesh and now takes account of no one by it. The Greek verbs are of knowing, used for the rule by which a person is judged. Verses: 2Cor 5:16.",
+   "verses": [
+    "2Cor.5.16"
+   ]
+  },
+  {
+   "sense": 22891,
+   "text": "Weighing in the mind: the prophets' words are to be weighed by the others who judge them, and the Preacher weighs, studies and arranges proverbs. The word is an act of testing and judging what is said or learned. Verses: 1Cor 14:29, Ecc 12:9.",
+   "verses": [
+    "1Cor.14.29",
+    "Eccl.12.9"
+   ]
+  },
+  {
+   "sense": 22892,
+   "text": "Weighing out metal on scales: the traders weigh out silver, and the gifts are to be weighed before the priests. It is the act of measuring by weight, with no act of thinking. Verses: Ezr 8:29, Zep 1:11.",
+   "verses": [
+    "Ezra.8.29",
+    "Zeph.1.11"
+   ]
+  },
+  {
+   "sense": 22893,
+   "text": "Weight as a stated measure: a ring and bracelets of a given weight in shekels, a bar of gold of fifty shekels, and the balances of the hair. The word is the weight of an object. Verses: Gen 24:22, Jos 7:21, Eze 5:1.",
+   "verses": [
+    "Gen.24.22",
+    "Josh.7.21",
+    "Ezek.5.1"
+   ]
+  }
+ ],
+ "verses": [
+  {
+   "reference": "Gen 4:5",
+   "text": "but for Cain and his offering he had no regard. So Cain was very angry, and his face fell.",
+   "words": [
+    " 0 cain H7014B HNpm | entity (human); party human",
+    " 0 cain H0413 HR",
+    " 0 and H9002 HC | connective",
+    " 1 offering H4503G HNcfsc",
+    " 1 offering H0413 HR",
+    " 1 and H9002 HC | connective",
+    " 2 no H3808 HTn | negator; qualifier negator; negator",
+    " 2 his H9023 HSp3ms",
+    "*3 regard H8159 HVqp3ms | member of this collection",
+    " 4 cain H7014B HNpm | entity (human); party human",
+    " 4 to/for H9005 HR",
+    " 5 very H3966 HAcmsa | qualifier candidate; qualifier morph: adjective",
+    " 6 angry H2734 HVqw3ms | word of another collection; collections anger",
+    " 7 his H9023 HSp3ms",
+    " 8 face H6440M HNcmpc",
+    " 9 fell H5307K HVqw3mp"
+   ]
+  },
+  {
+   "reference": "Gen 24:22",
+   "text": "When the camels had finished drinking, the man took a gold ring weighing a half shekel, and two bracelets for her arms weighing ten gold shekels,",
+   "words": [
+    " 0 camels H1581 HNcbpa",
+    " 0 [the] H9009 HTd",
+    " 1 finished H3615G HVpp3cp | word of another collection; collections fulfill",
+    " 1 finished H1961 HVqw3ms | word of another collection; collections fulfill",
+    " 1 finished H0834A HTr | word of another collection; collections fulfill",
+    " 1 like/as H9004 HR",
+    " 2 drinking H8354 HVqcc",
+    " 2 to/for H9005 HR",
+    " 3 man H0376G HNcmsa | entity (human); party human",
+    " 3 [the] H9009 HTd",
+    " 4 took H3947G HVqw3ms | word of another collection; collections snatch",
+    " 5 gold H2091 HNcmsa",
+    " 6 ring H5141 HNcmsc",
+    "*7 weighing H4948 HNcmsc | member of this collection",
+    " 8 half shekel H1235 HNcmsa",
+    " 9 two H8147 HAcbdc | qualifier candidate; qualifier morph: adjective",
+    " 9 and H9002 HC | connective",
+    " 9 his H9023 HSp3ms",
+    " 10 bracelets H6781A HNcmpa",
+    " 11 arms H3027X HNcbdc",
+    " 11 arms H5921A HR",
+    "*12 weighing H4948 HNcmsc | member of this collection",
+    " 12 their H9028 HSp3mp",
+    " 13 ten H6235 HNcfsa",
+    " 13 her H9024 HSp3fs",
+    " 14 gold shekels H2091 HNcmsa"
+   ]
+  },
+  {
+   "reference": "Gen 31:15",
+   "text": "Are we not regarded by him as foreigners? For he has sold us, and he has indeed devoured our money.",
+   "words": [
+    " 0 not H3808 HTn | negator; qualifier negator; negator",
+    " 0 [¿] H9008 HTi",
+    "*1 regarded H2803H HVNp1cp | member of this collection",
+    " 2 foreigners H5237 HAafpa | qualifier candidate; qualifier morph: adjective",
+    " 3 sold H4376 HVqp3ms",
+    " 3 to/for H9005 HRd",
+    " 3 him H9033 HSp3ms",
+    " 3 for H3588A HTc | connective",
+    " 4 indeed H0398 HVqw3ms",
+    " 4 us H9035 HSp1bp",
+    " 5 devoured H0398 HVqaa",
+    " 5 devoured H1571 HD | qualifier candidate; qualifier morph: adverb",
+    " 6 our H9025 HSp1bp",
+    " 7 money H3701G HNcmsc",
+    " 7 money H0853 HTo"
+   ]
+  },
+  {
+   "reference": "Lev 19:23",
+   "text": "“ When you come into the land and plant any kind of tree for food, then you shall regard its fruit as forbidden. Three years it shall be forbidden to you; it must not be eaten.",
+   "words": [
+    " 0 when H3588A HTc | connective",
+    " 0 and H9002 HC | connective",
+    " 1 come H0935G HVqi2mp",
+    " 2 land H0776G HNcfsa",
+    " 2 [the] H9009 HTd",
+    " 2 land H0413 HR",
+    " 3 plant H5193 HVqq2mp",
+    " 4 any H3605 HNcmsc",
+    " 5 tree H6086H HNcmsc",
+    " 6 food H3978 HNcmsa",
+    "*7 regard H6188 HVqq2mp | member of this collection",
+    " 8 fruit H6529 HNcmsc",
+    " 8 his H9023 HSp3ms",
+    " 8 fruit H0853 HTo",
+    " 9 forbidden H6190H HNcfsc | word of another collection; collections command",
+    " 10 three H7969 HAcbsa | qualifier candidate; qualifier morph: adjective",
+    " 10 his H9023 HSp3ms",
+    " 11 years H8141 HNcmpa",
+    " 12 be H1961 HVqi3ms",
+    " 13 forbidden H6189 HAampa | word of another collection; qualifier morph: adjective; collections command",
+    " 13 to/for H9005 HRd",
+    " 13 you H9036 HSp2mp",
+    " 14 not H3808 HTn | negator; qualifier negator; negator",
+    " 15 eaten H0398 HVNi3ms"
+   ]
+  },
+  {
+   "reference": "Deu 33:9",
+   "text": "who said of his father and mother, ‘I regard them not ’; he disowned his brothers and ignored his children. For they observed your word and kept your covenant.",
+   "words": [
+    " 0 said H0559 HVqrmsa",
+    " 0 [the] H9009 HTd",
+    " 1 father H0001G HNcmsc",
+    " 1 to/for H9005 HR",
+    " 2 mother H0517 HNcfsc",
+    " 2 to/for H9005 HR",
+    " 2 and H9002 HC | connective",
+    " 2 his H9023 HSp3ms",
+    "*3 regard H7200G HVqp1cs | member of this collection",
+    " 4 not H3808 HTn | negator; qualifier negator; negator",
+    " 4 his H9023 HSp3ms",
+    " 5 he H9023 HSp3ms",
+    " 6 disowned H3808 HTn | negator; qualifier negator; negator",
+    " 6 disowned H5234A HVhp3ms | word of another collection; collections forsake",
+    " 7 brothers H0251G HNcmpc",
+    " 7 him H9033 HSp3ms",
+    " 7 brothers H0853 HTo",
+    " 7 and H9002 HC | connective",
+    " 8 ignored H3808 HTn | negator; qualifier negator; negator",
+    " 8 his H9023 HSp3ms",
+    " 8 ignored H3045 HVqp3ms",
+    " 9 children H1121A HNcmpc",
+    " 9 children H0853 HTo",
+    " 9 and H9002 HC | connective",
+    " 10 observed H8104G HVqp3cp | word of another collection; collections watch",
+    " 10 for H3588A HTc | connective",
+    " 11 word H0565A HNcfsc",
+    " 12 kept H5341 HVqi3mp | word of another collection; collections remove",
+    " 12 your H9021 HSp2ms",
+    " 13 covenant H1285 HNcfsc",
+    " 13 and H9002 HC | connective",
+    " 13 your H9021 HSp2ms"
+   ]
+  },
+  {
+   "reference": "Jos 7:21",
+   "text": "when I saw among the spoil a beautiful cloak from Shinar, and 200 shekels of silver, and a bar of gold weighing 50 shekels, then I coveted them and took them. And see, they are hidden in the earth inside my tent, with the silver underneath.”",
+   "words": [
+    " 0 saw H7200G HVqw1cs",
+    " 1 spoil H7998 HNcmsa",
+    " 1 in/on/with H9003 HRd",
+    " 2 a H0259 HAcfsc | qualifier candidate; qualifier morph: adjective",
+    " 3 beautiful H2896A HAafsa | word of another collection; qualifier qualifier subgroup: Good, better, well (a quality of something); morph: adjective; collections beauty",
+    " 4 cloak H0155 HNcfsc",
+    " 5 shinar H8152 HNpl",
+    " 6 200 H3967 HAcfda | qualifier candidate; qualifier morph: adjective",
+    " 6 and H9002 HC | connective",
+    " 7 shekels H8255 HNcmpa",
+    " 8 silver H3701G HNcmsa",
+    " 9 and a H0259 HAcfsa | qualifier candidate; qualifier morph: adjective",
+    " 10 bar H3956I HNcbsc",
+    " 10 and H9002 HC | connective",
+    " 11 gold H2091 HNcmsa",
+    "*12 weighing H4948 HNcmsc | member of this collection",
+    " 13 50 H2572 HAcmpa | qualifier candidate; qualifier morph: adjective",
+    " 14 shekels H8255 HNcmpa",
+    " 15 coveted H2530A HVqw1cs | word of another collection; collections love",
+    " 15 his H9023 HSp3ms",
+    " 16 took H3947G HVqw1cs | word of another collection; collections snatch",
+    " 16 them H9038 HSp3mp",
+    " 17 see H2009 HTj",
+    " 17 and H9002 HC | connective",
+    " 17 them H9038 HSp3mp",
+    " 18 hidden H2934 HVqsmpa | word of another collection; collections conceal",
+    " 18 they H9048 HSp3mp",
+    " 19 earth H0776H HNcfsa",
+    " 19 in/on/with H9003 HRd",
+    " 20 inside H8432 HNcmsc",
+    " 20 in/on/with H9003 HR",
+    " 21 tent H0168G HNcmsc",
+    " 21 [the] H9009 HTd",
+    " 22 silver H3701G HNcmsa",
+    " 22 [the] H9009 HTd",
+    " 22 and H9002 HC | connective",
+    " 22 my H9020 HSp1bs",
+    " 23 underneath H8478G HNcmpc",
+    " 23 her H9034 HSp3fs"
+   ]
+  },
+  {
+   "reference": "1Sa 1:16",
+   "text": "Do not regard your servant as a worthless woman, for all along I have been speaking out of my great anxiety and vexation.”",
+   "words": [
+    "*0 regard H5414I HVqj2ms | member of this collection",
+    " 0 not H0408 HTn | negator",
+    " 1 servant H0519 HNcfsc",
+    " 1 servant H0853 HTo",
+    " 2 worthless H1100G HNcmsa | word of another collection; collections pride",
+    " 3 woman H1323G HNcfsc",
+    " 4 for H6440L HNcmpc",
+    " 4 to/for H9005 HR",
+    " 4 your H9021 HSp2ms",
+    " 5 along H5704 HR",
+    " 5 along H2008 HD | qualifier candidate; qualifier morph: adverb",
+    " 6 speaking H1696G HVpp1cs",
+    " 6 my H9020 HSp1bs",
+    " 7 great H7230 HNcmsc | qualifier candidate; qualifier qualifier subgroup: Abundance, many, great (a quantity)",
+    " 7 from H9006 HR",
+    " 7 great H3588A HTc | connective",
+    " 8 anxiety H7879 HNcmsc | word of another collection; collections fear",
+    " 9 vexation H3708A HNcmsc | word of another collection; collections anger",
+    " 9 and H9002 HC | connective",
+    " 9 my H9020 HSp1bs"
+   ]
+  },
+  {
+   "reference": "1Sa 25:25",
+   "text": "Let not my lord regard this worthless fellow, Nabal, for as his name is, so is he. Nabal is his name, and folly is with him. But I your servant did not see the young men of my lord, whom you sent.",
+   "words": [
+    " 0 let H7760K HVqj3ms",
+    " 0 let H0408 HTn | negator; qualifier negator; negator",
+    " 0 let H4994 HTj",
+    " 1 lord H0113 HNcmsc",
+    "*2 regard H3820A HNcmsc | member of this collection",
+    " 2 my H9020 HSp1bs",
+    "*2 regard H0853 HTo | member of this collection",
+    " 3 worthless H1100G HNcmsa | word of another collection; collections pride",
+    " 3 [the] H9009 HTd",
+    " 4 fellow H0376G HNcmsc | entity (human); party human",
+    " 4 his H9023 HSp3ms",
+    " 4 fellow H0413 HR",
+    " 5 nabal H5037 HNpm | entity (human); party human",
+    " 5 nabal H2088 HTm",
+    " 5 [the] H9009 HTd",
+    " 5 nabal H5921A HR",
+    " 6 name H8034 HNcmsc",
+    " 6 like/as H9004 HR",
+    " 6 for H3588A HTc | connective",
+    " 7 he H1931 HPp3ms",
+    " 8 nabal H5037 HNpm | entity (human); party human",
+    " 8 his H9023 HSp3ms",
+    " 8 nabal H3651C HD | qualifier candidate; qualifier morph: adverb",
+    " 9 name H8034 HNcmsc",
+    " 10 folly H5039 HNcfsa | word of another collection; collections folly",
+    " 10 and H9002 HC | connective",
+    " 10 his H9023 HSp3ms",
+    " 11 i H0589 HPp1bs",
+    " 12 servant H0519 HNcfsc",
+    " 12 servant H5973A HRd",
+    " 12 him H9033 HSp3ms",
+    " 12 and H9002 HC | connective",
+    " 13 not H3808 HTn | negator; qualifier negator; negator",
+    " 14 see H7200G HVqp1cs",
+    " 14 your H9021 HSp2ms",
+    " 15 young men H5288 HNcmpc | entity (human); party human",
+    " 15 young men H0853 HTo",
+    " 16 lord H0113 HNcmsc",
+    " 17 sent H7971G HVqp2ms",
+    " 17 my H9020 HSp1bs",
+    " 17 sent H0834A HTr | connective"
+   ]
+  },
+  {
+   "reference": "1Ki 10:21",
+   "text": "All King Solomon’s drinking vessels were of gold, and all the vessels of the House of the Forest of Lebanon were of pure gold. None were of silver; silver was not considered as anything in the days of Solomon.",
+   "words": [
+    " 0 all H3605 HNcmsc",
+    " 0 and H9002 HC | connective",
+    " 1 king H4428G HNcmsa",
+    " 1 [the] H9009 HTd",
+    " 2 solomon’s H8010 HNpm | entity (human); party human",
+    " 3 drinking H4945B HNcmsc",
+    " 4 vessels H3627 HNcmpc",
+    " 5 gold H2091 HNcmsa",
+    " 6 all H3605 HNcmsc",
+    " 6 and H9002 HC | connective",
+    " 7 vessels H3627 HNcmpc",
+    " 8 house H1004K HNcmsc",
+    " 9 forest H3293I HNcmsc",
+    " 10 lebanon H3844J HNpl",
+    " 10 [the] H9009 HTd",
+    " 11 pure H5462 HNcmsa | word of another collection; collections cleanse",
+    " 12 gold H2091 HNcmsa",
+    " 13 none H3808 HTn | negator; qualifier negator; negator",
+    " 14 silver H3701G HNcmsa",
+    " 15 not H0369 HNcmsc",
+    "*16 considered H2803H HVNrmsa | member of this collection",
+    " 17 anything H3972 HNcfsa",
+    " 17 to/for H9005 HR",
+    " 18 days H3117G HNcmpc",
+    " 18 in/on/with H9003 HR",
+    " 19 solomon H8010 HNpm | entity (human); party human"
+   ]
+  },
+  {
+   "reference": "2Ki 3:14",
+   "text": "And Elisha said, “As the Lord of hosts lives, before whom I stand, were it not that I have regard for Jehoshaphat the king of Judah, I would neither look at you nor see you.",
+   "words": [
+    " 0 elisha H0477 HNpm | entity (human); party human",
+    " 1 said H0559 HVqw3ms",
+    " 2 lord H3068G HNpt | entity (divine); party divine",
+    " 3 hosts H6635B HNcfpa",
+    " 4 lives H2416A HAamsa | word of another collection; qualifier morph: adjective; collections live",
+    " 5 before H6440G HNcmpc",
+    " 5 to/for H9005 HR",
+    " 6 whom H0834A HTr | connective",
+    " 7 stand H5975G HVqp1cs",
+    " 8 not H3884 HTc | connective",
+    " 9 that H3588A HTc | connective",
+    " 9 his H9023 HSp3ms",
+    " 10 i H0589 HPp1bs",
+    "*11 regard H5375Q HVqrmsa | member of this collection",
+    " 12 for H6440L HNcmpc",
+    " 13 jehoshaphat H3092I HNpm | entity (human); party human",
+    " 14 king H4428G HNcmsc",
+    " 15 judah H3063G HNpl",
+    " 16 neither H0518H HTc | connective",
+    " 17 look H5027 HVhi1cs",
+    " 18 nor H0518H HTc | connective",
+    " 18 and H9002 HC | connective",
+    " 18 nor H0413 HR",
+    " 18 you H9031 HSp2ms",
+    " 19 see H7200G HVqi1cs",
+    " 20 you H9031 HSp2ms"
+   ]
+  },
+  {
+   "reference": "Job 1:8",
+   "text": "And the Lord said to Satan, “Have you considered my servant Job, that there is none like him on the earth, a blameless and upright man, who fears God and turns away from evil?”",
+   "words": [
+    " 0 lord H3068G HNpt | entity (divine); party divine",
+    " 1 said H0559 HVqw3ms",
+    " 2 to H0413 HR",
+    " 3 satan H7854 HNtmsa",
+    " 3 [the] H9009 HTd",
+    "*4 considered H7760K HVqp2ms | member of this collection",
+    " 4 [¿] H9008 HTi",
+    "*4 considered H3820A HNcmsc | member of this collection",
+    " 5 servant H5650 HNcmsc | entity (human); party human",
+    " 5 your H9021 HSp2ms",
+    " 5 servant H5921A HR",
+    " 6 job H0347 HNpm | entity (human); party human",
+    " 6 my H9020 HSp1bs",
+    " 7 none H0369 HNcmsc",
+    " 7 none H3588A HTc | connective",
+    " 8 like H3644G HR",
+    " 9 earth H0776G HNcfsa",
+    " 9 in/on/with H9003 HRd",
+    " 9 him H9033 HSp3ms",
+    " 10 blameless H8535 HAamsa | word of another collection; qualifier morph: adjective; collections innocent",
+    " 11 upright H3477G HAamsa | word of another collection; qualifier morph: adjective; collections upright",
+    " 11 and H9002 HC | connective",
+    " 12 man H0376G HNcmsa | entity (human); party human",
+    " 13 fears H3373 HAamsc | word of another collection; qualifier morph: adjective; collections fear",
+    " 14 god H0430G HNcmpa | entity (divine); party divine",
+    " 15 away H5493I HVqrmsa",
+    " 16 evil H7451B HAamsa | word of another collection; qualifier qualifier subgroup: Bad (a quality of something); morph: adjective; collections evildoer",
+    " 16 from H9006 HR"
+   ]
+  },
+  {
+   "reference": "Job 2:3",
+   "text": "And the Lord said to Satan, “Have you considered my servant Job, that there is none like him on the earth, a blameless and upright man, who fears God and turns away from evil? He still holds fast his integrity, although you incited me against him to destroy him without reason.”",
+   "words": [
+    " 0 lord H3068G HNpt | entity (divine); party divine",
+    " 1 said H0559 HVqw3ms",
+    " 2 to H0413 HR",
+    " 3 satan H7854 HNtmsa",
+    " 3 [the] H9009 HTd",
+    "*4 considered H3820A HNcmsc | member of this collection",
+    "*4 considered H7760K HVqp2ms | member of this collection",
+    " 4 [¿] H9008 HTi",
+    " 5 servant H5650 HNcmsc | entity (human); party human",
+    " 5 your H9021 HSp2ms",
+    " 5 servant H0413 HR",
+    " 6 job H0347 HNpm | entity (human); party human",
+    " 6 my H9020 HSp1bs",
+    " 7 that H3588A HTc | connective",
+    " 8 none H0369 HNcmsc",
+    " 9 like him H3644G HR",
+    " 10 earth H0776G HNcfsa",
+    " 10 in/on/with H9003 HRd",
+    " 10 him H9033 HSp3ms",
+    " 11 blameless H8535 HAamsa | word of another collection; qualifier morph: adjective; collections innocent",
+    " 12 upright H3477G HAamsa | word of another collection; qualifier morph: adjective; collections upright",
+    " 12 and H9002 HC | connective",
+    " 13 man H0376G HNcmsa | entity (human); party human",
+    " 14 fears H3373 HAamsc | word of another collection; qualifier morph: adjective; collections fear",
+    " 15 god H0430G HNcmpa | entity (divine); party divine",
+    " 16 away H5493I HVqrmsa",
+    " 17 evil H7451B HAamsa | word of another collection; qualifier qualifier subgroup: Bad (a quality of something); morph: adjective; collections evildoer",
+    " 17 from H9006 HR",
+    " 18 still H5750 HAcmsc | word of another collection; qualifier morph: adjective; collections mute",
+    " 18 and H9002 HC | connective",
+    " 19 fast H2388H HVhrmsa | word of another collection; collections fast",
+    " 19 he H9043 HSp3ms",
+    " 20 integrity H8538 HNcfsc | word of another collection; collections innocent",
+    " 20 in/on/with H9003 HR",
+    " 21 incited H5496 HVhw2ms",
+    " 21 his H9023 HSp3ms",
+    " 22 destroy H1104 HVpcc | word of another collection; collections destruction",
+    " 22 to/for H9005 HR",
+    " 22 me H9030 HSp1bs",
+    " 22 in/on/with H9003 HR",
+    " 22 him H9033 HSp3ms",
+    " 23 without reason H2600 HD | qualifier candidate; qualifier morph: adverb",
+    " 23 him H9033 HSp3ms"
+   ]
+  },
+  {
+   "reference": "Job 9:21",
+   "text": "I am blameless; I regard not myself; I loathe my life.",
+   "words": [
+    " 0 blameless H8535 HAamsa | word of another collection; qualifier morph: adjective; collections innocent",
+    " 1 i H0589 HPp1bs",
+    "*2 regard H3045 HVqi1cs | member of this collection",
+    "*2 regard H3808 HTn | member of this collection; qualifier negator; negator",
+    " 3 myself H5315G HNcfsc",
+    " 4 i H9020 HSp1bs",
+    " 5 loathe H3988A HVqi1cs | word of another collection; collections love",
+    " 6 my H9020 HSp1bs",
+    " 7 life H2416E HNcmpc"
+   ]
+  },
+  {
+   "reference": "Job 34:27",
+   "text": "because they turned aside from following him and had no regard for any of his ways,",
+   "words": [
+    " 0 because H0834A HTr | connective",
+    " 1 turned aside H5493I HVqp3cp | word of another collection; collections turn",
+    " 1 turned aside H5921A HR | word of another collection; collections turn",
+    " 1 turned aside H3651C HD | word of another collection; qualifier morph: adverb; collections turn",
+    " 2 following him H0310A HAcmpc | qualifier candidate; qualifier morph: adjective",
+    " 2 from H9006 HR",
+    " 3 no H3808 HTn | negator; qualifier negator; negator",
+    " 3 his H9023 HSp3bs",
+    "*4 regard H7919A HVhp3cp | member of this collection",
+    " 5 any H3605 HNcmsc",
+    " 6 ways H1870G HNcmpc",
+    " 6 him H9033 HSp3ms",
+    " 6 and H9002 HC | connective"
+   ]
+  },
+  {
+   "reference": "Job 35:13",
+   "text": "Surely God does not hear an empty cry, nor does the Almighty regard it.",
+   "words": [
+    " 0 surely H0389 HD | word of another collection; qualifier morph: adverb; collections loyalty",
+    " 1 god H0410G HNcmsa | entity (divine); party divine",
+    " 2 not H3808 HTn | negator; qualifier negator; negator",
+    " 3 hear H8085G HVqi3ms | word of another collection; collections hear",
+    " 4 empty H7723H HNcmsa | word of another collection; collections fill",
+    " 5 nor H3808 HTn | negator; qualifier negator; negator",
+    " 6 almighty H7706 HNpt | entity (divine); party divine",
+    " 6 and H9002 HC | connective",
+    "*7 regard H7789 HVqi3ms | member of this collection",
+    " 8 it H9034 HSp3fs"
+   ]
+  },
+  {
+   "reference": "Job 37:24",
+   "text": "Therefore men fear him; he does not regard any who are wise in their own conceit.”",
+   "words": [
+    " 0 therefore H3651C HD | qualifier candidate; qualifier morph: adverb",
+    " 0 to/for H9005 HR",
+    " 1 men H0582 HNcmpa | entity (human); party human",
+    " 1 him H9033 HSp3ms",
+    " 2 fear H3372H HVqp3cp | word of another collection; collections fear",
+    " 3 not H3808 HTn | negator; qualifier negator; negator",
+    "*4 regard H7200G HVqi3ms | member of this collection",
+    " 5 any H3605 HNcmsc",
+    " 6 wise H2450 HAampc | word of another collection; qualifier morph: adjective; collections wise",
+    " 7 conceit H3820A HNcmsa | word of another collection; collections pride"
+   ]
+  },
+  {
+   "reference": "Psa 28:5",
+   "text": "Because they do not regard the works of the Lord or the work of his hands, he will tear them down and build them up no more.",
+   "words": [
+    " 0 because H3588A HTc | connective",
+    " 1 not H3808 HTn | negator; qualifier negator; negator",
+    "*2 regard H0995 HVqi3mp | member of this collection",
+    " 3 works H6468 HNcfpc | word of another collection; collections labor",
+    " 3 works H0413 HR | word of another collection; collections labor",
+    " 4 lord H3068G HNpt | entity (divine); party divine",
+    " 5 work H4639G HNcmsc | word of another collection; collections labor",
+    " 5 work H0413 HR | word of another collection; collections labor",
+    " 5 and H9002 HC | connective",
+    " 6 hands H3027G HNcbdc",
+    " 7 he H9023 HSp3ms",
+    " 8 tear H2040 HVqi3ms",
+    " 9 build H1129 HVqi3ms | word of another collection; collections build",
+    " 9 them H9038 HSp3mp",
+    " 9 build H3808 HTn | negator; qualifier negator; negator",
+    " 9 and H9002 HC | connective",
+    " 10 them H9038 HSp3mp"
+   ]
+  },
+  {
+   "reference": "Pro 12:10",
+   "text": "Whoever is righteous has regard for the life of his beast, but the mercy of the wicked is cruel.",
+   "words": [
+    " 0 righteous H6662 HAamsa | word of another collection; qualifier morph: adjective; collections righteous",
+    "*1 regard H3045 HVqrmsa | member of this collection",
+    " 2 life H5315H HNcfsc",
+    " 3 beast H0929 HNcfsc",
+    " 4 mercy H7356B HNcmpc | word of another collection; collections forgive",
+    " 4 and H9002 HC | connective",
+    " 4 his H9023 HSp3ms",
+    " 5 wicked H7563 HNcmpa | word of another collection; collections evildoer",
+    " 6 cruel H0394 HAamsa | word of another collection; qualifier morph: adjective; collections cruel"
+   ]
+  },
+  {
+   "reference": "Pro 17:28",
+   "text": "Even a fool who keeps silent is considered wise; when he closes his lips, he is deemed intelligent.",
+   "words": [
+    " 0 even H1571 HD | qualifier candidate; qualifier morph: adverb",
+    " 1 fool H0191 HAamsa | word of another collection; qualifier morph: adjective; collections folly",
+    " 2 silent H2790B HVhrmsa | word of another collection; collections mute",
+    "*3 considered H2803J HVNi3ms | member of this collection",
+    " 4 wise H2450 HAamsa | word of another collection; qualifier morph: adjective; collections wise",
+    " 5 closes H0331 HVqrmsa",
+    " 6 lips H8193G HNcfdc",
+    " 7 intelligent H0995 HVNrmsa | word of another collection; collections wise",
+    " 7 his H9023 HSp3ms"
+   ]
+  },
+  {
+   "reference": "Ecc 12:9",
+   "text": "Besides being wise, the Preacher also taught the people knowledge, weighing and studying and arranging many proverbs with great care.",
+   "words": [
+    " 0 besides H3148 HNcmsa",
+    " 0 and H9002 HC | connective",
+    " 1 wise H2450 HAamsa | word of another collection; qualifier morph: adjective; collections wise",
+    " 2 preacher H6953 HNcfsa",
+    " 2 preacher H1961 HVqp3ms",
+    " 2 which/that H9007 HTr",
+    " 3 also H5750 HAcmsa | qualifier candidate; qualifier morph: adjective",
+    " 4 taught H3925G HVpp3ms | word of another collection; collections teach",
+    " 5 people H5971A HNcmsa",
+    " 5 [the] H9009 HTd",
+    " 5 people H0853 HTo",
+    " 6 knowledge H1847 HNcfsa | word of another collection; collections know",
+    "*7 weighing H0239 HVpq3ms | member of this collection",
+    " 8 studying H2713 HVpq3ms",
+    " 9 arranging H8626 HVpp3ms",
+    " 10 many H7235A HVhaa",
+    " 11 proverbs H4912 HNcmpa"
+   ]
+  },
+  {
+   "reference": "Isa 5:12",
+   "text": "They have lyre and harp, tambourine and flute and wine at their feasts, but they do not regard the deeds of the Lord, or see the work of his hands.",
+   "words": [
+    " 0 lyre H5035B HNcmsa",
+    " 0 and H9002 HC | connective",
+    " 1 harp H3658 HNcmsa",
+    " 1 harp H1961 HVqq3ms",
+    " 2 tambourine H8596 HNcmsa",
+    " 3 flute H2485 HNcmsa",
+    " 3 and H9002 HC | connective",
+    " 4 wine H3196 HNcmsa",
+    " 4 and H9002 HC | connective",
+    " 5 feasts H4960 HNcmsc",
+    " 6 not H3808 HTn | negator; qualifier negator; negator",
+    "*7 regard H5027 HVhi3mp | member of this collection",
+    " 8 deeds H6467 HNcmsc",
+    " 8 their H9028 HSp3mp",
+    " 8 deeds H0853 HTo",
+    " 8 and H9002 HC | connective",
+    " 9 lord H3068G HNpt | entity (divine); party divine",
+    " 10 or H3808 HTn | negator; qualifier negator; negator",
+    " 10 his H9023 HSp3ms",
+    " 11 see H7200G HVqp3cp",
+    " 12 work H4639G HNcmsc | word of another collection; collections labor",
+    " 12 and H9002 HC | connective",
+    " 13 hands H3027G HNcbdc"
+   ]
+  },
+  {
+   "reference": "Isa 13:17",
+   "text": "Behold, I am stirring up the Medes against them, who have no regard for silver and do not delight in gold.",
+   "words": [
+    " 0 behold H2005 HTj",
+    " 1 i H9040 HSp1bs",
+    " 2 stirring up H5782 HVhrmsa",
+    " 3 medes H4074I HNpl",
+    " 3 them H9038 HSp3mp",
+    " 3 medes H0853 HTo",
+    " 4 against H5921A HR",
+    " 5 who H0834A HTr | connective",
+    " 6 no H3808 HTn | negator; qualifier negator; negator",
+    "*7 regard H2803H HVqi3mp | member of this collection",
+    " 8 silver H3701G HNcmsa",
+    " 9 not H3808 HTn | negator; qualifier negator; negator",
+    " 10 delight H2654A HVqi3mp | word of another collection; collections delight",
+    " 11 in/on/with H9003 HR",
+    " 11 him H9033 HSp3ms",
+    " 12 gold H2091 HNcmsa",
+    " 12 and H9002 HC | connective"
+   ]
+  },
+  {
+   "reference": "Isa 29:16",
+   "text": "You turn things upside down! Shall the potter be regarded as the clay, that the thing made should say of its maker, “He did not make me”; or the thing formed say of him who formed it, “He has no understanding ”?",
+   "words": [
+    " 0 upside down H2017 HNcmsc",
+    " 1 potter H3335H HNcmsa | entity (human); party human",
+    " 1 [the] H9009 HTd",
+    "*2 regarded H2803J HVNi3ms | member of this collection",
+    " 3 clay H2563A HNcmsc",
+    " 3 like/as H9004 HR",
+    " 3 your H9026 HSp2mp",
+    " 3 clay H0518H HTc | connective",
+    " 4 that H3588A HTc | connective",
+    " 5 thing made H4639G HNcmsa",
+    " 6 say H0559 HVqi3ms",
+    " 7 maker H6213H HVqrmsc",
+    " 7 to/for H9005 HR",
+    " 8 not H3808 HTn | negator; qualifier negator; negator",
+    " 8 him H9033 HSp3ms",
+    " 9 make H6213H HVqp3ms",
+    " 10 thing formed H3336 HNcmsa",
+    " 10 and H9002 HC | connective",
+    " 10 me H9030 HSp1bs",
+    " 11 formed H3335G HVqrmsc",
+    " 11 to/for H9005 HR",
+    " 11 say H0559 HVqp3ms",
+    " 12 no H3808 HTn | negator; qualifier negator; negator",
+    " 12 him H9033 HSp3ms",
+    " 13 understanding H0995 HVhp3ms | word of another collection; collections wise"
+   ]
+  },
+  {
+   "reference": "Isa 29:17",
+   "text": "Is it not yet a very little while until Lebanon shall be turned into a fruitful field, and the fruitful field shall be regarded as a forest?",
+   "words": [
+    " 0 not H3808 HTn | negator; qualifier negator; negator",
+    " 0 [¿] H9008 HTi",
+    " 1 yet H5750 HAcmsa | qualifier candidate; qualifier morph: adjective",
+    " 2 very H4213 HNcmsa",
+    " 3 little while H4592 HNcmsc",
+    " 4 lebanon H3844G HNpl",
+    " 5 turned H7725G HVqq3ms | word of another collection; collections turn",
+    " 6 fruitful field H3759 HNcmsa",
+    " 6 to/for H9005 HRd",
+    " 7 fruitful field H3759 HNcmsa",
+    " 7 and H9002 HC | connective",
+    " 7 [the] H9009 HTd",
+    "*8 regarded H2803J HVNi3ms | member of this collection",
+    " 9 forest H3293A HNcmsa",
+    " 9 to/for H9005 HRd"
+   ]
+  },
+  {
+   "reference": "Isa 33:8",
+   "text": "The highways lie waste; the traveler ceases. Covenants are broken; cities are despised; there is no regard for man.",
+   "words": [
+    " 0 highways H4546 HNcfpa",
+    " 1 waste H8074G HVNp3cp",
+    " 2 traveler H5674A HVqrmsc",
+    " 2 traveler H0734 HNcmsa",
+    " 3 ceases H7673A HVqp3ms | word of another collection; collections mute",
+    " 4 covenants H1285 HNcfsa",
+    " 5 broken H6565A HVhp3ms | word of another collection; collections shatter",
+    " 6 cities H5892B HNcmpa",
+    " 7 despised H3988A HVqp3ms | word of another collection; collections scoff",
+    " 8 no H3808 HTn | negator; qualifier negator; negator",
+    "*9 regard H2803H HVqp3ms | member of this collection",
+    " 10 man H0582 HNcmsa | entity (human); party human"
+   ]
+  },
+  {
+   "reference": "Isa 53:8",
+   "text": "By oppression and judgment he was taken away; and as for his generation, who considered that he was cut off out of the land of the living, stricken for the transgression of my people?",
+   "words": [
+    " 0 by H9006 HR",
+    " 1 oppression H6115 HNcmsa | word of another collection; collections oppress",
+    " 2 judgment H4941G HNcmsa | word of another collection; collections wise",
+    " 3 away H3947G HVPp3ms",
+    " 4 generation H1755 HNcmsc",
+    " 4 generation H0853 HTo",
+    " 4 and H9002 HC | connective",
+    " 5 who H4310 HPi",
+    " 5 his H9023 HSp3ms",
+    "*6 considered H7878 HVpi3ms | member of this collection",
+    " 7 that H3588A HTc | connective",
+    " 8 cut off H1504 HVNp3ms",
+    " 9 from H9006 HR",
+    " 9 and H9002 HC | connective",
+    " 10 land H0776G HNcfsc",
+    " 11 living H2416A HAampa | word of another collection; qualifier morph: adjective; collections live",
+    " 12 stricken H5061 HNcmsa",
+    " 12 my H9020 HSp1bs",
+    " 12 to/for H9005 HR",
+    " 12 them H9038 HSp3mp",
+    " 13 for H9006 HR",
+    " 14 transgression H6588 HNcmsc | word of another collection; collections crime",
+    " 14 from H9006 HR",
+    " 15 people H5971A HNcmsc"
+   ]
+  },
+  {
+   "reference": "Jer 24:5",
+   "text": "“ Thus says the Lord, the God of Israel: Like these good figs, so I will regard as good the exiles from Judah, whom I have sent away from this place to the land of the Chaldeans.",
+   "words": [
+    " 0 thus H3541 HD | qualifier candidate; qualifier morph: adverb",
+    " 1 says H0559 HVqp3ms",
+    " 2 lord H3068G HNpt | entity (divine); party divine",
+    " 3 god H0430G HNcmpc | entity (divine); party divine",
+    " 4 israel H3478 HNpl",
+    " 5 these H0428 HTm",
+    " 5 [the] H9009 HTd",
+    " 6 good H2896A HAafpa | qualifier candidate; qualifier qualifier subgroup: Good, better, well (a quality of something); morph: adjective",
+    " 6 to/for H9005 HR",
+    " 7 figs H8384 HNcmpa",
+    " 7 like/as H9004 HRd",
+    " 8 so H3651C HD | qualifier candidate; qualifier morph: adverb",
+    "*9 regard H5234A HVhi1cs | member of this collection",
+    " 10 good H2896C HNcfsa",
+    " 10 [the] H9009 HTd",
+    " 11 exiles H1546 HNcfsc",
+    " 11 exiles H0853 HTo",
+    " 12 judah H3063G HNpl",
+    " 13 whom H0834A HTr | connective",
+    " 14 sent H7971G HVpp1cs",
+    " 15 from H4480A HR",
+    " 16 this H2088 HTm",
+    " 16 [the] H9009 HTd",
+    " 17 place H4725 HNcmsa",
+    " 17 [the] H9009 HTd",
+    " 18 land H0776G HNcfsc",
+    " 19 chaldeans H3778 HNpl"
+   ]
+  },
+  {
+   "reference": "Lam 4:2",
+   "text": "The precious sons of Zion, worth their weight in fine gold, how they are regarded as earthen pots, the work of a potter’s hands!",
+   "words": [
+    " 0 precious H3368 HAampa | word of another collection; qualifier morph: adjective; collections love",
+    " 0 [the] H9009 HTd",
+    " 1 sons H1121G HNcmpc",
+    " 2 zion H6726 HNpl",
+    " 3 weight H5537 HVPsmpa",
+    " 3 [the] H9009 HTd",
+    " 4 fine gold H6337 HNcmsa",
+    " 4 in/on/with H9003 HRd",
+    " 5 how H0349B HTi",
+    "*6 regarded H2803H HVNp3cp | member of this collection",
+    " 7 earthen H2789 HNcmsa",
+    " 8 pots H5035A HNcmpc",
+    " 8 to/for H9005 HR",
+    " 9 work H4639G HNcmsc | word of another collection; collections labor",
+    " 10 potter’s H3335H HNcmsa | entity (human); party human",
+    " 11 hands H3027G HNcbdc"
+   ]
+  },
+  {
+   "reference": "Lam 4:16",
+   "text": "The Lord himself has scattered them; he will regard them no more; no honor was shown to the priests, no favor to the elders.",
+   "words": [
+    " 0 lord H3068G HNpt | entity (divine); party divine",
+    " 1 himself H6440L HNcmpc",
+    " 2 scattered H2505A HVpp3ms",
+    "*3 regard H5027 HVhcc | member of this collection",
+    " 3 to/for H9005 HR",
+    " 4 no H3808 HTn | negator; qualifier negator; negator",
+    " 4 them H9038 HSp3mp",
+    " 5 more H3254G HVhi3ms",
+    " 6 honor H6440N HNcmpc | word of another collection; collections honor",
+    " 6 them H9038 HSp3mp",
+    " 7 shown H5375Q HVqp3cp",
+    " 7 shown H3808 HTn | negator; qualifier negator; negator",
+    " 8 priests H3548 HNcmpa | entity (human); party human",
+    " 9 no H3808 HTn | negator; qualifier negator; negator",
+    " 10 favor H2603A HVqp3cp | word of another collection; collections delight",
+    " 11 elders H2205G HAampa | qualifier candidate; qualifier morph: adjective"
+   ]
+  },
+  {
+   "reference": "Eze 5:1",
+   "text": "“And you, O son of man, take a sharp sword. Use it as a barber’s razor and pass it over your head and your beard. Then take balances for weighing and divide the hair.",
+   "words": [
+    " 0 you H0859A HPp2ms",
+    " 0 and H9002 HC | connective",
+    " 1 son H1121A HNcmsc",
+    " 2 man H0120G HNcmsa | entity (human); party human",
+    " 3 take H3947G HVqv2ms | word of another collection; collections snatch",
+    " 4 sharp H2299 HAafsa | qualifier candidate; qualifier morph: adjective",
+    " 5 sword H2719 HNcfsa",
+    " 5 to/for H9005 HR",
+    " 5 you H9031 HSp2ms",
+    " 6 use H3947G HVqi2ms",
+    " 7 barber’s H1532 HNcmpa",
+    " 7 [the] H9009 HTd",
+    " 8 razor H8593 HNcbsc",
+    " 9 pass H5674A HVhq2ms",
+    " 9 her H9034 HSp3fs",
+    " 9 to/for H9005 HR",
+    " 9 you H9032 HSp2ms",
+    " 10 over H5921A HR",
+    " 11 head H7218A HNcmsc",
+    " 12 and H5921A HR",
+    " 12 and H9002 HC | connective",
+    " 12 your H9021 HSp2ms",
+    " 13 beard H2206 HNcmsc",
+    " 14 take H3947G HVqq2ms | word of another collection; collections snatch",
+    " 14 your H9021 HSp2ms",
+    " 15 balances H3976 HNcmdc",
+    " 15 to/for H9005 HR",
+    " 15 you H9031 HSp2ms",
+    "*16 weighing H4948 HNcmsa | member of this collection",
+    " 17 divide H2505A HVpq2ms",
+    " 17 them H9038 HSp3mp"
+   ]
+  },
+  {
+   "reference": "Eze 18:28",
+   "text": "Because he considered and turned away from all the transgressions that he had committed, he shall surely live; he shall not die.",
+   "words": [
+    "*0 considered H7200H HVqw3ms | member of this collection",
+    " 1 turned away H7725O HVqw3ms | word of another collection; collections turn",
+    " 2 from H9006 HR",
+    " 3 all H3605 HNcmsc",
+    " 4 transgressions H6588 HNcmpc | word of another collection; collections sin",
+    " 5 that H0834A HTr | connective",
+    " 5 his H9023 HSp3ms",
+    " 6 committed H6213H HVqp3ms | word of another collection; collections dedicate",
+    " 7 surely H2421 HVqaa | word of another collection; collections loyalty",
+    " 8 live H2421 HVqi3ms | word of another collection; collections live",
+    " 9 not H3808 HTn | negator; qualifier negator; negator",
+    " 10 die H4191 HVqi3ms | word of another collection; collections die"
+   ]
+  },
+  {
+   "reference": "Dan 7:8",
+   "text": "I considered the horns, and behold, there came up among them another horn, a little one, before which three of the first horns were plucked up by the roots. And behold, in this horn were eyes like the eyes of a man, and a mouth speaking great things.",
+   "words": [
+    "*0 considered H1934 AVqp1cs | member of this collection",
+    "*0 considered H7920 AVMrmsa | member of this collection",
+    " 1 horns H7162 ANcmpd",
+    " 1 in/on/with H9003 AR",
+    " 2 behold H0431 ATj",
+    " 2 and H9002 AC | connective",
+    " 2 [the] H9010 ATa",
+    " 3 came up H5559 AVqp3fs",
+    " 4 among H0997 ANcmpc",
+    " 4 them H9039 ASp3fp",
+    " 5 another H0317 AAabsa | qualifier candidate; qualifier morph: adjective",
+    " 6 horn H7162 ANcbsa",
+    " 7 little H2192 AAafsa | qualifier candidate; qualifier morph: adjective",
+    " 8 before H4481 AR",
+    " 8 before H6925 ANcbsc",
+    " 9 three H8532 AAcbsa | qualifier candidate; qualifier morph: adjective",
+    " 9 and H9002 AC | connective",
+    " 10 of H4481 AR",
+    " 11 first H6933 AAofpd | qualifier candidate; qualifier morph: adjective",
+    " 11 [the] H9010 ATa",
+    " 12 horns H7162 ANcmpd",
+    " 13 roots H6132 AVip3fp",
+    " 13 [the] H9010 ATa",
+    " 14 behold H0431 ATj",
+    " 14 and H9002 AC | connective",
+    " 14 her H9034 ASp3fs",
+    " 15 in this H1668 ATm",
+    " 15 [the] H9010 ATa",
+    " 16 horn H7162 ANcbsd",
+    " 16 in/on/with H9003 AR",
+    " 16 [the] H9010 ATa",
+    " 17 eyes H5870 ANcmpa",
+    " 18 eyes H5870 ANcmpc",
+    " 18 like/as H9004 AR",
+    " 19 man H0606 ANcbsd",
+    " 20 mouth H6433 ANcbsa",
+    " 20 and H9002 AC | connective",
+    " 21 speaking H4449 AVprmsa",
+    " 22 great things H7260 AAafpa | word of another collection; qualifier morph: adjective; collections mighty"
+   ]
+  },
+  {
+   "reference": "Hos 8:12",
+   "text": "Were I to write for him my laws by the ten thousands, they would be regarded as a strange thing.",
+   "words": [
+    " 0 write H3789 HVqi1cs",
+    " 1 for him H7230 HNcmpc | qualifier candidate; qualifier qualifier subgroup: Abundance, many, great (a quantity)",
+    " 1 for him H3789 HSp3ms",
+    " 1 to/for H9005 HR",
+    " 2 laws H8451 HNcfsc",
+    "*3 regarded H2803H HVNp3cp | member of this collection",
+    " 4 strange H2114A HAamsa | qualifier candidate; qualifier morph: adjective",
+    " 4 my H9020 HSp1bs",
+    " 4 strange H3644G HR"
+   ]
+  },
+  {
+   "reference": "Mat 1:20",
+   "text": "But as he considered these things, behold, an angel of the Lord appeared to him in a dream, saying, “ Joseph, son of David, do not fear to take Mary as your wife, for that which is conceived in her is from the Holy Spirit.",
+   "words": [
+    " 0 but G1161 CONJ | connective",
+    " 1 he G0846 P-GSM",
+    "*2 considered G1760 V-AOP-GSM | member of this collection",
+    " 3 things G3778 D-APN",
+    " 4 behold G2400 INJ",
+    " 5 angel G0032G N-NSM",
+    " 6 lord G2962G N-GSM-T | entity (divine); party divine",
+    " 7 appeared G5316 V-2API-3S",
+    " 8 him G0846 P-DSM",
+    " 9 in G2596 PREP",
+    " 10 dream G3677 N-ASN",
+    " 11 saying G3004G V-PAP-NSM",
+    " 12 joseph G2501G N-VSM-P",
+    " 13 son G5207 N-NSM",
+    " 14 david G1138 N-GSM-P | entity (human); party human",
+    " 15 not G3361 PRT-N | negator; qualifier negator; negator",
+    " 16 fear G5399 V-AOS-2S | word of another collection; collections fear",
+    " 17 take G3880 V-2AAN | word of another collection; collections snatch",
+    " 18 mary G3137G N-ASF-P",
+    " 19 your G4675 P-2GS",
+    " 20 wife G1135H N-ASF | entity (human); party human",
+    " 21 for G1063 CONJ | connective",
+    " 22 conceived G1080 V-APP-NSN",
+    " 23 in G1722 PREP",
+    " 24 her G0846 P-DSF",
+    " 25 is G1510 V-PAI-3S",
+    " 26 from G1537 PREP",
+    " 27 holy G0040G A-GSN | word of another collection; qualifier morph: adjective; collections godly",
+    " 28 spirit G4151G N-GSN"
+   ]
+  },
+  {
+   "reference": "Mar 10:42",
+   "text": "And Jesus called them to him and said to them, “You know that those who are considered rulers of the Gentiles lord it over them, and their great ones exercise authority over them.",
+   "words": [
+    " 0 and G1161 CONJ | connective",
+    " 1 jesus G2424G N-NSM-P | entity (divine); party divine",
+    " 2 called G4341 V-ADP-NSM | word of another collection; collections call",
+    " 3 them G0846 P-APM",
+    " 4 said G3004G V-PAI-3S",
+    " 5 them G0846 P-DPM",
+    " 6 know G6063 V-RAI-2P | word of another collection; collections know",
+    " 7 that G3754G CONJ | connective",
+    "*8 considered G1380 V-PAP-NPM | member of this collection",
+    " 9 rulers G0757 V-PAN",
+    " 10 gentiles G1484 N-GPN",
+    " 11 lord it G2634 V-PAI-3P",
+    " 12 them G0846 P-GPN",
+    " 13 and G2532 CONJ | connective",
+    " 14 their G0846 P-GPN",
+    " 15 great ones G3173 A-NPM | qualifier candidate; qualifier morph: adjective",
+    " 16 exercise authority G2715 V-PAI-3P | word of another collection; collections govern",
+    " 17 them G0846 P-GPN"
+   ]
+  },
+  {
+   "reference": "Luk 22:24",
+   "text": "A dispute also arose among them, as to which of them was to be regarded as the greatest.",
+   "words": [
+    " 0 dispute G5379 N-NSF | word of another collection; collections quarrel",
+    " 1 also G2532 CONJ | connective",
+    " 2 arose G1096 V-2ADI-3S",
+    " 2 arose G1161 CONJ | connective",
+    " 3 among G1722 PREP",
+    " 4 them G0846 P-DPM",
+    " 5 which G5101 I-NSM",
+    " 6 them G0846 P-GPM",
+    "*7 regarded G1380 V-PAI-3S | member of this collection",
+    " 8 greatest G3173 A-NSM-C | qualifier candidate; qualifier morph: adjective"
+   ]
+  },
+  {
+   "reference": "Act 28:22",
+   "text": "But we desire to hear from you what your views are, for with regard to this sect we know that everywhere it is spoken against.”",
+   "words": [
+    " 0 but G1161 CONJ | connective",
+    " 1 desire G0515 V-PAI-1P | word of another collection; collections desire",
+    " 2 hear G0191 V-AAN | word of another collection; collections hear",
+    " 3 from G3844 PREP",
+    " 4 you G4675 P-2GS",
+    " 5 what G3739 R-APN",
+    " 6 views G5426 V-PAI-2S",
+    " 7 for G1063 CONJ | connective",
+    "*8 regard G4012 PREP | member of this collection",
+    " 9 to G3303 PRT | connective",
+    " 10 this G3778 D-GSF",
+    " 11 sect G0139 N-GSF",
+    " 12 we G2254 P-1DP",
+    " 13 know G1110 A-NSN | word of another collection; qualifier morph: adjective; collections know",
+    " 14 that G3754G CONJ | connective",
+    " 15 everywhere G3837 ADV | qualifier candidate; qualifier morph: adverb",
+    " 16 is G1510 V-PAI-3S",
+    " 17 spoken against G0483 V-PPI-3S | word of another collection; collections scoff"
+   ]
+  },
+  {
+   "reference": "Rom 2:26",
+   "text": "So, if a man who is uncircumcised keeps the precepts of the law, will not his uncircumcision be regarded as circumcision?",
+   "words": [
+    " 0 so G3767 CONJ | connective",
+    " 1 if G1437 COND | connective",
+    " 2 uncircumcised G0203 N-NSF | word of another collection; collections uncircumcised",
+    " 3 keeps G5442G V-PAS-3S | word of another collection; collections remove",
+    " 4 precepts G1345 N-APN | word of another collection; collections govern",
+    " 5 law G3551 N-GSM",
+    " 6 not G3780 PRT-N | negator; qualifier negator; negator",
+    " 7 his G0846 P-GSM",
+    " 8 uncircumcision G0203 N-NSF | word of another collection; collections uncircumcised",
+    "*9 regarded G3049 V-FPI-3S | member of this collection",
+    " 10 as G1519 PREP",
+    " 11 circumcision G4061 N-ASF"
+   ]
+  },
+  {
+   "reference": "Rom 4:19",
+   "text": "He did not weaken in faith when he considered his own body, which was as good as dead ( since he was about a hundred years old ), or when he considered the barrenness of Sarah’s womb.",
+   "words": [
+    " 0 did G2532 CONJ | connective",
+    " 1 not G3361 PRT-N | negator; qualifier negator; negator",
+    " 2 weaken G0770G V-AAP-NSM | word of another collection; collections strengthen",
+    " 3 faith G4102G N-DSF | word of another collection; collections believe",
+    "*4 considered G2657 V-AAI-3S | member of this collection",
+    "*4 considered G3756 PRT-N | member of this collection; qualifier negator; negator",
+    " 5 own G1438 F-3GSM",
+    " 6 body G4983 N-ASN",
+    " 7 was G2235 ADV | qualifier candidate; qualifier morph: adverb",
+    " 8 dead G3499 V-RPP-ASN | word of another collection; collections live",
+    " 9 about a G4225 ADV | qualifier candidate; qualifier morph: adverb",
+    " 10 years old G1541 A-NSM | qualifier candidate; qualifier morph: adjective",
+    " 11 when G2532 CONJ | connective",
+    " 12 barrenness G3500 N-ASF",
+    " 13 sarah’s G4564 N-GSF-P | entity (human); party human",
+    " 14 womb G3388 N-GSF"
+   ]
+  },
+  {
+   "reference": "Rom 8:36",
+   "text": "As it is written, “For your sake we are being killed all the day long; we are regarded as sheep to be slaughtered.”",
+   "words": [
+    " 0 as G2531 CONJ | connective",
+    " 1 written G1125 V-RPI-3S",
+    " 2 your G4675 P-2GS",
+    " 3 sake G1752 PREP",
+    " 4 killed G2289 V-PPI-1P | word of another collection; collections kill",
+    " 5 all G3650 A-ASF | qualifier candidate; qualifier morph: adjective",
+    " 6 day long G2250 N-ASF",
+    "*7 regarded G3049 V-API-1P | member of this collection",
+    " 8 as G5613 PRT | connective",
+    " 9 sheep G4263 N-NPN",
+    " 10 slaughtered G4967 N-GSF"
+   ]
+  },
+  {
+   "reference": "1Cor 4:1",
+   "text": "This is how one should regard us, as servants of Christ and stewards of the mysteries of God.",
+   "words": [
+    " 0 how G3779 ADV | qualifier candidate; qualifier morph: adverb",
+    " 1 one G0444 N-NSM | entity (human); party human",
+    "*2 regard G3049 V-PNM-3S | member of this collection",
+    " 3 us G2248 P-1AP",
+    " 4 as G5613 PRT | connective",
+    " 5 servants G5257 N-APM",
+    " 6 christ G5547 N-GSM-T | entity (divine); party divine",
+    " 7 and G2532 CONJ | connective",
+    " 8 stewards G3623 N-APM",
+    " 9 mysteries G3466 N-GPN",
+    " 10 god G2316 N-GSM-T | entity (divine); party divine"
+   ]
+  },
+  {
+   "reference": "1Cor 14:29",
+   "text": "Let two or three prophets speak, and let the others weigh what is said.",
+   "words": [
+    " 0 let G1161 CONJ | connective",
+    " 1 two G1417 A-NUI | qualifier candidate; qualifier morph: adjective",
+    " 2 or G2228 CONJ | connective",
+    " 3 three G5140 A-NPM | qualifier candidate; qualifier morph: adjective",
+    " 4 prophets G4396 N-NPM",
+    " 5 speak G2980 V-PAM-3P",
+    " 6 and G2532 CONJ | connective",
+    " 7 others G0243 A-NPM | qualifier candidate; qualifier morph: adjective",
+    "*8 weigh G1252 V-PAM-3P | member of this collection"
+   ]
+  },
+  {
+   "reference": "2Cor 5:16",
+   "text": "From now on, therefore, we regard no one according to the flesh. Even though we once regarded Christ according to the flesh, we regard him thus no longer.",
+   "words": [
+    " 0 from G0575 PREP",
+    " 1 now on G3568 ADV | qualifier candidate; qualifier morph: adverb",
+    " 2 therefore G5620 CONJ | connective",
+    " 3 we G2249 P-1NP",
+    "*4 regard G6063 V-RAI-1P | member of this collection",
+    " 5 no one G3762 A-ASM | qualifier candidate; qualifier morph: adjective",
+    " 6 according G2596 PREP",
+    " 7 flesh G4561 N-ASF",
+    " 8 even G2532 CONJ | connective",
+    " 9 though G1487M COND",
+    " 10 once regarded G1097 V-RAI-1P | member of this collection",
+    " 11 christ G5547 N-ASM-T | entity (divine); party divine",
+    " 12 according G2596 PREP",
+    " 13 flesh G4561 N-ASF",
+    "*14 regard G1097 V-PAI-1P | member of this collection",
+    " 15 no longer G3765 PRT-N | negator; qualifier negator; negator"
+   ]
+  },
+  {
+   "reference": "Col 2:16",
+   "text": "Therefore let no one pass judgment on you in questions of food and drink, or with regard to a festival or a new moon or a Sabbath.",
+   "words": [
+    " 0 therefore G3767 CONJ | connective",
+    " 1 no G3361 PRT-N | negator; qualifier negator; negator",
+    " 2 one G5100 X-NSM",
+    " 3 judgment on G2919 V-PAM-3S | word of another collection; collections condemn",
+    " 4 you G5209 P-2AP",
+    " 5 in G1722 PREP",
+    " 6 food G1035 N-DSF",
+    " 7 and G2228 CONJ | connective",
+    " 8 drink G4213 N-DSF",
+    " 9 or G2228 CONJ | connective",
+    " 10 with G1722 PREP",
+    "*11 regard G3313 N-DSN | member of this collection",
+    " 12 festival G1859 N-GSF",
+    " 13 or G2228 CONJ | connective",
+    " 14 new moon G3561 N-GSF",
+    " 15 or G2228 CONJ | connective",
+    " 16 sabbath G4521 N-GPN"
+   ]
+  },
+  {
+   "reference": "2Th 3:15",
+   "text": "Do not regard him as an enemy, but warn him as a brother.",
+   "words": [
+    " 0 not G2532 CONJ | connective",
+    " 0 not G3361 PRT-N | negator; qualifier negator; negator",
+    "*1 regard G2233 V-PNM-2P | member of this collection",
+    " 2 as G5613 PRT | connective",
+    " 3 enemy G2190 N-ASM",
+    " 4 but G0235 CONJ | connective",
+    " 5 warn G3560 V-PAM-2P | word of another collection; collections warn",
+    " 6 as G5613 PRT | connective",
+    " 7 brother G0080 N-ASM | entity (human); party human"
+   ]
+  },
+  {
+   "reference": "1Ti 6:1",
+   "text": "Let all who are under a yoke as bondservants regard their own masters as worthy of all honor, so that the name of God and the teaching may not be reviled.",
+   "words": [
+    " 0 all G3745 K-NPM",
+    " 1 are G1526 V-PAI-3P",
+    " 2 under G5259H PREP",
+    " 3 yoke G2218 N-ASM",
+    " 4 bondservants G1401 N-NPM",
+    "*5 regard G2233 V-PNM-3P | member of this collection",
+    " 6 own G2398 A-APM | qualifier candidate; qualifier morph: adjective",
+    " 7 masters G1203 N-APM",
+    " 8 worthy G0514 A-APM | word of another collection; qualifier morph: adjective; collections honor",
+    " 9 all G3956 A-GSF | qualifier candidate; qualifier morph: adjective",
+    " 10 honor G5092 N-GSF | word of another collection; collections honor",
+    " 11 name G3686 N-NSN",
+    " 12 god G2316 N-GSM-T | entity (divine); party divine",
+    " 13 and G2532 CONJ | connective",
+    " 14 teaching G1319 N-NSF | word of another collection; collections teach",
+    " 15 not G3363 CONJ | connective",
+    " 16 reviled G0987 V-PPS-3S | word of another collection; collections scoff"
+   ]
+  },
+  {
+   "reference": "Heb 11:11",
+   "text": "By faith Sarah herself received power to conceive, even when she was past the age, since she considered him faithful who had promised.",
+   "words": [
+    " 0 faith G4102G N-DSF | word of another collection; collections believe",
+    " 1 sarah G4564 N-NSF-P | entity (human); party human",
+    " 2 herself G0846 P-NSF",
+    " 3 received G2983 V-2AAI-3S",
+    " 4 power G1411 N-ASF",
+    " 5 to G1519 PREP",
+    " 6 conceive G2602 N-ASF | member of this collection",
+    " 6 conceive G4690G N-GSN | member of this collection",
+    " 7 even G2532 CONJ | connective",
+    " 8 past G3844 PREP",
+    " 9 age G2540 N-ASM",
+    " 9 age G2244 N-GSF",
+    " 10 since G1893 CONJ | connective",
+    "*11 considered G2233 V-ADI-3S | member of this collection",
+    " 12 faithful G4103 A-ASM | word of another collection; qualifier morph: adjective; collections loyalty",
+    " 13 promised G1861 V-ADP-ASM | word of another collection; collections promise"
+   ]
+  },
+  {
+   "reference": "Heb 11:19",
+   "text": "He considered that God was able even to raise him from the dead, from which, figuratively speaking, he did receive him back.",
+   "words": [
+    "*0 considered G3049 V-ADP-NSM | member of this collection",
+    " 1 that G3754G CONJ | connective",
+    " 2 god G2316 N-NSM-T | entity (divine); party divine",
+    " 3 able G1415 A-NSM | word of another collection; qualifier morph: adjective; collections skill",
+    " 4 even G2532 CONJ | connective",
+    " 5 raise him G1453 V-PAN",
+    " 6 from G1537 PREP",
+    " 7 dead G3498 A-GPM | word of another collection; qualifier morph: adjective; collections live",
+    " 8 which G3606 PREP | connective",
+    " 9 figuratively speaking G1722 PREP",
+    " 9 figuratively speaking G3850 N-DSF",
+    " 10 receive G2865 V-AMI-3S",
+    " 11 him G0846 P-ASM"
+   ]
+  },
+  {
+   "reference": "Heb 11:26",
+   "text": "He considered the reproach of Christ greater wealth than the treasures of Egypt, for he was looking to the reward.",
+   "words": [
+    "*0 considered G2233 V-ADP-NSM | member of this collection",
+    " 1 reproach G3680 N-ASM | word of another collection; collections chide",
+    " 2 christ G5547 N-GSM-T | entity (divine); party divine",
+    " 3 greater G3173 A-ASM-C | qualifier candidate; qualifier morph: adjective",
+    " 4 wealth G4149 N-ASM | word of another collection; collections rich",
+    " 5 treasures G2344 N-GPM",
+    " 6 egypt G0125 N-GSF-L",
+    " 7 for G1063 CONJ | connective",
+    " 8 looking G0578 V-IAI-3S",
+    " 9 to G1519 PREP",
+    " 10 reward G3405 N-ASF | word of another collection; collections reward"
+   ]
+  },
+  {
+   "reference": "1Pe 5:12",
+   "text": "By Silvanus, a faithful brother as I regard him, I have written briefly to you, exhorting and declaring that this is the true grace of God. Stand firm in it.",
+   "words": [
+    " 0 by G1223 PREP | connective",
+    " 1 silvanus G4610 N-GSM-P",
+    " 2 faithful G4103 A-GSM | word of another collection; qualifier morph: adjective; collections loyalty",
+    " 3 brother G0080 N-GSM | entity (human); party human",
+    " 4 as G5613 PRT | connective",
+    "*5 regard G3049 V-PNI-1S | member of this collection",
+    " 6 written G1125 V-2AAI-1S",
+    " 7 briefly G1223 PREP | connective",
+    " 7 briefly G3641 A-GPN | qualifier candidate; qualifier morph: adjective",
+    " 8 exhorting G3870 V-PAP-NSM | word of another collection; collections preach",
+    " 9 and G2532 CONJ | connective",
+    " 10 declaring G1957 V-PAP-NSM | word of another collection; collections preach",
+    " 11 this G3778 D-ASF",
+    " 12 is G1511 V-PAN",
+    " 13 true G0227 A-ASF | word of another collection; qualifier morph: adjective; collections real",
+    " 14 grace G5485 N-ASF | word of another collection; collections bless",
+    " 15 god G2316 N-GSM-T | entity (divine); party divine",
+    " 16 stand firm G2476 V-2AAM-2P | word of another collection; collections firm",
+    " 17 in G1519 PREP"
+   ]
+  }
+ ],
+ "rows": [
+  {
+   "ledger_id": 1445,
+   "item": "qualifier",
+   "subject": "",
+   "asks": "Which qualifiers (negators and the words they reach, adjectives, adverbs, prepositional qualifiers) stand with the subgroup's surfaces, and what does each give by the grammar? Adjacency is not scope: state the word the negator or qualifier reaches. One finding for each distinct thing shown; it holds the verses it holds in as its nodes.",
+   "none_allowed": true,
+   "verses": [
+    "Gen 4:5",
+    "Gen 24:22",
+    "Gen 31:15",
+    "Lev 19:23",
+    "Deu 33:9",
+    "Jos 7:21",
+    "1Sa 1:16",
+    "1Sa 25:25",
+    "1Ki 10:21",
+    "2Ki 3:14",
+    "Job 1:8",
+    "Job 2:3",
+    "Job 9:21",
+    "Job 34:27",
+    "Job 35:13",
+    "Job 37:24",
+    "Psa 28:5",
+    "Pro 12:10",
+    "Pro 17:28",
+    "Ecc 12:9",
+    "Isa 5:12",
+    "Isa 13:17",
+    "Isa 29:16",
+    "Isa 29:17",
+    "Isa 33:8",
+    "Isa 53:8",
+    "Jer 24:5",
+    "Lam 4:2",
+    "Lam 4:16",
+    "Eze 5:1",
+    "Eze 18:28",
+    "Dan 7:8",
+    "Hos 8:12",
+    "Mat 1:20",
+    "Mar 10:42",
+    "Luk 22:24",
+    "Act 28:22",
+    "Rom 2:26",
+    "Rom 4:19",
+    "Rom 8:36",
+    "1Cor 4:1",
+    "1Cor 14:29",
+    "2Cor 5:16",
+    "Col 2:16",
+    "2Th 3:15",
+    "1Ti 6:1",
+    "Heb 11:11",
+    "Heb 11:19",
+    "Heb 11:26",
+    "1Pe 5:12"
+   ],
+   "occurrences": [
+    {
+     "occurrence": 976222,
+     "reference": "Gen 4:5",
+     "surface": "regard",
+     "strong": "H8159",
+     "as": "member"
+    },
+    {
+     "occurrence": 998078,
+     "reference": "Gen 24:22",
+     "surface": "weighing",
+     "strong": "H4948",
+     "as": "member"
+    },
+    {
+     "occurrence": 998086,
+     "reference": "Gen 24:22",
+     "surface": "weighing",
+     "strong": "H4948",
+     "as": "member"
+    },
+    {
+     "occurrence": 995552,
+     "reference": "Gen 31:15",
+     "surface": "regarded",
+     "strong": "H2803H",
+     "as": "member"
+    },
+    {
+     "occurrence": 1039316,
+     "reference": "Lev 19:23",
+     "surface": "regard",
+     "strong": "H6188",
+     "as": "member"
+    },
+    {
+     "occurrence": 1074743,
+     "reference": "Deu 33:9",
+     "surface": "regard",
+     "strong": "H7200G",
+     "as": "member"
+    },
+    {
+     "occurrence": 1094995,
+     "reference": "Jos 7:21",
+     "surface": "weighing",
+     "strong": "H4948",
+     "as": "member"
+    },
+    {
+     "occurrence": 1117262,
+     "reference": "1Sa 1:16",
+     "surface": "regard",
+     "strong": "H5414I",
+     "as": "member"
+    },
+    {
+     "occurrence": 1128679,
+     "reference": "1Sa 25:25",
+     "surface": "regard",
+     "strong": "H3820A",
+     "as": "member"
+    },
+    {
+     "occurrence": 1128681,
+     "reference": "1Sa 25:25",
+     "surface": "regard",
+     "strong": "H0853",
+     "as": "member"
+    },
+    {
+     "occurrence": 1168915,
+     "reference": "1Ki 10:21",
+     "surface": "considered",
+     "strong": "H2803H",
+     "as": "member"
+    },
+    {
+     "occurrence": 1175017,
+     "reference": "2Ki 3:14",
+     "surface": "regard",
+     "strong": "H5375Q",
+     "as": "member"
+    },
+    {
+     "occurrence": 1236992,
+     "reference": "Job 1:8",
+     "surface": "considered",
+     "strong": "H7760K",
+     "as": "member"
+    },
+    {
+     "occurrence": 1236994,
+     "reference": "Job 1:8",
+     "surface": "considered",
+     "strong": "H3820A",
+     "as": "member"
+    },
+    {
+     "occurrence": 1237020,
+     "reference": "Job 2:3",
+     "surface": "considered",
+     "strong": "H3820A",
+     "as": "member"
+    },
+    {
+     "occurrence": 1237021,
+     "reference": "Job 2:3",
+     "surface": "considered",
+     "strong": "H7760K",
+     "as": "member"
+    },
+    {
+     "occurrence": 1241760,
+     "reference": "Job 9:21",
+     "surface": "regard",
+     "strong": "H3045",
+     "as": "member"
+    },
+    {
+     "occurrence": 1241761,
+     "reference": "Job 9:21",
+     "surface": "regard",
+     "strong": "H3808",
+     "as": "member"
+    },
+    {
+     "occurrence": 1244033,
+     "reference": "Job 34:27",
+     "surface": "regard",
+     "strong": "H7919A",
+     "as": "member"
+    },
+    {
+     "occurrence": 1240118,
+     "reference": "Job 35:13",
+     "surface": "regard",
+     "strong": "H7789",
+     "as": "member"
+    },
+    {
+     "occurrence": 1236028,
+     "reference": "Job 37:24",
+     "surface": "regard",
+     "strong": "H7200G",
+     "as": "member"
+    },
+    {
+     "occurrence": 1254240,
+     "reference": "Psa 28:5",
+     "surface": "regard",
+     "strong": "H0995",
+     "as": "member"
+    },
+    {
+     "occurrence": 1278466,
+     "reference": "Pro 12:10",
+     "surface": "regard",
+     "strong": "H3045",
+     "as": "member"
+    },
+    {
+     "occurrence": 1281668,
+     "reference": "Pro 17:28",
+     "surface": "considered",
+     "strong": "H2803J",
+     "as": "member"
+    },
+    {
+     "occurrence": 1286093,
+     "reference": "Ecc 12:9",
+     "surface": "weighing",
+     "strong": "H0239",
+     "as": "member"
+    },
+    {
+     "occurrence": 1309329,
+     "reference": "Isa 5:12",
+     "surface": "regard",
+     "strong": "H5027",
+     "as": "member"
+    },
+    {
+     "occurrence": 1307624,
+     "reference": "Isa 13:17",
+     "surface": "regard",
+     "strong": "H2803H",
+     "as": "member"
+    },
+    {
+     "occurrence": 1300532,
+     "reference": "Isa 29:16",
+     "surface": "regarded",
+     "strong": "H2803J",
+     "as": "member"
+    },
+    {
+     "occurrence": 1313897,
+     "reference": "Isa 29:17",
+     "surface": "regarded",
+     "strong": "H2803J",
+     "as": "member"
+    },
+    {
+     "occurrence": 1299003,
+     "reference": "Isa 33:8",
+     "surface": "regard",
+     "strong": "H2803H",
+     "as": "member"
+    },
+    {
+     "occurrence": 1309721,
+     "reference": "Isa 53:8",
+     "surface": "considered",
+     "strong": "H7878",
+     "as": "member"
+    },
+    {
+     "occurrence": 1328689,
+     "reference": "Jer 24:5",
+     "surface": "regard",
+     "strong": "H5234A",
+     "as": "member"
+    },
+    {
+     "occurrence": 1348003,
+     "reference": "Lam 4:2",
+     "surface": "regarded",
+     "strong": "H2803H",
+     "as": "member"
+    },
+    {
+     "occurrence": 1347024,
+     "reference": "Lam 4:16",
+     "surface": "regard",
+     "strong": "H5027",
+     "as": "member"
+    },
+    {
+     "occurrence": 1374196,
+     "reference": "Eze 5:1",
+     "surface": "weighing",
+     "strong": "H4948",
+     "as": "member"
+    },
+    {
+     "occurrence": 1351521,
+     "reference": "Eze 18:28",
+     "surface": "considered",
+     "strong": "H7200H",
+     "as": "member"
+    },
+    {
+     "occurrence": 1384214,
+     "reference": "Dan 7:8",
+     "surface": "considered",
+     "strong": "H1934",
+     "as": "member"
+    },
+    {
+     "occurrence": 1384215,
+     "reference": "Dan 7:8",
+     "surface": "considered",
+     "strong": "H7920",
+     "as": "member"
+    },
+    {
+     "occurrence": 1387799,
+     "reference": "Hos 8:12",
+     "surface": "regarded",
+     "strong": "H2803H",
+     "as": "member"
+    },
+    {
+     "occurrence": 1405514,
+     "reference": "Mat 1:20",
+     "surface": "considered",
+     "strong": "G1760",
+     "as": "member"
+    },
+    {
+     "occurrence": 1422175,
+     "reference": "Mar 10:42",
+     "surface": "considered",
+     "strong": "G1380",
+     "as": "member"
+    },
+    {
+     "occurrence": 1442038,
+     "reference": "Luk 22:24",
+     "surface": "regarded",
+     "strong": "G1380",
+     "as": "member"
+    },
+    {
+     "occurrence": 1468254,
+     "reference": "Act 28:22",
+     "surface": "regard",
+     "strong": "G4012",
+     "as": "member"
+    },
+    {
+     "occurrence": 1479951,
+     "reference": "Rom 2:26",
+     "surface": "regarded",
+     "strong": "G3049",
+     "as": "member"
+    },
+    {
+     "occurrence": 1478905,
+     "reference": "Rom 4:19",
+     "surface": "considered",
+     "strong": "G2657",
+     "as": "member"
+    },
+    {
+     "occurrence": 1478906,
+     "reference": "Rom 4:19",
+     "surface": "considered",
+     "strong": "G3756",
+     "as": "member"
+    },
+    {
+     "occurrence": 1480169,
+     "reference": "Rom 8:36",
+     "surface": "regarded",
+     "strong": "G3049",
+     "as": "member"
+    },
+    {
+     "occurrence": 1480709,
+     "reference": "1Cor 4:1",
+     "surface": "regard",
+     "strong": "G3049",
+     "as": "member"
+    },
+    {
+     "occurrence": 1483695,
+     "reference": "1Cor 14:29",
+     "surface": "weigh",
+     "strong": "G1252",
+     "as": "member"
+    },
+    {
+     "occurrence": 1486647,
+     "reference": "2Cor 5:16",
+     "surface": "regard",
+     "strong": "G6063",
+     "as": "member"
+    },
+    {
+     "occurrence": 1486657,
+     "reference": "2Cor 5:16",
+     "surface": "regard",
+     "strong": "G1097",
+     "as": "member"
+    },
+    {
+     "occurrence": 1495800,
+     "reference": "Col 2:16",
+     "surface": "regard",
+     "strong": "G3313",
+     "as": "member"
+    },
+    {
+     "occurrence": 1498128,
+     "reference": "2Th 3:15",
+     "surface": "regard",
+     "strong": "G2233",
+     "as": "member"
+    },
+    {
+     "occurrence": 1499071,
+     "reference": "1Ti 6:1",
+     "surface": "regard",
+     "strong": "G2233",
+     "as": "member"
+    },
+    {
+     "occurrence": 1504739,
+     "reference": "Heb 11:11",
+     "surface": "considered",
+     "strong": "G2233",
+     "as": "member"
+    },
+    {
+     "occurrence": 1505097,
+     "reference": "Heb 11:19",
+     "surface": "considered",
+     "strong": "G3049",
+     "as": "member"
+    },
+    {
+     "occurrence": 1502093,
+     "reference": "Heb 11:26",
+     "surface": "considered",
+     "strong": "G2233",
+     "as": "member"
+    },
+    {
+     "occurrence": 1508222,
+     "reference": "1Pe 5:12",
+     "surface": "regard",
+     "strong": "G3049",
+     "as": "member"
+    },
+    {
+     "occurrence": 976220,
+     "reference": "Gen 4:5",
+     "surface": "no",
+     "strong": "H3808",
+     "as": "partner"
+    },
+    {
+     "occurrence": 976225,
+     "reference": "Gen 4:5",
+     "surface": "very",
+     "strong": "H3966",
+     "as": "partner"
+    },
+    {
+     "occurrence": 998080,
+     "reference": "Gen 24:22",
+     "surface": "two",
+     "strong": "H8147",
+     "as": "partner"
+    },
+    {
+     "occurrence": 995550,
+     "reference": "Gen 31:15",
+     "surface": "not",
+     "strong": "H3808",
+     "as": "partner"
+    },
+    {
+     "occurrence": 995553,
+     "reference": "Gen 31:15",
+     "surface": "foreigners",
+     "strong": "H5237",
+     "as": "partner"
+    },
+    {
+     "occurrence": 995561,
+     "reference": "Gen 31:15",
+     "surface": "devoured",
+     "strong": "H1571",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1039321,
+     "reference": "Lev 19:23",
+     "surface": "three",
+     "strong": "H7969",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1039325,
+     "reference": "Lev 19:23",
+     "surface": "forbidden",
+     "strong": "H6189",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1039328,
+     "reference": "Lev 19:23",
+     "surface": "not",
+     "strong": "H3808",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1074744,
+     "reference": "Deu 33:9",
+     "surface": "not",
+     "strong": "H3808",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1074747,
+     "reference": "Deu 33:9",
+     "surface": "disowned",
+     "strong": "H3808",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1074753,
+     "reference": "Deu 33:9",
+     "surface": "ignored",
+     "strong": "H3808",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1094983,
+     "reference": "Jos 7:21",
+     "surface": "a",
+     "strong": "H0259",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1094984,
+     "reference": "Jos 7:21",
+     "surface": "beautiful",
+     "strong": "H2896A",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1094987,
+     "reference": "Jos 7:21",
+     "surface": "200",
+     "strong": "H3967",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1094991,
+     "reference": "Jos 7:21",
+     "surface": "and a",
+     "strong": "H0259",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1094996,
+     "reference": "Jos 7:21",
+     "surface": "50",
+     "strong": "H2572",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1117272,
+     "reference": "1Sa 1:16",
+     "surface": "along",
+     "strong": "H2008",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1117275,
+     "reference": "1Sa 1:16",
+     "surface": "great",
+     "strong": "H7230",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1128676,
+     "reference": "1Sa 25:25",
+     "surface": "let",
+     "strong": "H0408",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1128697,
+     "reference": "1Sa 25:25",
+     "surface": "nabal",
+     "strong": "H3651C",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1128707,
+     "reference": "1Sa 25:25",
+     "surface": "not",
+     "strong": "H3808",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1168912,
+     "reference": "1Ki 10:21",
+     "surface": "none",
+     "strong": "H3808",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1175008,
+     "reference": "2Ki 3:14",
+     "surface": "lives",
+     "strong": "H2416A",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1237006,
+     "reference": "Job 1:8",
+     "surface": "blameless",
+     "strong": "H8535",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1237007,
+     "reference": "Job 1:8",
+     "surface": "upright",
+     "strong": "H3477G",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1237010,
+     "reference": "Job 1:8",
+     "surface": "fears",
+     "strong": "H3373",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1237013,
+     "reference": "Job 1:8",
+     "surface": "evil",
+     "strong": "H7451B",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1237034,
+     "reference": "Job 2:3",
+     "surface": "blameless",
+     "strong": "H8535",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1237035,
+     "reference": "Job 2:3",
+     "surface": "upright",
+     "strong": "H3477G",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1237038,
+     "reference": "Job 2:3",
+     "surface": "fears",
+     "strong": "H3373",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1237041,
+     "reference": "Job 2:3",
+     "surface": "evil",
+     "strong": "H7451B",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1237043,
+     "reference": "Job 2:3",
+     "surface": "still",
+     "strong": "H5750",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1237056,
+     "reference": "Job 2:3",
+     "surface": "without reason",
+     "strong": "H2600",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1241758,
+     "reference": "Job 9:21",
+     "surface": "blameless",
+     "strong": "H8535",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1244028,
+     "reference": "Job 34:27",
+     "surface": "turned aside",
+     "strong": "H3651C",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1244029,
+     "reference": "Job 34:27",
+     "surface": "following him",
+     "strong": "H0310A",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1244031,
+     "reference": "Job 34:27",
+     "surface": "no",
+     "strong": "H3808",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1240110,
+     "reference": "Job 35:13",
+     "surface": "surely",
+     "strong": "H0389",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1240112,
+     "reference": "Job 35:13",
+     "surface": "not",
+     "strong": "H3808",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1240115,
+     "reference": "Job 35:13",
+     "surface": "nor",
+     "strong": "H3808",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1236022,
+     "reference": "Job 37:24",
+     "surface": "therefore",
+     "strong": "H3651C",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1236027,
+     "reference": "Job 37:24",
+     "surface": "not",
+     "strong": "H3808",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1236030,
+     "reference": "Job 37:24",
+     "surface": "wise",
+     "strong": "H2450",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1254239,
+     "reference": "Psa 28:5",
+     "surface": "not",
+     "strong": "H3808",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1254252,
+     "reference": "Psa 28:5",
+     "surface": "build",
+     "strong": "H3808",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1278465,
+     "reference": "Pro 12:10",
+     "surface": "righteous",
+     "strong": "H6662",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1278473,
+     "reference": "Pro 12:10",
+     "surface": "cruel",
+     "strong": "H0394",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1281665,
+     "reference": "Pro 17:28",
+     "surface": "even",
+     "strong": "H1571",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1281666,
+     "reference": "Pro 17:28",
+     "surface": "fool",
+     "strong": "H0191",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1281669,
+     "reference": "Pro 17:28",
+     "surface": "wise",
+     "strong": "H2450",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1286083,
+     "reference": "Ecc 12:9",
+     "surface": "wise",
+     "strong": "H2450",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1286087,
+     "reference": "Ecc 12:9",
+     "surface": "also",
+     "strong": "H5750",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1309328,
+     "reference": "Isa 5:12",
+     "surface": "not",
+     "strong": "H3808",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1309335,
+     "reference": "Isa 5:12",
+     "surface": "or",
+     "strong": "H3808",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1307623,
+     "reference": "Isa 13:17",
+     "surface": "no",
+     "strong": "H3808",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1307626,
+     "reference": "Isa 13:17",
+     "surface": "not",
+     "strong": "H3808",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1300542,
+     "reference": "Isa 29:16",
+     "surface": "not",
+     "strong": "H3808",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1300551,
+     "reference": "Isa 29:16",
+     "surface": "no",
+     "strong": "H3808",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1313885,
+     "reference": "Isa 29:17",
+     "surface": "not",
+     "strong": "H3808",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1313887,
+     "reference": "Isa 29:17",
+     "surface": "yet",
+     "strong": "H5750",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1299002,
+     "reference": "Isa 33:8",
+     "surface": "no",
+     "strong": "H3808",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1309727,
+     "reference": "Isa 53:8",
+     "surface": "living",
+     "strong": "H2416A",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1328677,
+     "reference": "Jer 24:5",
+     "surface": "thus",
+     "strong": "H3541",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1328684,
+     "reference": "Jer 24:5",
+     "surface": "good",
+     "strong": "H2896A",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1328688,
+     "reference": "Jer 24:5",
+     "surface": "so",
+     "strong": "H3651C",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1347994,
+     "reference": "Lam 4:2",
+     "surface": "precious",
+     "strong": "H3368",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1347026,
+     "reference": "Lam 4:16",
+     "surface": "no",
+     "strong": "H3808",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1347032,
+     "reference": "Lam 4:16",
+     "surface": "shown",
+     "strong": "H3808",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1347034,
+     "reference": "Lam 4:16",
+     "surface": "no",
+     "strong": "H3808",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1347036,
+     "reference": "Lam 4:16",
+     "surface": "elders",
+     "strong": "H2205G",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1374173,
+     "reference": "Eze 5:1",
+     "surface": "sharp",
+     "strong": "H2299",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1351531,
+     "reference": "Eze 18:28",
+     "surface": "not",
+     "strong": "H3808",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1384224,
+     "reference": "Dan 7:8",
+     "surface": "another",
+     "strong": "H0317",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1384226,
+     "reference": "Dan 7:8",
+     "surface": "little",
+     "strong": "H2192",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1384229,
+     "reference": "Dan 7:8",
+     "surface": "three",
+     "strong": "H8532",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1384232,
+     "reference": "Dan 7:8",
+     "surface": "first",
+     "strong": "H6933",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1384252,
+     "reference": "Dan 7:8",
+     "surface": "great things",
+     "strong": "H7260",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1387795,
+     "reference": "Hos 8:12",
+     "surface": "for him",
+     "strong": "H7230",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1387800,
+     "reference": "Hos 8:12",
+     "surface": "strange",
+     "strong": "H2114A",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1405527,
+     "reference": "Mat 1:20",
+     "surface": "not",
+     "strong": "G3361",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1405539,
+     "reference": "Mat 1:20",
+     "surface": "holy",
+     "strong": "G0040G",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1422182,
+     "reference": "Mar 10:42",
+     "surface": "great ones",
+     "strong": "G3173",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1442039,
+     "reference": "Luk 22:24",
+     "surface": "greatest",
+     "strong": "G3173",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1468259,
+     "reference": "Act 28:22",
+     "surface": "know",
+     "strong": "G1110",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1468261,
+     "reference": "Act 28:22",
+     "surface": "everywhere",
+     "strong": "G3837",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1479948,
+     "reference": "Rom 2:26",
+     "surface": "not",
+     "strong": "G3780",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1478902,
+     "reference": "Rom 4:19",
+     "surface": "not",
+     "strong": "G3361",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1478909,
+     "reference": "Rom 4:19",
+     "surface": "was",
+     "strong": "G2235",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1478911,
+     "reference": "Rom 4:19",
+     "surface": "about a",
+     "strong": "G4225",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1478912,
+     "reference": "Rom 4:19",
+     "surface": "years old",
+     "strong": "G1541",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1480167,
+     "reference": "Rom 8:36",
+     "surface": "all",
+     "strong": "G3650",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1480707,
+     "reference": "1Cor 4:1",
+     "surface": "how",
+     "strong": "G3779",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1483688,
+     "reference": "1Cor 14:29",
+     "surface": "two",
+     "strong": "G1417",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1483690,
+     "reference": "1Cor 14:29",
+     "surface": "three",
+     "strong": "G5140",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1483694,
+     "reference": "1Cor 14:29",
+     "surface": "others",
+     "strong": "G0243",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1486644,
+     "reference": "2Cor 5:16",
+     "surface": "now on",
+     "strong": "G3568",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1486648,
+     "reference": "2Cor 5:16",
+     "surface": "no one",
+     "strong": "G3762",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1486658,
+     "reference": "2Cor 5:16",
+     "surface": "no longer",
+     "strong": "G3765",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1495790,
+     "reference": "Col 2:16",
+     "surface": "no",
+     "strong": "G3361",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1498127,
+     "reference": "2Th 3:15",
+     "surface": "not",
+     "strong": "G3361",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1499072,
+     "reference": "1Ti 6:1",
+     "surface": "own",
+     "strong": "G2398",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1499074,
+     "reference": "1Ti 6:1",
+     "surface": "worthy",
+     "strong": "G0514",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1499075,
+     "reference": "1Ti 6:1",
+     "surface": "all",
+     "strong": "G3956",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1504740,
+     "reference": "Heb 11:11",
+     "surface": "faithful",
+     "strong": "G4103",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1505100,
+     "reference": "Heb 11:19",
+     "surface": "able",
+     "strong": "G1415",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1505104,
+     "reference": "Heb 11:19",
+     "surface": "dead",
+     "strong": "G3498",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1502096,
+     "reference": "Heb 11:26",
+     "surface": "greater",
+     "strong": "G3173",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1508219,
+     "reference": "1Pe 5:12",
+     "surface": "faithful",
+     "strong": "G4103",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1508225,
+     "reference": "1Pe 5:12",
+     "surface": "briefly",
+     "strong": "G3641",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1508231,
+     "reference": "1Pe 5:12",
+     "surface": "true",
+     "strong": "G0227",
+     "as": "partner"
+    }
+   ],
+   "older": [
+    {
+     "observation": 11897,
+     "stage": "strand-reading",
+     "kind": "key-statement",
+     "nature": null,
+     "text": "It is joined with turning from evil: \"feared God and turned away from evil\"; \"fear the Lord, and turn away from evil\"; \"by the fear of the Lord one turns away from evil\"; \"The fear of the Lord is hatred of evil\"; \"the fear of the Lord, that is wisdom, and to turn away from evil is understanding\"",
+     "verses": [
+      "Job.1.1",
+      "Job.1.8",
+      "Job.2.3",
+      "Prov.3.7",
+      "Prov.16.6",
+      "Prov.8.13",
+      "Job.28.28",
+      "Prov.14.2"
+     ]
+    },
+    {
+     "observation": 12326,
+     "stage": "strand-reading",
+     "kind": "key-statement",
+     "nature": null,
+     "text": "The oath names what the LORD has done for the one who swears.",
+     "verses": [
+      "2Sam.4.9",
+      "1Kgs.1.29",
+      "Jer.38.16",
+      "1Kgs.17.1",
+      "2Kgs.3.14",
+      "2Kgs.5.16",
+      "Job.27.2"
+     ]
+    },
+    {
+     "observation": 12352,
+     "stage": "strand-reading",
+     "kind": "key-statement",
+     "nature": null,
+     "text": "\"The land of the living\" and the records of the living.",
+     "verses": [
+      "Ps.27.13",
+      "Ps.142.5",
+      "Isa.38.11",
+      "Isa.53.8",
+      "Jer.11.19",
+      "Ps.52.5",
+      "Ezek.32.23",
+      "Ezek.32.24",
+      "Ezek.32.25",
+      "Ezek.32.26",
+      "Ezek.32.27",
+      "Ezek.32.32",
+      "1Sam.25.29",
+      "Ps.69.28",
+      "Isa.4.3"
+     ]
+    },
+    {
+     "observation": 14221,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "nature": null,
+     "text": "How it co-exists: With the sufferer's own speech that explains it. Hannah: \"I am a woman troubled in spirit … I have been pouring out my soul before the Lord … I have been speaking out of my great anxiety and vexation\" (1Sa 1:15–16). Job: \"therefore my words have been rash\" (Job 6:3). The vexation is given as the reason the sufferer's speech looks the way it does: drunk to Eli, rash to the friends; With misreading by the onlooker: Eli takes Hannah \"to be a drunken woman\" (1:13–14).",
+     "verses": [
+      "1Sam.1.15",
+      "1Sam.1.16",
+      "Job.6.3"
+     ]
+    },
+    {
+     "observation": 15745,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "nature": null,
+     "text": "Cruelty is defined by the absence of mercy, stated explicitly, not implied. Three of H0394's six verses use the near-identical formula cruel and have no mercy (Jer 6:23, 50:42) or merciless (Jer 30:14); Prov 12:10 makes the same point as a paradox, the mercy of the wicked is cruel, that is, even their gentlest disposition still qualifies as cruelty. Cruelty here is not a separate vice alongside mercilessness; the texts treat the two as the same fact stated twice.",
+     "verses": [
+      "Jer.6.23",
+      "Jer.50.42",
+      "Jer.30.14",
+      "Prov.12.10"
+     ]
+    },
+    {
+     "observation": 17410,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "nature": null,
+     "text": "Seeing, coveting, taking.: Achan, in his own words: *\"when I saw among the spoil a beautiful cloak … then I coveted them and took them. And see, they are hidden\"* (Jos 7:21).; The woman: *\"saw … to be desired … took\"* (Gen 3:6).; The same three acts stand in both verses, and the second adds hiding (10.11).; Micah adds the night and the power: *\"Woe to those who devise wickedness and work evil on their beds! When the morning dawns, they perform it, because it is in the power of their hand. They covet fields and seize them\"* (Mic 2:1–2). The covetous wish is planned in bed and carried out when there is power to do it.",
+     "verses": [
+      "Josh.7.21",
+      "Gen.3.6",
+      "Mic.2.1",
+      "Mic.2.2"
+     ]
+    },
+    {
+     "observation": 19882,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "nature": null,
+     "text": "Choices weighed by another: The book does not let these evaluations have the last word. Job is the one the Lord calls *\"a blameless and upright man, who fears God and turns away from evil\"* (1:8). Of Eliphaz and his friends the Lord says *\"you have not spoken of me what is right, as my servant Job has\"* (42:7); Elihu is not named.; The choice Elihu pressed is made, in his own verb, but only when Job sees the Lord: *\"now my eye sees you; therefore I despise myself, and repent\"* (42:5–6).",
+     "verses": [
+      "Job.1.8",
+      "Job.42.7",
+      "Job.42.6"
+     ]
+    },
+    {
+     "observation": 20303,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "nature": null,
+     "text": "The frame the book sets: Before any friend speaks, the book says who Job is, twice: the narrator: *\"that man was blameless and upright, one who feared God and turned away from evil\"* (1:1); the Lord: *\"there is none like him on the earth, a blameless and upright man, who fears God and turns away from evil\"* (1:8); Job's choosing is already named there, in its refusing side: he *\"turned away from evil\"*.; At the end the book gives a verdict on the friends: *\"the Lord said to Eliphaz the Temanite\"*: *\"My anger burns against you and against your two friends, for you have not spoken of me what is right, as my servant Job has\"* (42:7). The verdict is about how they spoke *of God*. Elihu is not named in it, either way.; So every evaluation of Job's choices in these speeches is made by someone the book does not let have the last word.",
+     "verses": [
+      "Job.1.1",
+      "Job.1.8",
+      "Job.42.7"
+     ]
+    },
+    {
+     "observation": 21458,
+     "stage": "engagement",
+     "kind": "silence",
+     "nature": null,
+     "text": "Holy here names an attribute of God or of his rule (a righteous Lord, the scepter of uprightness, the Holy One, his holy name or Spirit, the mystery of godliness); no operation of a person's inner being is voiced by it.",
+     "verses": [
+      "1Chr.16.10",
+      "1Chr.16.35",
+      "1Chr.29.16",
+      "1Cor.12.3",
+      "1Cor.6.19",
+      "1Pet.1.12",
+      "1Pet.1.15",
+      "1Pet.1.16",
+      "1Sam.2.2",
+      "1Sam.6.20",
+      "1Thess.1.5",
+      "1Thess.1.6",
+      "1Thess.4.8",
+      "2Cor.13.14",
+      "2Cor.6.6",
+      "2Kgs.19.22",
+      "2Pet.1.21",
+      "2Tim.1.14",
+      "Acts.1.16",
+      "Acts.1.2",
+      "Acts.1.5",
+      "Acts.1.8",
+      "Acts.10.22",
+      "Acts.10.38",
+      "Acts.10.44",
+      "Acts.10.45",
+      "Acts.10.47",
+      "Acts.11.15",
+      "Acts.11.16",
+      "Acts.11.24",
+      "Acts.13.2",
+      "Acts.13.4",
+      "Acts.13.52",
+      "Acts.13.9",
+      "Acts.15.28",
+      "Acts.15.8",
+      "Acts.16.6",
+      "Acts.19.2",
+      "Acts.19.6",
+      "Acts.2.33",
+      "Acts.2.38",
+      "Acts.2.4",
+      "Acts.20.23",
+      "Acts.20.28",
+      "Acts.21.11",
+      "Acts.28.25",
+      "Acts.3.14",
+      "Acts.4.25",
+      "Acts.4.27",
+      "Acts.4.30",
+      "Acts.4.31",
+      "Acts.4.8",
+      "Acts.5.3",
+      "Acts.5.32",
+      "Acts.6.5",
+      "Acts.7.51",
+      "Acts.7.55",
+      "Acts.8.15",
+      "Acts.8.17",
+      "Acts.8.19",
+      "Acts.9.17",
+      "Acts.9.31",
+      "Amos.2.7",
+      "Dan.4.18",
+      "Dan.4.8",
+      "Dan.4.9",
+      "Dan.5.11",
+      "Dan.8.13",
+      "Eph.1.13",
+      "Eph.4.30",
+      "Ezek.20.39",
+      "Ezek.36.20",
+      "Ezek.36.21",
+      "Ezek.36.22",
+      "Ezek.39.25",
+      "Ezek.39.7",
+      "Ezek.43.7",
+      "Ezek.43.8",
+      "Hab.1.12",
+      "Hab.3.3",
+      "Heb.10.15",
+      "Heb.2.4",
+      "Heb.3.7",
+      "Heb.6.4",
+      "Heb.7.26",
+      "Heb.9.8",
+      "Hos.11.12",
+      "Hos.11.9",
+      "Isa.5.16",
+      "Isa.52.10",
+      "Isa.57.15",
+      "Isa.6.3",
+      "Isa.63.10",
+      "Isa.63.11",
+      "Jer.23.9",
+      "John.1.33",
+      "John.14.26",
+      "John.17.11",
+      "John.20.22",
+      "John.6.69",
+      "Josh.24.19",
+      "Jude.1.20",
+      "Lev.11.44",
+      "Lev.11.45",
+      "Lev.19.2",
+      "Lev.20.26",
+      "Lev.20.3",
+      "Lev.21.8",
+      "Lev.22.32",
+      "Luke.1.15",
+      "Luke.1.35",
+      "Luke.1.41",
+      "Luke.1.49",
+      "Luke.1.67",
+      "Luke.1.72",
+      "Luke.10.21",
+      "Luke.11.13",
+      "Luke.12.10",
+      "Luke.12.12",
+      "Luke.2.25",
+      "Luke.2.26",
+      "Luke.3.16",
+      "Luke.3.22",
+      "Luke.4.1",
+      "Luke.9.26",
+      "Mark.1.8",
+      "Mark.12.36",
+      "Mark.13.11",
+      "Mark.3.29",
+      "Mark.8.38",
+      "Matt.1.18",
+      "Matt.1.20",
+      "Matt.12.32",
+      "Matt.28.19",
+      "Matt.3.11",
+      "Ps.103.1",
+      "Ps.105.3",
+      "Ps.105.42",
+      "Ps.106.47",
+      "Ps.111.9",
+      "Ps.145.21",
+      "Ps.22.3",
+      "Ps.30.4",
+      "Ps.33.21",
+      "Ps.47.8",
+      "Ps.51.11",
+      "Ps.77.13",
+      "Ps.98.1",
+      "Ps.99.3",
+      "Ps.99.5",
+      "Ps.99.9",
+      "Rev.14.10",
+      "Rev.15.4",
+      "Rev.3.7",
+      "Rev.4.8",
+      "Rev.6.10",
+      "Rom.14.17",
+      "Rom.15.13",
+      "Rom.15.16",
+      "Rom.5.5",
+      "Rom.9.1",
+      "Titus.3.5"
+     ]
+    },
+    {
+     "observation": 21495,
+     "stage": "engagement",
+     "kind": "face",
+     "nature": null,
+     "text": "Upright is here the godliness, devoutness, reverence or uprightness of a person as a state of the heart toward God or toward what is right (a devout man who feared God, godliness trained and pursued, uprightness of heart, reverence and awe).",
+     "verses": [
+      "Acts.10.22",
+      "Eccl.7.29",
+      "Hab.2.4",
+      "Job.1.1",
+      "Job.1.8",
+      "Job.2.3",
+      "Job.8.6",
+      "Mic.7.2",
+      "Prov.21.29",
+      "Titus.1.8"
+     ]
+    },
+    {
+     "observation": 21689,
+     "stage": "engagement",
+     "kind": "silence",
+     "nature": null,
+     "text": "Strange here is foreign gods, foreign speech, foreign teaching or an unfamiliar thing; no human inner-being operation is named or qualified.",
+     "verses": [
+      "Deut.32.16",
+      "Heb.13.9",
+      "Hos.8.12",
+      "Isa.28.21",
+      "Isa.43.12"
+     ]
+    }
+   ]
+  }
+ ],
+ "answer": {
+  "command": "ReadStructure",
+  "collection": "thought",
+  "subgroup": "weighing and taking account of",
+  "rows": [
+   {
+    "ledger_id": 1445,
+    "item": "qualifier",
+    "subject": "",
+    "disposition": "observed | none",
+    "findings": [
+     {
+      "kind": "pairing",
+      "obs_text": "",
+      "basis": "read | stated",
+      "grounds": "",
+      "occurrences": []
+     }
+    ],
+    "reason": "",
+    "older": [
+     {
+      "observation": 11897,
+      "action": "keep | restate | merge | consume | delete_neither | defer | carry",
+      "reason": ""
+     },
+     {
+      "observation": 12326,
+      "action": "keep | restate | merge | consume | delete_neither | defer | carry",
+      "reason": ""
+     },
+     {
+      "observation": 12352,
+      "action": "keep | restate | merge | consume | delete_neither | defer | carry",
+      "reason": ""
+     },
+     {
+      "observation": 14221,
+      "action": "keep | restate | merge | consume | delete_neither | defer | carry",
+      "reason": ""
+     },
+     {
+      "observation": 15745,
+      "action": "keep | restate | merge | consume | delete_neither | defer | carry",
+      "reason": ""
+     },
+     {
+      "observation": 17410,
+      "action": "keep | restate | merge | consume | delete_neither | defer | carry",
+      "reason": ""
+     },
+     {
+      "observation": 19882,
+      "action": "keep | restate | merge | consume | delete_neither | defer | carry",
+      "reason": ""
+     },
+     {
+      "observation": 20303,
+      "action": "keep | restate | merge | consume | delete_neither | defer | carry",
+      "reason": ""
+     },
+     {
+      "observation": 21458,
+      "action": "keep | restate | merge | consume | delete_neither | defer | carry",
+      "reason": ""
+     },
+     {
+      "observation": 21495,
+      "action": "keep | restate | merge | consume | delete_neither | defer | carry",
+      "reason": ""
+     },
+     {
+      "observation": 21689,
+      "action": "keep | restate | merge | consume | delete_neither | defer | carry",
+      "reason": ""
+     }
+    ]
+   }
+  ]
+ },
+ "measured": {
+  "package_chars": 92158,
+  "seconds": 0.02
+ }
+}

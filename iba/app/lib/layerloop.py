@@ -29,6 +29,19 @@ def _subgroups(conn, cid: int) -> list[tuple[int, str]]:
     return [(r[0], r[1]) for r in conn.execute("SELECT id, name FROM collection_subgroup WHERE collection_id=? AND deleted=0 AND status!='retired' ORDER BY id", (cid,))]
 
 
+def _gate_items(cfg) -> dict:
+    """{step: [gate items]}: the ledger-only items of a loop step other than the old-observation rows (the sweep and the evidence validation of 2.1), from cfg_setting layer.reading."""
+    from . import buildvalidate as bv
+    from . import layerreading as lr
+    s = lr.settings(cfg)
+    return {st["key"]: g for st in s["steps"] if (g := [i for i in st["items"] if s["items"].get(i, {}).get("ledger_only") and i != bv.OLD_ITEM])}
+
+
+def _missing_gates(conn, cid: int, gid: int, step: str, items: list) -> list:
+    have = {r[0] for r in conn.execute("SELECT DISTINCT item FROM collection_layer_item WHERE collection_id=? AND subgroup_id=? AND step=? AND deleted=0 AND state!='retired'", (cid, gid, step))}
+    return [i for i in items if i not in have]
+
+
 def _status(rows: list) -> str:
     """none (no live row), open (a row still to answer), answered (answered, not yet validated), closed."""
     live = [r for r in rows if r[0] != "retired"]
@@ -54,15 +67,20 @@ def progress(conn, cfg, name: str) -> dict:
     LOOP_STEPS, COLLECTION_STEPS, _w = _steps(cfg)
     cid, cname = ci._collection(conn, name)
     out = {"collection": cname, "cid": cid, "subgroups": [], "collection_steps": {}}
+    gates = _gate_items(cfg)
     for gid, gname in _subgroups(conn, cid):
         st = {s: _step_status(conn, cid, gid, s) for s in LOOP_STEPS}
+        for s_, items in gates.items():      # a step whose gate rows (the sweep, the evidence validation; #2538) a subgroup does not yet have is not closed for it
+            if st.get(s_) in ("closed", "answered") and _missing_gates(conn, cid, gid, s_, items):
+                st[s_] = "open"
         done = 0
         for s in LOOP_STEPS:
             if st[s] == "closed":
                 done += 1
             else:
                 break
-        out["subgroups"].append({"id": gid, "name": gname, "steps": st, "closed": done, "complete": done == len(LOOP_STEPS)})
+        started = done < len(LOOP_STEPS) and st[LOOP_STEPS[done]] != "none"      # its next step is open: in flight, ahead of one with as many closed that has not begun it (#2538)
+        out["subgroups"].append({"id": gid, "name": gname, "steps": st, "closed": done, "started": started, "complete": done == len(LOOP_STEPS)})
     out["collection_steps"] = {s: _step_status(conn, cid, None, s) for s in COLLECTION_STEPS}
     return out
 
@@ -72,7 +90,7 @@ def _current(prog: dict):
     todo = [g for g in prog["subgroups"] if not g["complete"]]
     if not todo:
         return None
-    return sorted(todo, key=lambda g: (-g["closed"], g["id"]))[0]
+    return sorted(todo, key=lambda g: (-g["closed"], not g["started"], g["id"]))[0]
 
 
 def next_action(conn, cfg, name: str) -> dict:
@@ -93,10 +111,34 @@ def next_action(conn, cfg, name: str) -> dict:
         return out
     step = next(s for s in LOOP_STEPS if cur["steps"][s] != "closed")
     stt = cur["steps"][step]
-    out.update({"subgroup": cur["name"], "step": step, "state": stt, "what": WHAT[step], "commands": _commands(ps, coll, step, cur["name"], stt)})
+    cmds = _read_commands(conn, cfg, p["cid"], cur["id"], step, stt, ps, coll, cur["name"]) or _commands(ps, coll, step, cur["name"], stt)
+    out.update({"subgroup": cur["name"], "step": step, "state": stt, "what": WHAT[step], "commands": cmds})
     behind = [g["name"] for g in p["subgroups"] if not g["complete"] and g["id"] != cur["id"]]
     out["others_waiting"] = behind
     return out
+
+
+def _read_commands(conn, cfg, cid: int, gid: int, step: str, state: str, ps: str, coll: str, sub: str) -> list[str]:
+    """The read command that answers the next item of the step (cfg_setting layer.read_types: each read names its `command` and the `items` it answers; #2538). For an open step, the
+    first item in the step's order with a row not answered and validated; for a step not opened, its first item (the read command opens the step). [] where no read command answers it."""
+    import json
+    v = cfg.setting("layer.read_types")
+    if not v:
+        return []
+    rts = json.loads(v) if isinstance(v, str) else v
+    by_item = {i: t["command"] for t in rts.values() if isinstance(t, dict) and t.get("command") for i in t.get("items", [])}
+    from . import layerreading as lr
+    items = lr.step_def(lr.settings(cfg), step)["items"]
+    if state == "none":
+        todo = [i for i in items if i in by_item][:1]
+    else:
+        rows = conn.execute("SELECT item, state, validated FROM collection_layer_item WHERE collection_id=? AND subgroup_id=? AND step=? AND deleted=0 AND state!='retired'",
+                            (cid, gid, step)).fetchall()
+        pending = {r[0] for r in rows if r[1] == "open" or not r[2]} | set(_missing_gates(conn, cid, gid, step, _gate_items(cfg).get(step, [])))
+        todo = [i for i in items if i in pending and i in by_item][:1]
+    if not todo:
+        return []
+    return [f'{ps} -Action {by_item[todo[0]]} -Collection {coll} -Subgroup "{sub}"   (writes the package of the next {todo[0]} row(s); read it, fill its answer, then the matching Record command named in the package)']
 
 
 def _commands(ps: str, coll: str, step: str, sub, state: str) -> list[str]:
@@ -118,9 +160,11 @@ def order_gate(conn, cfg, name: str, subgroup: str | None) -> str | None:
     me = next((g for g in p["subgroups"] if g["name"].lower() == subgroup.strip().lower()), None)
     if me is None or me["complete"]:
         return None
-    ahead = [g for g in p["subgroups"] if not g["complete"] and g["id"] != me["id"] and g["closed"] > me["closed"]]
+    ahead = [g for g in p["subgroups"] if not g["complete"] and g["id"] != me["id"]
+             and (g["closed"] > me["closed"] or (g["closed"] == me["closed"] and g["started"] and not me["started"]))]
     if not ahead:
         return None
-    a = sorted(ahead, key=lambda g: (-g["closed"], g["id"]))[0]
-    return (f"the loop is for one subgroup at a time: {a['name']!r} is further through its loop ({a['closed']} of {len(_steps(cfg)[0])} steps closed) and is not finished, so {me['name']!r} "
+    a = sorted(ahead, key=lambda g: (-g["closed"], not g["started"], g["id"]))[0]
+    return (f"the loop is for one subgroup at a time: {a['name']!r} is further through its loop ({a['closed']} of {len(_steps(cfg)[0])} steps closed"
+            f"{', its next step open' if a['started'] else ''}) and is not finished, so {me['name']!r} "
             f"({me['closed']} closed) waits. Run Collection-Build.ps1 -Action LayerNext -Collection {p['collection']} to see what to do next.")

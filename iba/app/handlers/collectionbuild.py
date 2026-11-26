@@ -404,6 +404,261 @@ def layer_next(ctx: Ctx) -> Outcome:
     return ok(chr(10).join(lines), **{k: r[k] for k in ("subgroup", "step", "state") if k in r})
 
 
+def read_words(ctx: Ctx) -> Outcome:
+    """ReadWords: the package of the next words of one subgroup to read (step S1): the instruction of this read, only these words' occurrences, verses and lexicon, and the answer
+    template (lib/readcommands.py; escalation #2538). Opens S1 for the subgroup if it is not open; the order and grouping gates apply."""
+    from ..lib import layerreading as lr
+    from ..lib import readcommands as rc
+    from ..lib import scanguard as sg
+    coll, sub = str(ctx.params.get("Collection", "")).strip(), str(ctx.params.get("Subgroup", "")).strip()
+    if not coll or not sub:
+        return fail("refused", "-Collection and -Subgroup are required (the words are read one subgroup at a time)")
+    root = ctx.cfg.setting("layer.working_dir")
+    if not root:
+        return fail("refused", "cfg_setting layer.working_dir is missing")
+    try:
+        r = rc.read_words(ctx.cfg.conn, ctx.cfg, ctx.run_id, coll, sub, pathlib.Path(root))
+    except (rc.ReadError, lr.LayerError, sg.ScanBudgetExceeded) as exc:
+        return fail("refused", str(exc))
+    ctx.cfg.conn.commit()
+    head = f"step S1 opened for the subgroup ({r['opened']['add']} rows added). " if r.get("opened") else ""
+    return ok(head + f"package of {r['words']} word(s), {r['left']} left after it ({r['chars']} characters, {r['seconds']} s): {r['path'].as_posix()}. "
+              f"Read it and fill its `answer`, then: Collection-Build.ps1 -Action RecordWords -File <answer file> (-Check to preview)", words=r["words"], left=r["left"])
+
+
+def record_words(ctx: Ctx) -> Outcome:
+    """RecordWords: check a filled ReadWords answer whole, write it through the recorder of the layered reading, validate the subgroup's rows and name the next command. -Check previews."""
+    from ..lib import readcommands as rc
+    file = str(ctx.params.get("File", "")).strip()
+    if not file:
+        return fail("refused", "-File is required: the filled answer of a ReadWords package")
+    conn = ctx.cfg.conn
+    try:
+        data = _answer_of(json.loads(pathlib.Path(file).read_text(encoding="utf-8")))
+        r = rc.record_words(conn, ctx.cfg, ctx.run_id, data, keep=not _flag(ctx, "Check"))
+    except (OSError, ValueError) as exc:
+        return fail("refused", f"cannot read {file}: {exc}")
+    except rc.ReadError as exc:
+        return fail("refused", str(exc))
+    line = f"{r['observed']} observations written with {r['nodes']} nodes for {r['rows']} word(s)"
+    if r.get("preview"):
+        return ok("PREVIEW (nothing written): " + line, observed=r["observed"], nodes=r["nodes"])
+    conn.commit()
+    tail = f"; check: {r['validated']} validated" + (f", FAILED: {', '.join(r['failed'])}" if r["failed"] else "") + f"; {r['words_open']} word(s) still open. Next: {r['next']}"
+    return ok(line + tail, observed=r["observed"], nodes=r["nodes"], validated=r["validated"])
+
+
+def _answer_of(data):
+    """The answer of a read command: the file is the answer itself, or the whole package with its `answer` filled."""
+    return data["answer"] if isinstance(data, dict) and isinstance(data.get("answer"), dict) and "instruction" in data else data
+
+
+def read_senses(ctx: Ctx) -> Outcome:
+    """ReadSenses: the package of the senses of one subgroup (step 1.1): the instruction of this read, every B1 observation of the subgroup with the occurrences it holds, the sense head
+    and meaning range of each code, the older observations to answer, and the answer template (lib/readcommands.py; escalation #2538). Opens 1.1 for the subgroup if it is not open."""
+    from ..lib import layerreading as lr
+    from ..lib import readcommands as rc
+    from ..lib import scanguard as sg
+    coll, sub = str(ctx.params.get("Collection", "")).strip(), str(ctx.params.get("Subgroup", "")).strip()
+    if not coll or not sub:
+        return fail("refused", "-Collection and -Subgroup are required (the senses are read one subgroup at a time)")
+    root = ctx.cfg.setting("layer.working_dir")
+    if not root:
+        return fail("refused", "cfg_setting layer.working_dir is missing")
+    try:
+        r = rc.read_senses(ctx.cfg.conn, ctx.cfg, ctx.run_id, coll, sub, pathlib.Path(root))
+    except (rc.ReadError, lr.LayerError, sg.ScanBudgetExceeded) as exc:
+        return fail("refused", str(exc))
+    ctx.cfg.conn.commit()
+    head = f"step 1.1 opened for the subgroup ({r['opened']['add']} rows added). " if r.get("opened") else ""
+    return ok(head + f"package of {r['readings']} B1 observation(s) on {r['occurrences']} occurrence(s), {r['older']} older observation(s) ({r['chars']} characters, {r['seconds']} s): "
+              f"{r['path'].as_posix()}. Read it and fill its `answer`, then: Collection-Build.ps1 -Action RecordSenses -File <answer file> (-Check to preview)", readings=r["readings"])
+
+
+def record_senses(ctx: Ctx) -> Outcome:
+    """RecordSenses: check a filled ReadSenses answer whole, write it through the recorder of the layered reading, validate the subgroup's 1.1 row and name the next command. -Check previews."""
+    from ..lib import readcommands as rc
+    file = str(ctx.params.get("File", "")).strip()
+    if not file:
+        return fail("refused", "-File is required: the filled answer of a ReadSenses package")
+    conn = ctx.cfg.conn
+    try:
+        data = _answer_of(json.loads(pathlib.Path(file).read_text(encoding="utf-8")))
+        r = rc.record_senses(conn, ctx.cfg, ctx.run_id, data, keep=not _flag(ctx, "Check"))
+    except (OSError, ValueError) as exc:
+        return fail("refused", f"cannot read {file}: {exc}")
+    except rc.ReadError as exc:
+        return fail("refused", str(exc))
+    line = f"{r['observed']} observations written with {r['nodes']} nodes for {r['senses']} sense(s)"
+    if r.get("preview"):
+        return ok("PREVIEW (nothing written): " + line, observed=r["observed"], nodes=r["nodes"])
+    conn.commit()
+    tail = "; check: validated" if r["validated"] else f"; check: NOT validated ({r['reason']})"
+    return ok(line + tail + f". Next: {r['next']}", observed=r["observed"], nodes=r["nodes"], validated=r["validated"])
+
+
+def read_enrichment(ctx: Ctx) -> Outcome:
+    """ReadEnrichment: the package of the enrichment of one subgroup (step 1.2): the instruction of this read, every 1.1 sense of the subgroup with its codes and occurrences, the lexicon
+    of every code, the older observations to answer, and the answer template (lib/readcommands.py; escalation #2538). Opens 1.2 for the subgroup if it is not open."""
+    from ..lib import layerreading as lr
+    from ..lib import readcommands as rc
+    from ..lib import scanguard as sg
+    coll, sub = str(ctx.params.get("Collection", "")).strip(), str(ctx.params.get("Subgroup", "")).strip()
+    if not coll or not sub:
+        return fail("refused", "-Collection and -Subgroup are required (the enrichment is read one subgroup at a time)")
+    root = ctx.cfg.setting("layer.working_dir")
+    if not root:
+        return fail("refused", "cfg_setting layer.working_dir is missing")
+    try:
+        r = rc.read_enrichment(ctx.cfg.conn, ctx.cfg, ctx.run_id, coll, sub, pathlib.Path(root))
+    except (rc.ReadError, lr.LayerError, sg.ScanBudgetExceeded) as exc:
+        return fail("refused", str(exc))
+    ctx.cfg.conn.commit()
+    head = f"step 1.2 opened for the subgroup ({r['opened']['add']} rows added). " if r.get("opened") else ""
+    return ok(head + f"package of {r['senses']} sense(s) and {r['codes']} code(s), {r['older']} older observation(s) ({r['chars']} characters, {r['seconds']} s): "
+              f"{r['path'].as_posix()}. Read it and fill its `answer`, then: Collection-Build.ps1 -Action RecordEnrichment -File <answer file> (-Check to preview)", senses=r["senses"])
+
+
+def record_enrichment(ctx: Ctx) -> Outcome:
+    """RecordEnrichment: check a filled ReadEnrichment answer whole, write it through the recorder of the layered reading, validate the subgroup's 1.2 row and name the next command. -Check previews."""
+    from ..lib import readcommands as rc
+    file = str(ctx.params.get("File", "")).strip()
+    if not file:
+        return fail("refused", "-File is required: the filled answer of a ReadEnrichment package")
+    conn = ctx.cfg.conn
+    try:
+        data = _answer_of(json.loads(pathlib.Path(file).read_text(encoding="utf-8")))
+        r = rc.record_enrichment(conn, ctx.cfg, ctx.run_id, data, keep=not _flag(ctx, "Check"))
+    except (OSError, ValueError) as exc:
+        return fail("refused", f"cannot read {file}: {exc}")
+    except rc.ReadError as exc:
+        return fail("refused", str(exc))
+    line = f"{r['observed']} observations written with {r['nodes']} nodes for {r['enrichments']} enrichment(s)"
+    if r.get("preview"):
+        return ok("PREVIEW (nothing written): " + line, observed=r["observed"], nodes=r["nodes"])
+    conn.commit()
+    tail = "; check: validated" if r["validated"] else f"; check: NOT validated ({r['reason']})"
+    return ok(line + tail + f". Next: {r['next']}", observed=r["observed"], nodes=r["nodes"], validated=r["validated"])
+
+def read_structure(ctx: Ctx) -> Outcome:
+    """ReadStructure: the package of the next rows of step 2.1 of one subgroup, one item at a time (-Item to choose): what each row asks, its occurrences, the WordNet control of a
+    pairing, the older observations, the verses with their stored structure, the subgroup's 1.1 senses, and the answer template (lib/readcommands.py; escalation #2538). Opens 2.1 for
+    the subgroup if it is not open."""
+    from ..lib import layerreading as lr
+    from ..lib import readcommands as rc
+    from ..lib import scanguard as sg
+    coll, sub = str(ctx.params.get("Collection", "")).strip(), str(ctx.params.get("Subgroup", "")).strip()
+    item = str(ctx.params.get("Item", "") or "").strip() or None
+    if not coll or not sub:
+        return fail("refused", "-Collection and -Subgroup are required (the structure is read one subgroup at a time)")
+    root = ctx.cfg.setting("layer.working_dir")
+    if not root:
+        return fail("refused", "cfg_setting layer.working_dir is missing")
+    try:
+        r = rc.read_structure(ctx.cfg.conn, ctx.cfg, ctx.run_id, coll, sub, pathlib.Path(root), item)
+    except (rc.ReadError, lr.LayerError, sg.ScanBudgetExceeded) as exc:
+        return fail("refused", str(exc))
+    ctx.cfg.conn.commit()
+    head = f"step 2.1 opened for the subgroup ({r['opened']['add']} rows added). " if r.get("opened") else ""
+    return ok(head + f"package of {r['rows']} {r['item']} row(s), {r['left']} row(s) left after it, {r['verses']} verse(s) ({r['chars']} characters, {r['seconds']} s): "
+              f"{r['path'].as_posix()}. Read it and fill its `answer`, then: Collection-Build.ps1 -Action RecordStructure -File <answer file> (-Check to preview)", rows=r["rows"], left=r["left"])
+
+
+def record_structure(ctx: Ctx) -> Outcome:
+    """RecordStructure: check a filled ReadStructure answer whole, write it through the recorder of the layered reading, validate the subgroup's rows and name the next command. -Check previews."""
+    from ..lib import readcommands as rc
+    file = str(ctx.params.get("File", "")).strip()
+    if not file:
+        return fail("refused", "-File is required: the filled answer of a ReadStructure package")
+    conn = ctx.cfg.conn
+    try:
+        data = _answer_of(json.loads(pathlib.Path(file).read_text(encoding="utf-8")))
+        r = rc.record_structure(conn, ctx.cfg, ctx.run_id, data, keep=not _flag(ctx, "Check"))
+    except (OSError, ValueError) as exc:
+        return fail("refused", f"cannot read {file}: {exc}")
+    except rc.ReadError as exc:
+        return fail("refused", str(exc))
+    line = f"{r['observed']} observations written with {r['nodes']} nodes for {r['rows']} row(s)"
+    if r.get("preview"):
+        return ok("PREVIEW (nothing written): " + line, observed=r["observed"], nodes=r["nodes"])
+    conn.commit()
+    tail = f"; check: {r['validated']} validated" + (f", FAILED: {'; '.join(r['failed'])}" if r["failed"] else "") + f"; {r['rows_open']} row(s) still open. Next: {r['next']}"
+    return ok(line + tail, observed=r["observed"], nodes=r["nodes"], validated=r["validated"])
+
+def _read_gate(ctx: Ctx, fn_name: str, what: str) -> Outcome:
+    from ..lib import layerreading as lr
+    from ..lib import readcommands as rc
+    from ..lib import scanguard as sg
+    coll, sub = str(ctx.params.get("Collection", "")).strip(), str(ctx.params.get("Subgroup", "")).strip()
+    if not coll or not sub:
+        return fail("refused", f"-Collection and -Subgroup are required ({what} is read one subgroup at a time)")
+    root = ctx.cfg.setting("layer.working_dir")
+    if not root:
+        return fail("refused", "cfg_setting layer.working_dir is missing")
+    try:
+        r = getattr(rc, fn_name)(ctx.cfg.conn, ctx.cfg, ctx.run_id, coll, sub, pathlib.Path(root))
+    except rc.ReadError as exc:
+        ctx.cfg.conn.commit()       # a gate answered from the tables (nothing left to sweep or to read) is kept; the message names the next command
+        return fail("refused", str(exc))
+    except (lr.LayerError, sg.ScanBudgetExceeded) as exc:
+        return fail("refused", str(exc))
+    ctx.cfg.conn.commit()
+    return ok(", ".join(f"{k} {v}" for k, v in r.items() if k != "path") + f": {r['path'].as_posix()}. Read it and fill its `answer`, then the Record command (-Check to preview)")
+
+
+def read_sweep(ctx: Ctx) -> Outcome:
+    """ReadSweep: the sweep (B4) of one subgroup after its 2.1 rows: the package of its older observations still unmarked, to judge by content (lib/readcommands.py; escalation #2538).
+    With nothing left to sweep, the sweep row is answered as such and the next command is named."""
+    return _read_gate(ctx, "read_sweep", "the sweep")
+
+
+def read_evidence(ctx: Ctx) -> Outcome:
+    """ReadEvidence: the evidence validation (B5) of one subgroup after its sweep: the code checks and the package of the next evidence observations not yet read, to judge for truth and
+    coherence (lib/readcommands.py; escalation #2538). With every observation read and the checks passing, the row is answered and the next command is named."""
+    return _read_gate(ctx, "read_evidence", "the evidence validation")
+
+
+def _record_gate(ctx: Ctx, fn_name: str, what: str) -> Outcome:
+    from ..lib import readcommands as rc
+    file = str(ctx.params.get("File", "")).strip()
+    if not file:
+        return fail("refused", f"-File is required: the filled answer of a {what} package")
+    conn = ctx.cfg.conn
+    try:
+        data = _answer_of(json.loads(pathlib.Path(file).read_text(encoding="utf-8")))
+        r = getattr(rc, fn_name)(conn, ctx.cfg, ctx.run_id, data, keep=not _flag(ctx, "Check"))
+    except (OSError, ValueError) as exc:
+        return fail("refused", f"cannot read {file}: {exc}")
+    except rc.ReadError as exc:
+        return fail("refused", str(exc))
+    line = ", ".join(f"{k} {v}" for k, v in r.items() if k not in ("preview", "next"))
+    if r.get("preview"):
+        return ok("PREVIEW (nothing written): " + line)
+    conn.commit()
+    return ok(line + f". Next: {r['next']}")
+
+
+def record_sweep(ctx: Ctx) -> Outcome:
+    """RecordSweep: check a filled ReadSweep answer whole and write it; validate the sweep row; name the next command. -Check previews."""
+    return _record_gate(ctx, "record_sweep", "ReadSweep")
+
+
+def record_evidence(ctx: Ctx) -> Outcome:
+    """RecordEvidence: check a filled ReadEvidence answer whole, write its repairs and log each observation read; validate the evidence-validation row when all is read; name the next
+    command. -Check previews."""
+    return _record_gate(ctx, "record_evidence", "ReadEvidence")
+
+
+def read_elements(ctx: Ctx) -> Outcome:
+    """ReadElements: the package of step 3.1 of one subgroup (C1): the evidence observations to take up and those it may rest on, the older inner-being observations to answer, the
+    definition, the meaning by code, every verse, and the answer (lib/readcommands.py; escalation #2538). Opens 3.1 for the subgroup if it is not open."""
+    return _read_gate(ctx, "read_elements", "the elements")
+
+
+def record_elements(ctx: Ctx) -> Outcome:
+    """RecordElements: check a filled ReadElements answer whole and write it through the recorder of stage 4; validate the 3.1 row; name the next command. -Check previews."""
+    return _record_gate(ctx, "record_elements", "ReadElements")
+
 def layer_check(ctx: Ctx) -> Outcome:
     """Validate every answered row of a collection against the tables, set `validated`, and write the findings as a versioned Markdown report (cfg_setting layer.check_name)."""
     import datetime

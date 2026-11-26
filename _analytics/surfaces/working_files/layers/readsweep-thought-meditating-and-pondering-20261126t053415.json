@@ -1,0 +1,1187 @@
+{
+ "command": "ReadSweep",
+ "collection": "thought",
+ "subgroup": "meditating and pondering",
+ "step": "2.1",
+ "item": "sweep",
+ "made": "2026-11-26T05:34:15Z",
+ "instruction": {
+  "what": "The sweep (B4) of one subgroup, after its 2.1 rows: every observation of the subgroup's scope still unmarked after B1 to B3 -- older observations on its occurrences that B1 carried forward and B2 and B3 did not take up, any carried to the sweep, and any other unmarked observation of the scope (for example the reading of an earlier grouping). Each is judged by its content. End state: none of the subgroup's observations is unmarked, except one deferred to a named collection.",
+  "read": [
+   "Take one older observation at a time (`older`): its text, its stage and kind, its verses, how many of its nodes are on this subgroup's occurrences and how many elsewhere, and the collections its nodes belong to.",
+   "Judge it by what it states, not by its stage or kind: does it state what the data are or show, tied to a verse (evidence)? how something works in the inner being, based on evidence (inner being)? or neither?"
+  ],
+  "write": [
+   "Fill `answer.older`, one entry for each observation, each answered once, with `reason`: what it states and why it is so judged.",
+   "merge, with `into`: a live observation of the subgroup says the same in the same words. consume, with `carriers` (observation ids) and `mapping`: live observations already state what it says; every word occurrence of it must be on a live node of a carrier (VA-03), then it is deleted. keep, with `nature` evidence or inner_being: it stands as it is (an inner-being one waits for 3.1). delete_neither: it is neither evidence nor inner being; it is commented, then deleted with its nodes here (one held by other subgroups or collections loses only the nodes here). defer, with `collection`, `nature` and `finding`: another collection owns it; it is marked now and the finding is left to that collection.",
+   "Then: Collection-Build.ps1 -Action RecordSweep -File <the answer file> (-Check to preview). The record refuses the whole file on any fault; every unmarked observation must be answered."
+  ],
+  "keep": [
+   {
+    "rule": "VA-04 neither-evidence-nor-inner-being-is-deleted",
+    "text": "An observation that is neither evidence nor inner being contributes nothing to the purposes of the observations (researcher, 2026-11-22): it is commented with its reason and the word occurrences no other live observation holds, then deleted. An observation already marked, or one another observation traces, is not deleted this way."
+   },
+   {
+    "rule": "VA-05 the-marker-follows-content-not-stage",
+    "text": "Evidence states what the data are or show, tied to a verse. Inner being states how something works in the inner being, based on evidence, a building block of the stage 5 claims. The marker (ib_observation.nature) follows the content and purpose of the observation, never its stage (RS-04): an observation of any stage may be inner being when it traces to evidence. One that states both is split. The marker is set when the observation is created, by the item that is answered (cfg_setting layer.reading items.<item>.nature); a finding file never sets it; the validation changes it only where the content shows the item's nature does not hold."
+   },
+   {
+    "rule": "RW-01 changed-only-by-reading",
+    "text": "No observation is changed except by a reading, and every change is recorded with its reason. An observation no longer supported by the verse is soft-deleted, with the reason."
+   },
+   {
+    "rule": "RS-04 existing-checked-accept-modify-delete",
+    "text": "When a verse is worked, every existing observation and node on it, of any stage, is checked against the verse by its wording. The stage is not an indication of the nature of an observation and is never used to filter. Each observation is accepted, modified (changed in place; the old value, the new value and the reason are kept in ib_observation_change), soft deleted (the `deleted` column, with the reason), merged (a duplicate description, into the observation that is kept) or, when its wording shows it is not verse understanding, left exactly as it is with the reason. The check's fixes are part of it and need no separate approval. Nothing is physically deleted."
+   }
+  ],
+  "not_in_this_read": ""
+ },
+ "older": [
+  {
+   "observation": 22314,
+   "stage": "layer-1",
+   "kind": "enrichment",
+   "text": "The lexicon entries bear the grouping out for most of the group: the verbs of musing and meditating (H7878 to muse, 11 occurrences; H1897 to mutter, meditate; H7742 to meditate; the nouns H7881, H1902H and H1900 meditation), of considering and reflecting (H2803H to count, regard; H7760K and H7896K to set, consider; H7200H to examine, consider; G1760 to reflect on; G2657 to observe; H7920 to contemplate; H7919A to give heed) and of pondering and weighing up (G4820 to ponder, confer; H0239 to ponder, weigh; H6424 to weigh, make level; G1252 to judge). Codes that link the group to its usage are H7878 and H1897 for the musing on a named object and H7760K with H3820A (heart) for the idiom of setting the heart. The lexicon also lists physical senses among the codes: H4948 weight (4 occurrences), H8254 to weigh out, H5187 laden; and the stored sense head of H6424 reads 'to envy' against a range of weigh, make level. The group definition is giving attention to a matter and going over it, with the weights outside that meaning.",
+   "verses": [
+    "1Cor.14.29",
+    "1Kgs.10.21",
+    "1Kgs.18.27",
+    "2Chr.9.20",
+    "Acts.10.19",
+    "Dan.7.8",
+    "Eccl.12.9",
+    "Eccl.2.11",
+    "Ezek.18.28",
+    "Ezek.5.1",
+    "Ezra.8.29",
+    "Gen.24.22",
+    "Gen.24.63",
+    "Heb.11.11",
+    "Heb.11.19",
+    "Heb.11.26",
+    "Isa.53.8",
+    "Job.1.8",
+    "Job.15.4",
+    "Job.2.3",
+    "Josh.1.8",
+    "Josh.7.21",
+    "Luke.2.19",
+    "Mark.10.42",
+    "Matt.1.20",
+    "Neh.13.13",
+    "Prov.15.28",
+    "Prov.16.20",
+    "Prov.17.28",
+    "Prov.24.32",
+    "Prov.5.21",
+    "Ps.1.2",
+    "Ps.104.34",
+    "Ps.119.148",
+    "Ps.119.15",
+    "Ps.119.23",
+    "Ps.119.27",
+    "Ps.119.48",
+    "Ps.119.78",
+    "Ps.119.97",
+    "Ps.119.99",
+    "Ps.143.5",
+    "Ps.145.5",
+    "Ps.19.14",
+    "Ps.38.12",
+    "Ps.49.3",
+    "Ps.63.6",
+    "Ps.77.12",
+    "Ps.77.3",
+    "Ps.77.6",
+    "Rom.4.19",
+    "Zeph.1.11"
+   ],
+   "nodes_here": 28,
+   "nodes_elsewhere": 32,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22370,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "text": "Destruction stands with the group in Job 2:3 (destroy, 18 after), Psa 38:12 (ruin, 1 before) and Psa 119:78 (wronged, 3 before). In Psa 38:12 the ruin is 1 word before the meditating and the meditating is on treachery; in Psa 119:78 the speaker meditates after being wronged; in Job 2:3 the destroying is in a later clause.",
+   "verses": [
+    "Job.2.3",
+    "Ps.119.78",
+    "Ps.38.12"
+   ],
+   "nodes_here": 2,
+   "nodes_elsewhere": 5,
+   "collections": [
+    "destruction",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22371,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "text": "Evil and the wicked stand with the group in Job 1:8 (evil, 12 after), Job 2:3 (evil, 13 after) and Pro 15:28 (wicked, 3 after). In Job the evil is what the one considered turns away from; in Pro 15:28 the wicked is set against the righteous whose heart ponders.",
+   "verses": [
+    "Job.1.8",
+    "Job.2.3",
+    "Prov.15.28"
+   ],
+   "nodes_here": 1,
+   "nodes_elsewhere": 7,
+   "collections": [
+    "evildoer",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22372,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "text": "Fear stands with the group in Job 1:8 (fears, 9 after), Job 2:3 (10 after), Job 15:4 (fear, 2 before) and Mat 1:20 (14 after). In Job 1:8 and 2:3 the fear of God describes the one considered; in Job 15:4 fear of God and meditation are both what is being done away with.",
+   "verses": [
+    "Job.1.8",
+    "Job.15.4",
+    "Job.2.3",
+    "Matt.1.20"
+   ],
+   "nodes_here": 1,
+   "nodes_elsewhere": 9,
+   "collections": [
+    "fear",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22373,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "text": "Remembering stands with the group in Psa 63:6, Psa 77:3, Psa 77:6 and Psa 143:5, in every one 3 words before the member. The verses pair the remembering of God, a song or the days of old with the meditating that follows.",
+   "verses": [
+    "Ps.143.5",
+    "Ps.63.6",
+    "Ps.77.3",
+    "Ps.77.6"
+   ],
+   "nodes_here": 4,
+   "nodes_elsewhere": 4,
+   "collections": [
+    "forget",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22374,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "text": "Precepts and authority stand with the group in Psa 119:15 (precepts, 1 after), Psa 119:27 (1 before), Psa 119:78 (2 after) and Mar 10:42 (exercise authority, 8 after). In the three Psalm verses the precepts are within two words of the meditating; in Mar 10:42 the member is the sense of those who are reputed rulers.",
+   "verses": [
+    "Mark.10.42",
+    "Ps.119.15",
+    "Ps.119.27",
+    "Ps.119.78"
+   ],
+   "nodes_here": 3,
+   "nodes_elsewhere": 5,
+   "collections": [
+    "govern",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22375,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "text": "The heart stands with the group in five verses, within three words in every one: Psa 19:14 and Psa 49:3 (1 after, the meditation of the heart), Psa 77:6 (2 after), Pro 15:28 (2 before) and Luk 2:19 (3 after). The verses name the heart as the place of the meditating or pondering.",
+   "verses": [
+    "Luke.2.19",
+    "Prov.15.28",
+    "Ps.19.14",
+    "Ps.49.3",
+    "Ps.77.6"
+   ],
+   "nodes_here": 5,
+   "nodes_elsewhere": 5,
+   "collections": [
+    "heart",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22376,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "text": "Works stand with the group in Psa 77:12 (work, 1 before), Psa 143:5 (work, 4 after), Psa 145:5 (works, 1 before) and Ecc 2:11 (toil, 4 after). In the three Psalm verses the works are God's and are the object of the meditating; in Ecc 2:11 the toil is the speaker's own.",
+   "verses": [
+    "Eccl.2.11",
+    "Ps.143.5",
+    "Ps.145.5",
+    "Ps.77.12"
+   ],
+   "nodes_here": 3,
+   "nodes_elsewhere": 5,
+   "collections": [
+    "labor",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22378,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "text": "Love stands with the group in Psa 119:48 (love, 1 before) and Psa 119:97 (3 before): in both the love of the commandments or the law comes just before the meditating on them. In Jos 7:21 the partner is covetousness (3 after) beside the surface 'weighing' as a weight of gold.",
+   "verses": [
+    "Josh.7.21",
+    "Ps.119.48",
+    "Ps.119.97"
+   ],
+   "nodes_here": 2,
+   "nodes_elsewhere": 4,
+   "collections": [
+    "love",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22379,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "text": "Searching stands with the group in Psa 38:12 (seek, 7 and 4 before), Psa 77:6 (search, 4 after) and Act 10:19 (looking for, 8 after). In Psa 77:6 the search follows the meditating in the same verse; in Psa 38:12 those who seek the speaker's hurt come before the meditating on treachery; in Act 10:19 the men looking for Peter are named after he is pondering.",
+   "verses": [
+    "Acts.10.19",
+    "Ps.38.12",
+    "Ps.77.6"
+   ],
+   "nodes_here": 3,
+   "nodes_elsewhere": 4,
+   "collections": [
+    "search",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22381,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "text": "Wisdom and understanding stand with the group in seven verses. In Psa 77:12 (ponder, 3 before) and Psa 143:5 (ponder, 3 after) a second verb of musing is in the same clause as the member; in Psa 49:3 the meditation is between wisdom (1 before) and understanding (2 after); in Pro 17:28 the silent fool is considered wise (1 after) and intelligent (4 after); in Psa 119:27 understanding is 3 before, in Ecc 12:9 'wise' is 6 before and in Isa 53:8 'judgment' is 4 before.",
+   "verses": [
+    "Eccl.12.9",
+    "Isa.53.8",
+    "Prov.17.28",
+    "Ps.119.27",
+    "Ps.143.5",
+    "Ps.49.3",
+    "Ps.77.12"
+   ],
+   "nodes_here": 4,
+   "nodes_elsewhere": 12,
+   "collections": [
+    "thought",
+    "wise"
+   ]
+  },
+  {
+   "observation": 22415,
+   "stage": "layer-2",
+   "kind": "face",
+   "text": "The surface 'meditate' carries three codes in three senses. Musing on a named object: H1897 (Jos 1:8, Psa 63:6, Psa 143:5), H7878 (nine Psalm verses, with Psa 77:3 as a complaint) and H7742 (Gen 24:63, the lexicon marks the meaning uncertain). Devising harm: H1897 in Psa 38:12, where the object is treachery. The same surface therefore gives a musing on God and the law, a complaint, and a plotting.",
+   "verses": [
+    "Gen.24.63",
+    "Josh.1.8",
+    "Ps.119.148",
+    "Ps.119.15",
+    "Ps.119.23",
+    "Ps.119.27",
+    "Ps.119.48",
+    "Ps.119.78",
+    "Ps.143.5",
+    "Ps.145.5",
+    "Ps.38.12",
+    "Ps.63.6",
+    "Ps.77.12",
+    "Ps.77.3",
+    "Ps.77.6"
+   ],
+   "nodes_here": 15,
+   "nodes_elsewhere": 0,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22416,
+   "stage": "layer-2",
+   "kind": "face",
+   "text": "The surface 'meditation' carries five codes: H7881 (Job 15:4, Psa 119:97, Psa 119:99), H1902H (Psa 19:14), H1900 (Psa 49:3), H7879 (Psa 104:34) and H5921A (Psa 104:34, the preposition 'upon'). The four nouns give one sense, the inner musing; H7879 also lists 'complaint' in the lexicon but not in this verse.",
+   "verses": [
+    "Job.15.4",
+    "Ps.104.34",
+    "Ps.119.97",
+    "Ps.119.99",
+    "Ps.19.14",
+    "Ps.49.3"
+   ],
+   "nodes_here": 7,
+   "nodes_elsewhere": 0,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22417,
+   "stage": "layer-2",
+   "kind": "face",
+   "text": "The surface 'pondering' carries two codes, G4820 (Luk 2:19, to throw together, ponder) and G1760 (Act 10:19, to reflect on). The two Greek verbs give one sense, a sustained reflection on named things.",
+   "verses": [
+    "Acts.10.19",
+    "Luke.2.19"
+   ],
+   "nodes_here": 2,
+   "nodes_elsewhere": 0,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22418,
+   "stage": "layer-2",
+   "kind": "face",
+   "text": "The surface 'ponders' carries two codes in two senses. H6424 in Pro 5:21 is the Lord's weighing of a man's paths, and H1897 in Pro 15:28 is a person's going over how to answer. The stored sense head of H6424 reads 'to envy' and disagrees with its lexicon range, flagged in #2533.",
+   "verses": [
+    "Prov.15.28",
+    "Prov.5.21"
+   ],
+   "nodes_here": 2,
+   "nodes_elsewhere": 0,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22432,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "text": "Qualifiers stand with the attending group in five verses with negators (6 stored pairs). Only in 1Ki 10:21 is the member negated (silver not reckoned as anything). In Jos 1:8 the negator reaches 'depart' (the Book shall not depart), in Eze 18:28 it reaches 'die', in Mat 1:20 it reaches 'fear' (13 words after) and in Rom 4:19 it reaches 'weaken' (not the considering). Of the adjectives and adverbs only 'day', after the meditating in Jos 1:8 and Psa 1:2, qualifies the act itself (when it is done); 'wise' and 'fool' (Pro 17:28) and 'faithful' (Heb 11:11) describe the one considered, and 'righteous' (Pro 15:28) the one whose heart ponders.",
+   "verses": [
+    "1Cor.14.29",
+    "1Kgs.10.21",
+    "1Kgs.18.27",
+    "Acts.10.19",
+    "Dan.7.8",
+    "Eccl.12.9",
+    "Ezek.18.28",
+    "Ezek.5.1",
+    "Gen.24.22",
+    "Heb.11.11",
+    "Heb.11.19",
+    "Heb.11.26",
+    "Isa.53.8",
+    "Job.1.8",
+    "Job.2.3",
+    "Josh.1.8",
+    "Josh.7.21",
+    "Luke.2.19",
+    "Mark.10.42",
+    "Matt.1.20",
+    "Prov.15.28",
+    "Prov.16.20",
+    "Prov.17.28",
+    "Prov.5.21",
+    "Ps.1.2",
+    "Ps.119.23",
+    "Ps.119.78",
+    "Rom.4.19"
+   ],
+   "nodes_here": 9,
+   "nodes_elsewhere": 84,
+   "collections": [
+    "beauty",
+    "evildoer",
+    "fear",
+    "folly",
+    "godly",
+    "innocent",
+    "live",
+    "loyalty",
+    "mighty",
+    "mute",
+    "righteous",
+    "roar",
+    "skill",
+    "thought",
+    "upright",
+    "wise"
+   ]
+  },
+  {
+   "observation": 22439,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "text": "Entities are named in 25 of the 52 verses of the attending group, 25 different ones in 59 stored pairs (37 human, 22 divine). The divine are the Lord (12), God (8), Jesus and Christ. The human are mostly the persons considered or doing the considering: the servant Job (4 with 'servant'), Solomon, Sarah, Isaac, Elijah, the priests Shelemiah, Zadok and Pedaiah, and 'man'. Unlike the supposing group, the persons here are the objects of the attention in Job 1:8, 2:3 and Neh 13:13, or the speakers who meditate on God.",
+   "verses": [
+    "1Kgs.10.21",
+    "1Kgs.18.27",
+    "2Chr.9.20",
+    "Acts.10.19",
+    "Ezek.5.1",
+    "Ezra.8.29",
+    "Gen.24.22",
+    "Gen.24.63",
+    "Heb.11.11",
+    "Heb.11.19",
+    "Heb.11.26",
+    "Job.1.8",
+    "Job.15.4",
+    "Job.2.3",
+    "Mark.10.42",
+    "Matt.1.20",
+    "Neh.13.13",
+    "Prov.16.20",
+    "Prov.5.21",
+    "Ps.1.2",
+    "Ps.104.34",
+    "Ps.119.23",
+    "Ps.19.14",
+    "Ps.77.3",
+    "Rom.4.19"
+   ],
+   "nodes_here": 11,
+   "nodes_elsewhere": 65,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22446,
+   "stage": "layer-2",
+   "kind": "relation",
+   "text": "The direction of the attending changes across the verses. In Jos 1:8, Psa 63:6, Psa 119:15 and Psa 143:5 it runs from the speaker to God, the law and God's works; in Job 1:8 and 2:3 it runs from the Lord to Satan concerning Job (have you considered my servant); in Mat 1:20 and Luk 2:19 a person turns the events over inwardly; in Heb 11:11 Sarah considers God faithful. The attention goes both from a person to God and from God to a person.",
+   "verses": [
+    "1Kgs.10.21",
+    "1Kgs.18.27",
+    "2Chr.9.20",
+    "Acts.10.19",
+    "Ezek.5.1",
+    "Ezra.8.29",
+    "Gen.24.22",
+    "Gen.24.63",
+    "Heb.11.11",
+    "Heb.11.19",
+    "Heb.11.26",
+    "Job.1.8",
+    "Job.15.4",
+    "Job.2.3",
+    "Mark.10.42",
+    "Matt.1.20",
+    "Neh.13.13",
+    "Prov.16.20",
+    "Prov.5.21",
+    "Ps.1.2",
+    "Ps.104.34",
+    "Ps.119.23",
+    "Ps.19.14",
+    "Ps.77.3",
+    "Rom.4.19"
+   ],
+   "nodes_here": 11,
+   "nodes_elsewhere": 65,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22485,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Attending is a done act of musing on a named matter in Psa 1:2, Psa 63:6, Psa 143:5, Gen 24:63 and Pro 15:28 (how to answer), and of pondering in Luk 2:19, Act 10:19 and Mat 1:20 (the vision, these things). The verbs of musing and pondering are the same kind of act across the codes: a going over of something present to the mind, kept in the heart in Luk 2:19 and Pro 15:28.",
+   "verses": [
+    "Acts.10.19",
+    "Gen.24.63",
+    "Luke.2.19",
+    "Matt.1.20",
+    "Prov.15.28",
+    "Ps.1.2",
+    "Ps.143.5",
+    "Ps.63.6"
+   ],
+   "nodes_here": 7,
+   "nodes_elsewhere": 1,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22486,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "The psalmist's meditating is foreseen as a resolve in Psa 77:12, Psa 119:15, 119:23, 119:27, 119:48, 119:78, 119:148 and Psa 145:5 (I will meditate). In seven of these the object is the Lord's precepts, statutes, promise, works or deeds, within two words of the member; the act is a purposed going over of what God has said or done.",
+   "verses": [
+    "Ps.119.148",
+    "Ps.119.15",
+    "Ps.119.23",
+    "Ps.119.27",
+    "Ps.119.48",
+    "Ps.119.78",
+    "Ps.145.5",
+    "Ps.77.12"
+   ],
+   "nodes_here": 8,
+   "nodes_elsewhere": 0,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22487,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Attending is commanded in Jos 1:8 (the Book of the Law is to be meditated on day and night) and in 1Cor 14:29 (the others are to weigh what the prophets say). The negator of Jos 1:8 reaches 'depart' (the Book shall not depart from the mouth), so the command to meditate stands beside a command that the Law not depart.",
+   "verses": [
+    "1Cor.14.29",
+    "Josh.1.8"
+   ],
+   "nodes_here": 1,
+   "nodes_elsewhere": 1,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22488,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "The Lord's own attending is stated in Job 1:8 and Job 2:3 (the Lord asks Satan whether he has set his heart on his servant Job) and in Pro 5:21 (the Lord weighs all a man's paths). The act is a looking at a person or a person's ways by the Lord, with Job as the object in the first two and the man's paths in the third.",
+   "verses": [
+    "Job.1.8",
+    "Job.2.3",
+    "Prov.5.21"
+   ],
+   "nodes_here": 1,
+   "nodes_elsewhere": 4,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22492,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Where the attending is of the law, God or his works it is a pursuit of its object: the love of the commandments comes within three words before the meditating in Psa 119:48 and Psa 119:97, and the psalmist's remembering stands 3 words before the meditating in Psa 63:6, Psa 77:3, Psa 77:6 and Psa 143:5. The attention is drawn toward what is loved or remembered.",
+   "verses": [
+    "Ps.119.48",
+    "Ps.119.97",
+    "Ps.143.5",
+    "Ps.63.6",
+    "Ps.77.3",
+    "Ps.77.6"
+   ],
+   "nodes_here": 6,
+   "nodes_elsewhere": 0,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22493,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "The object of the meditating is the Lord's law and precepts in Jos 1:8, Psa 119:15, 119:27 and 119:78 (precepts 1 to 2 words from the member), his works and deeds in Psa 77:12, Psa 143:5 and Psa 145:5 (works 1 to 4 words), and the Lord himself and the days of old in Psa 63:6 and Psa 143:5. The object is God, what he has said and what he has done.",
+   "verses": [
+    "Josh.1.8",
+    "Ps.119.15",
+    "Ps.119.27",
+    "Ps.119.78",
+    "Ps.143.5",
+    "Ps.145.5",
+    "Ps.63.6",
+    "Ps.77.12"
+   ],
+   "nodes_here": 8,
+   "nodes_elsewhere": 0,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22494,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "In Psa 38:12 the same verb of meditating has harm as its object: those who seek the speaker's hurt speak of ruin (1 word before) and meditate treachery, and in Psa 119:78 the speaker meditates on the precepts after he has been wronged (3 words before). The verb takes harm as its object in the first and is set against wrongdoing in the second.",
+   "verses": [
+    "Ps.119.78",
+    "Ps.38.12"
+   ],
+   "nodes_here": 2,
+   "nodes_elsewhere": 0,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22496,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "The heart is named within three words of the member in five verses: 'the meditation of my heart' (Psa 19:14, Psa 49:3, each 1 word), 'in my heart' (Psa 77:6, 2 words), the heart of the righteous that ponders (Pro 15:28, 2 words before) and Mary pondering in her heart (Luk 2:19, 3 words). The verses place the attending in the heart.",
+   "verses": [
+    "Luke.2.19",
+    "Prov.15.28",
+    "Ps.19.14",
+    "Ps.49.3",
+    "Ps.77.6"
+   ],
+   "nodes_here": 5,
+   "nodes_elsewhere": 0,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22497,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Remembering stands exactly 3 words before the meditating in Psa 63:6, Psa 77:3, Psa 77:6 and Psa 143:5: the remembering of God, of a song or of the days of old comes first in the verse and the meditating follows it in the same sentence.",
+   "verses": [
+    "Ps.143.5",
+    "Ps.63.6",
+    "Ps.77.3",
+    "Ps.77.6"
+   ],
+   "nodes_here": 4,
+   "nodes_elsewhere": 0,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22498,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "A second verb of musing stands in the same clause in Psa 77:12 (ponder, 3 before) and Psa 143:5 (ponder, 3 after), and the meditation of the heart is set between wisdom (1 before) and understanding (2 after) in Psa 49:3; in Pro 17:28 the silent fool is counted wise and intelligent. Wisdom and understanding stand beside the attending within four words in these verses.",
+   "verses": [
+    "Prov.17.28",
+    "Ps.143.5",
+    "Ps.49.3",
+    "Ps.77.12"
+   ],
+   "nodes_here": 3,
+   "nodes_elsewhere": 1,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22499,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Searching stands near the meditating in Psa 77:6 (search, 4 after, after the meditating), Psa 38:12 (seeking 7 and 4 before) and Act 10:19 (the men looking for Peter, 8 after the pondering). The search follows the attending in the first and the third and comes before it in the second.",
+   "verses": [
+    "Acts.10.19",
+    "Ps.38.12",
+    "Ps.77.6"
+   ],
+   "nodes_here": 3,
+   "nodes_elsewhere": 0,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22501,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Fear and evil stand with the considering in Job 1:8 and Job 2:3 (the fear of God 9 to 10 words after, evil turned from 12 to 13 after), in Job 15:4 (fear of God and meditation both hindered, 2 words) and in Pro 15:28 (the wicked 3 words after the ponder). The attention of the Lord rests on one who fears God and turns from evil; the meditation is set beside what is done away with.",
+   "verses": [
+    "Job.1.8",
+    "Job.15.4",
+    "Job.2.3",
+    "Prov.15.28"
+   ],
+   "nodes_here": 2,
+   "nodes_elsewhere": 2,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22502,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "The nouns for meditation name the musing itself as a thing offered, loved or hindered: it is the meditation of the heart that is asked to be acceptable (Psa 19:14), that shall be understanding (Psa 49:3), that is asked to be pleasing (Psa 104:34), the law that is the speaker's meditation (Psa 119:97, Psa 119:99), and what is hindered before God (Job 15:4). Elijah's mockery names the god's musing (1Ki 18:27).",
+   "verses": [
+    "1Kgs.18.27",
+    "Job.15.4",
+    "Ps.104.34",
+    "Ps.119.97",
+    "Ps.119.99",
+    "Ps.19.14",
+    "Ps.49.3"
+   ],
+   "nodes_here": 7,
+   "nodes_elsewhere": 0,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22505,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "The stored sense head of H6424 in Pro 5:21 reads 'to envy' against a lexicon range of weigh and make level (flagged in #2533), and the codes H0595 and H1934 in Pro 24:32 and Dan 7:8 are the pronoun I and a verb of being aligned into the units of 'considered'. They are not acts of attention; the verse acts are the verbs of setting the heart and contemplating beside them.",
+   "verses": [
+    "Dan.7.8",
+    "Prov.24.32",
+    "Prov.5.21"
+   ],
+   "nodes_here": 1,
+   "nodes_elsewhere": 2,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22632,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Destruction words and the attending meet in three verses. In Psa 38:12 the ruin is 1 word before the meditating and the meditating is on treachery; in Psa 119:78 the speaker meditates on the precepts after being wronged (3 words before); in Job 2:3 the destroying is 18 words after the Lord's considering of Job, in a later clause. Harm stands beside the attending in the Psalm verses, as its object or its occasion.",
+   "verses": [
+    "Job.2.3",
+    "Ps.119.78",
+    "Ps.38.12"
+   ],
+   "nodes_here": 2,
+   "nodes_elsewhere": 5,
+   "collections": [
+    "destruction",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22633,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Evil and the wicked meet the attending in three verses. In Job 1:8 and Job 2:3 the evil that Job turns from stands 12 and 13 words after the Lord's considering, as part of the description of the one considered; in Pro 15:28 the wicked is 3 words after the heart of the righteous that ponders, and is set against it. The evil belongs to the one described or contrasted, not to the act of attending.",
+   "verses": [
+    "Job.1.8",
+    "Job.2.3",
+    "Prov.15.28"
+   ],
+   "nodes_here": 1,
+   "nodes_elsewhere": 7,
+   "collections": [
+    "evildoer",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22634,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Fear meets the attending in four verses: the fear of God is 9 and 10 words after the Lord's considering of Job in Job 1:8 and Job 2:3 and describes him, in Job 15:4 fear and meditation are both hindered (2 words), and in Mat 1:20 fear is 14 words after Joseph's considering, in the angel's words. The fear of God is the standing of the one considered or what meditation is set beside.",
+   "verses": [
+    "Job.1.8",
+    "Job.15.4",
+    "Job.2.3",
+    "Matt.1.20"
+   ],
+   "nodes_here": 1,
+   "nodes_elsewhere": 9,
+   "collections": [
+    "fear",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22635,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Remembering and the attending are paired in four verses, always 3 words apart with the remembering first: Psa 63:6, Psa 77:3, Psa 77:6 and Psa 143:5. The remembering of God, a song or the days of old comes first and the meditating follows in the same sentence, so the two are one movement: a recalling and then a going over.",
+   "verses": [
+    "Ps.143.5",
+    "Ps.63.6",
+    "Ps.77.3",
+    "Ps.77.6"
+   ],
+   "nodes_here": 4,
+   "nodes_elsewhere": 4,
+   "collections": [
+    "forget",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22636,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Precepts and authority meet the attending in four verses. In Psa 119:15, 119:27 and 119:78 the precepts are within two words of the meditating and are its object; in Mar 10:42 those who exercise authority stand 8 words after the members reputed to rule, so the reputed ruling and the exercise of authority are set together. The precepts are the thing meditated on; authority is the standing counted.",
+   "verses": [
+    "Mark.10.42",
+    "Ps.119.15",
+    "Ps.119.27",
+    "Ps.119.78"
+   ],
+   "nodes_here": 3,
+   "nodes_elsewhere": 5,
+   "collections": [
+    "govern",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22637,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "The heart meets the attending in five verses within three words: 1 word after the meditation in Psa 19:14 and Psa 49:3, 2 after in Psa 77:6, 2 before in Pro 15:28 and 3 after in Luk 2:19. In every verse the heart is the place of the meditating or pondering, which is one of the relations found across the subgroups (the heart as place).",
+   "verses": [
+    "Luke.2.19",
+    "Prov.15.28",
+    "Ps.19.14",
+    "Ps.49.3",
+    "Ps.77.6"
+   ],
+   "nodes_here": 5,
+   "nodes_elsewhere": 5,
+   "collections": [
+    "heart",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22638,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Works meet the attending in four verses. In Psa 77:12 (1 word before), Psa 143:5 (4 after) and Psa 145:5 (1 before) the works are God's and are the object of the meditating; in Ecc 2:11 the toil (4 after) is the speaker's own, considered. The attending is directed to God's works in three and to one's own work in one.",
+   "verses": [
+    "Eccl.2.11",
+    "Ps.143.5",
+    "Ps.145.5",
+    "Ps.77.12"
+   ],
+   "nodes_here": 3,
+   "nodes_elsewhere": 5,
+   "collections": [
+    "labor",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22640,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Love meets the attending in two verses: 'love' is 1 word before the meditating in Psa 119:48 and 3 before in Psa 119:97, where the love of the commandments or the law comes first and the meditation follows. In Jos 7:21 the partner is covetousness 3 words after the surface 'weighing', which is a weight of gold there and not an attending.",
+   "verses": [
+    "Josh.7.21",
+    "Ps.119.48",
+    "Ps.119.97"
+   ],
+   "nodes_here": 2,
+   "nodes_elsewhere": 4,
+   "collections": [
+    "love",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22641,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Searching meets the attending in three verses: 'search' is 4 words after the meditating in Psa 77:6, 'seek' 7 and 4 before in Psa 38:12, and 'looking for' 8 after the pondering in Act 10:19. In Psa 77:6 the spirit's search follows the meditating; in Act 10:19 the men looking for Peter are named while he ponders the vision.",
+   "verses": [
+    "Acts.10.19",
+    "Ps.38.12",
+    "Ps.77.6"
+   ],
+   "nodes_here": 3,
+   "nodes_elsewhere": 4,
+   "collections": [
+    "search",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22643,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Wisdom and understanding meet the attending in seven verses. A second verb of musing stands in the same clause in Psa 77:12 and Psa 143:5 (3 words); in Psa 49:3 the meditation lies between wisdom (1 before) and understanding (2 after); in Pro 17:28 the silent fool is considered wise (1 after) and intelligent (4); in Psa 119:27 understanding is 3 before, in Ecc 12:9 'wise' is 6 before the weighing and in Isa 53:8 'judgment' is 4 before.",
+   "verses": [
+    "Eccl.12.9",
+    "Isa.53.8",
+    "Prov.17.28",
+    "Ps.119.27",
+    "Ps.143.5",
+    "Ps.49.3",
+    "Ps.77.12"
+   ],
+   "nodes_here": 4,
+   "nodes_elsewhere": 12,
+   "collections": [
+    "thought",
+    "wise"
+   ]
+  }
+ ],
+ "answer": {
+  "command": "ReadSweep",
+  "collection": "thought",
+  "subgroup": "meditating and pondering",
+  "older": [
+   {
+    "observation": 22314,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22370,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22371,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22372,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22373,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22374,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22375,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22376,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22378,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22379,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22381,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22415,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22416,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22417,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22418,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22432,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22439,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22446,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22485,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22486,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22487,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22488,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22492,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22493,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22494,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22496,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22497,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22498,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22499,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22501,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22502,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22505,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22632,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22633,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22634,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22635,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22636,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22637,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22638,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22640,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22641,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22643,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   }
+  ]
+ },
+ "measured": {
+  "package_chars": 35240,
+  "seconds": 0.01
+ }
+}

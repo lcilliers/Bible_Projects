@@ -1,0 +1,18 @@
+# Escalation deep history
+
+## #2336 — Reading every verse for observations does not scale
+type=issue source=researcher
+
+**v1** (2026-10-30T11:26:25Z, Claude) state=raised next_action=review assigned_to=Researcher
+> **short description (set this version):** Reading every verse for observations does not scale
+> **comment (set this version):** Raised on the researcher's point (chat 2026-10-30, verbatim): 'if 230 verses are going to be so many tokens then it is not feasible to embark on reading the verses for observastions.  there are 24000  versus - it will take years to get through it'. Checked in iba.db: 24,227 verses carry at least one M-coded word (64,460 occurrences, 80 M clusters); the m21-asking reading alone holds 271 verses in scope. Measured on the 39 verses of #2329: 38 seconds recorded and 13.4 observations a verse; about 49 seconds of session time a verse (31.6 minutes for the 39). Estimate, inferential (B:4): about 10,000 tokens a verse, so about 240 million tokens and about 330 hours of session time for 24,227 verses by this method.
+> **context (set this version):** outputs/escalation/2329-redo-result-v1-20261030.md
+
+**v2** (2026-10-30T11:26:40Z, Claude) state=re-assigned next_action=ready_for_approval assigned_to=Researcher
+> **resolution (set this version):** Decision sought, with its options (nothing built, B:105). You are right that reading all 24,227 verses by the #2329 method is not feasible: about 240 million tokens and about 330 hours by my estimate. Options, which can be combined: A, recommended: the app drafts the mechanical items from the tables (meaning from the tree, polarity from the negator morph, object and party from the bears-on words and the party kind, circumstance and chain from the passage) and I only judge and write what needs reading: the read observations with grounds, the operation and the discovery flags; I expect a large cut in tokens, but it is untested, so a trial on 10 verses with a measured count comes first. B: read by objective, not by verse: a reading takes the verses that its objective needs (cfg_behaviour_rule RM-01, RM-03 and RM-04, gather not redo), so the nine items are worked in full only on the verses a claim rests on, and the other verses of a cluster carry the drafted items only. C: an API route for the drafting on a cheaper model, which CP-08 now rules out for the capture (chat session on Sonnet, 2026-10-26), so it needs your ruling. D: stop the observation reading at the 39 and the claims work from them, and decide the next scope after the claims show what is missing. #2320 stays with you for B, D or E until this is decided. On your choice Claude designs the chosen option and brings the design back before any build.
+
+**v3** (2026-10-30T11:30:55Z, Claude) state=re-assigned next_action=ready_for_approval assigned_to=Researcher
+> **comment (set this version):** Researcher, chat 2026-10-30 (verbatim), on #2320: 'we have confirmed that reading the verses for all the relevant characteristics in detail is simply not achievable.' #2320 is withdrawn. This item still needs the researcher's choice of how the observation work is scoped instead (options A to D in its resolution); no option is taken as chosen by that statement.
+
+**v4** (2026-10-30T11:33:12Z, Claude) state=withdraw next_action=reject assigned_to=Researcher
+> **comment (set this version):** Rejected by the researcher, chat 2026-10-30 (verbatim): '2336 is rejected.   I need to rethink how to approach the study'. None of options A to D is taken. The approach to the study is with the researcher; nothing is designed or built under this item.

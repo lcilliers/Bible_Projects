@@ -1,0 +1,1196 @@
+{
+ "command": "ReadSweep",
+ "collection": "thought",
+ "subgroup": "weighing and taking account of",
+ "step": "2.1",
+ "item": "sweep",
+ "made": "2026-11-26T05:51:15Z",
+ "instruction": {
+  "what": "The sweep (B4) of one subgroup, after its 2.1 rows: every observation of the subgroup's scope still unmarked after B1 to B3 -- older observations on its occurrences that B1 carried forward and B2 and B3 did not take up, any carried to the sweep, and any other unmarked observation of the scope (for example the reading of an earlier grouping). Each is judged by its content. End state: none of the subgroup's observations is unmarked, except one deferred to a named collection.",
+  "read": [
+   "Take one older observation at a time (`older`): its text, its stage and kind, its verses, how many of its nodes are on this subgroup's occurrences and how many elsewhere, and the collections its nodes belong to.",
+   "Judge it by what it states, not by its stage or kind: does it state what the data are or show, tied to a verse (evidence)? how something works in the inner being, based on evidence (inner being)? or neither?"
+  ],
+  "write": [
+   "Fill `answer.older`, one entry for each observation, each answered once, with `reason`: what it states and why it is so judged.",
+   "merge, with `into`: a live observation of the subgroup says the same in the same words. consume, with `carriers` (observation ids) and `mapping`: live observations already state what it says; every word occurrence of it must be on a live node of a carrier (VA-03), then it is deleted. keep, with `nature` evidence or inner_being: it stands as it is (an inner-being one waits for 3.1). delete_neither: it is neither evidence nor inner being; it is commented, then deleted with its nodes here (one held by other subgroups or collections loses only the nodes here). defer, with `collection`, `nature` and `finding`: another collection owns it; it is marked now and the finding is left to that collection.",
+   "Then: Collection-Build.ps1 -Action RecordSweep -File <the answer file> (-Check to preview). The record refuses the whole file on any fault; every unmarked observation must be answered."
+  ],
+  "keep": [
+   {
+    "rule": "VA-04 neither-evidence-nor-inner-being-is-deleted",
+    "text": "An observation that is neither evidence nor inner being contributes nothing to the purposes of the observations (researcher, 2026-11-22): it is commented with its reason and the word occurrences no other live observation holds, then deleted. An observation already marked, or one another observation traces, is not deleted this way."
+   },
+   {
+    "rule": "VA-05 the-marker-follows-content-not-stage",
+    "text": "Evidence states what the data are or show, tied to a verse. Inner being states how something works in the inner being, based on evidence, a building block of the stage 5 claims. The marker (ib_observation.nature) follows the content and purpose of the observation, never its stage (RS-04): an observation of any stage may be inner being when it traces to evidence. One that states both is split. The marker is set when the observation is created, by the item that is answered (cfg_setting layer.reading items.<item>.nature); a finding file never sets it; the validation changes it only where the content shows the item's nature does not hold."
+   },
+   {
+    "rule": "RW-01 changed-only-by-reading",
+    "text": "No observation is changed except by a reading, and every change is recorded with its reason. An observation no longer supported by the verse is soft-deleted, with the reason."
+   },
+   {
+    "rule": "RS-04 existing-checked-accept-modify-delete",
+    "text": "When a verse is worked, every existing observation and node on it, of any stage, is checked against the verse by its wording. The stage is not an indication of the nature of an observation and is never used to filter. Each observation is accepted, modified (changed in place; the old value, the new value and the reason are kept in ib_observation_change), soft deleted (the `deleted` column, with the reason), merged (a duplicate description, into the observation that is kept) or, when its wording shows it is not verse understanding, left exactly as it is with the reason. The check's fixes are part of it and need no separate approval. Nothing is physically deleted."
+   }
+  ],
+  "not_in_this_read": ""
+ },
+ "older": [
+  {
+   "observation": 22317,
+   "stage": "layer-1",
+   "kind": "enrichment",
+   "text": "The lexicon entries bear the grouping out for most of the group: the codes of looking on and heeding (H8159 to gaze, H5027 to look, H7200G to see, H7789 to see, H6485I to visit, attend to), of knowing in the sense of acknowledging (H3045 to know, H5234A to recognise, G1097 and G6063 to know), of favour (H5375Q to lift, favour) and of counting and esteeming as (H2803H to count, regard as, 6 occurrences; H2803J; G3049 to count; G2233 to lead, count). The codes that link the group to its usage are H2803H and G3049 for the status a thing is counted as and H8159, H5027 and H3045 for the regard paid. Several codes are small words aligned into the units: H0408 and H3808 (not, negators), H9006 (from), H0853 (object marker), G4012 (about), G3313 (part, in the idiom 'in regard to'), H1700 (cause, 'with regard to') and H3820A (heart, in an idiom). The group definition is taking account of someone or something and the standing given it.",
+   "verses": [
+    "1Cor.4.1",
+    "1Pet.5.12",
+    "1Sam.1.16",
+    "1Sam.25.25",
+    "1Tim.6.1",
+    "2Chr.5.11",
+    "2Chr.6.19",
+    "2Cor.5.16",
+    "2Kgs.3.14",
+    "2Thess.3.15",
+    "Acts.28.22",
+    "Col.2.16",
+    "Deut.33.9",
+    "Deut.9.27",
+    "Eccl.3.18",
+    "Exod.5.9",
+    "Gen.31.15",
+    "Gen.4.5",
+    "Hos.8.12",
+    "Isa.13.17",
+    "Isa.29.16",
+    "Isa.29.17",
+    "Isa.33.8",
+    "Isa.5.12",
+    "Jer.24.5",
+    "Job.34.27",
+    "Job.35.13",
+    "Job.37.24",
+    "Job.9.21",
+    "Judg.15.3",
+    "Lam.4.16",
+    "Lam.4.2",
+    "Lev.19.23",
+    "Luke.22.24",
+    "Prov.12.10",
+    "Ps.119.117",
+    "Ps.144.3",
+    "Ps.28.5",
+    "Ps.44.22",
+    "Ps.74.20",
+    "Ps.80.14",
+    "Rom.2.26",
+    "Rom.8.36"
+   ],
+   "nodes_here": 47,
+   "nodes_elsewhere": 1,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22377,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "text": "Life and death stand with the group in Isa 53:8 (living, 5 after), Eze 18:28 (live, 8 after), Rom 4:19 (dead, 4 after) and Heb 11:19 (dead, 7 after). In Rom 4:19 and Heb 11:19 what is considered is a body as good as dead and God's power to raise the dead; in Eze 18:28 life is the outcome of considering and turning away.",
+   "verses": [
+    "Ezek.18.28",
+    "Heb.11.19",
+    "Isa.53.8",
+    "Rom.4.19"
+   ],
+   "nodes_here": 5,
+   "nodes_elsewhere": 4,
+   "collections": [
+    "live",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22380,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "text": "Taking stands with the group in Gen 24:22 (took, 3 before), Jos 7:21 (took, 4 after), Eze 5:1 (take, 2 before) and Mat 1:20 (take, 15 after). In the first three the member is the weight of a thing taken (a ring, gold, balances), a measure and not a thought; only Mat 1:20, taking Mary as wife, belongs with the considering.",
+   "verses": [
+    "Ezek.5.1",
+    "Gen.24.22",
+    "Josh.7.21",
+    "Matt.1.20"
+   ],
+   "nodes_here": 5,
+   "nodes_elsewhere": 5,
+   "collections": [
+    "snatch",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22387,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "text": "Hearing stands with the group in 2Ch 6:19 (listening, 8 after), Job 35:13 (hear, 4 before) and Act 28:22 (hear, 6 before). In Job 35:13 hearing and regarding are paired as what God does not do for an empty cry; in 2Ch 6:19 the regard asked for and the listening are asked together.",
+   "verses": [
+    "2Chr.6.19",
+    "Acts.28.22",
+    "Job.35.13"
+   ],
+   "nodes_here": 3,
+   "nodes_elsewhere": 4,
+   "collections": [
+    "hear",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22388,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "text": "Works stand with the group in Exo 5:9 (work, 5 before; labor, 1 before), Psa 28:5 (works, 1 after; work, 3 after), Isa 5:12 (work, 5 after) and Lam 4:2 (work, 3 after). In Psa 28:5 and Isa 5:12 the Lord's works are what is not regarded; in Exo 5:9 the work is the burden laid on the men; in Lam 4:2 the work is a potter's hands.",
+   "verses": [
+    "Exod.5.9",
+    "Isa.5.12",
+    "Lam.4.2",
+    "Ps.28.5"
+   ],
+   "nodes_here": 5,
+   "nodes_elsewhere": 8,
+   "collections": [
+    "labor",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22389,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "text": "Worthlessness and conceit stand with the group in 1Sa 1:16 (worthless, 2 after), 1Sa 25:25 (1 after) and Job 37:24 (conceit, 3 after). In the two Samuel verses regard is asked not to be given to a person as worthless; in Job 37:24 God does not regard those wise in their own conceit.",
+   "verses": [
+    "1Sam.1.16",
+    "1Sam.25.25",
+    "Job.37.24"
+   ],
+   "nodes_here": 4,
+   "nodes_elsewhere": 3,
+   "collections": [
+    "pride",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22390,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "text": "Contempt stands with the group in Isa 33:8 (despised, 2 before), Act 28:22 (spoken against, 9 after) and 1Ti 6:1 (reviled, 11 after). In each verse a word of contempt is in the same sentence as the regard.",
+   "verses": [
+    "1Tim.6.1",
+    "Acts.28.22",
+    "Isa.33.8"
+   ],
+   "nodes_here": 3,
+   "nodes_elsewhere": 3,
+   "collections": [
+    "scoff",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22414,
+   "stage": "layer-2",
+   "kind": "face",
+   "text": "The surface 'considered' carries seventeen codes in two senses and some small words. Attention given to a matter: H7760K with H3820A (the idiom of setting the heart, Job 1:8 and 2:3, and Pro 24:32 with H7896K), H6437G (Ecc 2:11), H7200H (Eze 18:28), H7878 (Isa 53:8), H7920 (Dan 7:8), G1760 (Mat 1:20) and G2657 (Rom 4:19). Reckoning or being reckoned: H2803H (1Ki 10:21, 2Ch 9:20, Neh 13:13), H2803J (Pro 17:28), G2233 (Heb 11:11, Heb 11:26), G3049 (Heb 11:19) and G1380 in the sense of being reputed (Mar 10:42). H1934 (Dan 7:8, a verb of being), H0595 (Pro 24:32, the pronoun I) and G3756 (Rom 4:19, a negator) sit in the units without carrying either sense.",
+   "verses": [
+    "1Kgs.10.21",
+    "2Chr.9.20",
+    "Dan.7.8",
+    "Eccl.2.11",
+    "Ezek.18.28",
+    "Heb.11.11",
+    "Heb.11.19",
+    "Heb.11.26",
+    "Isa.53.8",
+    "Job.1.8",
+    "Job.2.3",
+    "Mark.10.42",
+    "Matt.1.20",
+    "Neh.13.13",
+    "Prov.17.28",
+    "Prov.24.32",
+    "Rom.4.19"
+   ],
+   "nodes_here": 23,
+   "nodes_elsewhere": 0,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22419,
+   "stage": "layer-2",
+   "kind": "face",
+   "text": "The surface 'weigh' carries three codes in two senses. Weighing out as a physical act: H8254 (Ezr 8:29, the vessels weighed before the priests) and H5187 (Zep 1:11, traders laden with silver). Weighing up what is said: G1252 (1Cor 14:29).",
+   "verses": [
+    "1Cor.14.29",
+    "Ezra.8.29",
+    "Zeph.1.11"
+   ],
+   "nodes_here": 3,
+   "nodes_elsewhere": 0,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22420,
+   "stage": "layer-2",
+   "kind": "face",
+   "text": "The surface 'weighing' carries two codes in two senses. H4948 (four occurrences in Gen 24:22 twice, Jos 7:21 and Eze 5:1) is a weight, a measure of shekels; H0239 in Ecc 12:9 is the Preacher weighing proverbs with care.",
+   "verses": [
+    "Eccl.12.9",
+    "Ezek.5.1",
+    "Gen.24.22",
+    "Josh.7.21"
+   ],
+   "nodes_here": 5,
+   "nodes_elsewhere": 0,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22424,
+   "stage": "layer-2",
+   "kind": "face",
+   "text": "The surface 'regard' carries twenty-seven codes in five senses and some small words. Looking on and heeding: H8159 (three verses), H5027 (three), H7200G (two), H7789, H6485I, H6437G (two), H7919A and H0995. Acknowledging or knowing: H3045 (three), H5234A, G1097 and G6063. Favour: H5375Q (2Ki 3:14). Counting as: H2803H (two), G3049 (two), G2233 (two), H5414I (1Sa 1:16) and H6188 (Lev 19:23). 'With regard to': G4012 (Act 28:22), G3313 (Col 2:16), H1700 (Ecc 3:18) and H9006 (Jdg 15:3). H8104J (2Ch 5:11) gives observing a rule. The negators H0408 and H3808 (Exo 5:9, Job 9:21), the object marker H0853 and H3820A (1Sa 25:25, heart in an idiom) sit in the units without carrying a sense of their own.",
+   "verses": [
+    "1Cor.4.1",
+    "1Pet.5.12",
+    "1Sam.1.16",
+    "1Sam.25.25",
+    "1Tim.6.1",
+    "2Chr.5.11",
+    "2Chr.6.19",
+    "2Cor.5.16",
+    "2Kgs.3.14",
+    "2Thess.3.15",
+    "Acts.28.22",
+    "Col.2.16",
+    "Deut.33.9",
+    "Deut.9.27",
+    "Eccl.3.18",
+    "Exod.5.9",
+    "Gen.4.5",
+    "Isa.13.17",
+    "Isa.33.8",
+    "Isa.5.12",
+    "Jer.24.5",
+    "Job.34.27",
+    "Job.35.13",
+    "Job.37.24",
+    "Job.9.21",
+    "Judg.15.3",
+    "Lam.4.16",
+    "Lev.19.23",
+    "Prov.12.10",
+    "Ps.119.117",
+    "Ps.144.3",
+    "Ps.28.5",
+    "Ps.74.20",
+    "Ps.80.14"
+   ],
+   "nodes_here": 38,
+   "nodes_elsewhere": 0,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22425,
+   "stage": "layer-2",
+   "kind": "face",
+   "text": "The surface 'regarded' carries four codes: H2803H (Gen 31:15, Psa 44:22, Lam 4:2, Hos 8:12), H2803J (Isa 29:16, 29:17) and G3049 (Rom 2:26, 8:36), all 'counted as'; and G1380 in Luk 22:24, which is being reputed or reckoned greatest. The surface has one sense with a reputation sense in one verse.",
+   "verses": [
+    "Gen.31.15",
+    "Hos.8.12",
+    "Isa.29.16",
+    "Isa.29.17",
+    "Lam.4.2",
+    "Luke.22.24",
+    "Ps.44.22",
+    "Rom.2.26",
+    "Rom.8.36"
+   ],
+   "nodes_here": 9,
+   "nodes_elsewhere": 0,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22435,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "text": "Qualifiers stand with the taking-account group in 19 verses with negators (33 stored pairs). The negator reaches the member, denying the regard, in Gen 4:5, Deu 33:9, 1Sa 25:25, Job 34:27, Job 35:13, Job 37:24, Psa 28:5, Isa 5:12, Isa 13:17, Isa 33:8, Lam 4:16, 2Th 3:15 and, as 'no longer', 2Cor 5:16; in Gen 31:15 and Rom 2:26 it is in a question about being counted as. It reaches another word in Lev 19:23 (not eaten), Psa 28:5 (build no more) and Col 2:16 (let no one pass judgment). The adjectives that matter are the complements of status after 'regarded' and 'regard': foreigners (Gen 31:15), a strange thing (Hos 8:12), the greatest (Luk 22:24), servants (1Cor 4:1).",
+   "verses": [
+    "1Cor.4.1",
+    "1Pet.5.12",
+    "1Sam.1.16",
+    "1Sam.25.25",
+    "1Tim.6.1",
+    "2Cor.5.16",
+    "2Kgs.3.14",
+    "2Thess.3.15",
+    "Acts.28.22",
+    "Col.2.16",
+    "Deut.33.9",
+    "Gen.31.15",
+    "Gen.4.5",
+    "Hos.8.12",
+    "Isa.13.17",
+    "Isa.29.16",
+    "Isa.29.17",
+    "Isa.33.8",
+    "Isa.5.12",
+    "Jer.24.5",
+    "Job.34.27",
+    "Job.35.13",
+    "Job.37.24",
+    "Job.9.21",
+    "Lam.4.16",
+    "Lam.4.2",
+    "Lev.19.23",
+    "Luke.22.24",
+    "Prov.12.10",
+    "Ps.28.5",
+    "Rom.2.26",
+    "Rom.8.36"
+   ],
+   "nodes_here": 35,
+   "nodes_elsewhere": 68,
+   "collections": [
+    "build",
+    "command",
+    "cruel",
+    "forsake",
+    "hear",
+    "honor",
+    "innocent",
+    "know",
+    "live",
+    "love",
+    "loyalty",
+    "real",
+    "righteous",
+    "thought",
+    "turn",
+    "wise"
+   ]
+  },
+  {
+   "observation": 22442,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "text": "Entities are named in 25 of the 43 verses of the taking-account group, 23 different ones in 54 stored pairs (34 human, 20 divine). The divine are God (8), the Lord (7), Christ (4) and the Almighty; the human include Nabal (4), man and men, the priests, Cain, Abraham, Isaac, Jacob, Elisha, Jehoshaphat, Samson, servants and brothers. Persons here are the ones regarded or not regarded (Nabal, Jehoshaphat, Cain's offering), and God is both the one who regards (Lam 4:16, Psa 80:14) and the one whose works are not regarded (Psa 28:5, Isa 5:12).",
+   "verses": [
+    "1Cor.4.1",
+    "1Pet.5.12",
+    "1Sam.25.25",
+    "1Tim.6.1",
+    "2Chr.5.11",
+    "2Chr.6.19",
+    "2Cor.5.16",
+    "2Kgs.3.14",
+    "2Thess.3.15",
+    "Deut.9.27",
+    "Eccl.3.18",
+    "Exod.5.9",
+    "Gen.4.5",
+    "Isa.29.16",
+    "Isa.33.8",
+    "Isa.5.12",
+    "Jer.24.5",
+    "Job.35.13",
+    "Job.37.24",
+    "Judg.15.3",
+    "Lam.4.16",
+    "Lam.4.2",
+    "Ps.144.3",
+    "Ps.28.5",
+    "Ps.80.14"
+   ],
+   "nodes_here": 28,
+   "nodes_elsewhere": 48,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22449,
+   "stage": "layer-2",
+   "kind": "relation",
+   "text": "The direction of the regard changes across the verses. It runs from a person to a person in 1Sa 25:25, 1Sa 1:16, 2Ki 3:14, Jer 24:5 and Pro 12:10 (the righteous regards his beast); from a person to God's works in Psa 28:5 and Isa 5:12; from God to a person in Gen 4:5 (no regard for Cain), Lam 4:16 and Job 37:24; asked of God in Psa 74:20, Psa 80:14 and 2Ch 6:19 (that he have regard for the covenant, the vine and the prayer); and withheld by God in Job 35:13 (he does not regard an empty cry). The status counted as runs from a speaker to the one counted in Gen 31:15, Psa 44:22, Isa 29:16 and Rom 8:36.",
+   "verses": [
+    "1Cor.4.1",
+    "1Pet.5.12",
+    "1Sam.25.25",
+    "1Tim.6.1",
+    "2Chr.5.11",
+    "2Chr.6.19",
+    "2Cor.5.16",
+    "2Kgs.3.14",
+    "2Thess.3.15",
+    "Deut.9.27",
+    "Eccl.3.18",
+    "Exod.5.9",
+    "Gen.4.5",
+    "Isa.29.16",
+    "Isa.33.8",
+    "Isa.5.12",
+    "Jer.24.5",
+    "Job.35.13",
+    "Job.37.24",
+    "Judg.15.3",
+    "Lam.4.16",
+    "Lam.4.2",
+    "Ps.144.3",
+    "Ps.28.5",
+    "Ps.80.14"
+   ],
+   "nodes_here": 28,
+   "nodes_elsewhere": 48,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22460,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Regard is given as a done act in 2Ki 3:14 (Elisha has regard for Jehoshaphat), Pro 12:10 (the righteous man's care for his beast), Psa 144:3 (the Lord regards man) and 2Cor 5:16 (Christ once regarded according to the flesh). The act is a taking account of a person or a creature, and the subjects are a prophet, a righteous man, the Lord and the apostles.",
+   "verses": [
+    "2Cor.5.16",
+    "2Kgs.3.14",
+    "Prov.12.10",
+    "Ps.144.3"
+   ],
+   "nodes_here": 3,
+   "nodes_elsewhere": 1,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22461,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Regard and its counting-as are foreseen in Jer 24:5 (the Lord will regard the exiles as good), Isa 29:17 (the fruitful field shall be counted as a forest) and Rom 2:26 (the uncircumcised will be counted as circumcision). The act stands in the future and gives a standing that does not yet hold.",
+   "verses": [
+    "Isa.29.17",
+    "Jer.24.5",
+    "Rom.2.26"
+   ],
+   "nodes_here": 3,
+   "nodes_elsewhere": 0,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22462,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Regard is asked or commanded in Psa 74:20, Psa 80:14 and 2Ch 6:19 (that the Lord have regard for the covenant, the vine and the prayer) and in 1Ti 6:1 and 1Cor 4:1 (that bondservants regard their masters as worthy, that the apostles be taken as servants). The act is put as what should be done, by God in the first three and by persons in the last two.",
+   "verses": [
+    "1Cor.4.1",
+    "1Tim.6.1",
+    "2Chr.6.19",
+    "Ps.74.20",
+    "Ps.80.14"
+   ],
+   "nodes_here": 5,
+   "nodes_elsewhere": 0,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22463,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Regard is negated in thirteen verses: Gen 4:5, Deu 33:9, 1Sa 25:25, Job 34:27, Job 35:13, Job 37:24, Psa 28:5, Isa 5:12, Isa 13:17, Isa 33:8, Lam 4:16, 2Th 3:15 and Exo 5:9. The negator reaches the member in each (no regard, do not regard, nor does he regard), and the subjects are Cain's rival, the Levite, a lord, the wicked, God and the feasters, so the denial runs both from persons and from God.",
+   "verses": [
+    "1Sam.25.25",
+    "2Thess.3.15",
+    "Deut.33.9",
+    "Exod.5.9",
+    "Gen.4.5",
+    "Isa.13.17",
+    "Isa.33.8",
+    "Isa.5.12",
+    "Job.34.27",
+    "Job.35.13",
+    "Job.37.24",
+    "Lam.4.16",
+    "Ps.28.5"
+   ],
+   "nodes_here": 13,
+   "nodes_elsewhere": 0,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22464,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "In these thirteen verses the act is a refusal as the grammar states it: the regard is withheld from an offering, a person, the Lord's works, silver, man or a prayer. The refusal is spoken of God in Gen 4:5, Job 35:13, Job 37:24 and Lam 4:16, and of persons in the others.",
+   "verses": [
+    "1Sam.25.25",
+    "2Thess.3.15",
+    "Deut.33.9",
+    "Exod.5.9",
+    "Gen.4.5",
+    "Isa.13.17",
+    "Isa.33.8",
+    "Isa.5.12",
+    "Job.34.27",
+    "Job.35.13",
+    "Job.37.24",
+    "Lam.4.16",
+    "Ps.28.5"
+   ],
+   "nodes_here": 13,
+   "nodes_elsewhere": 0,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22465,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Where regard is given or asked, the act is a pursuit of its object: the Lord is asked to look to the covenant, the vine and the prayer, Elisha acts out of regard for Jehoshaphat, and the righteous cares for his beast. The pursuit runs from persons to God's works and to persons, and from God to persons.",
+   "verses": [
+    "2Chr.6.19",
+    "2Kgs.3.14",
+    "Prov.12.10",
+    "Ps.144.3",
+    "Ps.74.20",
+    "Ps.80.14"
+   ],
+   "nodes_here": 6,
+   "nodes_elsewhere": 0,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22466,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "What the regard is directed at differs by verse: the Lord's works and deeds (Psa 28:5, Isa 5:12), the covenant, the vine and the prayer (Psa 74:20, Psa 80:14, 2Ch 6:19), persons (Nabal in 1Sa 25:25, Jehoshaphat in 2Ki 3:14, the exiles in Jer 24:5, the parents in Deu 33:9), Cain's offering (Gen 4:5), an empty cry (Job 35:13) and the self-wise (Job 37:24). Persons and the works of God are the commonest objects.",
+   "verses": [
+    "1Sam.25.25",
+    "2Chr.6.19",
+    "2Kgs.3.14",
+    "Deut.33.9",
+    "Gen.4.5",
+    "Isa.5.12",
+    "Jer.24.5",
+    "Job.35.13",
+    "Job.37.24",
+    "Ps.28.5",
+    "Ps.74.20",
+    "Ps.80.14"
+   ],
+   "nodes_here": 12,
+   "nodes_elsewhere": 0,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22467,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "After 'regarded' and 'regard' the complement gives the standing: foreigners (Gen 31:15), a strange thing (Hos 8:12), the greatest (Luk 22:24), worthy of honor (1Ti 6:1). Each complement is a qualifier of the counting or regarding, naming what the person or thing is counted as.",
+   "verses": [
+    "1Tim.6.1",
+    "Gen.31.15",
+    "Hos.8.12",
+    "Luke.22.24"
+   ],
+   "nodes_here": 4,
+   "nodes_elsewhere": 0,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22468,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "The negator is a qualifier of the regard it reaches, turning the act into a denial: 'no' in Gen 4:5, 'not' in Job 37:24 and Psa 28:5 and Isa 5:12, 'no' in Isa 13:17 and Isa 33:8 and Lam 4:16. In each verse the negator is 1 word before or after the member and the verse states what it reaches.",
+   "verses": [
+    "Gen.4.5",
+    "Isa.13.17",
+    "Isa.33.8",
+    "Isa.5.12",
+    "Job.37.24",
+    "Lam.4.16",
+    "Ps.28.5"
+   ],
+   "nodes_here": 7,
+   "nodes_elsewhere": 0,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22469,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Regard is bound up with worth in three verses: it is asked not to be given to a woman or a man as worthless (1Sa 1:16, 1Sa 25:25) and God does not give it to those wise in their own conceit (Job 37:24). The worth or the conceit of the person regarded is named in the same sentence, within three words of the member.",
+   "verses": [
+    "1Sam.1.16",
+    "1Sam.25.25",
+    "Job.37.24"
+   ],
+   "nodes_here": 3,
+   "nodes_elsewhere": 0,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22470,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "A word of contempt stands in the same sentence as the regard in Isa 33:8 (despised, 2 before), Act 28:22 (spoken against, 9 after) and 1Ti 6:1 (reviled, 11 after). The regard is set in a verse that also names the low standing of a city, a sect or a name.",
+   "verses": [
+    "1Tim.6.1",
+    "Acts.28.22",
+    "Isa.33.8"
+   ],
+   "nodes_here": 3,
+   "nodes_elsewhere": 0,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22471,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Hearing and regard are paired in 2Ch 6:19 (listening, 8 after), Job 35:13 (hear, 4 before) and Act 28:22 (hear, 6 before): the regard is asked or denied together with a hearing, of a prayer, an empty cry or the views of a sect.",
+   "verses": [
+    "2Chr.6.19",
+    "Acts.28.22",
+    "Job.35.13"
+   ],
+   "nodes_here": 3,
+   "nodes_elsewhere": 0,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22472,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "The surface 'regard' also holds the prepositional idiom 'with regard to' in Act 28:22 (G4012), Col 2:16 (G3313), Ecc 3:18 (H1700) and Jdg 15:3 (H9006): these are not an act of taking account of anyone and are read in their verses as standalone. The negators H0408 and H3808 in Exo 5:9 and Job 9:21 are aligned into the unit of the surface and are read as negators, not as acts of regard.",
+   "verses": [
+    "Acts.28.22",
+    "Col.2.16",
+    "Eccl.3.18",
+    "Judg.15.3"
+   ],
+   "nodes_here": 4,
+   "nodes_elsewhere": 0,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22489,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Considering and counting as a done act appears in Neh 13:13 and 2Ch 9:20 (reckoned reliable, silver reckoned as nothing), Pro 17:28 (the silent fool counted wise), Heb 11:11, 11:19 and 11:26 (Sarah counting him faithful, Abraham concluding that God can raise the dead, Moses counting the reproach of Christ greater than treasures) and Mar 10:42 (those reputed to rule). The act is a judgment of standing or worth.",
+   "verses": [
+    "2Chr.9.20",
+    "Heb.11.11",
+    "Heb.11.19",
+    "Heb.11.26",
+    "Mark.10.42",
+    "Neh.13.13",
+    "Prov.17.28"
+   ],
+   "nodes_here": 7,
+   "nodes_elsewhere": 0,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22490,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "In 1Ki 10:21 the reckoning is negated: silver was not counted as anything in Solomon's days, and the negator reaches 'considered'. It is the only negated member of the group in the stored pairs that the negator reaches directly; in Jos 1:8, Eze 18:28, Mat 1:20 and Rom 4:19 the negators reach other verbs.",
+   "verses": [
+    "1Kgs.10.21"
+   ],
+   "nodes_here": 1,
+   "nodes_elsewhere": 0,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22491,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "In 1Ki 10:21 the act is a refusal of worth: silver is counted as nothing, which the verse sets against the gold of Solomon's vessels.",
+   "verses": [
+    "1Kgs.10.21"
+   ],
+   "nodes_here": 1,
+   "nodes_elsewhere": 0,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22495,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "The object of the considering is a person or the person's body in Job 1:8 and 2:3 (the servant Job), Rom 4:19 (Abraham's own body, as good as dead), Heb 11:11 (the one who promised), Eze 18:28 (the transgressions turned from), Ecc 2:11 (the work of his own hands) and Dan 7:8 (the horns). The objects are persons, bodies, deeds and the things seen in a vision.",
+   "verses": [
+    "Dan.7.8",
+    "Eccl.2.11",
+    "Ezek.18.28",
+    "Heb.11.11",
+    "Job.1.8",
+    "Rom.4.19"
+   ],
+   "nodes_here": 6,
+   "nodes_elsewhere": 0,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22500,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Life and death are stated beside the considering in Eze 18:28 (the one who considers and turns away shall live, 8 after), Rom 4:19 (his body as good as dead, 4 after) and Heb 11:19 (raised from the dead, 7 after). In the last two what is considered is the state of death; in the first life is what follows the considering.",
+   "verses": [
+    "Ezek.18.28",
+    "Heb.11.19",
+    "Rom.4.19"
+   ],
+   "nodes_here": 3,
+   "nodes_elsewhere": 0,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22503,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Weighing up as an evaluative act appears in Ecc 12:9, where the Preacher weighs proverbs with care and wisdom stands 6 words before; the physical weighing out of Ezr 8:29 is a counting of vessels before the priests. The evaluative weighing is one act of the attention of the Preacher among teaching, studying and arranging.",
+   "verses": [
+    "Eccl.12.9"
+   ],
+   "nodes_here": 1,
+   "nodes_elsewhere": 0,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22504,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "The surface 'weighing' is a weight in Gen 24:22 (twice), Jos 7:21 and Eze 5:1, a measure of shekels and not an act of the mind, and the surface 'weigh' is a physical weighing out in Ezr 8:29 and Zep 1:11 (laden); 'taking' stands beside the weights in the first three (took, 2 to 4 words). These occurrences are read as standalone: they are in the group because the surface also carries an evaluative use (1Cor 14:29, Ecc 12:9), and their placement was left as uncertain in the grouping.",
+   "verses": [
+    "Ezek.5.1",
+    "Ezra.8.29",
+    "Gen.24.22",
+    "Josh.7.21",
+    "Zeph.1.11"
+   ],
+   "nodes_here": 6,
+   "nodes_elsewhere": 0,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22639,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Life and death meet the attending in four verses: 'living' 5 words after in Isa 53:8, 'live' 8 after in Eze 18:28 (life as the outcome of considering and turning away), and 'dead' 4 and 7 after in Rom 4:19 and Heb 11:19 (a body as good as dead and the raising of the dead as what is considered). The considered matter is death in two verses and the result is life in one.",
+   "verses": [
+    "Ezek.18.28",
+    "Heb.11.19",
+    "Isa.53.8",
+    "Rom.4.19"
+   ],
+   "nodes_here": 5,
+   "nodes_elsewhere": 4,
+   "collections": [
+    "live",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22642,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Taking meets the surface 'weighing' in three verses where it is a weight of gold or a balance: 'took' 3 words before in Gen 24:22, 4 after in Jos 7:21 and 'take' 2 and 13 before in Eze 5:1; only in Mat 1:20 does 'take' (15 words after) belong to Joseph's considering, in the words 'do not fear to take Mary'. The weights are not acts of the mind and are read as standalone.",
+   "verses": [
+    "Ezek.5.1",
+    "Gen.24.22",
+    "Josh.7.21",
+    "Matt.1.20"
+   ],
+   "nodes_here": 5,
+   "nodes_elsewhere": 5,
+   "collections": [
+    "snatch",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22649,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Hearing meets the regard in three verses: listening is 8 words after in 2Ch 6:19 where the regard and the hearing are asked together, hearing is 4 before in Job 35:13 where an empty cry is neither heard nor regarded by God, and 6 before in Act 28:22. The word 'surely' in Job 35:13 is not a word of hearing (#2536). Hearing and regard are paired as what is given or withheld together.",
+   "verses": [
+    "2Chr.6.19",
+    "Acts.28.22",
+    "Job.35.13"
+   ],
+   "nodes_here": 3,
+   "nodes_elsewhere": 4,
+   "collections": [
+    "hear",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22650,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Works meet the regard in four verses: the Lord's works are 1 and 3 words after the regard in Psa 28:5 and 5 after in Isa 5:12, where they are what is not regarded; in Exo 5:9 the work (5 before) and labor (1 before) are the burden laid on the men, who are to pay no regard to lying words; in Lam 4:2 the work of a potter's hands (3 after) is what the sons of Zion are regarded as. The works are the object of the regard in the first two.",
+   "verses": [
+    "Exod.5.9",
+    "Isa.5.12",
+    "Lam.4.2",
+    "Ps.28.5"
+   ],
+   "nodes_here": 5,
+   "nodes_elsewhere": 8,
+   "collections": [
+    "labor",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22651,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Worthlessness and conceit meet the regard in three verses: 'worthless' is 2 words after in 1Sa 1:16 (regard asked not to be given as to a worthless woman) and 1 after in 1Sa 25:25 (Nabal, the worthless fellow), and 'conceit' is 3 after in Job 37:24 (God does not regard the wise in their own conceit). The regard is refused or asked against a person described as worthless or conceited.",
+   "verses": [
+    "1Sam.1.16",
+    "1Sam.25.25",
+    "Job.37.24"
+   ],
+   "nodes_here": 4,
+   "nodes_elsewhere": 3,
+   "collections": [
+    "pride",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22652,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Contempt meets the regard in three verses: 'despised' 2 words before in Isa 33:8 (no regard for man), 'spoken against' 9 after in Act 28:22 and 'reviled' 11 after in 1Ti 6:1. In each verse a word of contempt is in the same sentence as the regard, either as what accompanies the lack of regard or as what the regard is asked to guard against.",
+   "verses": [
+    "1Tim.6.1",
+    "Acts.28.22",
+    "Isa.33.8"
+   ],
+   "nodes_here": 3,
+   "nodes_elsewhere": 3,
+   "collections": [
+    "scoff",
+    "thought"
+   ]
+  }
+ ],
+ "answer": {
+  "command": "ReadSweep",
+  "collection": "thought",
+  "subgroup": "weighing and taking account of",
+  "older": [
+   {
+    "observation": 22317,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22377,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22380,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22387,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22388,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22389,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22390,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22414,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22419,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22420,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22424,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22425,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22435,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22442,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22449,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22460,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22461,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22462,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22463,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22464,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22465,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22466,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22467,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22468,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22469,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22470,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22471,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22472,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22489,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22490,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22491,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22495,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22500,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22503,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22504,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22639,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22642,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22649,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22650,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22651,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22652,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   }
+  ]
+ },
+ "measured": {
+  "package_chars": 35466,
+  "seconds": 0.02
+ }
+}

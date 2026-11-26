@@ -1,0 +1,184 @@
+{
+ "command": "ReadElements",
+ "collection": "thought",
+ "subgroup": "the mind on",
+ "ledger_id": 1941,
+ "findings": [
+  {
+   "key": "set-mind",
+   "kind": "statement",
+   "text": "In Rom 8:5 and Rom 8:6 the mind is set on something: a person directs his mind to an object and holds it there, so that the mind-set becomes his frame of thought. It is stated as done by those who live one way or the other.",
+   "basis": "read",
+   "parts": {
+    "item": "operation",
+    "grounds": "set their minds on the things of the Spirit",
+    "mode": "done"
+   },
+   "nodes": [
+    {
+     "occurrence": 1479689,
+     "role": "characteristic"
+    },
+    {
+     "occurrence": 1479698,
+     "role": "characteristic"
+    },
+    {
+     "occurrence": 1479702,
+     "role": "characteristic"
+    },
+    {
+     "traced": 22879
+    },
+    {
+     "traced": 23593
+    },
+    {
+     "traced": 22770
+    },
+    {
+     "traced": 22771
+    },
+    {
+     "traced": 23595
+    }
+   ],
+   "read_back": []
+  },
+  {
+   "key": "flesh-spirit",
+   "kind": "statement",
+   "text": "In Rom 8:5 and Rom 8:6 what the mind is set on is one of two opposites: the flesh and its things, or the Spirit and its things.",
+   "basis": "stated",
+   "parts": {
+    "item": "object",
+    "grounds": "set the mind on the flesh"
+   },
+   "nodes": [
+    {
+     "occurrence": 1479689,
+     "role": "characteristic"
+    },
+    {
+     "occurrence": 1479698,
+     "role": "characteristic"
+    },
+    {
+     "occurrence": 1479702,
+     "role": "characteristic"
+    },
+    {
+     "traced": 22879
+    },
+    {
+     "traced": 22770
+    },
+    {
+     "traced": 22771
+    }
+   ],
+   "read_back": []
+  },
+  {
+   "key": "life-mind",
+   "kind": "link",
+   "text": "In Rom 8:5 the way a person lives, by the flesh or by the Spirit, goes with where the mind is set, and in Rom 8:6 the set of mind is itself death, or life and peace: living, the set of mind and its outcome are joined.",
+   "basis": "stated",
+   "parts": {
+    "item": "chain",
+    "grounds": "is life and peace"
+   },
+   "nodes": [
+    {
+     "occurrence": 1479689,
+     "role": "characteristic"
+    },
+    {
+     "occurrence": 1479698,
+     "role": "characteristic"
+    },
+    {
+     "occurrence": 1479702,
+     "role": "characteristic"
+    },
+    {
+     "traced": 23594
+    },
+    {
+     "traced": 23595
+    },
+    {
+     "traced": 23596
+    },
+    {
+     "traced": 22879
+    }
+   ],
+   "read_back": []
+  },
+  {
+   "key": "pursuit",
+   "kind": "statement",
+   "text": "In Rom 8:5 and Rom 8:6 the setting of the mind is a pursuit of its object, in either direction: toward the flesh or toward the Spirit.",
+   "basis": "read",
+   "parts": {
+    "item": "polarity",
+    "grounds": "those who live according to the Spirit",
+    "polarity": "pursuit"
+   },
+   "nodes": [
+    {
+     "occurrence": 1479689,
+     "role": "characteristic"
+    },
+    {
+     "occurrence": 1479698,
+     "role": "characteristic"
+    },
+    {
+     "occurrence": 1479702,
+     "role": "characteristic"
+    },
+    {
+     "traced": 22879
+    },
+    {
+     "traced": 23595
+    },
+    {
+     "traced": 22771
+    }
+   ],
+   "read_back": []
+  }
+ ],
+ "not_used": {},
+ "older": [],
+ "existing": [
+  {
+   "observation": 22452,
+   "action": "delete",
+   "reason": "a 3.1 finding of the group this subgroup replaced; this reading states its content in the finding(s) set-mind and life-mind, resting on the subgroup's evidence"
+  },
+  {
+   "observation": 22453,
+   "action": "delete",
+   "reason": "a 3.1 finding of the group this subgroup replaced; this reading states its content in the finding(s) set-mind and flesh-spirit, resting on the subgroup's evidence"
+  },
+  {
+   "observation": 22455,
+   "action": "delete",
+   "reason": "a 3.1 finding of the group this subgroup replaced; this reading states its content in the finding(s) pursuit, resting on the subgroup's evidence"
+  },
+  {
+   "observation": 22457,
+   "action": "leave",
+   "reason": "a finding of the replaced group that reaches verses of other subgroups, states words standing near the member with no element of an act, or is an interworking finding for 3.3: left for that subgroup or step"
+  },
+  {
+   "observation": 22458,
+   "action": "delete",
+   "reason": "a 3.1 finding of the group this subgroup replaced; this reading states its content in the finding(s) life-mind, resting on the subgroup's evidence"
+  }
+ ]
+}

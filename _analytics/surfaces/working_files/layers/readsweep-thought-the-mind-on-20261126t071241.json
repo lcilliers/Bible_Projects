@@ -1,0 +1,178 @@
+{
+ "command": "ReadSweep",
+ "collection": "thought",
+ "subgroup": "the mind on",
+ "step": "2.1",
+ "item": "sweep",
+ "made": "2026-11-26T07:12:41Z",
+ "instruction": {
+  "what": "The sweep (B4) of one subgroup, after its 2.1 rows: every observation of the subgroup's scope still unmarked after B1 to B3 -- older observations on its occurrences that B1 carried forward and B2 and B3 did not take up, any carried to the sweep, and any other unmarked observation of the scope (for example the reading of an earlier grouping). Each is judged by its content. End state: none of the subgroup's observations is unmarked, except one deferred to a named collection.",
+  "read": [
+   "Take one older observation at a time (`older`): its text, its stage and kind, its verses, how many of its nodes are on this subgroup's occurrences and how many elsewhere, and the collections its nodes belong to.",
+   "Judge it by what it states, not by its stage or kind: does it state what the data are or show, tied to a verse (evidence)? how something works in the inner being, based on evidence (inner being)? or neither?"
+  ],
+  "write": [
+   "Fill `answer.older`, one entry for each observation, each answered once, with `reason`: what it states and why it is so judged.",
+   "merge, with `into`: a live observation of the subgroup says the same in the same words. consume, with `carriers` (observation ids) and `mapping`: live observations already state what it says; every word occurrence of it must be on a live node of a carrier (VA-03), then it is deleted. keep, with `nature` evidence or inner_being: it stands as it is (an inner-being one waits for 3.1). delete_neither: it is neither evidence nor inner being; it is commented, then deleted with its nodes here (one held by other subgroups or collections loses only the nodes here). defer, with `collection`, `nature` and `finding`: another collection owns it; it is marked now and the finding is left to that collection.",
+   "Then: Collection-Build.ps1 -Action RecordSweep -File <the answer file> (-Check to preview). The record refuses the whole file on any fault; every unmarked observation must be answered."
+  ],
+  "keep": [
+   {
+    "rule": "VA-04 neither-evidence-nor-inner-being-is-deleted",
+    "text": "An observation that is neither evidence nor inner being contributes nothing to the purposes of the observations (researcher, 2026-11-22): it is commented with its reason and the word occurrences no other live observation holds, then deleted. An observation already marked, or one another observation traces, is not deleted this way."
+   },
+   {
+    "rule": "VA-05 the-marker-follows-content-not-stage",
+    "text": "Evidence states what the data are or show, tied to a verse. Inner being states how something works in the inner being, based on evidence, a building block of the stage 5 claims. The marker (ib_observation.nature) follows the content and purpose of the observation, never its stage (RS-04): an observation of any stage may be inner being when it traces to evidence. One that states both is split. The marker is set when the observation is created, by the item that is answered (cfg_setting layer.reading items.<item>.nature); a finding file never sets it; the validation changes it only where the content shows the item's nature does not hold."
+   },
+   {
+    "rule": "RW-01 changed-only-by-reading",
+    "text": "No observation is changed except by a reading, and every change is recorded with its reason. An observation no longer supported by the verse is soft-deleted, with the reason."
+   },
+   {
+    "rule": "RS-04 existing-checked-accept-modify-delete",
+    "text": "When a verse is worked, every existing observation and node on it, of any stage, is checked against the verse by its wording. The stage is not an indication of the nature of an observation and is never used to filter. Each observation is accepted, modified (changed in place; the old value, the new value and the reason are kept in ib_observation_change), soft deleted (the `deleted` column, with the reason), merged (a duplicate description, into the observation that is kept) or, when its wording shows it is not verse understanding, left exactly as it is with the reason. The check's fixes are part of it and need no separate approval. Nothing is physically deleted."
+   }
+  ],
+  "not_in_this_read": ""
+ },
+ "older": [
+  {
+   "observation": 22316,
+   "stage": "layer-1",
+   "kind": "enrichment",
+   "text": "The lexicon entries bear the grouping out fully: G5426 is 'to think, set the mind on, hold an attitude' and G5427 is the noun 'frame of thought, purpose, aspiration', which the lexicon lists for Rom 8:6, 8:7 and 8:27. The two codes are the verb and its noun and carry the same meaning, the set of the mind; they link the group to its usage in Rom 8:5, Rom 8:6 and Mar 8:33. The group definition is the set or direction of the mind.",
+   "verses": [
+    "Mark.8.33",
+    "Rom.8.5",
+    "Rom.8.6"
+   ],
+   "nodes_here": 3,
+   "nodes_elsewhere": 1,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22452,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "In Rom 8:5 the mind is directed: those who live by the flesh and those who live by the Spirit each set their minds on the things of their own way. The act is a setting of the mind toward an object, stated as done by persons of either way of living, with the same verb for both.",
+   "verses": [
+    "Rom.8.5"
+   ],
+   "nodes_here": 1,
+   "nodes_elsewhere": 0,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22453,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "In Rom 8:6 the setting of the mind is stated as the mind-set itself (the noun G5427, twice): a mind-set of the flesh and a mind-set of the Spirit. The verse gives the operation once for each side of the contrast and states what each issues in.",
+   "verses": [
+    "Rom.8.6"
+   ],
+   "nodes_here": 2,
+   "nodes_elsewhere": 0,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22455,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "In Rom 8:5 and Rom 8:6 the setting of the mind is a pursuit of its object: the mind is directed toward the flesh or toward the Spirit, and the verses set the two against each other as alternatives.",
+   "verses": [
+    "Rom.8.5",
+    "Rom.8.6"
+   ],
+   "nodes_here": 3,
+   "nodes_elsewhere": 0,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22457,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "The object of the setting is named in each verse as one of a pair of opposites: the things of the flesh against the things of the Spirit (Rom 8:5), the flesh against the Spirit (Rom 8:6), the things of God against the things of man (Mar 8:33). The direction does not change in kind across the three verses; only the pair differs.",
+   "verses": [
+    "Mark.8.33",
+    "Rom.8.5",
+    "Rom.8.6"
+   ],
+   "nodes_here": 3,
+   "nodes_elsewhere": 1,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22458,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "In Rom 8:5 and Rom 8:6 the setting of the mind stands beside a way of living and its issue: living by the flesh or the Spirit goes with the mind-set, and the verse states death for the one and life and peace for the other. No entity is named in these two verses; the contrast is carried by the nouns flesh and Spirit.",
+   "verses": [
+    "Rom.8.5",
+    "Rom.8.6"
+   ],
+   "nodes_here": 3,
+   "nodes_elsewhere": 0,
+   "collections": [
+    "thought"
+   ]
+  }
+ ],
+ "answer": {
+  "command": "ReadSweep",
+  "collection": "thought",
+  "subgroup": "the mind on",
+  "older": [
+   {
+    "observation": 22316,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22452,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22453,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22455,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22457,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22458,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   }
+  ]
+ },
+ "measured": {
+  "package_chars": 7914,
+  "seconds": 0.01
+ }
+}

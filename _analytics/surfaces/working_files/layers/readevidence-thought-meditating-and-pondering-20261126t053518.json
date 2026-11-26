@@ -1,0 +1,1110 @@
+{
+ "command": "ReadEvidence",
+ "collection": "thought",
+ "subgroup": "meditating and pondering",
+ "step": "2.1",
+ "item": "evidence-validation",
+ "made": "2026-11-26T05:35:18Z",
+ "batch": {
+  "observations": 40,
+  "left_after_this": 53,
+  "evidence_in_scope": 93,
+  "observations_in_scope": 131
+ },
+ "code_checks": {
+  "passes": true,
+  "findings": {
+   "unmarked": [],
+   "no_node": [],
+   "word_missing": [],
+   "traced_dead": [],
+   "duplicate_text": [],
+   "b1_not_traced_by_a_sense": [],
+   "sense_not_traced_by_2_1": [],
+   "older_open": []
+  }
+ },
+ "instruction": {
+  "what": "The evidence validation (B5) of one subgroup, after its sweep, the gate before 3.1: the code checks of its observations (shown in `code_checks`), and the reading of every evidence observation of the subgroup (its own of S1 to 2.1, and the older ones on its occurrences kept as evidence) for whether it is true, founded and coherent with the others. Inner being is not judged here; the two validations are never run together.",
+  "read": [
+   "Read the code checks first: a failing check names observations to repair (unmarked, no node, a word node missing a column without its reason, a trace to a deleted observation, two of one text, a B1 observation no sense traces, a sense the 2.1 observations on its occurrences do not trace, an older observation left open).",
+   "Take one observation at a time (`observations`, in the order of the steps): its text, basis and grounds against its verses (`verses`) and the observations it traces. Is it true of those verses? Does it say more than they show? Does it contradict another observation of the subgroup?"
+  ],
+  "write": [
+   "Fill `answer.observations`, one entry for each observation of the package: verdict true, with `why` (what in the verses and the data bears it out); or verdict repair, with `why` (what is wrong) and `actions`: the actions of the validation that repair it (cfg_setting validate.reading actions, each with its parameters, for example {\"action\": \"restate\", \"oid\": id, \"new_text\": ..., \"checked\": ..., \"reason\": ...}, or delete_neither, complete_node, add_trace).",
+   "A repair is checked as it is written; an observation that cannot be made true is deleted with its reason.",
+   "Then: Collection-Build.ps1 -Action RecordEvidence -File <the answer file> (-Check to preview), and ReadEvidence again until every evidence observation is read; the gate passes when all are read and the code checks pass."
+  ],
+  "keep": [
+   {
+    "rule": "VA-01 a-sheet-is-one-checked-transaction",
+    "text": "A sheet of validation actions is checked whole (every action named, its parameters complete) and written in one transaction: any action the tables refuse refuses the whole sheet and nothing is kept. -Check runs every action and rolls back. Every change is kept in ib_observation_change with its reason (RW-01); nothing is physically deleted."
+   },
+   {
+    "rule": "VA-02 repair-first-and-every-finding-acted-on",
+    "text": "A finding of the validation is repaired first: a wording that is untrue or stronger than its verse is restated and the restatement checked against the base data; a node missing a column is completed, or the reason the data cannot give it is recorded; a duplicate is consolidated; a node is deleted only when another live node carries its occurrence or it supports no finding of its observation. A finding is left open only when a named collection's validation will touch the observation: the deferral to that collection and the finding are recorded, and the check accepts it as deferred. A finding with no named owner is closed in the validation."
+   },
+   {
+    "rule": "VA-03 consumption-is-verified-before-deletion",
+    "text": "An older observation is deleted as consumed only when live observations carry its meaning: every word occurrence of it is on a live node of a carrier or named as not carried with its reason, the mapping is stated in words (what the old says, which carrier states each part), the traces to it are re-pointed or replaced, and the consumption is kept as `consumed_by`. An observation that holds more than one finding is split first."
+   },
+   {
+    "rule": "VA-04 neither-evidence-nor-inner-being-is-deleted",
+    "text": "An observation that is neither evidence nor inner being contributes nothing to the purposes of the observations (researcher, 2026-11-22): it is commented with its reason and the word occurrences no other live observation holds, then deleted. An observation already marked, or one another observation traces, is not deleted this way."
+   },
+   {
+    "rule": "VA-05 the-marker-follows-content-not-stage",
+    "text": "Evidence states what the data are or show, tied to a verse. Inner being states how something works in the inner being, based on evidence, a building block of the stage 5 claims. The marker (ib_observation.nature) follows the content and purpose of the observation, never its stage (RS-04): an observation of any stage may be inner being when it traces to evidence. One that states both is split. The marker is set when the observation is created, by the item that is answered (cfg_setting layer.reading items.<item>.nature); a finding file never sets it; the validation changes it only where the content shows the item's nature does not hold."
+   },
+   {
+    "rule": "VA-06 evidence-validation-gates-inner-being-validation",
+    "text": "The validation runs in two layers, never concurrently: evidence first, then inner being. The inner-being layer is judged only when the evidence layer passes (every in-scope observation marked, none without a live node, no word node missing a required column without its reason, no live trace to a deleted observation, no two of one meaning). A later evidence change reopens only the inner-being rows it touches. In the build this gate is: step 3.1 does not open before the evidence layer passes, and step 3.3 does not close before both layers pass (cfg_setting layer.reading open_gate and closing_gate)."
+   },
+   {
+    "rule": "RW-01 changed-only-by-reading",
+    "text": "No observation is changed except by a reading, and every change is recorded with its reason. An observation no longer supported by the verse is soft-deleted, with the reason."
+   },
+   {
+    "rule": "RW-03 no-duplicates-multi-node",
+    "text": "One observation per finding: the same description is never written twice. Applied to another verse, word or scope it gains a node on the existing observation."
+   },
+   {
+    "rule": "RW-04 concise-verse-specific",
+    "text": "Observation text is concise and tied to this verse's content, never a restatement of the word's dictionary sense. A transliteration is never given without its gloss."
+   },
+   {
+    "rule": "RW-06 resolved-fresh-on-evidence",
+    "text": "Verse references are resolved fresh at write time, never taken from the text written. Relations are recorded only on evidence."
+   },
+   {
+    "rule": "RW-11 missing-is-named",
+    "text": "Missing data in the base extract is named as a gap, never substituted from memory or outside knowledge."
+   }
+  ],
+  "not_in_this_read": ""
+ },
+ "observations": [
+  {
+   "observation": 22688,
+   "step": "S1",
+   "item": "word-sense",
+   "kind": "term",
+   "text": "In Psa 1:2 'meditates' is the steady murmuring over the law of the Lord, day and night: the delight of the person is taken up with it in repeated, low recitation and thought. The object is God's law and the time is the whole day and night.",
+   "basis": "read",
+   "grounds": "he meditates day and night",
+   "traces": [],
+   "verses": [
+    "Psa 1:2"
+   ]
+  },
+  {
+   "observation": 22689,
+   "step": "S1",
+   "item": "word-sense",
+   "kind": "term",
+   "text": "In Jos 1:8, Psa 63:6 and Psa 143:5 'meditate' is to murmur over and turn over in thought what belongs to God: the Book of the Law in Joshua, God himself on the bed at night in Psa 63:6, and God's deeds in Psa 143:5. Jos 1:8 ties it to doing what is written.",
+   "basis": "read",
+   "grounds": "meditate on all that you have done",
+   "traces": [],
+   "verses": [
+    "Jos 1:8",
+    "Psa 143:5",
+    "Psa 63:6"
+   ]
+  },
+  {
+   "observation": 22690,
+   "step": "S1",
+   "item": "word-sense",
+   "kind": "face",
+   "text": "In Psa 38:12 the same verb is used of those who seek the psalmist's hurt: they speak of ruin and 'meditate' treachery, that is they murmur over and devise deceit. The sense departs from the other three verses in its object: the thing turned over is harm, not what belongs to God.",
+   "basis": "read",
+   "grounds": "meditate treachery all day long",
+   "traces": [],
+   "verses": [
+    "Psa 38:12"
+   ]
+  },
+  {
+   "observation": 22691,
+   "step": "S1",
+   "item": "word-sense",
+   "kind": "term",
+   "text": "In Gen 24:63 Isaac goes out into the field toward evening to meditate: a solitary musing, in the open, at day's end, before he looks up and sees the camels. The verse gives no object for the musing.",
+   "basis": "read",
+   "grounds": "went out to meditate in the field",
+   "traces": [],
+   "verses": [
+    "Gen 24:63"
+   ]
+  },
+  {
+   "observation": 22692,
+   "step": "S1",
+   "item": "word-sense",
+   "kind": "term",
+   "text": "In Psa 77:3, 77:6, 77:12, 119:15, 119:23, 119:27, 119:48, 119:78, 119:148 and 145:5 'meditate' is to dwell on something in thought, usually with a named object: God's precepts, statutes, promise, wondrous works and deeds. In Psa 77:3 and 77:6 it is the psalmist's own brooding, with the spirit faint and the heart as its place, and in Psa 119:23 the psalmist keeps to it while princes plot.",
+   "basis": "read",
+   "grounds": "I will meditate on your precepts",
+   "traces": [],
+   "verses": [
+    "Psa 119:148",
+    "Psa 119:15",
+    "Psa 119:23",
+    "Psa 119:27",
+    "Psa 119:48",
+    "Psa 119:78",
+    "Psa 145:5",
+    "Psa 77:12",
+    "Psa 77:3",
+    "Psa 77:6"
+   ]
+  },
+  {
+   "observation": 22693,
+   "step": "S1",
+   "item": "word-sense",
+   "kind": "term",
+   "text": "In Psa 49:3 'the meditation of my heart' is what the heart's musing yields, set beside what the mouth speaks: the verse pairs speaking wisdom with the heart's meditation being understanding.",
+   "basis": "read",
+   "grounds": "meditation of my heart shall be",
+   "traces": [],
+   "verses": [
+    "Psa 49:3"
+   ]
+  },
+  {
+   "observation": 22694,
+   "step": "S1",
+   "item": "word-sense",
+   "kind": "term",
+   "text": "In Psa 19:14 'the meditation of my heart' is the heart's inward musing, set beside the words of the mouth, and both are put before the Lord to be accepted by him.",
+   "basis": "read",
+   "grounds": "the meditation of my heart be acceptable",
+   "traces": [],
+   "verses": [
+    "Psa 19:14"
+   ]
+  },
+  {
+   "observation": 22695,
+   "step": "S1",
+   "item": "word-sense",
+   "kind": "term",
+   "text": "In Psa 104:34 'my meditation' is the psalmist's own musing, which he asks to be pleasing to the Lord, and the verse joins it to rejoicing in him.",
+   "basis": "read",
+   "grounds": "May my meditation be pleasing to him",
+   "traces": [],
+   "verses": [
+    "Psa 104:34"
+   ]
+  },
+  {
+   "observation": 22696,
+   "step": "S1",
+   "item": "word-sense",
+   "kind": "term",
+   "text": "In Job 15:4, Psa 119:97 and Psa 119:99 'meditation' is devout reflection on God or his law: it can be hindered before God (Job 15:4), and the law and the testimonies are said to be the psalmist's meditation all the day (Psa 119:97, 119:99), the object that fills his thought.",
+   "basis": "read",
+   "grounds": "my meditation all the day",
+   "traces": [],
+   "verses": [
+    "Job 15:4",
+    "Psa 119:97",
+    "Psa 119:99"
+   ]
+  },
+  {
+   "observation": 22697,
+   "step": "S1",
+   "item": "word-sense",
+   "kind": "term",
+   "text": "In 1Ki 18:27 'musing' is the reproach Elijah throws at the prophets of Baal: that their god may be occupied or withdrawn in thought, as one of several reasons he does not answer. Here the word names being taken up inwardly with something else.",
+   "basis": "read",
+   "grounds": "Either he is musing, or he is",
+   "traces": [],
+   "verses": [
+    "1Ki 18:27"
+   ]
+  },
+  {
+   "observation": 22698,
+   "step": "S1",
+   "item": "word-sense",
+   "kind": "term",
+   "text": "In Act 10:19 'pondering' is Peter turning the vision over in his mind while the Spirit speaks to him; the verse places the Spirit's word at the moment of his reflection.",
+   "basis": "read",
+   "grounds": "Peter was pondering the vision",
+   "traces": [],
+   "verses": [
+    "Act 10:19"
+   ]
+  },
+  {
+   "observation": 22699,
+   "step": "S1",
+   "item": "word-sense",
+   "kind": "term",
+   "text": "In Luk 2:19 'pondering' is Mary putting together the things told about the child and holding them in her heart; the verse joins it to her treasuring them up.",
+   "basis": "read",
+   "grounds": "pondering them in her heart",
+   "traces": [],
+   "verses": [
+    "Luk 2:19"
+   ]
+  },
+  {
+   "observation": 22700,
+   "step": "S1",
+   "item": "word-sense",
+   "kind": "term",
+   "text": "In Pro 15:28 'ponders' is the heart of the righteous turning over how to answer before the mouth speaks, set against the mouth of the wicked that pours out evil.",
+   "basis": "read",
+   "grounds": "ponders how to answer",
+   "traces": [],
+   "verses": [
+    "Pro 15:28"
+   ]
+  },
+  {
+   "observation": 22701,
+   "step": "S1",
+   "item": "word-sense",
+   "kind": "term",
+   "text": "In Pro 5:21 'ponders' is said of the Lord: he weighs all of a man's paths, which lie open before his eyes. The subject is God, not a person, and the sense is careful weighing.",
+   "basis": "read",
+   "grounds": "he ponders all his paths",
+   "traces": [],
+   "verses": [
+    "Pro 5:21"
+   ]
+  },
+  {
+   "observation": 22868,
+   "step": "1.1",
+   "item": "group-definition",
+   "kind": "group",
+   "text": "Devout meditation on God, his law and his works: the person murmurs over and dwells on the law, God's deeds or God himself, by day and night, on the bed and in the watches of the night, and the law is called his meditation. In Job 15:4 meditation before God is what is hindered, and in Psa 104:34 the psalmist asks that his meditation be pleasing to God. The object is always what belongs to God, and the setting is private and continual. Verses: Jos 1:8, Psa 63:6, Psa 77:12, Psa 119:15, Psa 119:23, Psa 119:27, Psa 119:48, Psa 119:78, Psa 119:148, Psa 143:5, Psa 145:5, Psa 1:2, Job 15:4, Psa 104:34, Psa 119:97, Psa 119:99.",
+   "basis": "read",
+   "grounds": "to muse, meditate upon, study, ponder",
+   "traces": [
+    22688,
+    22689,
+    22692,
+    22695,
+    22696
+   ],
+   "verses": [
+    "Job 15:4",
+    "Jos 1:8",
+    "Psa 104:34",
+    "Psa 119:148",
+    "Psa 119:15",
+    "Psa 119:23",
+    "Psa 119:27",
+    "Psa 119:48",
+    "Psa 119:78",
+    "Psa 119:97",
+    "Psa 119:99",
+    "Psa 143:5",
+    "Psa 145:5",
+    "Psa 1:2",
+    "Psa 63:6",
+    "Psa 77:12"
+   ]
+  },
+  {
+   "observation": 22869,
+   "step": "1.1",
+   "item": "group-definition",
+   "kind": "group",
+   "text": "Brooding in distress: in Psa 77:3 the psalmist remembers God and moans, and meditating makes his spirit faint, and in Psa 77:6 he meditates in his heart by night and then his spirit searches. The musing here is troubled, with the spirit as the one affected. Verses: Psa 77:3, Psa 77:6.",
+   "basis": "read",
+   "grounds": "to complain",
+   "traces": [
+    22692
+   ],
+   "verses": [
+    "Psa 77:3",
+    "Psa 77:6"
+   ]
+  },
+  {
+   "observation": 22870,
+   "step": "1.1",
+   "item": "group-definition",
+   "kind": "group",
+   "text": "The meditation of the heart as what its musing yields, set beside the speech of the mouth: the mouth speaks wisdom and the heart's meditation is understanding, and both words and meditation are put before the Lord to be accepted. The heart's inward musing is paired with outward words. Verses: Psa 19:14, Psa 49:3.",
+   "basis": "read",
+   "grounds": "meditation, utterance, musing",
+   "traces": [
+    22693,
+    22694
+   ],
+   "verses": [
+    "Psa 19:14",
+    "Psa 49:3"
+   ]
+  },
+  {
+   "observation": 22871,
+   "step": "1.1",
+   "item": "group-definition",
+   "kind": "group",
+   "text": "Meditation turned to harm: those who seek the psalmist's hurt speak of ruin and murmur over treachery all day. The same verb as devout meditation, here with treachery as its object, so that devising is added to murmuring. Verses: Psa 38:12.",
+   "basis": "read",
+   "grounds": "to meditate, devise, muse, imagine",
+   "traces": [
+    22690
+   ],
+   "verses": [
+    "Psa 38:12"
+   ]
+  },
+  {
+   "observation": 22872,
+   "step": "1.1",
+   "item": "group-definition",
+   "kind": "group",
+   "text": "Solitary musing in the open at evening: Isaac goes out into the field to muse, with no object named, before he sees the camels coming. The musing is private and has no stated subject matter. Verses: Gen 24:63.",
+   "basis": "read",
+   "grounds": "to meditate, muse, commune, speak",
+   "traces": [
+    22691
+   ],
+   "verses": [
+    "Gen 24:63"
+   ]
+  },
+  {
+   "observation": 22873,
+   "step": "1.1",
+   "item": "group-definition",
+   "kind": "group",
+   "text": "Musing as being occupied inwardly: Elijah mocks the prophets of Baal that their god may be musing, taken up with his own thought and so not answering. The word names withdrawn preoccupation. Verses: 1Ki 18:27.",
+   "basis": "read",
+   "grounds": "meditation, complaint, musing",
+   "traces": [
+    22697
+   ],
+   "verses": [
+    "1Ki 18:27"
+   ]
+  },
+  {
+   "observation": 22874,
+   "step": "1.1",
+   "item": "group-definition",
+   "kind": "group",
+   "text": "Pondering as turning a matter over in the mind before acting or speaking: Mary treasures up the things told and ponders them in her heart, Peter ponders the vision as the Spirit speaks, and in Pro 15:28 the righteous man's heart weighs a reply before his mouth speaks. In each the thought is held inwardly and precedes what follows. Verses: Luk 2:19, Act 10:19, Pro 15:28.",
+   "basis": "read",
+   "grounds": "to think, ponder, reflect",
+   "traces": [
+    22698,
+    22699,
+    22700
+   ],
+   "verses": [
+    "Act 10:19",
+    "Luk 2:19",
+    "Pro 15:28"
+   ]
+  },
+  {
+   "observation": 22875,
+   "step": "1.1",
+   "item": "group-definition",
+   "kind": "group",
+   "text": "Pondering as weighing, said of the Lord: he weighs all the ways of a man, which lie before his eyes. The subject is God and the sense is careful weighing and levelling of what a person does. Verses: Pro 5:21.",
+   "basis": "read",
+   "grounds": "to weigh, make level, balance",
+   "traces": [
+    22701
+   ],
+   "verses": [
+    "Pro 5:21"
+   ]
+  },
+  {
+   "observation": 23042,
+   "step": "1.2",
+   "item": "strong-enrichment",
+   "kind": "enrichment",
+   "text": "The codes of devout meditation are H1897 and H7878, verbs whose range runs from muttering and moaning to meditating and studying, and H7879 and H7881, nouns of meditation, musing and devotion. The lexicon bears the sense out: a murmured, dwelling meditation, as in Jos 1:8, Psa 1:2 and Psa 119:97. H5921A in Psa 104:34 is a preposition (upon) joined in the unit, not a word of meditation.",
+   "basis": "read",
+   "grounds": "to muse, meditate upon, study, ponder",
+   "traces": [
+    22868
+   ],
+   "verses": [
+    "Job 15:4",
+    "Jos 1:8",
+    "Psa 104:34",
+    "Psa 119:148",
+    "Psa 119:15",
+    "Psa 119:23",
+    "Psa 119:27",
+    "Psa 119:48",
+    "Psa 119:78",
+    "Psa 119:97",
+    "Psa 119:99",
+    "Psa 143:5",
+    "Psa 145:5",
+    "Psa 1:2",
+    "Psa 63:6",
+    "Psa 77:12"
+   ]
+  },
+  {
+   "observation": 23043,
+   "step": "1.2",
+   "item": "strong-enrichment",
+   "kind": "enrichment",
+   "text": "The code of brooding in distress is H7878, whose range holds both complaint and musing (to complain; to muse, meditate upon). The lexicon bears out the troubled musing of Psa 77:3 and Psa 77:6, where the same verb carries moaning and searching.",
+   "basis": "read",
+   "grounds": "to complain",
+   "traces": [
+    22869
+   ],
+   "verses": [
+    "Psa 77:3",
+    "Psa 77:6"
+   ]
+  },
+  {
+   "observation": 23044,
+   "step": "1.2",
+   "item": "strong-enrichment",
+   "kind": "enrichment",
+   "text": "The codes of the heart's meditation are H1900 (meditation, utterance, musing) and H1902H (meditation, resounding music). Both nouns join inward musing with utterance, which the lexicon gives and Psa 19:14 and Psa 49:3 show, the heart's meditation set beside the mouth's words.",
+   "basis": "read",
+   "grounds": "meditation, utterance, musing",
+   "traces": [
+    22870
+   ],
+   "verses": [
+    "Psa 19:14",
+    "Psa 49:3"
+   ]
+  },
+  {
+   "observation": 23045,
+   "step": "1.2",
+   "item": "strong-enrichment",
+   "kind": "enrichment",
+   "text": "The code of meditation turned to harm is H1897, whose range includes to devise and plot beside to meditate. The lexicon bears out Psa 38:12, where the same verb of murmuring takes treachery as its object.",
+   "basis": "read",
+   "grounds": "to meditate, devise, muse, imagine",
+   "traces": [
+    22871
+   ],
+   "verses": [
+    "Psa 38:12"
+   ]
+  },
+  {
+   "observation": 23046,
+   "step": "1.2",
+   "item": "strong-enrichment",
+   "kind": "enrichment",
+   "text": "The code of Isaac's musing is H7742, given as to meditate, muse, commune, with its meaning marked uncertain in the lexicon. Gen 24:63 names no object of the musing, and the lexicon does not settle it.",
+   "basis": "read",
+   "grounds": "meaning uncertain",
+   "traces": [
+    22872
+   ],
+   "verses": [
+    "Gen 24:63"
+   ]
+  },
+  {
+   "observation": 23047,
+   "step": "1.2",
+   "item": "strong-enrichment",
+   "kind": "enrichment",
+   "text": "The code of musing as preoccupation is H7879, whose range is meditation, complaint, musing, with anxiety and talk among its uncertain senses. The lexicon allows the withdrawn, occupied god of 1Ki 18:27.",
+   "basis": "read",
+   "grounds": "meditation, complaint, musing",
+   "traces": [
+    22873
+   ],
+   "verses": [
+    "1Ki 18:27"
+   ]
+  },
+  {
+   "observation": 23048,
+   "step": "1.2",
+   "item": "strong-enrichment",
+   "kind": "enrichment",
+   "text": "The codes of pondering are G1760 (to reflect on, to revolve thoroughly in the mind), G4820 (to throw together, to ponder) and H1897 (to mutter, meditate). The lexicon bears out turning a matter over inwardly before acting or speaking, in Luk 2:19, Act 10:19 and Pro 15:28.",
+   "basis": "read",
+   "grounds": "to think, ponder, reflect",
+   "traces": [
+    22874
+   ],
+   "verses": [
+    "Act 10:19",
+    "Luk 2:19",
+    "Pro 15:28"
+   ]
+  },
+  {
+   "observation": 23049,
+   "step": "1.2",
+   "item": "strong-enrichment",
+   "kind": "enrichment",
+   "text": "The code of the Lord's pondering is H6424, to weigh, make level, balance. The lexicon gives a weighing and levelling, not inward musing, which fits Pro 5:21, where the Lord weighs the ways of a man.",
+   "basis": "read",
+   "grounds": "to weigh, make level, balance",
+   "traces": [
+    22875
+   ],
+   "verses": [
+    "Pro 5:21"
+   ]
+  },
+  {
+   "observation": 23050,
+   "step": "2.1",
+   "item": "double-meaning",
+   "kind": "face",
+   "text": "The surface meditate carries three codes: H7878 in Psa 77 and Psa 119 and Psa 145:5 (to muse, also to complain), H1897 in Jos 1:8, Psa 63:6, Psa 143:5 and Psa 38:12 (to mutter, also to devise), and H7742 in Gen 24:63 (to muse, its meaning uncertain). In Psa 38:12 the H1897 verb takes treachery as its object.",
+   "basis": "read",
+   "grounds": "meditate treachery all day long",
+   "traces": [
+    22868,
+    22869,
+    22871,
+    22872
+   ],
+   "verses": [
+    "Gen 24:63",
+    "Jos 1:8",
+    "Psa 119:148",
+    "Psa 119:15",
+    "Psa 119:23",
+    "Psa 119:27",
+    "Psa 119:48",
+    "Psa 119:78",
+    "Psa 143:5",
+    "Psa 145:5",
+    "Psa 38:12",
+    "Psa 63:6",
+    "Psa 77:12",
+    "Psa 77:3",
+    "Psa 77:6"
+   ]
+  },
+  {
+   "observation": 23051,
+   "step": "2.1",
+   "item": "double-meaning",
+   "kind": "face",
+   "text": "The surface meditation carries four codes and a preposition: H7881 in Job 15:4, Psa 119:97 and Psa 119:99, H1902H in Psa 19:14, H1900 in Psa 49:3, and H7879 in Psa 104:34, beside H5921A (upon), a small word joined in the unit of Psa 104:34.",
+   "basis": "read",
+   "grounds": "May my meditation be pleasing to him",
+   "traces": [
+    22868,
+    22870
+   ],
+   "verses": [
+    "Job 15:4",
+    "Psa 104:34",
+    "Psa 119:97",
+    "Psa 119:99",
+    "Psa 19:14",
+    "Psa 49:3"
+   ]
+  },
+  {
+   "observation": 23052,
+   "step": "2.1",
+   "item": "double-meaning",
+   "kind": "face",
+   "text": "The surface pondering carries two Greek codes: G4820 in Luk 2:19, a verb whose first sense is to throw together, and G1760 in Act 10:19, to revolve in the mind; the English gives one word for both.",
+   "basis": "read",
+   "grounds": "pondering them in her heart",
+   "traces": [
+    22874
+   ],
+   "verses": [
+    "Act 10:19",
+    "Luk 2:19"
+   ]
+  },
+  {
+   "observation": 23053,
+   "step": "2.1",
+   "item": "double-meaning",
+   "kind": "face",
+   "text": "The surface ponders carries two codes: H1897 in Pro 15:28, where the heart of the righteous weighs a reply, and H6424 in Pro 5:21, to weigh or make level, said of the Lord and the paths of a man.",
+   "basis": "read",
+   "grounds": "he ponders all his paths",
+   "traces": [
+    22874,
+    22875
+   ],
+   "verses": [
+    "Pro 15:28",
+    "Pro 5:21"
+   ]
+  },
+  {
+   "observation": 23054,
+   "step": "2.1",
+   "item": "qualifier",
+   "kind": "pairing",
+   "text": "In Jos 1:8 and Psa 1:2 the meditating (H1897) is qualified by time: day, with night beside it, says when it goes on, without a break.",
+   "basis": "read",
+   "grounds": "meditates day and night",
+   "traces": [
+    22868
+   ],
+   "verses": [
+    "Jos 1:8",
+    "Psa 1:2"
+   ]
+  },
+  {
+   "observation": 23055,
+   "step": "2.1",
+   "item": "qualifier",
+   "kind": "pairing",
+   "text": "In Jos 1:8 the negator (H3808) reaches the departing of the book from the mouth, not the meditating, and the adverbs then (H0227A) reach the prospering and the success that follow the doing.",
+   "basis": "read",
+   "grounds": "shall not depart from your mouth",
+   "traces": [
+    22868
+   ],
+   "verses": [
+    "Jos 1:8"
+   ]
+  },
+  {
+   "observation": 23056,
+   "step": "2.1",
+   "item": "qualifier",
+   "kind": "pairing",
+   "text": "In Pro 15:28 righteous (H6662) qualifies the heart that ponders, and evil things (H7451H) is the object of the other side, the mouth of the wicked: the pondering heart is set against the pouring mouth.",
+   "basis": "read",
+   "grounds": "The heart of the righteous ponders",
+   "traces": [
+    22874
+   ],
+   "verses": [
+    "Pro 15:28"
+   ]
+  },
+  {
+   "observation": 23057,
+   "step": "2.1",
+   "item": "qualifier",
+   "kind": "pairing",
+   "text": "In Psa 119:23 and Psa 119:78 the meditating is set against opponents by the clause before it: even (H1571) makes the plotting of princes a concession, and the insolent (H2086) are the ones who wrong the speaker.",
+   "basis": "read",
+   "grounds": "your servant will meditate on your statutes",
+   "traces": [
+    22868
+   ],
+   "verses": [
+    "Psa 119:23",
+    "Psa 119:78"
+   ]
+  },
+  {
+   "observation": 23058,
+   "step": "2.1",
+   "item": "qualifier",
+   "kind": "pairing",
+   "text": "In 1Ki 18:27 the musing (H7879) is one of the states Elijah lists in mockery, beside a journey and sleep; perhaps (H0194) and asleep (H3463) reach the last of them, and aloud (H1419A) reaches the crying.",
+   "basis": "read",
+   "grounds": "Either he is musing",
+   "traces": [
+    22873
+   ],
+   "verses": [
+    "1Ki 18:27"
+   ]
+  },
+  {
+   "observation": 23059,
+   "step": "2.1",
+   "item": "qualifier",
+   "kind": "pairing",
+   "text": "In Pro 5:21, Luk 2:19 and Act 10:19 the qualifiers reach other words: before (H5227) the ways set before the eyes of the Lord, all (G3956) the things Mary treasured, three (G5140) the men who come.",
+   "basis": "read",
+   "grounds": "pondering them in her heart",
+   "traces": [
+    22874,
+    22875
+   ],
+   "verses": [
+    "Act 10:19",
+    "Luk 2:19",
+    "Pro 5:21"
+   ]
+  }
+ ],
+ "verses": [
+  {
+   "reference": "Psa 38:12",
+   "text": "Those who seek my life lay their snares; those who seek my hurt speak of ruin and meditate treachery all day long."
+  },
+  {
+   "reference": "Psa 49:3",
+   "text": "My mouth shall speak wisdom; the meditation of my heart shall be understanding."
+  },
+  {
+   "reference": "Psa 119:23",
+   "text": "Even though princes sit plotting against me, your servant will meditate on your statutes."
+  },
+  {
+   "reference": "Job 15:4",
+   "text": "But you are doing away with the fear of God and hindering meditation before God."
+  },
+  {
+   "reference": "Act 10:19",
+   "text": "And while Peter was pondering the vision, the Spirit said to him, “ Behold, three men are looking for you."
+  },
+  {
+   "reference": "1Ki 18:27",
+   "text": "And at noon Elijah mocked them, saying, “ Cry aloud, for he is a god. Either he is musing, or he is relieving himself, or he is on a journey, or perhaps he is asleep and must be awakened.”"
+  },
+  {
+   "reference": "Pro 15:28",
+   "text": "The heart of the righteous ponders how to answer, but the mouth of the wicked pours out evil things."
+  },
+  {
+   "reference": "Psa 77:3",
+   "text": "When I remember God, I moan; when I meditate, my spirit faints. Selah"
+  },
+  {
+   "reference": "Psa 77:6",
+   "text": "I said, “Let me remember my song in the night; let me meditate in my heart.” Then my spirit made a diligent search:"
+  },
+  {
+   "reference": "Psa 119:78",
+   "text": "Let the insolent be put to shame, because they have wronged me with falsehood; as for me, I will meditate on your precepts."
+  },
+  {
+   "reference": "Psa 1:2",
+   "text": "but his delight is in the law of the Lord, and on his law he meditates day and night."
+  },
+  {
+   "reference": "Psa 19:14",
+   "text": "Let the words of my mouth and the meditation of my heart be acceptable in your sight, O Lord, my rock and my redeemer."
+  },
+  {
+   "reference": "Psa 104:34",
+   "text": "May my meditation be pleasing to him, for I rejoice in the Lord."
+  },
+  {
+   "reference": "Psa 119:48",
+   "text": "I will lift up my hands toward your commandments, which I love, and I will meditate on your statutes."
+  },
+  {
+   "reference": "Psa 119:97",
+   "text": "Mem Oh how I love your law! It is my meditation all the day."
+  },
+  {
+   "reference": "Psa 145:5",
+   "text": "On the glorious splendor of your majesty, and on your wondrous works, I will meditate."
+  },
+  {
+   "reference": "Psa 119:27",
+   "text": "Make me understand the way of your precepts, and I will meditate on your wondrous works."
+  },
+  {
+   "reference": "Gen 24:63",
+   "text": "And Isaac went out to meditate in the field toward evening. And he lifted up his eyes and saw, and behold, there were camels coming."
+  },
+  {
+   "reference": "Psa 77:12",
+   "text": "I will ponder all your work, and meditate on your mighty deeds."
+  },
+  {
+   "reference": "Psa 119:15",
+   "text": "I will meditate on your precepts and fix my eyes on your ways."
+  },
+  {
+   "reference": "Psa 119:148",
+   "text": "My eyes are awake before the watches of the night, that I may meditate on your promise."
+  },
+  {
+   "reference": "Psa 143:5",
+   "text": "I remember the days of old; I meditate on all that you have done; I ponder the work of your hands."
+  },
+  {
+   "reference": "Pro 5:21",
+   "text": "For a man’s ways are before the eyes of the Lord, and he ponders all his paths."
+  },
+  {
+   "reference": "Jos 1:8",
+   "text": "This Book of the Law shall not depart from your mouth, but you shall meditate on it day and night, so that you may be careful to do according to all that is written in it. For then you will make your way prosperous, and then you will have good success."
+  },
+  {
+   "reference": "Psa 63:6",
+   "text": "when I remember you upon my bed, and meditate on you in the watches of the night;"
+  },
+  {
+   "reference": "Psa 119:99",
+   "text": "I have more understanding than all my teachers, for your testimonies are my meditation."
+  },
+  {
+   "reference": "Luk 2:19",
+   "text": "But Mary treasured up all these things, pondering them in her heart."
+  }
+ ],
+ "answer": {
+  "command": "ReadEvidence",
+  "collection": "thought",
+  "subgroup": "meditating and pondering",
+  "observations": [
+   {
+    "observation": 22688,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 22689,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 22690,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 22691,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 22692,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 22693,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 22694,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 22695,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 22696,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 22697,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 22698,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 22699,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 22700,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 22701,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 22868,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 22869,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 22870,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 22871,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 22872,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 22873,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 22874,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 22875,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 23042,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 23043,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 23044,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 23045,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 23046,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 23047,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 23048,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 23049,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 23050,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 23051,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 23052,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 23053,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 23054,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 23055,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 23056,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 23057,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 23058,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 23059,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   }
+  ]
+ },
+ "measured": {
+  "package_chars": 32361,
+  "seconds": 0.02
+ }
+}

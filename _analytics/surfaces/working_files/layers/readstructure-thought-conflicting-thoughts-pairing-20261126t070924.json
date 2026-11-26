@@ -1,0 +1,443 @@
+{
+ "command": "ReadStructure",
+ "collection": "thought",
+ "subgroup": "conflicting thoughts",
+ "step": "2.1",
+ "item": "pairing",
+ "made": "2026-11-26T07:09:24Z",
+ "batch": {
+  "rows": 4,
+  "rows_left_after_this": 0
+ },
+ "instruction": {
+  "what": "Step 2.1, the structure of one subgroup (stage 1, B3): what stands with the subgroup's words in each verse, read from the stored structure. One item at a time: double-meaning (a surface with more than one code), qualifier (negators and the word each reaches, adjectives, adverbs, prepositional qualifiers), entity (who is named or referred to), direction (from whom to whom, by the grammar), pairing (one row for each partner collection: its words in the verses shared with the subgroup). Nothing here says what anything does for the inner being; that begins at step 3.1.",
+  "read": [
+   "Take one row at a time (`rows`): what it asks, its occurrences (`as`: member, the subgroup's word; partner, the other word), and its verses.",
+   "Read each verse (`verses`) from its stored structure, one line for each word: * marks an occurrence of the subgroup; then the position, surface, Strong's code and morph, and what the pairing makes of the word (its type, the qualifier it carries, a negator, a party, the collections of a word of another collection). Nothing is evaluated that is not stored.",
+   "Where each word stands: its side and distance from the subgroup's word, from the positions. Adjacency is not scope: a negator or qualifier is read for the word it reaches by the grammar.",
+   "A pairing row shows the WordNet control for its partner collection: a pairing WordNet gives and the verses do not show is one to look for; a pairing only the verses show has no control.",
+   "Differences in meaning are read from the base data (the Strong's code, the morph, the construction), not from the English alone. The subgroup's 1.1 senses (`senses`) are what the findings build on."
+  ],
+  "write": [
+   "Fill `answer.rows`: for each row, disposition observed with its `findings`, or none with its `reason` (where the row allows none: nothing of the item stands with the subgroup in its verses).",
+   "One finding for each distinct thing the structure shows; the same finding in several verses is ONE finding naming all its occurrences; a verse that shows something different is its own finding. Together the findings name every occurrence of the row (occurrence ids or verse references), each in one finding.",
+   "kind: as the template gives it (pairing; relation for direction; face for double-meaning). obs_text: concise; names the verses it holds in, as the package writes the references (for example Act 18:4); states what the structure shows (which word, where it stands, what it reaches or gives by the grammar); never a verse restated, never what it does for the inner being.",
+   "basis: stated (the verse says it) or read (read from the structure), with `grounds`: words copied exactly from the verses it is tied to (the record checks them).",
+   "Each subgroup's surface has its own finding; none joins two subgroups. A data error is named in grounds, not fixed.",
+   "`older`: answer each older observation shown under the row, once: keep (with `nature`), restate (with `nature`, `new_text`, `checked`), merge (with `into`), consume (with `carriers` [\"this\"] or observation ids, and `mapping`), delete_neither (with `reason`), carry (with `to` and `reason`), defer (with `collection`, `nature`, `finding`). One listed under another row is answered there.",
+   "Then: Collection-Build.ps1 -Action RecordStructure -File <the answer file> (-Check to preview). The record refuses the whole file on any fault and lists every fault."
+  ],
+  "keep": [
+   {
+    "rule": "RG-14 morph-read",
+    "text": "Morph is read, not carried: where occurrences of a word show different stems or voices, record whether the subject does, undergoes or causes the act."
+   },
+   {
+    "rule": "RG-16 homonym-and-data-error",
+    "text": "A word that is only a homonym or a name, with no meaningful context, is recorded as such (tag no-human-context) and left. Data errors found while reading are flagged (tag data-error), not fixed in the reading."
+   },
+   {
+    "rule": "RG-21 grain",
+    "text": "A word is read per its lettered Strong's code (its grain), never the bare lemma (B:113). The occurrences of a word with several senses are related per grain and never aggregated across grains: related verses are same-grain occurrences."
+   },
+   {
+    "rule": "RO11 one-row-per-code",
+    "text": "One observation per finding, never a duplicate description; a finding applying to several verses or words carries several nodes, each with the word's role in it."
+   },
+   {
+    "rule": "RW-03 no-duplicates-multi-node",
+    "text": "One observation per finding: the same description is never written twice. Applied to another verse, word or scope it gains a node on the existing observation."
+   },
+   {
+    "rule": "RW-04 concise-verse-specific",
+    "text": "Observation text is concise and tied to this verse's content, never a restatement of the word's dictionary sense. A transliteration is never given without its gloss."
+   },
+   {
+    "rule": "RW-08 slants-own-rows",
+    "text": "Where the evidence points to more than one reading, each is its own observation with its own evidence."
+   },
+   {
+    "rule": "RW-09 reread-builds-on-prior",
+    "text": "A re-read includes the observations already recorded for the verse, so the reading sees prior findings and builds on them."
+   },
+   {
+    "rule": "RW-11 missing-is-named",
+    "text": "Missing data in the base extract is named as a gap, never substituted from memory or outside knowledge."
+   },
+   {
+    "rule": "RW-13 older-observations-answered-at-record",
+    "text": "Every older live observation with a live node on an occurrence of the row (a stage that is not the build's own) is answered in fill.older when the row is recorded, once: keep or restate (each with its marker), merge into a named observation, consume (live observations carry its meaning, stated in words, verified before it is deleted), delete as neither (comment first), or defer to a named collection (marked now; only the finding is left to that collection). An observation already marked by the validation, answered in a build or deferred is not asked again. A new observation whose text equals that of another live observation of the collection is refused, the other named. LayerCheck re-derives both from the tables. The end state of a collection's build is that every observation of its scope is marked and fixed or deleted, every word node complete or with its reason, and each deferral owned by a named collection."
+   },
+   {
+    "rule": "RS-04 existing-checked-accept-modify-delete",
+    "text": "When a verse is worked, every existing observation and node on it, of any stage, is checked against the verse by its wording. The stage is not an indication of the nature of an observation and is never used to filter. Each observation is accepted, modified (changed in place; the old value, the new value and the reason are kept in ib_observation_change), soft deleted (the `deleted` column, with the reason), merged (a duplicate description, into the observation that is kept) or, when its wording shows it is not verse understanding, left exactly as it is with the reason. The check's fixes are part of it and need no separate approval. Nothing is physically deleted."
+   },
+   {
+    "rule": "LR-02 nodes-are-built-from-the-data",
+    "text": "The nodes of a layer observation are the occurrences the aspect demands (a word's occurrences, the group's occurrences, the partner's occurrences in the verses they share), written by the recorder with the collection and the subgroup of each surface; they are never typed. An item answered by senses (word-sense) names, for each sense, the occurrences it holds for, and together the senses cover every occurrence; the recorder checks them against the data. The interpretation is the observation text, founded in what the evidence shows (basis stated or read, B:131) and tied to its verses (the text names them and does not restate them): the items of every step (S1, 1.1, 1.2, 2.1) state what the dictionary, the verses and the stored structure show of a word and never what a word does for the inner being; their nodes carry the role lexical and no route. The whole file is checked and written in one transaction; any problem refuses all of it. A row answered again withdraws its earlier observations with the reason."
+   },
+   {
+    "rule": "LR-03 none-needs-a-permitted-reason",
+    "text": "An aspect is recorded as none only where its item allows it (cfg_setting layer.reading none_allowed) and with its reason in words. A group definition and a group's Strong's enrichment are always observed."
+   },
+   {
+    "rule": "DA-02 a-node-per-occurrence-with-its-surfaces-collection",
+    "text": "A node is on one occurrence (verse_lexical_id) and carries the collection of its surface (a supportive node, the collection of the surface it supports); a node already on the observation for the same occurrence is not written twice, and takes the role. A node with no collection to carry, or on a verse out of scope (B:130), is not written and is listed."
+   },
+   {
+    "rule": "VA-03 consumption-is-verified-before-deletion",
+    "text": "An older observation is deleted as consumed only when live observations carry its meaning: every word occurrence of it is on a live node of a carrier or named as not carried with its reason, the mapping is stated in words (what the old says, which carrier states each part), the traces to it are re-pointed or replaced, and the consumption is kept as `consumed_by`. An observation that holds more than one finding is split first."
+   },
+   {
+    "rule": "VA-04 neither-evidence-nor-inner-being-is-deleted",
+    "text": "An observation that is neither evidence nor inner being contributes nothing to the purposes of the observations (researcher, 2026-11-22): it is commented with its reason and the word occurrences no other live observation holds, then deleted. An observation already marked, or one another observation traces, is not deleted this way."
+   }
+  ],
+  "not_in_this_read": ""
+ },
+ "senses": [
+  {
+   "sense": 22877,
+   "text": "Conflicting thoughts as the reasonings within a person that argue with one another: in Rom 2:15 they accuse or excuse the person alongside conscience, and the verse places the work of the law in the heart. The Greek noun is of reckoning and reasoning, here an inner debate with the heart as its place. Verses: Rom 2:15.",
+   "verses": [
+    "Rom.2.15"
+   ]
+  }
+ ],
+ "verses": [
+  {
+   "reference": "Rom 2:15",
+   "text": "They show that the work of the law is written on their hearts, while their conscience also bears witness, and their conflicting thoughts accuse or even excuse them",
+   "words": [
+    " 0 they G3748 R-NPM",
+    " 1 show G1731 V-PMI-3P",
+    " 2 work G2041 N-ASN | word of another collection; collections labor",
+    " 3 law G3551 N-GSM",
+    " 4 written G1123 A-ASN | qualifier candidate; qualifier morph: adjective",
+    " 5 on G1722 PREP",
+    " 6 their G0846 P-GPM",
+    " 7 hearts G2588 N-DPF | word of another collection; collections heart",
+    " 8 their G0846 P-GPM",
+    " 9 conscience G4893 N-GSF | word of another collection; collections heart",
+    " 10 bears witness G4828 V-PAP-GSF | word of another collection; collections witness",
+    " 11 and G2532 CONJ | connective",
+    "*12 conflicting thoughts G3053 N-GPM | member of this collection",
+    " 13 accuse G2723 V-PAP-GPM | word of another collection; collections condemn",
+    " 14 or G2228 CONJ | connective",
+    " 15 even G2532 CONJ | connective",
+    " 16 excuse G0626 V-PNP-GPM",
+    " 17 them G0240 C-GPM"
+   ]
+  }
+ ],
+ "rows": [
+  {
+   "ledger_id": 1910,
+   "item": "pairing",
+   "subject": "condemn",
+   "asks": "Which words of this partner collection stand with the subgroup's surfaces in the verses they share, where does each stand (side and distance, from the stored structure), and which stand out? The WordNet control for this collection is shown. Write one finding for each distinct thing the structure shows; a finding holds the verses it holds in as its nodes.",
+   "none_allowed": true,
+   "verses": [
+    "Rom 2:15"
+   ],
+   "occurrences": [
+    {
+     "occurrence": 1477813,
+     "reference": "Rom 2:15",
+     "surface": "conflicting thoughts",
+     "strong": "G3053",
+     "as": "member"
+    },
+    {
+     "occurrence": 1477814,
+     "reference": "Rom 2:15",
+     "surface": "accuse",
+     "strong": "G2723",
+     "as": "partner"
+    }
+   ],
+   "older": [],
+   "wordnet_control": "WordNet relates no surface of the subgroup to this collection (a verse-only pairing: no control)"
+  },
+  {
+   "ledger_id": 1911,
+   "item": "pairing",
+   "subject": "heart",
+   "asks": "Which words of this partner collection stand with the subgroup's surfaces in the verses they share, where does each stand (side and distance, from the stored structure), and which stand out? The WordNet control for this collection is shown. Write one finding for each distinct thing the structure shows; a finding holds the verses it holds in as its nodes.",
+   "none_allowed": true,
+   "verses": [
+    "Rom 2:15"
+   ],
+   "occurrences": [
+    {
+     "occurrence": 1477813,
+     "reference": "Rom 2:15",
+     "surface": "conflicting thoughts",
+     "strong": "G3053",
+     "as": "member"
+    },
+    {
+     "occurrence": 1477808,
+     "reference": "Rom 2:15",
+     "surface": "hearts",
+     "strong": "G2588",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1477810,
+     "reference": "Rom 2:15",
+     "surface": "conscience",
+     "strong": "G4893",
+     "as": "partner"
+    }
+   ],
+   "older": [
+    {
+     "observation": 16492,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "nature": null,
+     "text": "13. Cross-cutting observations for Batch E [Claude reading]: Unclean spirits recognise the Son of God (Mar 3:11) and obey him (Mar 1:27).; Spirits either confess Jesus come in the flesh or are \"the spirit of the antichrist\" (1Jo 4:2–3).; They must be tested (1Jo 4:1), and the spirit of error stands against the Spirit of truth (1Jo 4:6).; The Lord can dispatch a lying spirit (1Ki 22:23). Ministering spirits serve (Heb 1:14).; Flesh in relating to God: \"All flesh\" is humanity as it comes to God: all flesh comes in prayer (Psa 65:2), sees salvation and glory (Luk 3:6; Isa 40:5), and blesses (Psa 145:21).; Covenant is cut in the flesh, and its inner counterpart is the circumcised heart (§7.2).; Flesh vs spirit as powers: Isa 31:3; Joh 6:63; 1Co 5:5; Jer 17:5.; The \"life of the flesh is in the blood\" (Lev 17:11) is the ground of atonement.; God is shown with his own heart and soul in these relations: his soul avenges (Jer 5:9) and he swears by it (Amo 6:8); he acts with all his heart and soul (Jer 32:41); he wishes for a heart in his people (Deu 5:29); his heart recoils in compassion (Hos 11:8); his soul delights in the servant (Isa 42:1); he gives up the beloved of his soul (Jer 12:7); the priest acts according to his heart and soul (1Sa 2:35); Speech and the heart. The heart speaks inwardly (\"in the heart\", §1.3), is spoken to (\"to the heart\" = comfort, §1.4), and its speech either matches the mouth or is betrayed by it. Hebrew prayer is an act of the heart that may or may not reach the lips.; Fringe worth keeping: *kāvôd* as the inner self (§3.2) — a possible inner-being term outside M47; the soul asked to die (§2); the double portion of another's spirit (2Ki 2:9); the dying soul naming a child and the returning spirit naming a spring (§1.8); Isaac's soul giving the blessing (§12); Qoheleth testing his own heart (Ecc 2:1); the Gentile's heart-and-conscience law-court (Rom 2:15); the flesh-then-breath sequence of the dry bones (Eze 37:6–8); \"gain the whole world and forfeit his soul\" (Mat 16:26); \"transgression speaks [as an oracle] deep in his heart\" (Psa 36:1); the heart with \"highways to Zion\" (Psa 84:5); \"absent in body … present in spirit\" (Col 2:5)",
+     "verses": [
+      "Mark.3.11",
+      "Mark.1.27",
+      "1John.4.2",
+      "1John.4.3",
+      "1John.4.1",
+      "1John.4.6",
+      "1Kgs.22.23",
+      "Heb.1.14",
+      "Ps.65.2",
+      "Luke.3.6",
+      "Isa.40.5",
+      "Ps.145.21",
+      "Isa.31.3",
+      "John.6.63",
+      "1Cor.5.5",
+      "Jer.17.5",
+      "Lev.17.11",
+      "Jer.32.41",
+      "Deut.5.29",
+      "Hos.11.8",
+      "Isa.42.1",
+      "Jer.12.7",
+      "1Sam.2.35",
+      "2Kgs.2.9",
+      "Eccl.2.1",
+      "Rom.2.15",
+      "Ezek.37.6",
+      "Ezek.37.8",
+      "Matt.16.26",
+      "Ps.36.1",
+      "Ps.84.5",
+      "Col.2.5"
+     ]
+    },
+    {
+     "observation": 17241,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "nature": null,
+     "text": "i. The heart as a surface, container, store, soil: *Written on:*; \"write them on the tablet of your heart\" (Pro 3:3; 7:3); sin \"engraved on the tablet of their heart\" (Jer 17:1); \"I will write it on their hearts\" (Jer 31:33; Heb 8:10; 10:16); \"tablets of human hearts\" (2Co 3:3); \"written on our hearts\" (2Co 3:2); \"the work of the law is written on their hearts\" (Rom 2:15); *Stored in:*; \"I have stored up your word in my heart\" (Psa 119:11); \"lay up these words … in your heart\" (Deu 11:18; Job 22:22); \"keep them within your heart\" (Pro 4:21); \"laid them up in their hearts\" (Luk 1:66); \"the good treasure of his heart\" (Luk 6:45); *Things put in or taken in:*; \"idols into their hearts\" (Eze 14:3–7); \"eternity into man's heart\" (Ecc 3:11); \"the law of his God is in his heart\" (Psa 37:31; Isa 51:7); \"the fear of me in their hearts\" (Jer 32:40); \"wisdom rests in the heart\" (Pro 14:33); \"wisdom will come into your heart\" (Pro 2:10); *Soil:* \"hold it fast in an honest and good heart, and bear fruit\" (Luk 8:15); \"what has been sown in his heart\" snatched away (Mat 13:19; Luk 8:12).; *Vessel filled:* \"Satan filled your heart\" (Act 5:3); \"sorrow has filled your heart\" (Joh 16:6); \"hearts full of evil\" (Ecc 9:3); \"hearts overflow with follies\" (Psa 73:7).",
+     "verses": [
+      "Prov.3.3",
+      "Prov.7.3",
+      "Jer.17.1",
+      "Jer.31.33",
+      "Heb.8.10",
+      "Heb.10.16",
+      "2Cor.3.3",
+      "2Cor.3.2",
+      "Rom.2.15",
+      "Ps.119.11",
+      "Deut.11.18",
+      "Job.22.22",
+      "Prov.4.21",
+      "Luke.1.66",
+      "Luke.6.45",
+      "Ezek.14.3",
+      "Ezek.14.4",
+      "Ezek.14.5",
+      "Ezek.14.7",
+      "Eccl.3.11",
+      "Ps.37.31",
+      "Isa.51.7",
+      "Jer.32.40",
+      "Prov.14.33",
+      "Prov.2.10",
+      "Luke.8.15",
+      "Matt.13.19",
+      "Acts.5.3",
+      "John.16.6",
+      "Eccl.9.3",
+      "Ps.73.7"
+     ]
+    },
+    {
+     "observation": 20502,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "nature": null,
+     "text": "7 | Counsel and conscience | Prov 15:22; 20:18; Rom 2:15 | H6098 *ʿēṣāh*, H3289 *yāʿaṣ*, G4893 *syneidēsis*",
+     "verses": [
+      "Prov.15.22",
+      "Prov.20.18",
+      "Rom.2.15"
+     ]
+    }
+   ],
+   "wordnet_control": "WordNet relates no surface of the subgroup to this collection (a verse-only pairing: no control)"
+  },
+  {
+   "ledger_id": 1912,
+   "item": "pairing",
+   "subject": "labor",
+   "asks": "Which words of this partner collection stand with the subgroup's surfaces in the verses they share, where does each stand (side and distance, from the stored structure), and which stand out? The WordNet control for this collection is shown. Write one finding for each distinct thing the structure shows; a finding holds the verses it holds in as its nodes.",
+   "none_allowed": true,
+   "verses": [
+    "Rom 2:15"
+   ],
+   "occurrences": [
+    {
+     "occurrence": 1477813,
+     "reference": "Rom 2:15",
+     "surface": "conflicting thoughts",
+     "strong": "G3053",
+     "as": "member"
+    },
+    {
+     "occurrence": 1477803,
+     "reference": "Rom 2:15",
+     "surface": "work",
+     "strong": "G2041",
+     "as": "partner"
+    }
+   ],
+   "older": [],
+   "wordnet_control": "WordNet relates no surface of the subgroup to this collection (a verse-only pairing: no control)"
+  },
+  {
+   "ledger_id": 1913,
+   "item": "pairing",
+   "subject": "witness",
+   "asks": "Which words of this partner collection stand with the subgroup's surfaces in the verses they share, where does each stand (side and distance, from the stored structure), and which stand out? The WordNet control for this collection is shown. Write one finding for each distinct thing the structure shows; a finding holds the verses it holds in as its nodes.",
+   "none_allowed": true,
+   "verses": [
+    "Rom 2:15"
+   ],
+   "occurrences": [
+    {
+     "occurrence": 1477813,
+     "reference": "Rom 2:15",
+     "surface": "conflicting thoughts",
+     "strong": "G3053",
+     "as": "member"
+    },
+    {
+     "occurrence": 1477811,
+     "reference": "Rom 2:15",
+     "surface": "bears witness",
+     "strong": "G4828",
+     "as": "partner"
+    }
+   ],
+   "older": [],
+   "wordnet_control": "WordNet relates no surface of the subgroup to this collection (a verse-only pairing: no control)"
+  }
+ ],
+ "answer": {
+  "command": "ReadStructure",
+  "collection": "thought",
+  "subgroup": "conflicting thoughts",
+  "rows": [
+   {
+    "ledger_id": 1910,
+    "item": "pairing",
+    "subject": "condemn",
+    "disposition": "observed | none",
+    "findings": [
+     {
+      "kind": "pairing",
+      "obs_text": "",
+      "basis": "read | stated",
+      "grounds": "",
+      "occurrences": []
+     }
+    ],
+    "reason": "",
+    "older": []
+   },
+   {
+    "ledger_id": 1911,
+    "item": "pairing",
+    "subject": "heart",
+    "disposition": "observed | none",
+    "findings": [
+     {
+      "kind": "pairing",
+      "obs_text": "",
+      "basis": "read | stated",
+      "grounds": "",
+      "occurrences": []
+     }
+    ],
+    "reason": "",
+    "older": [
+     {
+      "observation": 16492,
+      "action": "keep | restate | merge | consume | delete_neither | defer | carry",
+      "reason": ""
+     },
+     {
+      "observation": 17241,
+      "action": "keep | restate | merge | consume | delete_neither | defer | carry",
+      "reason": ""
+     },
+     {
+      "observation": 20502,
+      "action": "keep | restate | merge | consume | delete_neither | defer | carry",
+      "reason": ""
+     }
+    ]
+   },
+   {
+    "ledger_id": 1912,
+    "item": "pairing",
+    "subject": "labor",
+    "disposition": "observed | none",
+    "findings": [
+     {
+      "kind": "pairing",
+      "obs_text": "",
+      "basis": "read | stated",
+      "grounds": "",
+      "occurrences": []
+     }
+    ],
+    "reason": "",
+    "older": []
+   },
+   {
+    "ledger_id": 1913,
+    "item": "pairing",
+    "subject": "witness",
+    "disposition": "observed | none",
+    "findings": [
+     {
+      "kind": "pairing",
+      "obs_text": "",
+      "basis": "read | stated",
+      "grounds": "",
+      "occurrences": []
+     }
+    ],
+    "reason": "",
+    "older": []
+   }
+  ]
+ },
+ "measured": {
+  "package_chars": 21072,
+  "seconds": 0.01
+ }
+}

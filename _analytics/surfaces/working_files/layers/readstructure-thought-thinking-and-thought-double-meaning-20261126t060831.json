@@ -1,0 +1,1852 @@
+{
+ "command": "ReadStructure",
+ "collection": "thought",
+ "subgroup": "thinking and thought",
+ "step": "2.1",
+ "item": "double-meaning",
+ "made": "2026-11-26T06:08:31Z",
+ "batch": {
+  "rows": 1,
+  "rows_left_after_this": 123
+ },
+ "instruction": {
+  "what": "Step 2.1, the structure of one subgroup (stage 1, B3): what stands with the subgroup's words in each verse, read from the stored structure. One item at a time: double-meaning (a surface with more than one code), qualifier (negators and the word each reaches, adjectives, adverbs, prepositional qualifiers), entity (who is named or referred to), direction (from whom to whom, by the grammar), pairing (one row for each partner collection: its words in the verses shared with the subgroup). Nothing here says what anything does for the inner being; that begins at step 3.1.",
+  "read": [
+   "Take one row at a time (`rows`): what it asks, its occurrences (`as`: member, the subgroup's word; partner, the other word), and its verses.",
+   "Read each verse (`verses`) from its stored structure, one line for each word: * marks an occurrence of the subgroup; then the position, surface, Strong's code and morph, and what the pairing makes of the word (its type, the qualifier it carries, a negator, a party, the collections of a word of another collection). Nothing is evaluated that is not stored.",
+   "Where each word stands: its side and distance from the subgroup's word, from the positions. Adjacency is not scope: a negator or qualifier is read for the word it reaches by the grammar.",
+   "A pairing row shows the WordNet control for its partner collection: a pairing WordNet gives and the verses do not show is one to look for; a pairing only the verses show has no control.",
+   "Differences in meaning are read from the base data (the Strong's code, the morph, the construction), not from the English alone. The subgroup's 1.1 senses (`senses`) are what the findings build on."
+  ],
+  "write": [
+   "Fill `answer.rows`: for each row, disposition observed with its `findings`, or none with its `reason` (where the row allows none: nothing of the item stands with the subgroup in its verses).",
+   "One finding for each distinct thing the structure shows; the same finding in several verses is ONE finding naming all its occurrences; a verse that shows something different is its own finding. Together the findings name every occurrence of the row (occurrence ids or verse references), each in one finding.",
+   "kind: as the template gives it (pairing; relation for direction; face for double-meaning). obs_text: concise; names the verses it holds in, as the package writes the references (for example Act 18:4); states what the structure shows (which word, where it stands, what it reaches or gives by the grammar); never a verse restated, never what it does for the inner being.",
+   "basis: stated (the verse says it) or read (read from the structure), with `grounds`: words copied exactly from the verses it is tied to (the record checks them).",
+   "Each subgroup's surface has its own finding; none joins two subgroups. A data error is named in grounds, not fixed.",
+   "`older`: answer each older observation shown under the row, once: keep (with `nature`), restate (with `nature`, `new_text`, `checked`), merge (with `into`), consume (with `carriers` [\"this\"] or observation ids, and `mapping`), delete_neither (with `reason`), carry (with `to` and `reason`), defer (with `collection`, `nature`, `finding`). One listed under another row is answered there.",
+   "Then: Collection-Build.ps1 -Action RecordStructure -File <the answer file> (-Check to preview). The record refuses the whole file on any fault and lists every fault."
+  ],
+  "keep": [
+   {
+    "rule": "RG-14 morph-read",
+    "text": "Morph is read, not carried: where occurrences of a word show different stems or voices, record whether the subject does, undergoes or causes the act."
+   },
+   {
+    "rule": "RG-16 homonym-and-data-error",
+    "text": "A word that is only a homonym or a name, with no meaningful context, is recorded as such (tag no-human-context) and left. Data errors found while reading are flagged (tag data-error), not fixed in the reading."
+   },
+   {
+    "rule": "RG-21 grain",
+    "text": "A word is read per its lettered Strong's code (its grain), never the bare lemma (B:113). The occurrences of a word with several senses are related per grain and never aggregated across grains: related verses are same-grain occurrences."
+   },
+   {
+    "rule": "RO11 one-row-per-code",
+    "text": "One observation per finding, never a duplicate description; a finding applying to several verses or words carries several nodes, each with the word's role in it."
+   },
+   {
+    "rule": "RW-03 no-duplicates-multi-node",
+    "text": "One observation per finding: the same description is never written twice. Applied to another verse, word or scope it gains a node on the existing observation."
+   },
+   {
+    "rule": "RW-04 concise-verse-specific",
+    "text": "Observation text is concise and tied to this verse's content, never a restatement of the word's dictionary sense. A transliteration is never given without its gloss."
+   },
+   {
+    "rule": "RW-08 slants-own-rows",
+    "text": "Where the evidence points to more than one reading, each is its own observation with its own evidence."
+   },
+   {
+    "rule": "RW-09 reread-builds-on-prior",
+    "text": "A re-read includes the observations already recorded for the verse, so the reading sees prior findings and builds on them."
+   },
+   {
+    "rule": "RW-11 missing-is-named",
+    "text": "Missing data in the base extract is named as a gap, never substituted from memory or outside knowledge."
+   },
+   {
+    "rule": "RW-13 older-observations-answered-at-record",
+    "text": "Every older live observation with a live node on an occurrence of the row (a stage that is not the build's own) is answered in fill.older when the row is recorded, once: keep or restate (each with its marker), merge into a named observation, consume (live observations carry its meaning, stated in words, verified before it is deleted), delete as neither (comment first), or defer to a named collection (marked now; only the finding is left to that collection). An observation already marked by the validation, answered in a build or deferred is not asked again. A new observation whose text equals that of another live observation of the collection is refused, the other named. LayerCheck re-derives both from the tables. The end state of a collection's build is that every observation of its scope is marked and fixed or deleted, every word node complete or with its reason, and each deferral owned by a named collection."
+   },
+   {
+    "rule": "RS-04 existing-checked-accept-modify-delete",
+    "text": "When a verse is worked, every existing observation and node on it, of any stage, is checked against the verse by its wording. The stage is not an indication of the nature of an observation and is never used to filter. Each observation is accepted, modified (changed in place; the old value, the new value and the reason are kept in ib_observation_change), soft deleted (the `deleted` column, with the reason), merged (a duplicate description, into the observation that is kept) or, when its wording shows it is not verse understanding, left exactly as it is with the reason. The check's fixes are part of it and need no separate approval. Nothing is physically deleted."
+   },
+   {
+    "rule": "LR-02 nodes-are-built-from-the-data",
+    "text": "The nodes of a layer observation are the occurrences the aspect demands (a word's occurrences, the group's occurrences, the partner's occurrences in the verses they share), written by the recorder with the collection and the subgroup of each surface; they are never typed. An item answered by senses (word-sense) names, for each sense, the occurrences it holds for, and together the senses cover every occurrence; the recorder checks them against the data. The interpretation is the observation text, founded in what the evidence shows (basis stated or read, B:131) and tied to its verses (the text names them and does not restate them): the items of every step (S1, 1.1, 1.2, 2.1) state what the dictionary, the verses and the stored structure show of a word and never what a word does for the inner being; their nodes carry the role lexical and no route. The whole file is checked and written in one transaction; any problem refuses all of it. A row answered again withdraws its earlier observations with the reason."
+   },
+   {
+    "rule": "LR-03 none-needs-a-permitted-reason",
+    "text": "An aspect is recorded as none only where its item allows it (cfg_setting layer.reading none_allowed) and with its reason in words. A group definition and a group's Strong's enrichment are always observed."
+   },
+   {
+    "rule": "DA-02 a-node-per-occurrence-with-its-surfaces-collection",
+    "text": "A node is on one occurrence (verse_lexical_id) and carries the collection of its surface (a supportive node, the collection of the surface it supports); a node already on the observation for the same occurrence is not written twice, and takes the role. A node with no collection to carry, or on a verse out of scope (B:130), is not written and is listed."
+   },
+   {
+    "rule": "VA-03 consumption-is-verified-before-deletion",
+    "text": "An older observation is deleted as consumed only when live observations carry its meaning: every word occurrence of it is on a live node of a carrier or named as not carried with its reason, the mapping is stated in words (what the old says, which carrier states each part), the traces to it are re-pointed or replaced, and the consumption is kept as `consumed_by`. An observation that holds more than one finding is split first."
+   },
+   {
+    "rule": "VA-04 neither-evidence-nor-inner-being-is-deleted",
+    "text": "An observation that is neither evidence nor inner being contributes nothing to the purposes of the observations (researcher, 2026-11-22): it is commented with its reason and the word occurrences no other live observation holds, then deleted. An observation already marked, or one another observation traces, is not deleted this way."
+   }
+  ],
+  "not_in_this_read": ""
+ },
+ "senses": [
+  {
+   "sense": 22894,
+   "text": "God's thoughts, and the contrast with man's: his thoughts toward his people are many and very deep, the nations do not know the Lord's thoughts, his thoughts are not man's and are as high above them as the heavens, and his thoughts are precious to the psalmist. The thoughts are the Lord's own purposes and mind. Verses: Psa 40:5, Psa 92:5, Psa 139:17, Isa 55:8, Isa 55:9, Mic 4:12.",
+   "verses": [
+    "Ps.40.5",
+    "Ps.92.5",
+    "Ps.139.17",
+    "Isa.55.8",
+    "Isa.55.9",
+    "Mic.4.12"
+   ]
+  },
+  {
+   "sense": 22903,
+   "text": "A question that asks for a hearer's view: 'what do you think?' is put to Simon, to the hearers, to the lawyer, to the chief priests and to those looking for Jesus. It asks the person to give a judgment he already forms. Verses: Mat 17:25, Mat 18:12, Mat 21:28, Mat 22:17, Mat 22:42, Luk 10:36, Joh 11:56.",
+   "verses": [
+    "Matt.17.25",
+    "Matt.18.12",
+    "Matt.21.28",
+    "Matt.22.17",
+    "Matt.22.42",
+    "Luke.10.36",
+    "John.11.56"
+   ]
+  },
+  {
+   "sense": 22904,
+   "text": "What seems right or best in someone's eyes: the Hebrew word for eye in the idiom of what appears good to a person, rendered think, think best or thought good. It is a person's own judgment of what is good or fitting. Verses: Num 36:6, 2Sa 10:3, 1Ch 19:3, Jer 40:4, Jer 40:5, 2Sa 3:19.",
+   "verses": [
+    "Num.36.6",
+    "2Sam.10.3",
+    "1Chr.19.3",
+    "Jer.40.4",
+    "Jer.40.5",
+    "2Sam.3.19"
+   ]
+  },
+  {
+   "sense": 22905,
+   "text": "A thought quoted as inner speech: the Hebrew verb of saying introduces what a person says in himself, and the quoted sentence gives the thought; the Greek of Luk 12:17 does the same with the rich man's words to himself. The thought is inner speech, usually about what others will do or what will follow, and the verse often shows it wrong. Verses: Gen 32:8, 1Sa 27:11, 1Sa 27:12, 2Sa 5:6, 2Ki 7:12, 2Ch 32:1, Neh 6:9, Psa 64:5, 1Sa 20:3, Gen 20:11, Gen 26:9, Gen 31:31, Gen 32:20, Exo 2:14, Jos 22:28, Judg 3:24, Judg 15:2, Rut 4:4, 1Sa 16:6, 1Sa 18:11, 1Sa 18:17, 1Sa 18:21, 1Sa 20:26, 2Sa 14:15, 2Sa 14:17, 2Sa 21:16, 2Ki 5:11, 2Ki 20:19, Job 29:18, Psa 94:18, Isa 39:8, Jer 3:7, Jer 3:19, Eze 20:32, Luk 12:17.",
+   "verses": [
+    "Gen.32.8",
+    "1Sam.27.11",
+    "1Sam.27.12",
+    "2Sam.5.6",
+    "2Kgs.7.12",
+    "2Chr.32.1",
+    "Neh.6.9",
+    "Ps.64.5",
+    "1Sam.20.3",
+    "Gen.20.11",
+    "Gen.26.9",
+    "Gen.31.31",
+    "Gen.32.20",
+    "Exod.2.14",
+    "Josh.22.28",
+    "Judg.3.24",
+    "Judg.15.2",
+    "Ruth.4.4",
+    "1Sam.16.6",
+    "1Sam.18.11",
+    "1Sam.18.17",
+    "1Sam.18.21",
+    "1Sam.20.26",
+    "2Sam.14.15",
+    "2Sam.14.17",
+    "2Sam.21.16",
+    "2Kgs.5.11",
+    "2Kgs.20.19",
+    "Job.29.18",
+    "Ps.94.18",
+    "Isa.39.8",
+    "Jer.3.7",
+    "Jer.3.19",
+    "Ezek.20.32",
+    "Luke.12.17"
+   ]
+  },
+  {
+   "sense": 22906,
+   "text": "Planning or intending: the Assyrian's heart is set on destroying nations, the prophets intend to make the people forget the name, the Lord plans for his people what they planned, and the one who speaks against God intends to change times and laws. The verbs are of devising and purpose. Verses: Job 6:26, Isa 10:7, Jer 23:27, Dan 7:25, Num 33:56, 1Sa 18:25.",
+   "verses": [
+    "Job.6.26",
+    "Isa.10.7",
+    "Jer.23.27",
+    "Dan.7.25",
+    "Num.33.56",
+    "1Sam.18.25"
+   ]
+  },
+  {
+   "sense": 22907,
+   "text": "Giving thought to something: calling to mind, reflecting on, attending to, taking thought for or turning the mind to what is named: the psalmist thinks on his ways and on the Lord's rules, the Lord takes thought for the poor, the prudent give thought to their steps, the believer is to think on what is excellent, Jerusalem took no thought of her end. The word is attention of the mind to a matter or person. Verses: Psa 119:52, Psa 119:59, Psa 144:3, Mat 9:4, Eph 3:20, Phili 4:8, Heb 11:15, Psa 40:17, Psa 48:9, Psa 73:16, Pro 14:15, Pro 21:29, Lam 1:9, Jon 1:6.",
+   "verses": [
+    "Ps.119.52",
+    "Ps.119.59",
+    "Ps.144.3",
+    "Matt.9.4",
+    "Eph.3.20",
+    "Phil.4.8",
+    "Heb.11.15",
+    "Ps.40.17",
+    "Ps.48.9",
+    "Ps.73.16",
+    "Prov.14.15",
+    "Prov.21.29",
+    "Lam.1.9",
+    "Jonah.1.6"
+   ]
+  },
+  {
+   "sense": 22908,
+   "text": "Reckoning something as so, judging or counting: Paul judges it necessary, a thing is counted unclean by the one who holds it so, the unbelief of Act 26:8 is judged incredible, Judah takes the covered woman for a prostitute, and Job 41:32 counts the deep as white-haired. The word is a judgment that counts or takes something as of a certain kind. Verses: Job 35:2, Job 41:32, 2Cor 12:6, 2Pe 1:13, Rom 14:14, Gen 38:15, Act 26:8, 2Cor 9:5, Phili 2:25.",
+   "verses": [
+    "Job.35.2",
+    "Job.41.32",
+    "2Cor.12.6",
+    "2Pet.1.13",
+    "Rom.14.14",
+    "Gen.38.15",
+    "Acts.26.8",
+    "2Cor.9.5",
+    "Phil.2.25"
+   ]
+  },
+  {
+   "sense": 22909,
+   "text": "Being minded: the way a person is set in mind, to rate oneself soberly in Rom 12:3, to hold the same mind or another in Phili 3:15, and the child's mindedness given up in 1Cor 13:11. The Greek verb is of being of a mind or having an attitude. Verses: Rom 12:3, Phili 3:15, 1Cor 13:11.",
+   "verses": [
+    "Rom.12.3",
+    "Phil.3.15",
+    "1Cor.13.11"
+   ]
+  },
+  {
+   "sense": 22910,
+   "text": "Thoughts as purposes and devices: the intention of the heart in Gen 6:5, the schemes of the wicked, the thoughts the righteous and the wicked hold, the thoughts to be forsaken, and the wicked thoughts that lodge within. The word is of purpose, plan and device, and the verses place it in the heart. Verses: 1Ch 28:9, Gen 6:5, 1Ch 29:18, Job 21:27, Psa 10:4, Psa 56:5, Psa 94:11, Pro 12:5, Pro 15:26, Isa 55:7, Isa 59:7, Isa 66:18, Jer 4:14, Lam 3:62.",
+   "verses": [
+    "1Chr.28.9",
+    "Gen.6.5",
+    "1Chr.29.18",
+    "Job.21.27",
+    "Ps.10.4",
+    "Ps.56.5",
+    "Ps.94.11",
+    "Prov.12.5",
+    "Prov.15.26",
+    "Isa.55.7",
+    "Isa.59.7",
+    "Isa.66.18",
+    "Jer.4.14",
+    "Lam.3.62"
+   ]
+  },
+  {
+   "sense": 22911,
+   "text": "Thoughts as what arises and is held in the mind, known to God or others: they come out of the heart, are perceived by Jesus, are alarmed or answered, are known by the spirit of the person or by the Lord, are shaped by ease, and are led astray. The words are nouns of thought, reasoning and musing, in many Hebrew, Aramaic and Greek words, with the heart or the mind as their place. Verses: Deu 15:9, Job 12:5, Ecc 9:10, Amo 4:13, 2Cor 10:5, Job 20:2, Psa 139:2, Psa 139:23, Ecc 10:20, Eze 38:10, Dan 2:29, Dan 2:30, Dan 4:19, Dan 5:6, Dan 5:10, Dan 7:28, Mat 12:25, Mat 15:19, Mar 7:21, Luk 1:51, Luk 2:35, Luk 5:22, Luk 6:8, Luk 11:17, 1Cor 2:11, 1Cor 3:20, 2Cor 11:3, Heb 4:12, Jam 2:4.",
+   "verses": [
+    "Deut.15.9",
+    "Job.12.5",
+    "Eccl.9.10",
+    "Amos.4.13",
+    "2Cor.10.5",
+    "Job.20.2",
+    "Ps.139.2",
+    "Ps.139.23",
+    "Eccl.10.20",
+    "Ezek.38.10",
+    "Dan.2.29",
+    "Dan.2.30",
+    "Dan.4.19",
+    "Dan.5.6",
+    "Dan.5.10",
+    "Dan.7.28",
+    "Matt.12.25",
+    "Matt.15.19",
+    "Mark.7.21",
+    "Luke.1.51",
+    "Luke.2.35",
+    "Luke.5.22",
+    "Luke.6.8",
+    "Luke.11.17",
+    "1Cor.2.11",
+    "1Cor.3.20",
+    "2Cor.11.3",
+    "Heb.4.12",
+    "Jas.2.4"
+   ]
+  },
+  {
+   "sense": 22912,
+   "text": "Supposing, holding a belief or imagining something to be so: the belief is stated or put in question, often about oneself or about another, and the verse tests, corrects or reproves it. The hearers think the Gentiles' many words will be heard, that Jesus cannot appeal to his Father, that he came to give peace, that they are wise, stand, or are religious; in the Hebrew verses the speaker is told what the hearer thinks or the Lord says what the house of Israel thinks. The word is a belief held and not yet tested. Verses: 2Sa 18:27, 2Ki 18:20, 2Ch 13:8, Est 4:13, Isa 36:5, Eze 11:5, Mat 5:17, Mat 6:7, Mat 10:34, Mat 26:53, Luk 12:51, Luk 13:2, Luk 13:4, Joh 5:39, Joh 5:45, Joh 16:2, Act 17:29, 1Cor 4:9, 1Cor 7:26, 1Cor 7:40, 1Cor 12:23, 2Cor 11:16, Heb 10:29, 2Cor 12:19, Phili 1:17, Luk 8:18, 1Cor 3:18, 1Cor 7:36, 1Cor 10:12, 1Cor 14:37, Gal 6:3, Phili 3:4, Jam 1:26, Psa 50:21, Mat 20:10, Mar 6:49, Luk 24:37, Joh 11:13, Joh 13:29, Act 8:20, Act 12:9.",
+   "verses": [
+    "2Sam.18.27",
+    "2Kgs.18.20",
+    "2Chr.13.8",
+    "Esth.4.13",
+    "Isa.36.5",
+    "Ezek.11.5",
+    "Matt.5.17",
+    "Matt.6.7",
+    "Matt.10.34",
+    "Matt.26.53",
+    "Luke.12.51",
+    "Luke.13.2",
+    "Luke.13.4",
+    "John.5.39",
+    "John.5.45",
+    "John.16.2",
+    "Acts.17.29",
+    "1Cor.4.9",
+    "1Cor.7.26",
+    "1Cor.7.40",
+    "1Cor.12.23",
+    "2Cor.11.16",
+    "Heb.10.29",
+    "2Cor.12.19",
+    "Phil.1.17",
+    "Luke.8.18",
+    "1Cor.3.18",
+    "1Cor.7.36",
+    "1Cor.10.12",
+    "1Cor.14.37",
+    "Gal.6.3",
+    "Phil.3.4",
+    "Jas.1.26",
+    "Ps.50.21",
+    "Matt.20.10",
+    "Mark.6.49",
+    "Luke.24.37",
+    "John.11.13",
+    "John.13.29",
+    "Acts.8.20",
+    "Acts.12.9"
+   ]
+  },
+  {
+   "sense": 22895,
+   "text": "Conceiving evil as if in a womb: wicked people conceive trouble, chaff and mischief and give birth to evil, stubble and iniquity. The same verb of conceiving is turned to what a person forms within and brings out in act. Verses: Job 15:35, Isa 33:11, Isa 59:4.",
+   "verses": [
+    "Job.15.35",
+    "Isa.33.11",
+    "Isa.59.4"
+   ]
+  },
+  {
+   "sense": 22896,
+   "text": "Conceiving a child: the woman becomes pregnant and bears, in the promises and announcements of a son, in the question of the barren, in the cleansed woman who will conceive, in the confession of the psalmist that his mother conceived him in sin, and in the sign of the virgin. The words are Hebrew and Greek verbs and nouns of pregnancy and seed, and the English 'conceive' is bodily. Verses: Num 5:28, Num 11:12, Judg 13:3, Judg 13:5, Judg 13:7, Psa 51:5, Isa 7:14, Mat 1:23, Luk 1:31, Heb 11:11.",
+   "verses": [
+    "Num.5.28",
+    "Num.11.12",
+    "Judg.13.3",
+    "Judg.13.5",
+    "Judg.13.7",
+    "Ps.51.5",
+    "Isa.7.14",
+    "Matt.1.23",
+    "Luke.1.31",
+    "Heb.11.11"
+   ]
+  },
+  {
+   "sense": 22897,
+   "text": "'Opinion' in the phrase about not caring for anyone's opinion: the Greek verb is of looking, and the phrase is that Jesus does not look at the person's face, that is, does not weigh people by standing. It is regard for status, not a view held. Verses: Mat 22:16, Mar 12:14.",
+   "verses": [
+    "Matt.22.16",
+    "Mark.12.14"
+   ]
+  },
+  {
+   "sense": 22898,
+   "text": "Opinion as a view that a person holds and declares: Elihu is afraid to declare his opinion and then insists on it, and the fool takes pleasure only in declaring what his heart holds. It is a person's own view, set against understanding. Verses: Job 32:6, Job 32:10, Job 32:17, Pro 18:2.",
+   "verses": [
+    "Job.32.6",
+    "Job.32.10",
+    "Job.32.17",
+    "Prov.18.2"
+   ]
+  },
+  {
+   "sense": 22899,
+   "text": "'Perhaps' as the captain's hope that the god may give a thought to them: the Hebrew particle of possibility, carrying no thinking of its own. Verses: Jon 1:6.",
+   "verses": [
+    "Jonah.1.6"
+   ]
+  },
+  {
+   "sense": 22900,
+   "text": "'With no thought of war' as turning back from war: the Hebrew verb is of returning, said of the trusting passers-by who are stripped. It is a turning back, not a thought. Verses: Mic 2:8.",
+   "verses": [
+    "Mic.2.8"
+   ]
+  },
+  {
+   "sense": 22901,
+   "text": "'Well thought of' as a good report: the Greek noun is of testimony, the overseer must have a good report from outsiders. It is how others speak of him, not what he thinks. Verses: 1Ti 3:7.",
+   "verses": [
+    "1Tim.3.7"
+   ]
+  },
+  {
+   "sense": 22902,
+   "text": "Thinking as the way the mind works, its understanding or frame: the thinking of people who knew God becomes futile, the believers are to be mature and not children in their thinking, and they are to arm themselves with Christ's way of thinking. It is the mind's mode, with a measure of maturity or futility. Verses: Rom 1:21, 1Cor 14:20, 1Pe 4:1.",
+   "verses": [
+    "Rom.1.21",
+    "1Cor.14.20",
+    "1Pet.4.1"
+   ]
+  }
+ ],
+ "verses": [
+  {
+   "reference": "Gen 6:5",
+   "text": "The Lord saw that the wickedness of man was great in the earth, and that every intention of the thoughts of his heart was only evil continually.",
+   "words": [
+    " 0 lord H3068G HNpt | entity (divine); party divine",
+    " 1 saw H7200G HVqw3ms",
+    " 2 that H3588A HTc | connective",
+    " 3 wickedness H7451I HNcfsc | word of another collection; collections cruel",
+    " 4 man H0120G HNcmsa | entity (human); party human",
+    " 4 [the] H9009 HTd",
+    " 5 great H7227A HAafsa | qualifier candidate; qualifier morph: adjective",
+    " 6 earth H0776G HNcfsa",
+    " 6 in/on/with H9003 HRd",
+    " 7 every H3605 HNcmsc",
+    " 7 and H9002 HC | connective",
+    " 8 intention H3336 HNcmsc | word of another collection; collections intend",
+    "*9 thoughts H4284 HNcfpc | member of this collection",
+    " 10 heart H3820A HNcmsc | word of another collection; collections heart",
+    " 11 only H7535 HD | qualifier candidate; qualifier morph: adverb",
+    " 11 his H9023 HSp3ms",
+    " 12 evil H7451H HAamsa | word of another collection; qualifier qualifier subgroup: Bad (a quality of something); morph: adjective; collections evildoer",
+    " 13 continually H3605 HNcmsc | word of another collection; collections continual",
+    " 13 continually H3117J HNcmsa | word of another collection; collections continual",
+    " 13 [the] H9009 HTd"
+   ]
+  },
+  {
+   "reference": "1Ch 29:18",
+   "text": "O Lord, the God of Abraham, Isaac, and Israel, our fathers, keep forever such purposes and thoughts in the hearts of your people, and direct their hearts toward you.",
+   "words": [
+    " 0 lord H3068G HNpt | entity (divine); party divine",
+    " 1 god H0430G HNcmpc | entity (divine); party divine",
+    " 2 abraham H0085 HNpm | entity (human); party human",
+    " 3 isaac H3327 HNpm | entity (human); party human",
+    " 4 israel H3478 HNpl",
+    " 4 and H9002 HC | connective",
+    " 5 fathers H0001G HNcfpc",
+    " 6 keep H8104G HVqv2ms | word of another collection; collections remove",
+    " 6 our H9025 HSp1bp",
+    " 7 forever H5769G HNcmsa",
+    " 7 to/for H9005 HR",
+    " 7 [emph.?] H9012 HSh",
+    " 7 forever H2063 HTm",
+    " 8 purposes H3336 HNcmsc | word of another collection; collections intend",
+    " 8 to/for H9005 HR",
+    "*9 thoughts H4284 HNcfpc | member of this collection",
+    " 10 hearts H3824 HNcmsc | word of another collection; collections heart",
+    " 11 people H5971A HNcmsc",
+    " 12 direct H3559J HVhv2ms | word of another collection; collections command",
+    " 12 your H9021 HSp2ms",
+    " 13 their H9028 HSp3mp",
+    " 14 hearts H3824 HNcmsc | word of another collection; collections heart",
+    " 15 toward H0413 HR",
+    " 16 you H9031 HSp2ms"
+   ]
+  },
+  {
+   "reference": "Job 20:2",
+   "text": "“ Therefore my thoughts answer me, because of my haste within me.",
+   "words": [
+    " 0 therefore H3651C HD | qualifier candidate; qualifier morph: adverb",
+    " 0 to/for H9005 HR",
+    "*1 thoughts H5587B HNcmpc | member of this collection",
+    " 2 answer H7725M HVhi3mp | word of another collection; collections profess",
+    " 2 my H9020 HSp1bs",
+    " 3 my H9040 HSp1bs",
+    " 4 haste H2363A HVqcc | word of another collection; collections earnest",
+    " 4 me H9030 HSp1bs",
+    " 4 haste H5668 HNcmsa | word of another collection; collections earnest",
+    " 4 in/on/with H9003 HR",
+    " 4 and H9002 HC | connective",
+    " 5 in/on/with H9003 HR",
+    " 5 me H9030 HSp1bs"
+   ]
+  },
+  {
+   "reference": "Job 21:27",
+   "text": "“ Behold, I know your thoughts and your schemes to wrong me.",
+   "words": [
+    " 0 behold H2005 HTj",
+    " 1 know H3045 HVqp1cs | word of another collection; collections know",
+    "*2 thoughts H4284 HNcfpc | member of this collection",
+    " 3 schemes H4209 HNcfpa",
+    " 3 and H9002 HC | connective",
+    " 3 your H9026 HSp2mp",
+    " 4 wrong H2554 HVqi2mp | word of another collection; collections evildoer",
+    " 4 wrong H5921A HRd | word of another collection; collections evildoer",
+    " 4 me H9030 HSp1bs"
+   ]
+  },
+  {
+   "reference": "Psa 10:4",
+   "text": "In the pride of his face the wicked does not seek him; all his thoughts are, “There is no God.”",
+   "words": [
+    " 0 pride H1363 HNcmsc | word of another collection; collections pride",
+    " 0 like/as H9004 HR",
+    " 1 face H0639I HNcmsc",
+    " 2 wicked H7563 HNcmsa | word of another collection; collections evildoer",
+    " 3 seek H1875 HVqi3ms | word of another collection; collections search",
+    " 3 his H9023 HSp3ms",
+    " 3 not H1077 HTn | negator; qualifier negator; negator",
+    " 4 all H3605 HNcmsc",
+    "*5 thoughts H4209 HNcfpc | member of this collection",
+    " 5 his H9023 HSp3ms",
+    " 6 no H0369 HNcmsc",
+    " 7 god H0430G HNcmpa | entity (divine); party divine"
+   ]
+  },
+  {
+   "reference": "Psa 40:5",
+   "text": "You have multiplied, O Lord my God, your wondrous deeds and your thoughts toward us; none can compare with you! I will proclaim and tell of them, yet they are more than can be told.",
+   "words": [
+    " 0 multiplied H7227A HAafpa | qualifier candidate; qualifier morph: adjective",
+    " 1 lord H3068G HNpt | entity (divine); party divine",
+    " 1 lord H0859A HPp2ms",
+    " 2 god H0430G HNcmpc | entity (divine); party divine",
+    " 3 wondrous H6381 HVNrfpc | word of another collection; collections amazement",
+    " 3 my H9020 HSp1bs",
+    " 4 deeds H6213A HVqp2ms",
+    "*5 thoughts H4284 HNcfpc | member of this collection",
+    " 5 and H9002 HC",
+    " 5 your H9021 HSp2ms",
+    " 6 toward H0413 HR",
+    " 6 your H9021 HSp2ms",
+    " 7 none H0369 HNcmsc",
+    " 7 us H9035 HSp1bp",
+    " 8 compare H6186A HVqcc",
+    " 9 proclaim H5046 HVhc1cs | word of another collection; collections preach",
+    " 9 proclaim H0413 HR | word of another collection; collections preach",
+    " 9 you H9031 HSp2ms",
+    " 10 tell H1696G HVpc1cs",
+    " 11 more H6105A HVqp3cp",
+    " 12 than H9006 HR",
+    " 13 told H5608A HVpcc"
+   ]
+  },
+  {
+   "reference": "Psa 56:5",
+   "text": "All day long they injure my cause; all their thoughts are against me for evil.",
+   "words": [
+    " 0 all H3605 HNcmsc",
+    " 1 day H3117G HNcmsa",
+    " 1 [the] H9009 HTd",
+    " 2 injure H6087A HVpi3mp | word of another collection; collections destruction",
+    " 2 my H9020 HSp1bs",
+    " 3 cause H1697G HNcmpc",
+    " 4 all H3605 HNcmsc",
+    " 4 me H9030 HSp1bs",
+    "*5 thoughts H4284 HNcfpc | member of this collection",
+    " 6 against H5921A HR",
+    " 7 evil H7451B HAamsa | word of another collection; qualifier qualifier subgroup: Bad (a quality of something); morph: adjective; collections evildoer",
+    " 7 to/for H9005 HRd",
+    " 7 their H9028 HSp3mp"
+   ]
+  },
+  {
+   "reference": "Psa 92:5",
+   "text": "How great are your works, O Lord! Your thoughts are very deep!",
+   "words": [
+    " 0 how H4100 HPi",
+    " 1 great H1431 HVqp3cp",
+    " 2 works H4639G HNcmpc | word of another collection; collections labor",
+    " 3 lord H3068G HNpt | entity (divine); party divine",
+    " 3 your H9021 HSp2ms",
+    " 4 your H9021 HSp2ms",
+    "*5 thoughts H4284 HNcfpc | member of this collection",
+    " 6 very H3966 HAcmsa | qualifier candidate; qualifier morph: adjective",
+    " 7 deep H6009 HVqp3cp"
+   ]
+  },
+  {
+   "reference": "Psa 94:11",
+   "text": "the Lord — knows the thoughts of man, that they are but a breath.",
+   "words": [
+    " 0 lord H3068G HNpt | entity (divine); party divine",
+    " 1 knows H3045 HVqrmsa | word of another collection; collections know",
+    "*2 thoughts H4284 HNcfpc | member of this collection",
+    " 3 man H0120G HNcmsa | entity (human); party human",
+    " 4 that H3588A HTc | connective",
+    " 5 they H1992 HPp3mp",
+    " 6 breath H1892 HNcmsa"
+   ]
+  },
+  {
+   "reference": "Psa 139:2",
+   "text": "You know when I sit down and when I rise up; you discern my thoughts from afar.",
+   "words": [
+    " 0 you H0859A HPp2ms",
+    " 1 know H3045 HVqp2ms | word of another collection; collections know",
+    " 2 sit down H3427 HVqcc",
+    " 3 rise up H6965B HVqcc",
+    " 3 i H9040 HSp1bs",
+    " 4 discern H0995 HVqp2ms | word of another collection; collections wise",
+    " 4 i H9040 HSp1bs",
+    "*5 thoughts H7454 HNcmsc | member of this collection",
+    " 5 to/for H9005 HR",
+    " 6 from H9006 HR",
+    " 6 my H9020 HSp1bs",
+    " 7 afar H7350 HAamsa | qualifier candidate; qualifier morph: adjective"
+   ]
+  },
+  {
+   "reference": "Psa 139:17",
+   "text": "How precious to me are your thoughts, O God! How vast is the sum of them!",
+   "words": [
+    " 0 how H4100 HPi",
+    " 0 and H9002 HC | connective",
+    " 0 to/for H9005 HR",
+    " 0 me H9030 HSp1bs",
+    " 1 precious H3365 HVqp3cp | word of another collection; collections love",
+    "*2 thoughts H7454 HNcmpc | member of this collection",
+    " 3 god H0410G HNcmsa | entity (divine); party divine",
+    " 3 your H9021 HSp2ms",
+    " 4 vast H6105A HVqp3cp",
+    " 4 vast H4100 HPi",
+    " 5 sum H7218K HNcmpc",
+    " 5 their H9028 HSp3mp"
+   ]
+  },
+  {
+   "reference": "Psa 139:23",
+   "text": "Search me, O God, and know my heart! Try me and know my thoughts!",
+   "words": [
+    " 0 search H2713 HVqv2ms | word of another collection; collections search",
+    " 1 god H0410G HNcmsa | entity (divine); party divine",
+    " 1 me H9030 HSp1bs",
+    " 2 know H3045 HVqv2ms | word of another collection; collections know",
+    " 3 heart H3824 HNcmsc | word of another collection; collections heart",
+    " 4 try H0974 HVqv2ms | word of another collection; collections trial",
+    " 4 my H9020 HSp1bs",
+    " 5 know H3045 HVqv2ms | word of another collection; collections know",
+    " 5 me H9030 HSp1bs",
+    " 6 my H9020 HSp1bs",
+    "*7 thoughts H8312 HNcmpc | member of this collection"
+   ]
+  },
+  {
+   "reference": "Pro 12:5",
+   "text": "The thoughts of the righteous are just; the counsels of the wicked are deceitful.",
+   "words": [
+    "*0 thoughts H4284 HNcfpc | member of this collection",
+    " 1 righteous H6662 HAampa | word of another collection; qualifier morph: adjective; collections righteous",
+    " 2 just H4941H HNcmsa | word of another collection; collections righteous",
+    " 3 counsels H8458 HNcfpa | word of another collection; collections teach",
+    " 4 wicked H7563 HNcmpa | word of another collection; collections evildoer",
+    " 5 deceitful H4820 HNcfsa | word of another collection; collections deceive"
+   ]
+  },
+  {
+   "reference": "Pro 15:26",
+   "text": "The thoughts of the wicked are an abomination to the Lord, but gracious words are pure.",
+   "words": [
+    "*0 thoughts H4284 HNcfpc | member of this collection",
+    " 1 wicked H7451B HAamsa | word of another collection; qualifier qualifier subgroup: Bad (a quality of something); morph: adjective; collections evildoer",
+    " 2 abomination H8441 HNcfsc | word of another collection; collections abominable",
+    " 3 lord H3068G HNpt | entity (divine); party divine",
+    " 4 gracious H5278 HNcmsa | word of another collection; collections compassion",
+    " 5 words H0561 HNcmpc",
+    " 6 pure H2889 HAampa | word of another collection; qualifier morph: adjective; collections cleanse",
+    " 6 and H9002 HC | connective"
+   ]
+  },
+  {
+   "reference": "Ecc 10:20",
+   "text": "Even in your thoughts, do not curse the king, nor in your bedroom curse the rich, for a bird of the air will carry your voice, or some winged creature tell the matter.",
+   "words": [
+    " 0 even H1571 HD | qualifier candidate; qualifier morph: adverb",
+    "*1 thoughts H4093 HNcmsc | member of this collection",
+    " 1 in/on/with H9003 HR",
+    " 2 not H0408 HTn | negator; qualifier negator; negator",
+    " 2 your H9021 HSp2ms",
+    " 3 curse H7043 HVpj2ms",
+    " 4 king H4428G HNcmsa",
+    " 4 your H9021 HSp2ms",
+    " 5 nor H0408 HTn | negator; qualifier negator; negator",
+    " 6 bedroom H2315 HNcmpc",
+    " 6 and H9002 HC | connective",
+    " 6 in/on/with H9003 HR",
+    " 6 bedroom H4904 HNcmsc",
+    " 7 curse H7043 HVpj2ms",
+    " 8 rich H6223 HAamsa | word of another collection; qualifier morph: adjective; collections rich",
+    " 9 for H3588A HTc | connective",
+    " 10 bird H5775 HNcmsc",
+    " 11 air H8064 HNcmpa",
+    " 11 [the] H9009 HTd",
+    " 12 carry H1980J HVhi3ms",
+    " 13 voice H6963A HNcmsa",
+    " 13 [the] H9009 HTd",
+    " 13 voice H0853 HTo",
+    " 14 winged H3671 HNcfda",
+    " 15 creature H1167I HNcmsa",
+    " 15 and H9002 HC | connective",
+    " 16 tell H5046 HVhi3ms",
+    " 17 matter H1697I HNcmsa"
+   ]
+  },
+  {
+   "reference": "Isa 55:7",
+   "text": "let the wicked forsake his way, and the unrighteous man his thoughts; let him return to the Lord, that he may have compassion on him, and to our God, for he will abundantly pardon.",
+   "words": [
+    " 0 wicked H7563 HNcmsa | word of another collection; collections evildoer",
+    " 1 forsake H5800A HVqi3ms | word of another collection; collections forsake",
+    " 2 way H1870G HNcbsc",
+    " 3 unrighteous H0205G HNcmsa | word of another collection; collections evildoer",
+    " 4 man H0376G HNcmsc | entity (human); party human",
+    " 4 and H9002 HC | connective",
+    " 4 his H9023 HSp3ms",
+    "*5 thoughts H4284 HNcfpc | member of this collection",
+    " 6 return H7725O HVqj3ms | word of another collection; collections return",
+    " 6 his H9023 HSp3ms",
+    " 7 to H0413 HR",
+    " 8 lord H3068G HNpt | entity (divine); party divine",
+    " 9 compassion H7355 HVpu3ms | word of another collection; collections compassion",
+    " 10 to H0413 HR",
+    " 11 god H0430G HNcmpc | entity (divine); party divine",
+    " 11 him H9033 HSp3ms",
+    " 11 and H9002 HC | connective",
+    " 12 for H3588A HTc | connective",
+    " 12 our H9025 HSp1bp",
+    " 13 abundantly H7235A HVhi3ms | word of another collection; collections rich",
+    " 14 pardon H5545 HVqcc | word of another collection; collections forgive",
+    " 14 to/for H9005 HR"
+   ]
+  },
+  {
+   "reference": "Isa 55:8",
+   "text": "For my thoughts are not your thoughts, neither are your ways my ways, declares the Lord.",
+   "words": [
+    " 0 for H3588A HTc | connective",
+    "*1 thoughts H4284 HNcfpc | member of this collection",
+    " 2 not H3808 HTn | negator; qualifier negator; negator",
+    "*3 thoughts H4284 HNcfpc | member of this collection",
+    " 3 my H9020 HSp1bs",
+    " 4 neither H3808 HTn | negator; qualifier negator; negator",
+    " 4 and H9002 HC | connective",
+    " 4 your H9026 HSp2mp",
+    " 5 ways H1870G HNcmpc",
+    " 6 ways H1870G HNcbpc",
+    " 6 your H9026 HSp2bp",
+    " 7 declares H5002 HNcmsc | word of another collection; collections preach",
+    " 7 my H9020 HSp1bs",
+    " 8 lord H3068G HNpt | entity (divine); party divine"
+   ]
+  },
+  {
+   "reference": "Isa 55:9",
+   "text": "For as the heavens are higher than the earth, so are my ways higher than your ways and my thoughts than your thoughts.",
+   "words": [
+    " 0 for H3588A HTc | connective",
+    " 1 heavens H8064 HNcmpa",
+    " 2 higher H1361 HVqp3cp",
+    " 3 than H9006 HR",
+    " 4 earth H0776G HNcfsa",
+    " 5 so H3651C HD | qualifier candidate; qualifier morph: adverb",
+    " 6 ways H1870G HNcbpc",
+    " 7 higher H1361 HVqp3cp",
+    " 8 from H9006 HR",
+    " 8 my H9020 HSp1bs",
+    " 9 ways H1870G HNcmpc",
+    "*10 thoughts H4284 HNcfpc | member of this collection",
+    " 10 and H9002 HC | connective",
+    " 10 your H9026 HSp2bp",
+    " 11 from H9006 HR",
+    " 11 my H9020 HSp1bs",
+    " 12 your H9026 HSp2mp",
+    "*13 thoughts H4284 HNcfpc | member of this collection"
+   ]
+  },
+  {
+   "reference": "Isa 59:7",
+   "text": "Their feet run to evil, and they are swift to shed innocent blood; their thoughts are thoughts of iniquity; desolation and destruction are in their highways.",
+   "words": [
+    " 0 feet H7272 HNcfdc",
+    " 1 run H7323G HVqi3mp",
+    " 2 evil H7451B HAamsa | word of another collection; qualifier qualifier subgroup: Bad (a quality of something); morph: adjective; collections evildoer",
+    " 2 to/for H9005 HRd",
+    " 2 their H9028 HSp3mp",
+    " 3 swift H4116A HVpu3mp",
+    " 4 shed H8210H HVqcc",
+    " 4 to/for H9005 HR",
+    " 5 innocent H5355A HAamsa | word of another collection; qualifier morph: adjective; collections innocent",
+    " 6 blood H1818 HNcmsa",
+    "*7 thoughts H4284 HNcfpc | member of this collection",
+    "*8 thoughts H4284 HNcfpc | member of this collection",
+    " 8 their H9028 HSp3mp",
+    " 9 iniquity H0205G HNcmsa | word of another collection; collections sin",
+    " 10 desolation H7701 HNcmsa | word of another collection; collections destruction",
+    " 11 destruction H7667 HNcmsa | word of another collection; collections destruction",
+    " 11 and H9002 HC | connective",
+    " 12 their H9028 HSp3mp",
+    " 13 highways H4546 HNcfpc",
+    " 13 in/on/with H9003 HR"
+   ]
+  },
+  {
+   "reference": "Isa 66:18",
+   "text": "“For I know their works and their thoughts, and the time is coming to gather all nations and tongues. And they shall come and shall see my glory,",
+   "words": [
+    " 0 i H0595 HPp1bs",
+    " 1 works H4639K HNcmpc | word of another collection; collections labor",
+    " 1 and H9002 HC | connective",
+    "*2 thoughts H4284 HNcfpc | member of this collection",
+    " 2 and H9002 HC",
+    " 2 their H9028 HSp3mp",
+    " 3 coming H0935G HVqrfsa",
+    " 3 their H9028 HSp3mp",
+    " 4 to H9005 HR",
+    " 5 gather H6908 HVpcc",
+    " 6 all H3605 HNcmsc",
+    " 6 all H0853 HTo",
+    " 7 nations H1471A HNcmpa",
+    " 7 [the] H9009 HTd",
+    " 8 tongues H3956H HNcfpa",
+    " 8 and H9002 HC | connective",
+    " 8 [the] H9009 HTd",
+    " 9 come H0935G HVqq3cp",
+    " 10 see H7200G HVqq3cp",
+    " 11 my H9020 HSp1ms",
+    " 12 glory H3519 HNcbsc | word of another collection; collections majesty",
+    " 12 glory H0853 HTo | word of another collection; collections majesty"
+   ]
+  },
+  {
+   "reference": "Jer 4:14",
+   "text": "O Jerusalem, wash your heart from evil, that you may be saved. How long shall your wicked thoughts lodge within you?",
+   "words": [
+    " 0 jerusalem H3389 HNpl",
+    " 0 your H9022 HSp2fs",
+    " 1 wash H3526H HVpv2fs",
+    " 2 heart H3820A HNcmsc | word of another collection; collections heart",
+    " 3 from H9006 HR",
+    " 4 evil H7451I HNcfsa | word of another collection; collections evildoer",
+    " 5 that H4616 HTc | connective",
+    " 6 saved H3467 HVNj2fs | word of another collection; collections save",
+    " 7 long H5704 HR",
+    " 7 how H4970 HTi",
+    " 8 wicked H0205G HNcmsc | word of another collection; collections evildoer",
+    " 8 your H9022 HSp2fs",
+    "*9 thoughts H4284 HNcfpc | member of this collection",
+    " 9 your H9022 HSp2fs",
+    " 10 lodge H3885A HVqi3fs",
+    " 11 within H7130G HNcmsc",
+    " 11 in/on/with H9003 HR"
+   ]
+  },
+  {
+   "reference": "Lam 3:62",
+   "text": "The lips and thoughts of my assailants are against me all the day long.",
+   "words": [
+    " 0 lips H8193G HNcfdc",
+    "*1 thoughts H1902H HNcmsc",
+    " 1 and H9002 HC",
+    " 1 me H9030 HSp1bs",
+    " 2 assailants H6965J HVqrmpc",
+    " 3 against H5921A HR",
+    " 3 their H9028 HSp3mp",
+    " 4 all H3605 HNcmsc",
+    " 4 me H9030 HSp1bs",
+    " 5 day H3117G HNcmsa",
+    " 5 [the] H9009 HTd"
+   ]
+  },
+  {
+   "reference": "Eze 38:10",
+   "text": "“ Thus says the Lord God: On that day, thoughts will come into your mind, and you will devise an evil scheme",
+   "words": [
+    " 0 thus H3541 HD | qualifier candidate; qualifier morph: adverb",
+    " 1 says H0559 HVqp3ms",
+    " 2 lord H0136 HNpt",
+    " 3 god H3069 HNpt | entity (divine); party divine",
+    " 4 day H3117G HNcmsa",
+    " 4 in/on/with H9003 HRd",
+    " 4 day H1961 HVqq3ms",
+    "*5 thoughts H1697I HNcmpa | member of this collection",
+    " 6 come H5927G HVqi3mp",
+    " 6 come H1931 HPp3ms",
+    " 6 [the] H9009 HTd",
+    " 7 into H5921A HR",
+    " 8 mind H3824 HNcmsc | word of another collection; collections heart",
+    " 9 devise H2803I HVqq2ms | word of another collection; collections plot",
+    " 9 your H9021 HSp2ms",
+    " 10 evil H7451H HAafsa | word of another collection; qualifier qualifier subgroup: Bad (a quality of something); morph: adjective; collections evildoer",
+    " 11 scheme H4284 HNcfsc"
+   ]
+  },
+  {
+   "reference": "Dan 2:29",
+   "text": "To you, O king, as you lay in bed came thoughts of what would be after this, and he who reveals mysteries made known to you what is to be.",
+   "words": [
+    " 0 you H0607 APp2ms",
+    " 1 king H4430 ANcbsd",
+    " 2 bed H4903 ANcbsc",
+    " 2 your H9021 ASp2ms",
+    " 3 came H5559 AVqp3mp",
+    " 3 your H9021 ASp2ms",
+    " 3 came H5922 AR",
+    "*4 thoughts H7476 ANcbsc | member of this collection",
+    " 4 [the] H9010 ATa",
+    " 5 what H4101 APi",
+    " 6 would H1934 AVqi3ms",
+    " 6 would H1768 AC | connective",
+    " 7 after H0311 ANcmpc",
+    " 8 this H1836 ATm",
+    " 9 reveals H1541 AVqrmsa",
+    " 10 mysteries H7328 ANcmpd",
+    " 11 known H3046 AVhp3ms | word of another collection; collections know",
+    " 11 [the] H9010 ATa",
+    " 12 what H4101 APi",
+    " 12 you H9031 ASp2ms",
+    " 13 be H1934 AVqi3ms",
+    " 13 be H1768 AC | connective"
+   ]
+  },
+  {
+   "reference": "Dan 2:30",
+   "text": "But as for me, this mystery has been revealed to me, not because of any wisdom that I have more than all the living, but in order that the interpretation may be made known to the king, and that you may know the thoughts of your mind.",
+   "words": [
+    " 0 me H0576B APp1bs",
+    " 0 and H9002 AC | connective",
+    " 1 this H1836 ATm",
+    " 1 [the] H9010 ATa",
+    " 2 mystery H7328 ANcbsd",
+    " 2 [the] H9010 ATa",
+    " 3 revealed H1541 AVQp3ms | word of another collection; collections conceal",
+    " 4 not H3809 ATn | negator; qualifier negator; negator",
+    " 5 wisdom H2452 ANcfsa | word of another collection; collections wise",
+    " 5 in/on/with H9003 AR",
+    " 6 have H0383 ANcbsa",
+    " 6 that H1768 AC | connective",
+    " 7 more than H4481 AR",
+    " 7 in/on/with H9003 AR",
+    " 7 me H9030 ASp1bs",
+    " 8 all H3606 ANcbsc",
+    " 9 living H2417 AAampd | word of another collection; qualifier morph: adjective; collections live",
+    " 10 but H3861 AC | connective",
+    " 10 to/for H9005 AR",
+    " 10 me H9030 ASp1bs",
+    " 11 order H1701 ANcfsc | word of another collection; collections command",
+    " 12 that H5922 AR",
+    " 13 interpretation H6591 ANcbsd",
+    " 13 interpretation H1768 AC | connective",
+    " 14 known H3046 AVhi3mp | word of another collection; collections know",
+    " 14 [the] H9010 ATa",
+    " 15 king H4430 ANcbsd",
+    " 15 to/for H9005 AR",
+    " 15 [the] H9010 ATa",
+    " 16 you H9021 ASp2ms",
+    " 17 know H3046 AVqi2ms | word of another collection; collections know",
+    "*18 thoughts H7476 ANcmpc | member of this collection",
+    " 18 and H9002 AC",
+    " 19 mind H3825 ANcbsc | word of another collection; collections heart"
+   ]
+  },
+  {
+   "reference": "Dan 4:19",
+   "text": "Then Daniel, whose name was Belteshazzar, was dismayed for a while, and his thoughts alarmed him. The king answered and said, “ Belteshazzar, let not the dream or the interpretation alarm you.” Belteshazzar answered and said, “My lord, may the dream be for those who hate you and its interpretation for your enemies!",
+   "words": [
+    " 0 then H0116 AD | qualifier candidate; qualifier morph: adverb",
+    " 1 daniel H1841H ANpm | entity (human); party human",
+    " 2 whose H1768 AC | connective",
+    " 3 name H8036 ANcbsc",
+    " 4 belteshazzar H1096 ANpm | entity (human); party human",
+    " 4 his H9023 ASp3ms",
+    " 5 dismayed H8075 AVPp3ms | word of another collection; collections fear",
+    " 6 for a H2298 AAcbsa | qualifier candidate; qualifier morph: adjective",
+    " 7 while H8160 ANcfsa",
+    " 7 like/as H9004 AR",
+    "*8 thoughts H7476 ANcmpc | member of this collection",
+    " 8 and H9002 AC",
+    " 9 alarmed H0927 AVpi3mp | word of another collection; collections fear",
+    " 9 his H9023 ASp3ms",
+    " 10 king H4430 ANcbsd",
+    " 11 answered H6032 AVqrmsa | word of another collection; collections profess",
+    " 11 him H9033 ASp3ms",
+    " 12 said H0560 AVqrmsa",
+    " 12 [the] H9010 ATa",
+    " 13 belteshazzar H1096 ANpm | entity (human); party human",
+    " 14 not H0409 ATn",
+    " 15 dream H2493 ANcbsd",
+    " 16 interpretation H6591 ANcbsc",
+    " 16 his H9023 ASp3ms",
+    " 16 and H9002 AC | connective",
+    " 16 [the] H9010 ATa",
+    " 17 alarm H0927 AVpj3ms | word of another collection; collections fear",
+    " 18 belteshazzar H1096 ANpm | entity (human); party human",
+    " 19 answered H6032 AVqrmsa | word of another collection; collections profess",
+    " 19 you H9031 ASp2ms",
+    " 20 said H0560 AVqrmsa",
+    " 21 lord H4756 ANcbsc",
+    " 22 dream H2493 ANcbsd",
+    " 22 my H9020 ASp1bs",
+    " 23 who hate H8131 AVqrmpc | word of another collection; collections love",
+    " 23 to/for H9005 AR",
+    " 23 [the] H9010 ATa",
+    " 24 interpretation H6591 ANcbsc",
+    " 24 and H9002 AC | connective",
+    " 24 you H9031 ASp2ms",
+    " 25 your H9021 ASp2ms",
+    " 26 enemies H6146 ANcmpc",
+    " 26 to/for H9005 AR",
+    " 26 his H9023 ASp3ms"
+   ]
+  },
+  {
+   "reference": "Dan 5:6",
+   "text": "Then the king’s color changed, and his thoughts alarmed him; his limbs gave way, and his knees knocked together.",
+   "words": [
+    " 0 then H0116 AD | qualifier candidate; qualifier morph: adverb",
+    " 1 king’s H4430 ANcbsd",
+    " 2 color H2122 ANcmpc",
+    " 2 [the] H9010 ATa",
+    " 3 changed H8133 AVqp3mp | word of another collection; collections change",
+    " 3 his H9023 ASp3ms",
+    "*4 thoughts H7476 ANcmpc | member of this collection",
+    " 4 and H9002 AC",
+    " 4 him H9033 ASp3ms",
+    " 5 alarmed H0927 AVpi3mp | word of another collection; collections fear",
+    " 5 his H9023 ASp3ms",
+    " 6 limbs H7001 ANcmpc",
+    " 6 and H9002 AC | connective",
+    " 6 him H9033 ASp3ms",
+    " 6 limbs H2783 ANcbsc",
+    " 7 gave way H8271 AVMrmpa",
+    " 7 his H9023 ASp3ms",
+    " 8 knees H0755 ANcfpc",
+    " 8 and H9002 AC | connective",
+    " 9 knocked H5368 AVqrfpa",
+    " 9 to/for H9005 AR",
+    " 10 together H1668 ATm",
+    " 10 his H9023 ASp3ms",
+    " 10 together H1668 ATm"
+   ]
+  },
+  {
+   "reference": "Dan 5:10",
+   "text": "The queen, because of the words of the king and his lords, came into the banqueting hall, and the queen declared, “O king, live forever! Let not your thoughts alarm you or your color change.",
+   "words": [
+    " 0 queen H4433 ANcfsd",
+    " 1 because H6903G ANcbsc",
+    " 1 to/for H9005 AR",
+    " 1 [the] H9010 ATa",
+    " 2 words H4406 ANcmpc",
+    " 3 king H4430 ANcbsd",
+    " 4 lords H7261 ANcmpc",
+    " 4 and H9002 AC | connective",
+    " 4 [the] H9010 ATa",
+    " 5 came into H5954 AVqp3fs",
+    " 5 [the] H9010 ATa",
+    " 6 banqueting H4961 ANcbsd",
+    " 7 hall H1005 ANcbsc",
+    " 7 to/for H9005 AR",
+    " 7 his H9023 ASp3ms",
+    " 8 queen H4433 ANcfsd",
+    " 9 declared H6032 AVqp3fs | word of another collection; collections preach",
+    " 9 declared H0560 AVqp3fs | word of another collection; collections preach",
+    " 10 king H4430 ANcbsd",
+    " 10 [the] H9010 ATa",
+    " 11 live H2418 AVqv2ms | word of another collection; collections live",
+    " 12 forever H5957 ANcmpa | qualifier candidate; qualifier qualifier subgroup: Forever, ever, always (a quality of time)",
+    " 12 to/for H9005 AR",
+    " 12 [the] H9010 ATa",
+    " 13 not H0409 ATn",
+    "*14 thoughts H7476 ANcbsc | member of this collection",
+    " 14 you H9031 ASp2ms",
+    " 15 alarm H0927 AVpj3mp | word of another collection; collections fear",
+    " 16 color H2122 ANcmpc",
+    " 16 and H9002 AC | connective",
+    " 16 your H9021 ASp2ms",
+    " 17 change H8133 AVPj3mp | word of another collection; collections change",
+    " 17 your H9021 ASp2ms",
+    " 17 change H0409 ATn | word of another collection; collections change"
+   ]
+  },
+  {
+   "reference": "Dan 7:28",
+   "text": "“ Here is the end of the matter. As for me, Daniel, my thoughts greatly alarmed me, and my color changed, but I kept the matter in my heart.”",
+   "words": [
+    " 0 here H5705 AR",
+    " 0 here H3542 AD | qualifier candidate; qualifier morph: adverb",
+    " 1 end H5491 ANcbsd",
+    " 2 matter H4406 ANcfsd",
+    " 2 [the] H9010 ATa",
+    " 2 matter H1768 AC | connective",
+    " 3 me H0576B APp1bs",
+    " 3 [the] H9010 ATa",
+    " 4 daniel H1841H ANpm | entity (human); party human",
+    "*5 thoughts H7476 ANcmpc | member of this collection",
+    " 6 greatly H7690 AAabsa | qualifier candidate; qualifier morph: adjective",
+    " 7 alarmed H0927 AVpi3mp | word of another collection; collections fear",
+    " 7 my H9020 ASp1bs",
+    " 8 and my H5922 AR",
+    " 9 color H2122 ANcmpc",
+    " 9 and H9002 AC | connective",
+    " 9 me H9030 ASp1bs",
+    " 10 changed H8133 AVPi3mp | word of another collection; collections change",
+    " 10 my H9020 ASp1bs",
+    " 11 i H9020 ASp1bs",
+    " 12 kept H5202 AVqp1cs | word of another collection; collections remove",
+    " 13 matter H4406 ANcfsd",
+    " 13 and H9002 AC | connective",
+    " 13 me H9030 ASp1bs",
+    " 14 heart H3821 ANcbsc | word of another collection; collections heart",
+    " 14 in/on/with H9003 AR",
+    " 14 [the] H9010 ATa"
+   ]
+  },
+  {
+   "reference": "Mic 4:12",
+   "text": "But they do not know the thoughts of the Lord; they do not understand his plan, that he has gathered them as sheaves to the threshing floor.",
+   "words": [
+    " 0 but H1992 HPp3mp",
+    " 0 and H9002 HC | connective",
+    " 1 not H3808 HTn | negator; qualifier negator; negator",
+    " 2 know H3045 HVqp3cp | word of another collection; collections know",
+    "*3 thoughts H4284 HNcfpc | member of this collection",
+    " 4 lord H3068G HNpt | entity (divine); party divine",
+    " 5 not H3808 HTn | negator; qualifier negator; negator",
+    " 5 and H9002 HC | connective",
+    " 6 understand H0995 HVhp3cp | word of another collection; collections wise",
+    " 7 plan H6098 HNcfsc | word of another collection; collections intend",
+    " 8 that H3588A HTc | connective",
+    " 8 his H9023 HSp3ms",
+    " 9 gathered H6908 HVpp3ms",
+    " 10 sheaves H5995 HNcmsa",
+    " 10 like/as H9004 HRd",
+    " 10 them H9038 HSp3mp",
+    " 11 threshing floor H1637 HNcfsa",
+    " 11 [to] H9011 HSd"
+   ]
+  },
+  {
+   "reference": "Mat 9:4",
+   "text": "But Jesus, knowing their thoughts, said, “ Why do you think evil in your hearts?",
+   "words": [
+    " 0 but G2532 CONJ | connective",
+    " 1 jesus G2424G N-NSM-P | entity (divine); party divine",
+    " 2 knowing G1492H V-2AAP-NSM | word of another collection; collections know",
+    " 3 their G0846 P-GPM",
+    "*4 thoughts G1761 N-APF | member of this collection",
+    " 5 said G2036 V-2AAI-3S",
+    " 6 why G2444 CONJ",
+    "*7 think G1760 V-PNI-2P | member of this collection",
+    " 8 evil G4190 A-APN | word of another collection; qualifier qualifier subgroup: Bad (a quality of something); morph: adjective; collections evildoer",
+    " 9 in G1722 PREP",
+    " 10 your G5216 P-2GP",
+    " 11 hearts G2588 N-DPF | word of another collection; collections heart"
+   ]
+  },
+  {
+   "reference": "Mat 12:25",
+   "text": "Knowing their thoughts, he said to them, “ Every kingdom divided against itself is laid waste, and no city or house divided against itself will stand.",
+   "words": [
+    " 0 knowing G1161 CONJ | word of another collection; collections know",
+    " 0 knowing G6063 V-RAP-NSM | word of another collection; collections know",
+    " 1 their G0846 P-GPM",
+    "*2 thoughts G1761 N-APF | member of this collection",
+    " 3 he G2424G N-NSM-P | entity (divine); party divine",
+    " 4 said G2036 V-2AAI-3S",
+    " 5 them G0846 P-DPM",
+    " 6 every G3956 A-NSF | qualifier candidate; qualifier morph: adjective",
+    " 7 kingdom G0932 N-NSF",
+    " 8 divided G3307 V-APP-NSF",
+    " 9 against G2596 PREP",
+    " 10 itself G1438 F-3GSF",
+    " 11 laid waste G2049 V-PPI-3S",
+    " 12 and G2532 CONJ | connective",
+    " 13 no G3756 PRT-N | negator; qualifier negator; negator",
+    " 14 city G4172 N-NSF",
+    " 15 or G2228 CONJ | connective",
+    " 16 house G3614H N-NSF",
+    " 17 divided G3307 V-APP-NSF",
+    " 18 against G2596 PREP",
+    " 19 itself G1438 F-3GSF",
+    " 20 stand G2476 V-FPI-3S"
+   ]
+  },
+  {
+   "reference": "Mat 15:19",
+   "text": "For out of the heart come evil thoughts, murder, adultery, sexual immorality, theft, false witness, slander.",
+   "words": [
+    " 0 for G1063 CONJ | connective",
+    " 1 of G1537 PREP",
+    " 2 heart G2588 N-GSF | word of another collection; collections heart",
+    " 3 come G1831 V-PNI-3P",
+    " 4 evil G4190 A-NPM | word of another collection; qualifier qualifier subgroup: Bad (a quality of something); morph: adjective; collections evildoer",
+    "*5 thoughts G1261 N-NPM | member of this collection",
+    " 6 murder G5408 N-NPM | word of another collection; collections kill",
+    " 7 adultery G3430 N-NPF | word of another collection; collections adultery",
+    " 8 sexual immorality G4202 N-NPF | word of another collection; collections righteous",
+    " 9 theft G2829 N-NPF",
+    " 10 false witness G5577 N-NPF | word of another collection; collections witness",
+    " 11 slander G0988 N-NPF | word of another collection; collections scoff"
+   ]
+  },
+  {
+   "reference": "Mar 7:21",
+   "text": "For from within, out of the heart of man, come evil thoughts, sexual immorality, theft, murder, adultery,",
+   "words": [
+    " 0 for G1063 CONJ | connective",
+    " 1 within G2081 ADV | qualifier candidate; qualifier morph: adverb",
+    " 2 of G1537 PREP",
+    " 3 heart G2588 N-GSF | word of another collection; collections heart",
+    " 4 man G0444 N-GPM | entity (human); party human",
+    " 5 come G1607 V-PNI-3P",
+    " 6 evil G2556G A-NPM | word of another collection; qualifier qualifier subgroup: Bad (a quality of something); morph: adjective; collections evildoer",
+    "*7 thoughts G1261 N-NPM | member of this collection",
+    " 8 sexual immorality G4202 N-NPF | word of another collection; collections righteous",
+    " 9 theft G2829 N-NPF",
+    " 10 murder G5408 N-NPM | word of another collection; collections kill",
+    " 11 adultery G3430 N-NPF | word of another collection; collections adultery"
+   ]
+  },
+  {
+   "reference": "Luk 1:51",
+   "text": "He has shown strength with his arm; he has scattered the proud in the thoughts of their hearts;",
+   "words": [
+    " 0 shown G4160G V-AAI-3S",
+    " 1 strength G2904 N-ASN | word of another collection; collections mighty",
+    " 2 with G1722 PREP",
+    " 3 his G0846 P-GSM",
+    " 4 arm G1023 N-DSM",
+    " 5 scattered G1287 V-AAI-3S",
+    " 6 proud G5244 A-APM | word of another collection; qualifier morph: adjective; collections pride",
+    "*7 thoughts G1271 N-DSF | member of this collection",
+    " 8 their G0846 P-GPM",
+    " 9 hearts G2588 N-GSF | word of another collection; collections heart"
+   ]
+  },
+  {
+   "reference": "Luk 2:35",
+   "text": "( and a sword will pierce through your own soul also ), so that thoughts from many hearts may be revealed.”",
+   "words": [
+    " 0 and G1161 CONJ | connective",
+    " 1 sword G4501 N-NSF",
+    " 2 through G1330 V-FDI-3S",
+    " 3 your G4675 P-2GS",
+    " 4 own G0846 P-GSF",
+    " 5 soul G5590G N-ASF",
+    " 6 also G2532 CONJ | connective",
+    " 7 that G3704 CONJ | connective",
+    " 7 that G0302 PRT | connective",
+    "*8 thoughts G1261 N-NPM | member of this collection",
+    " 9 from G1537 PREP",
+    " 10 many G4183 A-GPF | qualifier candidate; qualifier morph: adjective",
+    " 11 hearts G2588 N-GPF | word of another collection; collections heart",
+    " 12 revealed G0601 V-APS-3P | word of another collection; collections conceal"
+   ]
+  },
+  {
+   "reference": "Luk 5:22",
+   "text": "When Jesus perceived their thoughts, he answered them, “ Why do you question in your hearts?",
+   "words": [
+    " 0 when G1161 CONJ | connective",
+    " 1 jesus G2424G N-NSM-P | entity (divine); party divine",
+    " 2 perceived G1921 V-2AAP-NSM | word of another collection; collections know",
+    " 3 their G0846 P-GPM",
+    "*4 thoughts G1261 N-APM | member of this collection",
+    " 5 answered G0611 V-AOP-NSM | word of another collection; collections profess",
+    " 6 them G0846 P-APM",
+    " 7 why G5101 I-ASN",
+    " 8 question G1260 V-PNI-2P | word of another collection; collections ask",
+    " 9 in G1722 PREP",
+    " 10 your G5216 P-2GP",
+    " 11 hearts G2588 N-DPF | word of another collection; collections heart"
+   ]
+  },
+  {
+   "reference": "Luk 6:8",
+   "text": "But he knew their thoughts, and he said to the man with the withered hand, “ Come and stand here.” And he rose and stood there.",
+   "words": [
+    " 0 but G1161 CONJ | connective",
+    " 1 he G0846 P-NSM",
+    " 2 knew G1492I V-2LAI-3S | word of another collection; collections know",
+    " 3 their G0846 P-GPM",
+    "*4 thoughts G1261 N-APM | member of this collection",
+    " 5 said G2036 V-2AAI-3S",
+    " 6 man G0435G N-DSM | entity (human); party human",
+    " 7 with G3588 n/a",
+    " 7 with G2192 V-PAP-DSM",
+    " 8 withered G3584 A-ASF | word of another collection; qualifier morph: adjective; collections dry",
+    " 9 hand G5495 N-ASF",
+    " 10 come G1453 V-PAM-2S",
+    " 11 and G2532 CONJ | connective",
+    " 12 stand G2476 V-2AAM-2S",
+    " 13 here G1519 PREP",
+    " 13 here G3319 A-ASN | qualifier candidate; qualifier morph: adjective",
+    " 14 and G2532 CONJ | connective",
+    " 15 rose G0450 V-2AAP-NSM",
+    " 16 stood G2476 V-2AAI-3S"
+   ]
+  },
+  {
+   "reference": "Luk 11:17",
+   "text": "But he, knowing their thoughts, said to them, “ Every kingdom divided against itself is laid waste, and a divided household falls.",
+   "words": [
+    " 0 but G1161 CONJ | connective",
+    " 1 he G0846 P-NSM",
+    " 2 knowing G6063 V-RAP-NSM | word of another collection; collections know",
+    " 3 their G0846 P-GPM",
+    "*4 thoughts G1270 N-APN | member of this collection",
+    " 5 said G2036 V-2AAI-3S",
+    " 6 them G0846 P-DPM",
+    " 7 every G3956 A-NSF | qualifier candidate; qualifier morph: adjective",
+    " 8 kingdom G0932 N-NSF",
+    " 9 divided G1266 V-APP-NSF",
+    " 10 against G1909 PREP",
+    " 11 itself G1438 F-3ASF",
+    " 12 laid waste G2049 V-PPI-3S",
+    " 13 and G2532 CONJ | connective",
+    " 14 household G3624H N-NSM",
+    " 15 falls G4098 V-PAI-3S"
+   ]
+  },
+  {
+   "reference": "1Cor 2:11",
+   "text": "For who knows a person’s thoughts except the spirit of that person, which is in him? So also no one comprehends the thoughts of God except the Spirit of God.",
+   "words": [
+    " 0 for G1063 CONJ | connective",
+    " 1 who G5101 I-NSM",
+    " 2 knows G6063 V-RAI-3S | word of another collection; collections know",
+    " 3 person’s G0444 N-GSM | entity (human); party human",
+    " 4 except G1487H COND",
+    " 5 spirit G4151G N-NSN",
+    " 6 person G0444 N-GSM | entity (human); party human",
+    " 7 which G3588 None",
+    " 8 in G1722 PREP",
+    " 9 him G0846 P-DSM",
+    " 10 so G3779 ADV | qualifier candidate; qualifier morph: adverb",
+    " 11 also G2532 CONJ | connective",
+    " 12 no one G3762 A-NSM | qualifier candidate; qualifier morph: adjective",
+    " 13 comprehends G6063 V-RAI-3S | word of another collection; collections know",
+    "*14 thoughts G3588 None | member of this collection",
+    " 15 god G2316 N-GSM-T | entity (divine); party divine",
+    " 16 except G1487H COND",
+    " 16 except G3361 PRT-N | negator; qualifier negator; negator",
+    " 17 spirit G4151G N-NSN",
+    " 18 god G2316 N-GSM-T | entity (divine); party divine"
+   ]
+  },
+  {
+   "reference": "1Cor 3:20",
+   "text": "and again, “The Lord knows the thoughts of the wise, that they are futile.”",
+   "words": [
+    " 0 and G2532 CONJ | connective",
+    " 1 again G3825 ADV | qualifier candidate; qualifier morph: adverb",
+    " 2 lord G2962G N-NSM-T | entity (divine); party divine",
+    " 3 knows G1097 V-PAI-3S | word of another collection; collections know",
+    "*4 thoughts G1261 N-APM | member of this collection",
+    " 5 wise G4680 A-GPM | word of another collection; qualifier morph: adjective; collections wise",
+    " 6 that G3754G CONJ | connective",
+    " 7 are G1526 V-PAI-3P",
+    " 8 futile G3152 A-NPM | qualifier candidate; qualifier morph: adjective"
+   ]
+  },
+  {
+   "reference": "2Cor 11:3",
+   "text": "But I am afraid that as the serpent deceived Eve by his cunning, your thoughts will be led astray from a sincere and pure devotion to Christ.",
+   "words": [
+    " 0 but G1161 CONJ | connective",
+    " 1 afraid G5399 V-PNI-1S | word of another collection; collections fear",
+    " 2 that G3381 PRT | connective",
+    " 3 as G5613 PRT | connective",
+    " 4 serpent G3789 N-NSM",
+    " 5 deceived G1818 V-AAI-3S | word of another collection; collections deceive",
+    " 6 eve G2096 N-ASF-P | entity (human); party human",
+    " 7 by G1722 PREP",
+    " 8 his G0846 P-GSM",
+    " 9 cunning G3834 N-DSF | word of another collection; collections deceive",
+    " 10 your G5216 P-2GP",
+    "*11 thoughts G3540 N-NPN | member of this collection",
+    " 12 led astray G5351 V-2APS-3S | word of another collection; collections astray",
+    " 13 from G0575 PREP",
+    " 14 pure devotion G0572 N-GSF | word of another collection; collections dedicate",
+    " 15 to G1519 PREP",
+    " 16 christ G5547 N-ASM-T | entity (divine); party divine"
+   ]
+  },
+  {
+   "reference": "Heb 4:12",
+   "text": "For the word of God is living and active, sharper than any two-edged sword, piercing to the division of soul and of spirit, of joints and of marrow, and discerning the thoughts and intentions of the heart.",
+   "words": [
+    " 0 for G1063 CONJ | connective",
+    " 1 word G3056 N-NSM",
+    " 2 god G2316 N-GSM-T | entity (divine); party divine",
+    " 3 living G2198 V-PAP-NSM | word of another collection; collections live",
+    " 4 and G2532 CONJ | connective",
+    " 4 and G5037 CONJ | connective",
+    " 5 active G1756 A-NSM | qualifier candidate; qualifier morph: adjective",
+    " 6 sharper G2532 CONJ | connective",
+    " 6 sharper G5114 A-NSM-C | qualifier candidate; qualifier morph: adjective",
+    " 7 than G5228 PREP",
+    " 8 any G3956 A-ASF | qualifier candidate; qualifier morph: adjective",
+    " 9 two-edged G1366 A-ASF | qualifier candidate; qualifier morph: adjective",
+    " 10 sword G3162 N-ASF",
+    " 11 piercing G1338 V-PNP-NSM",
+    " 12 to G0891 PREP",
+    " 13 division G3311 N-GSM",
+    " 14 soul G5590G N-GSF",
+    " 15 and G2532 CONJ | connective",
+    " 16 spirit G4151G N-GSN",
+    " 17 joints G0719 N-GPM",
+    " 18 and G2532 CONJ | connective",
+    " 19 marrow G3452 N-GPM",
+    " 20 and G2532 CONJ | connective",
+    " 21 discerning G2924 A-NSM | word of another collection; qualifier morph: adjective; collections wise",
+    "*22 thoughts G1761 N-GPF | member of this collection",
+    " 23 and G2532 CONJ | connective",
+    " 24 intentions G1771 N-GPF | word of another collection; collections intend",
+    " 25 heart G2588 N-GSF | word of another collection; collections heart"
+   ]
+  },
+  {
+   "reference": "Jam 2:4",
+   "text": "have you not then made distinctions among yourselves and become judges with evil thoughts?",
+   "words": [
+    " 0 not G3756 PRT-N | negator; qualifier negator; negator",
+    " 1 distinctions G1252 V-API-2P | word of another collection; collections doubt",
+    " 2 among G1722 PREP",
+    " 3 yourselves G1438 F-2DPM",
+    " 4 and G2532 CONJ | connective",
+    " 5 become G1096 V-2ADI-2P",
+    " 6 judges G2923 N-NPM | word of another collection; collections condemn",
+    " 7 evil G4190 A-GPM | word of another collection; qualifier qualifier subgroup: Bad (a quality of something); morph: adjective; collections evildoer",
+    "*8 thoughts G1261 N-GPM | member of this collection"
+   ]
+  }
+ ],
+ "rows": [
+  {
+   "ledger_id": 1721,
+   "item": "double-meaning",
+   "subject": "thoughts",
+   "asks": "Does this surface carry a different Strong's code or sense in different verses (the faces of the word)? State the codes and the verses.",
+   "none_allowed": true,
+   "verses": [
+    "Gen 6:5",
+    "1Ch 29:18",
+    "Job 20:2",
+    "Job 21:27",
+    "Psa 10:4",
+    "Psa 40:5",
+    "Psa 56:5",
+    "Psa 92:5",
+    "Psa 94:11",
+    "Psa 139:2",
+    "Psa 139:17",
+    "Psa 139:23",
+    "Pro 12:5",
+    "Pro 15:26",
+    "Ecc 10:20",
+    "Isa 55:7",
+    "Isa 55:8",
+    "Isa 55:9",
+    "Isa 59:7",
+    "Isa 66:18",
+    "Jer 4:14",
+    "Lam 3:62",
+    "Eze 38:10",
+    "Dan 2:29",
+    "Dan 2:30",
+    "Dan 4:19",
+    "Dan 5:6",
+    "Dan 5:10",
+    "Dan 7:28",
+    "Mic 4:12",
+    "Mat 9:4",
+    "Mat 12:25",
+    "Mat 15:19",
+    "Mar 7:21",
+    "Luk 1:51",
+    "Luk 2:35",
+    "Luk 5:22",
+    "Luk 6:8",
+    "Luk 11:17",
+    "1Cor 2:11",
+    "1Cor 3:20",
+    "2Cor 11:3",
+    "Heb 4:12",
+    "Jam 2:4"
+   ],
+   "occurrences": [
+    {
+     "occurrence": 996337,
+     "reference": "Gen 6:5",
+     "surface": "thoughts",
+     "strong": "H4284",
+     "as": "member"
+    },
+    {
+     "occurrence": 1195496,
+     "reference": "1Ch 29:18",
+     "surface": "thoughts",
+     "strong": "H4284",
+     "as": "member"
+    },
+    {
+     "occurrence": 1244052,
+     "reference": "Job 20:2",
+     "surface": "thoughts",
+     "strong": "H5587B",
+     "as": "member"
+    },
+    {
+     "occurrence": 1240784,
+     "reference": "Job 21:27",
+     "surface": "thoughts",
+     "strong": "H4284",
+     "as": "member"
+    },
+    {
+     "occurrence": 1248174,
+     "reference": "Psa 10:4",
+     "surface": "thoughts",
+     "strong": "H4209",
+     "as": "member"
+    },
+    {
+     "occurrence": 1251521,
+     "reference": "Psa 40:5",
+     "surface": "thoughts",
+     "strong": "H4284",
+     "as": "member"
+    },
+    {
+     "occurrence": 1262488,
+     "reference": "Psa 56:5",
+     "surface": "thoughts",
+     "strong": "H4284",
+     "as": "member"
+    },
+    {
+     "occurrence": 1251322,
+     "reference": "Psa 92:5",
+     "surface": "thoughts",
+     "strong": "H4284",
+     "as": "member"
+    },
+    {
+     "occurrence": 1266797,
+     "reference": "Psa 94:11",
+     "surface": "thoughts",
+     "strong": "H4284",
+     "as": "member"
+    },
+    {
+     "occurrence": 1266422,
+     "reference": "Psa 139:2",
+     "surface": "thoughts",
+     "strong": "H7454",
+     "as": "member"
+    },
+    {
+     "occurrence": 1267641,
+     "reference": "Psa 139:17",
+     "surface": "thoughts",
+     "strong": "H7454",
+     "as": "member"
+    },
+    {
+     "occurrence": 1249981,
+     "reference": "Psa 139:23",
+     "surface": "thoughts",
+     "strong": "H8312",
+     "as": "member"
+    },
+    {
+     "occurrence": 1278724,
+     "reference": "Pro 12:5",
+     "surface": "thoughts",
+     "strong": "H4284",
+     "as": "member"
+    },
+    {
+     "occurrence": 1275782,
+     "reference": "Pro 15:26",
+     "surface": "thoughts",
+     "strong": "H4284",
+     "as": "member"
+    },
+    {
+     "occurrence": 1287293,
+     "reference": "Ecc 10:20",
+     "surface": "thoughts",
+     "strong": "H4093",
+     "as": "member"
+    },
+    {
+     "occurrence": 1290992,
+     "reference": "Isa 55:7",
+     "surface": "thoughts",
+     "strong": "H4284",
+     "as": "member"
+    },
+    {
+     "occurrence": 1312428,
+     "reference": "Isa 55:8",
+     "surface": "thoughts",
+     "strong": "H4284",
+     "as": "member"
+    },
+    {
+     "occurrence": 1312430,
+     "reference": "Isa 55:8",
+     "surface": "thoughts",
+     "strong": "H4284",
+     "as": "member"
+    },
+    {
+     "occurrence": 1307127,
+     "reference": "Isa 55:9",
+     "surface": "thoughts",
+     "strong": "H4284",
+     "as": "member"
+    },
+    {
+     "occurrence": 1307133,
+     "reference": "Isa 55:9",
+     "surface": "thoughts",
+     "strong": "H4284",
+     "as": "member"
+    },
+    {
+     "occurrence": 1291076,
+     "reference": "Isa 59:7",
+     "surface": "thoughts",
+     "strong": "H4284",
+     "as": "member"
+    },
+    {
+     "occurrence": 1291077,
+     "reference": "Isa 59:7",
+     "surface": "thoughts",
+     "strong": "H4284",
+     "as": "member"
+    },
+    {
+     "occurrence": 1308866,
+     "reference": "Isa 66:18",
+     "surface": "thoughts",
+     "strong": "H4284",
+     "as": "member"
+    },
+    {
+     "occurrence": 1314918,
+     "reference": "Jer 4:14",
+     "surface": "thoughts",
+     "strong": "H4284",
+     "as": "member"
+    },
+    {
+     "occurrence": 1347876,
+     "reference": "Lam 3:62",
+     "surface": "thoughts",
+     "strong": "H1902H",
+     "as": "member"
+    },
+    {
+     "occurrence": 1359332,
+     "reference": "Eze 38:10",
+     "surface": "thoughts",
+     "strong": "H1697I",
+     "as": "member"
+    },
+    {
+     "occurrence": 1381597,
+     "reference": "Dan 2:29",
+     "surface": "thoughts",
+     "strong": "H7476",
+     "as": "member"
+    },
+    {
+     "occurrence": 1381643,
+     "reference": "Dan 2:30",
+     "surface": "thoughts",
+     "strong": "H7476",
+     "as": "member"
+    },
+    {
+     "occurrence": 1378876,
+     "reference": "Dan 4:19",
+     "surface": "thoughts",
+     "strong": "H7476",
+     "as": "member"
+    },
+    {
+     "occurrence": 1383795,
+     "reference": "Dan 5:6",
+     "surface": "thoughts",
+     "strong": "H7476",
+     "as": "member"
+    },
+    {
+     "occurrence": 1379139,
+     "reference": "Dan 5:10",
+     "surface": "thoughts",
+     "strong": "H7476",
+     "as": "member"
+    },
+    {
+     "occurrence": 1383822,
+     "reference": "Dan 7:28",
+     "surface": "thoughts",
+     "strong": "H7476",
+     "as": "member"
+    },
+    {
+     "occurrence": 1394763,
+     "reference": "Mic 4:12",
+     "surface": "thoughts",
+     "strong": "H4284",
+     "as": "member"
+    },
+    {
+     "occurrence": 1410604,
+     "reference": "Mat 9:4",
+     "surface": "thoughts",
+     "strong": "G1761",
+     "as": "member"
+    },
+    {
+     "occurrence": 1410756,
+     "reference": "Mat 12:25",
+     "surface": "thoughts",
+     "strong": "G1761",
+     "as": "member"
+    },
+    {
+     "occurrence": 1414954,
+     "reference": "Mat 15:19",
+     "surface": "thoughts",
+     "strong": "G1261",
+     "as": "member"
+    },
+    {
+     "occurrence": 1426357,
+     "reference": "Mar 7:21",
+     "surface": "thoughts",
+     "strong": "G1261",
+     "as": "member"
+    },
+    {
+     "occurrence": 1441959,
+     "reference": "Luk 1:51",
+     "surface": "thoughts",
+     "strong": "G1271",
+     "as": "member"
+    },
+    {
+     "occurrence": 1441924,
+     "reference": "Luk 2:35",
+     "surface": "thoughts",
+     "strong": "G1261",
+     "as": "member"
+    },
+    {
+     "occurrence": 1439973,
+     "reference": "Luk 5:22",
+     "surface": "thoughts",
+     "strong": "G1261",
+     "as": "member"
+    },
+    {
+     "occurrence": 1434988,
+     "reference": "Luk 6:8",
+     "surface": "thoughts",
+     "strong": "G1261",
+     "as": "member"
+    },
+    {
+     "occurrence": 1435976,
+     "reference": "Luk 11:17",
+     "surface": "thoughts",
+     "strong": "G1270",
+     "as": "member"
+    },
+    {
+     "occurrence": 1484168,
+     "reference": "1Cor 2:11",
+     "surface": "thoughts",
+     "strong": "G3588",
+     "as": "member"
+    },
+    {
+     "occurrence": 1483839,
+     "reference": "1Cor 3:20",
+     "surface": "thoughts",
+     "strong": "G1261",
+     "as": "member"
+    },
+    {
+     "occurrence": 1486883,
+     "reference": "2Cor 11:3",
+     "surface": "thoughts",
+     "strong": "G3540",
+     "as": "member"
+    },
+    {
+     "occurrence": 1504175,
+     "reference": "Heb 4:12",
+     "surface": "thoughts",
+     "strong": "G1761",
+     "as": "member"
+    },
+    {
+     "occurrence": 1506936,
+     "reference": "Jam 2:4",
+     "surface": "thoughts",
+     "strong": "G1261",
+     "as": "member"
+    }
+   ],
+   "older": []
+  }
+ ],
+ "answer": {
+  "command": "ReadStructure",
+  "collection": "thought",
+  "subgroup": "thinking and thought",
+  "rows": [
+   {
+    "ledger_id": 1721,
+    "item": "double-meaning",
+    "subject": "thoughts",
+    "disposition": "observed | none",
+    "findings": [
+     {
+      "kind": "face",
+      "obs_text": "",
+      "basis": "read | stated",
+      "grounds": "",
+      "occurrences": []
+     }
+    ],
+    "reason": "",
+    "older": []
+   }
+  ]
+ },
+ "measured": {
+  "package_chars": 66829,
+  "seconds": 0.04
+ }
+}

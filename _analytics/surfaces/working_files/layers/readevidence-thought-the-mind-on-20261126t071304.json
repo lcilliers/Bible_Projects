@@ -1,0 +1,255 @@
+{
+ "command": "ReadEvidence",
+ "collection": "thought",
+ "subgroup": "the mind on",
+ "step": "2.1",
+ "item": "evidence-validation",
+ "made": "2026-11-26T07:13:04Z",
+ "batch": {
+  "observations": 7,
+  "left_after_this": 0,
+  "evidence_in_scope": 7,
+  "observations_in_scope": 19
+ },
+ "code_checks": {
+  "passes": true,
+  "findings": {
+   "unmarked": [],
+   "no_node": [],
+   "word_missing": [],
+   "traced_dead": [],
+   "duplicate_text": [],
+   "b1_not_traced_by_a_sense": [],
+   "sense_not_traced_by_2_1": [],
+   "older_open": []
+  }
+ },
+ "instruction": {
+  "what": "The evidence validation (B5) of one subgroup, after its sweep, the gate before 3.1: the code checks of its observations (shown in `code_checks`), and the reading of every evidence observation of the subgroup (its own of S1 to 2.1, and the older ones on its occurrences kept as evidence) for whether it is true, founded and coherent with the others. Inner being is not judged here; the two validations are never run together.",
+  "read": [
+   "Read the code checks first: a failing check names observations to repair (unmarked, no node, a word node missing a column without its reason, a trace to a deleted observation, two of one text, a B1 observation no sense traces, a sense the 2.1 observations on its occurrences do not trace, an older observation left open).",
+   "Take one observation at a time (`observations`, in the order of the steps): its text, basis and grounds against its verses (`verses`) and the observations it traces. Is it true of those verses? Does it say more than they show? Does it contradict another observation of the subgroup?"
+  ],
+  "write": [
+   "Fill `answer.observations`, one entry for each observation of the package: verdict true, with `why` (what in the verses and the data bears it out); or verdict repair, with `why` (what is wrong) and `actions`: the actions of the validation that repair it (cfg_setting validate.reading actions, each with its parameters, for example {\"action\": \"restate\", \"oid\": id, \"new_text\": ..., \"checked\": ..., \"reason\": ...}, or delete_neither, complete_node, add_trace).",
+   "A repair is checked as it is written; an observation that cannot be made true is deleted with its reason.",
+   "Then: Collection-Build.ps1 -Action RecordEvidence -File <the answer file> (-Check to preview), and ReadEvidence again until every evidence observation is read; the gate passes when all are read and the code checks pass."
+  ],
+  "keep": [
+   {
+    "rule": "VA-01 a-sheet-is-one-checked-transaction",
+    "text": "A sheet of validation actions is checked whole (every action named, its parameters complete) and written in one transaction: any action the tables refuse refuses the whole sheet and nothing is kept. -Check runs every action and rolls back. Every change is kept in ib_observation_change with its reason (RW-01); nothing is physically deleted."
+   },
+   {
+    "rule": "VA-02 repair-first-and-every-finding-acted-on",
+    "text": "A finding of the validation is repaired first: a wording that is untrue or stronger than its verse is restated and the restatement checked against the base data; a node missing a column is completed, or the reason the data cannot give it is recorded; a duplicate is consolidated; a node is deleted only when another live node carries its occurrence or it supports no finding of its observation. A finding is left open only when a named collection's validation will touch the observation: the deferral to that collection and the finding are recorded, and the check accepts it as deferred. A finding with no named owner is closed in the validation."
+   },
+   {
+    "rule": "VA-03 consumption-is-verified-before-deletion",
+    "text": "An older observation is deleted as consumed only when live observations carry its meaning: every word occurrence of it is on a live node of a carrier or named as not carried with its reason, the mapping is stated in words (what the old says, which carrier states each part), the traces to it are re-pointed or replaced, and the consumption is kept as `consumed_by`. An observation that holds more than one finding is split first."
+   },
+   {
+    "rule": "VA-04 neither-evidence-nor-inner-being-is-deleted",
+    "text": "An observation that is neither evidence nor inner being contributes nothing to the purposes of the observations (researcher, 2026-11-22): it is commented with its reason and the word occurrences no other live observation holds, then deleted. An observation already marked, or one another observation traces, is not deleted this way."
+   },
+   {
+    "rule": "VA-05 the-marker-follows-content-not-stage",
+    "text": "Evidence states what the data are or show, tied to a verse. Inner being states how something works in the inner being, based on evidence, a building block of the stage 5 claims. The marker (ib_observation.nature) follows the content and purpose of the observation, never its stage (RS-04): an observation of any stage may be inner being when it traces to evidence. One that states both is split. The marker is set when the observation is created, by the item that is answered (cfg_setting layer.reading items.<item>.nature); a finding file never sets it; the validation changes it only where the content shows the item's nature does not hold."
+   },
+   {
+    "rule": "VA-06 evidence-validation-gates-inner-being-validation",
+    "text": "The validation runs in two layers, never concurrently: evidence first, then inner being. The inner-being layer is judged only when the evidence layer passes (every in-scope observation marked, none without a live node, no word node missing a required column without its reason, no live trace to a deleted observation, no two of one meaning). A later evidence change reopens only the inner-being rows it touches. In the build this gate is: step 3.1 does not open before the evidence layer passes, and step 3.3 does not close before both layers pass (cfg_setting layer.reading open_gate and closing_gate)."
+   },
+   {
+    "rule": "RW-01 changed-only-by-reading",
+    "text": "No observation is changed except by a reading, and every change is recorded with its reason. An observation no longer supported by the verse is soft-deleted, with the reason."
+   },
+   {
+    "rule": "RW-03 no-duplicates-multi-node",
+    "text": "One observation per finding: the same description is never written twice. Applied to another verse, word or scope it gains a node on the existing observation."
+   },
+   {
+    "rule": "RW-04 concise-verse-specific",
+    "text": "Observation text is concise and tied to this verse's content, never a restatement of the word's dictionary sense. A transliteration is never given without its gloss."
+   },
+   {
+    "rule": "RW-06 resolved-fresh-on-evidence",
+    "text": "Verse references are resolved fresh at write time, never taken from the text written. Relations are recorded only on evidence."
+   },
+   {
+    "rule": "RW-11 missing-is-named",
+    "text": "Missing data in the base extract is named as a gap, never substituted from memory or outside knowledge."
+   }
+  ],
+  "not_in_this_read": ""
+ },
+ "observations": [
+  {
+   "observation": 22770,
+   "step": "S1",
+   "item": "word-sense",
+   "kind": "term",
+   "text": "In Rom 8:6 'mind' is the Greek noun for the mind-set, the way of thinking that a person's thought is fixed on; the verse gives it two objects, the flesh and the Spirit, with death and life and peace as what each brings. The two nodes are the two uses of the noun in the one verse.",
+   "basis": "read",
+   "grounds": "set the mind on the flesh",
+   "traces": [],
+   "verses": [
+    "Rom 8:6"
+   ]
+  },
+  {
+   "observation": 22771,
+   "step": "S1",
+   "item": "word-sense",
+   "kind": "term",
+   "text": "In Rom 8:5 'set their minds on' is the verb of having one's mind fixed on something: the verse sets those who live by the flesh against those who live by the Spirit, each with a different object for the mind. The verb names the direction of the mind, set beside the way a person lives.",
+   "basis": "read",
+   "grounds": "set their minds on the things",
+   "traces": [],
+   "verses": [
+    "Rom 8:5"
+   ]
+  },
+  {
+   "observation": 22879,
+   "step": "1.1",
+   "item": "group-definition",
+   "kind": "group",
+   "text": "The mind-set, the frame of thought that a person's life is directed by: in Rom 8:5 and Rom 8:6 the mind is set on the flesh or on the Spirit, and the verses tie each set to a way of living and to its outcome, death or life and peace. The Greek noun is of purpose and frame of thought and the verb of having the mind set on something. Verses: Rom 8:5, Rom 8:6.",
+   "basis": "read",
+   "grounds": "purpose, frame of thought, will, aspirations",
+   "traces": [
+    22770,
+    22771
+   ],
+   "verses": [
+    "Rom 8:5",
+    "Rom 8:6"
+   ]
+  },
+  {
+   "observation": 23593,
+   "step": "1.2",
+   "item": "strong-enrichment",
+   "kind": "enrichment",
+   "text": "The codes of the mind set on something are G5426 (to set one's mind on; to have a certain attitude; to be minded) in Rom 8:5 and G5427 (purpose, frame of thought, will, aspirations, with Rom 8:6 named) in Rom 8:6. The lexicon bears out a set of mind directed on an object, the flesh or the Spirit.",
+   "basis": "read",
+   "grounds": "purpose, frame of thought, will, aspirations",
+   "traces": [
+    22879
+   ],
+   "verses": [
+    "Rom 8:5",
+    "Rom 8:6"
+   ]
+  },
+  {
+   "observation": 23594,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In Rom 8:6 death is what the mind set on the flesh is: the set of mind is named as death itself, set against life and peace.",
+   "basis": "stated",
+   "grounds": "to set the mind on the flesh is death",
+   "traces": [
+    22879
+   ],
+   "verses": [
+    "Rom 8:6"
+   ]
+  },
+  {
+   "observation": 23595,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In Rom 8:5 living according to the flesh or the Spirit goes with setting the mind on the things of each: the way of life and the set of mind match.",
+   "basis": "read",
+   "grounds": "those who live according to the flesh",
+   "traces": [
+    22879
+   ],
+   "verses": [
+    "Rom 8:5"
+   ]
+  },
+  {
+   "observation": 23596,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In Rom 8:6 peace, with life, is what the mind set on the Spirit is: the set of mind is named as peace, against the death of the mind set on the flesh.",
+   "basis": "stated",
+   "grounds": "is life and peace",
+   "traces": [
+    22879
+   ],
+   "verses": [
+    "Rom 8:6"
+   ]
+  }
+ ],
+ "verses": [
+  {
+   "reference": "Rom 8:5",
+   "text": "For those who live according to the flesh set their minds on the things of the flesh, but those who live according to the Spirit set their minds on the things of the Spirit."
+  },
+  {
+   "reference": "Rom 8:6",
+   "text": "For to set the mind on the flesh is death, but to set the mind on the Spirit is life and peace."
+  }
+ ],
+ "answer": {
+  "command": "ReadEvidence",
+  "collection": "thought",
+  "subgroup": "the mind on",
+  "observations": [
+   {
+    "observation": 22770,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 22771,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 22879,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 23593,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 23594,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 23595,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 23596,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   }
+  ]
+ },
+ "measured": {
+  "package_chars": 10914,
+  "seconds": 0.02
+ }
+}

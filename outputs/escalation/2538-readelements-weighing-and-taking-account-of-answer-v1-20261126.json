@@ -1,0 +1,1346 @@
+{
+ "command": "ReadElements",
+ "collection": "thought",
+ "subgroup": "weighing and taking account of",
+ "ledger_id": 1515,
+ "findings": [
+  {
+   "key": "attention",
+   "kind": "statement",
+   "text": "In Pro 24:32, Ecc 2:11, Eze 18:28, Dan 7:8, Rom 4:19 and Mat 1:20 considering is attention set on a matter and taken in: the field looked over, the toil surveyed, the transgressions seen, the horns watched, the body faced, the things Joseph turned over. The person does it, and it comes before a turn, a verdict or a word from God.",
+   "basis": "read",
+   "parts": {
+    "item": "operation",
+    "grounds": "I saw and considered it",
+    "mode": "done"
+   },
+   "nodes": [
+    {
+     "occurrence": 1281983,
+     "role": "characteristic"
+    },
+    {
+     "occurrence": 1281984,
+     "role": "standalone"
+    },
+    {
+     "occurrence": 1281985,
+     "role": "characteristic"
+    },
+    {
+     "occurrence": 1285010,
+     "role": "characteristic"
+    },
+    {
+     "occurrence": 1351521,
+     "role": "characteristic"
+    },
+    {
+     "occurrence": 1384214,
+     "role": "standalone"
+    },
+    {
+     "occurrence": 1384215,
+     "role": "characteristic"
+    },
+    {
+     "occurrence": 1478905,
+     "role": "characteristic"
+    },
+    {
+     "occurrence": 1478906,
+     "role": "qualifier"
+    },
+    {
+     "occurrence": 1405514,
+     "role": "characteristic"
+    },
+    {
+     "traced": 22886
+    },
+    {
+     "traced": 23129
+    },
+    {
+     "traced": 23145
+    },
+    {
+     "traced": 22716
+    },
+    {
+     "traced": 22712
+    },
+    {
+     "traced": 22713
+    },
+    {
+     "traced": 22708
+    },
+    {
+     "traced": 22717
+    },
+    {
+     "traced": 22705
+    },
+    {
+     "traced": 22707
+    },
+    {
+     "traced": 22703
+    },
+    {
+     "traced": 22711
+    }
+   ],
+   "read_back": []
+  },
+  {
+   "key": "set-heart",
+   "kind": "statement",
+   "text": "In Job 1:8 and Job 2:3 the Lord asks Satan whether he has set his heart on Job: the considering is put as a question to another, and the heart is named as what is set on the person.",
+   "basis": "stated",
+   "parts": {
+    "item": "operation",
+    "grounds": "Have you considered my servant Job",
+    "mode": "reported"
+   },
+   "nodes": [
+    {
+     "occurrence": 1236992,
+     "role": "characteristic"
+    },
+    {
+     "occurrence": 1236994,
+     "role": "characteristic"
+    },
+    {
+     "occurrence": 1237020,
+     "role": "characteristic"
+    },
+    {
+     "occurrence": 1237021,
+     "role": "characteristic"
+    },
+    {
+     "traced": 22711
+    },
+    {
+     "traced": 22714
+    },
+    {
+     "traced": 23150
+    },
+    {
+     "traced": 23158
+    },
+    {
+     "traced": 23257
+    }
+   ],
+   "read_back": []
+  },
+  {
+   "key": "no-thought",
+   "kind": "statement",
+   "text": "In Isa 53:8 the question who of his generation considered that he was cut off states that none gave it thought: the considering is denied of the servant's own generation.",
+   "basis": "read",
+   "parts": {
+    "item": "operation",
+    "grounds": "who considered that he was cut off",
+    "mode": "negated"
+   },
+   "nodes": [
+    {
+     "occurrence": 1309721,
+     "role": "characteristic"
+    },
+    {
+     "traced": 22715
+    },
+    {
+     "traced": 22886
+    },
+    {
+     "traced": 23233
+    },
+    {
+     "traced": 23179
+    }
+   ],
+   "read_back": []
+  },
+  {
+   "key": "turn",
+   "kind": "link",
+   "text": "In Eze 18:28 the considering leads a chain: the man considers, turns away from the transgressions he committed, and shall live and not die.",
+   "basis": "stated",
+   "parts": {
+    "item": "chain",
+    "grounds": "Because he considered and turned away"
+   },
+   "nodes": [
+    {
+     "occurrence": 1351521,
+     "role": "characteristic"
+    },
+    {
+     "traced": 22713
+    },
+    {
+     "traced": 23184
+    },
+    {
+     "traced": 23190
+    },
+    {
+     "traced": 23227
+    },
+    {
+     "traced": 23255
+    }
+   ],
+   "read_back": []
+  },
+  {
+   "key": "instruction",
+   "kind": "link",
+   "text": "In Pro 24:32 the considering stands between seeing and being taught: the man sees the field, sets his heart on it, looks, and receives instruction.",
+   "basis": "stated",
+   "parts": {
+    "item": "chain",
+    "grounds": "I looked and received instruction"
+   },
+   "nodes": [
+    {
+     "occurrence": 1281983,
+     "role": "characteristic"
+    },
+    {
+     "occurrence": 1281984,
+     "role": "standalone"
+    },
+    {
+     "occurrence": 1281985,
+     "role": "characteristic"
+    },
+    {
+     "traced": 22716
+    },
+    {
+     "traced": 23253
+    }
+   ],
+   "read_back": []
+  },
+  {
+   "key": "verdict",
+   "kind": "link",
+   "text": "In Ecc 2:11 the considering of all the work and toil ends in a verdict: all was vanity and nothing was gained.",
+   "basis": "stated",
+   "parts": {
+    "item": "chain",
+    "grounds": "Then I considered all that my hands had done"
+   },
+   "nodes": [
+    {
+     "occurrence": 1285010,
+     "role": "characteristic"
+    },
+    {
+     "traced": 22712
+    },
+    {
+     "traced": 23167
+    },
+    {
+     "traced": 23223
+    },
+    {
+     "traced": 23251
+    }
+   ],
+   "read_back": []
+  },
+  {
+   "key": "reckon",
+   "kind": "statement",
+   "text": "Counting someone or something as a certain thing is the second act of the subgroup: in Heb 11:11, Heb 11:19, Heb 11:26, Pro 17:28, Neh 13:13, 2Ch 9:20, Mar 10:42, Luk 22:24, Gen 31:15, Psa 44:22, Rom 8:36, Lam 4:2 and Hos 8:12 a person, a people, a thing or God is counted faithful, able, greater, wise, reliable, nothing, rulers, the greatest, foreigners, sheep, pots or strange. It is a valuation that gives a standing.",
+   "basis": "read",
+   "parts": {
+    "item": "operation",
+    "grounds": "since she considered him faithful who had promised",
+    "mode": "done"
+   },
+   "nodes": [
+    {
+     "occurrence": 1504739,
+     "role": "characteristic"
+    },
+    {
+     "occurrence": 1505097,
+     "role": "characteristic"
+    },
+    {
+     "occurrence": 1502093,
+     "role": "characteristic"
+    },
+    {
+     "occurrence": 1281668,
+     "role": "characteristic"
+    },
+    {
+     "occurrence": 1228583,
+     "role": "characteristic"
+    },
+    {
+     "occurrence": 1217488,
+     "role": "characteristic"
+    },
+    {
+     "occurrence": 1422175,
+     "role": "characteristic"
+    },
+    {
+     "occurrence": 1442038,
+     "role": "characteristic"
+    },
+    {
+     "occurrence": 995552,
+     "role": "characteristic"
+    },
+    {
+     "occurrence": 1273162,
+     "role": "characteristic"
+    },
+    {
+     "occurrence": 1480169,
+     "role": "characteristic"
+    },
+    {
+     "occurrence": 1348003,
+     "role": "characteristic"
+    },
+    {
+     "occurrence": 1387799,
+     "role": "characteristic"
+    },
+    {
+     "traced": 22887
+    },
+    {
+     "traced": 23130
+    },
+    {
+     "traced": 23144
+    },
+    {
+     "traced": 23139
+    },
+    {
+     "traced": 22704
+    },
+    {
+     "traced": 22706
+    },
+    {
+     "traced": 22709
+    },
+    {
+     "traced": 22710
+    },
+    {
+     "traced": 22718
+    },
+    {
+     "traced": 22719
+    },
+    {
+     "traced": 22720
+    },
+    {
+     "traced": 22702
+    }
+   ],
+   "read_back": []
+  },
+  {
+   "key": "faith",
+   "kind": "statement",
+   "text": "In Heb 11:11, Heb 11:19, Heb 11:26 and Rom 4:19 the counting is done by faith and is set on God: the one who promised is counted faithful, God is counted able to raise the dead, reproach for Christ is counted above Egypt's treasures with the eye on the reward, and Abraham faces his own body without his faith weakening.",
+   "basis": "read",
+   "parts": {
+    "item": "object",
+    "grounds": "He considered that God was able"
+   },
+   "nodes": [
+    {
+     "occurrence": 1504739,
+     "role": "characteristic"
+    },
+    {
+     "occurrence": 1505097,
+     "role": "characteristic"
+    },
+    {
+     "occurrence": 1502093,
+     "role": "characteristic"
+    },
+    {
+     "occurrence": 1478905,
+     "role": "characteristic"
+    },
+    {
+     "occurrence": 1478906,
+     "role": "qualifier"
+    },
+    {
+     "traced": 22704
+    },
+    {
+     "traced": 22706
+    },
+    {
+     "traced": 22705
+    },
+    {
+     "traced": 23165
+    },
+    {
+     "traced": 23229
+    },
+    {
+     "traced": 23236
+    },
+    {
+     "traced": 23240
+    },
+    {
+     "traced": 23241
+    },
+    {
+     "traced": 23248
+    },
+    {
+     "traced": 23250
+    },
+    {
+     "traced": 23160
+    },
+    {
+     "traced": 23152
+    }
+   ],
+   "read_back": []
+  },
+  {
+   "key": "foreseen",
+   "kind": "statement",
+   "text": "In Jer 24:5, Isa 29:17 and Rom 2:26 the counting is foreseen: the Lord will count the exiles good, the field shall be counted a forest, the uncircumcised who keeps the precepts will be counted as circumcised.",
+   "basis": "stated",
+   "parts": {
+    "item": "operation",
+    "grounds": "so I will regard as good the exiles",
+    "mode": "foreseen"
+   },
+   "nodes": [
+    {
+     "occurrence": 1328689,
+     "role": "characteristic"
+    },
+    {
+     "occurrence": 1313897,
+     "role": "characteristic"
+    },
+    {
+     "occurrence": 1479951,
+     "role": "characteristic"
+    },
+    {
+     "traced": 22735
+    },
+    {
+     "traced": 22721
+    },
+    {
+     "traced": 22719
+    },
+    {
+     "traced": 23143
+    },
+    {
+     "traced": 23256
+    },
+    {
+     "traced": 23209
+    }
+   ],
+   "read_back": []
+  },
+  {
+   "key": "commanded",
+   "kind": "statement",
+   "text": "The counting is commanded or asked of people in Lev 19:23, 1Ti 6:1, 1Cor 4:1, 2Th 3:15, 1Sa 1:16 and 1Sa 25:25: fruit to be counted forbidden, masters worthy of honor, the apostles as servants of Christ, the disobedient not an enemy, Hannah not a worthless woman, Nabal not to be taken to heart.",
+   "basis": "stated",
+   "parts": {
+    "item": "operation",
+    "grounds": "Do not regard him as an enemy",
+    "mode": "commanded"
+   },
+   "nodes": [
+    {
+     "occurrence": 1039316,
+     "role": "characteristic"
+    },
+    {
+     "occurrence": 1499071,
+     "role": "characteristic"
+    },
+    {
+     "occurrence": 1480709,
+     "role": "characteristic"
+    },
+    {
+     "occurrence": 1498128,
+     "role": "characteristic"
+    },
+    {
+     "occurrence": 1117262,
+     "role": "characteristic"
+    },
+    {
+     "occurrence": 1128679,
+     "role": "characteristic"
+    },
+    {
+     "occurrence": 1128681,
+     "role": "standalone"
+    },
+    {
+     "traced": 22738
+    },
+    {
+     "traced": 22723
+    },
+    {
+     "traced": 22724
+    },
+    {
+     "traced": 22737
+    },
+    {
+     "traced": 22733
+    },
+    {
+     "traced": 23258
+    },
+    {
+     "traced": 23214
+    },
+    {
+     "traced": 23174
+    },
+    {
+     "traced": 23235
+    }
+   ],
+   "read_back": []
+  },
+  {
+   "key": "given",
+   "kind": "statement",
+   "text": "Regard is given as a done act in 2Ki 3:14, Pro 12:10 and Psa 144:3: Elisha's regard for Jehoshaphat, the righteous man's knowing care for the life of his beast, and the Lord's regard for man, which the psalmist wonders at.",
+   "basis": "read",
+   "parts": {
+    "item": "operation",
+    "grounds": "what is man that you regard him",
+    "mode": "done"
+   },
+   "nodes": [
+    {
+     "occurrence": 1175017,
+     "role": "characteristic"
+    },
+    {
+     "occurrence": 1278466,
+     "role": "characteristic"
+    },
+    {
+     "occurrence": 1266947,
+     "role": "characteristic"
+    },
+    {
+     "traced": 22736
+    },
+    {
+     "traced": 22731
+    },
+    {
+     "traced": 22888
+    },
+    {
+     "traced": 23131
+    },
+    {
+     "traced": 23146
+    },
+    {
+     "traced": 23242
+    },
+    {
+     "traced": 23155
+    }
+   ],
+   "read_back": []
+  },
+  {
+   "key": "asked",
+   "kind": "statement",
+   "text": "Regard is asked in Psa 74:20, Psa 80:14, 2Ch 6:19 and Psa 119:117: the Lord is asked to have regard for the covenant, the vine and his servant's prayer, and the psalmist asks to be held up so that he may have regard for the statutes. In Deu 9:27 the Lord is asked not to regard the people's stubbornness.",
+   "basis": "stated",
+   "parts": {
+    "item": "operation",
+    "grounds": "have regard to the prayer of your servant",
+    "mode": "commanded"
+   },
+   "nodes": [
+    {
+     "occurrence": 1260839,
+     "role": "characteristic"
+    },
+    {
+     "occurrence": 1267157,
+     "role": "characteristic"
+    },
+    {
+     "occurrence": 1201964,
+     "role": "characteristic"
+    },
+    {
+     "occurrence": 1274414,
+     "role": "characteristic"
+    },
+    {
+     "occurrence": 1071429,
+     "role": "characteristic"
+    },
+    {
+     "traced": 22734
+    },
+    {
+     "traced": 22740
+    },
+    {
+     "traced": 22739
+    },
+    {
+     "traced": 22745
+    },
+    {
+     "traced": 23156
+    },
+    {
+     "traced": 23149
+    },
+    {
+     "traced": 23252
+    },
+    {
+     "traced": 23243
+    },
+    {
+     "traced": 23247
+    },
+    {
+     "traced": 23260
+    }
+   ],
+   "read_back": []
+  },
+  {
+   "key": "refusal",
+   "kind": "statement",
+   "text": "Regard withheld is a refusal in Gen 4:5, Job 35:13, Job 37:24, Lam 4:16, Psa 28:5, Isa 5:12, Job 34:27, Deu 33:9, Job 9:21, Isa 13:17, Isa 33:8, Exo 5:9 and 1Ki 10:21: God withholds it from Cain's offering, an empty cry, the conceited and a scattered people; people withhold it from God's works and ways; Levi from his kin, Job from himself, the Medes from silver, the land from man, the men from lying words, and Solomon's days from silver. The negator reaches the regard each time.",
+   "basis": "read",
+   "parts": {
+    "item": "polarity",
+    "grounds": "for Cain and his offering he had no regard",
+    "polarity": "refusal"
+   },
+   "nodes": [
+    {
+     "occurrence": 976222,
+     "role": "characteristic"
+    },
+    {
+     "occurrence": 1240118,
+     "role": "characteristic"
+    },
+    {
+     "occurrence": 1236028,
+     "role": "characteristic"
+    },
+    {
+     "occurrence": 1347024,
+     "role": "characteristic"
+    },
+    {
+     "occurrence": 1254240,
+     "role": "characteristic"
+    },
+    {
+     "occurrence": 1309329,
+     "role": "characteristic"
+    },
+    {
+     "occurrence": 1244033,
+     "role": "characteristic"
+    },
+    {
+     "occurrence": 1074743,
+     "role": "characteristic"
+    },
+    {
+     "occurrence": 1241760,
+     "role": "characteristic"
+    },
+    {
+     "occurrence": 1241761,
+     "role": "qualifier"
+    },
+    {
+     "occurrence": 1307624,
+     "role": "characteristic"
+    },
+    {
+     "occurrence": 1299003,
+     "role": "characteristic"
+    },
+    {
+     "occurrence": 1008612,
+     "role": "characteristic"
+    },
+    {
+     "occurrence": 1008615,
+     "role": "qualifier"
+    },
+    {
+     "occurrence": 1168915,
+     "role": "characteristic"
+    },
+    {
+     "traced": 23142
+    },
+    {
+     "traced": 22745
+    },
+    {
+     "traced": 22742
+    },
+    {
+     "traced": 22741
+    },
+    {
+     "traced": 22734
+    },
+    {
+     "traced": 22743
+    },
+    {
+     "traced": 22728
+    },
+    {
+     "traced": 22732
+    },
+    {
+     "traced": 22731
+    },
+    {
+     "traced": 22730
+    },
+    {
+     "traced": 22709
+    },
+    {
+     "traced": 23157
+    },
+    {
+     "traced": 23199
+    },
+    {
+     "traced": 23182
+    },
+    {
+     "traced": 23217
+    }
+   ],
+   "read_back": []
+  },
+  {
+   "key": "pursuit",
+   "kind": "statement",
+   "text": "Where regard is given or sought it is a pursuit of its object: in Pro 12:10 the righteous reaches to the life of his beast, in 2Ki 3:14 Elisha acts for the king's sake, in Psa 119:117 the psalmist seeks lasting regard for the statutes, and in 2Ch 6:19 the Lord is asked to turn to the prayer.",
+   "basis": "read",
+   "parts": {
+    "item": "polarity",
+    "grounds": "has regard for the life of his beast",
+    "polarity": "pursuit"
+   },
+   "nodes": [
+    {
+     "occurrence": 1278466,
+     "role": "characteristic"
+    },
+    {
+     "occurrence": 1175017,
+     "role": "characteristic"
+    },
+    {
+     "occurrence": 1274414,
+     "role": "characteristic"
+    },
+    {
+     "occurrence": 1201964,
+     "role": "characteristic"
+    },
+    {
+     "traced": 23242
+    },
+    {
+     "traced": 23146
+    },
+    {
+     "traced": 23243
+    },
+    {
+     "traced": 23178
+    },
+    {
+     "traced": 23252
+    },
+    {
+     "traced": 22731
+    },
+    {
+     "traced": 22736
+    },
+    {
+     "traced": 22745
+    },
+    {
+     "traced": 22739
+    }
+   ],
+   "read_back": []
+  },
+  {
+   "key": "worth",
+   "kind": "statement",
+   "text": "In 1Sa 1:16, 1Sa 25:25 and Job 37:24 the regard is bound to worth: Hannah asks not to be counted worthless, Abigail asks that worthless Nabal not be taken to heart, and God withholds regard from the wise in their own conceit.",
+   "basis": "stated",
+   "parts": {
+    "item": "object",
+    "grounds": "Do not regard your servant as a worthless woman"
+   },
+   "nodes": [
+    {
+     "occurrence": 1117262,
+     "role": "characteristic"
+    },
+    {
+     "occurrence": 1128679,
+     "role": "characteristic"
+    },
+    {
+     "occurrence": 1128681,
+     "role": "standalone"
+    },
+    {
+     "occurrence": 1236028,
+     "role": "characteristic"
+    },
+    {
+     "traced": 23235
+    },
+    {
+     "traced": 23201
+    },
+    {
+     "traced": 22737
+    },
+    {
+     "traced": 22733
+    },
+    {
+     "traced": 22741
+    },
+    {
+     "traced": 23261
+    }
+   ],
+   "read_back": []
+  },
+  {
+   "key": "hearing",
+   "kind": "statement",
+   "text": "In 2Ch 6:19 and Job 35:13 regard goes with hearing: the Lord is asked to regard the prayer and listen to the cry, and an empty cry God neither hears nor regards.",
+   "basis": "stated",
+   "parts": {
+    "item": "circumstance",
+    "grounds": "listening to the cry and to the prayer"
+   },
+   "nodes": [
+    {
+     "occurrence": 1201964,
+     "role": "characteristic"
+    },
+    {
+     "occurrence": 1240118,
+     "role": "characteristic"
+    },
+    {
+     "traced": 23211
+    },
+    {
+     "traced": 22742
+    },
+    {
+     "traced": 22739
+    },
+    {
+     "traced": 23226
+    }
+   ],
+   "read_back": []
+  },
+  {
+   "key": "ways",
+   "kind": "link",
+   "text": "In Job 34:27 turning aside from following God and having no regard for his ways are one fault, and in Psa 28:5 not regarding the Lord's works leads to being torn down and not built up.",
+   "basis": "stated",
+   "parts": {
+    "item": "chain",
+    "grounds": "had no regard for any of his ways"
+   },
+   "nodes": [
+    {
+     "occurrence": 1244033,
+     "role": "characteristic"
+    },
+    {
+     "occurrence": 1254240,
+     "role": "characteristic"
+    },
+    {
+     "traced": 22743
+    },
+    {
+     "traced": 23255
+    },
+    {
+     "traced": 22728
+    },
+    {
+     "traced": 23169
+    },
+    {
+     "traced": 23222
+    }
+   ],
+   "read_back": []
+  },
+  {
+   "key": "kin",
+   "kind": "link",
+   "text": "In Deu 33:9 withholding regard from father and mother, disowning brothers and ignoring children stands with keeping the word and the covenant: the refusal is for the sake of what is kept.",
+   "basis": "stated",
+   "parts": {
+    "item": "chain",
+    "grounds": "For they observed your word"
+   },
+   "nodes": [
+    {
+     "occurrence": 1074743,
+     "role": "characteristic"
+    },
+    {
+     "traced": 22741
+    },
+    {
+     "traced": 23239
+    },
+    {
+     "traced": 23259
+    },
+    {
+     "traced": 23205
+    }
+   ],
+   "read_back": []
+  },
+  {
+   "key": "flesh",
+   "kind": "statement",
+   "text": "In 2Cor 5:16 the regard by the standard of the flesh is given up: Paul once knew Christ that way and now takes account of no one by it.",
+   "basis": "stated",
+   "parts": {
+    "item": "operation",
+    "grounds": "we regard no one according to the flesh",
+    "mode": "negated"
+   },
+   "nodes": [
+    {
+     "occurrence": 1486647,
+     "role": "characteristic"
+    },
+    {
+     "occurrence": 1486657,
+     "role": "characteristic"
+    },
+    {
+     "traced": 22722
+    },
+    {
+     "traced": 22726
+    },
+    {
+     "traced": 22890
+    },
+    {
+     "traced": 23133
+    }
+   ],
+   "read_back": []
+  },
+  {
+   "key": "weigh-said",
+   "kind": "statement",
+   "text": "In 1Cor 14:29 weighing in the mind is commanded: when two or three prophets have spoken, the others are to weigh what is said, judging and discerning it.",
+   "basis": "stated",
+   "parts": {
+    "item": "operation",
+    "grounds": "let the others weigh what is said",
+    "mode": "commanded"
+   },
+   "nodes": [
+    {
+     "occurrence": 1483695,
+     "role": "characteristic"
+    },
+    {
+     "traced": 22748
+    },
+    {
+     "traced": 22891
+    },
+    {
+     "traced": 23134
+    },
+    {
+     "traced": 23140
+    }
+   ],
+   "read_back": []
+  },
+  {
+   "key": "weigh-proverbs",
+   "kind": "statement",
+   "text": "In Ecc 12:9 the wise Preacher weighs proverbs, with studying and arranging, as part of teaching the people knowledge: the weighing tests and orders what is learned.",
+   "basis": "stated",
+   "parts": {
+    "item": "operation",
+    "grounds": "weighing and studying and arranging many proverbs",
+    "mode": "done"
+   },
+   "nodes": [
+    {
+     "occurrence": 1286093,
+     "role": "characteristic"
+    },
+    {
+     "traced": 22746
+    },
+    {
+     "traced": 22891
+    },
+    {
+     "traced": 23134
+    },
+    {
+     "traced": 23141
+    },
+    {
+     "traced": 23219
+    }
+   ],
+   "read_back": []
+  }
+ ],
+ "not_used": {
+  "22889": "taken up by no finding: it states a weight, a link of respect or a sense whose content the findings' senses carry, and adds no element of an act of the inner being",
+  "22892": "taken up by no finding: it states a weight, a link of respect or a sense whose content the findings' senses carry, and adds no element of an act of the inner being",
+  "22893": "taken up by no finding: it states a weight, a link of respect or a sense whose content the findings' senses carry, and adds no element of an act of the inner being",
+  "23132": "taken up by no finding: it states a weight, a link of respect or a sense whose content the findings' senses carry, and adds no element of an act of the inner being",
+  "23135": "taken up by no finding: it states a weight, a link of respect or a sense whose content the findings' senses carry, and adds no element of an act of the inner being",
+  "23136": "taken up by no finding: it states a weight, a link of respect or a sense whose content the findings' senses carry, and adds no element of an act of the inner being",
+  "23137": "a finding of the structure (double-meaning) that names where words stand, who is named or which codes a surface carries; it adds no element of an act of the inner being beyond what the findings rest on",
+  "23138": "a finding of the structure (double-meaning) that names where words stand, who is named or which codes a surface carries; it adds no element of an act of the inner being beyond what the findings rest on",
+  "23147": "a finding of the structure (qualifier) that names where words stand, who is named or which codes a surface carries; it adds no element of an act of the inner being beyond what the findings rest on",
+  "23148": "a finding of the structure (entity) that names where words stand, who is named or which codes a surface carries; it adds no element of an act of the inner being beyond what the findings rest on",
+  "23151": "a finding of the structure (entity) that names where words stand, who is named or which codes a surface carries; it adds no element of an act of the inner being beyond what the findings rest on",
+  "23153": "a finding of the structure (entity) that names where words stand, who is named or which codes a surface carries; it adds no element of an act of the inner being beyond what the findings rest on",
+  "23154": "a finding of the structure (entity) that names where words stand, who is named or which codes a surface carries; it adds no element of an act of the inner being beyond what the findings rest on",
+  "23159": "a finding of the structure (direction) that names where words stand, who is named or which codes a surface carries; it adds no element of an act of the inner being beyond what the findings rest on",
+  "23161": "a finding of the structure (direction) that names where words stand, who is named or which codes a surface carries; it adds no element of an act of the inner being beyond what the findings rest on",
+  "23162": "a finding of the structure (pairing) that names where words stand, who is named or which codes a surface carries; it adds no element of an act of the inner being beyond what the findings rest on",
+  "23163": "a finding of the structure (pairing) that names where words stand, who is named or which codes a surface carries; it adds no element of an act of the inner being beyond what the findings rest on",
+  "23164": "a finding of the structure (pairing) that names where words stand, who is named or which codes a surface carries; it adds no element of an act of the inner being beyond what the findings rest on",
+  "23166": "a finding of the structure (pairing) that names where words stand, who is named or which codes a surface carries; it adds no element of an act of the inner being beyond what the findings rest on",
+  "23168": "a finding of the structure (pairing) that names where words stand, who is named or which codes a surface carries; it adds no element of an act of the inner being beyond what the findings rest on",
+  "23170": "a finding of the structure (pairing) that names where words stand, who is named or which codes a surface carries; it adds no element of an act of the inner being beyond what the findings rest on",
+  "23171": "a finding of the structure (pairing) that names where words stand, who is named or which codes a surface carries; it adds no element of an act of the inner being beyond what the findings rest on",
+  "23172": "a finding of the structure (pairing) that names where words stand, who is named or which codes a surface carries; it adds no element of an act of the inner being beyond what the findings rest on",
+  "23173": "a finding of the structure (pairing) that names where words stand, who is named or which codes a surface carries; it adds no element of an act of the inner being beyond what the findings rest on",
+  "23175": "a finding of the structure (pairing) that names where words stand, who is named or which codes a surface carries; it adds no element of an act of the inner being beyond what the findings rest on",
+  "23176": "a finding of the structure (pairing) that names where words stand, who is named or which codes a surface carries; it adds no element of an act of the inner being beyond what the findings rest on",
+  "23177": "a finding of the structure (pairing) that names where words stand, who is named or which codes a surface carries; it adds no element of an act of the inner being beyond what the findings rest on",
+  "23180": "a finding of the structure (pairing) that names where words stand, who is named or which codes a surface carries; it adds no element of an act of the inner being beyond what the findings rest on",
+  "23181": "a finding of the structure (pairing) that names where words stand, who is named or which codes a surface carries; it adds no element of an act of the inner being beyond what the findings rest on",
+  "23183": "a finding of the structure (pairing) that names where words stand, who is named or which codes a surface carries; it adds no element of an act of the inner being beyond what the findings rest on",
+  "23185": "a finding of the structure (pairing) that names where words stand, who is named or which codes a surface carries; it adds no element of an act of the inner being beyond what the findings rest on",
+  "23186": "a finding of the structure (pairing) that names where words stand, who is named or which codes a surface carries; it adds no element of an act of the inner being beyond what the findings rest on",
+  "23187": "a finding of the structure (pairing) that names where words stand, who is named or which codes a surface carries; it adds no element of an act of the inner being beyond what the findings rest on",
+  "23188": "a finding of the structure (pairing) that names where words stand, who is named or which codes a surface carries; it adds no element of an act of the inner being beyond what the findings rest on",
+  "23189": "a finding of the structure (pairing) that names where words stand, who is named or which codes a surface carries; it adds no element of an act of the inner being beyond what the findings rest on",
+  "23191": "a finding of the structure (pairing) that names where words stand, who is named or which codes a surface carries; it adds no element of an act of the inner being beyond what the findings rest on",
+  "23192": "a finding of the structure (pairing) that names where words stand, who is named or which codes a surface carries; it adds no element of an act of the inner being beyond what the findings rest on",
+  "23193": "a finding of the structure (pairing) that names where words stand, who is named or which codes a surface carries; it adds no element of an act of the inner being beyond what the findings rest on",
+  "23194": "a finding of the structure (pairing) that names where words stand, who is named or which codes a surface carries; it adds no element of an act of the inner being beyond what the findings rest on",
+  "23195": "a finding of the structure (pairing) that names where words stand, who is named or which codes a surface carries; it adds no element of an act of the inner being beyond what the findings rest on",
+  "23196": "a finding of the structure (pairing) that names where words stand, who is named or which codes a surface carries; it adds no element of an act of the inner being beyond what the findings rest on",
+  "23197": "a finding of the structure (pairing) that names where words stand, who is named or which codes a surface carries; it adds no element of an act of the inner being beyond what the findings rest on",
+  "23198": "a finding of the structure (pairing) that names where words stand, who is named or which codes a surface carries; it adds no element of an act of the inner being beyond what the findings rest on",
+  "23200": "a finding of the structure (pairing) that names where words stand, who is named or which codes a surface carries; it adds no element of an act of the inner being beyond what the findings rest on",
+  "23202": "a finding of the structure (pairing) that names where words stand, who is named or which codes a surface carries; it adds no element of an act of the inner being beyond what the findings rest on",
+  "23203": "a finding of the structure (pairing) that names where words stand, who is named or which codes a surface carries; it adds no element of an act of the inner being beyond what the findings rest on",
+  "23204": "a finding of the structure (pairing) that names where words stand, who is named or which codes a surface carries; it adds no element of an act of the inner being beyond what the findings rest on",
+  "23206": "a finding of the structure (pairing) that names where words stand, who is named or which codes a surface carries; it adds no element of an act of the inner being beyond what the findings rest on",
+  "23207": "a finding of the structure (pairing) that names where words stand, who is named or which codes a surface carries; it adds no element of an act of the inner being beyond what the findings rest on",
+  "23208": "a finding of the structure (pairing) that names where words stand, who is named or which codes a surface carries; it adds no element of an act of the inner being beyond what the findings rest on",
+  "23210": "a finding of the structure (pairing) that names where words stand, who is named or which codes a surface carries; it adds no element of an act of the inner being beyond what the findings rest on",
+  "23212": "a finding of the structure (pairing) that names where words stand, who is named or which codes a surface carries; it adds no element of an act of the inner being beyond what the findings rest on",
+  "23213": "a finding of the structure (pairing) that names where words stand, who is named or which codes a surface carries; it adds no element of an act of the inner being beyond what the findings rest on",
+  "23215": "a finding of the structure (pairing) that names where words stand, who is named or which codes a surface carries; it adds no element of an act of the inner being beyond what the findings rest on",
+  "23216": "a finding of the structure (pairing) that names where words stand, who is named or which codes a surface carries; it adds no element of an act of the inner being beyond what the findings rest on",
+  "23218": "a finding of the structure (pairing) that names where words stand, who is named or which codes a surface carries; it adds no element of an act of the inner being beyond what the findings rest on",
+  "23220": "a finding of the structure (pairing) that names where words stand, who is named or which codes a surface carries; it adds no element of an act of the inner being beyond what the findings rest on",
+  "23221": "a finding of the structure (pairing) that names where words stand, who is named or which codes a surface carries; it adds no element of an act of the inner being beyond what the findings rest on",
+  "23224": "a finding of the structure (pairing) that names where words stand, who is named or which codes a surface carries; it adds no element of an act of the inner being beyond what the findings rest on",
+  "23225": "a finding of the structure (pairing) that names where words stand, who is named or which codes a surface carries; it adds no element of an act of the inner being beyond what the findings rest on",
+  "23228": "a finding of the structure (pairing) that names where words stand, who is named or which codes a surface carries; it adds no element of an act of the inner being beyond what the findings rest on",
+  "23230": "a finding of the structure (pairing) that names where words stand, who is named or which codes a surface carries; it adds no element of an act of the inner being beyond what the findings rest on",
+  "23231": "a finding of the structure (pairing) that names where words stand, who is named or which codes a surface carries; it adds no element of an act of the inner being beyond what the findings rest on",
+  "23232": "a finding of the structure (pairing) that names where words stand, who is named or which codes a surface carries; it adds no element of an act of the inner being beyond what the findings rest on",
+  "23234": "a finding of the structure (pairing) that names where words stand, who is named or which codes a surface carries; it adds no element of an act of the inner being beyond what the findings rest on",
+  "23237": "a finding of the structure (pairing) that names where words stand, who is named or which codes a surface carries; it adds no element of an act of the inner being beyond what the findings rest on",
+  "23238": "a finding of the structure (pairing) that names where words stand, who is named or which codes a surface carries; it adds no element of an act of the inner being beyond what the findings rest on",
+  "23244": "a finding of the structure (pairing) that names where words stand, who is named or which codes a surface carries; it adds no element of an act of the inner being beyond what the findings rest on",
+  "23245": "a finding of the structure (pairing) that names where words stand, who is named or which codes a surface carries; it adds no element of an act of the inner being beyond what the findings rest on",
+  "23246": "a finding of the structure (pairing) that names where words stand, who is named or which codes a surface carries; it adds no element of an act of the inner being beyond what the findings rest on",
+  "23249": "a finding of the structure (pairing) that names where words stand, who is named or which codes a surface carries; it adds no element of an act of the inner being beyond what the findings rest on",
+  "23254": "a finding of the structure (pairing) that names where words stand, who is named or which codes a surface carries; it adds no element of an act of the inner being beyond what the findings rest on",
+  "12412": "taken up by no finding: it states a weight, a link of respect or a sense whose content the findings' senses carry, and adds no element of an act of the inner being",
+  "21713": "taken up by no finding: it states a weight, a link of respect or a sense whose content the findings' senses carry, and adds no element of an act of the inner being",
+  "21714": "taken up by no finding: it states a weight, a link of respect or a sense whose content the findings' senses carry, and adds no element of an act of the inner being",
+  "21715": "taken up by no finding: it states a weight, a link of respect or a sense whose content the findings' senses carry, and adds no element of an act of the inner being",
+  "21716": "taken up by no finding: it states a weight, a link of respect or a sense whose content the findings' senses carry, and adds no element of an act of the inner being",
+  "22505": "taken up by no finding: it states a weight, a link of respect or a sense whose content the findings' senses carry, and adds no element of an act of the inner being"
+ },
+ "older": [],
+ "existing": [
+  {
+   "observation": 22460,
+   "action": "delete",
+   "reason": "a 3.1 finding of the group this subgroup replaced; this reading states its content in the finding(s) given and reckon, resting on the subgroup's evidence"
+  },
+  {
+   "observation": 22461,
+   "action": "delete",
+   "reason": "a 3.1 finding of the group this subgroup replaced; this reading states its content in the finding(s) foreseen, resting on the subgroup's evidence"
+  },
+  {
+   "observation": 22462,
+   "action": "delete",
+   "reason": "a 3.1 finding of the group this subgroup replaced; this reading states its content in the finding(s) asked and commanded, resting on the subgroup's evidence"
+  },
+  {
+   "observation": 22463,
+   "action": "delete",
+   "reason": "a 3.1 finding of the group this subgroup replaced; this reading states its content in the finding(s) refusal, resting on the subgroup's evidence"
+  },
+  {
+   "observation": 22464,
+   "action": "delete",
+   "reason": "a 3.1 finding of the group this subgroup replaced; this reading states its content in the finding(s) refusal, resting on the subgroup's evidence"
+  },
+  {
+   "observation": 22465,
+   "action": "delete",
+   "reason": "a 3.1 finding of the group this subgroup replaced; this reading states its content in the finding(s) pursuit, resting on the subgroup's evidence"
+  },
+  {
+   "observation": 22466,
+   "action": "delete",
+   "reason": "a 3.1 finding of the group this subgroup replaced; this reading states its content in the finding(s) refusal, given and asked, resting on the subgroup's evidence"
+  },
+  {
+   "observation": 22467,
+   "action": "delete",
+   "reason": "a 3.1 finding of the group this subgroup replaced; this reading states its content in the finding(s) reckon, resting on the subgroup's evidence"
+  },
+  {
+   "observation": 22468,
+   "action": "delete",
+   "reason": "a 3.1 finding of the group this subgroup replaced; this reading states its content in the finding(s) refusal, resting on the subgroup's evidence"
+  },
+  {
+   "observation": 22469,
+   "action": "delete",
+   "reason": "a 3.1 finding of the group this subgroup replaced; this reading states its content in the finding(s) worth, resting on the subgroup's evidence"
+  },
+  {
+   "observation": 22470,
+   "action": "leave",
+   "reason": "a finding of the replaced group that reaches verses of other subgroups, states words standing near the member with no element of an act, or is an interworking finding for 3.3: left for that subgroup or step"
+  },
+  {
+   "observation": 22471,
+   "action": "delete",
+   "reason": "a 3.1 finding of the group this subgroup replaced; this reading states its content in the finding(s) hearing, resting on the subgroup's evidence"
+  },
+  {
+   "observation": 22472,
+   "action": "leave",
+   "reason": "a finding of the replaced group that reaches verses of other subgroups, states words standing near the member with no element of an act, or is an interworking finding for 3.3: left for that subgroup or step"
+  },
+  {
+   "observation": 22487,
+   "action": "leave",
+   "reason": "a finding of the replaced group that reaches verses of other subgroups, states words standing near the member with no element of an act, or is an interworking finding for 3.3: left for that subgroup or step"
+  },
+  {
+   "observation": 22488,
+   "action": "leave",
+   "reason": "a finding of the replaced group that reaches verses of other subgroups, states words standing near the member with no element of an act, or is an interworking finding for 3.3: left for that subgroup or step"
+  },
+  {
+   "observation": 22489,
+   "action": "delete",
+   "reason": "a 3.1 finding of the group this subgroup replaced; this reading states its content in the finding(s) reckon and faith, resting on the subgroup's evidence"
+  },
+  {
+   "observation": 22490,
+   "action": "delete",
+   "reason": "a 3.1 finding of the group this subgroup replaced; this reading states its content in the finding(s) refusal, resting on the subgroup's evidence"
+  },
+  {
+   "observation": 22491,
+   "action": "delete",
+   "reason": "a 3.1 finding of the group this subgroup replaced; this reading states its content in the finding(s) refusal, resting on the subgroup's evidence"
+  },
+  {
+   "observation": 22495,
+   "action": "delete",
+   "reason": "a 3.1 finding of the group this subgroup replaced; this reading states its content in the finding(s) attention and faith, resting on the subgroup's evidence"
+  },
+  {
+   "observation": 22498,
+   "action": "leave",
+   "reason": "a finding of the replaced group that reaches verses of other subgroups, states words standing near the member with no element of an act, or is an interworking finding for 3.3: left for that subgroup or step"
+  },
+  {
+   "observation": 22500,
+   "action": "delete",
+   "reason": "a 3.1 finding of the group this subgroup replaced; this reading states its content in the finding(s) turn and faith, resting on the subgroup's evidence"
+  },
+  {
+   "observation": 22501,
+   "action": "leave",
+   "reason": "a finding of the replaced group that reaches verses of other subgroups, states words standing near the member with no element of an act, or is an interworking finding for 3.3: left for that subgroup or step"
+  },
+  {
+   "observation": 22503,
+   "action": "delete",
+   "reason": "a 3.1 finding of the group this subgroup replaced; this reading states its content in the finding(s) weigh-proverbs and weigh-said, resting on the subgroup's evidence"
+  },
+  {
+   "observation": 22504,
+   "action": "leave",
+   "reason": "a finding of the replaced group that reaches verses of other subgroups, states words standing near the member with no element of an act, or is an interworking finding for 3.3: left for that subgroup or step"
+  },
+  {
+   "observation": 22632,
+   "action": "leave",
+   "reason": "a finding of the replaced group that reaches verses of other subgroups, states words standing near the member with no element of an act, or is an interworking finding for 3.3: left for that subgroup or step"
+  },
+  {
+   "observation": 22633,
+   "action": "leave",
+   "reason": "a finding of the replaced group that reaches verses of other subgroups, states words standing near the member with no element of an act, or is an interworking finding for 3.3: left for that subgroup or step"
+  },
+  {
+   "observation": 22634,
+   "action": "leave",
+   "reason": "a finding of the replaced group that reaches verses of other subgroups, states words standing near the member with no element of an act, or is an interworking finding for 3.3: left for that subgroup or step"
+  },
+  {
+   "observation": 22636,
+   "action": "leave",
+   "reason": "a finding of the replaced group that reaches verses of other subgroups, states words standing near the member with no element of an act, or is an interworking finding for 3.3: left for that subgroup or step"
+  },
+  {
+   "observation": 22638,
+   "action": "leave",
+   "reason": "a finding of the replaced group that reaches verses of other subgroups, states words standing near the member with no element of an act, or is an interworking finding for 3.3: left for that subgroup or step"
+  },
+  {
+   "observation": 22639,
+   "action": "delete",
+   "reason": "a 3.1 finding of the group this subgroup replaced; this reading states its content in the finding(s) turn and faith, resting on the subgroup's evidence"
+  },
+  {
+   "observation": 22640,
+   "action": "leave",
+   "reason": "a finding of the replaced group that reaches verses of other subgroups, states words standing near the member with no element of an act, or is an interworking finding for 3.3: left for that subgroup or step"
+  },
+  {
+   "observation": 22642,
+   "action": "leave",
+   "reason": "a finding of the replaced group that reaches verses of other subgroups, states words standing near the member with no element of an act, or is an interworking finding for 3.3: left for that subgroup or step"
+  },
+  {
+   "observation": 22643,
+   "action": "leave",
+   "reason": "a finding of the replaced group that reaches verses of other subgroups, states words standing near the member with no element of an act, or is an interworking finding for 3.3: left for that subgroup or step"
+  },
+  {
+   "observation": 22649,
+   "action": "delete",
+   "reason": "a 3.1 finding of the group this subgroup replaced; this reading states its content in the finding(s) hearing, resting on the subgroup's evidence"
+  },
+  {
+   "observation": 22650,
+   "action": "delete",
+   "reason": "a 3.1 finding of the group this subgroup replaced; this reading states its content in the finding(s) ways, resting on the subgroup's evidence"
+  },
+  {
+   "observation": 22651,
+   "action": "delete",
+   "reason": "a 3.1 finding of the group this subgroup replaced; this reading states its content in the finding(s) worth, resting on the subgroup's evidence"
+  },
+  {
+   "observation": 22652,
+   "action": "leave",
+   "reason": "a finding of the replaced group that reaches verses of other subgroups, states words standing near the member with no element of an act, or is an interworking finding for 3.3: left for that subgroup or step"
+  }
+ ]
+}

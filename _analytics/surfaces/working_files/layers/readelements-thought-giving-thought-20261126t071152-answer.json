@@ -1,0 +1,93 @@
+{
+ "command": "ReadElements",
+ "collection": "thought",
+ "subgroup": "giving thought",
+ "ledger_id": 1927,
+ "findings": [
+  {
+   "key": "attend-word",
+   "kind": "statement",
+   "text": "In Pro 16:20 giving thought is attention with insight turned to the word: the person does it, and it is set as a way of life beside trusting in the Lord.",
+   "basis": "read",
+   "parts": {
+    "item": "operation",
+    "grounds": "Whoever gives thought to the word",
+    "mode": "done"
+   },
+   "nodes": [
+    {
+     "occurrence": 1279770,
+     "role": "characteristic"
+    },
+    {
+     "traced": 22876
+    },
+    {
+     "traced": 23584
+    },
+    {
+     "traced": 23587
+    },
+    {
+     "traced": 22767
+    }
+   ],
+   "read_back": []
+  },
+  {
+   "key": "word-object",
+   "kind": "statement",
+   "text": "In Pro 16:20 what the attention is turned to is the word.",
+   "basis": "stated",
+   "parts": {
+    "item": "object",
+    "grounds": "gives thought to the word"
+   },
+   "nodes": [
+    {
+     "occurrence": 1279770,
+     "role": "characteristic"
+    },
+    {
+     "traced": 23587
+    },
+    {
+     "traced": 22876
+    }
+   ],
+   "read_back": []
+  },
+  {
+   "key": "finds-good",
+   "kind": "link",
+   "text": "In Pro 16:20 attending to the word leads on: the one who does it will find good, as the one who trusts in the Lord is blessed.",
+   "basis": "stated",
+   "parts": {
+    "item": "chain",
+    "grounds": "will discover good"
+   },
+   "nodes": [
+    {
+     "occurrence": 1279770,
+     "role": "characteristic"
+    },
+    {
+     "traced": 23585
+    },
+    {
+     "traced": 23588
+    },
+    {
+     "traced": 23589
+    },
+    {
+     "traced": 23586
+    }
+   ],
+   "read_back": []
+  }
+ ],
+ "not_used": {},
+ "older": [],
+ "existing": []
+}

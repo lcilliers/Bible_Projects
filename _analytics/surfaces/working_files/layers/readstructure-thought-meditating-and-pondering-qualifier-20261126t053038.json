@@ -1,0 +1,706 @@
+{
+ "command": "ReadStructure",
+ "collection": "thought",
+ "subgroup": "meditating and pondering",
+ "step": "2.1",
+ "item": "qualifier",
+ "made": "2026-11-26T05:30:38Z",
+ "batch": {
+  "rows": 1,
+  "rows_left_after_this": 36
+ },
+ "instruction": {
+  "what": "Step 2.1, the structure of one subgroup (stage 1, B3): what stands with the subgroup's words in each verse, read from the stored structure. One item at a time: double-meaning (a surface with more than one code), qualifier (negators and the word each reaches, adjectives, adverbs, prepositional qualifiers), entity (who is named or referred to), direction (from whom to whom, by the grammar), pairing (one row for each partner collection: its words in the verses shared with the subgroup). Nothing here says what anything does for the inner being; that begins at step 3.1.",
+  "read": [
+   "Take one row at a time (`rows`): what it asks, its occurrences (`as`: member, the subgroup's word; partner, the other word), and its verses.",
+   "Read each verse (`verses`) from its stored structure, one line for each word: * marks an occurrence of the subgroup; then the position, surface, Strong's code and morph, and what the pairing makes of the word (its type, the qualifier it carries, a negator, a party, the collections of a word of another collection). Nothing is evaluated that is not stored.",
+   "Where each word stands: its side and distance from the subgroup's word, from the positions. Adjacency is not scope: a negator or qualifier is read for the word it reaches by the grammar.",
+   "A pairing row shows the WordNet control for its partner collection: a pairing WordNet gives and the verses do not show is one to look for; a pairing only the verses show has no control.",
+   "Differences in meaning are read from the base data (the Strong's code, the morph, the construction), not from the English alone. The subgroup's 1.1 senses (`senses`) are what the findings build on."
+  ],
+  "write": [
+   "Fill `answer.rows`: for each row, disposition observed with its `findings`, or none with its `reason` (where the row allows none: nothing of the item stands with the subgroup in its verses).",
+   "One finding for each distinct thing the structure shows; the same finding in several verses is ONE finding naming all its occurrences; a verse that shows something different is its own finding. Together the findings name every occurrence of the row (occurrence ids or verse references), each in one finding.",
+   "kind: as the template gives it (pairing; relation for direction; face for double-meaning). obs_text: concise; names the verses it holds in, as the package writes the references (for example Act 18:4); states what the structure shows (which word, where it stands, what it reaches or gives by the grammar); never a verse restated, never what it does for the inner being.",
+   "basis: stated (the verse says it) or read (read from the structure), with `grounds`: words copied exactly from the verses it is tied to (the record checks them).",
+   "Each subgroup's surface has its own finding; none joins two subgroups. A data error is named in grounds, not fixed.",
+   "`older`: answer each older observation shown under the row, once: keep (with `nature`), restate (with `nature`, `new_text`, `checked`), merge (with `into`), consume (with `carriers` [\"this\"] or observation ids, and `mapping`), delete_neither (with `reason`), carry (with `to` and `reason`), defer (with `collection`, `nature`, `finding`). One listed under another row is answered there.",
+   "Then: Collection-Build.ps1 -Action RecordStructure -File <the answer file> (-Check to preview). The record refuses the whole file on any fault and lists every fault."
+  ],
+  "keep": [
+   {
+    "rule": "RG-14 morph-read",
+    "text": "Morph is read, not carried: where occurrences of a word show different stems or voices, record whether the subject does, undergoes or causes the act."
+   },
+   {
+    "rule": "RG-16 homonym-and-data-error",
+    "text": "A word that is only a homonym or a name, with no meaningful context, is recorded as such (tag no-human-context) and left. Data errors found while reading are flagged (tag data-error), not fixed in the reading."
+   },
+   {
+    "rule": "RG-21 grain",
+    "text": "A word is read per its lettered Strong's code (its grain), never the bare lemma (B:113). The occurrences of a word with several senses are related per grain and never aggregated across grains: related verses are same-grain occurrences."
+   },
+   {
+    "rule": "RO11 one-row-per-code",
+    "text": "One observation per finding, never a duplicate description; a finding applying to several verses or words carries several nodes, each with the word's role in it."
+   },
+   {
+    "rule": "RW-03 no-duplicates-multi-node",
+    "text": "One observation per finding: the same description is never written twice. Applied to another verse, word or scope it gains a node on the existing observation."
+   },
+   {
+    "rule": "RW-04 concise-verse-specific",
+    "text": "Observation text is concise and tied to this verse's content, never a restatement of the word's dictionary sense. A transliteration is never given without its gloss."
+   },
+   {
+    "rule": "RW-08 slants-own-rows",
+    "text": "Where the evidence points to more than one reading, each is its own observation with its own evidence."
+   },
+   {
+    "rule": "RW-09 reread-builds-on-prior",
+    "text": "A re-read includes the observations already recorded for the verse, so the reading sees prior findings and builds on them."
+   },
+   {
+    "rule": "RW-11 missing-is-named",
+    "text": "Missing data in the base extract is named as a gap, never substituted from memory or outside knowledge."
+   },
+   {
+    "rule": "RW-13 older-observations-answered-at-record",
+    "text": "Every older live observation with a live node on an occurrence of the row (a stage that is not the build's own) is answered in fill.older when the row is recorded, once: keep or restate (each with its marker), merge into a named observation, consume (live observations carry its meaning, stated in words, verified before it is deleted), delete as neither (comment first), or defer to a named collection (marked now; only the finding is left to that collection). An observation already marked by the validation, answered in a build or deferred is not asked again. A new observation whose text equals that of another live observation of the collection is refused, the other named. LayerCheck re-derives both from the tables. The end state of a collection's build is that every observation of its scope is marked and fixed or deleted, every word node complete or with its reason, and each deferral owned by a named collection."
+   },
+   {
+    "rule": "RS-04 existing-checked-accept-modify-delete",
+    "text": "When a verse is worked, every existing observation and node on it, of any stage, is checked against the verse by its wording. The stage is not an indication of the nature of an observation and is never used to filter. Each observation is accepted, modified (changed in place; the old value, the new value and the reason are kept in ib_observation_change), soft deleted (the `deleted` column, with the reason), merged (a duplicate description, into the observation that is kept) or, when its wording shows it is not verse understanding, left exactly as it is with the reason. The check's fixes are part of it and need no separate approval. Nothing is physically deleted."
+   },
+   {
+    "rule": "LR-02 nodes-are-built-from-the-data",
+    "text": "The nodes of a layer observation are the occurrences the aspect demands (a word's occurrences, the group's occurrences, the partner's occurrences in the verses they share), written by the recorder with the collection and the subgroup of each surface; they are never typed. An item answered by senses (word-sense) names, for each sense, the occurrences it holds for, and together the senses cover every occurrence; the recorder checks them against the data. The interpretation is the observation text, founded in what the evidence shows (basis stated or read, B:131) and tied to its verses (the text names them and does not restate them): the items of every step (S1, 1.1, 1.2, 2.1) state what the dictionary, the verses and the stored structure show of a word and never what a word does for the inner being; their nodes carry the role lexical and no route. The whole file is checked and written in one transaction; any problem refuses all of it. A row answered again withdraws its earlier observations with the reason."
+   },
+   {
+    "rule": "LR-03 none-needs-a-permitted-reason",
+    "text": "An aspect is recorded as none only where its item allows it (cfg_setting layer.reading none_allowed) and with its reason in words. A group definition and a group's Strong's enrichment are always observed."
+   },
+   {
+    "rule": "DA-02 a-node-per-occurrence-with-its-surfaces-collection",
+    "text": "A node is on one occurrence (verse_lexical_id) and carries the collection of its surface (a supportive node, the collection of the surface it supports); a node already on the observation for the same occurrence is not written twice, and takes the role. A node with no collection to carry, or on a verse out of scope (B:130), is not written and is listed."
+   },
+   {
+    "rule": "VA-03 consumption-is-verified-before-deletion",
+    "text": "An older observation is deleted as consumed only when live observations carry its meaning: every word occurrence of it is on a live node of a carrier or named as not carried with its reason, the mapping is stated in words (what the old says, which carrier states each part), the traces to it are re-pointed or replaced, and the consumption is kept as `consumed_by`. An observation that holds more than one finding is split first."
+   },
+   {
+    "rule": "VA-04 neither-evidence-nor-inner-being-is-deleted",
+    "text": "An observation that is neither evidence nor inner being contributes nothing to the purposes of the observations (researcher, 2026-11-22): it is commented with its reason and the word occurrences no other live observation holds, then deleted. An observation already marked, or one another observation traces, is not deleted this way."
+   }
+  ],
+  "not_in_this_read": ""
+ },
+ "senses": [
+  {
+   "sense": 22868,
+   "text": "Devout meditation on God, his law and his works: the person murmurs over and dwells on the law, God's deeds or God himself, by day and night, on the bed and in the watches of the night, and the law is called his meditation. In Job 15:4 meditation before God is what is hindered, and in Psa 104:34 the psalmist asks that his meditation be pleasing to God. The object is always what belongs to God, and the setting is private and continual. Verses: Jos 1:8, Psa 63:6, Psa 77:12, Psa 119:15, Psa 119:23, Psa 119:27, Psa 119:48, Psa 119:78, Psa 119:148, Psa 143:5, Psa 145:5, Psa 1:2, Job 15:4, Psa 104:34, Psa 119:97, Psa 119:99.",
+   "verses": [
+    "Josh.1.8",
+    "Ps.63.6",
+    "Ps.77.12",
+    "Ps.119.15",
+    "Ps.119.23",
+    "Ps.119.27",
+    "Ps.119.48",
+    "Ps.119.78",
+    "Ps.119.148",
+    "Ps.143.5",
+    "Ps.145.5",
+    "Ps.1.2",
+    "Job.15.4",
+    "Ps.104.34",
+    "Ps.119.97",
+    "Ps.119.99"
+   ]
+  },
+  {
+   "sense": 22869,
+   "text": "Brooding in distress: in Psa 77:3 the psalmist remembers God and moans, and meditating makes his spirit faint, and in Psa 77:6 he meditates in his heart by night and then his spirit searches. The musing here is troubled, with the spirit as the one affected. Verses: Psa 77:3, Psa 77:6.",
+   "verses": [
+    "Ps.77.3",
+    "Ps.77.6"
+   ]
+  },
+  {
+   "sense": 22870,
+   "text": "The meditation of the heart as what its musing yields, set beside the speech of the mouth: the mouth speaks wisdom and the heart's meditation is understanding, and both words and meditation are put before the Lord to be accepted. The heart's inward musing is paired with outward words. Verses: Psa 19:14, Psa 49:3.",
+   "verses": [
+    "Ps.19.14",
+    "Ps.49.3"
+   ]
+  },
+  {
+   "sense": 22871,
+   "text": "Meditation turned to harm: those who seek the psalmist's hurt speak of ruin and murmur over treachery all day. The same verb as devout meditation, here with treachery as its object, so that devising is added to murmuring. Verses: Psa 38:12.",
+   "verses": [
+    "Ps.38.12"
+   ]
+  },
+  {
+   "sense": 22872,
+   "text": "Solitary musing in the open at evening: Isaac goes out into the field to muse, with no object named, before he sees the camels coming. The musing is private and has no stated subject matter. Verses: Gen 24:63.",
+   "verses": [
+    "Gen.24.63"
+   ]
+  },
+  {
+   "sense": 22873,
+   "text": "Musing as being occupied inwardly: Elijah mocks the prophets of Baal that their god may be musing, taken up with his own thought and so not answering. The word names withdrawn preoccupation. Verses: 1Ki 18:27.",
+   "verses": [
+    "1Kgs.18.27"
+   ]
+  },
+  {
+   "sense": 22874,
+   "text": "Pondering as turning a matter over in the mind before acting or speaking: Mary treasures up the things told and ponders them in her heart, Peter ponders the vision as the Spirit speaks, and in Pro 15:28 the righteous man's heart weighs a reply before his mouth speaks. In each the thought is held inwardly and precedes what follows. Verses: Luk 2:19, Act 10:19, Pro 15:28.",
+   "verses": [
+    "Luke.2.19",
+    "Acts.10.19",
+    "Prov.15.28"
+   ]
+  },
+  {
+   "sense": 22875,
+   "text": "Pondering as weighing, said of the Lord: he weighs all the ways of a man, which lie before his eyes. The subject is God and the sense is careful weighing and levelling of what a person does. Verses: Pro 5:21.",
+   "verses": [
+    "Prov.5.21"
+   ]
+  }
+ ],
+ "verses": [
+  {
+   "reference": "Jos 1:8",
+   "text": "This Book of the Law shall not depart from your mouth, but you shall meditate on it day and night, so that you may be careful to do according to all that is written in it. For then you will make your way prosperous, and then you will have good success.",
+   "words": [
+    " 0 this H2088 HTm",
+    " 0 [the] H9009 HTd",
+    " 1 book H5612H HNcmsc",
+    " 2 law H8451 HNcfsa",
+    " 2 [the] H9009 HTd",
+    " 3 not H3808 HTn | negator; qualifier negator; negator",
+    " 4 depart H4185 HVqi3ms | word of another collection; collections depart",
+    " 5 mouth H6310G HNcmsc",
+    " 5 from H9006 HR",
+    " 6 you H9021 HSp2ms",
+    "*7 meditate H1897 HVqq2ms | member of this collection",
+    " 8 day H3119 HD | qualifier candidate; qualifier morph: adverb",
+    " 8 in/on/with H9003 HRd",
+    " 8 him H9033 HSp3ms",
+    " 9 night H3915 HNcmsa",
+    " 9 and H9002 HC | connective",
+    " 10 so H4616 HTc | connective",
+    " 11 careful H8104J HVqj2ms | word of another collection; collections care",
+    " 12 do H6213A HVqcc | word of another collection; collections serve",
+    " 12 to/for H9005 HR",
+    " 13 all H3605 HNcmsa",
+    " 13 like/as H9004 HR",
+    " 14 written H3789 HVqsmsa",
+    " 14 [the] H9009 HTd",
+    " 15 for then H0227A HD | qualifier candidate; qualifier morph: adverb",
+    " 15 in/on/with H9003 HRd",
+    " 15 him H9033 HSp3ms",
+    " 15 for then H3588A HTc | connective",
+    " 16 way H1870L HNcmpc",
+    " 16 way H0853 HTo",
+    " 17 prosperous H6743B HVhi2ms | word of another collection; collections rich",
+    " 18 success H7919A HVhi2ms",
+    " 18 your H9021 HSp2bs",
+    " 18 then H0227A HD | qualifier candidate; qualifier morph: adverb",
+    " 18 and H9002 HC | connective"
+   ]
+  },
+  {
+   "reference": "1Ki 18:27",
+   "text": "And at noon Elijah mocked them, saying, “ Cry aloud, for he is a god. Either he is musing, or he is relieving himself, or he is on a journey, or perhaps he is asleep and must be awakened.”",
+   "words": [
+    " 0 noon H6672A HNcmda",
+    " 0 in/on/with H9003 HRd",
+    " 0 noon H1961 HVqw3ms",
+    " 1 elijah H0452G HNpm | entity (human); party human",
+    " 1 in/on/with H9003 HR",
+    " 1 them H9038 HSp3mp",
+    " 2 mocked H2048A HVpw3ms | word of another collection; collections scoff",
+    " 3 saying H0559 HVqw3ms",
+    " 4 cry H7121I HVqv2mp | word of another collection; collections laugh",
+    " 5 aloud H1419A HAamsa | word of another collection; qualifier morph: adjective; collections roar",
+    " 5 aloud H6963A HNcmsa | word of another collection; collections roar",
+    " 5 in/on/with H9003 HR",
+    " 6 for H3588A HTc | connective",
+    " 7 god H0430G HNcmpa | entity (divine); party divine",
+    " 8 either H3588A HTc | connective",
+    " 8 either H1931 HPp3ms",
+    "*9 musing H7879 HNcmsa | member of this collection",
+    " 10 relieving H7873 HNcmsa",
+    " 11 or H3588A HTc | connective",
+    " 11 and H9002 HC | connective",
+    " 12 journey H1870L HNcbsa",
+    " 12 journey H3588A HTc | connective",
+    " 12 to/for H9005 HR",
+    " 12 him H9033 HSp3ms",
+    " 12 and H9002 HC | connective",
+    " 13 perhaps H0194 HD | qualifier candidate; qualifier morph: adverb",
+    " 13 to/for H9005 HR",
+    " 13 him H9033 HSp3ms",
+    " 14 asleep H3463 HAamsa | qualifier candidate; qualifier morph: adjective",
+    " 15 awakened H3364 HVqu3ms | word of another collection; collections watch",
+    " 15 awakened H1931 HPp3ms | word of another collection; collections watch"
+   ]
+  },
+  {
+   "reference": "Psa 1:2",
+   "text": "but his delight is in the law of the Lord, and on his law he meditates day and night.",
+   "words": [
+    " 0 delight H2656 HNcmsc | word of another collection; collections delight",
+    " 1 law H8451 HNcfsc",
+    " 1 in/on/with H9003 HR",
+    " 1 law H3588B HTc | connective",
+    " 1 law H0518B HTc | connective",
+    " 2 lord H3068G HNpt | entity (divine); party divine",
+    " 3 law H8451 HNcfsc",
+    " 3 in/on/with H9003 HR",
+    " 3 and H9002 HC | connective",
+    " 3 his H9023 HSp3ms",
+    "*4 meditates H1897 HVqi3ms | member of this collection",
+    " 4 his H9023 HSp3ms",
+    " 5 day H3119 HD | qualifier candidate; qualifier morph: adverb",
+    " 6 night H3915 HNcmsa",
+    " 6 and H9002 HC | connective"
+   ]
+  },
+  {
+   "reference": "Psa 119:23",
+   "text": "Even though princes sit plotting against me, your servant will meditate on your statutes.",
+   "words": [
+    " 0 even H1571 HD | qualifier candidate; qualifier morph: adverb",
+    " 1 princes H8269 HNcmpa",
+    " 2 sit H3427 HVqp3cp",
+    " 3 plotting H1696G HVNp3cp | word of another collection; collections plot",
+    " 3 in/on/with H9003 HR",
+    " 3 me H9030 HSp1bs",
+    " 4 servant H5650 HNcmsc | entity (human); party human",
+    "*5 meditate H7878 HVqi3ms | member of this collection",
+    " 5 your H9021 HSp2ms",
+    " 6 your H9021 HSp2ms",
+    " 7 statutes H2706G HNcmpc",
+    " 7 in/on/with H9003 HR"
+   ]
+  },
+  {
+   "reference": "Psa 119:78",
+   "text": "Let the insolent be put to shame, because they have wronged me with falsehood; as for me, I will meditate on your precepts.",
+   "words": [
+    " 0 insolent H2086 HAampa | qualifier candidate; qualifier morph: adjective",
+    " 1 put H0954 HVqi3mp",
+    " 2 because H3588A HTc | connective",
+    " 3 wronged H5791 HVpp3cp | word of another collection; collections destruction",
+    " 4 falsehood H8267 HNcmsa | word of another collection; collections real",
+    " 5 me H0589 HPp1bs",
+    " 5 me H9030 HSp1bs",
+    "*6 meditate H7878 HVqi1cs | member of this collection",
+    " 7 your H9021 HSp2ms",
+    " 8 precepts H6490 HNcmpc | word of another collection; collections govern",
+    " 8 in/on/with H9003 HR"
+   ]
+  },
+  {
+   "reference": "Pro 5:21",
+   "text": "For a man’s ways are before the eyes of the Lord, and he ponders all his paths.",
+   "words": [
+    " 0 for H3588A HTc | connective",
+    " 1 man’s H0376G HNcmsa | entity (human); party human",
+    " 2 ways H1870G HNcbpc",
+    " 3 before H5227 HAcmsc | qualifier candidate; qualifier morph: adjective",
+    " 4 eyes H5869A HNcfdc",
+    " 5 lord H3068G HNpt | entity (divine); party divine",
+    "*6 ponders H6424 HVprmsa | member of this collection",
+    " 6 his H9023 HSp3ms",
+    " 7 all H3605 HNcmsc",
+    " 7 and H9002 HC | connective",
+    " 8 paths H4570 HNcfpc"
+   ]
+  },
+  {
+   "reference": "Pro 15:28",
+   "text": "The heart of the righteous ponders how to answer, but the mouth of the wicked pours out evil things.",
+   "words": [
+    " 0 heart H3820A HNcmsa | word of another collection; collections heart",
+    " 1 righteous H6662 HAamsa | word of another collection; qualifier morph: adjective; collections righteous",
+    "*2 ponders H1897 HVqi3ms | member of this collection",
+    " 3 answer H6030B HVqcc | word of another collection; collections profess",
+    " 3 to/for H9005 HR",
+    " 4 mouth H6310G HNcmsc",
+    " 4 and H9002 HC | connective",
+    " 5 wicked H7563 HNcmpa | word of another collection; collections evildoer",
+    " 6 out H5042 HVhi3ms",
+    " 7 evil things H7451H HNcfpa | qualifier candidate; qualifier qualifier subgroup: Bad (a quality of something)"
+   ]
+  },
+  {
+   "reference": "Luk 2:19",
+   "text": "But Mary treasured up all these things, pondering them in her heart.",
+   "words": [
+    " 0 but G1161 CONJ | connective",
+    " 1 mary G3137G N-NSF-P",
+    " 2 treasured up G4933 V-IAI-3S",
+    " 3 all G3956 A-APN | qualifier candidate; qualifier morph: adjective",
+    " 4 these G3778 D-APN",
+    " 5 things G4487 N-APN",
+    "*6 pondering G4820 V-PAP-NSF | member of this collection",
+    " 7 in G1722 PREP",
+    " 8 her G0846 P-GSF",
+    " 9 heart G2588 N-DSF | word of another collection; collections heart"
+   ]
+  },
+  {
+   "reference": "Act 10:19",
+   "text": "And while Peter was pondering the vision, the Spirit said to him, “ Behold, three men are looking for you.",
+   "words": [
+    " 0 and G1161 CONJ | connective",
+    " 1 peter G4074G N-GSM-P",
+    "*2 pondering G1760 V-PNP-GSM | member of this collection",
+    " 3 vision G3705 N-GSN",
+    " 4 spirit G4151G N-NSN",
+    " 5 said G2036 V-2AAI-3S",
+    " 6 him G0846 P-DSM",
+    " 7 behold G2400 INJ",
+    " 8 three G5140 A-NUI | qualifier candidate; qualifier morph: adjective",
+    " 9 men G0435G N-NPM | entity (human); party human",
+    " 10 looking for G2212 V-PAP-NPM | word of another collection; collections search",
+    " 11 you G4571 P-2AS"
+   ]
+  }
+ ],
+ "rows": [
+  {
+   "ledger_id": 1332,
+   "item": "qualifier",
+   "subject": "",
+   "asks": "Which qualifiers (negators and the words they reach, adjectives, adverbs, prepositional qualifiers) stand with the subgroup's surfaces, and what does each give by the grammar? Adjacency is not scope: state the word the negator or qualifier reaches. One finding for each distinct thing shown; it holds the verses it holds in as its nodes.",
+   "none_allowed": true,
+   "verses": [
+    "Jos 1:8",
+    "1Ki 18:27",
+    "Psa 1:2",
+    "Psa 119:23",
+    "Psa 119:78",
+    "Pro 5:21",
+    "Pro 15:28",
+    "Luk 2:19",
+    "Act 10:19"
+   ],
+   "occurrences": [
+    {
+     "occurrence": 1098636,
+     "reference": "Jos 1:8",
+     "surface": "meditate",
+     "strong": "H1897",
+     "as": "member"
+    },
+    {
+     "occurrence": 1158768,
+     "reference": "1Ki 18:27",
+     "surface": "musing",
+     "strong": "H7879",
+     "as": "member"
+    },
+    {
+     "occurrence": 1264096,
+     "reference": "Psa 1:2",
+     "surface": "meditates",
+     "strong": "H1897",
+     "as": "member"
+    },
+    {
+     "occurrence": 1251807,
+     "reference": "Psa 119:23",
+     "surface": "meditate",
+     "strong": "H7878",
+     "as": "member"
+    },
+    {
+     "occurrence": 1263698,
+     "reference": "Psa 119:78",
+     "surface": "meditate",
+     "strong": "H7878",
+     "as": "member"
+    },
+    {
+     "occurrence": 1282483,
+     "reference": "Pro 5:21",
+     "surface": "ponders",
+     "strong": "H6424",
+     "as": "member"
+    },
+    {
+     "occurrence": 1277997,
+     "reference": "Pro 15:28",
+     "surface": "ponders",
+     "strong": "H1897",
+     "as": "member"
+    },
+    {
+     "occurrence": 1442875,
+     "reference": "Luk 2:19",
+     "surface": "pondering",
+     "strong": "G4820",
+     "as": "member"
+    },
+    {
+     "occurrence": 1464018,
+     "reference": "Act 10:19",
+     "surface": "pondering",
+     "strong": "G1760",
+     "as": "member"
+    },
+    {
+     "occurrence": 1098631,
+     "reference": "Jos 1:8",
+     "surface": "not",
+     "strong": "H3808",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1098637,
+     "reference": "Jos 1:8",
+     "surface": "day",
+     "strong": "H3119",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1098650,
+     "reference": "Jos 1:8",
+     "surface": "for then",
+     "strong": "H0227A",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1098659,
+     "reference": "Jos 1:8",
+     "surface": "then",
+     "strong": "H0227A",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1158761,
+     "reference": "1Ki 18:27",
+     "surface": "aloud",
+     "strong": "H1419A",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1158777,
+     "reference": "1Ki 18:27",
+     "surface": "perhaps",
+     "strong": "H0194",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1158780,
+     "reference": "1Ki 18:27",
+     "surface": "asleep",
+     "strong": "H3463",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1264098,
+     "reference": "Psa 1:2",
+     "surface": "day",
+     "strong": "H3119",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1251800,
+     "reference": "Psa 119:23",
+     "surface": "even",
+     "strong": "H1571",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1263691,
+     "reference": "Psa 119:78",
+     "surface": "insolent",
+     "strong": "H2086",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1282480,
+     "reference": "Pro 5:21",
+     "surface": "before",
+     "strong": "H5227",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1277996,
+     "reference": "Pro 15:28",
+     "surface": "righteous",
+     "strong": "H6662",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1278004,
+     "reference": "Pro 15:28",
+     "surface": "evil things",
+     "strong": "H7451H",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1442872,
+     "reference": "Luk 2:19",
+     "surface": "all",
+     "strong": "G3956",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1464024,
+     "reference": "Act 10:19",
+     "surface": "three",
+     "strong": "G5140",
+     "as": "partner"
+    }
+   ],
+   "older": [
+    {
+     "observation": 20551,
+     "stage": "prior-capture",
+     "kind": "face",
+     "nature": null,
+     "text": "Face: Pondering before answering; Verses: Pro 15:28; What differs: The righteous heart, against the mouth that \"pours out\"",
+     "verses": [
+      "Prov.15.28"
+     ]
+    },
+    {
+     "observation": 21277,
+     "stage": "engagement",
+     "kind": "qualification",
+     "nature": null,
+     "text": "Aloud gives audibility: the inner state of grief, thanksgiving or distress, named by another word of the verse, is voiced so that it is heard.",
+     "verses": [
+      "1Kgs.18.27",
+      "1Kgs.18.28",
+      "1Sam.11.4",
+      "2Sam.15.23",
+      "Ezra.3.12",
+      "Gen.29.11",
+      "Isa.10.30",
+      "Mic.4.9",
+      "Ps.26.7"
+     ]
+    },
+    {
+     "observation": 21469,
+     "stage": "engagement",
+     "kind": "face",
+     "nature": null,
+     "text": "Righteous is here the godliness, devoutness, reverence or uprightness of a person as a state of the heart toward God or toward what is right (a devout man who feared God, godliness trained and pursued, uprightness of heart, reverence and awe).",
+     "verses": [
+      "1John.2.29",
+      "1John.3.12",
+      "1John.3.7",
+      "1Kgs.2.32",
+      "1Sam.24.17",
+      "2Pet.2.7",
+      "2Pet.2.8",
+      "2Sam.4.11",
+      "Eccl.7.15",
+      "Eccl.7.16",
+      "Eccl.7.20",
+      "Ezek.18.5",
+      "Ezek.18.9",
+      "Ezek.3.20",
+      "Ezek.33.12",
+      "Ezek.33.13",
+      "Ezek.33.18",
+      "Gen.38.26",
+      "Gen.6.9",
+      "Gen.7.1",
+      "Hab.1.13",
+      "Isa.26.2",
+      "Isa.60.21",
+      "Jer.3.11",
+      "Job.15.14",
+      "Job.17.9",
+      "Job.32.1",
+      "Job.35.7",
+      "Luke.1.6",
+      "Luke.18.9",
+      "Luke.2.25",
+      "Luke.23.50",
+      "Mark.6.20",
+      "Matt.23.28",
+      "Prov.12.10",
+      "Prov.12.26",
+      "Prov.12.5",
+      "Prov.13.5",
+      "Prov.13.9",
+      "Prov.15.28",
+      "Prov.20.7",
+      "Prov.21.26",
+      "Prov.28.1",
+      "Prov.29.6",
+      "Prov.29.7",
+      "Ps.143.2",
+      "Ps.37.21",
+      "Ps.37.30",
+      "Ps.52.6",
+      "Ps.58.10",
+      "Ps.64.10",
+      "Ps.68.3",
+      "Rev.22.11",
+      "Rom.2.13",
+      "Rom.3.10"
+     ]
+    }
+   ]
+  }
+ ],
+ "answer": {
+  "command": "ReadStructure",
+  "collection": "thought",
+  "subgroup": "meditating and pondering",
+  "rows": [
+   {
+    "ledger_id": 1332,
+    "item": "qualifier",
+    "subject": "",
+    "disposition": "observed | none",
+    "findings": [
+     {
+      "kind": "pairing",
+      "obs_text": "",
+      "basis": "read | stated",
+      "grounds": "",
+      "occurrences": []
+     }
+    ],
+    "reason": "",
+    "older": [
+     {
+      "observation": 20551,
+      "action": "keep | restate | merge | consume | delete_neither | defer | carry",
+      "reason": ""
+     },
+     {
+      "observation": 21277,
+      "action": "keep | restate | merge | consume | delete_neither | defer | carry",
+      "reason": ""
+     },
+     {
+      "observation": 21469,
+      "action": "keep | restate | merge | consume | delete_neither | defer | carry",
+      "reason": ""
+     }
+    ]
+   }
+  ]
+ },
+ "measured": {
+  "package_chars": 26277,
+  "seconds": 0.01
+ }
+}

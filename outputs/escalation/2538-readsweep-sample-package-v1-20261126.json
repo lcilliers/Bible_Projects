@@ -1,0 +1,840 @@
+{
+ "command": "ReadSweep",
+ "collection": "thought",
+ "subgroup": "reasoning",
+ "step": "2.1",
+ "item": "sweep",
+ "made": "2026-11-26T05:04:40Z",
+ "instruction": {
+  "what": "The sweep (B4) of one subgroup, after its 2.1 rows: every observation of the subgroup's scope still unmarked after B1 to B3 -- older observations on its occurrences that B1 carried forward and B2 and B3 did not take up, any carried to the sweep, and any other unmarked observation of the scope (for example the reading of an earlier grouping). Each is judged by its content. End state: none of the subgroup's observations is unmarked, except one deferred to a named collection.",
+  "read": [
+   "Take one older observation at a time (`older`): its text, its stage and kind, its verses, how many of its nodes are on this subgroup's occurrences and how many elsewhere, and the collections its nodes belong to.",
+   "Judge it by what it states, not by its stage or kind: does it state what the data are or show, tied to a verse (evidence)? how something works in the inner being, based on evidence (inner being)? or neither?"
+  ],
+  "write": [
+   "Fill `answer.older`, one entry for each observation, each answered once, with `reason`: what it states and why it is so judged.",
+   "merge, with `into`: a live observation of the subgroup says the same in the same words. consume, with `carriers` (observation ids) and `mapping`: live observations already state what it says; every word occurrence of it must be on a live node of a carrier (VA-03), then it is deleted. keep, with `nature` evidence or inner_being: it stands as it is (an inner-being one waits for 3.1). delete_neither: it is neither evidence nor inner being; it is commented, then deleted with its nodes here (one held by other subgroups or collections loses only the nodes here). defer, with `collection`, `nature` and `finding`: another collection owns it; it is marked now and the finding is left to that collection.",
+   "Then: Collection-Build.ps1 -Action RecordSweep -File <the answer file> (-Check to preview). The record refuses the whole file on any fault; every unmarked observation must be answered."
+  ],
+  "keep": [
+   {
+    "rule": "VA-04 neither-evidence-nor-inner-being-is-deleted",
+    "text": "An observation that is neither evidence nor inner being contributes nothing to the purposes of the observations (researcher, 2026-11-22): it is commented with its reason and the word occurrences no other live observation holds, then deleted. An observation already marked, or one another observation traces, is not deleted this way."
+   },
+   {
+    "rule": "VA-05 the-marker-follows-content-not-stage",
+    "text": "Evidence states what the data are or show, tied to a verse. Inner being states how something works in the inner being, based on evidence, a building block of the stage 5 claims. The marker (ib_observation.nature) follows the content and purpose of the observation, never its stage (RS-04): an observation of any stage may be inner being when it traces to evidence. One that states both is split. The marker is set when the observation is created, by the item that is answered (cfg_setting layer.reading items.<item>.nature); a finding file never sets it; the validation changes it only where the content shows the item's nature does not hold."
+   },
+   {
+    "rule": "RW-01 changed-only-by-reading",
+    "text": "No observation is changed except by a reading, and every change is recorded with its reason. An observation no longer supported by the verse is soft-deleted, with the reason."
+   },
+   {
+    "rule": "RS-04 existing-checked-accept-modify-delete",
+    "text": "When a verse is worked, every existing observation and node on it, of any stage, is checked against the verse by its wording. The stage is not an indication of the nature of an observation and is never used to filter. Each observation is accepted, modified (changed in place; the old value, the new value and the reason are kept in ib_observation_change), soft deleted (the `deleted` column, with the reason), merged (a duplicate description, into the observation that is kept) or, when its wording shows it is not verse understanding, left exactly as it is with the reason. The check's fixes are part of it and need no separate approval. Nothing is physically deleted."
+   }
+  ],
+  "not_in_this_read": ""
+ },
+ "older": [
+  {
+   "observation": 22315,
+   "stage": "layer-1",
+   "kind": "enrichment",
+   "text": "The lexicon entries bear the grouping out only partly: the reasoning codes are G1256 (to reason, discuss, argue, 7 occurrences), G1261 (reasoning), G3049 (to reckon) and H3198 (to prove, argue a case), and the ground or cause codes are G0156 (cause, charge), G1352 (therefore, for this reason), G1223 and G5484 (because of), G5124, H6440I and H1697M (because), H3651C (so, therefore) and H2600 (without cause). The codes that link the group to its usage are G1256 for the spoken reasoning in the synagogue and G0156 for the cause given. Several codes are small words aligned into the units: G2596 (according to), G0302 (if), G1519 (toward), H5921A (upon), G5124 (that), H1961 (to be); and G2138 (compliant), G3056 (word) and H4486 (knowledge) have senses of their own that the verses use for reasonableness, an account and knowledge. The group definition is giving a ground and arguing a case by grounds; the causal codes are the larger share by occurrence.",
+   "verses": [
+    "1Cor.13.11",
+    "1John.3.8",
+    "1Kgs.11.27",
+    "1Pet.3.15",
+    "1Sam.20.29",
+    "1Thess.3.5",
+    "1Thess.3.7",
+    "1Tim.1.16",
+    "2Tim.1.6",
+    "Acts.10.21",
+    "Acts.17.17",
+    "Acts.17.2",
+    "Acts.18.14",
+    "Acts.18.19",
+    "Acts.18.4",
+    "Acts.19.8",
+    "Acts.19.9",
+    "Acts.24.25",
+    "Acts.28.18",
+    "Acts.28.20",
+    "Dan.4.34",
+    "Dan.4.36",
+    "Eph.3.1",
+    "Eph.3.14",
+    "Ezek.19.10",
+    "Gen.41.31",
+    "Gen.47.13",
+    "Isa.1.18",
+    "Jas.3.17",
+    "Job.1.9",
+    "Josh.5.4",
+    "Luke.9.47",
+    "Mark.12.24",
+    "Num.18.32",
+    "Prov.3.30",
+    "Rom.15.22"
+   ],
+   "nodes_here": 41,
+   "nodes_elsewhere": 0,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22382,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "text": "Belief stands with the group in Act 19:9 (unbelief, 10 before), 1Th 3:5 (faith, 8 after), 1Th 3:7 (faith, 13 after) and 1Ti 1:16 (believe, 13 after). The three verses of 'for this reason' state the cause first and name faith or believing 8 to 13 words after; in Act 19:9 the reasoning follows the unbelief.",
+   "verses": [
+    "1Thess.3.5",
+    "1Thess.3.7",
+    "1Tim.1.16",
+    "Acts.19.9"
+   ],
+   "nodes_here": 5,
+   "nodes_elsewhere": 4,
+   "collections": [
+    "believe",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22383,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "text": "Words of duration stand with the group in Dan 4:34 (everlasting, 10 after), 1Ti 1:16 (eternal, 17 after) and 1Pe 3:15 (always, 7 before). The distances show the partner is in another clause of each verse, with no grammatical tie to the member.",
+   "verses": [
+    "1Pet.3.15",
+    "1Tim.1.16",
+    "Dan.4.34"
+   ],
+   "nodes_here": 3,
+   "nodes_elsewhere": 3,
+   "collections": [
+    "continual",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22384,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "text": "Bearing stands with the group in Num 18:32 (bear, 2 before), 1Th 3:5 (bear, 2 after) and 1Ti 1:16 (patience, 9 after). In Num 18:32 and 1Th 3:5 the verb bear is in the same clause as the phrase of reason (bear no sin by reason of it; could bear it no longer).",
+   "verses": [
+    "1Thess.3.5",
+    "1Tim.1.16",
+    "Num.18.32"
+   ],
+   "nodes_here": 3,
+   "nodes_elsewhere": 3,
+   "collections": [
+    "endure",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22385,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "text": "Knowing stands with the group in Mar 12:24 (know, 2 after), Luk 9:47 (knowing, 1 before) and 1Th 3:5 (learn, 6 after). In Mar 12:24 the stated reason for the error is not knowing the Scriptures or the power of God; in Luk 9:47 Jesus' knowing stands 1 word before the reasoning in their hearts.",
+   "verses": [
+    "1Thess.3.5",
+    "Luke.9.47",
+    "Mark.12.24"
+   ],
+   "nodes_here": 4,
+   "nodes_elsewhere": 3,
+   "collections": [
+    "know",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22386,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "text": "Sin stands with the group in Num 18:32 (sin, 1 before), Isa 1:18 (sins, 4 after) and 1Jo 3:8 (sinning, 9 and 3 before). In all three the sin is named near the reason: borne by reason of the offering, addressed in the reasoning together, and the ground of the appearing of the Son of God.",
+   "verses": [
+    "1John.3.8",
+    "Isa.1.18",
+    "Num.18.32"
+   ],
+   "nodes_here": 4,
+   "nodes_elsewhere": 5,
+   "collections": [
+    "sin",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22421,
+   "stage": "layer-2",
+   "kind": "face",
+   "text": "The surface 'reason' carries eighteen codes in four senses and some small words. The ground or cause: G0156 (Act 10:21, 28:18, 28:20, 2Ti 1:6), G1223 and G5124 (Mar 12:24, 1Th 3:5, 1Th 3:7, 1Ti 1:16, 1Jo 3:8), G5484 (Eph 3:1, 3:14), G1352 (Rom 15:22), G1519 (1Jo 3:8), H1697M (Jos 5:4, 1Ki 11:27), H5921A (Num 18:32, 1Sa 20:29), H3651C (1Sa 20:29), H6440I (Gen 41:31, 47:13), H2600 (Job 1:9, Pro 3:30). Reasoning with someone: H3198 (Isa 1:18). Understanding as a faculty: G2138 (Jam 3:17, open to reason), H4486 (Dan 4:34, 4:36, reason returned). An account given: G3056 (1Pe 3:15). G2596 and G0302 (Act 18:14) and H1961 (Eze 19:10, the copula, flagged in #2533) sit in the units without carrying these senses.",
+   "verses": [
+    "1John.3.8",
+    "1Kgs.11.27",
+    "1Pet.3.15",
+    "1Sam.20.29",
+    "1Thess.3.5",
+    "1Thess.3.7",
+    "1Tim.1.16",
+    "2Tim.1.6",
+    "Acts.10.21",
+    "Acts.18.14",
+    "Acts.28.18",
+    "Acts.28.20",
+    "Dan.4.34",
+    "Dan.4.36",
+    "Eph.3.1",
+    "Eph.3.14",
+    "Ezek.19.10",
+    "Gen.41.31",
+    "Gen.47.13",
+    "Isa.1.18",
+    "Jas.3.17",
+    "Job.1.9",
+    "Josh.5.4",
+    "Mark.12.24",
+    "Num.18.32",
+    "Prov.3.30",
+    "Rom.15.22"
+   ],
+   "nodes_here": 32,
+   "nodes_elsewhere": 0,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22422,
+   "stage": "layer-2",
+   "kind": "face",
+   "text": "The surface 'reasoned' carries two codes in two senses: G1256 (five verses, Paul reasoning with hearers in speech) and G3049 (1Cor 13:11, the reckoning of a child).",
+   "verses": [
+    "1Cor.13.11",
+    "Acts.17.17",
+    "Acts.17.2",
+    "Acts.18.19",
+    "Acts.18.4",
+    "Acts.24.25"
+   ],
+   "nodes_here": 6,
+   "nodes_elsewhere": 0,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22423,
+   "stage": "layer-2",
+   "kind": "face",
+   "text": "The surface 'reasoning' carries two codes in two senses: G1261 in Luk 9:47, the reasoning inside the disciples' hearts, and G1256 in Act 19:8 and Act 19:9, Paul's reasoning aloud in the synagogue and the hall. The same word gives an inward reasoning and a spoken one.",
+   "verses": [
+    "Acts.19.8",
+    "Acts.19.9",
+    "Luke.9.47"
+   ],
+   "nodes_here": 3,
+   "nodes_elsewhere": 0,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22433,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "text": "Qualifiers stand with the reasoning group in five verses with negators (14 stored pairs). In Pro 3:30 the negator reaches 'reason' in 'for no reason' (the ground is denied) and in Act 28:18 'no reason for the death penalty' does the same; in Mar 12:24 the 'not' of the question reaches 'the reason' (is this not the reason), and 'neither ... nor' reaches 'know'; in Num 18:32 the negator reaches 'bear' (bear no sin by reason of it); in 1Sa 20:29 it reaches 'come' after the reason is stated; in Gen 41:31 the negation is in 'unknown'. Of the adjectives, 'three' (Act 17:2) gives the length of the reasoning, 'like a child' (1Cor 13:11) its manner, and 'often' (Rom 15:22) the repetition of the hindering.",
+   "verses": [
+    "1Cor.13.11",
+    "1John.3.8",
+    "1Pet.3.15",
+    "1Sam.20.29",
+    "1Thess.3.5",
+    "1Thess.3.7",
+    "1Tim.1.16",
+    "Acts.17.17",
+    "Acts.17.2",
+    "Acts.18.14",
+    "Acts.18.19",
+    "Acts.18.4",
+    "Acts.19.8",
+    "Acts.24.25",
+    "Acts.28.18",
+    "Dan.4.34",
+    "Dan.4.36",
+    "Ezek.19.10",
+    "Gen.41.31",
+    "Gen.47.13",
+    "Jas.3.17",
+    "Josh.5.4",
+    "Mark.12.24",
+    "Num.18.32",
+    "Prov.3.30",
+    "Rom.15.22"
+   ],
+   "nodes_here": 31,
+   "nodes_elsewhere": 62,
+   "collections": [
+    "cleanse",
+    "compassion",
+    "continual",
+    "cruel",
+    "die",
+    "earnest",
+    "endure",
+    "fear",
+    "follow",
+    "impartial",
+    "live",
+    "offer",
+    "pride",
+    "quarrel",
+    "ready",
+    "rich",
+    "righteous",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22440,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "text": "Entities are named in 18 of the 35 verses of the reasoning group, 13 different ones in 30 stored pairs (12 human, 18 divine). The divine are God (7), Jesus (5), the Lord (4) and Christ (2); the human are the brothers, Joshua, Job, Solomon, David, Nebuchadnezzar, the disciples, man and men. Paul, who does the reasoning in the Acts verses, is not among the stored entities.",
+   "verses": [
+    "1Cor.13.11",
+    "1John.3.8",
+    "1Kgs.11.27",
+    "1Pet.3.15",
+    "1Thess.3.7",
+    "1Tim.1.16",
+    "2Tim.1.6",
+    "Acts.10.21",
+    "Acts.19.8",
+    "Acts.19.9",
+    "Dan.4.34",
+    "Eph.3.1",
+    "Isa.1.18",
+    "Job.1.9",
+    "Josh.5.4",
+    "Luke.9.47",
+    "Mark.12.24",
+    "Prov.3.30"
+   ],
+   "nodes_here": 21,
+   "nodes_elsewhere": 26,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22447,
+   "stage": "layer-2",
+   "kind": "relation",
+   "text": "The direction of the reasoning changes across the verses. In Act 17:2, 17:17, 18:4, 18:19, 19:8 and 24:25 it runs from Paul to his hearers; in Mar 12:24 from Jesus to those he answers, with the ground of their error stated; in Isa 1:18 from the Lord to the people; in 1Ti 1:16 the ground runs from God to Paul (mercy received for this reason) and in 1Jo 3:8 the ground of the Son of God's appearing is stated; in Luk 9:47 Jesus knows the reasoning of the disciples' hearts.",
+   "verses": [
+    "1Cor.13.11",
+    "1John.3.8",
+    "1Kgs.11.27",
+    "1Pet.3.15",
+    "1Thess.3.7",
+    "1Tim.1.16",
+    "2Tim.1.6",
+    "Acts.10.21",
+    "Acts.19.8",
+    "Acts.19.9",
+    "Dan.4.34",
+    "Eph.3.1",
+    "Isa.1.18",
+    "Job.1.9",
+    "Josh.5.4",
+    "Luke.9.47",
+    "Mark.12.24",
+    "Prov.3.30"
+   ],
+   "nodes_here": 21,
+   "nodes_elsewhere": 26,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22473,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Reasoning is a done act of speech in seven Acts verses: Paul reasons in the synagogue, in the marketplace, in the hall of Tyrannus and before Felix (Act 17:2, 17:17, 18:4, 18:19, 19:8, 19:9, 24:25). The verb stands in the aorist or imperfect and is spoken to hearers, with persuading beside it in several; it is an exchange of grounds in speech and not a silent act.",
+   "verses": [
+    "Acts.17.17",
+    "Acts.17.2",
+    "Acts.18.19",
+    "Acts.18.4",
+    "Acts.19.8",
+    "Acts.19.9",
+    "Acts.24.25"
+   ],
+   "nodes_here": 7,
+   "nodes_elsewhere": 0,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22474,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "In Luk 9:47 the reasoning is inward: it is in the hearts of the disciples after their dispute, and it is Jesus who knows it, the knowing standing 1 word before the member. The same noun therefore gives an unspoken reasoning here and the spoken reasoning of the Acts verses.",
+   "verses": [
+    "Luke.9.47"
+   ],
+   "nodes_here": 1,
+   "nodes_elsewhere": 0,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22475,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "In 1Cor 13:11 the reckoning is the working out of a child and is set among speaking and thinking as one of the ways of a child; the verb is a past tense and is given up when the speaker became a man.",
+   "verses": [
+    "1Cor.13.11"
+   ],
+   "nodes_here": 1,
+   "nodes_elsewhere": 0,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22476,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "What the reasoning is on, where the verses give it, is the Scriptures in Act 17:2, the topics of righteousness, self-control and judgment before Felix in Act 24:25 and the kingdom of God in Act 19:8; the objects are matters of teaching put to hearers, with persuading as the aim in Act 18:4, 19:8.",
+   "verses": [
+    "Acts.17.2",
+    "Acts.18.4",
+    "Acts.19.8",
+    "Acts.24.25"
+   ],
+   "nodes_here": 4,
+   "nodes_elsewhere": 0,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22477,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "In the ground phrases 'for this reason' and 'the reason why' (G1223, G5124, G5484, G1352, G0156) the member names the ground on which an act or state stands: Paul's sending to learn of faith (1Th 3:5), the comfort he received (1Th 3:7), the mercy received (1Ti 1:16), his imprisonment and prayer (Eph 3:1, Eph 3:14), his hindering (Rom 15:22), the chain he wears (Act 28:20) and the reminder to Timothy (2Ti 1:6). In each the ground is stated first and what rests on it follows, 8 to 13 words later where the stored positions are given.",
+   "verses": [
+    "1Thess.3.5",
+    "1Thess.3.7",
+    "1Tim.1.16",
+    "2Tim.1.6",
+    "Acts.28.20",
+    "Eph.3.1",
+    "Eph.3.14",
+    "Rom.15.22"
+   ],
+   "nodes_here": 8,
+   "nodes_elsewhere": 0,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22478,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "The ground is set beside bearing and sin in four verses: sin is not borne by reason of the offering (Num 18:32), Paul could bear it no longer and sent (1Th 3:5), the sins are what the reasoning together addresses (Isa 1:18), and the Son of God appeared on the ground of the devil's sinning (1Jo 3:8). The reasoning or the ground is thus named where a burden or a sin stands within a few words.",
+   "verses": [
+    "1John.3.8",
+    "1Thess.3.5",
+    "Isa.1.18",
+    "Num.18.32"
+   ],
+   "nodes_here": 5,
+   "nodes_elsewhere": 0,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22479,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Knowing is stated as the ground of error in Mar 12:24: the ground of the error is a lack of knowledge, of the Scriptures and of God's power, and the negator reaches the knowing. In Luk 9:47 the knowing is Jesus' knowing of the disciples' reasoning. The ground and the knowing stand within two words of each other in both verses.",
+   "verses": [
+    "Luke.9.47",
+    "Mark.12.24"
+   ],
+   "nodes_here": 3,
+   "nodes_elsewhere": 0,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22480,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "The ground is denied in four verses: 'for no reason' (Job 1:9, Pro 3:30), no reason for the death penalty (Act 28:18) and the question whether this is not the reason (Mar 12:24). The negator reaches the reason itself in the first three, so the ground is stated as absent; in Mar 12:24 the question puts it as the answer.",
+   "verses": [
+    "Acts.28.18",
+    "Job.1.9",
+    "Mark.12.24",
+    "Prov.3.30"
+   ],
+   "nodes_here": 4,
+   "nodes_elsewhere": 0,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22481,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Where the ground is denied (Job 1:9, Pro 3:30, Act 28:18) the act is a refusal of a ground: Satan asks whether Job fears God for nothing, the proverb forbids contending without cause, and the Romans found no ground for the penalty.",
+   "verses": [
+    "Acts.28.18",
+    "Job.1.9",
+    "Prov.3.30"
+   ],
+   "nodes_here": 3,
+   "nodes_elsewhere": 0,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22482,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Two qualifiers give the reasoning its manner and length: 'three' Sabbath days in Act 17:2 (2 words before) gives how long it went on, and 'like a child' in 1Cor 13:11 (1 before and 2 after) gives the kind of reckoning. The qualifier of the ground in Rom 15:22 is 'often', which gives the repeated hindering the reason accounts for.",
+   "verses": [
+    "1Cor.13.11",
+    "Acts.17.2",
+    "Rom.15.22"
+   ],
+   "nodes_here": 3,
+   "nodes_elsewhere": 0,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22483,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Reasoning and the ground run in different directions across the verses: from Paul to hearers in the Acts verses, from Jesus to those he answers in Mar 12:24, from the Lord to the people in Isa 1:18, and from God to Paul in 1Ti 1:16, where mercy is received for this reason. God and Jesus are named more often than any human in these verses, and Paul, who reasons in the Acts verses, is not among the stored entities.",
+   "verses": [
+    "1Tim.1.16",
+    "Acts.24.25",
+    "Isa.1.18",
+    "Mark.12.24"
+   ],
+   "nodes_here": 4,
+   "nodes_elsewhere": 0,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22484,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Three words in the units of 'reason' do not carry the sense of the group: the copula H1961 in Eze 19:10 (flagged in #2533), the function words G2596 and G0302 in Act 18:14 and the adjective G2138 in Jam 3:17 ('open to reason', compliant). They are read as standalone in their verses; the causal phrase 'for this reason', which makes up most of the surface 'reason', is a ground and not a thought, which the double-meaning observation records.",
+   "verses": [
+    "Acts.18.14",
+    "Ezek.19.10",
+    "Jas.3.17"
+   ],
+   "nodes_here": 4,
+   "nodes_elsewhere": 0,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22644,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Believing meets the reasoning in four verses. In Act 19:9 the unbelief is 10 words before Paul's reasoning, as what the reasoning meets; in 1Th 3:5, 1Th 3:7 and 1Ti 1:16 faith or believing is 8 to 13 words after the phrase 'for this reason', as what the ground leads to. The reasoning answers unbelief, and the stated ground is followed by faith.",
+   "verses": [
+    "1Thess.3.5",
+    "1Thess.3.7",
+    "1Tim.1.16",
+    "Acts.19.9"
+   ],
+   "nodes_here": 5,
+   "nodes_elsewhere": 4,
+   "collections": [
+    "believe",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22645,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Words of duration stand 7 to 17 words from the reasoning or the ground in three verses (Dan 4:34, 1Ti 1:16, 1Pe 3:15), in other clauses and phrases (the everlasting kingdom, eternal life, always being prepared). The two meet only in that the verse says something is lasting beside the ground; no tie of grammar joins them.",
+   "verses": [
+    "1Pet.3.15",
+    "1Tim.1.16",
+    "Dan.4.34"
+   ],
+   "nodes_here": 3,
+   "nodes_elsewhere": 3,
+   "collections": [
+    "continual",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22646,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Bearing meets the ground in three verses: 'bear' is 2 words before the ground in Num 18:32 (bear no sin by reason of it) and 2 after in 1Th 3:5 (could bear it no longer), and 'patience' is 9 after in 1Ti 1:16. The ground is stated in the same clause as the bearing in the first two.",
+   "verses": [
+    "1Thess.3.5",
+    "1Tim.1.16",
+    "Num.18.32"
+   ],
+   "nodes_here": 3,
+   "nodes_elsewhere": 3,
+   "collections": [
+    "endure",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22647,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Knowing meets the reasoning and the ground in three verses. In Mar 12:24 the ground of the error is the lack of knowing (2 words after the phrase of reason) and the negator reaches the knowing; in Luk 9:47 Jesus' knowing is 1 word before the reasoning in the disciples' hearts; in 1Th 3:5 learning is 6 after the ground. Knowing is the ground or the knower of the reasoning.",
+   "verses": [
+    "1Thess.3.5",
+    "Luke.9.47",
+    "Mark.12.24"
+   ],
+   "nodes_here": 4,
+   "nodes_elsewhere": 3,
+   "collections": [
+    "know",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22648,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Sin meets the ground and the reasoning in three verses: sin is 1 word before the reason in Num 18:32 (no sin borne by reason of the offering), 4 after the reasoning together in Isa 1:18, and 3 and 9 before the ground in 1Jo 3:8 (the devil sinning from the beginning). Sin is the matter the reasoning addresses or the ground that is stated.",
+   "verses": [
+    "1John.3.8",
+    "Isa.1.18",
+    "Num.18.32"
+   ],
+   "nodes_here": 4,
+   "nodes_elsewhere": 5,
+   "collections": [
+    "sin",
+    "thought"
+   ]
+  }
+ ],
+ "answer": {
+  "command": "ReadSweep",
+  "collection": "thought",
+  "subgroup": "reasoning",
+  "older": [
+   {
+    "observation": 22315,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22382,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22383,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22384,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22385,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22386,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22421,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22422,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22423,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22433,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22440,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22447,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22473,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22474,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22475,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22476,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22477,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22478,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22479,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22480,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22481,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22482,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22483,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22484,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22644,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22645,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22646,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22647,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22648,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   }
+  ]
+ },
+ "measured": {
+  "package_chars": 26091,
+  "seconds": 0.11
+ }
+}

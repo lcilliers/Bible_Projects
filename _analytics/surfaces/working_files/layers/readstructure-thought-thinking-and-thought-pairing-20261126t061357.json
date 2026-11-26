@@ -1,0 +1,1299 @@
+{
+ "command": "ReadStructure",
+ "collection": "thought",
+ "subgroup": "thinking and thought",
+ "step": "2.1",
+ "item": "pairing",
+ "made": "2026-11-26T06:13:57Z",
+ "batch": {
+  "rows": 5,
+  "rows_left_after_this": 77
+ },
+ "instruction": {
+  "what": "Step 2.1, the structure of one subgroup (stage 1, B3): what stands with the subgroup's words in each verse, read from the stored structure. One item at a time: double-meaning (a surface with more than one code), qualifier (negators and the word each reaches, adjectives, adverbs, prepositional qualifiers), entity (who is named or referred to), direction (from whom to whom, by the grammar), pairing (one row for each partner collection: its words in the verses shared with the subgroup). Nothing here says what anything does for the inner being; that begins at step 3.1.",
+  "read": [
+   "Take one row at a time (`rows`): what it asks, its occurrences (`as`: member, the subgroup's word; partner, the other word), and its verses.",
+   "Read each verse (`verses`) from its stored structure, one line for each word: * marks an occurrence of the subgroup; then the position, surface, Strong's code and morph, and what the pairing makes of the word (its type, the qualifier it carries, a negator, a party, the collections of a word of another collection). Nothing is evaluated that is not stored.",
+   "Where each word stands: its side and distance from the subgroup's word, from the positions. Adjacency is not scope: a negator or qualifier is read for the word it reaches by the grammar.",
+   "A pairing row shows the WordNet control for its partner collection: a pairing WordNet gives and the verses do not show is one to look for; a pairing only the verses show has no control.",
+   "Differences in meaning are read from the base data (the Strong's code, the morph, the construction), not from the English alone. The subgroup's 1.1 senses (`senses`) are what the findings build on."
+  ],
+  "write": [
+   "Fill `answer.rows`: for each row, disposition observed with its `findings`, or none with its `reason` (where the row allows none: nothing of the item stands with the subgroup in its verses).",
+   "One finding for each distinct thing the structure shows; the same finding in several verses is ONE finding naming all its occurrences; a verse that shows something different is its own finding. Together the findings name every occurrence of the row (occurrence ids or verse references), each in one finding.",
+   "kind: as the template gives it (pairing; relation for direction; face for double-meaning). obs_text: concise; names the verses it holds in, as the package writes the references (for example Act 18:4); states what the structure shows (which word, where it stands, what it reaches or gives by the grammar); never a verse restated, never what it does for the inner being.",
+   "basis: stated (the verse says it) or read (read from the structure), with `grounds`: words copied exactly from the verses it is tied to (the record checks them).",
+   "Each subgroup's surface has its own finding; none joins two subgroups. A data error is named in grounds, not fixed.",
+   "`older`: answer each older observation shown under the row, once: keep (with `nature`), restate (with `nature`, `new_text`, `checked`), merge (with `into`), consume (with `carriers` [\"this\"] or observation ids, and `mapping`), delete_neither (with `reason`), carry (with `to` and `reason`), defer (with `collection`, `nature`, `finding`). One listed under another row is answered there.",
+   "Then: Collection-Build.ps1 -Action RecordStructure -File <the answer file> (-Check to preview). The record refuses the whole file on any fault and lists every fault."
+  ],
+  "keep": [
+   {
+    "rule": "RG-14 morph-read",
+    "text": "Morph is read, not carried: where occurrences of a word show different stems or voices, record whether the subject does, undergoes or causes the act."
+   },
+   {
+    "rule": "RG-16 homonym-and-data-error",
+    "text": "A word that is only a homonym or a name, with no meaningful context, is recorded as such (tag no-human-context) and left. Data errors found while reading are flagged (tag data-error), not fixed in the reading."
+   },
+   {
+    "rule": "RG-21 grain",
+    "text": "A word is read per its lettered Strong's code (its grain), never the bare lemma (B:113). The occurrences of a word with several senses are related per grain and never aggregated across grains: related verses are same-grain occurrences."
+   },
+   {
+    "rule": "RO11 one-row-per-code",
+    "text": "One observation per finding, never a duplicate description; a finding applying to several verses or words carries several nodes, each with the word's role in it."
+   },
+   {
+    "rule": "RW-03 no-duplicates-multi-node",
+    "text": "One observation per finding: the same description is never written twice. Applied to another verse, word or scope it gains a node on the existing observation."
+   },
+   {
+    "rule": "RW-04 concise-verse-specific",
+    "text": "Observation text is concise and tied to this verse's content, never a restatement of the word's dictionary sense. A transliteration is never given without its gloss."
+   },
+   {
+    "rule": "RW-08 slants-own-rows",
+    "text": "Where the evidence points to more than one reading, each is its own observation with its own evidence."
+   },
+   {
+    "rule": "RW-09 reread-builds-on-prior",
+    "text": "A re-read includes the observations already recorded for the verse, so the reading sees prior findings and builds on them."
+   },
+   {
+    "rule": "RW-11 missing-is-named",
+    "text": "Missing data in the base extract is named as a gap, never substituted from memory or outside knowledge."
+   },
+   {
+    "rule": "RW-13 older-observations-answered-at-record",
+    "text": "Every older live observation with a live node on an occurrence of the row (a stage that is not the build's own) is answered in fill.older when the row is recorded, once: keep or restate (each with its marker), merge into a named observation, consume (live observations carry its meaning, stated in words, verified before it is deleted), delete as neither (comment first), or defer to a named collection (marked now; only the finding is left to that collection). An observation already marked by the validation, answered in a build or deferred is not asked again. A new observation whose text equals that of another live observation of the collection is refused, the other named. LayerCheck re-derives both from the tables. The end state of a collection's build is that every observation of its scope is marked and fixed or deleted, every word node complete or with its reason, and each deferral owned by a named collection."
+   },
+   {
+    "rule": "RS-04 existing-checked-accept-modify-delete",
+    "text": "When a verse is worked, every existing observation and node on it, of any stage, is checked against the verse by its wording. The stage is not an indication of the nature of an observation and is never used to filter. Each observation is accepted, modified (changed in place; the old value, the new value and the reason are kept in ib_observation_change), soft deleted (the `deleted` column, with the reason), merged (a duplicate description, into the observation that is kept) or, when its wording shows it is not verse understanding, left exactly as it is with the reason. The check's fixes are part of it and need no separate approval. Nothing is physically deleted."
+   },
+   {
+    "rule": "LR-02 nodes-are-built-from-the-data",
+    "text": "The nodes of a layer observation are the occurrences the aspect demands (a word's occurrences, the group's occurrences, the partner's occurrences in the verses they share), written by the recorder with the collection and the subgroup of each surface; they are never typed. An item answered by senses (word-sense) names, for each sense, the occurrences it holds for, and together the senses cover every occurrence; the recorder checks them against the data. The interpretation is the observation text, founded in what the evidence shows (basis stated or read, B:131) and tied to its verses (the text names them and does not restate them): the items of every step (S1, 1.1, 1.2, 2.1) state what the dictionary, the verses and the stored structure show of a word and never what a word does for the inner being; their nodes carry the role lexical and no route. The whole file is checked and written in one transaction; any problem refuses all of it. A row answered again withdraws its earlier observations with the reason."
+   },
+   {
+    "rule": "LR-03 none-needs-a-permitted-reason",
+    "text": "An aspect is recorded as none only where its item allows it (cfg_setting layer.reading none_allowed) and with its reason in words. A group definition and a group's Strong's enrichment are always observed."
+   },
+   {
+    "rule": "DA-02 a-node-per-occurrence-with-its-surfaces-collection",
+    "text": "A node is on one occurrence (verse_lexical_id) and carries the collection of its surface (a supportive node, the collection of the surface it supports); a node already on the observation for the same occurrence is not written twice, and takes the role. A node with no collection to carry, or on a verse out of scope (B:130), is not written and is listed."
+   },
+   {
+    "rule": "VA-03 consumption-is-verified-before-deletion",
+    "text": "An older observation is deleted as consumed only when live observations carry its meaning: every word occurrence of it is on a live node of a carrier or named as not carried with its reason, the mapping is stated in words (what the old says, which carrier states each part), the traces to it are re-pointed or replaced, and the consumption is kept as `consumed_by`. An observation that holds more than one finding is split first."
+   },
+   {
+    "rule": "VA-04 neither-evidence-nor-inner-being-is-deleted",
+    "text": "An observation that is neither evidence nor inner being contributes nothing to the purposes of the observations (researcher, 2026-11-22): it is commented with its reason and the word occurrences no other live observation holds, then deleted. An observation already marked, or one another observation traces, is not deleted this way."
+   }
+  ],
+  "not_in_this_read": ""
+ },
+ "senses": [
+  {
+   "sense": 22894,
+   "text": "God's thoughts, and the contrast with man's: his thoughts toward his people are many and very deep, the nations do not know the Lord's thoughts, his thoughts are not man's and are as high above them as the heavens, and his thoughts are precious to the psalmist. The thoughts are the Lord's own purposes and mind. Verses: Psa 40:5, Psa 92:5, Psa 139:17, Isa 55:8, Isa 55:9, Mic 4:12.",
+   "verses": [
+    "Ps.40.5",
+    "Ps.92.5",
+    "Ps.139.17",
+    "Isa.55.8",
+    "Isa.55.9",
+    "Mic.4.12"
+   ]
+  },
+  {
+   "sense": 22903,
+   "text": "A question that asks for a hearer's view: 'what do you think?' is put to Simon, to the hearers, to the lawyer, to the chief priests and to those looking for Jesus. It asks the person to give a judgment he already forms. Verses: Mat 17:25, Mat 18:12, Mat 21:28, Mat 22:17, Mat 22:42, Luk 10:36, Joh 11:56.",
+   "verses": [
+    "Matt.17.25",
+    "Matt.18.12",
+    "Matt.21.28",
+    "Matt.22.17",
+    "Matt.22.42",
+    "Luke.10.36",
+    "John.11.56"
+   ]
+  },
+  {
+   "sense": 22904,
+   "text": "What seems right or best in someone's eyes: the Hebrew word for eye in the idiom of what appears good to a person, rendered think, think best or thought good. It is a person's own judgment of what is good or fitting. Verses: Num 36:6, 2Sa 10:3, 1Ch 19:3, Jer 40:4, Jer 40:5, 2Sa 3:19.",
+   "verses": [
+    "Num.36.6",
+    "2Sam.10.3",
+    "1Chr.19.3",
+    "Jer.40.4",
+    "Jer.40.5",
+    "2Sam.3.19"
+   ]
+  },
+  {
+   "sense": 22905,
+   "text": "A thought quoted as inner speech: the Hebrew verb of saying introduces what a person says in himself, and the quoted sentence gives the thought; the Greek of Luk 12:17 does the same with the rich man's words to himself. The thought is inner speech, usually about what others will do or what will follow, and the verse often shows it wrong. Verses: Gen 32:8, 1Sa 27:11, 1Sa 27:12, 2Sa 5:6, 2Ki 7:12, 2Ch 32:1, Neh 6:9, Psa 64:5, 1Sa 20:3, Gen 20:11, Gen 26:9, Gen 31:31, Gen 32:20, Exo 2:14, Jos 22:28, Judg 3:24, Judg 15:2, Rut 4:4, 1Sa 16:6, 1Sa 18:11, 1Sa 18:17, 1Sa 18:21, 1Sa 20:26, 2Sa 14:15, 2Sa 14:17, 2Sa 21:16, 2Ki 5:11, 2Ki 20:19, Job 29:18, Psa 94:18, Isa 39:8, Jer 3:7, Jer 3:19, Eze 20:32, Luk 12:17.",
+   "verses": [
+    "Gen.32.8",
+    "1Sam.27.11",
+    "1Sam.27.12",
+    "2Sam.5.6",
+    "2Kgs.7.12",
+    "2Chr.32.1",
+    "Neh.6.9",
+    "Ps.64.5",
+    "1Sam.20.3",
+    "Gen.20.11",
+    "Gen.26.9",
+    "Gen.31.31",
+    "Gen.32.20",
+    "Exod.2.14",
+    "Josh.22.28",
+    "Judg.3.24",
+    "Judg.15.2",
+    "Ruth.4.4",
+    "1Sam.16.6",
+    "1Sam.18.11",
+    "1Sam.18.17",
+    "1Sam.18.21",
+    "1Sam.20.26",
+    "2Sam.14.15",
+    "2Sam.14.17",
+    "2Sam.21.16",
+    "2Kgs.5.11",
+    "2Kgs.20.19",
+    "Job.29.18",
+    "Ps.94.18",
+    "Isa.39.8",
+    "Jer.3.7",
+    "Jer.3.19",
+    "Ezek.20.32",
+    "Luke.12.17"
+   ]
+  },
+  {
+   "sense": 22906,
+   "text": "Planning or intending: the Assyrian's heart is set on destroying nations, the prophets intend to make the people forget the name, the Lord plans for his people what they planned, and the one who speaks against God intends to change times and laws. The verbs are of devising and purpose. Verses: Job 6:26, Isa 10:7, Jer 23:27, Dan 7:25, Num 33:56, 1Sa 18:25.",
+   "verses": [
+    "Job.6.26",
+    "Isa.10.7",
+    "Jer.23.27",
+    "Dan.7.25",
+    "Num.33.56",
+    "1Sam.18.25"
+   ]
+  },
+  {
+   "sense": 22907,
+   "text": "Giving thought to something: calling to mind, reflecting on, attending to, taking thought for or turning the mind to what is named: the psalmist thinks on his ways and on the Lord's rules, the Lord takes thought for the poor, the prudent give thought to their steps, the believer is to think on what is excellent, Jerusalem took no thought of her end. The word is attention of the mind to a matter or person. Verses: Psa 119:52, Psa 119:59, Psa 144:3, Mat 9:4, Eph 3:20, Phili 4:8, Heb 11:15, Psa 40:17, Psa 48:9, Psa 73:16, Pro 14:15, Pro 21:29, Lam 1:9, Jon 1:6.",
+   "verses": [
+    "Ps.119.52",
+    "Ps.119.59",
+    "Ps.144.3",
+    "Matt.9.4",
+    "Eph.3.20",
+    "Phil.4.8",
+    "Heb.11.15",
+    "Ps.40.17",
+    "Ps.48.9",
+    "Ps.73.16",
+    "Prov.14.15",
+    "Prov.21.29",
+    "Lam.1.9",
+    "Jonah.1.6"
+   ]
+  },
+  {
+   "sense": 22908,
+   "text": "Reckoning something as so, judging or counting: Paul judges it necessary, a thing is counted unclean by the one who holds it so, the unbelief of Act 26:8 is judged incredible, Judah takes the covered woman for a prostitute, and Job 41:32 counts the deep as white-haired. The word is a judgment that counts or takes something as of a certain kind. Verses: Job 35:2, Job 41:32, 2Cor 12:6, 2Pe 1:13, Rom 14:14, Gen 38:15, Act 26:8, 2Cor 9:5, Phili 2:25.",
+   "verses": [
+    "Job.35.2",
+    "Job.41.32",
+    "2Cor.12.6",
+    "2Pet.1.13",
+    "Rom.14.14",
+    "Gen.38.15",
+    "Acts.26.8",
+    "2Cor.9.5",
+    "Phil.2.25"
+   ]
+  },
+  {
+   "sense": 22909,
+   "text": "Being minded: the way a person is set in mind, to rate oneself soberly in Rom 12:3, to hold the same mind or another in Phili 3:15, and the child's mindedness given up in 1Cor 13:11. The Greek verb is of being of a mind or having an attitude. Verses: Rom 12:3, Phili 3:15, 1Cor 13:11.",
+   "verses": [
+    "Rom.12.3",
+    "Phil.3.15",
+    "1Cor.13.11"
+   ]
+  },
+  {
+   "sense": 22910,
+   "text": "Thoughts as purposes and devices: the intention of the heart in Gen 6:5, the schemes of the wicked, the thoughts the righteous and the wicked hold, the thoughts to be forsaken, and the wicked thoughts that lodge within. The word is of purpose, plan and device, and the verses place it in the heart. Verses: 1Ch 28:9, Gen 6:5, 1Ch 29:18, Job 21:27, Psa 10:4, Psa 56:5, Psa 94:11, Pro 12:5, Pro 15:26, Isa 55:7, Isa 59:7, Isa 66:18, Jer 4:14, Lam 3:62.",
+   "verses": [
+    "1Chr.28.9",
+    "Gen.6.5",
+    "1Chr.29.18",
+    "Job.21.27",
+    "Ps.10.4",
+    "Ps.56.5",
+    "Ps.94.11",
+    "Prov.12.5",
+    "Prov.15.26",
+    "Isa.55.7",
+    "Isa.59.7",
+    "Isa.66.18",
+    "Jer.4.14",
+    "Lam.3.62"
+   ]
+  },
+  {
+   "sense": 22911,
+   "text": "Thoughts as what arises and is held in the mind, known to God or others: they come out of the heart, are perceived by Jesus, are alarmed or answered, are known by the spirit of the person or by the Lord, are shaped by ease, and are led astray. The words are nouns of thought, reasoning and musing, in many Hebrew, Aramaic and Greek words, with the heart or the mind as their place. Verses: Deu 15:9, Job 12:5, Ecc 9:10, Amo 4:13, 2Cor 10:5, Job 20:2, Psa 139:2, Psa 139:23, Ecc 10:20, Eze 38:10, Dan 2:29, Dan 2:30, Dan 4:19, Dan 5:6, Dan 5:10, Dan 7:28, Mat 12:25, Mat 15:19, Mar 7:21, Luk 1:51, Luk 2:35, Luk 5:22, Luk 6:8, Luk 11:17, 1Cor 2:11, 1Cor 3:20, 2Cor 11:3, Heb 4:12, Jam 2:4.",
+   "verses": [
+    "Deut.15.9",
+    "Job.12.5",
+    "Eccl.9.10",
+    "Amos.4.13",
+    "2Cor.10.5",
+    "Job.20.2",
+    "Ps.139.2",
+    "Ps.139.23",
+    "Eccl.10.20",
+    "Ezek.38.10",
+    "Dan.2.29",
+    "Dan.2.30",
+    "Dan.4.19",
+    "Dan.5.6",
+    "Dan.5.10",
+    "Dan.7.28",
+    "Matt.12.25",
+    "Matt.15.19",
+    "Mark.7.21",
+    "Luke.1.51",
+    "Luke.2.35",
+    "Luke.5.22",
+    "Luke.6.8",
+    "Luke.11.17",
+    "1Cor.2.11",
+    "1Cor.3.20",
+    "2Cor.11.3",
+    "Heb.4.12",
+    "Jas.2.4"
+   ]
+  },
+  {
+   "sense": 22912,
+   "text": "Supposing, holding a belief or imagining something to be so: the belief is stated or put in question, often about oneself or about another, and the verse tests, corrects or reproves it. The hearers think the Gentiles' many words will be heard, that Jesus cannot appeal to his Father, that he came to give peace, that they are wise, stand, or are religious; in the Hebrew verses the speaker is told what the hearer thinks or the Lord says what the house of Israel thinks. The word is a belief held and not yet tested. Verses: 2Sa 18:27, 2Ki 18:20, 2Ch 13:8, Est 4:13, Isa 36:5, Eze 11:5, Mat 5:17, Mat 6:7, Mat 10:34, Mat 26:53, Luk 12:51, Luk 13:2, Luk 13:4, Joh 5:39, Joh 5:45, Joh 16:2, Act 17:29, 1Cor 4:9, 1Cor 7:26, 1Cor 7:40, 1Cor 12:23, 2Cor 11:16, Heb 10:29, 2Cor 12:19, Phili 1:17, Luk 8:18, 1Cor 3:18, 1Cor 7:36, 1Cor 10:12, 1Cor 14:37, Gal 6:3, Phili 3:4, Jam 1:26, Psa 50:21, Mat 20:10, Mar 6:49, Luk 24:37, Joh 11:13, Joh 13:29, Act 8:20, Act 12:9.",
+   "verses": [
+    "2Sam.18.27",
+    "2Kgs.18.20",
+    "2Chr.13.8",
+    "Esth.4.13",
+    "Isa.36.5",
+    "Ezek.11.5",
+    "Matt.5.17",
+    "Matt.6.7",
+    "Matt.10.34",
+    "Matt.26.53",
+    "Luke.12.51",
+    "Luke.13.2",
+    "Luke.13.4",
+    "John.5.39",
+    "John.5.45",
+    "John.16.2",
+    "Acts.17.29",
+    "1Cor.4.9",
+    "1Cor.7.26",
+    "1Cor.7.40",
+    "1Cor.12.23",
+    "2Cor.11.16",
+    "Heb.10.29",
+    "2Cor.12.19",
+    "Phil.1.17",
+    "Luke.8.18",
+    "1Cor.3.18",
+    "1Cor.7.36",
+    "1Cor.10.12",
+    "1Cor.14.37",
+    "Gal.6.3",
+    "Phil.3.4",
+    "Jas.1.26",
+    "Ps.50.21",
+    "Matt.20.10",
+    "Mark.6.49",
+    "Luke.24.37",
+    "John.11.13",
+    "John.13.29",
+    "Acts.8.20",
+    "Acts.12.9"
+   ]
+  },
+  {
+   "sense": 22895,
+   "text": "Conceiving evil as if in a womb: wicked people conceive trouble, chaff and mischief and give birth to evil, stubble and iniquity. The same verb of conceiving is turned to what a person forms within and brings out in act. Verses: Job 15:35, Isa 33:11, Isa 59:4.",
+   "verses": [
+    "Job.15.35",
+    "Isa.33.11",
+    "Isa.59.4"
+   ]
+  },
+  {
+   "sense": 22896,
+   "text": "Conceiving a child: the woman becomes pregnant and bears, in the promises and announcements of a son, in the question of the barren, in the cleansed woman who will conceive, in the confession of the psalmist that his mother conceived him in sin, and in the sign of the virgin. The words are Hebrew and Greek verbs and nouns of pregnancy and seed, and the English 'conceive' is bodily. Verses: Num 5:28, Num 11:12, Judg 13:3, Judg 13:5, Judg 13:7, Psa 51:5, Isa 7:14, Mat 1:23, Luk 1:31, Heb 11:11.",
+   "verses": [
+    "Num.5.28",
+    "Num.11.12",
+    "Judg.13.3",
+    "Judg.13.5",
+    "Judg.13.7",
+    "Ps.51.5",
+    "Isa.7.14",
+    "Matt.1.23",
+    "Luke.1.31",
+    "Heb.11.11"
+   ]
+  },
+  {
+   "sense": 22897,
+   "text": "'Opinion' in the phrase about not caring for anyone's opinion: the Greek verb is of looking, and the phrase is that Jesus does not look at the person's face, that is, does not weigh people by standing. It is regard for status, not a view held. Verses: Mat 22:16, Mar 12:14.",
+   "verses": [
+    "Matt.22.16",
+    "Mark.12.14"
+   ]
+  },
+  {
+   "sense": 22898,
+   "text": "Opinion as a view that a person holds and declares: Elihu is afraid to declare his opinion and then insists on it, and the fool takes pleasure only in declaring what his heart holds. It is a person's own view, set against understanding. Verses: Job 32:6, Job 32:10, Job 32:17, Pro 18:2.",
+   "verses": [
+    "Job.32.6",
+    "Job.32.10",
+    "Job.32.17",
+    "Prov.18.2"
+   ]
+  },
+  {
+   "sense": 22899,
+   "text": "'Perhaps' as the captain's hope that the god may give a thought to them: the Hebrew particle of possibility, carrying no thinking of its own. Verses: Jon 1:6.",
+   "verses": [
+    "Jonah.1.6"
+   ]
+  },
+  {
+   "sense": 22900,
+   "text": "'With no thought of war' as turning back from war: the Hebrew verb is of returning, said of the trusting passers-by who are stripped. It is a turning back, not a thought. Verses: Mic 2:8.",
+   "verses": [
+    "Mic.2.8"
+   ]
+  },
+  {
+   "sense": 22901,
+   "text": "'Well thought of' as a good report: the Greek noun is of testimony, the overseer must have a good report from outsiders. It is how others speak of him, not what he thinks. Verses: 1Ti 3:7.",
+   "verses": [
+    "1Tim.3.7"
+   ]
+  },
+  {
+   "sense": 22902,
+   "text": "Thinking as the way the mind works, its understanding or frame: the thinking of people who knew God becomes futile, the believers are to be mature and not children in their thinking, and they are to arm themselves with Christ's way of thinking. It is the mind's mode, with a measure of maturity or futility. Verses: Rom 1:21, 1Cor 14:20, 1Pe 4:1.",
+   "verses": [
+    "Rom.1.21",
+    "1Cor.14.20",
+    "1Pet.4.1"
+   ]
+  }
+ ],
+ "verses": [
+  {
+   "reference": "Gen 32:8",
+   "text": "thinking, “ If Esau comes to the one camp and attacks it, then the camp that is left will escape.”",
+   "words": [
+    "*0 thinking H0559 HVqw3ms | member of this collection",
+    " 1 if H0518A HTc | connective",
+    " 2 esau H6215G HNpm | entity (human); party human",
+    " 3 comes H0935G HVqi3ms",
+    " 4 one H0259 HAcfsa | qualifier candidate; qualifier morph: adjective",
+    " 4 [the] H9009 HTd",
+    " 5 camp H4264 HNcfsa",
+    " 5 [the] H9009 HTd",
+    " 5 camp H0413 HR",
+    " 6 attacks H5221 HVhq3ms",
+    " 7 camp H4264 HNcfsa",
+    " 7 [the] H9009 HTd",
+    " 7 him H9033 HSp3ms",
+    " 7 camp H1961 HVqq3ms",
+    " 8 left H7604 HVNrmsa",
+    " 8 [the] H9009 HTd",
+    " 9 escape H6413 HNcfsa | word of another collection; collections escape",
+    " 9 to/for H9005 HR"
+   ]
+  },
+  {
+   "reference": "Judg 13:3",
+   "text": "And the angel of the Lord appeared to the woman and said to her, “Behold, you are barren and have not borne children, but you shall conceive and bear a son.",
+   "words": [
+    " 0 angel H4397H HNcmsc",
+    " 1 lord H3068G HNpt | entity (divine); party divine",
+    " 2 appeared H7200L HVNw3ms",
+    " 3 to H0413 HR",
+    " 4 woman H0802G HNcfsa | entity (human); party human",
+    " 4 [the] H9009 HTd",
+    " 5 said H0559 HVqw3ms",
+    " 6 you H0859C HPp2fs",
+    " 7 barren H6135 HAafsa | word of another collection; qualifier morph: adjective; collections dry",
+    " 7 barren H0413 HRd | word of another collection; collections dry",
+    " 7 her H9034 HSp3fs",
+    " 7 barren H2009 HTj | word of another collection; collections dry",
+    " 7 barren H4994 HTj | word of another collection; collections dry",
+    " 8 not H3808 HTn | negator; qualifier negator; negator",
+    " 9 borne children H3205 HVqp2fs",
+    " 9 and H9002 HC | connective",
+    "*10 conceive H2029 HVqq2fs | member of this collection",
+    " 11 bear H3205 HVqq2fs | word of another collection; collections endure",
+    " 12 son H1121A HNcmsa"
+   ]
+  },
+  {
+   "reference": "Judg 13:5",
+   "text": "for behold, you shall conceive and bear a son. No razor shall come upon his head, for the child shall be a Nazirite to God from the womb, and he shall begin to save Israel from the hand of the Philistines.”",
+   "words": [
+    "*0 conceive H2030A HAafsa | member of this collection; qualifier morph: adjective",
+    " 0 for H3588A HTc",
+    " 0 behold H2009 HTj",
+    " 0 you H9042 HSp2fs",
+    " 1 bear H3205 HVqrfsa | word of another collection; collections endure",
+    " 2 son H1121A HNcmsa",
+    " 3 razor H4177 HNcfsa",
+    " 3 and H9002 HC | connective",
+    " 4 come upon H5927G HVqi3ms",
+    " 4 come upon H3808 HTn | negator; qualifier negator; negator",
+    " 5 head H7218A HNcmsc",
+    " 5 head H5921A HR",
+    " 6 child H5288 HNcmsa | entity (human); party human",
+    " 6 [the] H9009 HTd",
+    " 6 child H1961 HVqi3ms",
+    " 7 nazirite H5139 HNgmsc",
+    " 7 his H9023 HSp3ms",
+    " 7 nazirite H3588A HTc | connective",
+    " 8 god H0430G HNcmpa | entity (divine); party divine",
+    " 9 from H4480A HR",
+    " 10 womb H0990H HNcfsa",
+    " 10 [the] H9009 HTd",
+    " 11 he H1931 HPp3ms",
+    " 12 begin H2490C HVhi3ms",
+    " 12 and H9002 HC | connective",
+    " 13 save H3467 HVhcc | word of another collection; collections save",
+    " 13 to/for H9005 HR",
+    " 14 israel H3478 HNpl",
+    " 14 israel H0853 HTo",
+    " 15 hand H3027H HNcbsc",
+    " 15 from H9006 HR",
+    " 16 philistines H6430G HNgmpa"
+   ]
+  },
+  {
+   "reference": "Judg 13:7",
+   "text": "but he said to me, ‘Behold, you shall conceive and bear a son. So then drink no wine or strong drink, and eat nothing unclean, for the child shall be a Nazirite to God from the womb to the day of his death.’”",
+   "words": [
+    " 0 said H0559 HVqw3ms",
+    "*1 conceive H2030A HAafsa | member of this collection; qualifier morph: adjective",
+    " 1 to/for H9005 HRd",
+    " 1 me H9030 HSp1bs",
+    " 1 behold H2009 HTj",
+    " 1 you H9042 HSp2fs",
+    " 2 bear H3205 HVqrfsa | word of another collection; collections endure",
+    " 3 son H1121A HNcmsa",
+    " 4 drink H7941 HNcmsa",
+    " 4 and H9002 HC | connective",
+    " 5 wine H3196 HNcmsa",
+    " 6 strong drink H8354 HVqj2fs",
+    " 6 strong drink H6258 HD | qualifier candidate; qualifier morph: adverb",
+    " 6 and H9002 HC | connective",
+    " 6 strong drink H0408 HTn | negator; qualifier negator; negator",
+    " 7 eat H0398 HVqj2fs",
+    " 7 eat H0408 HTn | negator; qualifier negator; negator",
+    " 7 and H9002 HC | connective",
+    " 8 nothing unclean H2932 HNcfsa | word of another collection; collections unclean",
+    " 8 nothing unclean H3605 HNcmsc | word of another collection; collections unclean",
+    " 9 child H5288 HNcmsa | entity (human); party human",
+    " 9 [the] H9009 HTd",
+    " 9 child H1961 HVqi3ms",
+    " 10 nazirite H5139 HNgmsc",
+    " 10 nazirite H3588A HTc | connective",
+    " 11 god H0430G HNcmpa | entity (divine); party divine",
+    " 12 from H4480A HR",
+    " 13 womb H0990H HNcfsa",
+    " 13 [the] H9009 HTd",
+    " 14 day H3117G HNcmsc",
+    " 14 day H5704 HR",
+    " 15 his H9023 HSp3ms",
+    " 16 death H4194 HNcmsc | word of another collection; collections die"
+   ]
+  },
+  {
+   "reference": "2Ch 13:8",
+   "text": "“And now you think to withstand the kingdom of the Lord in the hand of the sons of David, because you are a great multitude and have with you the golden calves that Jeroboam made you for gods.",
+   "words": [
+    " 0 now H6258 HD | qualifier candidate; qualifier morph: adverb",
+    " 0 and H9002 HC | connective",
+    " 1 you H0859D HPp2mp",
+    "*2 think H0559 HVqrmpa | member of this collection",
+    " 3 withstand H2388J HVtcc | word of another collection; collections endure",
+    " 3 to/for H9005 HR",
+    " 4 kingdom H6440G HNcmpc",
+    " 4 to/for H9005 HR",
+    " 4 kingdom H4467 HNcfsc",
+    " 5 lord H3068G HNpt | entity (divine); party divine",
+    " 6 hand H3027H HNcbsc",
+    " 6 in/on/with H9003 HR",
+    " 7 sons H1121G HNcmpc",
+    " 8 david H1732 HNpm | entity (human); party human",
+    " 9 great H7227A HAamsa | qualifier candidate; qualifier morph: adjective",
+    " 10 multitude H1995A HNcmsa",
+    " 10 multitude H0859D HPp2mp",
+    " 10 and H9002 HC | connective",
+    " 11 golden H2091 HNcmsa",
+    " 12 calves H5695 HNcmpc",
+    " 12 and H9002 HC | connective",
+    " 12 calves H5973A HR",
+    " 12 you H9036 HSp2mp",
+    " 13 jeroboam H3379G HNpm | entity (human); party human",
+    " 13 to/for H9005 HR",
+    " 13 you H9036 HSp2mp",
+    " 14 made H6213H HVqp3ms",
+    " 14 made H0834A HTr | connective",
+    " 15 gods H0430J HNcmpa",
+    " 15 to/for H9005 HR"
+   ]
+  },
+  {
+   "reference": "Est 4:13",
+   "text": "Then Mordecai told them to reply to Esther, “Do not think to yourself that in the king’s palace you will escape any more than all the other Jews.",
+   "words": [
+    " 0 mordecai H4782H HNpm | entity (human); party human",
+    " 1 told H0559 HVqw3ms",
+    " 2 reply H7725M HVhcc | word of another collection; collections profess",
+    " 2 to/for H9005 HR",
+    " 3 to H0413 HR",
+    " 4 esther H0635 HNpf | entity (human); party human",
+    "*5 think H1819 HVpj2fs | member of this collection",
+    " 5 not H0408 HTn | negator",
+    " 6 yourself H5315I HNcfsc",
+    " 6 in/on/with H9003 HR",
+    " 7 king’s H4428G HNcmsa",
+    " 7 [the] H9009 HTd",
+    " 8 palace H1004B HNcmsc",
+    " 9 escape H4422 HVNcc | word of another collection; collections escape",
+    " 9 to/for H9005 HR",
+    " 9 your H9022 HSp2fs",
+    " 10 any H3605 HNcmsc",
+    " 11 all H9006 HR",
+    " 12 jews H3064 HNgmpa",
+    " 12 [the] H9009 HTd"
+   ]
+  },
+  {
+   "reference": "Job 20:2",
+   "text": "“ Therefore my thoughts answer me, because of my haste within me.",
+   "words": [
+    " 0 therefore H3651C HD | qualifier candidate; qualifier morph: adverb",
+    " 0 to/for H9005 HR",
+    "*1 thoughts H5587B HNcmpc | member of this collection",
+    " 2 answer H7725M HVhi3mp | word of another collection; collections profess",
+    " 2 my H9020 HSp1bs",
+    " 3 my H9040 HSp1bs",
+    " 4 haste H2363A HVqcc | word of another collection; collections earnest",
+    " 4 me H9030 HSp1bs",
+    " 4 haste H5668 HNcmsa | word of another collection; collections earnest",
+    " 4 in/on/with H9003 HR",
+    " 4 and H9002 HC | connective",
+    " 5 in/on/with H9003 HR",
+    " 5 me H9030 HSp1bs"
+   ]
+  },
+  {
+   "reference": "Isa 7:14",
+   "text": "Therefore the Lord himself will give you a sign. Behold, the virgin shall conceive and bear a son, and shall call his name Immanuel.",
+   "words": [
+    " 0 therefore H3651C HD | qualifier candidate; qualifier morph: adverb",
+    " 0 to/for H9005 HR",
+    " 1 lord H0136 HNpt",
+    " 2 give H5414G HVqi3ms | word of another collection; collections share",
+    " 3 sign H0226G HNcfsa",
+    " 3 sign H1931 HPp3ms",
+    " 3 to/for H9005 HR",
+    " 3 you H9036 HSp2mp",
+    " 4 behold H2009 HTj",
+    " 5 virgin H5959 HNcfsa",
+    " 5 [the] H9009 HTd",
+    "*6 conceive H2030A HAafsa | member of this collection; qualifier morph: adjective",
+    " 7 bear H3205 HVqrfsa | word of another collection; collections endure",
+    " 8 son H1121A HNcmsa",
+    " 9 call H7121H HVqq3fs | word of another collection; collections call",
+    " 10 name H8034 HNcmsc",
+    " 11 immanuel H6005 HNpm | entity (human); party human",
+    " 11 his H9023 HSp3ms"
+   ]
+  },
+  {
+   "reference": "Jer 40:5",
+   "text": "If you remain, then return to Gedaliah the son of Ahikam, son of Shaphan, whom the king of Babylon appointed governor of the cities of Judah, and dwell with him among the people. Or go wherever you think it right to go.” So the captain of the guard gave him an allowance of food and a present, and let him go.",
+   "words": [
+    " 0 remain H7725G HVqi3ms | word of another collection; collections endure",
+    " 0 remain H5750 HAcmsc | word of another collection; qualifier morph: adjective; collections endure",
+    " 0 he H9043 HSp3ms",
+    " 0 and H9002 HC | connective",
+    " 0 remain H3808 HTn | negator; qualifier negator; negator",
+    " 1 return H7725G HVqv2ms | word of another collection; collections return",
+    " 2 to H0413 HR",
+    " 3 gedaliah H1436G HNpm | entity (human); party human",
+    " 3 [emph.?] H9012 HSh",
+    " 4 son H1121A HNcmsc",
+    " 5 ahikam H0296 HNpm | entity (human); party human",
+    " 6 son H1121A HNcmsc",
+    " 7 shaphan H8227B HNpm | entity (human); party human",
+    " 8 whom H0834A HTr | connective",
+    " 9 king H4428G HNcmsc",
+    " 10 babylon H0894 HNpl",
+    " 11 governor H6485J HVhp3ms",
+    " 12 cities H5892B HNcmpc",
+    " 12 in/on/with H9003 HR",
+    " 13 judah H3063G HNpl",
+    " 14 dwell H3427 HVqv2ms",
+    " 15 with H0854 HRd",
+    " 16 among H8432 HNcmsc",
+    " 16 in/on/with H9003 HR",
+    " 16 him H9033 HSp3ms",
+    " 17 people H5971A HNcmsa",
+    " 17 [the] H9009 HTd",
+    " 18 or H0176A HC | connective",
+    " 19 go H1980G HVqcc",
+    " 19 to/for H9005 HR",
+    " 19 your H9021 HSp2ms",
+    "*20 think H5869I HNcfdc | member of this collection",
+    " 20 in/on/with H9003 HR",
+    " 21 right H3477G HAamsa | qualifier candidate; qualifier morph: adjective",
+    " 21 [the] H9009 HTd",
+    " 21 right H0413 HR",
+    " 21 right H3605 HNcmsc",
+    " 22 go H1980G HVqv2ms",
+    " 23 captain H7227B HNcmsc",
+    " 23 to/for H9005 HRd",
+    " 23 him H9033 HSp3ms",
+    " 24 guard H2876 HNcmpa | word of another collection; collections guard",
+    " 25 gave H5414G HVqw3ms | word of another collection; collections share",
+    " 26 food H0737 HNcfsa",
+    " 27 present H4864 HNcfsa | word of another collection; collections offer",
+    " 27 and H9002 HC | connective",
+    " 28 go H7971H HVpw3ms",
+    " 28 him H9033 HSp3ms"
+   ]
+  },
+  {
+   "reference": "Mat 1:23",
+   "text": "“ Behold, the virgin shall conceive and bear a son, and they shall call his name Immanuel ” ( which means, God with us ).",
+   "words": [
+    " 0 behold G2400 INJ",
+    " 1 virgin G3933 N-NSF",
+    "*2 conceive G1722 PREP | member of this collection",
+    "*2 conceive G2192 V-FAI-3S | member of this collection",
+    " 3 and G2532 CONJ | connective",
+    " 4 bear G5088 V-FDI-3S | word of another collection; collections endure",
+    " 5 son G5207 N-ASM",
+    " 6 and G2532 CONJ | connective",
+    " 7 call G2564G V-FAI-3P | word of another collection; collections call",
+    " 8 his G0846 P-GSM",
+    " 9 name G3686 N-ASN",
+    " 10 immanuel G1694 N-ASM-T | entity (human); party human",
+    " 11 which G3739 R-NSN",
+    " 12 means G3177 V-PPP-NSN",
+    " 13 god G2316 N-NSM-T | entity (divine); party divine",
+    " 14 with G3326 PREP",
+    " 15 us G2257 P-1GP"
+   ]
+  },
+  {
+   "reference": "Luk 1:31",
+   "text": "And behold, you will conceive in your womb and bear a son, and you shall call his name Jesus.",
+   "words": [
+    " 0 and G2532 CONJ | connective",
+    " 1 behold G2400 INJ",
+    "*2 conceive G4815 V-FDI-2S | member of this collection",
+    " 3 in G1722 PREP",
+    " 4 womb G1064 N-DSF",
+    " 5 and G2532 CONJ | connective",
+    " 6 bear G5088 V-FDI-2S | word of another collection; collections endure",
+    " 7 son G5207 N-ASM",
+    " 8 and G2532 CONJ | connective",
+    " 9 call G2564G V-FAI-2S | word of another collection; collections call",
+    " 10 his G0846 P-GSM",
+    " 11 name G3686 N-ASN",
+    " 12 jesus G2424G N-ASM-P | entity (divine); party divine"
+   ]
+  },
+  {
+   "reference": "Luk 6:8",
+   "text": "But he knew their thoughts, and he said to the man with the withered hand, “ Come and stand here.” And he rose and stood there.",
+   "words": [
+    " 0 but G1161 CONJ | connective",
+    " 1 he G0846 P-NSM",
+    " 2 knew G1492I V-2LAI-3S | word of another collection; collections know",
+    " 3 their G0846 P-GPM",
+    "*4 thoughts G1261 N-APM | member of this collection",
+    " 5 said G2036 V-2AAI-3S",
+    " 6 man G0435G N-DSM | entity (human); party human",
+    " 7 with G3588 n/a",
+    " 7 with G2192 V-PAP-DSM",
+    " 8 withered G3584 A-ASF | word of another collection; qualifier morph: adjective; collections dry",
+    " 9 hand G5495 N-ASF",
+    " 10 come G1453 V-PAM-2S",
+    " 11 and G2532 CONJ | connective",
+    " 12 stand G2476 V-2AAM-2S",
+    " 13 here G1519 PREP",
+    " 13 here G3319 A-ASN | qualifier candidate; qualifier morph: adjective",
+    " 14 and G2532 CONJ | connective",
+    " 15 rose G0450 V-2AAP-NSM",
+    " 16 stood G2476 V-2AAI-3S"
+   ]
+  },
+  {
+   "reference": "1Cor 4:9",
+   "text": "For I think that God has exhibited us apostles as last of all, like men sentenced to death, because we have become a spectacle to the world, to angels, and to men.",
+   "words": [
+    " 0 for G1063 CONJ | connective",
+    "*1 think G1380 V-PAI-1S | member of this collection",
+    " 2 god G2316 N-NSM-T | entity (divine); party divine",
+    " 3 exhibited G0584 V-AAI-3S",
+    " 4 us G2248 P-1AP",
+    " 5 apostles G0652 N-APM",
+    " 6 as G5613 PRT | connective",
+    " 7 last G2078 A-APM | word of another collection; qualifier morph: adjective; collections endure",
+    " 8 death G1935 A-APM | word of another collection; qualifier morph: adjective; collections die",
+    " 9 because G3754G CONJ | connective",
+    " 10 become G1096 V-2AOI-1P",
+    " 11 spectacle G2302 N-NSN",
+    " 12 world G2889 N-DSM",
+    " 13 angels G0032G N-DPM",
+    " 14 and G2532 CONJ | connective",
+    " 15 men G0444 N-DPM | entity (human); party human"
+   ]
+  },
+  {
+   "reference": "1Cor 7:26",
+   "text": "I think that in view of the present distress it is good for a person to remain as he is.",
+   "words": [
+    "*0 think G3543 V-PAI-1S | member of this collection",
+    " 1 view G2570G A-ASN | qualifier candidate; qualifier qualifier subgroup: Good, better, right (a quality of something); morph: adjective",
+    " 2 present G1764 V-RAP-ASF | word of another collection; collections offer",
+    " 3 distress G0318 N-ASF | word of another collection; collections tribulation",
+    " 4 it G3778 D-ASN",
+    " 5 is G5225 V-PAN",
+    " 6 good G2570G A-NSN | qualifier candidate; qualifier qualifier subgroup: Good, better, right (a quality of something); morph: adjective",
+    " 7 for G1223 PREP | connective",
+    " 8 person G0444 N-DSM | entity (human); party human",
+    " 9 remain G1511 V-PAN | word of another collection; collections endure",
+    " 10 is G3779 ADV | qualifier candidate; qualifier morph: adverb"
+   ]
+  },
+  {
+   "reference": "Jam 2:4",
+   "text": "have you not then made distinctions among yourselves and become judges with evil thoughts?",
+   "words": [
+    " 0 not G3756 PRT-N | negator; qualifier negator; negator",
+    " 1 distinctions G1252 V-API-2P | word of another collection; collections doubt",
+    " 2 among G1722 PREP",
+    " 3 yourselves G1438 F-2DPM",
+    " 4 and G2532 CONJ | connective",
+    " 5 become G1096 V-2ADI-2P",
+    " 6 judges G2923 N-NPM | word of another collection; collections condemn",
+    " 7 evil G4190 A-GPM | word of another collection; qualifier qualifier subgroup: Bad (a quality of something); morph: adjective; collections evildoer",
+    "*8 thoughts G1261 N-GPM | member of this collection"
+   ]
+  }
+ ],
+ "rows": [
+  {
+   "ledger_id": 1630,
+   "item": "pairing",
+   "subject": "doubt",
+   "asks": "Which words of this partner collection stand with the subgroup's surfaces in the verses they share, where does each stand (side and distance, from the stored structure), and which stand out? The WordNet control for this collection is shown. Write one finding for each distinct thing the structure shows; a finding holds the verses it holds in as its nodes.",
+   "none_allowed": true,
+   "verses": [
+    "Jam 2:4"
+   ],
+   "occurrences": [
+    {
+     "occurrence": 1506936,
+     "reference": "Jam 2:4",
+     "surface": "thoughts",
+     "strong": "G1261",
+     "as": "member"
+    },
+    {
+     "occurrence": 1506929,
+     "reference": "Jam 2:4",
+     "surface": "distinctions",
+     "strong": "G1252",
+     "as": "partner"
+    }
+   ],
+   "older": [],
+   "wordnet_control": {
+    "pairs": 5,
+    "types": {
+     "synonym": 5
+    },
+    "examples": [
+     {
+      "surface": "thought",
+      "partner_surface": "meaning",
+      "type": "synonym",
+      "weight": 1
+     },
+     {
+      "surface": "think",
+      "partner_surface": "meaning",
+      "type": "synonym",
+      "weight": 1
+     },
+     {
+      "surface": "thinking",
+      "partner_surface": "meaning",
+      "type": "synonym",
+      "weight": 1
+     },
+     {
+      "surface": "thinks",
+      "partner_surface": "meaning",
+      "type": "synonym",
+      "weight": 1
+     },
+     {
+      "surface": "opinion",
+      "partner_surface": "judgment",
+      "type": "synonym",
+      "weight": 1
+     }
+    ]
+   }
+  },
+  {
+   "ledger_id": 1631,
+   "item": "pairing",
+   "subject": "dry",
+   "asks": "Which words of this partner collection stand with the subgroup's surfaces in the verses they share, where does each stand (side and distance, from the stored structure), and which stand out? The WordNet control for this collection is shown. Write one finding for each distinct thing the structure shows; a finding holds the verses it holds in as its nodes.",
+   "none_allowed": true,
+   "verses": [
+    "Judg 13:3",
+    "Luk 6:8"
+   ],
+   "occurrences": [
+    {
+     "occurrence": 1105871,
+     "reference": "Judg 13:3",
+     "surface": "conceive",
+     "strong": "H2029",
+     "as": "member"
+    },
+    {
+     "occurrence": 1434988,
+     "reference": "Luk 6:8",
+     "surface": "thoughts",
+     "strong": "G1261",
+     "as": "member"
+    },
+    {
+     "occurrence": 1105863,
+     "reference": "Judg 13:3",
+     "surface": "barren",
+     "strong": "H6135",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1105864,
+     "reference": "Judg 13:3",
+     "surface": "barren",
+     "strong": "H0413",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1105866,
+     "reference": "Judg 13:3",
+     "surface": "barren",
+     "strong": "H2009",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1105867,
+     "reference": "Judg 13:3",
+     "surface": "barren",
+     "strong": "H4994",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1434993,
+     "reference": "Luk 6:8",
+     "surface": "withered",
+     "strong": "G3584",
+     "as": "partner"
+    }
+   ],
+   "older": [],
+   "wordnet_control": "WordNet relates no surface of the subgroup to this collection (a verse-only pairing: no control)"
+  },
+  {
+   "ledger_id": 1632,
+   "item": "pairing",
+   "subject": "earnest",
+   "asks": "Which words of this partner collection stand with the subgroup's surfaces in the verses they share, where does each stand (side and distance, from the stored structure), and which stand out? The WordNet control for this collection is shown. Write one finding for each distinct thing the structure shows; a finding holds the verses it holds in as its nodes.",
+   "none_allowed": true,
+   "verses": [
+    "Job 20:2"
+   ],
+   "occurrences": [
+    {
+     "occurrence": 1244052,
+     "reference": "Job 20:2",
+     "surface": "thoughts",
+     "strong": "H5587B",
+     "as": "member"
+    },
+    {
+     "occurrence": 1244056,
+     "reference": "Job 20:2",
+     "surface": "haste",
+     "strong": "H2363A",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1244058,
+     "reference": "Job 20:2",
+     "surface": "haste",
+     "strong": "H5668",
+     "as": "partner"
+    }
+   ],
+   "older": [],
+   "wordnet_control": "WordNet relates no surface of the subgroup to this collection (a verse-only pairing: no control)"
+  },
+  {
+   "ledger_id": 1633,
+   "item": "pairing",
+   "subject": "endure",
+   "asks": "Which words of this partner collection stand with the subgroup's surfaces in the verses they share, where does each stand (side and distance, from the stored structure), and which stand out? The WordNet control for this collection is shown. Write one finding for each distinct thing the structure shows; a finding holds the verses it holds in as its nodes.",
+   "none_allowed": true,
+   "verses": [
+    "Judg 13:3",
+    "Judg 13:5",
+    "Judg 13:7",
+    "2Ch 13:8",
+    "Isa 7:14",
+    "Jer 40:5",
+    "Mat 1:23",
+    "Luk 1:31",
+    "1Cor 4:9",
+    "1Cor 7:26"
+   ],
+   "occurrences": [
+    {
+     "occurrence": 1105871,
+     "reference": "Judg 13:3",
+     "surface": "conceive",
+     "strong": "H2029",
+     "as": "member"
+    },
+    {
+     "occurrence": 1109427,
+     "reference": "Judg 13:5",
+     "surface": "conceive",
+     "strong": "H2030A",
+     "as": "member"
+    },
+    {
+     "occurrence": 1105875,
+     "reference": "Judg 13:7",
+     "surface": "conceive",
+     "strong": "H2030A",
+     "as": "member"
+    },
+    {
+     "occurrence": 1203828,
+     "reference": "2Ch 13:8",
+     "surface": "think",
+     "strong": "H0559",
+     "as": "member"
+    },
+    {
+     "occurrence": 1303122,
+     "reference": "Isa 7:14",
+     "surface": "conceive",
+     "strong": "H2030A",
+     "as": "member"
+    },
+    {
+     "occurrence": 1339738,
+     "reference": "Jer 40:5",
+     "surface": "think",
+     "strong": "H5869I",
+     "as": "member"
+    },
+    {
+     "occurrence": 1412178,
+     "reference": "Mat 1:23",
+     "surface": "conceive",
+     "strong": "G1722",
+     "as": "member"
+    },
+    {
+     "occurrence": 1412179,
+     "reference": "Mat 1:23",
+     "surface": "conceive",
+     "strong": "G2192",
+     "as": "member"
+    },
+    {
+     "occurrence": 1437820,
+     "reference": "Luk 1:31",
+     "surface": "conceive",
+     "strong": "G4815",
+     "as": "member"
+    },
+    {
+     "occurrence": 1482842,
+     "reference": "1Cor 4:9",
+     "surface": "think",
+     "strong": "G1380",
+     "as": "member"
+    },
+    {
+     "occurrence": 1483767,
+     "reference": "1Cor 7:26",
+     "surface": "think",
+     "strong": "G3543",
+     "as": "member"
+    },
+    {
+     "occurrence": 1105872,
+     "reference": "Judg 13:3",
+     "surface": "bear",
+     "strong": "H3205",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1109431,
+     "reference": "Judg 13:5",
+     "surface": "bear",
+     "strong": "H3205",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1105880,
+     "reference": "Judg 13:7",
+     "surface": "bear",
+     "strong": "H3205",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1203829,
+     "reference": "2Ch 13:8",
+     "surface": "withstand",
+     "strong": "H2388J",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1303123,
+     "reference": "Isa 7:14",
+     "surface": "bear",
+     "strong": "H3205",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1339707,
+     "reference": "Jer 40:5",
+     "surface": "remain",
+     "strong": "H7725G",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1339708,
+     "reference": "Jer 40:5",
+     "surface": "remain",
+     "strong": "H5750",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1412181,
+     "reference": "Mat 1:23",
+     "surface": "bear",
+     "strong": "G5088",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1437824,
+     "reference": "Luk 1:31",
+     "surface": "bear",
+     "strong": "G5088",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1482848,
+     "reference": "1Cor 4:9",
+     "surface": "last",
+     "strong": "G2078",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1483776,
+     "reference": "1Cor 7:26",
+     "surface": "remain",
+     "strong": "G1511",
+     "as": "partner"
+    }
+   ],
+   "older": [],
+   "wordnet_control": "WordNet relates no surface of the subgroup to this collection (a verse-only pairing: no control)"
+  },
+  {
+   "ledger_id": 1634,
+   "item": "pairing",
+   "subject": "escape",
+   "asks": "Which words of this partner collection stand with the subgroup's surfaces in the verses they share, where does each stand (side and distance, from the stored structure), and which stand out? The WordNet control for this collection is shown. Write one finding for each distinct thing the structure shows; a finding holds the verses it holds in as its nodes.",
+   "none_allowed": true,
+   "verses": [
+    "Gen 32:8",
+    "Est 4:13"
+   ],
+   "occurrences": [
+    {
+     "occurrence": 987105,
+     "reference": "Gen 32:8",
+     "surface": "thinking",
+     "strong": "H0559",
+     "as": "member"
+    },
+    {
+     "occurrence": 1231956,
+     "reference": "Est 4:13",
+     "surface": "think",
+     "strong": "H1819",
+     "as": "member"
+    },
+    {
+     "occurrence": 987121,
+     "reference": "Gen 32:8",
+     "surface": "escape",
+     "strong": "H6413",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1231963,
+     "reference": "Est 4:13",
+     "surface": "escape",
+     "strong": "H4422",
+     "as": "partner"
+    }
+   ],
+   "older": [],
+   "wordnet_control": "WordNet relates no surface of the subgroup to this collection (a verse-only pairing: no control)"
+  }
+ ],
+ "answer": {
+  "command": "ReadStructure",
+  "collection": "thought",
+  "subgroup": "thinking and thought",
+  "rows": [
+   {
+    "ledger_id": 1630,
+    "item": "pairing",
+    "subject": "doubt",
+    "disposition": "observed | none",
+    "findings": [
+     {
+      "kind": "pairing",
+      "obs_text": "",
+      "basis": "read | stated",
+      "grounds": "",
+      "occurrences": []
+     }
+    ],
+    "reason": "",
+    "older": []
+   },
+   {
+    "ledger_id": 1631,
+    "item": "pairing",
+    "subject": "dry",
+    "disposition": "observed | none",
+    "findings": [
+     {
+      "kind": "pairing",
+      "obs_text": "",
+      "basis": "read | stated",
+      "grounds": "",
+      "occurrences": []
+     }
+    ],
+    "reason": "",
+    "older": []
+   },
+   {
+    "ledger_id": 1632,
+    "item": "pairing",
+    "subject": "earnest",
+    "disposition": "observed | none",
+    "findings": [
+     {
+      "kind": "pairing",
+      "obs_text": "",
+      "basis": "read | stated",
+      "grounds": "",
+      "occurrences": []
+     }
+    ],
+    "reason": "",
+    "older": []
+   },
+   {
+    "ledger_id": 1633,
+    "item": "pairing",
+    "subject": "endure",
+    "disposition": "observed | none",
+    "findings": [
+     {
+      "kind": "pairing",
+      "obs_text": "",
+      "basis": "read | stated",
+      "grounds": "",
+      "occurrences": []
+     }
+    ],
+    "reason": "",
+    "older": []
+   },
+   {
+    "ledger_id": 1634,
+    "item": "pairing",
+    "subject": "escape",
+    "disposition": "observed | none",
+    "findings": [
+     {
+      "kind": "pairing",
+      "obs_text": "",
+      "basis": "read | stated",
+      "grounds": "",
+      "occurrences": []
+     }
+    ],
+    "reason": "",
+    "older": []
+   }
+  ]
+ },
+ "measured": {
+  "package_chars": 45357,
+  "seconds": 0.05
+ }
+}

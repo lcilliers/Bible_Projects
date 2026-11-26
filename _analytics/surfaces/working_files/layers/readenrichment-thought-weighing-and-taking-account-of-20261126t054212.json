@@ -1,0 +1,1204 @@
+{
+ "command": "ReadEnrichment",
+ "collection": "thought",
+ "subgroup": "weighing and taking account of",
+ "step": "1.2",
+ "made": "2026-11-26T05:42:12Z",
+ "unit": {
+  "ledger_id": 1361,
+  "senses": 8,
+  "occurrences": 78,
+  "codes": 44,
+  "older": 0
+ },
+ "instruction": {
+  "what": "Step 1.2, the enrichment of one subgroup (stage 1, B2): for each sense of step 1.1, what the Strong's codes of its occurrences say. The lexicon is the point of this read. Nothing here says what a sense does for the inner being; that begins at step 3.1.",
+  "read": [
+   "Take one sense at a time (`senses`: its text from step 1.1, its codes, words and occurrences).",
+   "Read the lexicon of each of its codes (`codes`: sense_head, meaning_range, lsj, mounce, related), the three meaning sources read together, none picked and the others dropped.",
+   "Validate the sense against its codes: do the lexicon entries bear out the meaning the sense names? Where they do not, say so in the enrichment; the sense is not changed here.",
+   "Where one surface carries several codes in the sense, read what each code adds."
+  ],
+  "write": [
+   "Fill `answer.enrichments`: one entry for each sense, named by `sense` (the id of its 1.1 observation); every sense has exactly one. The enrichment takes the sense's occurrences.",
+   "kind: enrichment. obs_text: a short definition from the lexicon entries; names the codes that link the sense to its usage and what different codes of one surface add; names verses the sense holds in, as the package writes the references (for example Psa 77:6); concise; never the lexicon copied whole, never a verse restated, never what the sense does for the inner being.",
+   "basis: read, with `grounds`: words copied exactly from the lexicon of a code of the sense (sense_head, meaning_range, lsj or mounce; the record checks them); or stated, where a verse says it.",
+   "Where the lexicon does not bear out the sense, the enrichment says so with its grounds; a missing lexicon entry is named, never filled from memory (RW-11).",
+   "`older`: answer each older observation shown, once: keep (with `nature`), restate (with `nature`, `new_text`, `checked`), merge (with `into`), consume (with `carriers` [\"this\"] for this answer's enrichments or observation ids, and `mapping`), delete_neither (with `reason`), carry (with `to` 2.1 and `reason`), defer (with `collection`, `nature`, `finding`).",
+   "Then: Collection-Build.ps1 -Action RecordEnrichment -File <the answer file> (-Check to preview). The record refuses the whole file on any fault and lists every fault."
+  ],
+  "keep": [
+   {
+    "rule": "RG-08 the-original",
+    "text": "For every word that names an inner or bodily act, look at the original: the root's range in all three meaning sources read together, never one picked and the others dropped; the ESV renderings across its verses; whether the English adds or hides; the literal sense beside the rendering. Where more than one reading is open, record each, and mark the choice 'I read'."
+   },
+   {
+    "rule": "RG-21 grain",
+    "text": "A word is read per its lettered Strong's code (its grain), never the bare lemma (B:113). The occurrences of a word with several senses are related per grain and never aggregated across grains: related verses are same-grain occurrences."
+   },
+   {
+    "rule": "RO11 one-row-per-code",
+    "text": "One observation per finding, never a duplicate description; a finding applying to several verses or words carries several nodes, each with the word's role in it."
+   },
+   {
+    "rule": "RW-03 no-duplicates-multi-node",
+    "text": "One observation per finding: the same description is never written twice. Applied to another verse, word or scope it gains a node on the existing observation."
+   },
+   {
+    "rule": "RW-04 concise-verse-specific",
+    "text": "Observation text is concise and tied to this verse's content, never a restatement of the word's dictionary sense. A transliteration is never given without its gloss."
+   },
+   {
+    "rule": "RW-09 reread-builds-on-prior",
+    "text": "A re-read includes the observations already recorded for the verse, so the reading sees prior findings and builds on them."
+   },
+   {
+    "rule": "RW-11 missing-is-named",
+    "text": "Missing data in the base extract is named as a gap, never substituted from memory or outside knowledge."
+   },
+   {
+    "rule": "RW-13 older-observations-answered-at-record",
+    "text": "Every older live observation with a live node on an occurrence of the row (a stage that is not the build's own) is answered in fill.older when the row is recorded, once: keep or restate (each with its marker), merge into a named observation, consume (live observations carry its meaning, stated in words, verified before it is deleted), delete as neither (comment first), or defer to a named collection (marked now; only the finding is left to that collection). An observation already marked by the validation, answered in a build or deferred is not asked again. A new observation whose text equals that of another live observation of the collection is refused, the other named. LayerCheck re-derives both from the tables. The end state of a collection's build is that every observation of its scope is marked and fixed or deleted, every word node complete or with its reason, and each deferral owned by a named collection."
+   },
+   {
+    "rule": "RS-04 existing-checked-accept-modify-delete",
+    "text": "When a verse is worked, every existing observation and node on it, of any stage, is checked against the verse by its wording. The stage is not an indication of the nature of an observation and is never used to filter. Each observation is accepted, modified (changed in place; the old value, the new value and the reason are kept in ib_observation_change), soft deleted (the `deleted` column, with the reason), merged (a duplicate description, into the observation that is kept) or, when its wording shows it is not verse understanding, left exactly as it is with the reason. The check's fixes are part of it and need no separate approval. Nothing is physically deleted."
+   },
+   {
+    "rule": "LR-02 nodes-are-built-from-the-data",
+    "text": "The nodes of a layer observation are the occurrences the aspect demands (a word's occurrences, the group's occurrences, the partner's occurrences in the verses they share), written by the recorder with the collection and the subgroup of each surface; they are never typed. An item answered by senses (word-sense) names, for each sense, the occurrences it holds for, and together the senses cover every occurrence; the recorder checks them against the data. The interpretation is the observation text, founded in what the evidence shows (basis stated or read, B:131) and tied to its verses (the text names them and does not restate them): the items of every step (S1, 1.1, 1.2, 2.1) state what the dictionary, the verses and the stored structure show of a word and never what a word does for the inner being; their nodes carry the role lexical and no route. The whole file is checked and written in one transaction; any problem refuses all of it. A row answered again withdraws its earlier observations with the reason."
+   },
+   {
+    "rule": "VA-03 consumption-is-verified-before-deletion",
+    "text": "An older observation is deleted as consumed only when live observations carry its meaning: every word occurrence of it is on a live node of a carrier or named as not carried with its reason, the mapping is stated in words (what the old says, which carrier states each part), the traces to it are re-pointed or replaced, and the consumption is kept as `consumed_by`. An observation that holds more than one finding is split first."
+   },
+   {
+    "rule": "VA-04 neither-evidence-nor-inner-being-is-deleted",
+    "text": "An observation that is neither evidence nor inner being contributes nothing to the purposes of the observations (researcher, 2026-11-22): it is commented with its reason and the word occurrences no other live observation holds, then deleted. An observation already marked, or one another observation traces, is not deleted this way."
+   }
+  ],
+  "not_in_this_read": ""
+ },
+ "prompts": [],
+ "senses": [
+  {
+   "sense": 22886,
+   "text": "Considering a matter: turning attention and thought to it, looking it over, setting the heart on it. The Lord asks Satan whether he has fixed on Job, the observer sets his heart on the field and takes instruction, the Preacher looks over all his works, the generation gives no thought to the servant's being cut off, the sinner sees his transgressions and turns, the seer contemplates the horns, Joseph turns over what he resolved, and Abraham fixes his attention on his own body without his faith weakening. In each the consideration is an act of the mind taking in a matter, usually before a turn or a conclusion. Verses: Job 1:8, Job 2:3, Pro 24:32, Ecc 2:11, Isa 53:8, Eze 18:28, Dan 7:8, Mat 1:20, Rom 4:19.",
+   "codes": [
+    "G1760",
+    "G2657",
+    "G3756",
+    "H0595",
+    "H1934",
+    "H3820A",
+    "H6437G",
+    "H7200H",
+    "H7760K",
+    "H7878",
+    "H7896K",
+    "H7920"
+   ],
+   "words": [
+    "considered|G1760",
+    "considered|G2657",
+    "considered|G3756",
+    "considered|H0595",
+    "considered|H1934",
+    "considered|H3820A",
+    "considered|H6437G",
+    "considered|H7200H",
+    "considered|H7760K",
+    "considered|H7878",
+    "considered|H7896K",
+    "considered|H7920"
+   ],
+   "occurrences": [
+    "Ecc 2:11",
+    "Eze 18:28",
+    "Mat 1:20",
+    "Job 1:8",
+    "Job 1:8",
+    "Job 2:3",
+    "Job 2:3",
+    "Pro 24:32",
+    "Pro 24:32",
+    "Pro 24:32",
+    "Isa 53:8",
+    "Rom 4:19",
+    "Rom 4:19",
+    "Dan 7:8",
+    "Dan 7:8"
+   ]
+  },
+  {
+   "sense": 22887,
+   "text": "Reckoning something or someone as a certain thing: how a person or thing is counted, judged or esteemed. Sarah counts the promiser faithful, Abraham concludes that God can raise the dead, Moses counts the reproach of Christ greater than treasure, rulers are held to be rulers, the silent fool is held wise, silver is counted as nothing, the men are counted reliable, the people are counted as foreigners, as sheep, as pots, the laws as strange, the potter as clay, the disciples dispute who is held greatest, the uncircumcised is counted as circumcised, servants are counted as masters worthy of honor, the Lord counts the exiles good. The word is a reckoning or valuation, the standing given by a judgment. Verses: 1Ki 10:21, 2Ch 9:20, Neh 13:13, Pro 17:28, Mar 10:42, Heb 11:11, Heb 11:19, Heb 11:26, Lev 19:23, 1Sa 1:16, Jer 24:5, 1Cor 4:1, 2Th 3:15, 1Ti 6:1, 1Pe 5:12, Gen 31:15, Psa 44:22, Isa 29:16, Isa 29:17, Lam 4:2, Hos 8:12, Luk 22:24, Rom 2:26, Rom 8:36.",
+   "codes": [
+    "G1380",
+    "G2233",
+    "G3049",
+    "H2803H",
+    "H2803J",
+    "H5234A",
+    "H5414I",
+    "H6188"
+   ],
+   "words": [
+    "considered|G1380",
+    "considered|G2233",
+    "considered|G3049",
+    "considered|H2803H",
+    "considered|H2803J",
+    "regarded|G1380",
+    "regarded|G3049",
+    "regarded|H2803H",
+    "regarded|H2803J",
+    "regard|G2233",
+    "regard|G3049",
+    "regard|H5234A",
+    "regard|H5414I",
+    "regard|H6188"
+   ],
+   "occurrences": [
+    "1Sa 1:16",
+    "1Cor 4:1",
+    "Heb 11:26",
+    "Mar 10:42",
+    "2Th 3:15",
+    "1Ti 6:1",
+    "1Pe 5:12",
+    "Isa 29:16",
+    "Jer 24:5",
+    "Gen 31:15",
+    "Pro 17:28",
+    "Neh 13:13",
+    "Lev 19:23",
+    "Heb 11:11",
+    "Heb 11:19",
+    "Luk 22:24",
+    "Hos 8:12",
+    "Rom 2:26",
+    "Rom 8:36",
+    "Psa 44:22",
+    "Isa 29:17",
+    "1Ki 10:21",
+    "2Ch 9:20",
+    "Lam 4:2"
+   ]
+  },
+  {
+   "sense": 22888,
+   "text": "Having regard: giving notice and heed to someone or something, or refusing it. The Lord has no regard for Cain's offering, the psalmist asks God to have regard for the covenant and the vine, the wicked do not regard the Lord's works, God does not regard those wise in their own conceit, Levi disregards his kin, the righteous have regard for the life of the beast, the Medes have no regard for silver, and none is shown to the priests. The word is attention that turns toward a person or matter with favor or care, or is withheld. Verses: Gen 4:5, Exo 5:9, Deu 9:27, Deu 33:9, 1Sa 25:25, 2Ki 3:14, 2Ch 5:11, 2Ch 6:19, Job 9:21, Job 34:27, Job 35:13, Job 37:24, Psa 28:5, Psa 74:20, Psa 80:14, Psa 119:117, Psa 144:3, Pro 12:10, Isa 5:12, Isa 13:17, Isa 33:8, Lam 4:16.",
+   "codes": [
+    "H0408",
+    "H0853",
+    "H0995",
+    "H2803H",
+    "H3045",
+    "H3808",
+    "H3820A",
+    "H5027",
+    "H5375Q",
+    "H6437G",
+    "H6485I",
+    "H7200G",
+    "H7789",
+    "H7919A",
+    "H8104J",
+    "H8159"
+   ],
+   "words": [
+    "regard|H0408",
+    "regard|H0853",
+    "regard|H0995",
+    "regard|H2803H",
+    "regard|H3045",
+    "regard|H3808",
+    "regard|H3820A",
+    "regard|H5027",
+    "regard|H5375Q",
+    "regard|H6437G",
+    "regard|H6485I",
+    "regard|H7200G",
+    "regard|H7789",
+    "regard|H7919A",
+    "regard|H8104J",
+    "regard|H8159"
+   ],
+   "occurrences": [
+    "Gen 4:5",
+    "Job 37:24",
+    "Deu 9:27",
+    "2Ch 6:19",
+    "Exo 5:9",
+    "Exo 5:9",
+    "Psa 28:5",
+    "Isa 33:8",
+    "Deu 33:9",
+    "2Ki 3:14",
+    "1Sa 25:25",
+    "1Sa 25:25",
+    "Lam 4:16",
+    "Pro 12:10",
+    "Psa 74:20",
+    "2Ch 5:11",
+    "Job 35:13",
+    "Isa 13:17",
+    "Job 9:21",
+    "Job 9:21",
+    "Psa 144:3",
+    "Psa 80:14",
+    "Isa 5:12",
+    "Job 34:27",
+    "Psa 119:117"
+   ]
+  },
+  {
+   "sense": 22889,
+   "text": "'With regard to' as a linking phrase of respect: it marks the matter spoken of, a festival or a sect or the children of man or the Philistines. The words are prepositions and nouns of concern and carry no act of thinking. Verses: Judg 15:3, Ecc 3:18, Act 28:22, Col 2:16.",
+   "codes": [
+    "G3313",
+    "G4012",
+    "H1700",
+    "H9006"
+   ],
+   "words": [
+    "regard|G3313",
+    "regard|G4012",
+    "regard|H1700",
+    "regard|H9006"
+   ],
+   "occurrences": [
+    "Judg 15:3",
+    "Ecc 3:18",
+    "Col 2:16",
+    "Act 28:22"
+   ]
+  },
+  {
+   "sense": 22890,
+   "text": "Regarding by a standard: Paul says he knew and took account of Christ once by the standard of the flesh and now takes account of no one by it. The Greek verbs are of knowing, used for the rule by which a person is judged. Verses: 2Cor 5:16.",
+   "codes": [
+    "G1097",
+    "G6063"
+   ],
+   "words": [
+    "regard|G1097",
+    "regard|G6063"
+   ],
+   "occurrences": [
+    "2Cor 5:16",
+    "2Cor 5:16"
+   ]
+  },
+  {
+   "sense": 22891,
+   "text": "Weighing in the mind: the prophets' words are to be weighed by the others who judge them, and the Preacher weighs, studies and arranges proverbs. The word is an act of testing and judging what is said or learned. Verses: 1Cor 14:29, Ecc 12:9.",
+   "codes": [
+    "G1252",
+    "H0239"
+   ],
+   "words": [
+    "weighing|H0239",
+    "weigh|G1252"
+   ],
+   "occurrences": [
+    "Ecc 12:9",
+    "1Cor 14:29"
+   ]
+  },
+  {
+   "sense": 22892,
+   "text": "Weighing out metal on scales: the traders weigh out silver, and the gifts are to be weighed before the priests. It is the act of measuring by weight, with no act of thinking. Verses: Ezr 8:29, Zep 1:11.",
+   "codes": [
+    "H5187",
+    "H8254"
+   ],
+   "words": [
+    "weigh|H5187",
+    "weigh|H8254"
+   ],
+   "occurrences": [
+    "Zep 1:11",
+    "Ezr 8:29"
+   ]
+  },
+  {
+   "sense": 22893,
+   "text": "Weight as a stated measure: a ring and bracelets of a given weight in shekels, a bar of gold of fifty shekels, and the balances of the hair. The word is the weight of an object. Verses: Gen 24:22, Jos 7:21, Eze 5:1.",
+   "codes": [
+    "H4948"
+   ],
+   "words": [
+    "weighing|H4948"
+   ],
+   "occurrences": [
+    "Jos 7:21",
+    "Gen 24:22",
+    "Gen 24:22",
+    "Eze 5:1"
+   ]
+  }
+ ],
+ "occurrences_in_no_sense": [],
+ "codes": {
+  "G1097": {
+   "surfaces": [
+    "regard"
+   ],
+   "sense_head": "to know",
+   "meaning_range": "to know, come to know, recognize, understand; to have sexual relations; <b>to know,</b> whether the action be inceptive or complete and settled; <b>to perceive,</b> <ref='Mat.22.18'>Mt. 22:18</ref>; <ref='Mrk.5.29; 8:17; 12:12'>Mk. 5:29; 8:17; 12:12</ref>; <ref='Luk.8.46'>Lk. 8:46</ref>; <b>to mark, discern,</b> <ref='Mat.25.24'>Mt. 25:24</ref>; <ref='Luk.19.44'>Lk. 19:44</ref>; <b>to ascertain by examination,</b> <ref='Mrk.6.38'>Mk. 6:38</ref>; <ref='Jhn.7.51'>Jn. 7:51</ref>; <ref='Act.23.28'>Acts 23:28;</ref> <b>to understand,</b> <ref='Mrk.4.13'>Mk. 4:13</ref>; <ref='Luk.18.34'>Lk. 18:34</ref>; <ref='Jhn.12.16; 13:7'>Jn. 12:16; 13:7</ref>; <ref='Act.8.30'>Acts 8:30;</ref> <ref='1Co.14.7'>",
+   "lsj": "Included with: <b> γιγνώσκω</b>, <br /> <i>Doric dialect</i> [<a href=\"javascript:void(0)\" title=\"(5th c.BC: Epicharmus Comicus 9, 5th c.BC: Pindarus Lyricus “O.” 6.97)\">Refs 5th c.BC+</a>], <i>Aeolic dialect</i>, <i>Ionic dialect</i>, and after [<a href=\"javascript:void(0)\" title=\" 4th c.BC: Aristoteles Philosophus \">Refs 4th c.BC+</a>] <u><b>γινώσκω</b></u>, but γιγνώσκω in early <i>Attic dialect</i> Inscrr., as [<a href=\"javascript:void(0)\" title=\" “IG” 12.127.19\">Refs</a>] (κατα-), etc.: <i>future</i> γνώσομαι [<a href=\"javascript:void(0)\" title=\" 8th c.BC: Ilias Homerus Epicus “Illiad” 23.497, etc.\">Refs 8th c.BC+</a>], <i>Doric dialect</i> <i>3rd.pers.</i> <i>singular</i> γνωσεῖται [<a",
+   "mounce": "to know, come to know, recognize, understand; to have sexual relations",
+   "related": [
+    "G0050 ἀγνοέω be ignorant",
+    "G0052 ἄγνοια ignorance",
+    "G0056 ἀγνωσία ignorance",
+    "G0057 ἄγνωστος unknown",
+    "G0314 ἀναγινώσκω to read",
+    "G0319 ἀναγνωρίζω to recognize",
+    "G1106 γνώμη resolution",
+    "G1107 γνωρίζω to make known",
+    "G1108 γνῶσις knowledge",
+    "G1109 γνώστης expert in",
+    "G1110 γνωστός, γνώριμος acquainted with",
+    "G1231 διαγινώσκω to decide"
+   ]
+  },
+  "G1252": {
+   "surfaces": [
+    "weigh"
+   ],
+   "sense_head": "to judge/doubt",
+   "meaning_range": "to make a distinction, judge a dispute; (<i>middle</i>/<i>passive</i>) to doubt, hesitate, waver; <b>to separate, sever; to make a distinction</b>, or <b>difference,</b> <ref='Act.15.9'>Acts 15:9;</ref> <ref='1Co.11.29'>1Cor. 11:29;</ref> <b>to make to differ, distinguish, prefer, confer a superiority,</b> <ref='1Co.4.7'>1Cor. 4:7;</ref> <b>to examine, scrutinize, estimate,</b> <ref='1Co.11.31'>1Cor. 11:31;</ref> 14:29; <b>to discern, discriminate,</b> <ref='Mat.16.3'>Mt. 16:3</ref>; <b>to judge, to decide a cause,</b> <ref='1Co.6.5'>1Cor. 6:5;</ref> <b>to dispute, contend,</b> <ref='Act.11.2'>Acts 11:2;</ref> Jude 9; <b>to make a distinction</b> mentally, <ref='Jas.2.4'>Jas. 2:4;</ref> Jude",
+   "lsj": "<b> διακρίνω</b> [ρῑ], <br /> <i>future</i> -κρῐνῶ, <i>Epic dialect</i> and Delph. <b>-κρῐνέω</b>[<a href=\"javascript:void(0)\" title=\" 8th c.BC: Ilias Homerus Epicus “Illiad” 2.387, “SIG” 614.8 (2nd c.BC)\">Refs 8th c.BC+</a>]:—<b>separate one from another,</b> ὥς τ᾽ αἰπόλια.. αἰπόλοι ἄνδρες ῥεῖα διακρίνωσιν [<a href=\"javascript:void(0)\" title=\" 8th c.BC: Ilias Homerus Epicus “Illiad” 2.475, compare 5th c.BC: Herodotus Historicus 8.114 \">Refs 8th c.BC+</a>]; <b>part</b> combatants, εἰς ὅ κε δαίμων ἄμμε διακρίνη [<a href=\"javascript:void(0)\" title=\" 8th c.BC: Ilias Homerus Epicus “Illiad” 7.292, etc.; εἰ μὴ νὺξ.. διακρινέει μένος ἀνδρῶν 2.387; δ. φιλέοντε 8th c.BC: Odyssea Homerus Epicus “Odys",
+   "mounce": "to make a distinction, judge a dispute; (<i>middle</i>/<i>passive</i>) to doubt, hesitate, waver",
+   "related": [
+    "G0087 ἀδιάκριτος impartial",
+    "G1223 διά through/because of",
+    "G1253 διάκρισις discernment",
+    "G2919 κρίνω to judge"
+   ]
+  },
+  "G1380": {
+   "surfaces": [
+    "considered",
+    "regarded"
+   ],
+   "sense_head": "to think",
+   "meaning_range": "to think, consider, regard, an action of the mind and heart for processing information into understanding and choices, sometimes with a focus on appearances. Often in the impersonal form translated, \"it seems\" (<ref='Act.17.18'>Act.17:18</ref>); <b>to think, imagine, suppose, presume,</b> <ref='Mat.3.9; 6:7'>Mt. 3:9; 6:7</ref>; <b>to seem, appear,</b> <ref='Luk.10.36'>Lk. 10:36</ref>; <ref='Act.17.18'>Acts 17:18;</ref> <b>it seems; it seems good, best,</b> or <b>right, it pleases,</b> <ref='Luk.1.3'>Lk. 1:3</ref>; <ref='Act.15.22, 25'>Acts 15:22, 25</ref>",
+   "lsj": "<b> δοκέω</b> <br /> [<a href=\"javascript:void(0)\" title=\" 8th c.BC: Ilias Homerus Epicus “Illiad” 7.192, _Attic dialect_ \">Refs 8th c.BC+</a>]<i>imperfect</i> ἐδόκουν, <i>Epic dialect</i> δοκέεσκον [<a href=\"javascript:void(0)\" title=\" “Anthologia Graeca” 5.298 (6th c.AD: Agathias Historicus et Epigrammaticus)\">Refs 6th c.AD+</a>]: —<i>middle</i>, δοκέοντο [<a href=\"javascript:void(0)\" title=\" 3rd c.AD: Oppianus Apamensis Epicus “Cynegetica” 4.296 \">Refs 3rd c.AD+</a>]: <i>participle</i> δοκεύμενος[<a href=\"javascript:void(0)\" title=\" [prev. work] 109 \">Refs</a>]: the <i>future</i> and other tenses are twofold: <br /><Level3><b>__1</b></Level3> <i>future</i> δόξω and <i>aorist 1</i> ἔδοξα [",
+   "mounce": "to think, consider, regard, an action of the mind and heart for processing information into understanding and choices, sometimes with a focus on appearances. Often in the impersonal form translated, \"it seems\" (<ref='Act.17.18'>Act.17:18</ref>)",
+   "related": [
+    ""
+   ]
+  },
+  "G1760": {
+   "surfaces": [
+    "considered"
+   ],
+   "sense_head": "to reflect on",
+   "meaning_range": "to think, ponder, reflect; <b>to revolve thoroughly in the mind, consider carefully, ponder, reflect,</b> <ref='Act.10.19'>Acts 10:19</ref>*",
+   "lsj": "<b> ἐνθῡμ-έομαι</b>, <br /> <i>future</i> <b>-ήσομαι</b>[<a href=\"javascript:void(0)\" title=\" 5th c.BC: Lysias Orator 12.45\">Refs 5th c.BC+</a>], later <b>-ηθήσομαι</b> [<a href=\"javascript:void(0)\" title=\"2nd-3rd c.AD: Philostratus Sophista “Vitae Sophistarum” 2.26.3, 1st-2nd c.AD: Epictetus Philosophus “Enchiridion” 21, etc.\">Refs 1st c.AD+</a>]: <i>aorist</i> ἐνεθυμήθην [<a href=\"javascript:void(0)\" title=\" 5th-6th c.BC: Aristophanes Comicus “Ranae” 40, 5th c.BC: Thucydides Historicus 2.62, 5th c.BC: Lysias Orator 31.27, etc.\">Refs 5th c.BC+</a>]: <i>perfect</i> ἐντεθύμημαι [<a href=\"javascript:void(0)\" title=\" 5th c.BC: Thucydides Historicus 1.120 \">Refs 5th c.BC+</a>]: <i>pluperfect</i>",
+   "mounce": "to think, ponder, reflect",
+   "related": [
+    "G1722 ἐν in/on/among",
+    "G1761 ἐνθύμησις reflection",
+    "G2372 θυμός wrath"
+   ]
+  },
+  "G2233": {
+   "surfaces": [
+    "considered",
+    "regard"
+   ],
+   "sense_head": "to govern",
+   "meaning_range": "to lead the way; to take the lead, <ref='Act.14.12;'>Acts 14:12;</ref> to be chief, to preside, govern, rule, <ref='Mat.2.6;'>Mat.2:6;</ref> <ref='Act.7.10;'>Acts 7:10;</ref> ἡγούμενος, a chief officer in the church, <ref='Heb.13.7, 17, 24;'>Heb. 13:7, 17, 24;</ref> also, to think, consider, count, esteem, regard, <ref='Act.26.2;'>Acts 26:2;</ref> <ref='2Co.9.5'>2Cor. 9:5</ref>",
+   "lsj": "<b> ἡγέομαι</b>, <br /> <i>Doric dialect</i> <b>ἁγ-</b> (irregular <i>present</i> <i>participle</i> ἁγώμενος [<a href=\"javascript:void(0)\" title=\" “Hymnus Curetum [3rd c.BC (?)]” 4), \">Refs</a>]<i>imperfect</i> ἡγούμην[<a href=\"javascript:void(0)\" title=\" lines12.28, etc.\">Refs</a>], <i>Ionic dialect</i> <b>-εύμην</b>[<a href=\"javascript:void(0)\" title=\" 5th c.BC: Herodotus Historicus 2.115, ἡγέοντο [prev. author] 9.15 \">Refs 5th c.BC+</a>]: <i>future</i> ἡγήσομαι [<a href=\"javascript:void(0)\" title=\" 8th c.BC: Ilias Homerus Epicus “Illiad” 14.374, etc.\">Refs 8th c.BC+</a>]: <i>aorist 1</i> ἡγησάμην [<a href=\"javascript:void(0)\" title=\" 8th c.BC: Odyssea Homerus Epicus “Odyssey” 14.48, etc.:",
+   "mounce": "to govern",
+   "related": [
+    "G1334 διηγέομαι to relate fully",
+    "G2230 ἡγεμονεύω to govern",
+    "G2231 ἡγεμονία reign",
+    "G2232 ἡγεμών ruler",
+    "G3594 ὁδηγέω to guide",
+    "G4285 προηγέομαι to prefer",
+    "G5524 χορηγέω to provide"
+   ]
+  },
+  "G2657": {
+   "surfaces": [
+    "considered"
+   ],
+   "sense_head": "to observe",
+   "meaning_range": "to pay attention, notice, observe; consider, contemplate; this word has a strong implication that the attention paid is intense, and the contemplation is broad and thorough, resulting in complete understanding; <b>to perceive, understand, apprehend,</b> <ref='Luk.20.23'>Lk. 20:23</ref>; <b>to observe, consider, contemplate, pay attention to</b> <ref='Luk.12.24, 27'>Lk. 12:24, 27</ref>; <b>to discern, detect, notice</b> <ref='Mat.7.3'>Mt. 7:3</ref>; <b>to have regard to, make account of,</b> <ref='Rom.4.19'>Rom. 4:19</ref>",
+   "lsj": "<b> κατανο-έω</b>, <br /> <b>observe well, understand, apprehend</b>, [<a href=\"javascript:void(0)\" title=\" ὡς ἐμὲ κατανοέειν 5th c.BC: Herodotus Historicus 2.28, compare 93; οὐ Χαλεπὸν τῷ βουλομένῳ κ. 5th c.BC: Lysias Orator 25.34; οὐ.. κατανοῶ τὸ νῦν ἐρωτώμενον Plato Philosophus [{5-6th c.BC}] “Sophista” 233a; κ. ὅ τι λέγω [prev\\. author] “Grg.” 455b; οὐ πάνυ κατανοῶ [prev\\. author] “Phlb.” 48a; κ. ὅτι.. [prev\\. author] “Sph.” 264b \">Refs 6th c.BC+</a>]; κατανοεῖς τίς ποτ᾽ ἐστίν..; [<a href=\"javascript:void(0)\" title=\" 4th c.BC: Antiphanes Comicus 33.1; ἐκεῖνο, ὅτι.. Epicurus Philosophus [{4-3rd c.BC}] “Epistulae” 1p.30U.; ἐκ τίνων.. καὶ πότε.. καὶ πῶς.. 2nd c.BC: Polybius Historicus 1.12.",
+   "mounce": "to pay attention, notice, observe; consider, contemplate; this word has a strong implication that the attention paid is intense, and the contemplation is broad and thorough, resulting in complete understanding",
+   "related": [
+    "G2596 κατά according to",
+    "G3539 νοέω to understand"
+   ]
+  },
+  "G3049": {
+   "surfaces": [
+    "considered",
+    "regard",
+    "regarded"
+   ],
+   "sense_head": "to count",
+   "meaning_range": "to credit, count, reckon; regard, think, consider; (1) <i>primarily</i> <b>to count, calculate; to count, enumerate, consider</b> <ref='Mrk.15.28'>Mk. 15:28</ref>; <ref='Luk.22.37'>Lk. 22:37</ref>; <b>to set down</b> as a matter of account, <ref='1Co.13.5'>1Cor. 13:5;</ref> <ref='2Co.3.5'>2Cor. 3:5;</ref> 12:6; <b>to impute, credit, count, consider, reckon</b> <ref='Rom.4.3'>Rom. 4:3;</ref> <ref='2Co.5.19'>2Cor. 5:19;</ref> <ref='2Ti.4.16'>2Tim. 4:16;</ref> <b>to account,</b> <ref='Rom.2.26'>Rom. 2:26;</ref> 8:36; <greek>εἰς οὐδὲν λογισθῆναι</greek>, <b>to be set at nought, despised,</b> <ref='Act.19.27'>Acts 19:27;</ref> <b>to regard, deem, consider,</b> <ref='Rom.6.11'>Rom. 6:11;</ref> 14:",
+   "lsj": "<b> λογ-ίζομαι</b>, <br /> <i>Attic dialect</i> <i>future</i> -ιοῦμαι [<a href=\"javascript:void(0)\" title=\" [prev. author = 5th-6th c.BC: Aristophanes Comicus] “Ra.” 1263, 5th c.BC: Thucydides Historicus 5.87, etc.\">Refs 5th c.BC+</a>]: <i>aorist</i> ἐλογισάμην [<a href=\"javascript:void(0)\" title=\" 5th c.BC: Euripides Tragicus “Orestes” 555, 5th c.BC: Thucydides Historicus 6.31, etc.\">Refs 5th c.BC+</a>]: <i>perfect</i> λελόγισμαι [<a href=\"javascript:void(0)\" title=\" 5th c.BC: Lysias Orator 32.24,27, 4th c.BC: Demosthenes Orator 28.12 \">Refs 5th c.BC+</a>]:—<i>passive</i>, see below 111: (λόγος):—properly of numerical calculation, <b>count, reckon</b>, οὐκ ἐπισταμένους λογίζεσθαι [<a href=\"",
+   "mounce": "to credit, count, reckon; regard, think, consider",
+   "related": [
+    "G3056 λόγος word"
+   ]
+  },
+  "G3313": {
+   "surfaces": [
+    "regard"
+   ],
+   "sense_head": "part",
+   "meaning_range": "part, share, portion; (pl.) <b>district, region part, portion, division,</b> of a whole, <ref='Luk.11.36; 15:12'>Lk. 11:36; 15:12</ref>; <ref='Act.5.2'>Acts 5:2;</ref> <ref='Eph.4.16'>Eph. 4:16;</ref> <b>a piece, fragment,</b> <ref='Luk.24.42'>Lk. 24:42</ref>; <ref='Jhn.19.23'>Jn. 19:23</ref>; <b>a party, faction,</b> <ref='Act.23.9'>Acts 23:9;</ref> allotted <b>portion, lot, destiny,</b> <ref='Mat.24.51'>Mt. 24:51</ref>; <ref='Luk.12.46'>Lk. 12:46</ref>; <b>a calling, craft,</b> <ref='Act.19.27'>Acts 19:27;</ref> <b>a</b> partner's <b>portion, partnership, fellowship,</b> <ref='Jhn.13.8'>Jn. 13:8</ref>; <i>plural</i> <greek>μέρη</greek>, a local <b>quarter, district, region,</b> <ref='Mat.2",
+   "lsj": "<b> μέρος</b>, εος, τό, <br /> (μείρομαι) first in [<a href=\"javascript:void(0)\" title=\" “hymnus ad Cererem” 399 (see. infr. IV), “hymnus ad Mercurium” 53 (see. infr. II. 2)\">Refs</a>]:— <b>share, portion</b>, [<a href=\"javascript:void(0)\" title=\" 5th c.BC: Pindarus Lyricus “O.” 8.77, 5th c.BC: Herodotus Historicus 1.145, “Berl.Sitzb.” 1927.167 (from Cyrene), etc.; μέρος ἔχοντα Μουσᾶν 5th c.BC: Bacchylides Lyricus 3.71; ἔχει δόμων μ. 5th c.BC: Euripides Tragicus “Phoenissae” 483; κτεάνων μ. 4th-5th c.BC: Aeschylus Tragicus “Agamemnon” 1574 (_anapaest meter_); συμβαλέσθαι τὸ μ. 4th c.BC: Demosthenes Orator 41.11; τὰ μ. τινῶν κομίζεσθαι [prev. passage]; λαβεῖν τῆς μεθόδου τὸ μ. 4th c.BC: Arist",
+   "mounce": "part, share, portion; (<i>plural</i>) district, region",
+   "related": [
+    "G1266 διαμερίζω to divide",
+    "G1267 διαμερισμός division",
+    "G2183 ἐφημερία division",
+    "G3307 μερίζω to divide",
+    "G3310 μερίς part",
+    "G3311 μερισμός division",
+    "G3312 μεριστής arbiter",
+    "G4829 συμμερίζω to share"
+   ]
+  },
+  "G3756": {
+   "surfaces": [
+    "considered"
+   ],
+   "sense_head": "no",
+   "meaning_range": "no, not, not at all, in no way, (with G3361) absolutely not. At the beginning of a Greek question, it anticipates a positive response; negative adverb, originally the <i>genitive</i> of <greek>ὅς</greek>, spelled <greek>οὐκ</greek> if followed by a word beginning with a vowel and a smooth breathing, <greek>οὐχ</greek> if followed by a vowel and rough breathing, <b>not, no,</b> <ref='Mat.5.37; 12:43; 23:37'>Mt. 5:37; 12:43; 23:37</ref>; for the peculiarities of its usage (especially as distinct from <greek>μή</greek>) consult a grammar",
+   "lsj": "<b> οὐ</b>, <br /> the negative of <b>fact</b> and <b>statement</b>, as μή of <b>will</b> and <b>thought</b>; οὐ denies, μή rejects; οὐ is absolute, μή relative; οὐ objective, μή subjective. —The same differences hold for all compounds of οὐ and μή, and some examples of οὐδέ and οὐδείς are included below.—As to the Form, see infr. G. USAG[<a href=\"javascript:void(0)\" title=\" 5th c.BC: Euripides Tragicus \">Refs 5th c.BC+</a>]<br /><Level2><b>__I</b></Level2> as the negative of single words, <br /><Level2><b>__II</b></Level2> as the negative of the sentence. <br /><Level2><b>__I</b></Level2> οὐ adhering to single words so as to form a quasi-<i>compound</i> with them:—with Verbs: οὐ δίδωμι <b>w",
+   "mounce": "no, not, not at all, in no way, (with G3361) absolutely not. At the beginning of a Greek question, it anticipates a positive response",
+   "related": [
+    "G3756 οὐ no",
+    "G3765 οὐκέτι not any more"
+   ]
+  },
+  "G4012": {
+   "surfaces": [
+    "regard"
+   ],
+   "sense_head": "about",
+   "meaning_range": "(gen.) about, concerning, in regard to; (acc.) around, about, nearby; <i>primarily</i> of place, (1) <i>genitive</i>, <b>about, around; about, concerning, respecting,</b> <ref='Mat.2.8; 11:10; 22:31'>Mt. 2:8; 11:10; 22:31</ref>; <ref='Jhn.8.18'>Jn. 8:18</ref>; <ref='Rom.8.3'>Rom. 8:3</ref>, and frequently ;; (2) <i>accusative</i>, of place, <b>about, around, round about,</b> <ref='Mat.3.4'>Mt. 3:4</ref>; <ref='Mrk.3.34'>Mk. 3:34</ref>; <ref='Luk.13.8'>Lk. 13:8</ref>; <greek>οἱ περι τινα</greek>, <b>the companions</b> of a person, <ref='Luk.22.49'>Lk. 22:49</ref>; <b>a person and his companions,</b> <ref='Act.13.13'>Acts 13:13;</ref> simply <b>a person,</b> <ref='Jhn.11.19'>Jn. 11:19</ref>; <",
+   "lsj": "<b> περί</b>, <br /> Thess., Delph. περ [<a href=\"javascript:void(0)\" title=\" “IG” 9(2).517.17 (3rd c.BC), +others, “Schwyzer” 323 A 4 (5th-4th c.BC)\">Refs 5th c.BC+</a>], also <i>Aeolic dialect</i>, see below [<a href=\"javascript:void(0)\" title=\" 4th-5th c.BC: Aeschylus Tragicus \">Refs 4th c.BC+</a>] V; Elean παρ [<a href=\"javascript:void(0)\" title=\"[prev. work]413.4\">Refs</a>]: <i>preposition</i> with <i>genitive</i>, <i>dative</i>, and <i>accusative</i>:—<b>round about, all round</b> (properly different from ἀμφί, <b>on both sides</b>). (Cogn. with Sanskrit <i>pári</i> 'round about'.) <br /><Level1><b>__A</b></Level1> WITH GENITIVE, <br /><Level2><b>__A.I</b></Level2> of Place, sometimes ",
+   "mounce": "(gen.) about, concerning, in regard to; (acc.) around, about, nearby",
+   "related": [
+    "G4019 περιδέω to wrap around",
+    "G4023 περιέχω to contain",
+    "G4038 πέριξ around"
+   ]
+  },
+  "G6063": {
+   "surfaces": [
+    "regard"
+   ],
+   "sense_head": "to know",
+   "meaning_range": "to know of anything, to know, i.e. get knowledge of, understand, perceiveof any fact; the force and meaning of something which has definite meaning; to know how, to be skilled into have regard for one, cherish, pay attention to (<ref='1Th.5.12'>1Th. 5:12</ref>); to know, understand; Occurs as Perfect with Present meaning and as Pluperfect with Imperfect meaning.",
+   "lsj": "<b> οἶδα</b>, <br /> <i>perfect</i> morphology, οἶδα I <b>know</b>, used as <i>present</i>: <i>pluperfect</i> ᾔδεα (see. below), I <b>knew</b>, used as <i>imperfect</i>:—<i>perfect</i> οἶδα, <i>Aeolic dialect</i> ὄϊδα [<a href=\"javascript:void(0)\" title=\" 7th-6th c.BC: Alcaeus Lyricus 145 \">Refs 7th c.BC+</a>]; <i>2nd pers.</i> <i>singular</i> οἶδας once in [<a href=\"javascript:void(0)\" title=\" 8th c.BC: Homerus Epicus, 8th c.BC: Odyssea Homerus Epicus “Odyssey” 1.337, compare “hymnus ad Mercurium” 456, 6th c.BC: Theognis Elegiacus 491, 6th c.BC: Hipponax Iambographus 89, 5th c.BC: Hippocrates Medicus “περὶ διαίτης ὀξέων” 67, 5th c.BC: Euripides Tragicus “Alcestis” 780, 4th-3rd c.BC: Philemo",
+   "mounce": "to know, understand, perceive",
+   "related": [
+    "G1492H εἴδω to perceive: see",
+    "G1492I εἴδω to perceive: know",
+    "G2467 ἴσημι to know",
+    "G6063 οἶδα to know"
+   ]
+  },
+  "H0239": {
+   "surfaces": [
+    "weighing"
+   ],
+   "sense_head": "to ponder",
+   "meaning_range": "(Piel) weigh, test, prove, consider",
+   "lsj": "",
+   "mounce": "",
+   "related": [
+    "H0238 אָזַן to listen",
+    "H0242 אֻזֵּן שֶׁאֱרָה Uzzen-sheerah",
+    "H3976 מֹאזֵן balance",
+    "H3977 מֹאזֵנְיָא scale"
+   ]
+  },
+  "H0408": {
+   "surfaces": [
+    "regard"
+   ],
+   "sense_head": "not",
+   "meaning_range": "1) not, no, nor, neither, nothing (as wish or preference); 1a) do not, let not (with a verb); 1b) let there not be (with a verb understood); 1c) not, no (with substantive); 1d) nothing (as substantive); Aramaic equivalent: <i>al</i> (אַל \"not\" H0409)",
+   "lsj": "",
+   "mounce": "",
+   "related": [
+    "H0409 אַל not",
+    "H0432 אִלּוּ except",
+    "H3808 לֹא not"
+   ]
+  },
+  "H0595": {
+   "surfaces": [
+    "considered"
+   ],
+   "sense_head": "I",
+   "meaning_range": "I (first pers. sing.); Another spelling of <i>a.ni</i> (אֲנִי, אָֽנֹכִ֫י \"I\" H0589)",
+   "lsj": "",
+   "mounce": "",
+   "related": [
+    "H0576B אֲנָה me",
+    "H0587 אֲנַ֫חְנוּ we",
+    "H0589 אֲנִי I"
+   ]
+  },
+  "H0853": {
+   "surfaces": [
+    "regard"
+   ],
+   "sense_head": "[Obj.]",
+   "meaning_range": "sign of the definite direct object, not translated in English but generally preceding and indicating the accusative; Aramaic equivalent: <i>yat</i> (יָת \"whom\" H3487)",
+   "lsj": "",
+   "mounce": "",
+   "related": [
+    "H0226G אוֹת sign: miraculous",
+    "H0226H אוֹת sign:  indicator",
+    "H0865 אֶתְמוֹל previously",
+    "H3487 יָת whom"
+   ]
+  },
+  "H0995": {
+   "surfaces": [
+    "regard"
+   ],
+   "sense_head": "to understand",
+   "meaning_range": "1) to discern, understand, consider; 1a) (Qal); 1a1) to perceive, discern; 1a2) to understand, know (with the mind); 1a3) to observe, mark, give heed to, distinguish, consider; 1a4) to have discernment, insight, understanding; 1b) (Niphal) to be discerning, intelligent, discreet, have understanding; 1c) (Hiphil); 1c1) to understand; 1c2) to cause to understand, give understanding, teach; 1d) (Hithpolel) to show oneself discerning or attentive, consider diligently; 1e) (Polel) to teach, instruct; 2) (TWOT) prudent, regard",
+   "lsj": "",
+   "mounce": "",
+   "related": [
+    "H0946 בּוּנָה Bunah",
+    "H0996G בַּ֫יִן between",
+    "H0996H בַּ֫יִן between: among",
+    "H0998 בִּינָה understanding",
+    "H1002 בִּירָה palace",
+    "H1003 בִּירָנִית fortress",
+    "H1004A בֵּית place",
+    "H1004B בַּ֫יִת house: home",
+    "H1004G בַּ֫יִת Beth-[ashbea]",
+    "H1004H בַּ֫יִת Beth [Haggan]",
+    "H1004I בַּ֫יִת Beth-[togarmah]",
+    "H1004J בַּ֫יִת House [of the Forest]"
+   ]
+  },
+  "H1700": {
+   "surfaces": [
+    "regard"
+   ],
+   "sense_head": "cause",
+   "meaning_range": "cause, manner, reason; Aramaic equivalent: <i>div.rah</i> (דִּבְרָה \"cause\" H1701)",
+   "lsj": "",
+   "mounce": "",
+   "related": [
+    "H1682 דְּבוֹרָה bee",
+    "H1683G דְּבוֹרָה Deborah",
+    "H1683H דְּבוֹרָה Deborah",
+    "H1687 דְּבִיר sanctuary",
+    "H1688A דְּבִיר Debir",
+    "H1688B לִדְבִר Debir",
+    "H1688G דְּבִיר Debir",
+    "H1688H דְּבִיר Debir",
+    "H1696G דָבַר to speak: speak",
+    "H1696H דָבַר to speak: subdue",
+    "H1696I דָבַר to speak: promise",
+    "H1697G דָּבָר word"
+   ]
+  },
+  "H1934": {
+   "surfaces": [
+    "considered"
+   ],
+   "sense_head": "to be",
+   "meaning_range": "1) to come to pass, become, be; 1a) (P'al); 1a1) to come to pass; 1a2) to come into being, arise, become, come to be; 1a2a) to let become known (with participle of knowing); 1a3) to be",
+   "lsj": "",
+   "mounce": "",
+   "related": [
+    "H1933A הָוָא to fall",
+    "H1933B הָוָה to be",
+    "H1942 הַוָּה desire",
+    "H1943 הֹוָה misfortune",
+    "H1944 הוֹהָם Hoham",
+    "H1953 יְהוֹשָׁמָע Hoshama",
+    "H1962 הַיָּה calamity",
+    "H3050 יָהּ LORD",
+    "H3058G יֵהוּא Jehu",
+    "H3058H יֵהוּא Jehu",
+    "H3058I יֵהוּא Jehu",
+    "H3058J יֵהוּא Jehu"
+   ]
+  },
+  "H2803H": {
+   "surfaces": [
+    "considered",
+    "regard",
+    "regarded"
+   ],
+   "sense_head": "count/regard as",
+   "meaning_range": "1) to think, plan, esteem, calculate, invent, make a judgment, imagine, count; 1a) (Qal); 1a1) to think, account; 1a2) to plan, devise, mean; 1a3) to charge, impute, reckon; 1a4) to esteem, value, regard; 1a5) to invent; 1b) (Niphal); 1b1) to be accounted, be thought, be esteemed; 1b2) to be computed, be reckoned; 1b3) to be imputed; 1c) (Piel); 1c1) to think upon, consider, be mindful of; 1c2) to think to do, devise, plan; 1c3) to count, reckon; 1d) (Hithpael) to be considered",
+   "lsj": "",
+   "mounce": "",
+   "related": [
+    "H2803G חָשַׁב to devise: design",
+    "H2803I חָשַׁב to devise: devise",
+    "H2803J חָשַׁב to devise: think",
+    "H2804 חֲשַׁב to account",
+    "H2805 חֵ֫שֶׁב artwork",
+    "H2806 חַשְׁבַּדָּנָה Hashbaddanah",
+    "H2807 חֲשֻׁבָה Hashubah",
+    "H2808 חֶשְׁבּוֹן explanation",
+    "H2809 חֶשְׁבּוֹן Heshbon",
+    "H2810 חִשָּׁבוֹן invention",
+    "H2811G חֲשַׁבְיָ֫הוּ Hashabiah",
+    "H2811H חֲשַׁבְיָ֫הוּ Hashabiah"
+   ]
+  },
+  "H2803J": {
+   "surfaces": [
+    "considered",
+    "regarded"
+   ],
+   "sense_head": "think/imagine",
+   "meaning_range": "1) to think, plan, esteem, calculate, invent, make a judgment, imagine, count; 1a) (Qal); 1a1) to think, account; 1a2) to plan, devise, mean; 1a3) to charge, impute, reckon; 1a4) to esteem, value, regard; 1a5) to invent; 1b) (Niphal); 1b1) to be accounted, be thought, be esteemed; 1b2) to be computed, be reckoned; 1b3) to be imputed; 1c) (Piel); 1c1) to think upon, consider, be mindful of; 1c2) to think to do, devise, plan; 1c3) to count, reckon; 1d) (Hithpael) to be considered",
+   "lsj": "",
+   "mounce": "",
+   "related": [
+    "H2803G חָשַׁב to devise: design",
+    "H2803H חָשַׁב to devise: count",
+    "H2803I חָשַׁב to devise: devise",
+    "H2804 חֲשַׁב to account",
+    "H2805 חֵ֫שֶׁב artwork",
+    "H2806 חַשְׁבַּדָּנָה Hashbaddanah",
+    "H2807 חֲשֻׁבָה Hashubah",
+    "H2808 חֶשְׁבּוֹן explanation",
+    "H2809 חֶשְׁבּוֹן Heshbon",
+    "H2810 חִשָּׁבוֹן invention",
+    "H2811G חֲשַׁבְיָ֫הוּ Hashabiah",
+    "H2811H חֲשַׁבְיָ֫הוּ Hashabiah"
+   ]
+  },
+  "H3045": {
+   "surfaces": [
+    "regard"
+   ],
+   "sense_head": "to know",
+   "meaning_range": "1) to know; 1a) (Qal); 1a1) to know; 1a1a) to know, learn to know; 1a1b) to perceive; 1a1c) to perceive and see, find out and discern; 1a1d) to discriminate, distinguish; 1a1e) to know by experience; 1a1f) to recognise, admit, acknowledge, confess; 1a1g) to consider; 1a2) to know, be acquainted with; 1a3) to know (a person carnally); 1a4) to know how, be skilful in; 1a5) to have knowledge, be wise; 1b) (Niphal); 1b1) to be made known, be or become known, be revealed; 1b2) to make oneself known; 1b3) to be perceived; 1b4) to be instructed; 1c) (Piel) to cause to know; 1d) (Poel) to cause to know; 1e) (Pual); 1e1) to be known; 1e2) known, one known, acquaintance (participle); 1f) (Hiphil) to m",
+   "lsj": "",
+   "mounce": "",
+   "related": [
+    "H1843 דֵּעַ knowledge",
+    "H1844 דֵּעָה knowledge",
+    "H1845 דְּעוּאֵל Deuel",
+    "H1847 דַּ֫עַת knowledge",
+    "H3037G יַדּוּעַ Jaddua",
+    "H3037H יַדּוּעַ Jaddua",
+    "H3043G יְדִיעֲאֵל Jediael",
+    "H3043H יְדִיעֲאֵל Jediael",
+    "H3043I יְדִיעֲאֵל Jediael",
+    "H3043J יְדִיעֲאֵל Jediael",
+    "H3046 יְדַע to know",
+    "H3047 יָדָע Jada"
+   ]
+  },
+  "H3808": {
+   "surfaces": [
+    "regard"
+   ],
+   "sense_head": "not",
+   "meaning_range": "1) not, no; 1a) not (with verb-absolute prohibition); 1b) not (with modifier-negation); 1c) nothing (subst); 1d) without (with particle); 1e) before (of time); Aramaic equivalent: <i>la</i> (לָא \"not\" H3809)",
+   "lsj": "",
+   "mounce": "",
+   "related": [
+    "H0408 אַל not",
+    "H3809 לָא not",
+    "H3810 לֹא דְבָר Lo-debar",
+    "H3818 לֹא עַמִּי Not My People",
+    "H3819 לֹא רֻחָ֫מָה No Mercy"
+   ]
+  },
+  "H3820A": {
+   "surfaces": [
+    "considered",
+    "regard"
+   ],
+   "sense_head": "heart",
+   "meaning_range": "1) inner man, mind, will, heart, understanding; 1a) inner part, midst; 1a1) midst (of things); 1a2) heart (of man); 1a3) soul, heart (of man); 1a4) mind, knowledge, thinking, reflection, memory; 1a5) inclination, resolution, determination (of will); 1a6) conscience; 1a7) heart (of moral character); 1a8) as seat of appetites; 1a9) as seat of emotions and passions 1a10) as seat of courage",
+   "lsj": "",
+   "mounce": "",
+   "related": [
+    "H1079 בָּל mind",
+    "H3820B לֵב Leb",
+    "H3821 לֵב heart",
+    "H3823A לָבַב to encourage",
+    "H3823B לִבֵּב to bake",
+    "H3824 לֵבָב heart",
+    "H3826 לִבָּה heart",
+    "H3834 לְבִבָה cake",
+    "H6965A קָמָי [Leb]-kamai",
+    "H6965B קוּם to arise: rise",
+    "H6965H קוּם to arise: raise",
+    "H6965I קוּם to arise: establish"
+   ]
+  },
+  "H4948": {
+   "surfaces": [
+    "weighing"
+   ],
+   "sense_head": "weight",
+   "meaning_range": "heaviness, weight",
+   "lsj": "",
+   "mounce": "",
+   "related": [
+    "H4946 מִשְׁקוֹל weight",
+    "H4949 מִשְׁקֶ֫לֶת level",
+    "H8254 שָׁקַל to weigh",
+    "H8255 שֶׁ֫קֶל shekel",
+    "H8256 שִׁקְמָה sycamore",
+    "H8625A תְּקַל to weigh",
+    "H8625B תְּקֵל shekel"
+   ]
+  },
+  "H5027": {
+   "surfaces": [
+    "regard"
+   ],
+   "sense_head": "to look",
+   "meaning_range": "1) to look, regard; 1a) (Piel) to look; 1b) (Hiphil); 1b1) tolook; 1b2) to regard, show regard to, pay attention to, consider; 1b3) to look upon, regard, show regard to",
+   "lsj": "",
+   "mounce": "",
+   "related": [
+    "H4007 מַבָּט expectation",
+    "H5028 נְבָט Nebat",
+    "H5032 נְבָיוֹת Nebaioth",
+    "H5033 נֵ֫בֶךְ spring"
+   ]
+  },
+  "H5187": {
+   "surfaces": [
+    "weigh"
+   ],
+   "sense_head": "laden",
+   "meaning_range": "laden",
+   "lsj": "",
+   "mounce": "",
+   "related": [
+    "H5190 נָטַל to lift",
+    "H5191 נְטַל to lift",
+    "H5192 נֵ֫טֶל weight"
+   ]
+  },
+  "H5234A": {
+   "surfaces": [
+    "regard"
+   ],
+   "sense_head": "to recognize",
+   "meaning_range": "1) to recognise, acknowledge, know, respect, discern, regard; 1a) (Niphal) to be recognised; 1b) (Piel) to regard; 1c) (Hiphil); 1c1) to regard, observe, pay attention to, pay regard to, notice; 1c2) to recognise (as formerly known), perceive; 1c3) to be willing to recognise or acknowledge, acknowledge with honour; 1c4) to be acquainted with; 1c5) to distinguish, understand; 1d) (Hithpael) to make oneself known",
+   "lsj": "",
+   "mounce": "",
+   "related": [
+    "H1971 הַכָּרָה look",
+    "H4378 מַכָּר acquaintance",
+    "H5234B נָכַר to alienate"
+   ]
+  },
+  "H5375Q": {
+   "surfaces": [
+    "regard"
+   ],
+   "sense_head": "kindness/honour/favour/lift(head/face)",
+   "meaning_range": "1) to lift, bear up, carry, take; 1a) (Qal); 1a1) to lift, lift up; 1a2) to bear, carry, support, sustain, endure; 1a3) to take, take away, carry off, forgive; 1b) (Niphal); 1b1) to be lifted up, be exalted; 1b2) to lift oneself up, rise up; 1b3) to be borne, be carried; 1b4) to be taken away, be carried off, be swept away; 1c) (Piel); 1c1) to lift up, exalt, support, aid, assist; 1c2) to desire, long (fig.); 1c3) to carry, bear continuously; 1c4) to take, take away; 1d) (Hithpael) to lift oneself up, exalt oneself; 1e) (Hiphil); 1e1) to cause one to bear (iniquity); 1e2) to cause to bring, have brought",
+   "lsj": "",
+   "mounce": "",
+   "related": [
+    "H4853A מַשָּׂא burden",
+    "H4853B מַשָּׂא oracle",
+    "H4856 מַשֹּׂא respect",
+    "H4858 מַשָּׂאָה smoke",
+    "H4864 מַשְׂאֵת tribute",
+    "H5375G נָשָׂא to lift: raise",
+    "H5375H נָשָׂא to lift: bear",
+    "H5375I נָשָׂא to lift: forgive",
+    "H5375J נָשָׂא to lift: guilt",
+    "H5375K נָשָׂא to lift: aid",
+    "H5375L נָשָׂא to lift: exalt",
+    "H5375M נָשָׂא to lift: look"
+   ]
+  },
+  "H5414I": {
+   "surfaces": [
+    "regard"
+   ],
+   "sense_head": "make",
+   "meaning_range": "1) to give, put, set; 1a) (Qal); 1a1) to give, bestow, grant, permit, ascribe, employ, devote, consecrate, dedicate, pay wages, sell, exchange, lend, commit, entrust, give over, deliver up, yield produce, occasion, produce, requite to, report, mention, utter, stretch out, extend; 1a2) to put, set, put on, put upon, set, appoint, assign, designate; 1a3) to make, constitute; 1b) (Niphal); 1b1) to be given, be bestowed, be provided, be entrusted to, be granted to, be permitted, be issued, be published, be uttered, be assigned; 1b2) to be set, be put, be made, be inflicted; 1c) (Hophal); 1c1) to be given, be bestowed, be given up, be delivered up; 1c2) to be put upon",
+   "lsj": "",
+   "mounce": "",
+   "related": [
+    "H4976 מַתָּן gift",
+    "H4977G מַתָּן Mattan",
+    "H4977H מַתָּן Mattan",
+    "H4979 מַתָּנָה gift",
+    "H4980 מַתָּנָה Mattanah",
+    "H4982G מַתְּנַי Mattenai",
+    "H4982H מַתְּנַי Mattenai",
+    "H4982I מַתְּנַי Mattenai",
+    "H4983G מַתַּנְיָ֫הוּ Mattaniah",
+    "H4983H מַתַּנְיָ֫הוּ Mattaniah",
+    "H4983I מַתַּנְיָ֫הוּ Mattaniah",
+    "H4983J מַתַּנְיָ֫הוּ Mattaniah"
+   ]
+  },
+  "H6188": {
+   "surfaces": [
+    "regard"
+   ],
+   "sense_head": "be uncircumcised",
+   "meaning_range": "1) to remain uncircumcised, count uncircumcised, count as foreskin; 1a) (Qal); 1a1) to regard as uncircumcised; 1a2) to remain unharvested (fig.); 1b) (Niphal) to be counted as uncircumcised",
+   "lsj": "",
+   "mounce": "",
+   "related": [
+    "H6189 עָרֵל uncircumcised",
+    "H6190G עׇרְלָה [Gilgal]-haaraloth",
+    "H6190H עׇרְלָה foreskin"
+   ]
+  },
+  "H6437G": {
+   "surfaces": [
+    "considered",
+    "regard"
+   ],
+   "sense_head": "to turn",
+   "meaning_range": "1) to turn; 1a) (Qal); 1a1) to turn toward or from or away; 1a2) to turn and do; 1a3) to turn, decline (of day); 1a4) to turn toward, approach (of evening); 1a5) to turn and look, look, look back or at or after or for; 1b) (Piel) to turn away, put out of the way, make clear, clear away; 1c) (Hiphil); 1c1) to turn; 1c2) to make a turn, show signs of turning, turn back; 1d) (Hophal) to be turned back",
+   "lsj": "",
+   "mounce": "",
+   "related": [
+    "H3312G יְפֻנֶּה Jephunneh",
+    "H3312H יְפֻנֶּה Jephunneh",
+    "H6437H פָּנָה Corner [Gate]",
+    "H6439G פְּנוּאֵל Peniel",
+    "H6439H פְּנוּאֵל Penuel",
+    "H6439I פְּנוּאֵל Penuel",
+    "H6440G פָּנֶה face: before",
+    "H6440H פָּנֶה face",
+    "H6440I פָּנֶה face: because",
+    "H6440J פָּנֶה face: surface",
+    "H6440K פָּנֶה face: east",
+    "H6440L פָּנֶה face of"
+   ]
+  },
+  "H6485I": {
+   "surfaces": [
+    "regard"
+   ],
+   "sense_head": "visit/inspect",
+   "meaning_range": "1) to attend to, muster, number, reckon, visit, punish, appoint, look after, care for; 1a) (Qal); 1a1) to pay attention to, observe; 1a2) to attend to; 1a3) to seek, look about for; 1a4) to seek in vain, need, miss, lack; 1a5) to visit; 1a6) to visit upon, punish; 1a7) to pass in review, muster, number; 1a8) to appoint, assign, lay upon as a charge, deposit; 1b) (Niphal); 1b1) to be sought, be needed, be missed, be lacking; 1b2) to be visited; 1b3) to be visited upon; 1b4) to be appointed; 1b5) to be watched over; 1c) (Piel) to muster, call up; 1d) (Pual) to be passed in review, be caused to miss, be called, be called to account; 1e) (Hiphil); 1e1) to set over, make overseer, appoint an over",
+   "lsj": "",
+   "mounce": "",
+   "related": [
+    "H4662G מִפְקָד Muster [Gate]",
+    "H4662H מִפְקָד appointment",
+    "H6485A פָּקַד to reckon: list",
+    "H6485B פְּקוּדִים reckoning",
+    "H6485H פָּקַד to reckon: punish",
+    "H6485J פָּקַד to reckon: overseer",
+    "H6485K פָּקַד to reckon: missing",
+    "H6485L פָּקַד to reckon: put",
+    "H6486 פְּקֻדָּה punishment",
+    "H6487 פִּקָּדוֹן deposit",
+    "H6488 פְּקִדֻת oversight",
+    "H6489 פְּקוֹד Pekod"
+   ]
+  },
+  "H7200G": {
+   "surfaces": [
+    "regard"
+   ],
+   "sense_head": "see/show",
+   "meaning_range": "1) to see, look at, inspect, perceive, consider; 1a) (Qal); 1a1) to see; 1a2) to see, perceive; 1a3) to see, have vision; 1a4) to look at, see, regard, look after, see after, learn about, observe, watch, look upon, look out, find out; 1a5) to see, observe, consider, look at, give attention to, discern, distinguish; 1a6) to look at, gaze at; 1a7) to provide, choose; 1b) (Niphal); 1b1) to appear, present oneself; 1b2) to be seen; 1b3) to be visible; 1c) (Pual) to be seen; 1d) (Hiphil); 1d1) to cause to see, show; 1d2) to cause to look intently at, behold, cause to gaze at; 1e) (Hophal); 1e1) to be caused to see, be shown; 1e2) to be exhibited to; 1f) (Hithpael) to look at each other, face",
+   "lsj": "",
+   "mounce": "",
+   "related": [
+    "H3070 יִרְאֶה Provider [God]",
+    "H3376 יִרְאִיָּיה Irijah",
+    "H4758 מַרְאֶה appearance",
+    "H4759A מַרְאָה vision",
+    "H4759B מַרְאָה mirror",
+    "H7200H רָאָה to see: examine",
+    "H7200I רָאָה to see: behold!",
+    "H7200J רָאָה to see: select",
+    "H7200K רָאָה to see: enjoy",
+    "H7200L רָאָה to see: seer",
+    "H7200M רָאָה to see: approach",
+    "H7200N רָאָה Provider [God]"
+   ]
+  },
+  "H7200H": {
+   "surfaces": [
+    "considered"
+   ],
+   "sense_head": "examine/consider",
+   "meaning_range": "1) to see, look at, inspect, perceive, consider; 1a) (Qal); 1a1) to see; 1a2) to see, perceive; 1a3) to see, have vision; 1a4) to look at, see, regard, look after, see after, learn about, observe, watch, look upon, look out, find out; 1a5) to see, observe, consider, look at, give attention to, discern, distinguish; 1a6) to look at, gaze at; 1a7) to provide, choose; 1b) (Niphal); 1b1) to appear, present oneself; 1b2) to be seen; 1b3) to be visible; 1c) (Pual) to be seen; 1d) (Hiphil); 1d1) to cause to see, show; 1d2) to cause to look intently at, behold, cause to gaze at; 1e) (Hophal); 1e1) to be caused to see, be shown; 1e2) to be exhibited to; 1f) (Hithpael) to look at each other, face",
+   "lsj": "",
+   "mounce": "",
+   "related": [
+    "H3070 יִרְאֶה Provider [God]",
+    "H3376 יִרְאִיָּיה Irijah",
+    "H4758 מַרְאֶה appearance",
+    "H4759A מַרְאָה vision",
+    "H4759B מַרְאָה mirror",
+    "H7200G רָאָה to see: see",
+    "H7200I רָאָה to see: behold!",
+    "H7200J רָאָה to see: select",
+    "H7200K רָאָה to see: enjoy",
+    "H7200L רָאָה to see: seer",
+    "H7200M רָאָה to see: approach",
+    "H7200N רָאָה Provider [God]"
+   ]
+  },
+  "H7760K": {
+   "surfaces": [
+    "considered"
+   ],
+   "sense_head": "consider",
+   "meaning_range": "1) to put, place, set, appoint, make; 1a) (Qal); 1a1) to put, set, lay, put or lay upon, lay (violent) hands on; 1a2) to set, direct, direct toward; 1a2a) to extend (compassion) (fig); 1a3) to set, ordain, establish, found, appoint, constitute, make, determine, fix; 1a4) to set, station, put, set in place, plant, fix; 1a5) to make, make for, transform into, constitute, fashion, work, bring to pass, appoint, give; 1b) (Hiphil) to set or make for a sign; 1c) (Hophal) to be set",
+   "lsj": "",
+   "mounce": "",
+   "related": [
+    "H3450 יְשִׁימִאֵל Jesimiel",
+    "H7760A שׂוּם to set: make",
+    "H7760B שׂוּמָה fate",
+    "H7760H שׂוּם to set: put",
+    "H7760I שׂוּם to set: take",
+    "H7760J שׂוּם to set: accuse",
+    "H7760L שׂוּם to set: appoint",
+    "H7760M שׂוּם to set: name",
+    "H7761G שׂוּם to set: make",
+    "H7761H שׂוּם to set: put/give",
+    "H7761I שׂוּם to set: appoint",
+    "H8667 תְּשׂ֫וּמֶת security"
+   ]
+  },
+  "H7789": {
+   "surfaces": [
+    "regard"
+   ],
+   "sense_head": "to see",
+   "meaning_range": "1) to see, behold, observe, regard; 1a) (Qal); 1a1) to behold, observe; 1a2) to regard; 1a3) to watch, watch (stealthily), lie in wait",
+   "lsj": "",
+   "mounce": "",
+   "related": [
+    "H7790 שׁוּר enemy",
+    "H8324 שׁוֹרֵר enemy"
+   ]
+  },
+  "H7878": {
+   "surfaces": [
+    "considered"
+   ],
+   "sense_head": "to muse",
+   "meaning_range": "1) to put forth, mediate, muse, commune, speak, complain, ponder, sing; 1a) (Qal); 1a1) to complain; 1a2) to muse, meditate upon, study, ponder; 1a3) to talk, sing, speak; 1b) (Polel) to meditate, consider, put forth thoughts",
+   "lsj": "",
+   "mounce": "",
+   "related": [
+    "H7808 שֵׂחַ thought",
+    "H7879 שִׂיחַ complaint",
+    "H7881 שִׂיחָה meditation"
+   ]
+  },
+  "H7896K": {
+   "surfaces": [
+    "considered"
+   ],
+   "sense_head": "consider",
+   "meaning_range": "1) to put, set; 1a) (Qal); 1a1) to put, lay (hand upon); 1a2) to set, station, appoint, fix, set mind to; 1a3) to constitute, make (one something), make like, perform; 1a4) to take one's stand; 1a5) to lay waste; 1b) (Hophal) to be imposed, be set upon",
+   "lsj": "",
+   "mounce": "",
+   "related": [
+    "H7896G שִׁית to set: make",
+    "H7896H שִׁית to set: put",
+    "H7896I שִׁית to set: appoint",
+    "H7896J שִׁית to set: accuse",
+    "H7897 שִׁית garment",
+    "H7898 שַׁ֫יִת thornbush",
+    "H8352 שֵׁת Seth",
+    "H8356 שָׁת foundation"
+   ]
+  },
+  "H7919A": {
+   "surfaces": [
+    "regard"
+   ],
+   "sense_head": "be prudent",
+   "meaning_range": "1) to be prudent, be circumspect, wisely understand, prosper; 1a) (Qal) to be prudent, be circumspect; 1b) (Hiphil); 1b1) to look at or upon, have insight; 1b2) to give attention to, consider, ponder, be prudent; 1b3) to have insight, have comprehension; 1b3a) insight, comprehension (subst); 1b4) to cause to consider, give insight, teach; 1b4a) the teachers, the wise; 1b5) to act circumspectly, act prudently, act wisely; 1b6) to prosper, have success; 1b7) to cause to prosper; Aramaic equivalent: <i>se.khal</i> (שְׂכַל \"to contemplate\" H7920)",
+   "lsj": "",
+   "mounce": "",
+   "related": [
+    "H4905 מַשְׂכִּיל Maskil",
+    "H7919B שָׂכַל to cross hands",
+    "H7920 שְׂכַל to contemplate",
+    "H7922 שֵׂ֫כֶל understanding"
+   ]
+  },
+  "H7920": {
+   "surfaces": [
+    "considered"
+   ],
+   "sense_head": "to contemplate",
+   "meaning_range": "(Ithpael) to consider, contemplate; Aramaic of <i>sa.khal</i> (שָׂכַל \"be prudent\" H7919A)",
+   "lsj": "",
+   "mounce": "",
+   "related": [
+    "H7919A שָׂכַל be prudent",
+    "H7919B שָׂכַל to cross hands",
+    "H7924 שׇׂכְלְתָנוּ insight"
+   ]
+  },
+  "H8104J": {
+   "surfaces": [
+    "regard"
+   ],
+   "sense_head": "careful/dilligent",
+   "meaning_range": "1) to keep, guard, observe, give heed; 1a) (Qal); 1a1) to keep, have charge of; 1a2) to keep, guard, keep watch and ward, protect, save life; 1a2a) watch, watchman (participle); 1a3) to watch for, wait for; 1a4) to watch, observe; 1a5) to keep, retain, treasure up (in memory); 1a6) to keep (within bounds), restrain; 1a7) to observe, celebrate, keep (sabbath or covenant or commands), perform (vow); 1a8) to keep, preserve, protect; 1a9) to keep, reserve; 1b) (Niphal); 1b1) to be on one's guard, take heed, take care, beware; 1b2) to keep oneself, refrain, abstain; 1b3) to be kept, be guarded; 1c) (Piel) to keep, pay heed; 1d) (Hithpael) to keep oneself from",
+   "lsj": "",
+   "mounce": "",
+   "related": [
+    "H0821 אַשְׁמוּרָה watch",
+    "H3461 יִשְׁמְרַי Ishmerai",
+    "H4929 מִשְׁמָר custody",
+    "H4931 מִשְׁמֶ֫רֶת charge",
+    "H7763G שֹׁמֵר Shomer",
+    "H7763H שֹׁמֵר Shomer",
+    "H8068 שָׁמִיר thorn",
+    "H8104G שָׁמַר to keep: obey",
+    "H8104H שָׁמַר to keep: guard",
+    "H8104I שָׁמַר to keep: look at",
+    "H8106A שֶׁ֫מֶר Shemer",
+    "H8106B שָׁ֫מֶד Shemed"
+   ]
+  },
+  "H8159": {
+   "surfaces": [
+    "regard"
+   ],
+   "sense_head": "to gaze",
+   "meaning_range": "1) to look at or to, regard, gaze at or about; 1a) (Qal) to gaze at, regard, behold, look about; 1b) (Hiphil) to look away, cause gaze to turn away; 1c) (Hithpael) to look in dismay, gaze about (in anxiety)",
+   "lsj": "",
+   "mounce": "",
+   "related": [
+    "H8160 שָׁעָה moment"
+   ]
+  },
+  "H8254": {
+   "surfaces": [
+    "weigh"
+   ],
+   "sense_head": "to weigh",
+   "meaning_range": "1) to weigh, weigh out, pay out; 1a) (Qal); 1a1) to weigh; 1a2) to weigh out (a price); 1a3) of grief (fig); 1b) (Niphal); 1b1) to be weighed; 1b2) to be weighed out; Aramaic equivalent: <i>te.qal</i> (תְּקַל \"to weigh\" H8625A)",
+   "lsj": "",
+   "mounce": "",
+   "related": [
+    "H4946 מִשְׁקוֹל weight",
+    "H4948 מִשְׁקָל weight",
+    "H4949 מִשְׁקֶ֫לֶת level",
+    "H8255 שֶׁ֫קֶל shekel",
+    "H8256 שִׁקְמָה sycamore",
+    "H8625A תְּקַל to weigh",
+    "H8625B תְּקֵל shekel"
+   ]
+  },
+  "H9006": {
+   "surfaces": [
+    "regard"
+   ],
+   "sense_head": "from",
+   "meaning_range": "Prefix mem: from",
+   "lsj": "",
+   "mounce": "",
+   "related": [
+    ""
+   ]
+  }
+ },
+ "older": [],
+ "answer": {
+  "command": "ReadEnrichment",
+  "collection": "thought",
+  "subgroup": "weighing and taking account of",
+  "ledger_id": 1361,
+  "enrichments": [
+   {
+    "sense": 22886,
+    "kind": "enrichment",
+    "obs_text": "",
+    "basis": "read | stated",
+    "grounds": ""
+   },
+   {
+    "sense": 22887,
+    "kind": "enrichment",
+    "obs_text": "",
+    "basis": "read | stated",
+    "grounds": ""
+   },
+   {
+    "sense": 22888,
+    "kind": "enrichment",
+    "obs_text": "",
+    "basis": "read | stated",
+    "grounds": ""
+   },
+   {
+    "sense": 22889,
+    "kind": "enrichment",
+    "obs_text": "",
+    "basis": "read | stated",
+    "grounds": ""
+   },
+   {
+    "sense": 22890,
+    "kind": "enrichment",
+    "obs_text": "",
+    "basis": "read | stated",
+    "grounds": ""
+   },
+   {
+    "sense": 22891,
+    "kind": "enrichment",
+    "obs_text": "",
+    "basis": "read | stated",
+    "grounds": ""
+   },
+   {
+    "sense": 22892,
+    "kind": "enrichment",
+    "obs_text": "",
+    "basis": "read | stated",
+    "grounds": ""
+   },
+   {
+    "sense": 22893,
+    "kind": "enrichment",
+    "obs_text": "",
+    "basis": "read | stated",
+    "grounds": ""
+   }
+  ],
+  "older": []
+ },
+ "measured": {
+  "package_chars": 54913,
+  "seconds": 0.16
+ }
+}

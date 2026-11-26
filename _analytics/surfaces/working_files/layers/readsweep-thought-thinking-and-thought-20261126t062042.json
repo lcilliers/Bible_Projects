@@ -1,0 +1,3315 @@
+{
+ "command": "ReadSweep",
+ "collection": "thought",
+ "subgroup": "thinking and thought",
+ "step": "2.1",
+ "item": "sweep",
+ "made": "2026-11-26T06:20:42Z",
+ "instruction": {
+  "what": "The sweep (B4) of one subgroup, after its 2.1 rows: every observation of the subgroup's scope still unmarked after B1 to B3 -- older observations on its occurrences that B1 carried forward and B2 and B3 did not take up, any carried to the sweep, and any other unmarked observation of the scope (for example the reading of an earlier grouping). Each is judged by its content. End state: none of the subgroup's observations is unmarked, except one deferred to a named collection.",
+  "read": [
+   "Take one older observation at a time (`older`): its text, its stage and kind, its verses, how many of its nodes are on this subgroup's occurrences and how many elsewhere, and the collections its nodes belong to.",
+   "Judge it by what it states, not by its stage or kind: does it state what the data are or show, tied to a verse (evidence)? how something works in the inner being, based on evidence (inner being)? or neither?"
+  ],
+  "write": [
+   "Fill `answer.older`, one entry for each observation, each answered once, with `reason`: what it states and why it is so judged.",
+   "merge, with `into`: a live observation of the subgroup says the same in the same words. consume, with `carriers` (observation ids) and `mapping`: live observations already state what it says; every word occurrence of it must be on a live node of a carrier (VA-03), then it is deleted. keep, with `nature` evidence or inner_being: it stands as it is (an inner-being one waits for 3.1). delete_neither: it is neither evidence nor inner being; it is commented, then deleted with its nodes here (one held by other subgroups or collections loses only the nodes here). defer, with `collection`, `nature` and `finding`: another collection owns it; it is marked now and the finding is left to that collection.",
+   "Then: Collection-Build.ps1 -Action RecordSweep -File <the answer file> (-Check to preview). The record refuses the whole file on any fault; every unmarked observation must be answered."
+  ],
+  "keep": [
+   {
+    "rule": "VA-04 neither-evidence-nor-inner-being-is-deleted",
+    "text": "An observation that is neither evidence nor inner being contributes nothing to the purposes of the observations (researcher, 2026-11-22): it is commented with its reason and the word occurrences no other live observation holds, then deleted. An observation already marked, or one another observation traces, is not deleted this way."
+   },
+   {
+    "rule": "VA-05 the-marker-follows-content-not-stage",
+    "text": "Evidence states what the data are or show, tied to a verse. Inner being states how something works in the inner being, based on evidence, a building block of the stage 5 claims. The marker (ib_observation.nature) follows the content and purpose of the observation, never its stage (RS-04): an observation of any stage may be inner being when it traces to evidence. One that states both is split. The marker is set when the observation is created, by the item that is answered (cfg_setting layer.reading items.<item>.nature); a finding file never sets it; the validation changes it only where the content shows the item's nature does not hold."
+   },
+   {
+    "rule": "RW-01 changed-only-by-reading",
+    "text": "No observation is changed except by a reading, and every change is recorded with its reason. An observation no longer supported by the verse is soft-deleted, with the reason."
+   },
+   {
+    "rule": "RS-04 existing-checked-accept-modify-delete",
+    "text": "When a verse is worked, every existing observation and node on it, of any stage, is checked against the verse by its wording. The stage is not an indication of the nature of an observation and is never used to filter. Each observation is accepted, modified (changed in place; the old value, the new value and the reason are kept in ib_observation_change), soft deleted (the `deleted` column, with the reason), merged (a duplicate description, into the observation that is kept) or, when its wording shows it is not verse understanding, left exactly as it is with the reason. The check's fixes are part of it and need no separate approval. Nothing is physically deleted."
+   }
+  ],
+  "not_in_this_read": ""
+ },
+ "older": [
+  {
+   "observation": 22321,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "text": "Believing stands with the group in Pro 14:15, Rom 12:3, Phili 3:4 and Jam 1:26. In Pro 14:15 'believes' is 3 words before the member and is set against giving thought; in the other three the thing thought concerns oneself and its partner is faith (6 after, Rom 12:3), confidence (6 before and 1 after, Phili 3:4) and religion (12 after, Jam 1:26).",
+   "verses": [
+    "Jas.1.26",
+    "Phil.3.4",
+    "Prov.14.15",
+    "Rom.12.3"
+   ],
+   "nodes_here": 5,
+   "nodes_elsewhere": 5,
+   "collections": [
+    "believe",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22322,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "text": "Blessing words stand with the group at a distance in Rom 12:3, 2Cor 9:5 and Heb 10:29: grace 11 words before the member in Rom 12:3 and 16 after it in Heb 10:29, and a willing gift 16 after in 2Cor 9:5. The distances show the partner is in another clause of the verse, not in the clause of the member.",
+   "verses": [
+    "2Cor.9.5",
+    "Heb.10.29",
+    "Rom.12.3"
+   ],
+   "nodes_here": 4,
+   "nodes_elsewhere": 3,
+   "collections": [
+    "bless",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22323,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "text": "Calling stands with the group in Gen 26:9, 2Ki 5:11, Jer 3:19 and Jon 1:6. In 2Ki 5:11 (4 after) and Jer 3:19 (1 after) the call is part of what was expected; in Jon 1:6 it is the command to call on his god, 4 words before the hope that the god will give a thought; in Gen 26:9 the call (Abimelech calling Isaac) is 12 words before and a separate act.",
+   "verses": [
+    "2Kgs.5.11",
+    "Gen.26.9",
+    "Jer.3.19",
+    "Jonah.1.6"
+   ],
+   "nodes_here": 5,
+   "nodes_elsewhere": 4,
+   "collections": [
+    "call",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22324,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "text": "War words stand with the group in 1Sa 18:17, 2Ki 18:20, Isa 36:5 and Mic 2:8. In 2Ki 18:20 and Isa 36:5 'war' is 5 words after the member and is what the supposed strategy and power are for; in 1Sa 18:17 'fight' is 4 and 'battles' 2 words before the member and belong to Saul's plan; in Mic 2:8 'war' is 1 word after.",
+   "verses": [
+    "1Sam.18.17",
+    "2Kgs.18.20",
+    "Isa.36.5",
+    "Mic.2.8"
+   ],
+   "nodes_here": 4,
+   "nodes_elsewhere": 5,
+   "collections": [
+    "combat",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22327,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "text": "Concealing stands with the group in Gen 38:15, 2Ki 7:12 and Psa 64:5. In Gen 38:15 the covering is 2 words after the member and is the ground of Judah's supposition; in 2Ki 7:12 'hide' is 2 words and in Psa 64:5 'secretly' 1 word before the thought, so the thought is quoted beside hiding.",
+   "verses": [
+    "2Kgs.7.12",
+    "Gen.38.15",
+    "Ps.64.5"
+   ],
+   "nodes_here": 3,
+   "nodes_elsewhere": 3,
+   "collections": [
+    "conceal",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22330,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "text": "Deceiving stands with the group in 1Cor 3:18, Gal 6:3 and Jam 1:26: 6 words before the member in 1Cor 3:18, 5 after in Gal 6:3 and 8 after in Jam 1:26. In all three the person thinks something of himself (wise, something, religious) and the verse names self-deception beside it.",
+   "verses": [
+    "1Cor.3.18",
+    "Gal.6.3",
+    "Jas.1.26"
+   ],
+   "nodes_here": 3,
+   "nodes_elsewhere": 3,
+   "collections": [
+    "deceive",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22334,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "text": "Death words stand with the group in seven verses. In Gen 26:9, Job 29:18 and Jon 1:6 the dying or perishing is 2 words after the member and is the content of the thought; in Joh 11:13 death is 3 words before and the disciples suppose something else; in Act 8:20 perishing is 4 before, in 1Cor 4:9 death is 7 after and in 1Sa 20:3 15 after.",
+   "verses": [
+    "1Cor.4.9",
+    "1Sam.20.3",
+    "Acts.8.20",
+    "Gen.26.9",
+    "Job.29.18",
+    "John.11.13",
+    "Jonah.1.6"
+   ],
+   "nodes_here": 8,
+   "nodes_elsewhere": 9,
+   "collections": [
+    "die",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22335,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "text": "Enduring stands with the group in 2Ch 13:8, Jer 40:5, 1Cor 4:9 and 1Cor 7:26. In 2Ch 13:8 'withstand' is 1 word after the thought to withstand; in 1Cor 7:26 'remain' is 9 after and is what is judged good; in 1Cor 4:9 'last' is 6 after; in Jer 40:5 'remain' is 20 words before.",
+   "verses": [
+    "1Cor.4.9",
+    "1Cor.7.26",
+    "2Chr.13.8",
+    "Jer.40.5"
+   ],
+   "nodes_here": 4,
+   "nodes_elsewhere": 5,
+   "collections": [
+    "endure",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22338,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "text": "Fear stands with the group in six verses. In Gen 31:31, Exo 2:14, 2Sa 14:15 and Neh 6:9 the fear is 1 to 2 words before the thought and the thought comes from it; in Luk 24:37 the startled and frightened are 3 and 1 words before; in Gen 20:11 the fear is of God and is 3 words after, as what the thought says is absent.",
+   "verses": [
+    "2Sam.14.15",
+    "Exod.2.14",
+    "Gen.20.11",
+    "Gen.31.31",
+    "Luke.24.37",
+    "Neh.6.9"
+   ],
+   "nodes_here": 8,
+   "nodes_elsewhere": 8,
+   "collections": [
+    "fear",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22339,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "text": "Folly stands with the group in Pro 14:15, Rom 1:21, 1Cor 3:18, 2Cor 11:16 and 2Cor 12:6: 'simple' 4 words before in Pro 14:15, 'foolish' 2 after in Rom 1:21, 'fool' 7 after in 1Cor 3:18, 'foolish' 2 and 'fool' 9 after in 2Cor 11:16, 'fool' 8 before in 2Cor 12:6. Folly is what a person is judged to be or becomes in the thinking.",
+   "verses": [
+    "1Cor.3.18",
+    "2Cor.11.16",
+    "2Cor.12.6",
+    "Prov.14.15",
+    "Rom.1.21"
+   ],
+   "nodes_here": 6,
+   "nodes_elsewhere": 6,
+   "collections": [
+    "folly",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22340,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "text": "Security stands with the group in 2Ki 20:19, 2Ch 32:1, Isa 39:8 and Jer 40:5. In 2Ki 20:19 (4 after) and Isa 39:8 (3 after) security is the content of Hezekiah's thought; in 2Ch 32:1 the fortified cities are 2 words before and are what is planned against; in Jer 40:5 'guard' is 4 after.",
+   "verses": [
+    "2Chr.32.1",
+    "2Kgs.20.19",
+    "Isa.39.8",
+    "Jer.40.5"
+   ],
+   "nodes_here": 4,
+   "nodes_elsewhere": 4,
+   "collections": [
+    "guard",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22341,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "text": "The partner is the surface 'surely' (codes H0403, H2009, H0389, H3588A, H1931, H3318G, H0413) in five Hebrew verses, where it stands inside the quoted thought (1 to 5 words after the member in 1Sa 20:26 and 2Ki 5:11; positions not stored in the others), and hearing proper in Mat 6:7 (heard, 2 after), Luk 8:18 (hear, 12 before) and 2Cor 12:6 (hears, 7 after).",
+   "verses": [
+    "1Sam.16.6",
+    "1Sam.20.26",
+    "2Cor.12.6",
+    "2Kgs.5.11",
+    "Exod.2.14",
+    "Judg.3.24",
+    "Luke.8.18",
+    "Matt.6.7"
+   ],
+   "nodes_here": 8,
+   "nodes_elsewhere": 10,
+   "collections": [
+    "hear",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22347,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "text": "Work stands with the group in Neh 6:9, Ecc 9:10, Mat 21:28 and Eph 3:20: 4 words after in Neh 6:9, 1 before in Ecc 9:10 (where work and thought are two things not in Sheol), 11 after in Mat 21:28 and 3 after in Eph 3:20 (the power at work set beside what we think).",
+   "verses": [
+    "Eccl.9.10",
+    "Eph.3.20",
+    "Matt.21.28",
+    "Neh.6.9"
+   ],
+   "nodes_here": 5,
+   "nodes_elsewhere": 4,
+   "collections": [
+    "labor",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22350,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "text": "Loyalty stands with the group in 2Ch 32:1, Psa 48:9 and Psa 94:18. In both Psalm verses steadfast love is within 3 words after the member: in Psa 48:9 (1 after) it is what is thought on, in Psa 94:18 (3 after) it is what held the speaker up after he thought his foot slips; in 2Ch 32:1 faithfulness is 10 words before.",
+   "verses": [
+    "2Chr.32.1",
+    "Ps.48.9",
+    "Ps.94.18"
+   ],
+   "nodes_here": 3,
+   "nodes_elsewhere": 3,
+   "collections": [
+    "loyalty",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22351,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "text": "Silence and rest stand with the group in 2Sa 14:17 (rest, 5 after), Psa 50:21 (silent, 1 before), 1Cor 7:40 (remains, 3 before) and 1Pe 4:1 (ceased, 5 after). Only in Psa 50:21 is the silence the ground of the supposition (the speaker has been silent and is supposed to be like the other).",
+   "verses": [
+    "1Cor.7.40",
+    "1Pet.4.1",
+    "2Sam.14.17",
+    "Ps.50.21"
+   ],
+   "nodes_here": 4,
+   "nodes_elsewhere": 4,
+   "collections": [
+    "mute",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22352,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "text": "A gift stands with the group in Gen 32:20 (present, 3 after, the means of appeasing) and Jer 40:5 (present, 7 after). In Rut 4:4 the partner word is 'presence' (in the presence of, 4 after) and in 1Cor 7:26 it is 'present' as in the present distress (2 after), different senses of the English word.",
+   "verses": [
+    "1Cor.7.26",
+    "Gen.32.20",
+    "Jer.40.5",
+    "Ruth.4.4"
+   ],
+   "nodes_here": 4,
+   "nodes_elsewhere": 5,
+   "collections": [
+    "offer",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22353,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "text": "Suffering stands with the group in 2Ki 7:12 (hungry, 6 before), Luk 13:2 (suffered, 10 after) and 1Pe 4:1 (suffered, 2 and 2 after). In 1Pe 4:1 the suffering of Christ in the flesh is within two words of the way of thinking the readers are to arm themselves with.",
+   "verses": [
+    "1Pet.4.1",
+    "2Kgs.7.12",
+    "Luke.13.2"
+   ],
+   "nodes_here": 3,
+   "nodes_elsewhere": 4,
+   "collections": [
+    "pain",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22355,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "text": "Peace stands with the group in 2Ki 20:19 (3 after), Isa 39:8 (2 after), Mat 10:34 (4 after, twice) and Luk 12:51 (4 after). The same word has two stances: Hezekiah supposes there will be peace in his days, and in Mat 10:34 and Luk 12:51 the supposition that Jesus came to bring peace is the one corrected.",
+   "verses": [
+    "2Kgs.20.19",
+    "Isa.39.8",
+    "Luke.12.51",
+    "Matt.10.34"
+   ],
+   "nodes_here": 4,
+   "nodes_elsewhere": 6,
+   "collections": [
+    "quarrel",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22356,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "text": "Returning stands with the group in Jer 3:7 (5 after), Jer 40:5 (19 before) and Heb 11:15 (8 after). In Jer 3:7 the return is what was expected and did not happen; in Heb 11:15 it is what thinking of the land would have allowed.",
+   "verses": [
+    "Heb.11.15",
+    "Jer.3.7",
+    "Jer.40.5"
+   ],
+   "nodes_here": 3,
+   "nodes_elsewhere": 5,
+   "collections": [
+    "return",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22357,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "text": "Reward and its opposite stand with the group in Deu 15:9 ('unworthy', 1 before, by the code H1100I), Mat 22:17 (pay, 2 after, the tax) and Heb 10:29 (punishment, 1 before). In each verse the partner is within two words of the member; in Heb 10:29 the punishment is what the question asks the hearer to estimate.",
+   "verses": [
+    "Deut.15.9",
+    "Heb.10.29",
+    "Matt.22.17"
+   ],
+   "nodes_here": 4,
+   "nodes_elsewhere": 3,
+   "collections": [
+    "reward",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22358,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "text": "The poor and the rich stand with the group in Deu 15:9 (poor, 10 after), Psa 40:17 (poor 3 and needy 2 before), Mic 2:8 (rich, 4 before) and Joh 13:29 (poor, 17 after); Eph 3:20 has 'abundantly' (6 before). In Psa 40:17, Deu 15:9 and Joh 13:29 the poor are the ones the thought is directed to: thought taken for them, an unworthy thought toward a poor brother, a supposed gift to the poor.",
+   "verses": [
+    "Deut.15.9",
+    "Eph.3.20",
+    "John.13.29",
+    "Mic.2.8",
+    "Ps.40.17"
+   ],
+   "nodes_here": 6,
+   "nodes_elsewhere": 6,
+   "collections": [
+    "rich",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22362,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "text": "Giving stands with the group in twelve verses. It is within three words after the member in Jdg 15:2 (3), 1Sa 18:21 (1) and Luk 12:51 (3), where it is what is done or supposed on the strength of the thought (her father gave her away, Saul will give her to him, Jesus supposed to give peace); in the others it is 4 to 15 words away (Deu 15:9, 1Sa 18:17, Jer 3:19, Jer 40:5, Dan 7:25, Luk 8:18, Joh 13:29, Rom 12:3, 1Cor 13:11).",
+   "verses": [
+    "1Cor.13.11",
+    "1Sam.18.17",
+    "1Sam.18.21",
+    "Dan.7.25",
+    "Deut.15.9",
+    "Jer.3.19",
+    "Jer.40.5",
+    "John.13.29",
+    "Judg.15.2",
+    "Luke.12.51",
+    "Luke.8.18",
+    "Rom.12.3"
+   ],
+   "nodes_here": 14,
+   "nodes_elsewhere": 13,
+   "collections": [
+    "share",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22365,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "text": "Asking stands with the group in 2Sa 14:15 (request, 7 after), Mat 6:7 (pray, 6 before) and Mat 26:53 (appeal, 3 after). In Mat 6:7 those who pray suppose they will be heard for many words; in Mat 26:53 the supposition is whether Jesus cannot appeal to the Father; in 2Sa 14:15 the request is what the speaker came to make.",
+   "verses": [
+    "2Sam.14.15",
+    "Matt.26.53",
+    "Matt.6.7"
+   ],
+   "nodes_here": 3,
+   "nodes_elsewhere": 4,
+   "collections": [
+    "supplication",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22366,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "text": "Affliction stands with the group in Lam 1:9 (affliction, 8 after), 1Cor 7:26 (distress, 3 after) and Phili 1:17 (afflict, 1 after). In Phili 1:17 the thought is of afflicting Paul and the affliction is 1 word after it; in 1Cor 7:26 the distress is the ground of the judgment; in Lam 1:9 the affliction is the speaker's lament.",
+   "verses": [
+    "1Cor.7.26",
+    "Lam.1.9",
+    "Phil.1.17"
+   ],
+   "nodes_here": 3,
+   "nodes_elsewhere": 5,
+   "collections": [
+    "thought",
+    "tribulation"
+   ]
+  },
+  {
+   "observation": 22367,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "text": "Trust stands with the group in 1Sa 27:12 (trusted, 2 before), 2Ki 18:20 and Isa 36:5 (trust, 8 after) and Mic 2:8 (trustingly, 1 before). In 1Sa 27:12 the trust is the ground of Achish's thought; in the two parallel verses the question of whom they trust follows the supposed claim about words.",
+   "verses": [
+    "1Sam.27.12",
+    "2Kgs.18.20",
+    "Isa.36.5",
+    "Mic.2.8"
+   ],
+   "nodes_here": 4,
+   "nodes_elsewhere": 5,
+   "collections": [
+    "thought",
+    "trust"
+   ]
+  },
+  {
+   "observation": 22368,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "text": "Cleanness and uncleanness stand with the group in 1Sa 20:26 (clean, 4 after, twice), Lam 1:9 (uncleanness, 5 before) and Rom 14:14 (unclean, 2 before, three nodes). In Rom 14:14 the uncleanness is the object of the thinking and depends on it; in 1Sa 20:26 Saul's thought is that David is not clean.",
+   "verses": [
+    "1Sam.20.26",
+    "Lam.1.9",
+    "Rom.14.14"
+   ],
+   "nodes_here": 3,
+   "nodes_elsewhere": 6,
+   "collections": [
+    "thought",
+    "unclean"
+   ]
+  },
+  {
+   "observation": 22391,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "text": "A bodily change stands with the group in Dan 5:6 (changed, 1 before), Dan 5:10 (change, 3 after) and Dan 7:28 (changed, 5 after). These are the three Aramaic verses in which the thoughts alarm the person, and the change of color is named within five words of the alarmed thoughts.",
+   "verses": [
+    "Dan.5.10",
+    "Dan.5.6",
+    "Dan.7.28"
+   ],
+   "nodes_here": 3,
+   "nodes_elsewhere": 4,
+   "collections": [
+    "change",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22392,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "text": "Evil and wickedness stand with the group in all fourteen verses, within five words of the member in each. Within one word: Pro 15:26, Mat 15:19, Mar 7:21 and Jam 2:4; within three: Gen 6:5, Job 21:27, Psa 10:4 and Psa 56:5; at four or five: Pro 12:5, Isa 55:7, Isa 59:7, Jer 4:14, Eze 38:10 and Mat 9:4. In Pro 12:5 the thoughts of the righteous are set beside the counsels of the wicked.",
+   "verses": [
+    "Ezek.38.10",
+    "Gen.6.5",
+    "Isa.55.7",
+    "Isa.59.7",
+    "Jas.2.4",
+    "Jer.4.14",
+    "Job.21.27",
+    "Mark.7.21",
+    "Matt.15.19",
+    "Matt.9.4",
+    "Prov.12.5",
+    "Prov.15.26",
+    "Ps.10.4",
+    "Ps.56.5"
+   ],
+   "nodes_here": 15,
+   "nodes_elsewhere": 17,
+   "collections": [
+    "evildoer",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22393,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "text": "Fear and alarm stand with the group in six verses. In Dan 4:19, 5:6, 5:10 and 7:28 the thoughts are the subject of alarming, with the alarm 1 to 2 words after the member; in Job 32:6 the speaker is afraid, 4 words before declaring his opinion; in 2Cor 11:3 the fear (10 before) is Paul's fear about the readers' thoughts.",
+   "verses": [
+    "2Cor.11.3",
+    "Dan.4.19",
+    "Dan.5.10",
+    "Dan.5.6",
+    "Dan.7.28",
+    "Job.32.6"
+   ],
+   "nodes_here": 6,
+   "nodes_elsewhere": 8,
+   "collections": [
+    "fear",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22394,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "text": "A heart or mind is named with the group in all fifteen verses. It is within three words of the member in eight (Gen 6:5, 1Ch 29:18, Dan 2:30, Luk 1:51, Eze 38:10, Mat 15:19, Luk 2:35, Heb 4:12), and in Rom 2:15 the conscience is 3 before; it is 4 to 9 away in Psa 139:23, Mar 7:21, Jer 4:14, Mat 9:4, Luk 5:22 and Dan 7:28. The verses place the thoughts in, or coming out of, the heart.",
+   "verses": [
+    "1Chr.29.18",
+    "Dan.2.30",
+    "Dan.7.28",
+    "Ezek.38.10",
+    "Gen.6.5",
+    "Heb.4.12",
+    "Jer.4.14",
+    "Luke.1.51",
+    "Luke.2.35",
+    "Luke.5.22",
+    "Mark.7.21",
+    "Matt.15.19",
+    "Matt.9.4",
+    "Ps.139.23",
+    "Rom.2.15"
+   ],
+   "nodes_here": 14,
+   "nodes_elsewhere": 18,
+   "collections": [
+    "heart",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22395,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "text": "Intention stands with the group in Gen 6:5 (intention, 1 before), 1Ch 29:18 (purposes, 1 before), Mic 4:12 (plan, 4 after) and Heb 4:12 (intentions, 2 after). The partner words are of the same kind as the member and are paired with it in the verse.",
+   "verses": [
+    "1Chr.29.18",
+    "Gen.6.5",
+    "Heb.4.12",
+    "Mic.4.12"
+   ],
+   "nodes_here": 4,
+   "nodes_elsewhere": 4,
+   "collections": [
+    "intend",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22396,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "text": "Knowing stands with the group in sixteen verses. In thirteen the thoughts are the object of a verb of knowing or perceiving (within four words before the member where the position is stored: Job 21:27, Psa 94:11, Psa 139:2, Psa 139:23, Dan 2:30, Mic 4:12, Mat 9:4, Luk 5:22, Luk 6:8, Luk 11:17, 1Cor 2:11, 1Cor 3:20; Mat 12:25 has no stored position); the exceptions are Dan 2:29 (known, 7 after) and Mat 22:16 and Mar 12:14, where 'opinion' stands 14 and 9 words after 'know'.",
+   "verses": [
+    "1Cor.2.11",
+    "1Cor.3.20",
+    "Dan.2.29",
+    "Dan.2.30",
+    "Job.21.27",
+    "Luke.11.17",
+    "Luke.5.22",
+    "Luke.6.8",
+    "Mark.12.14",
+    "Matt.12.25",
+    "Matt.22.16",
+    "Matt.9.4",
+    "Mic.4.12",
+    "Ps.139.2",
+    "Ps.139.23",
+    "Ps.94.11"
+   ],
+   "nodes_here": 16,
+   "nodes_elsewhere": 20,
+   "collections": [
+    "know",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22397,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "text": "Works stand with the group in Psa 92:5 (works, 3 before), Isa 66:18 (works, 1 before) and Rom 2:15 (work, 10 before). In Psa 92:5 and Isa 66:18 works and thoughts are paired within three words, as God's works and thoughts and as what the Lord knows of the nations.",
+   "verses": [
+    "Isa.66.18",
+    "Ps.92.5",
+    "Rom.2.15"
+   ],
+   "nodes_here": 2,
+   "nodes_elsewhere": 4,
+   "collections": [
+    "labor",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22398,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "text": "Words of life stand with the group in Dan 2:30 (living, 9 before), Dan 5:10 (live, 3 before) and Heb 4:12 (living, 19 before). The distances, and the phrases (the living, live forever, the word is living), show no grammatical tie to the member.",
+   "verses": [
+    "Dan.2.30",
+    "Dan.5.10",
+    "Heb.4.12"
+   ],
+   "nodes_here": 3,
+   "nodes_elsewhere": 3,
+   "collections": [
+    "live",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22399,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "text": "Declaring stands with the group in six verses. In Job 32:6, 32:10 and 32:17 'declare' is 2 words before the member and the opinion is what is declared; in Psa 40:5 (proclaim, 4 after) and Isa 55:8 (declares, 4 after) the declaring follows the thoughts of the Lord; in Dan 5:10 (declared, 5 before) it is the queen's speech.",
+   "verses": [
+    "Dan.5.10",
+    "Isa.55.8",
+    "Job.32.10",
+    "Job.32.17",
+    "Job.32.6",
+    "Ps.40.5"
+   ],
+   "nodes_here": 7,
+   "nodes_elsewhere": 8,
+   "collections": [
+    "preach",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22400,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "text": "Answering stands with the group in five verses. In Job 20:2 (answer, 1 after) and Luk 5:22 (answered, 1 after) the thoughts are the occasion of the answer, and in Dan 4:19 (answered, 3 after, twice) the king answers after the thoughts alarmed him; in Job 32:6 (12 before) and Job 32:17 (6 before) the answer comes before the opinion is declared.",
+   "verses": [
+    "Dan.4.19",
+    "Job.20.2",
+    "Job.32.17",
+    "Job.32.6",
+    "Luke.5.22"
+   ],
+   "nodes_here": 5,
+   "nodes_elsewhere": 6,
+   "collections": [
+    "profess",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22402,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "text": "Righteousness stands with the group in Pro 12:5 (righteous, 1 after; just, 2 after), and the partner is sexual immorality in Mat 15:19 (3 after) and Mar 7:21 (1 after), in the list that follows 'evil thoughts', and 'lawful' in Mar 12:14 (8 after). In Pro 12:5 the thoughts of the righteous are set beside the counsels of the wicked.",
+   "verses": [
+    "Mark.12.14",
+    "Mark.7.21",
+    "Matt.15.19",
+    "Prov.12.5"
+   ],
+   "nodes_here": 4,
+   "nodes_elsewhere": 5,
+   "collections": [
+    "righteous",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22403,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "text": "Teaching stands with the group in Pro 12:5 (counsels, 3 after), Mat 22:16 (teach, 9 before) and Mar 12:14 (teach, 5 after). In the two Gospel verses the opinion in question is the opinion of persons, which the Teacher is said not to regard while he teaches the way of God.",
+   "verses": [
+    "Mark.12.14",
+    "Matt.22.16",
+    "Prov.12.5"
+   ],
+   "nodes_here": 3,
+   "nodes_elsewhere": 3,
+   "collections": [
+    "teach",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22404,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "text": "Wisdom and discernment stand with the group in six verses. In Psa 139:2 (discern, 1 before) and Heb 4:12 (discerning, 1 before) the thoughts are the object of discerning; in 1Cor 3:20 (wise, 1 after) the thoughts are of the wise and are futile; in Pro 18:2 (understanding, 6 before), Mic 4:12 (understand, 3 after) and Dan 2:30 (wisdom, 13 before) the partner is farther off.",
+   "verses": [
+    "1Cor.3.20",
+    "Dan.2.30",
+    "Heb.4.12",
+    "Mic.4.12",
+    "Prov.18.2",
+    "Ps.139.2"
+   ],
+   "nodes_here": 6,
+   "nodes_elsewhere": 6,
+   "collections": [
+    "thought",
+    "wise"
+   ]
+  },
+  {
+   "observation": 22405,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "text": "Calling stands with the group in Isa 7:14 (call, 3 after), Mat 1:23 (5 after) and Luk 1:31 (7 after). In all three the calling of the child's name follows the conceiving and the bearing of a son.",
+   "verses": [
+    "Isa.7.14",
+    "Luke.1.31",
+    "Matt.1.23"
+   ],
+   "nodes_here": 4,
+   "nodes_elsewhere": 3,
+   "collections": [
+    "call",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22406,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "text": "Bearing stands with the group in six verses, 1 word after the member in Jdg 13:3, 13:5, 13:7 and Isa 7:14, 2 after in Mat 1:23 and 4 after in Luk 1:31. In every verse the bearing of a child is the second act of the pair, conceive and bear.",
+   "verses": [
+    "Isa.7.14",
+    "Judg.13.3",
+    "Judg.13.5",
+    "Judg.13.7",
+    "Luke.1.31",
+    "Matt.1.23"
+   ],
+   "nodes_here": 7,
+   "nodes_elsewhere": 6,
+   "collections": [
+    "endure",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22410,
+   "stage": "layer-2",
+   "kind": "face",
+   "text": "The surface 'think' carries seventeen codes in four senses. A judgment or supposition held: G1380 (20 verses), G3543 (4), G5426 (4), G3049 (Phili 4:8 and 2Cor 12:6), G3539 (Eph 3:20), H2803J (6), H1819 (Est 4:13). A thing said or claimed: H0559 (2Ki 18:20, 2Ch 13:8, Isa 36:5, Eze 11:5). The idiom 'in the eyes of': H5869I (Num 36:6, 2Sa 10:3, 1Ch 19:3, Jer 40:5). Other acts of mind: H7200H (2Sa 18:27, a judgment from seeing), H2142 (Psa 119:52, to call to mind), H2803I (Isa 10:7, to plan), H5452 (Dan 7:25, to intend), G1760 (Mat 9:4). H0413 (Jer 40:4, a preposition) and G1161 with G2233 (2Pe 1:13, a connective and the verb of counting) sit in the unit without carrying the sense.",
+   "verses": [
+    "1Chr.19.3",
+    "1Cor.12.23",
+    "1Cor.4.9",
+    "1Cor.7.26",
+    "1Cor.7.40",
+    "2Chr.13.8",
+    "2Cor.11.16",
+    "2Cor.12.6",
+    "2Kgs.18.20",
+    "2Pet.1.13",
+    "2Sam.10.3",
+    "2Sam.18.27",
+    "Acts.17.29",
+    "Dan.7.25",
+    "Eph.3.20",
+    "Esth.4.13",
+    "Ezek.11.5",
+    "Heb.10.29",
+    "Isa.10.7",
+    "Isa.36.5",
+    "Jer.23.27",
+    "Jer.40.4",
+    "Jer.40.5",
+    "Job.35.2",
+    "Job.41.32",
+    "Job.6.26",
+    "John.11.56",
+    "John.16.2",
+    "John.5.39",
+    "John.5.45",
+    "Luke.10.36",
+    "Luke.12.51",
+    "Luke.13.2",
+    "Luke.13.4",
+    "Matt.10.34",
+    "Matt.17.25",
+    "Matt.18.12",
+    "Matt.21.28",
+    "Matt.22.17",
+    "Matt.22.42",
+    "Matt.26.53",
+    "Matt.5.17",
+    "Matt.6.7",
+    "Matt.9.4",
+    "Num.36.6",
+    "Phil.3.15",
+    "Phil.4.8",
+    "Ps.119.52",
+    "Ps.119.59",
+    "Ps.144.3",
+    "Rom.12.3"
+   ],
+   "nodes_here": 54,
+   "nodes_elsewhere": 0,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22411,
+   "stage": "layer-2",
+   "kind": "face",
+   "text": "The surface 'thinking' carries nine codes in three senses. A thought held or quoted: H0559 (eight verses, with the purpose of 2Ch 32:1), G1380 (2Cor 12:19) and G3633 (Phili 1:17). The mind or way of thinking as a noun: G5424 (1Cor 14:20), G1771 (1Pe 4:1) and G1261 (Rom 1:21). Calling to mind: G3421 (Heb 11:15). H0853 (Neh 6:9, the object marker) and G2532 (Rom 1:21, a connective) sit in the units without carrying a sense.",
+   "verses": [
+    "1Cor.14.20",
+    "1Pet.4.1",
+    "1Sam.27.11",
+    "1Sam.27.12",
+    "2Chr.32.1",
+    "2Cor.12.19",
+    "2Kgs.7.12",
+    "2Sam.5.6",
+    "Gen.32.8",
+    "Heb.11.15",
+    "Neh.6.9",
+    "Phil.1.17",
+    "Ps.64.5",
+    "Rom.1.21"
+   ],
+   "nodes_here": 17,
+   "nodes_elsewhere": 0,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22412,
+   "stage": "layer-2",
+   "kind": "face",
+   "text": "The surface 'thinks' carries four codes: H0559 (1Sa 20:3, a thought quoted), G1380 (seven verses, a person's estimate of himself), G3049 (Rom 14:14, reckoning a thing unclean) and G3543 (1Cor 7:36, a judgment of his conduct). All four are verbs of holding a view; the surface has one sense with four verbs behind it.",
+   "verses": [
+    "1Cor.10.12",
+    "1Cor.14.37",
+    "1Cor.3.18",
+    "1Cor.7.36",
+    "1Sam.20.3",
+    "Gal.6.3",
+    "Jas.1.26",
+    "Luke.8.18",
+    "Phil.3.4",
+    "Rom.14.14"
+   ],
+   "nodes_here": 10,
+   "nodes_elsewhere": 0,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22427,
+   "stage": "layer-2",
+   "kind": "face",
+   "text": "The surface 'opinion' carries three codes in three senses. H1843 (Job 32:6, 32:10, 32:17) is a view or knowledge that Elihu declares; H3820A (Pro 18:2) is the heart, what the fool lays bare; G0991 (Mat 22:16, Mar 12:14) is a looking at persons, regard for how they appear.",
+   "verses": [
+    "Job.32.10",
+    "Job.32.17",
+    "Job.32.6",
+    "Mark.12.14",
+    "Matt.22.16",
+    "Prov.18.2"
+   ],
+   "nodes_here": 6,
+   "nodes_elsewhere": 0,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22428,
+   "stage": "layer-2",
+   "kind": "face",
+   "text": "The surface 'thoughts' carries fifteen codes, all nouns of the same kind: thought and device (H4284, 19 verses; H4209; H7454; H7476; H4093; H8312; G1761; G3540; G1270), reasoning (G1261, seven verses; G3053), the mind (G1271), disquietings (H5587B), the muttered musing of enemies (H1902H in Lam 3:62), matters that come up (H1697I in Eze 38:10) and the article G3588 in 1Cor 2:11, whose morph is empty and which is flagged in #2533. The surface has one sense; the verses differ in whose thoughts they are, a person's, the wicked's or the Lord's.",
+   "verses": [
+    "1Chr.29.18",
+    "1Cor.2.11",
+    "1Cor.3.20",
+    "2Cor.11.3",
+    "Dan.2.29",
+    "Dan.2.30",
+    "Dan.4.19",
+    "Dan.5.10",
+    "Dan.5.6",
+    "Dan.7.28",
+    "Eccl.10.20",
+    "Ezek.38.10",
+    "Gen.6.5",
+    "Heb.4.12",
+    "Isa.55.7",
+    "Isa.55.8",
+    "Isa.55.9",
+    "Isa.59.7",
+    "Isa.66.18",
+    "Jas.2.4",
+    "Jer.4.14",
+    "Job.20.2",
+    "Job.21.27",
+    "Lam.3.62",
+    "Luke.1.51",
+    "Luke.11.17",
+    "Luke.2.35",
+    "Luke.5.22",
+    "Luke.6.8",
+    "Mark.7.21",
+    "Matt.12.25",
+    "Matt.15.19",
+    "Matt.9.4",
+    "Mic.4.12",
+    "Prov.12.5",
+    "Prov.15.26",
+    "Ps.10.4",
+    "Ps.139.17",
+    "Ps.139.2",
+    "Ps.139.23",
+    "Ps.40.5",
+    "Ps.56.5",
+    "Ps.92.5",
+    "Ps.94.11"
+   ],
+   "nodes_here": 47,
+   "nodes_elsewhere": 0,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22429,
+   "stage": "layer-2",
+   "kind": "face",
+   "text": "The surface 'conceive' carries nine codes in two senses, with one rhetorical use between them. The bodily conceiving of a child: H2232 (Num 5:28), H2029 (Jdg 13:3), H2030A (Jdg 13:5, 13:7, Isa 7:14), H3179 (Psa 51:5), and the Greek G4815 (Luk 1:31), G2192 with G1722 (Mat 1:23) and G2602 with G4690G (Heb 11:11). The figurative conceiving of trouble, chaff and mischief: H2029 in Job 15:35, Isa 33:11 and Isa 59:4, where what is conceived is borne as evil or stubble. H2029 in Num 11:12 is Moses' rhetorical question whether he conceived the whole people, the bodily word used of his relation to them.",
+   "verses": [
+    "Heb.11.11",
+    "Isa.33.11",
+    "Isa.59.4",
+    "Isa.7.14",
+    "Job.15.35",
+    "Judg.13.3",
+    "Judg.13.5",
+    "Judg.13.7",
+    "Luke.1.31",
+    "Matt.1.23",
+    "Num.11.12",
+    "Num.5.28",
+    "Ps.51.5"
+   ],
+   "nodes_here": 15,
+   "nodes_elsewhere": 0,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22437,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "text": "Qualifiers stand with the devising group in four verses with negators (5 stored pairs). They reach words other than the member: 'defiled' in Num 5:28 (a woman not defiled shall conceive), 'borne' in Jdg 13:3 (barren, has not borne), and in Jdg 13:5 and 13:7 the things the woman must not do (a razor, wine, strong drink, unclean food). The adjectives are 'barren' (Jdg 13:3), 'clean' (Num 5:28) and 'faithful' (Heb 11:11, the one who promised); none qualifies the conceiving itself.",
+   "verses": [
+    "Heb.11.11",
+    "Isa.7.14",
+    "Judg.13.3",
+    "Judg.13.5",
+    "Judg.13.7",
+    "Num.5.28"
+   ],
+   "nodes_here": 7,
+   "nodes_elsewhere": 10,
+   "collections": [
+    "dry",
+    "loyalty",
+    "thought",
+    "unclean"
+   ]
+  },
+  {
+   "observation": 22444,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "text": "Entities are named in 8 of the 13 verses of the devising group, 7 different ones in 15 stored pairs (9 human, 6 divine). The divine are God (4), the Lord and Jesus; the human are Immanuel (3), Sarah (2), the woman and the child. The persons are those conceiving or conceived (Sarah, the woman, Immanuel), and the divine appear as the one who sends the angel or whose name 'God with us' the child bears.",
+   "verses": [
+    "Heb.11.11",
+    "Isa.7.14",
+    "Judg.13.3",
+    "Judg.13.5",
+    "Judg.13.7",
+    "Luke.1.31",
+    "Matt.1.23",
+    "Num.5.28"
+   ],
+   "nodes_here": 10,
+   "nodes_elsewhere": 12,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22451,
+   "stage": "layer-2",
+   "kind": "relation",
+   "text": "The direction does not change across the verses of the devising group. In Jdg 13:3, 13:5, 13:7, Isa 7:14, Mat 1:23 and Luk 1:31 a messenger or the Lord announces to a woman that she will conceive and bear a son, and in Heb 11:11 Sarah received power to conceive; the conceiving runs from the woman to the child, and the divine entity is the source of the announcement.",
+   "verses": [
+    "Heb.11.11",
+    "Isa.7.14",
+    "Judg.13.3",
+    "Judg.13.5",
+    "Judg.13.7",
+    "Luke.1.31",
+    "Matt.1.23",
+    "Num.5.28"
+   ],
+   "nodes_here": 10,
+   "nodes_elsewhere": 12,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22506,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "A thought is said within oneself and given as quoted speech in twenty-eight verses: Abraham, Isaac, Jacob, Saul, David, Naaman, Hezekiah and others each think something and the verse gives it. The code behind most is the verb 'to say', whose lexicon sense includes saying in one's heart; in several the thought is spoken to another in a dialogue.",
+   "verses": [
+    "1Sam.16.6",
+    "1Sam.18.11",
+    "1Sam.18.17",
+    "1Sam.18.21",
+    "1Sam.20.26",
+    "1Sam.20.3",
+    "1Sam.27.11",
+    "1Sam.27.12",
+    "2Kgs.20.19",
+    "2Kgs.5.11",
+    "2Kgs.7.12",
+    "2Sam.14.15",
+    "2Sam.14.17",
+    "2Sam.5.6",
+    "Exod.2.14",
+    "Ezek.20.32",
+    "Gen.20.11",
+    "Gen.26.9",
+    "Gen.32.20",
+    "Gen.32.8",
+    "Isa.39.8",
+    "Jer.3.7",
+    "Job.29.18",
+    "Josh.22.28",
+    "Judg.3.24",
+    "Neh.6.9",
+    "Ps.64.5",
+    "Ps.94.18"
+   ],
+   "nodes_here": 28,
+   "nodes_elsewhere": 0,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22509,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "A thought is held as a purpose or plan in Num 33:56, 1Sa 18:25, 2Sa 21:16, 2Ch 13:8, 2Ch 32:1, Isa 10:7, Jer 23:27, Dan 7:25, Rut 4:4 and Phili 1:17: the Lord's purpose, Saul's snare, a giant's killing, withstanding a kingdom, conquering cities, destroying nations, making the people forget, changing the times, telling a kinsman and afflicting Paul. The verb is the same as for a supposition, and the verse gives the purpose within two words of it in several.",
+   "verses": [
+    "1Sam.18.25",
+    "2Chr.13.8",
+    "2Chr.32.1",
+    "2Sam.21.16",
+    "Dan.7.25",
+    "Isa.10.7",
+    "Jer.23.27",
+    "Num.33.56",
+    "Phil.1.17",
+    "Ruth.4.4"
+   ],
+   "nodes_here": 10,
+   "nodes_elsewhere": 0,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22510,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "A view is asked of the hearer in eight verses, where Jesus or the writer puts the question and the hearer's opinion is what is sought: what do you think, Simon (Mat 17:25), a man with a hundred sheep (Mat 18:12), a man with two sons (Mat 21:28), is it lawful (Mat 22:17), what of the Christ (Mat 22:42), which of the three (Luk 10:36), the feast (Joh 11:56) and how much worse a punishment (Heb 10:29). The direction of the asking runs from the speaker to the hearer.",
+   "verses": [
+    "Heb.10.29",
+    "John.11.56",
+    "Luke.10.36",
+    "Matt.17.25",
+    "Matt.18.12",
+    "Matt.21.28",
+    "Matt.22.17",
+    "Matt.22.42"
+   ],
+   "nodes_here": 8,
+   "nodes_elsewhere": 0,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22515,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "What is held to be so is peace and security in 2Ki 20:19 and Isa 39:8 (Hezekiah's thought, security 3 to 4 words after) and in Mat 10:34 and Luk 12:51 (the supposition that Jesus came to bring peace, which is corrected); and fortified cities in 2Ch 32:1 and a guard in Jer 40:5. The same word peace is held by Hezekiah and denied of Jesus' coming.",
+   "verses": [
+    "2Chr.32.1",
+    "2Kgs.20.19",
+    "Isa.39.8",
+    "Jer.40.5",
+    "Luke.12.51",
+    "Matt.10.34"
+   ],
+   "nodes_here": 6,
+   "nodes_elsewhere": 0,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22518,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "What is thought of is the steadfast love of the Lord in Psa 48:9 (1 word after the member), and what answers the thought of falling is the same steadfast love in Psa 94:18 (3 words after); the poor are the ones the Lord thinks of in Psa 40:17 (poor 3 before, needy 2 before) and the ones the unworthy thought turns from in Deu 15:9 (poor 10 after). The thinking is directed at the Lord's love or at the poor.",
+   "verses": [
+    "Deut.15.9",
+    "Ps.40.17",
+    "Ps.48.9",
+    "Ps.94.18"
+   ],
+   "nodes_here": 4,
+   "nodes_elsewhere": 0,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22521,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Fear stands within three words before the thought in Gen 31:31, Exo 2:14, 2Sa 14:15 and Neh 6:9, in Luk 24:37 (startled and frightened, 3 and 1 words before) and in Gen 20:11 (the fear of God, 3 words after). In five of the six the fear is named before the thought and the thought comes from it.",
+   "verses": [
+    "2Sam.14.15",
+    "Exod.2.14",
+    "Gen.20.11",
+    "Gen.31.31",
+    "Luke.24.37",
+    "Neh.6.9"
+   ],
+   "nodes_here": 7,
+   "nodes_elsewhere": 0,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22526,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Trust, loyalty and silence stand with the thought in 1Sa 27:12 (Achish trusted David, 2 words before), 2Ki 18:20 and Isa 36:5 (whom do you trust, 8 after), Mic 2:8 (trustingly, 1 before), Psa 48:9 and Psa 94:18 (steadfast love within 3 words) and Psa 50:21 (silence 1 word before the false supposition). Trust is the ground of Achish's thought, and the Lord's silence is the ground of the supposition that he is like the one who has done these things.",
+   "verses": [
+    "1Sam.27.12",
+    "2Kgs.18.20",
+    "Isa.36.5",
+    "Mic.2.8",
+    "Ps.48.9",
+    "Ps.50.21",
+    "Ps.94.18"
+   ],
+   "nodes_here": 7,
+   "nodes_elsewhere": 0,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22527,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Asking and calling stand with the supposition in Mat 6:7 (those who pray suppose they will be heard), Mat 26:53 (the supposition whether Jesus cannot appeal), 2Sa 14:15 (the request the woman came to make), 2Ki 5:11 (Naaman supposes the prophet will call on the name of the Lord, 4 after), Jer 3:19 (call me Father, 1 after) and Jon 1:6 (call out to your god, 4 before the hope). The supposition is about being heard or about a call.",
+   "verses": [
+    "2Kgs.5.11",
+    "2Sam.14.15",
+    "Jer.3.19",
+    "Jonah.1.6",
+    "Matt.26.53",
+    "Matt.6.7"
+   ],
+   "nodes_here": 7,
+   "nodes_elsewhere": 0,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22530,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Believing, honor, reward and the commandment stand with the thought in Pro 14:15 (the simple believes, 3 words before), Rom 12:3 (faith, 6 after), Jam 1:26 (religion, 12 after), 2Sa 10:3 and 1Ch 19:3 (honoring, 4 after), 1Cor 12:23 (honor, 3 after), Heb 10:29 (punishment, 1 before), Mat 22:17 (pay, 2 after) and Num 36:6 and 1Cor 14:37 (the Lord's command). In each the thought is about something owed, believed or commanded.",
+   "verses": [
+    "1Chr.19.3",
+    "1Cor.12.23",
+    "1Cor.14.37",
+    "2Sam.10.3",
+    "Heb.10.29",
+    "Jas.1.26",
+    "Matt.22.17",
+    "Num.36.6",
+    "Prov.14.15",
+    "Rom.12.3"
+   ],
+   "nodes_here": 11,
+   "nodes_elsewhere": 0,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22532,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "War, return and the endurance of a held position stand with the thought in 2Ki 18:20 and Isa 36:5 (war, 5 after), 1Sa 18:17 (fight and battles), Mic 2:8 (war, 1 after), Jer 3:7 (return, 5 after, expected and not done), Heb 11:15 (return, 8 after, what thinking of the land would have allowed), 2Ch 13:8 (withstand, 1 after) and 1Cor 7:26 (remain, 9 after). The thought is of conflict, of return or of holding out.",
+   "verses": [
+    "1Cor.7.26",
+    "1Sam.18.17",
+    "2Chr.13.8",
+    "2Kgs.18.20",
+    "Heb.11.15",
+    "Isa.36.5",
+    "Jer.3.7",
+    "Mic.2.8"
+   ],
+   "nodes_here": 8,
+   "nodes_elsewhere": 0,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22534,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "In the verses of the quoted thought the partner collections hold words that are not words of their collection's meaning: the surface 'surely' stands as a member of 'hear' in Exo 2:14, Jdg 3:24, 1Sa 16:6, 1Sa 20:26 and 2Ki 5:11; 'unworthy' as a member of 'reward' in Deu 15:9; 'presence' and 'present' as members of 'offer' in Rut 4:4 and 1Cor 7:26; and 'will' as a member of 'desire' in 2Sa 14:17 and 2Ki 7:12. These are recorded as open item #2536 and are not resolved here.",
+   "verses": [
+    "1Cor.7.26",
+    "1Sam.16.6",
+    "1Sam.20.26",
+    "2Kgs.5.11",
+    "2Kgs.7.12",
+    "2Sam.14.17",
+    "Deut.15.9",
+    "Exod.2.14",
+    "Judg.3.24",
+    "Ruth.4.4"
+   ],
+   "nodes_here": 10,
+   "nodes_elsewhere": 0,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22535,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Thoughts come out of or arise in a person: evil thoughts come out of the heart in Mat 15:19 and Mar 7:21 (the heart 3 to 4 words before, the thoughts the first of the things named), thoughts will come into the mind in Eze 38:10, and thoughts came to the king on his bed in Dan 2:29. The act is the arising of a thought in the heart or mind, and in the first two it issues in the acts that the verses list after it.",
+   "verses": [
+    "Dan.2.29",
+    "Ezek.38.10",
+    "Mark.7.21",
+    "Matt.15.19"
+   ],
+   "nodes_here": 4,
+   "nodes_elsewhere": 0,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22536,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Another knows, perceives or discerns the thoughts: Job knows his friends' thoughts (Job 21:27), the Lord knows the thoughts of man (Psa 94:11), you discern my thoughts (Psa 139:2), Jesus knows or perceives theirs (Mat 9:4, Mat 12:25, Luk 5:22, Luk 6:8, Luk 11:17), the Lord knows what the wise think and finds it futile (1Cor 3:20), the Spirit knows a person's (1Cor 2:11) and the word of God discerns them (Heb 4:12). The verb of knowing stands within four words before the member in most of the verses where its position is stored.",
+   "verses": [
+    "1Cor.2.11",
+    "1Cor.3.20",
+    "Heb.4.12",
+    "Job.21.27",
+    "Luke.11.17",
+    "Luke.5.22",
+    "Luke.6.8",
+    "Matt.12.25",
+    "Matt.9.4",
+    "Ps.139.2",
+    "Ps.94.11"
+   ],
+   "nodes_here": 11,
+   "nodes_elsewhere": 0,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22537,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "The thoughts alarm the one who has them in Dan 4:19, Dan 5:6, Dan 5:10 and Dan 7:28: the thoughts are the subject of the alarming, the verb stands 1 to 2 words after the member, and the change of color is named within five words. The act runs from the thoughts to the person.",
+   "verses": [
+    "Dan.4.19",
+    "Dan.5.10",
+    "Dan.5.6",
+    "Dan.7.28"
+   ],
+   "nodes_here": 4,
+   "nodes_elsewhere": 0,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22538,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "An opinion is declared in Job 32:6, 32:10 and 32:17 (Elihu says he will declare his opinion, the declaring 2 words before) and laid bare in Pro 18:2 (the fool takes pleasure in expressing his heart). The opinion is a view held and then spoken, in the first three in an answer within a dialogue.",
+   "verses": [
+    "Job.32.10",
+    "Job.32.17",
+    "Job.32.6",
+    "Prov.18.2"
+   ],
+   "nodes_here": 4,
+   "nodes_elsewhere": 0,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22539,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "The Lord's own thoughts are stated as done and known by those who hear: his thoughts toward us are multiplied (Psa 40:5), very deep (Psa 92:5), precious (Psa 139:17), higher than ours (Isa 55:8, Isa 55:9) and not known by the nations (Mic 4:12, plan 4 words after). The Lord's thoughts are named beside his works in Psa 92:5 and Isa 66:18.",
+   "verses": [
+    "Isa.55.8",
+    "Isa.55.9",
+    "Isa.66.18",
+    "Mic.4.12",
+    "Ps.139.17",
+    "Ps.40.5",
+    "Ps.92.5"
+   ],
+   "nodes_here": 9,
+   "nodes_elsewhere": 0,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22540,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Evil and iniquitous thoughts are held or planned in Gen 6:5, Job 21:27, Psa 56:5, Pro 15:26, Isa 55:7, Isa 59:7, Jer 4:14 and Psa 10:4, with 'evil' or 'wicked' within five words of the member in each. The thoughts are of the wicked and the verses name the thought and the evil together.",
+   "verses": [
+    "Gen.6.5",
+    "Isa.55.7",
+    "Isa.59.7",
+    "Jer.4.14",
+    "Job.21.27",
+    "Prov.15.26",
+    "Ps.10.4",
+    "Ps.56.5"
+   ],
+   "nodes_here": 9,
+   "nodes_elsewhere": 0,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22541,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "A thought is asked to be searched and known in Psa 139:23 (search me and know my thoughts, the knowing 2 words before) and a person is told to forsake his thoughts in Isa 55:7 (the unrighteous man his thoughts, 5 words after the wicked). The first is asked of God and the second is said by the Lord of a person.",
+   "verses": [
+    "Isa.55.7",
+    "Ps.139.23"
+   ],
+   "nodes_here": 2,
+   "nodes_elsewhere": 0,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22542,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "The thoughts are not known, not the same, not cared about: the nations do not know what the Lord thinks (Mic 4:12, the negator 2 words before the member), the Lord's thoughts are not our thoughts (Isa 55:8), and you do not care about anyone's opinion (Mat 22:16, Mar 12:14, the negator reaches 'care'). In each the thought or opinion is the object of a negated knowing, sameness or care.",
+   "verses": [
+    "Isa.55.8",
+    "Mark.12.14",
+    "Matt.22.16",
+    "Mic.4.12"
+   ],
+   "nodes_here": 5,
+   "nodes_elsewhere": 0,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22543,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Where the thoughts of persons are given up, set against God's or left uncared for, the act is a refusal as the verses state it: the unrighteous man is to forsake his thoughts (Isa 55:7) and the opinion of persons is not regarded (Mat 22:16, Mar 12:14). Where the psalmist asks to be known the act is a pursuit.",
+   "verses": [
+    "Isa.55.7",
+    "Mark.12.14",
+    "Matt.22.16"
+   ],
+   "nodes_here": 3,
+   "nodes_elsewhere": 0,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22544,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Where the psalmist asks that his thoughts be known and tried (Psa 139:23) and speaks of the Lord's thoughts as precious (Psa 139:17) the act is a pursuit of what is asked or valued.",
+   "verses": [
+    "Ps.139.17",
+    "Ps.139.23"
+   ],
+   "nodes_here": 2,
+   "nodes_elsewhere": 0,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22545,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "The thoughts are of iniquity in Isa 59:7, of evil in Gen 6:5, against the speaker in Psa 56:5, the words 'there is no God' in Psa 10:4, the wicked's in Pro 15:26 and the righteous's in Pro 12:5 (just), toward us in Psa 40:5 and of the Lord in Mic 4:12; the opinion in Mat 22:16 and Mar 12:14 is of persons and what they appear to be. The object or content of the thought is named in the verse or set beside the word within three words.",
+   "verses": [
+    "Gen.6.5",
+    "Isa.59.7",
+    "Mark.12.14",
+    "Matt.22.16",
+    "Mic.4.12",
+    "Prov.12.5",
+    "Prov.15.26",
+    "Ps.10.4",
+    "Ps.40.5",
+    "Ps.56.5"
+   ],
+   "nodes_here": 11,
+   "nodes_elsewhere": 0,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22546,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "The evil thoughts come out of the heart together with the acts the verses list after them: sexual immorality 1 to 3 words after the member in Mat 15:19 and Mar 7:21, with murder, adultery, theft, false witness and slander in the same list. The thought is the first of the things that come out and the acts follow it in the same sentence.",
+   "verses": [
+    "Mark.7.21",
+    "Matt.15.19"
+   ],
+   "nodes_here": 2,
+   "nodes_elsewhere": 0,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22547,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "A heart or mind is named with the thoughts in all fifteen verses of the pairing: within three words in Gen 6:5, 1Ch 29:18, Dan 2:30, Luk 1:51, Eze 38:10, Mat 15:19, Luk 2:35 and Heb 4:12, and 4 to 9 away in Psa 139:23, Mar 7:21, Jer 4:14, Mat 9:4, Luk 5:22 and Dan 7:28; in Rom 2:15 the conscience stands 3 words before. The thoughts are placed in the heart, mind or conscience of the person.",
+   "verses": [
+    "1Chr.29.18",
+    "Dan.2.30",
+    "Dan.7.28",
+    "Ezek.38.10",
+    "Gen.6.5",
+    "Heb.4.12",
+    "Jer.4.14",
+    "Luke.1.51",
+    "Luke.2.35",
+    "Luke.5.22",
+    "Mark.7.21",
+    "Matt.15.19",
+    "Matt.9.4",
+    "Ps.139.23",
+    "Rom.2.15"
+   ],
+   "nodes_here": 14,
+   "nodes_elsewhere": 1,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22549,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Qualifiers of the thoughts are 'evil' directly before the noun in Mat 15:19, Mar 7:21 and Jam 2:4 (1 word before), 'wicked' in Jer 4:14 (1 before), 'very deep' in Psa 92:5 and 'of the righteous' and 'of the wicked' in Pro 12:5 and Pro 15:26. The adjective gives the thought its moral character in the verses of evil and its depth in the verse of the Lord's thoughts.",
+   "verses": [
+    "Jas.2.4",
+    "Jer.4.14",
+    "Mark.7.21",
+    "Matt.15.19",
+    "Prov.12.5",
+    "Prov.15.26",
+    "Ps.92.5"
+   ],
+   "nodes_here": 7,
+   "nodes_elsewhere": 0,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22550,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Codes of the surfaces of this group have senses of their own that differ from 'thought': H8312 in Psa 139:23 (stored sense head 'anxiety'), H5587B in Job 20:2 (disquietings), H1902H in Lam 3:62 (the muttered musing of enemies), H1697I in Eze 38:10 (matters that come up), G0991 in Mat 22:16 and Mar 12:14 (a looking at persons, not an opinion held) and G3588 in 1Cor 2:11 (the article, morph empty, flagged in #2533). They are recorded as they stand in their verses.",
+   "verses": [
+    "1Cor.2.11",
+    "Ezek.38.10",
+    "Job.20.2",
+    "Lam.3.62",
+    "Mark.12.14",
+    "Matt.22.16",
+    "Ps.139.23"
+   ],
+   "nodes_here": 7,
+   "nodes_elsewhere": 0,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22551,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Conceiving is foreseen as an announcement in Jdg 13:3, 13:5 and 13:7, Isa 7:14, Mat 1:23 and Luk 1:31 (you shall conceive and bear a son), made by the angel of the Lord, by the Lord or by an angel to a woman, and as a condition in Num 5:28 (a clean woman shall conceive). The act stands in the future and is paired with bearing a son in each of the announcements.",
+   "verses": [
+    "Isa.7.14",
+    "Judg.13.3",
+    "Judg.13.5",
+    "Judg.13.7",
+    "Luke.1.31",
+    "Matt.1.23",
+    "Num.5.28"
+   ],
+   "nodes_here": 8,
+   "nodes_elsewhere": 0,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22552,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Conceiving is a done act in Psa 51:5 (the speaker's mother conceived him) and in Heb 11:11 (Sarah received power to conceive); in the Greek verse the conceiving is carried by a phrase of two nouns, 'laying down' and 'seed', and in Mat 1:23 by the verb 'to have' with 'in'. The act is bodily and is stated of a woman in each verse.",
+   "verses": [
+    "Heb.11.11",
+    "Ps.51.5"
+   ],
+   "nodes_here": 3,
+   "nodes_elsewhere": 0,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22553,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "The figurative conceiving of what is then borne is a done act in Job 15:35 (trouble conceived and evil borne), Isa 33:11 (chaff conceived and stubble borne) and Isa 59:4 (mischief conceived and iniquity borne). The same code H2029 whose Poel sense is to contrive or devise is used of bodily conceiving in Jdg 13:3; in these three verses what is conceived is evil and what is borne is evil or stubble.",
+   "verses": [
+    "Isa.33.11",
+    "Isa.59.4",
+    "Job.15.35"
+   ],
+   "nodes_here": 3,
+   "nodes_elsewhere": 0,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22554,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "In Num 11:12 the conceiving is put as a rhetorical question: Moses asks whether he conceived all this people and gave them birth. The question presupposes that he did not, so the conceiving is stated as not done by him and the bodily word is used of his relation to the people.",
+   "verses": [
+    "Num.11.12"
+   ],
+   "nodes_here": 1,
+   "nodes_elsewhere": 0,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22557,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "In Num 11:12 the act is a refusal as the question puts it: Moses denies having conceived the people and so denies the charge laid on him.",
+   "verses": [
+    "Num.11.12"
+   ],
+   "nodes_here": 1,
+   "nodes_elsewhere": 0,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22559,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Bearing follows the conceiving in six verses: 1 word after the member in Jdg 13:3, 13:5, 13:7 and Isa 7:14, 2 after in Mat 1:23 and 4 after in Luk 1:31; and calling the child's name follows in Isa 7:14 (3 after), Mat 1:23 (5) and Luk 1:31 (7). The conceiving is the first act of a pair or a series, bearing and naming.",
+   "verses": [
+    "Isa.7.14",
+    "Judg.13.3",
+    "Judg.13.5",
+    "Judg.13.7",
+    "Luke.1.31",
+    "Matt.1.23"
+   ],
+   "nodes_here": 7,
+   "nodes_elsewhere": 0,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22560,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "The conceiving is stated of women whose condition the verse names: barren and not having borne (Jdg 13:3), clean and not defiled (Num 5:28), and in Heb 11:11 Sarah past the age; the negators of these verses reach the words defiled and borne, and in Jdg 13:5 and 13:7 they reach what the woman must not do (a razor, wine, unclean food). The conceiving is announced under a condition of the woman.",
+   "verses": [
+    "Heb.11.11",
+    "Judg.13.3",
+    "Judg.13.5",
+    "Judg.13.7",
+    "Num.5.28"
+   ],
+   "nodes_here": 6,
+   "nodes_elsewhere": 0,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22561,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "The divine and the human are named in eight verses: God (4), the Lord and Jesus, with Immanuel (3), Sarah (2), the woman and the child. The messenger or the Lord announces the conceiving to the woman, the woman conceives and bears a son, and the child is called by the name the Lord gives; the direction of the announcement does not change across the verses.",
+   "verses": [
+    "Heb.11.11",
+    "Isa.7.14",
+    "Judg.13.5",
+    "Luke.1.31",
+    "Matt.1.23"
+   ],
+   "nodes_here": 7,
+   "nodes_elsewhere": 0,
+   "collections": [
+    "thought"
+   ]
+  },
+  {
+   "observation": 22583,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Believing and the supposition meet in four verses with different ties. In Pro 14:15 the simple believes everything 3 words before the prudent gives thought, and the two are set against each other; in Rom 12:3, Phili 3:4 and Jam 1:26 the faith, confidence or religion is the thing the person thinks of himself, 1 to 12 words from the member. The supposition is about one's own standing in belief.",
+   "verses": [
+    "Jas.1.26",
+    "Phil.3.4",
+    "Prov.14.15",
+    "Rom.12.3"
+   ],
+   "nodes_here": 5,
+   "nodes_elsewhere": 5,
+   "collections": [
+    "believe",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22584,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Blessing words stand far from the supposition in three verses: grace 11 words before in Rom 12:3, a willing gift 16 words after in 2Cor 9:5 and grace 16 after in Heb 10:29. At these distances the partner is in another clause, and the two work together only in that the same verse speaks of what is given and of what is thought of oneself or others; no tie of grammar joins them.",
+   "verses": [
+    "2Cor.9.5",
+    "Heb.10.29",
+    "Rom.12.3"
+   ],
+   "nodes_here": 4,
+   "nodes_elsewhere": 3,
+   "collections": [
+    "bless",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22585,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Calling and the supposition meet in four verses. In 2Ki 5:11 (4 words after) and Jer 3:19 (1 after) the call is what the thinker expected would be made; in Jon 1:6 the command to call on his god stands 4 words before the hope that the god will give thought to them; in Gen 26:9 the calling of Isaac is 12 words before and is a separate act. The call is the expected or commanded act that the supposition concerns.",
+   "verses": [
+    "2Kgs.5.11",
+    "Gen.26.9",
+    "Jer.3.19",
+    "Jonah.1.6"
+   ],
+   "nodes_here": 5,
+   "nodes_elsewhere": 4,
+   "collections": [
+    "call",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22586,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "War and the supposition meet in four verses: in 2Ki 18:20 and Isa 36:5 war stands 5 words after the thought that words are strategy and power for it, in Mic 2:8 it is 1 word after the thought of the passersby, and in 1Sa 18:17 fight and battles stand 4 and 2 words before Saul's quoted thought. Conflict is what the supposed strength or the plan is for.",
+   "verses": [
+    "1Sam.18.17",
+    "2Kgs.18.20",
+    "Isa.36.5",
+    "Mic.2.8"
+   ],
+   "nodes_here": 4,
+   "nodes_elsewhere": 5,
+   "collections": [
+    "combat",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22589,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Concealing and the supposition meet in three verses: the covering of her face (2 words after) is the ground of Judah's supposition in Gen 38:15; hiding (2 before) and secretly (1 before) stand beside the quoted thoughts of the Syrians and of the wicked in 2Ki 7:12 and Psa 64:5. The thought is formed from, or alongside, something concealed.",
+   "verses": [
+    "2Kgs.7.12",
+    "Gen.38.15",
+    "Ps.64.5"
+   ],
+   "nodes_here": 3,
+   "nodes_elsewhere": 3,
+   "collections": [
+    "conceal",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22592,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Deceiving and the supposition meet in three verses: 6 words before in 1Cor 3:18, 5 after in Gal 6:3 and 8 after in Jam 1:26. In all three the person thinks something of himself and the verse names self-deception beside it, so the supposition about oneself and the deceit of oneself are stated together.",
+   "verses": [
+    "1Cor.3.18",
+    "Gal.6.3",
+    "Jas.1.26"
+   ],
+   "nodes_here": 3,
+   "nodes_elsewhere": 3,
+   "collections": [
+    "deceive",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22596,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Death words and the supposition meet in seven verses. In Gen 26:9, Job 29:18 and Jon 1:6 the dying or perishing is 2 words after the member and is the content of the thought; in Joh 11:13 death is 3 words before and the disciples suppose something else; in Act 8:20 perishing is 4 before, in 1Cor 4:9 death is 7 after and in 1Sa 20:3 it is 15 after. What is feared or foreseen as death is the commonest matter supposed.",
+   "verses": [
+    "1Cor.4.9",
+    "1Sam.20.3",
+    "Acts.8.20",
+    "Gen.26.9",
+    "Job.29.18",
+    "John.11.13",
+    "Jonah.1.6"
+   ],
+   "nodes_here": 8,
+   "nodes_elsewhere": 9,
+   "collections": [
+    "die",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22597,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Enduring and the supposition meet in four verses: 'withstand' is 1 word after the thought in 2Ch 13:8, 'remain' is 9 after in 1Cor 7:26 and 20 before in Jer 40:5, and 'last' is 6 after in 1Cor 4:9. In 2Ch 13:8 and 1Cor 7:26 the holding out or remaining is the content of the supposition or judgment.",
+   "verses": [
+    "1Cor.4.9",
+    "1Cor.7.26",
+    "2Chr.13.8",
+    "Jer.40.5"
+   ],
+   "nodes_here": 4,
+   "nodes_elsewhere": 5,
+   "collections": [
+    "endure",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22600,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Fear and the supposition meet in six verses. In Gen 31:31, Exo 2:14, 2Sa 14:15 and Neh 6:9 the fear stands 1 to 2 words before the thought and the thought arises from it; in Luk 24:37 the startled and frightened are 3 and 1 words before; in Gen 20:11 the fear of God is 3 words after, as what the thought says is absent. Fear precedes the supposition in five of the six.",
+   "verses": [
+    "2Sam.14.15",
+    "Exod.2.14",
+    "Gen.20.11",
+    "Gen.31.31",
+    "Luke.24.37",
+    "Neh.6.9"
+   ],
+   "nodes_here": 8,
+   "nodes_elsewhere": 8,
+   "collections": [
+    "fear",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22601,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Folly and the supposition meet in five verses: 'simple' 4 words before in Pro 14:15, 'foolish' 2 after in Rom 1:21, 'fool' 7 after in 1Cor 3:18, 'foolish' 2 and 'fool' 9 after in 2Cor 11:16 and 'fool' 8 before in 2Cor 12:6. Folly is what the thinking is judged to be, becomes, or is asked not to be taken for.",
+   "verses": [
+    "1Cor.3.18",
+    "2Cor.11.16",
+    "2Cor.12.6",
+    "Prov.14.15",
+    "Rom.1.21"
+   ],
+   "nodes_here": 6,
+   "nodes_elsewhere": 6,
+   "collections": [
+    "folly",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22602,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Security and the supposition meet in four verses: 'security' is 4 and 3 words after the thought of Hezekiah in 2Ki 20:19 and Isa 39:8, 'fortified' is 2 words before the thought of Sennacherib in 2Ch 32:1, and 'guard' is 4 after in Jer 40:5. In the first two security is the content of the thought; in the third the fortified cities are what he plans against.",
+   "verses": [
+    "2Chr.32.1",
+    "2Kgs.20.19",
+    "Isa.39.8",
+    "Jer.40.5"
+   ],
+   "nodes_here": 4,
+   "nodes_elsewhere": 4,
+   "collections": [
+    "guard",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22603,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Two kinds of partner meet the supposition. The word 'surely' (flagged in #2536 as not a word of hearing) stands 1 to 5 words after the member in five Hebrew verses, inside the quoted thought; hearing proper stands 2 words after in Mat 6:7 (they think they will be heard), 12 before in Luk 8:18 and 7 after in 2Cor 12:6. Only Mat 6:7 ties hearing to the supposition.",
+   "verses": [
+    "1Sam.16.6",
+    "1Sam.20.26",
+    "2Cor.12.6",
+    "2Kgs.5.11",
+    "Exod.2.14",
+    "Judg.3.24",
+    "Luke.8.18",
+    "Matt.6.7"
+   ],
+   "nodes_here": 8,
+   "nodes_elsewhere": 10,
+   "collections": [
+    "hear",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22609,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Work stands with the supposition in four verses: 4 words after in Neh 6:9 (the work that will not be done), 1 before in Ecc 9:10 (no work or thought in Sheol), 11 after in Mat 21:28 and 3 after in Eph 3:20 (the power at work beyond what we think). Work is the thing the thought is about or set beside, not a tie of grammar.",
+   "verses": [
+    "Eccl.9.10",
+    "Eph.3.20",
+    "Matt.21.28",
+    "Neh.6.9"
+   ],
+   "nodes_here": 5,
+   "nodes_elsewhere": 4,
+   "collections": [
+    "labor",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22612,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Loyalty and steadfast love stand with the supposition in three verses: steadfast love is 1 word after the thought in Psa 48:9 and 3 after in Psa 94:18, and faithfulness is 10 before in 2Ch 32:1. In Psa 48:9 the Lord's love is what is thought on, and in Psa 94:18 it answers the thought that the foot slips.",
+   "verses": [
+    "2Chr.32.1",
+    "Ps.48.9",
+    "Ps.94.18"
+   ],
+   "nodes_here": 3,
+   "nodes_elsewhere": 3,
+   "collections": [
+    "loyalty",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22613,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Silence and rest stand with the supposition in four verses: 'rest' 5 words after in 2Sa 14:17, 'silent' 1 before in Psa 50:21, 'remains' 3 before in 1Cor 7:40 and 'ceased' 5 after in 1Pe 4:1. Only in Psa 50:21 is the silence the ground of the supposition, that the one who is silent is like the one who accuses.",
+   "verses": [
+    "1Cor.7.40",
+    "1Pet.4.1",
+    "2Sam.14.17",
+    "Ps.50.21"
+   ],
+   "nodes_here": 4,
+   "nodes_elsewhere": 4,
+   "collections": [
+    "mute",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22614,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "A gift or presence stands with the supposition in four verses with different senses. In Gen 32:20 the present (3 words after) is the means of appeasing, and in Jer 40:5 the present (7 after) is a gift; in Rut 4:4 ('presence') and 1Cor 7:26 ('present distress') the English word renders a place and a time, flagged in #2536. Only Gen 32:20 ties a gift to the supposition.",
+   "verses": [
+    "1Cor.7.26",
+    "Gen.32.20",
+    "Jer.40.5",
+    "Ruth.4.4"
+   ],
+   "nodes_here": 4,
+   "nodes_elsewhere": 5,
+   "collections": [
+    "offer",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22615,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Pain and hunger stand with the supposition in three verses: 'hungry' 6 words before in 2Ki 7:12, 'suffered' 10 after in Luk 13:2, and 'suffered' 5 before and 2 after in 1Pe 4:1. In 1Pe 4:1 the suffering of Christ is within two words of the way of thinking the readers are to arm themselves with.",
+   "verses": [
+    "1Pet.4.1",
+    "2Kgs.7.12",
+    "Luke.13.2"
+   ],
+   "nodes_here": 3,
+   "nodes_elsewhere": 4,
+   "collections": [
+    "pain",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22617,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Peace stands with the supposition in four verses: 2 to 4 words after in 2Ki 20:19, Isa 39:8, Mat 10:34 and Luk 12:51. The same word has two stances in the verses: Hezekiah supposes there will be peace in his days, and in Mat 10:34 and Luk 12:51 the supposition that Jesus came to bring peace is the one corrected.",
+   "verses": [
+    "2Kgs.20.19",
+    "Isa.39.8",
+    "Luke.12.51",
+    "Matt.10.34"
+   ],
+   "nodes_here": 4,
+   "nodes_elsewhere": 6,
+   "collections": [
+    "quarrel",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22618,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Returning stands with the supposition in three verses: 5 words after in Jer 3:7 (expected and not done), 8 after in Heb 11:15 (what thinking of the land would have allowed) and 19 before in Jer 40:5. In Jer 3:7 and Heb 11:15 the return is what the thought leads toward and in Jer 3:7 it does not happen.",
+   "verses": [
+    "Heb.11.15",
+    "Jer.3.7",
+    "Jer.40.5"
+   ],
+   "nodes_here": 3,
+   "nodes_elsewhere": 5,
+   "collections": [
+    "return",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22619,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Reward and its opposite stand with the supposition in three verses: 'unworthy' 1 word before in Deu 15:9 (flagged in #2536 as stored under reward), 'pay' 2 after in Mat 22:17 and 'punishment' 1 before in Heb 10:29. In the two Gospel and Hebrew verses the thought asked of the hearer is about what is owed or what is deserved.",
+   "verses": [
+    "Deut.15.9",
+    "Heb.10.29",
+    "Matt.22.17"
+   ],
+   "nodes_here": 4,
+   "nodes_elsewhere": 3,
+   "collections": [
+    "reward",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22620,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "The poor and the rich stand with the supposition in five verses: 'poor' 10 words after in Deu 15:9, 'poor' 3 and 'needy' 2 before in Psa 40:17, 'rich' 4 before in Mic 2:8, 'poor' 17 after in Joh 13:29 and 'abundantly' 6 before in Eph 3:20. In Psa 40:17 and Deu 15:9 the poor are the ones the thought is directed to; in Joh 13:29 the disciples suppose a gift to the poor.",
+   "verses": [
+    "Deut.15.9",
+    "Eph.3.20",
+    "John.13.29",
+    "Mic.2.8",
+    "Ps.40.17"
+   ],
+   "nodes_here": 6,
+   "nodes_elsewhere": 6,
+   "collections": [
+    "rich",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22624,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Giving stands with the supposition in twelve verses. Within three words after the member in Jdg 15:2 (3), 1Sa 18:21 (1) and Luk 12:51 (3), giving is the act the thought issues in or the peace supposed to be given; elsewhere it is 4 to 15 words away (Deu 15:9, 1Sa 18:17, Jer 3:19, Jer 40:5, Dan 7:25, Luk 8:18, Joh 13:29, Rom 12:3, 1Cor 13:11).",
+   "verses": [
+    "1Cor.13.11",
+    "1Sam.18.17",
+    "1Sam.18.21",
+    "Dan.7.25",
+    "Deut.15.9",
+    "Jer.3.19",
+    "Jer.40.5",
+    "John.13.29",
+    "Judg.15.2",
+    "Luke.12.51",
+    "Luke.8.18",
+    "Rom.12.3"
+   ],
+   "nodes_here": 14,
+   "nodes_elsewhere": 13,
+   "collections": [
+    "share",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22627,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Asking stands with the supposition in three verses: 'pray' 6 words before in Mat 6:7, 'appeal' 3 after in Mat 26:53 and 'request' 7 after in 2Sa 14:15. In Mat 6:7 those who pray suppose they will be heard for many words; in Mat 26:53 the supposition is whether Jesus cannot appeal to the Father.",
+   "verses": [
+    "2Sam.14.15",
+    "Matt.26.53",
+    "Matt.6.7"
+   ],
+   "nodes_here": 3,
+   "nodes_elsewhere": 4,
+   "collections": [
+    "supplication",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22628,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Affliction stands with the supposition in three verses: 'afflict' 1 word after in Phili 1:17, 'distress' 3 after in 1Cor 7:26 and 'affliction' 8 after in Lam 1:9. In Phili 1:17 the thought is of afflicting Paul and the affliction is 1 word after it; in 1Cor 7:26 the distress is the ground of the judgment.",
+   "verses": [
+    "1Cor.7.26",
+    "Lam.1.9",
+    "Phil.1.17"
+   ],
+   "nodes_here": 3,
+   "nodes_elsewhere": 5,
+   "collections": [
+    "thought",
+    "tribulation"
+   ]
+  },
+  {
+   "observation": 22629,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Trust stands with the supposition in four verses: 'trusted' 2 words before in 1Sa 27:12, 'trustingly' 1 before in Mic 2:8, and 'trust' 8 after in 2Ki 18:20 and Isa 36:5. In 1Sa 27:12 Achish's trust is the ground of his thought, and in the two parallel verses the question whom they trust follows the supposed claim about words.",
+   "verses": [
+    "1Sam.27.12",
+    "2Kgs.18.20",
+    "Isa.36.5",
+    "Mic.2.8"
+   ],
+   "nodes_here": 4,
+   "nodes_elsewhere": 5,
+   "collections": [
+    "thought",
+    "trust"
+   ]
+  },
+  {
+   "observation": 22630,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Cleanness and uncleanness stand with the supposition in three verses: 'unclean' 2 words before and after and 7 before in Rom 14:14, 'clean' 4 and 7 after in 1Sa 20:26 and 'uncleanness' 5 before in Lam 1:9. In Rom 14:14 the uncleanness is the object of the thinking and depends on it; in 1Sa 20:26 Saul's thought is that David is not clean.",
+   "verses": [
+    "1Sam.20.26",
+    "Lam.1.9",
+    "Rom.14.14"
+   ],
+   "nodes_here": 3,
+   "nodes_elsewhere": 6,
+   "collections": [
+    "thought",
+    "unclean"
+   ]
+  },
+  {
+   "observation": 22653,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "A change of color meets the thoughts in three Aramaic verses: 'changed' is 1 word before in Dan 5:6, 'change' 3 after in Dan 5:10 and 'changed' 5 after in Dan 7:28. In each verse the thoughts alarm the person and the bodily change is named within five words, so the thoughts and the visible effect are stated together.",
+   "verses": [
+    "Dan.5.10",
+    "Dan.5.6",
+    "Dan.7.28"
+   ],
+   "nodes_here": 3,
+   "nodes_elsewhere": 4,
+   "collections": [
+    "change",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22654,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Evil and wickedness meet the thoughts in fourteen verses, within five words in each. Within one word: Pro 15:26, Mat 15:19, Mar 7:21, Jam 2:4; within three: Gen 6:5, Job 21:27, Psa 10:4, Psa 56:5; at four or five: Pro 12:5, Isa 55:7, Isa 59:7, Jer 4:14, Eze 38:10, Mat 9:4. In Pro 12:5 the thoughts of the righteous are set beside the counsels of the wicked.",
+   "verses": [
+    "Ezek.38.10",
+    "Gen.6.5",
+    "Isa.55.7",
+    "Isa.59.7",
+    "Jas.2.4",
+    "Jer.4.14",
+    "Job.21.27",
+    "Mark.7.21",
+    "Matt.15.19",
+    "Matt.9.4",
+    "Prov.12.5",
+    "Prov.15.26",
+    "Ps.10.4",
+    "Ps.56.5"
+   ],
+   "nodes_here": 15,
+   "nodes_elsewhere": 17,
+   "collections": [
+    "evildoer",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22655,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Fear and alarm meet the thoughts in six verses. In Dan 4:19, 5:6, 5:10 and 7:28 the thoughts are the subject of alarming, the alarm 1 to 2 words after; in Job 32:6 the speaker is afraid 4 words before declaring his opinion; in 2Cor 11:3 the fear (10 before) is Paul's fear about the readers' thoughts. The thoughts cause alarm in four and stand beside fear in two.",
+   "verses": [
+    "2Cor.11.3",
+    "Dan.4.19",
+    "Dan.5.10",
+    "Dan.5.6",
+    "Dan.7.28",
+    "Job.32.6"
+   ],
+   "nodes_here": 6,
+   "nodes_elsewhere": 8,
+   "collections": [
+    "fear",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22656,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "A heart, mind or conscience is named with the thoughts in all fifteen verses. It is within three words in Gen 6:5, 1Ch 29:18, Dan 2:30, Luk 1:51, Eze 38:10, Mat 15:19 (3 before), Luk 2:35 and Heb 4:12, and 4 to 9 away in Psa 139:23, Mar 7:21, Jer 4:14, Mat 9:4, Luk 5:22 and Dan 7:28; in Rom 2:15 the conscience is 3 before. The thoughts are placed in the heart or mind, one of the relations found across the subgroups.",
+   "verses": [
+    "1Chr.29.18",
+    "Dan.2.30",
+    "Dan.7.28",
+    "Ezek.38.10",
+    "Gen.6.5",
+    "Heb.4.12",
+    "Jer.4.14",
+    "Luke.1.51",
+    "Luke.2.35",
+    "Luke.5.22",
+    "Mark.7.21",
+    "Matt.15.19",
+    "Matt.9.4",
+    "Ps.139.23",
+    "Rom.2.15"
+   ],
+   "nodes_here": 14,
+   "nodes_elsewhere": 18,
+   "collections": [
+    "heart",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22657,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Intention meets the thoughts in four verses, of the same kind as the member: 'intention' 1 word before in Gen 6:5, 'purposes' 1 before in 1Ch 29:18, 'plan' 4 after in Mic 4:12 and 'intentions' 2 after in Heb 4:12. Thoughts and intentions are paired, as what a person holds or what the Lord holds and discerns.",
+   "verses": [
+    "1Chr.29.18",
+    "Gen.6.5",
+    "Heb.4.12",
+    "Mic.4.12"
+   ],
+   "nodes_here": 4,
+   "nodes_elsewhere": 4,
+   "collections": [
+    "intend",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22658,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Knowing meets the thoughts in sixteen verses. In thirteen the thoughts are the object of a verb of knowing or perceiving, within four words before the member where the position is stored (Job 21:27, Psa 94:11, Psa 139:2, Psa 139:23, Dan 2:30, Mic 4:12, Mat 9:4, Mat 12:25, Luk 5:22, Luk 6:8, Luk 11:17, 1Cor 2:11, 1Cor 3:20); in Dan 2:29 it is 7 after, and in Mat 22:16 and Mar 12:14 'opinion' stands 14 and 9 words after 'know'. The knower is the Lord, Jesus or the Spirit in most.",
+   "verses": [
+    "1Cor.2.11",
+    "1Cor.3.20",
+    "Dan.2.29",
+    "Dan.2.30",
+    "Job.21.27",
+    "Luke.11.17",
+    "Luke.5.22",
+    "Luke.6.8",
+    "Mark.12.14",
+    "Matt.12.25",
+    "Matt.22.16",
+    "Matt.9.4",
+    "Mic.4.12",
+    "Ps.139.2",
+    "Ps.139.23",
+    "Ps.94.11"
+   ],
+   "nodes_here": 16,
+   "nodes_elsewhere": 20,
+   "collections": [
+    "know",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22659,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Works meet the thoughts in three verses: the works are 3 words before in Psa 92:5 and 1 before in Isa 66:18, where God's works and God's thoughts, or the works and thoughts of the nations, are paired, and 10 before in Rom 2:15 where the law's work is set in the hearts. In the first two the pairing is of the Lord's works with his thoughts.",
+   "verses": [
+    "Isa.66.18",
+    "Ps.92.5",
+    "Rom.2.15"
+   ],
+   "nodes_here": 2,
+   "nodes_elsewhere": 4,
+   "collections": [
+    "labor",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22660,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Words of life meet the thoughts in three verses: 'living' 9 words before in Dan 2:30, 'live' 3 before in Dan 5:10 (live forever) and 'living' 19 before in Heb 4:12 (the word is living). The distances and the phrases show no tie of grammar between the living and the thoughts.",
+   "verses": [
+    "Dan.2.30",
+    "Dan.5.10",
+    "Heb.4.12"
+   ],
+   "nodes_here": 3,
+   "nodes_elsewhere": 3,
+   "collections": [
+    "live",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22661,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Declaring meets the opinion and the thoughts in six verses. In Job 32:6, 32:10 and 32:17 'declare' is 2 words before the opinion and the opinion is what Elihu declares; in Psa 40:5 (proclaim, 4 after) and Isa 55:8 (declares, 4 after) the declaring follows the Lord's thoughts; in Dan 5:10 the queen declared 5 words before. The opinion is declared by the one who holds it and the thoughts are declared by the Lord.",
+   "verses": [
+    "Dan.5.10",
+    "Isa.55.8",
+    "Job.32.10",
+    "Job.32.17",
+    "Job.32.6",
+    "Ps.40.5"
+   ],
+   "nodes_here": 7,
+   "nodes_elsewhere": 8,
+   "collections": [
+    "preach",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22662,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Answering meets the thoughts and the opinion in five verses. In Job 20:2 and Luk 5:22 the answer is 1 word after the thoughts, as their occasion; in Dan 4:19 the king answers 3 words after; in Job 32:6 and Job 32:17 the answer stands 12 and 6 words before the opinion is declared. The thoughts are the occasion of an answer or are given in one.",
+   "verses": [
+    "Dan.4.19",
+    "Job.20.2",
+    "Job.32.17",
+    "Job.32.6",
+    "Luke.5.22"
+   ],
+   "nodes_here": 5,
+   "nodes_elsewhere": 6,
+   "collections": [
+    "profess",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22664,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Righteousness meets the thoughts in four verses: 'righteous' 1 and 'just' 2 words after in Pro 12:5, 'lawful' 8 after in Mar 12:14, and sexual immorality 3 and 1 words after in Mat 15:19 and Mar 7:21, the next item in the list of what comes out of the heart. The thoughts of the righteous are set against the wicked's in Pro 12:5, and in the lists the evil thoughts head the sins.",
+   "verses": [
+    "Mark.12.14",
+    "Mark.7.21",
+    "Matt.15.19",
+    "Prov.12.5"
+   ],
+   "nodes_here": 4,
+   "nodes_elsewhere": 5,
+   "collections": [
+    "righteous",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22665,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Teaching meets the thoughts and the opinion in three verses: 'counsels' 3 words after in Pro 12:5, and 'teach' 9 before in Mat 22:16 and 5 after in Mar 12:14, where the opinion of persons is set against teaching the way of God. The counsels of the wicked are paired with the thoughts of the righteous, and the Teacher is said not to regard opinion.",
+   "verses": [
+    "Mark.12.14",
+    "Matt.22.16",
+    "Prov.12.5"
+   ],
+   "nodes_here": 3,
+   "nodes_elsewhere": 3,
+   "collections": [
+    "teach",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22666,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Wisdom and discernment meet the thoughts in six verses. In Psa 139:2 (discern, 1 before) and Heb 4:12 (discerning, 1 before) the thoughts are the object of discerning; in 1Cor 3:20 (wise, 1 after) the thoughts are of the wise and are futile; in Mic 4:12 (understand, 3 after), Pro 18:2 (understanding, 6 before) and Dan 2:30 (wisdom, 13 before) the partner is farther off.",
+   "verses": [
+    "1Cor.3.20",
+    "Dan.2.30",
+    "Heb.4.12",
+    "Mic.4.12",
+    "Prov.18.2",
+    "Ps.139.2"
+   ],
+   "nodes_here": 6,
+   "nodes_elsewhere": 6,
+   "collections": [
+    "thought",
+    "wise"
+   ]
+  },
+  {
+   "observation": 22667,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Calling meets the conceiving in three verses, after the conceiving and the bearing: 'call' is 3 words after in Isa 7:14, 5 after in Mat 1:23 and 7 after in Luk 1:31, where the child's name is called. The calling of the name follows the conceiving of a son; the verses are the bodily conceiving of a child and bear no inner-being meaning (researcher's ruling, #2527 v13).",
+   "verses": [
+    "Isa.7.14",
+    "Luke.1.31",
+    "Matt.1.23"
+   ],
+   "nodes_here": 4,
+   "nodes_elsewhere": 3,
+   "collections": [
+    "call",
+    "thought"
+   ]
+  },
+  {
+   "observation": 22668,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Bearing meets the conceiving in six verses: 1 word after in Jdg 13:3, 13:5, 13:7 and Isa 7:14, 2 after in Mat 1:23 and 4 after in Luk 1:31. In every verse the bearing is the second act of the pair, conceive and bear; the verses are the bodily conceiving of a child and bear no inner-being meaning (researcher's ruling, #2527 v13).",
+   "verses": [
+    "Isa.7.14",
+    "Judg.13.3",
+    "Judg.13.5",
+    "Judg.13.7",
+    "Luke.1.31",
+    "Matt.1.23"
+   ],
+   "nodes_here": 7,
+   "nodes_elsewhere": 6,
+   "collections": [
+    "endure",
+    "thought"
+   ]
+  }
+ ],
+ "answer": {
+  "command": "ReadSweep",
+  "collection": "thought",
+  "subgroup": "thinking and thought",
+  "older": [
+   {
+    "observation": 22321,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22322,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22323,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22324,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22327,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22330,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22334,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22335,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22338,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22339,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22340,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22341,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22347,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22350,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22351,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22352,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22353,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22355,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22356,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22357,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22358,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22362,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22365,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22366,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22367,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22368,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22391,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22392,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22393,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22394,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22395,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22396,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22397,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22398,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22399,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22400,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22402,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22403,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22404,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22405,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22406,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22410,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22411,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22412,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22427,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22428,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22429,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22437,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22444,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22451,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22506,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22509,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22510,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22515,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22518,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22521,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22526,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22527,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22530,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22532,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22534,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22535,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22536,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22537,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22538,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22539,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22540,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22541,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22542,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22543,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22544,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22545,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22546,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22547,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22549,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22550,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22551,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22552,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22553,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22554,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22557,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22559,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22560,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22561,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22583,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22584,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22585,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22586,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22589,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22592,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22596,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22597,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22600,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22601,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22602,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22603,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22609,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22612,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22613,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22614,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22615,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22617,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22618,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22619,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22620,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22624,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22627,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22628,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22629,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22630,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22653,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22654,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22655,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22656,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22657,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22658,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22659,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22660,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22661,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22662,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22664,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22665,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22666,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22667,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   },
+   {
+    "observation": 22668,
+    "action": "keep | delete_neither | defer",
+    "nature": "evidence | inner_being",
+    "reason": ""
+   }
+  ]
+ },
+ "measured": {
+  "package_chars": 93020,
+  "seconds": 0.06
+ }
+}

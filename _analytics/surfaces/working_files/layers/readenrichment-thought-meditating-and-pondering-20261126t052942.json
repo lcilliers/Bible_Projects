@@ -1,0 +1,479 @@
+{
+ "command": "ReadEnrichment",
+ "collection": "thought",
+ "subgroup": "meditating and pondering",
+ "step": "1.2",
+ "made": "2026-11-26T05:29:42Z",
+ "unit": {
+  "ledger_id": 1295,
+  "senses": 8,
+  "occurrences": 28,
+  "codes": 11,
+  "older": 0
+ },
+ "instruction": {
+  "what": "Step 1.2, the enrichment of one subgroup (stage 1, B2): for each sense of step 1.1, what the Strong's codes of its occurrences say. The lexicon is the point of this read. Nothing here says what a sense does for the inner being; that begins at step 3.1.",
+  "read": [
+   "Take one sense at a time (`senses`: its text from step 1.1, its codes, words and occurrences).",
+   "Read the lexicon of each of its codes (`codes`: sense_head, meaning_range, lsj, mounce, related), the three meaning sources read together, none picked and the others dropped.",
+   "Validate the sense against its codes: do the lexicon entries bear out the meaning the sense names? Where they do not, say so in the enrichment; the sense is not changed here.",
+   "Where one surface carries several codes in the sense, read what each code adds."
+  ],
+  "write": [
+   "Fill `answer.enrichments`: one entry for each sense, named by `sense` (the id of its 1.1 observation); every sense has exactly one. The enrichment takes the sense's occurrences.",
+   "kind: enrichment. obs_text: a short definition from the lexicon entries; names the codes that link the sense to its usage and what different codes of one surface add; names verses the sense holds in, as the package writes the references (for example Psa 77:6); concise; never the lexicon copied whole, never a verse restated, never what the sense does for the inner being.",
+   "basis: read, with `grounds`: words copied exactly from the lexicon of a code of the sense (sense_head, meaning_range, lsj or mounce; the record checks them); or stated, where a verse says it.",
+   "Where the lexicon does not bear out the sense, the enrichment says so with its grounds; a missing lexicon entry is named, never filled from memory (RW-11).",
+   "`older`: answer each older observation shown, once: keep (with `nature`), restate (with `nature`, `new_text`, `checked`), merge (with `into`), consume (with `carriers` [\"this\"] for this answer's enrichments or observation ids, and `mapping`), delete_neither (with `reason`), carry (with `to` 2.1 and `reason`), defer (with `collection`, `nature`, `finding`).",
+   "Then: Collection-Build.ps1 -Action RecordEnrichment -File <the answer file> (-Check to preview). The record refuses the whole file on any fault and lists every fault."
+  ],
+  "keep": [
+   {
+    "rule": "RG-08 the-original",
+    "text": "For every word that names an inner or bodily act, look at the original: the root's range in all three meaning sources read together, never one picked and the others dropped; the ESV renderings across its verses; whether the English adds or hides; the literal sense beside the rendering. Where more than one reading is open, record each, and mark the choice 'I read'."
+   },
+   {
+    "rule": "RG-21 grain",
+    "text": "A word is read per its lettered Strong's code (its grain), never the bare lemma (B:113). The occurrences of a word with several senses are related per grain and never aggregated across grains: related verses are same-grain occurrences."
+   },
+   {
+    "rule": "RO11 one-row-per-code",
+    "text": "One observation per finding, never a duplicate description; a finding applying to several verses or words carries several nodes, each with the word's role in it."
+   },
+   {
+    "rule": "RW-03 no-duplicates-multi-node",
+    "text": "One observation per finding: the same description is never written twice. Applied to another verse, word or scope it gains a node on the existing observation."
+   },
+   {
+    "rule": "RW-04 concise-verse-specific",
+    "text": "Observation text is concise and tied to this verse's content, never a restatement of the word's dictionary sense. A transliteration is never given without its gloss."
+   },
+   {
+    "rule": "RW-09 reread-builds-on-prior",
+    "text": "A re-read includes the observations already recorded for the verse, so the reading sees prior findings and builds on them."
+   },
+   {
+    "rule": "RW-11 missing-is-named",
+    "text": "Missing data in the base extract is named as a gap, never substituted from memory or outside knowledge."
+   },
+   {
+    "rule": "RW-13 older-observations-answered-at-record",
+    "text": "Every older live observation with a live node on an occurrence of the row (a stage that is not the build's own) is answered in fill.older when the row is recorded, once: keep or restate (each with its marker), merge into a named observation, consume (live observations carry its meaning, stated in words, verified before it is deleted), delete as neither (comment first), or defer to a named collection (marked now; only the finding is left to that collection). An observation already marked by the validation, answered in a build or deferred is not asked again. A new observation whose text equals that of another live observation of the collection is refused, the other named. LayerCheck re-derives both from the tables. The end state of a collection's build is that every observation of its scope is marked and fixed or deleted, every word node complete or with its reason, and each deferral owned by a named collection."
+   },
+   {
+    "rule": "RS-04 existing-checked-accept-modify-delete",
+    "text": "When a verse is worked, every existing observation and node on it, of any stage, is checked against the verse by its wording. The stage is not an indication of the nature of an observation and is never used to filter. Each observation is accepted, modified (changed in place; the old value, the new value and the reason are kept in ib_observation_change), soft deleted (the `deleted` column, with the reason), merged (a duplicate description, into the observation that is kept) or, when its wording shows it is not verse understanding, left exactly as it is with the reason. The check's fixes are part of it and need no separate approval. Nothing is physically deleted."
+   },
+   {
+    "rule": "LR-02 nodes-are-built-from-the-data",
+    "text": "The nodes of a layer observation are the occurrences the aspect demands (a word's occurrences, the group's occurrences, the partner's occurrences in the verses they share), written by the recorder with the collection and the subgroup of each surface; they are never typed. An item answered by senses (word-sense) names, for each sense, the occurrences it holds for, and together the senses cover every occurrence; the recorder checks them against the data. The interpretation is the observation text, founded in what the evidence shows (basis stated or read, B:131) and tied to its verses (the text names them and does not restate them): the items of every step (S1, 1.1, 1.2, 2.1) state what the dictionary, the verses and the stored structure show of a word and never what a word does for the inner being; their nodes carry the role lexical and no route. The whole file is checked and written in one transaction; any problem refuses all of it. A row answered again withdraws its earlier observations with the reason."
+   },
+   {
+    "rule": "VA-03 consumption-is-verified-before-deletion",
+    "text": "An older observation is deleted as consumed only when live observations carry its meaning: every word occurrence of it is on a live node of a carrier or named as not carried with its reason, the mapping is stated in words (what the old says, which carrier states each part), the traces to it are re-pointed or replaced, and the consumption is kept as `consumed_by`. An observation that holds more than one finding is split first."
+   },
+   {
+    "rule": "VA-04 neither-evidence-nor-inner-being-is-deleted",
+    "text": "An observation that is neither evidence nor inner being contributes nothing to the purposes of the observations (researcher, 2026-11-22): it is commented with its reason and the word occurrences no other live observation holds, then deleted. An observation already marked, or one another observation traces, is not deleted this way."
+   }
+  ],
+  "not_in_this_read": ""
+ },
+ "prompts": [],
+ "senses": [
+  {
+   "sense": 22868,
+   "text": "Devout meditation on God, his law and his works: the person murmurs over and dwells on the law, God's deeds or God himself, by day and night, on the bed and in the watches of the night, and the law is called his meditation. In Job 15:4 meditation before God is what is hindered, and in Psa 104:34 the psalmist asks that his meditation be pleasing to God. The object is always what belongs to God, and the setting is private and continual. Verses: Jos 1:8, Psa 63:6, Psa 77:12, Psa 119:15, Psa 119:23, Psa 119:27, Psa 119:48, Psa 119:78, Psa 119:148, Psa 143:5, Psa 145:5, Psa 1:2, Job 15:4, Psa 104:34, Psa 119:97, Psa 119:99.",
+   "codes": [
+    "H1897",
+    "H5921A",
+    "H7878",
+    "H7879",
+    "H7881"
+   ],
+   "words": [
+    "meditates|H1897",
+    "meditate|H1897",
+    "meditate|H7878",
+    "meditation|H5921A",
+    "meditation|H7879",
+    "meditation|H7881"
+   ],
+   "occurrences": [
+    "Psa 119:23",
+    "Job 15:4",
+    "Psa 119:78",
+    "Psa 1:2",
+    "Psa 104:34",
+    "Psa 104:34",
+    "Psa 119:48",
+    "Psa 119:97",
+    "Psa 145:5",
+    "Psa 119:27",
+    "Psa 77:12",
+    "Psa 119:15",
+    "Psa 119:148",
+    "Psa 143:5",
+    "Jos 1:8",
+    "Psa 63:6",
+    "Psa 119:99"
+   ]
+  },
+  {
+   "sense": 22869,
+   "text": "Brooding in distress: in Psa 77:3 the psalmist remembers God and moans, and meditating makes his spirit faint, and in Psa 77:6 he meditates in his heart by night and then his spirit searches. The musing here is troubled, with the spirit as the one affected. Verses: Psa 77:3, Psa 77:6.",
+   "codes": [
+    "H7878"
+   ],
+   "words": [
+    "meditate|H7878"
+   ],
+   "occurrences": [
+    "Psa 77:3",
+    "Psa 77:6"
+   ]
+  },
+  {
+   "sense": 22870,
+   "text": "The meditation of the heart as what its musing yields, set beside the speech of the mouth: the mouth speaks wisdom and the heart's meditation is understanding, and both words and meditation are put before the Lord to be accepted. The heart's inward musing is paired with outward words. Verses: Psa 19:14, Psa 49:3.",
+   "codes": [
+    "H1900",
+    "H1902H"
+   ],
+   "words": [
+    "meditation|H1900",
+    "meditation|H1902H"
+   ],
+   "occurrences": [
+    "Psa 49:3",
+    "Psa 19:14"
+   ]
+  },
+  {
+   "sense": 22871,
+   "text": "Meditation turned to harm: those who seek the psalmist's hurt speak of ruin and murmur over treachery all day. The same verb as devout meditation, here with treachery as its object, so that devising is added to murmuring. Verses: Psa 38:12.",
+   "codes": [
+    "H1897"
+   ],
+   "words": [
+    "meditate|H1897"
+   ],
+   "occurrences": [
+    "Psa 38:12"
+   ]
+  },
+  {
+   "sense": 22872,
+   "text": "Solitary musing in the open at evening: Isaac goes out into the field to muse, with no object named, before he sees the camels coming. The musing is private and has no stated subject matter. Verses: Gen 24:63.",
+   "codes": [
+    "H7742"
+   ],
+   "words": [
+    "meditate|H7742"
+   ],
+   "occurrences": [
+    "Gen 24:63"
+   ]
+  },
+  {
+   "sense": 22873,
+   "text": "Musing as being occupied inwardly: Elijah mocks the prophets of Baal that their god may be musing, taken up with his own thought and so not answering. The word names withdrawn preoccupation. Verses: 1Ki 18:27.",
+   "codes": [
+    "H7879"
+   ],
+   "words": [
+    "musing|H7879"
+   ],
+   "occurrences": [
+    "1Ki 18:27"
+   ]
+  },
+  {
+   "sense": 22874,
+   "text": "Pondering as turning a matter over in the mind before acting or speaking: Mary treasures up the things told and ponders them in her heart, Peter ponders the vision as the Spirit speaks, and in Pro 15:28 the righteous man's heart weighs a reply before his mouth speaks. In each the thought is held inwardly and precedes what follows. Verses: Luk 2:19, Act 10:19, Pro 15:28.",
+   "codes": [
+    "G1760",
+    "G4820",
+    "H1897"
+   ],
+   "words": [
+    "pondering|G1760",
+    "pondering|G4820",
+    "ponders|H1897"
+   ],
+   "occurrences": [
+    "Act 10:19",
+    "Pro 15:28",
+    "Luk 2:19"
+   ]
+  },
+  {
+   "sense": 22875,
+   "text": "Pondering as weighing, said of the Lord: he weighs all the ways of a man, which lie before his eyes. The subject is God and the sense is careful weighing and levelling of what a person does. Verses: Pro 5:21.",
+   "codes": [
+    "H6424"
+   ],
+   "words": [
+    "ponders|H6424"
+   ],
+   "occurrences": [
+    "Pro 5:21"
+   ]
+  }
+ ],
+ "occurrences_in_no_sense": [],
+ "codes": {
+  "G1760": {
+   "surfaces": [
+    "pondering"
+   ],
+   "sense_head": "to reflect on",
+   "meaning_range": "to think, ponder, reflect; <b>to revolve thoroughly in the mind, consider carefully, ponder, reflect,</b> <ref='Act.10.19'>Acts 10:19</ref>*",
+   "lsj": "<b> ἐνθῡμ-έομαι</b>, <br /> <i>future</i> <b>-ήσομαι</b>[<a href=\"javascript:void(0)\" title=\" 5th c.BC: Lysias Orator 12.45\">Refs 5th c.BC+</a>], later <b>-ηθήσομαι</b> [<a href=\"javascript:void(0)\" title=\"2nd-3rd c.AD: Philostratus Sophista “Vitae Sophistarum” 2.26.3, 1st-2nd c.AD: Epictetus Philosophus “Enchiridion” 21, etc.\">Refs 1st c.AD+</a>]: <i>aorist</i> ἐνεθυμήθην [<a href=\"javascript:void(0)\" title=\" 5th-6th c.BC: Aristophanes Comicus “Ranae” 40, 5th c.BC: Thucydides Historicus 2.62, 5th c.BC: Lysias Orator 31.27, etc.\">Refs 5th c.BC+</a>]: <i>perfect</i> ἐντεθύμημαι [<a href=\"javascript:void(0)\" title=\" 5th c.BC: Thucydides Historicus 1.120 \">Refs 5th c.BC+</a>]: <i>pluperfect</i>",
+   "mounce": "to think, ponder, reflect",
+   "related": [
+    "G1722 ἐν in/on/among",
+    "G1761 ἐνθύμησις reflection",
+    "G2372 θυμός wrath"
+   ]
+  },
+  "G4820": {
+   "surfaces": [
+    "pondering"
+   ],
+   "sense_head": "to ponder/confer",
+   "meaning_range": "to dispute with; to confer with, meet with; to ponder; to engage in (war); (<i>middle</i>) to help, assist; <i>primarily</i> <b>to throw together;</b> <i>absolute</i> <b>to meet and join,</b> <ref='Act.20.14'>Acts 20:14;</ref> <b>to meet</b> in war, <b>to encounter, engage with,</b> <ref='Luk.14.31'>Lk. 14:31</ref>; <b>to encounter</b> in discourse or dispute, <ref='Act.17.18'>Acts 17:18;</ref> <b>to consult together,</b> <ref='Act.4.15'>Acts 4:15;</ref> <i>middle</i> <b>to contribute, be of service to, to aid,</b> <ref='Act.18.27'>Acts 18:27;</ref> <greek>συμβάλλειν ἐν τῇ καρδιᾳ</greek>, <b>to revolve in mind, ponder upon,</b> <ref='Luk.2.19'>Lk. 2:19</ref>*",
+   "lsj": "<b> συμβάλλω</b>, <br /> <i>future</i> -βᾰλῶ: <i>aorist</i> -έβᾰλον, <i>infinitive</i> -βᾰλεῖν: <i>perfect</i> -βέβληκα: <i>aorist 1</i> <i>passive</i> -εβλήθην:—of these tenses [<a href=\"javascript:void(0)\" title=\" 8th c.BC: Homerus Epicus uses only \">Refs 8th c.BC+</a>]<i>present</i> <i>active</i>, <i>aorist</i> <i>active</i> and <i>middle</i>, but most commonly <i>Epic dialect</i> <i>intransitive</i> <i>aorist</i> forms συμβλήτην, -βλήμεναι, <i>middle</i> σύμβλητο, -βληντο, -βλήμενος, <i>subjunctive</i> <i>2nd pers.</i> <i>singular</i> -βλήεαι probably conjecture for -βλήσεαι in [<a href=\"javascript:void(0)\" title=\" 8th c.BC: Ilias Homerus Epicus “Illiad” 20.335 \">Refs 8th c.BC+</a>], <i>",
+   "mounce": "to dispute with; to confer with, meet with; to ponder; to engage in (war); (<i>middle</i>) to help, assist",
+   "related": [
+    "G0306 ἀναβάλλω to defer",
+    "G0474 ἀντιβάλλω to discuss",
+    "G0577 ἀποβάλλω to throw away",
+    "G0641 ἀπορρίπτω to throw off",
+    "G0906G βάλλω to throw: throw",
+    "G0906H βάλλω to throw: put",
+    "G0906I βάλλω to throw: sow",
+    "G0906J βάλλω to throw: pour",
+    "G0906K βάλλω to throw: hit",
+    "G1225 διαβάλλω to accuse",
+    "G1544 ἐκβάλλω to expel",
+    "G1685 ἐμβάλλω to throw in"
+   ]
+  },
+  "H1897": {
+   "surfaces": [
+    "meditate",
+    "meditates",
+    "ponders"
+   ],
+   "sense_head": "to mutter",
+   "meaning_range": "1) to moan, growl, utter, muse, mutter, meditate, devise, plot, speak; 1a) (Qal); 1a1) to roar, growl, groan; 1a2) to utter, speak; 1a3) to meditate, devise, muse, imagine; 1b) (Poal) to utter; 1c) (Hiphil) to mutter",
+   "lsj": "",
+   "mounce": "",
+   "related": [
+    "H1899 הֶ֫גֶה moaning",
+    "H1900 הָגוּת meditation",
+    "H1901 הָגִיג meditation",
+    "H1902G הִגָּיוֹן Higgaion",
+    "H1902H הִגָּיוֹן meditation"
+   ]
+  },
+  "H1900": {
+   "surfaces": [
+    "meditation"
+   ],
+   "sense_head": "meditation",
+   "meaning_range": "meditation, utterance, musing",
+   "lsj": "",
+   "mounce": "",
+   "related": [
+    "H1897 הָגָה to mutter",
+    "H1899 הֶ֫גֶה moaning",
+    "H1902G הִגָּיוֹן Higgaion",
+    "H1902H הִגָּיוֹן meditation"
+   ]
+  },
+  "H1902H": {
+   "surfaces": [
+    "meditation"
+   ],
+   "sense_head": "meditation",
+   "meaning_range": "1) meditation, resounding music, musing; 1a) resounding music; 1b) meditation, plotting",
+   "lsj": "",
+   "mounce": "",
+   "related": [
+    "H1897 הָגָה to mutter",
+    "H1899 הֶ֫גֶה moaning",
+    "H1900 הָגוּת meditation",
+    "H1902G הִגָּיוֹן Higgaion"
+   ]
+  },
+  "H5921A": {
+   "surfaces": [
+    "meditation"
+   ],
+   "sense_head": "upon",
+   "meaning_range": "prep; 1) upon, on the ground of, according to, on account of, on behalf of, concerning, beside, in addition to, together with, beyond, above, over, by, on to, towards, to, against; 1a) upon, on the ground of, on the basis of, on account of, because of, therefore, on behalf of, for the sake of, for, with, in spite of, notwithstanding, concerning, in the matter of, as regards; 1b) above, beyond, over (of excess); 1c) above, over (of elevation or pre-eminence); 1d) upon, to, over to, unto, in addition to, together with, with (of addition); 1e) over (of suspension or extension); 1f) by, adjoining, next, at, over, around (of contiguity or proximity); 1g) down upon, upon, on, from, up upon, up to,",
+   "lsj": "",
+   "mounce": "",
+   "related": [
+    "H0131 אֲדֻמִּים Adummim",
+    "H3588A כִּי for",
+    "H3588B כִּי [אם] that if: except",
+    "H3588C כִּי [עַל כֵּן] for as that: since",
+    "H3651C כֵּן so",
+    "H3652 כֵּן thus",
+    "H4605 מַ֫עַל above",
+    "H4607 מֹ֫עַל lifting",
+    "H4608 מַעֲלֶה ascent",
+    "H4609A מַעֲלָה thought",
+    "H4609B מַעֲלָה step",
+    "H4610 עַקְרַבִּים Akrabbim"
+   ]
+  },
+  "H6424": {
+   "surfaces": [
+    "ponders"
+   ],
+   "sense_head": "to weigh, make level, balance",
+   "meaning_range": "1) (Piel) to weigh, make level, balance; 1a) to weigh out; 1b) to make level or smooth",
+   "lsj": "",
+   "mounce": "",
+   "related": [
+    "H4657 מִפְלָשׂ swaying",
+    "H6425 פֶּ֫לֶס balance"
+   ]
+  },
+  "H7742": {
+   "surfaces": [
+    "meditate"
+   ],
+   "sense_head": "to meditate",
+   "meaning_range": "1) (Qal) to meditate, muse, commune, speak, complain; 1a) meaning uncertain",
+   "lsj": "",
+   "mounce": "",
+   "related": [
+    "H4880A מָשׁוֹט oar",
+    "H4880B מִשּׁוֹט oar",
+    "H7751A שׁוּט to rove",
+    "H7751B שׁוּט to row",
+    "H7752 שׁוֹט whip",
+    "H7850 שֹׁטֵט scourge",
+    "H7885 שַׁ֫יִט oar"
+   ]
+  },
+  "H7878": {
+   "surfaces": [
+    "meditate"
+   ],
+   "sense_head": "to muse",
+   "meaning_range": "1) to put forth, mediate, muse, commune, speak, complain, ponder, sing; 1a) (Qal); 1a1) to complain; 1a2) to muse, meditate upon, study, ponder; 1a3) to talk, sing, speak; 1b) (Polel) to meditate, consider, put forth thoughts",
+   "lsj": "",
+   "mounce": "",
+   "related": [
+    "H7808 שֵׂחַ thought",
+    "H7879 שִׂיחַ complaint",
+    "H7881 שִׂיחָה meditation"
+   ]
+  },
+  "H7879": {
+   "surfaces": [
+    "meditation",
+    "musing"
+   ],
+   "sense_head": "complaint",
+   "meaning_range": "1) meditation, complaint, musing; 1a) plaint, complaint; 1b) following are uncertain; 1b1) musing; 1b2) anxiety, trouble; 1b3) talk",
+   "lsj": "",
+   "mounce": "",
+   "related": [
+    "H7808 שֵׂחַ thought",
+    "H7878 שִׂיחַ to muse",
+    "H7881 שִׂיחָה meditation"
+   ]
+  },
+  "H7881": {
+   "surfaces": [
+    "meditation"
+   ],
+   "sense_head": "meditation",
+   "meaning_range": "1) meditation, reflection, prayer, devotion, complaint, musing; 1a) complaint; 1b) musing, study (of object)",
+   "lsj": "",
+   "mounce": "",
+   "related": [
+    "H7808 שֵׂחַ thought",
+    "H7878 שִׂיחַ to muse",
+    "H7879 שִׂיחַ complaint"
+   ]
+  }
+ },
+ "older": [],
+ "answer": {
+  "command": "ReadEnrichment",
+  "collection": "thought",
+  "subgroup": "meditating and pondering",
+  "ledger_id": 1295,
+  "enrichments": [
+   {
+    "sense": 22868,
+    "kind": "enrichment",
+    "obs_text": "",
+    "basis": "read | stated",
+    "grounds": ""
+   },
+   {
+    "sense": 22869,
+    "kind": "enrichment",
+    "obs_text": "",
+    "basis": "read | stated",
+    "grounds": ""
+   },
+   {
+    "sense": 22870,
+    "kind": "enrichment",
+    "obs_text": "",
+    "basis": "read | stated",
+    "grounds": ""
+   },
+   {
+    "sense": 22871,
+    "kind": "enrichment",
+    "obs_text": "",
+    "basis": "read | stated",
+    "grounds": ""
+   },
+   {
+    "sense": 22872,
+    "kind": "enrichment",
+    "obs_text": "",
+    "basis": "read | stated",
+    "grounds": ""
+   },
+   {
+    "sense": 22873,
+    "kind": "enrichment",
+    "obs_text": "",
+    "basis": "read | stated",
+    "grounds": ""
+   },
+   {
+    "sense": 22874,
+    "kind": "enrichment",
+    "obs_text": "",
+    "basis": "read | stated",
+    "grounds": ""
+   },
+   {
+    "sense": 22875,
+    "kind": "enrichment",
+    "obs_text": "",
+    "basis": "read | stated",
+    "grounds": ""
+   }
+  ],
+  "older": []
+ },
+ "measured": {
+  "package_chars": 19717,
+  "seconds": 0.1
+ }
+}

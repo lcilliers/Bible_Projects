@@ -1,0 +1,141 @@
+{
+ "command": "ReadElements",
+ "collection": "thought",
+ "subgroup": "setting your mind",
+ "ledger_id": 1957,
+ "findings": [
+  {
+   "key": "not-set",
+   "kind": "statement",
+   "text": "In Mar 8:33 setting the mind on the things of God is denied of Peter: the act is stated as not done, and the mind is set elsewhere.",
+   "basis": "stated",
+   "parts": {
+    "item": "operation",
+    "grounds": "you are not setting your mind on the things of God",
+    "mode": "negated"
+   },
+   "nodes": [
+    {
+     "occurrence": 1421837,
+     "role": "characteristic"
+    },
+    {
+     "traced": 22880
+    },
+    {
+     "traced": 23608
+    },
+    {
+     "traced": 23609
+    },
+    {
+     "traced": 22769
+    }
+   ],
+   "read_back": []
+  },
+  {
+   "key": "god-or-man",
+   "kind": "statement",
+   "text": "In Mar 8:33 what the mind is set on is one of two opposites: the things of God or the things of man.",
+   "basis": "stated",
+   "parts": {
+    "item": "object",
+    "grounds": "the things of God"
+   },
+   "nodes": [
+    {
+     "occurrence": 1421837,
+     "role": "characteristic"
+    },
+    {
+     "traced": 23609
+    },
+    {
+     "traced": 23610
+    },
+    {
+     "traced": 22880
+    }
+   ],
+   "read_back": []
+  },
+  {
+   "key": "refusal",
+   "kind": "statement",
+   "text": "In Mar 8:33 the set of mind is a refusal of the things of God in favour of the things of man, as the verse states it.",
+   "basis": "read",
+   "parts": {
+    "item": "polarity",
+    "grounds": "you are not setting your mind",
+    "polarity": "refusal"
+   },
+   "nodes": [
+    {
+     "occurrence": 1421837,
+     "role": "characteristic"
+    },
+    {
+     "traced": 23609
+    },
+    {
+     "traced": 23611
+    }
+   ],
+   "read_back": []
+  },
+  {
+   "key": "rebuked",
+   "kind": "statement",
+   "text": "In Mar 8:33 the set of mind is named in a rebuke: Jesus turns, sees the disciples, and rebukes Peter, so the correction is spoken in the hearing of the others.",
+   "basis": "stated",
+   "parts": {
+    "item": "circumstance",
+    "grounds": "But turning and seeing his disciples"
+   },
+   "nodes": [
+    {
+     "occurrence": 1421837,
+     "role": "characteristic"
+    },
+    {
+     "traced": 23612
+    },
+    {
+     "traced": 23613
+    },
+    {
+     "traced": 23610
+    },
+    {
+     "traced": 23611
+    }
+   ],
+   "read_back": []
+  }
+ ],
+ "not_used": {},
+ "older": [],
+ "existing": [
+  {
+   "observation": 22454,
+   "action": "delete",
+   "reason": "a 3.1 finding of the group this subgroup replaced; this reading states its content in the finding(s) not-set, resting on the subgroup's evidence"
+  },
+  {
+   "observation": 22456,
+   "action": "delete",
+   "reason": "a 3.1 finding of the group this subgroup replaced; this reading states its content in the finding(s) refusal, resting on the subgroup's evidence"
+  },
+  {
+   "observation": 22457,
+   "action": "delete",
+   "reason": "a 3.1 finding of the group this subgroup replaced; this reading states its content in the finding(s) god-or-man here and flesh-spirit of 'the mind on', resting on the subgroup's evidence"
+  },
+  {
+   "observation": 22459,
+   "action": "delete",
+   "reason": "a 3.1 finding of the group this subgroup replaced; this reading states its content in the finding(s) rebuked, resting on the subgroup's evidence"
+  }
+ ]
+}

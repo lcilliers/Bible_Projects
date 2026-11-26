@@ -1,0 +1,475 @@
+{
+ "command": "ReadEnrichment",
+ "collection": "thought",
+ "subgroup": "supposing and imagining",
+ "step": "1.2",
+ "made": "2026-11-26T05:56:55Z",
+ "unit": {
+  "ledger_id": 1516,
+  "senses": 5,
+  "occurrences": 28,
+  "codes": 13,
+  "older": 0
+ },
+ "instruction": {
+  "what": "Step 1.2, the enrichment of one subgroup (stage 1, B2): for each sense of step 1.1, what the Strong's codes of its occurrences say. The lexicon is the point of this read. Nothing here says what a sense does for the inner being; that begins at step 3.1.",
+  "read": [
+   "Take one sense at a time (`senses`: its text from step 1.1, its codes, words and occurrences).",
+   "Read the lexicon of each of its codes (`codes`: sense_head, meaning_range, lsj, mounce, related), the three meaning sources read together, none picked and the others dropped.",
+   "Validate the sense against its codes: do the lexicon entries bear out the meaning the sense names? Where they do not, say so in the enrichment; the sense is not changed here.",
+   "Where one surface carries several codes in the sense, read what each code adds."
+  ],
+  "write": [
+   "Fill `answer.enrichments`: one entry for each sense, named by `sense` (the id of its 1.1 observation); every sense has exactly one. The enrichment takes the sense's occurrences.",
+   "kind: enrichment. obs_text: a short definition from the lexicon entries; names the codes that link the sense to its usage and what different codes of one surface add; names verses the sense holds in, as the package writes the references (for example Psa 77:6); concise; never the lexicon copied whole, never a verse restated, never what the sense does for the inner being.",
+   "basis: read, with `grounds`: words copied exactly from the lexicon of a code of the sense (sense_head, meaning_range, lsj or mounce; the record checks them); or stated, where a verse says it.",
+   "Where the lexicon does not bear out the sense, the enrichment says so with its grounds; a missing lexicon entry is named, never filled from memory (RW-11).",
+   "`older`: answer each older observation shown, once: keep (with `nature`), restate (with `nature`, `new_text`, `checked`), merge (with `into`), consume (with `carriers` [\"this\"] for this answer's enrichments or observation ids, and `mapping`), delete_neither (with `reason`), carry (with `to` 2.1 and `reason`), defer (with `collection`, `nature`, `finding`).",
+   "Then: Collection-Build.ps1 -Action RecordEnrichment -File <the answer file> (-Check to preview). The record refuses the whole file on any fault and lists every fault."
+  ],
+  "keep": [
+   {
+    "rule": "RG-08 the-original",
+    "text": "For every word that names an inner or bodily act, look at the original: the root's range in all three meaning sources read together, never one picked and the others dropped; the ESV renderings across its verses; whether the English adds or hides; the literal sense beside the rendering. Where more than one reading is open, record each, and mark the choice 'I read'."
+   },
+   {
+    "rule": "RG-21 grain",
+    "text": "A word is read per its lettered Strong's code (its grain), never the bare lemma (B:113). The occurrences of a word with several senses are related per grain and never aggregated across grains: related verses are same-grain occurrences."
+   },
+   {
+    "rule": "RO11 one-row-per-code",
+    "text": "One observation per finding, never a duplicate description; a finding applying to several verses or words carries several nodes, each with the word's role in it."
+   },
+   {
+    "rule": "RW-03 no-duplicates-multi-node",
+    "text": "One observation per finding: the same description is never written twice. Applied to another verse, word or scope it gains a node on the existing observation."
+   },
+   {
+    "rule": "RW-04 concise-verse-specific",
+    "text": "Observation text is concise and tied to this verse's content, never a restatement of the word's dictionary sense. A transliteration is never given without its gloss."
+   },
+   {
+    "rule": "RW-09 reread-builds-on-prior",
+    "text": "A re-read includes the observations already recorded for the verse, so the reading sees prior findings and builds on them."
+   },
+   {
+    "rule": "RW-11 missing-is-named",
+    "text": "Missing data in the base extract is named as a gap, never substituted from memory or outside knowledge."
+   },
+   {
+    "rule": "RW-13 older-observations-answered-at-record",
+    "text": "Every older live observation with a live node on an occurrence of the row (a stage that is not the build's own) is answered in fill.older when the row is recorded, once: keep or restate (each with its marker), merge into a named observation, consume (live observations carry its meaning, stated in words, verified before it is deleted), delete as neither (comment first), or defer to a named collection (marked now; only the finding is left to that collection). An observation already marked by the validation, answered in a build or deferred is not asked again. A new observation whose text equals that of another live observation of the collection is refused, the other named. LayerCheck re-derives both from the tables. The end state of a collection's build is that every observation of its scope is marked and fixed or deleted, every word node complete or with its reason, and each deferral owned by a named collection."
+   },
+   {
+    "rule": "RS-04 existing-checked-accept-modify-delete",
+    "text": "When a verse is worked, every existing observation and node on it, of any stage, is checked against the verse by its wording. The stage is not an indication of the nature of an observation and is never used to filter. Each observation is accepted, modified (changed in place; the old value, the new value and the reason are kept in ib_observation_change), soft deleted (the `deleted` column, with the reason), merged (a duplicate description, into the observation that is kept) or, when its wording shows it is not verse understanding, left exactly as it is with the reason. The check's fixes are part of it and need no separate approval. Nothing is physically deleted."
+   },
+   {
+    "rule": "LR-02 nodes-are-built-from-the-data",
+    "text": "The nodes of a layer observation are the occurrences the aspect demands (a word's occurrences, the group's occurrences, the partner's occurrences in the verses they share), written by the recorder with the collection and the subgroup of each surface; they are never typed. An item answered by senses (word-sense) names, for each sense, the occurrences it holds for, and together the senses cover every occurrence; the recorder checks them against the data. The interpretation is the observation text, founded in what the evidence shows (basis stated or read, B:131) and tied to its verses (the text names them and does not restate them): the items of every step (S1, 1.1, 1.2, 2.1) state what the dictionary, the verses and the stored structure show of a word and never what a word does for the inner being; their nodes carry the role lexical and no route. The whole file is checked and written in one transaction; any problem refuses all of it. A row answered again withdraws its earlier observations with the reason."
+   },
+   {
+    "rule": "VA-03 consumption-is-verified-before-deletion",
+    "text": "An older observation is deleted as consumed only when live observations carry its meaning: every word occurrence of it is on a live node of a carrier or named as not carried with its reason, the mapping is stated in words (what the old says, which carrier states each part), the traces to it are re-pointed or replaced, and the consumption is kept as `consumed_by`. An observation that holds more than one finding is split first."
+   },
+   {
+    "rule": "VA-04 neither-evidence-nor-inner-being-is-deleted",
+    "text": "An observation that is neither evidence nor inner being contributes nothing to the purposes of the observations (researcher, 2026-11-22): it is commented with its reason and the word occurrences no other live observation holds, then deleted. An observation already marked, or one another observation traces, is not deleted this way."
+   }
+  ],
+  "not_in_this_read": ""
+ },
+ "prompts": [],
+ "senses": [
+  {
+   "sense": 22881,
+   "text": "An assumption that an act then rests on: the parents take the boy to be in the company and travel a day, the mourners take Mary to be going to the tomb, Mary takes Jesus for the gardener, the crowd takes Paul to be dead, the jailer takes the prisoners to have escaped, and the sailors take their purpose to be gained. In each verse the supposing is a belief about a present fact, and what is done follows from it and meets the facts in the verse. Verses: Luk 2:44, Joh 11:31, Joh 20:15, Act 14:19, Act 16:27, Act 27:13.",
+   "codes": [
+    "G1380",
+    "G3543"
+   ],
+   "words": [
+    "supposing|G1380",
+    "supposing|G3543"
+   ],
+   "occurrences": [
+    "Joh 20:15",
+    "Act 27:13",
+    "Joh 11:31",
+    "Luk 2:44",
+    "Act 14:19",
+    "Act 16:27"
+   ]
+  },
+  {
+   "sense": 22882,
+   "text": "A belief or opinion held or put to another: a man imagines he knows something, people are imagining that godliness is gain, Jonadab warns David not to conclude that all the sons are dead, Simon gives his judgment, the writer judges how many books the world could hold, the hearers are told they suppose wrongly about drunkenness, the crowd is asked what it supposes of John, the one who judges is asked whether he supposes he escapes, the doubter must not expect to receive, and the readers are asked whether they suppose the Scripture speaks to no purpose. The word is a view that the verse tests, corrects or leaves to the hearer. Verses: 1Cor 8:2, 1Ti 6:5, 2Sa 13:32, 2Sa 13:33, Luk 7:43, Joh 21:25, Act 2:15, Act 13:25, Rom 2:3, Jam 1:7, Jam 4:5.",
+   "codes": [
+    "G1161",
+    "G1380",
+    "G3543",
+    "G3633",
+    "G5274",
+    "G5282",
+    "H0559"
+   ],
+   "words": [
+    "imagines|G1161",
+    "imagines|G1380",
+    "imagining|G3543",
+    "suppose|G1161",
+    "suppose|G1380",
+    "suppose|G3633",
+    "suppose|G5274",
+    "suppose|G5282",
+    "suppose|H0559"
+   ],
+   "occurrences": [
+    "Act 13:25",
+    "Jam 4:5",
+    "2Sa 13:32",
+    "Luk 7:43",
+    "2Sa 13:33",
+    "Rom 2:3",
+    "1Ti 6:5",
+    "1Cor 8:2",
+    "1Cor 8:2",
+    "Joh 21:25",
+    "Act 2:15",
+    "Jam 1:7"
+   ]
+  },
+  {
+   "sense": 22883,
+   "text": "A case put as a possibility: Abraham sets one lower number of righteous after another with 'suppose', and the prophet puts a case of a son who sees his father's sins. The words are Hebrew particles of perhaps and behold that introduce a hypothetical case and carry no thinking of their own. Verses: Gen 18:28, Gen 18:29, Gen 18:30, Gen 18:31, Gen 18:32, Eze 18:14.",
+   "codes": [
+    "H0194",
+    "H2009"
+   ],
+   "words": [
+    "suppose|H0194",
+    "suppose|H2009"
+   ],
+   "occurrences": [
+    "Gen 18:30",
+    "Gen 18:32",
+    "Gen 18:29",
+    "Gen 18:31",
+    "Gen 18:28",
+    "Eze 18:14"
+   ]
+  },
+  {
+   "sense": 22884,
+   "text": "Imagining as devising evil: those who hate the psalmist whisper together and plan the worst against him. The Hebrew verb is of reckoning and devising, here turned toward harm. Verses: Psa 41:7.",
+   "codes": [
+    "H2803I",
+    "H5921A"
+   ],
+   "words": [
+    "imagine|H2803I",
+    "imagine|H5921A"
+   ],
+   "occurrences": [
+    "Psa 41:7",
+    "Psa 41:7"
+   ]
+  },
+  {
+   "sense": 22885,
+   "text": "The mind's own picture or device: in Pro 18:11 the rich man's wealth is a high wall in his imagination, a conceit that is not the fact, and in Act 17:29 the image of gold or stone is formed by human design and thought. The word is what the human mind pictures or devises. Verses: Pro 18:11, Act 17:29.",
+   "codes": [
+    "G1761",
+    "H4906"
+   ],
+   "words": [
+    "imagination|G1761",
+    "imagination|H4906"
+   ],
+   "occurrences": [
+    "Pro 18:11",
+    "Act 17:29"
+   ]
+  }
+ ],
+ "occurrences_in_no_sense": [],
+ "codes": {
+  "G1161": {
+   "surfaces": [
+    "imagines",
+    "suppose"
+   ],
+   "sense_head": "then",
+   "meaning_range": "but, and, then, rather; a conjunctive particle, marking the superaddition of a clause, whether in opposition or in continuation, to what has preceded, and it may be variously rendered <b>but, on the other hand, and, also, now,</b> etc.; <greek>καὶ δέ</greek>, when there is a special superaddition in continuation, <b>too, yea,</b> etc. It sometimes is found at the commencement of the apodosis of a sentence, <ref='Act.11.17.'>Acts 11:17.</ref> It serves also to mark the resumption of an interrupted discourse, <ref='2Co.2.10'>2Cor. 2:10;</ref> <ref='Gal.2.6'>Gal. 2:6</ref>",
+   "lsj": "<b> δέ</b>, <br /> <b>but</b>: adversative and copulative Particle, <br /><Level2><b>__I</b></Level2> answering to μέν (which see), τὴν νῦν μὲν Βοιωτίαν, πρότερον δὲ Καδμηίδα γῆν καλουμένην [<a href=\"javascript:void(0)\" title=\" 5th c.BC: Thucydides Historicus 1.12, etc. \">Refs 5th c.BC+</a>]<br /><Level2><b>__II</b></Level2> without preceding μέν, <br /><Level3><b>__II.1</b></Level3> adversative, expressing distinct opposition, αἰεί τοι τὰ κάκ᾽ ἐστὶ φίλα.. μαντεύεσθαι, ἐσθλὸν δ᾽ οὔτε τί πω εἶπας[<a href=\"javascript:void(0)\" title=\" lines 1.108; ὀρθῶς ἔλεξας, οὐ φίλως δέ μοι λέγεις 5th c.BC: Euripides Tragicus “Orestes” 100, compare 5th c.BC: Sophocles Tragicus “Antigone” 85, etc.; τέθνηκεν ἀ",
+   "mounce": "but, and, then, rather",
+   "related": [
+    "G1211 δή so"
+   ]
+  },
+  "G1380": {
+   "surfaces": [
+    "imagines",
+    "suppose",
+    "supposing"
+   ],
+   "sense_head": "to think",
+   "meaning_range": "to think, consider, regard, an action of the mind and heart for processing information into understanding and choices, sometimes with a focus on appearances. Often in the impersonal form translated, \"it seems\" (<ref='Act.17.18'>Act.17:18</ref>); <b>to think, imagine, suppose, presume,</b> <ref='Mat.3.9; 6:7'>Mt. 3:9; 6:7</ref>; <b>to seem, appear,</b> <ref='Luk.10.36'>Lk. 10:36</ref>; <ref='Act.17.18'>Acts 17:18;</ref> <b>it seems; it seems good, best,</b> or <b>right, it pleases,</b> <ref='Luk.1.3'>Lk. 1:3</ref>; <ref='Act.15.22, 25'>Acts 15:22, 25</ref>",
+   "lsj": "<b> δοκέω</b> <br /> [<a href=\"javascript:void(0)\" title=\" 8th c.BC: Ilias Homerus Epicus “Illiad” 7.192, _Attic dialect_ \">Refs 8th c.BC+</a>]<i>imperfect</i> ἐδόκουν, <i>Epic dialect</i> δοκέεσκον [<a href=\"javascript:void(0)\" title=\" “Anthologia Graeca” 5.298 (6th c.AD: Agathias Historicus et Epigrammaticus)\">Refs 6th c.AD+</a>]: —<i>middle</i>, δοκέοντο [<a href=\"javascript:void(0)\" title=\" 3rd c.AD: Oppianus Apamensis Epicus “Cynegetica” 4.296 \">Refs 3rd c.AD+</a>]: <i>participle</i> δοκεύμενος[<a href=\"javascript:void(0)\" title=\" [prev. work] 109 \">Refs</a>]: the <i>future</i> and other tenses are twofold: <br /><Level3><b>__1</b></Level3> <i>future</i> δόξω and <i>aorist 1</i> ἔδοξα [",
+   "mounce": "to think, consider, regard, an action of the mind and heart for processing information into understanding and choices, sometimes with a focus on appearances. Often in the impersonal form translated, \"it seems\" (<ref='Act.17.18'>Act.17:18</ref>)",
+   "related": [
+    ""
+   ]
+  },
+  "G1761": {
+   "surfaces": [
+    "imagination"
+   ],
+   "sense_head": "reflection",
+   "meaning_range": "thought, reflection; design, idea; <b>the act of thought, reflection,</b> <ref='Mat.9.4; 12:25'>Mt. 9:4; 12:25</ref>; <ref='Heb.4.12'>Heb. 4:12;</ref> <b>the result of thought, invention, device,</b> <ref='Act.17.29'>Acts 17:29</ref>*",
+   "lsj": "<b> ἐνθῡμ-ησις</b>, εως, ἡ, <br /> <b>consideration, esteem,</b> [<a href=\"javascript:void(0)\" title=\" 5th c.BC: Euripides Tragicus “Fragmenta” 246. \">Refs 5th c.BC+</a>]<br /><Level2><b>__II</b></Level2> <b>consideration, reflection,</b> [<a href=\"javascript:void(0)\" title=\" 5th c.BC: Thucydides Historicus 1.132, NT.Matt.9.4 (_plural_), 2nd-3rd c.AD: Symmachus LXX.Job.21.27, Vett. Val.301.8, etc. \">NT+5th c.BC+</a>]<br /><Level3><b>__II.2</b></Level3> <b>idea, conception,</b> εἰς ἐ. ἐσθήτων ἦλθον [<a href=\"javascript:void(0)\" title=\" 4th c.BC: Diogenes Cynicus Philosophus Oen.10; τὰς ἐ. ὀξύς 2nd c.AD: Lucianus Sophista “Salt.” 81. \">Refs 4th c.BC+</a>]<br /><Level2><b>__III</b></Level2> <b>",
+   "mounce": "thought, reflection; design, idea",
+   "related": [
+    "G1760 ἐνθυμέομαι to reflect on"
+   ]
+  },
+  "G3543": {
+   "surfaces": [
+    "imagining",
+    "supposing"
+   ],
+   "sense_head": "to think",
+   "meaning_range": "to think, suppose, expect, consider; <b>to own as settled and established; to deem,</b> <ref='1Co.7.26'>1Cor. 7:26;</ref> <ref='1Ti.6.5'>1Tim. 6:5;</ref> <b>to suppose, presume, expect</b> <ref='Mat.5.17; 20:10'>Mt. 5:17; 20:10</ref>; <ref='Luk.2.44'>Lk. 2:44</ref>; <b>to be usual, customary,</b> <ref='Act.16.13'>Acts 16:13</ref>",
+   "lsj": "<b> νομ-ίζω</b>, <br /> <i>future</i> νομιῶ [<a href=\"javascript:void(0)\" title=\" 5th-6th c.BC: Aristophanes Comicus “Aves” 571, 5th c.BC: Thucydides Historicus 4.87, etc.\">Refs 5th c.BC+</a>]; <i>Ionic dialect</i> <i>1st pers.</i> <i>plural</i> νομιοῦμεν [<a href=\"javascript:void(0)\" title=\" 5th c.BC: Herodotus Historicus 2.17; later νομίσω 3rd c.AD(?): Longus Scriptor Eroticus 1.1 codices, 5th-6th c.AD: Procopius Gazaeus Rhetor “Epistulae - Epistolographi” 12: \">Refs 5th c.BC+</a>]<i>aorist</i> ἐνόμισα, <i>poetry</i> νόμισα [<a href=\"javascript:void(0)\" title=\" 5th c.BC: Pindarus Lyricus “I.” 5(4).2 \">Refs 5th c.BC+</a>]: <i>perfect</i> νενόμικα [<a href=\"javascript:void(0)\" title=\" 4th c.",
+   "mounce": "to think, suppose, expect, consider",
+   "related": [
+    "G0143 αἰσθάνομαι to perceive",
+    "G1271 διάνοια mind",
+    "G1272 διανοίγω to open up",
+    "G1771 ἔννοια thought/purpose",
+    "G1950 ἐπιλανθάνω to forget",
+    "G1963 ἐπίνοια thought",
+    "G3105 μαίνομαι to rave",
+    "G3539 νοέω to understand",
+    "G3551 νόμος law",
+    "G4307 πρόνοια foresight",
+    "G5283 ὑπόνοια suspicion"
+   ]
+  },
+  "G3633": {
+   "surfaces": [
+    "suppose"
+   ],
+   "sense_head": "to suppose",
+   "meaning_range": "to think, suppose, imagine, presume, <ref='Jhn.21.25;'>Jhn.21:25;</ref> <ref='Phi.1.17.'>Phil. 1:17.</ref> οἰέσθω in <ref='Jas.1.7'>Jas. 1:7</ref> formed from the contracted form οἶ\\μαι*",
+   "lsj": "<b> οἴομαι</b>, <br /> in [<a href=\"javascript:void(0)\" title=\" 8th c.BC: Homerus Epicus \">Refs 8th c.BC+</a>] always un <i>contraction</i> <b>ὀΐομαι</b> (except οἴομαι [<a href=\"javascript:void(0)\" title=\" 8th c.BC: Odyssea Homerus Epicus “Odyssey” 10.193, οἴοιτο 17.580, 22.12)\">Refs 8th c.BC+</a>], see below:—the shortened form <b>οἶμαι</b> is the one chiefly used in Trag., οἴομαι only in [<a href=\"javascript:void(0)\" title=\" 4th-5th c.BC: Aeschylus Tragicus “Choephori” 758, 5th c.BC: Sophocles Tragicus “Oedipus Coloneus” 28 \">Refs 5th c.BC+</a>]; but οἴομαι is frequently in [<a href=\"javascript:void(0)\" title=\" 5th-6th c.BC: Aristophanes Comicus (“Eq.” 407, +others); 5th c.BC: Herodotus H",
+   "mounce": "to suppose",
+   "related": [
+    "G3634 οἷος such as"
+   ]
+  },
+  "G5274": {
+   "surfaces": [
+    "suppose"
+   ],
+   "sense_head": "to take up/suppose",
+   "meaning_range": "to take up; to show hospitality; to reply; to suppose, think, believe; <b>to take up,</b> by placing one's self underneath what is taken up; <b>to catch away, withdraw,</b> <ref='Act.1.9'>Acts 1:9;</ref> <b>to take up</b> discourse by continuation; hence, <b>to answer,</b> <ref='Luk.10.30'>Lk. 10:30</ref>; <b>to take up</b> a notion, <b>to think, suppose,</b> <ref='Luk.7.43'>Lk. 7:43</ref>; <ref='Act.2.15'>Acts 2:15;</ref> <b>receive as a guest,</b> 3Jn. 8*",
+   "lsj": "<b> ὑπολαμβάνω</b>, <br /> also <b>ὑπολάζυμαι</b> (which see), late <i>Doric dialect</i> <i>3rd.pers.</i> <i>plural</i> <i>future</i> <b>-λαμψοῦνται</b>[<a href=\"javascript:void(0)\" title=\" Anonymus “Oxy.” 410.99 \">Refs</a>]:—<b>take up by getting under,</b> as the dolphin did [<a href=\"javascript:void(0)\" title=\" 6th c.BC: Arion Lyricus, 5th c.BC: Herodotus Historicus 1.24, 5th-6th c.BC: Plato Philosophus “Respublica” 453d; τοὺς νεοττοὺς ὑ. ἡ φήνη 4th c.BC: Aristoteles Philosophus “Historia Animalium” 619b34; τὸ κῦμα ὑ. τινά 4th-3rd c.BC: Clearchus Historicus 73; νεφέλη ὑ. τινά NT.Act.1.9. \">NT+6th c.BC+</a>]<br /><Level4><b>__b</b></Level4> <b>bear up, support,</b> [<a href=\"javascript:voi",
+   "mounce": "to take up; to show hospitality; to reply; to suppose, think, believe",
+   "related": [
+    "G0353 ἀναλαμβάνω to take up",
+    "G0482 ἀντιλαμβάνω to help",
+    "G0618 ἀπολαμβάνω to get back",
+    "G1949 ἐπιλαμβάνω to catch",
+    "G2638 καταλαμβάνω to grasp",
+    "G2983 λαμβάνω to take",
+    "G3880 παραλαμβάνω to take",
+    "G4301 προλαμβάνω to take beforehand",
+    "G4355 προσλαμβάνω to take",
+    "G4815 συλλαμβάνω to seize/conceive/help",
+    "G4838 συμπαραλαμβάνω to take along with",
+    "G4843 συμπεριλαμβάνω to embrace"
+   ]
+  },
+  "G5282": {
+   "surfaces": [
+    "suppose"
+   ],
+   "sense_head": "to suppose",
+   "meaning_range": "to think, suppose; expect; to sense, suspect; <b>to suspect; to suppose, deem,</b> <ref='Act.13.25'>Acts 13:25;</ref> 25:18; 27:27*",
+   "lsj": "<b> ὑπονο-έω</b>, <br /> <b>suspect,</b> τι [<a href=\"javascript:void(0)\" title=\" 5th c.BC: Herodotus Historicus 9.88, 5th c.BC: Euripides Tragicus “Iphigenia Aulidensis” 1132; μηδὲν εἴς τινα 5th-6th c.BC: Aristophanes Comicus “Plutus” 361; ὑ. αὐτῶν τὴν διάνοιαν 5th c.BC: Thucydides Historicus 7.73; ψεῦδος 5th-6th c.BC: Plato Philosophus “Leges” 679c; πονηρά 1st c.BC: Philodemus Philosophus “περὶ παρρησίας” p.61 \">Refs 5th c.BC+</a>] O.: with <i>accusative</i> <i>person</i> et <i>infinitive</i>, ὑπονοήσαντες τοὺς Σαμίους τὰ τῶν Ἑλλήνων φρονέειν [<a href=\"javascript:void(0)\" title=\" 5th c.BC: Herodotus Historicus 9.99 \">Refs 5th c.BC+</a>]; ὑ. εἶναί τι θεῖον (variant{θεόν}) [<a href=\"javascri",
+   "mounce": "to think, suppose; expect; to sense, suspect",
+   "related": [
+    "G3539 νοέω to understand",
+    "G5259G ὑπό by/under: by",
+    "G5259H ὑπό by/under: under",
+    "G5283 ὑπόνοια suspicion"
+   ]
+  },
+  "H0194": {
+   "surfaces": [
+    "suppose"
+   ],
+   "sense_head": "perhaps",
+   "meaning_range": "1) perhaps, peradventure; 2) if peradventure; 3) unless; 4) suppose",
+   "lsj": "",
+   "mounce": "",
+   "related": [
+    "H0176A אוֹ or",
+    "H0199 אוּלָם but"
+   ]
+  },
+  "H0559": {
+   "surfaces": [
+    "suppose"
+   ],
+   "sense_head": "to say",
+   "meaning_range": "1) to say, speak, utter; 1a) (Qal) to say, to answer, to say in one's heart, to think, to command, to promise, to intend; 1b) (Niphal) to be told, to be said, to be called; 1c) (Hithpael) to boast, to act proudly; 1d) (Hiphil) to avow, to avouch; Aramaic equivalent: <i>a.mar</i> (אֲמַר \"to say\" H0560)",
+   "lsj": "",
+   "mounce": "",
+   "related": [
+    "H0201 אוֹמָר Omar",
+    "H0204 אֹן On",
+    "H0534 אָמִיר top",
+    "H0560 אֲמַר to say",
+    "H0561 אֵמֶר word",
+    "H0562 אֹמֶר word",
+    "H0564G אִמֵּר Immer",
+    "H0564H אִמֵּר Immer",
+    "H0564I אִמֵּר Immer",
+    "H0564J אִמֵּר Immer",
+    "H0565A אִמְרָה word",
+    "H0565B אֶמְרָה threat"
+   ]
+  },
+  "H2009": {
+   "surfaces": [
+    "suppose"
+   ],
+   "sense_head": "behold",
+   "meaning_range": "behold, lo, see, if",
+   "lsj": "",
+   "mounce": "",
+   "related": [
+    "H2005 הֵן look!",
+    "H2006A הֵן if",
+    "H2006B לָהֵן therefore",
+    "H2008 הֵ֫נָּה here/thus",
+    "H2011G הִנֹּם [Topheth of] Hinnom",
+    "H2011H הִנֹּם [Topheth of son of] Hinnom",
+    "H2012 הֵנַע Hena"
+   ]
+  },
+  "H2803I": {
+   "surfaces": [
+    "imagine"
+   ],
+   "sense_head": "devise/plot/plan",
+   "meaning_range": "1) to think, plan, esteem, calculate, invent, make a judgment, imagine, count; 1a) (Qal); 1a1) to think, account; 1a2) to plan, devise, mean; 1a3) to charge, impute, reckon; 1a4) to esteem, value, regard; 1a5) to invent; 1b) (Niphal); 1b1) to be accounted, be thought, be esteemed; 1b2) to be computed, be reckoned; 1b3) to be imputed; 1c) (Piel); 1c1) to think upon, consider, be mindful of; 1c2) to think to do, devise, plan; 1c3) to count, reckon; 1d) (Hithpael) to be considered",
+   "lsj": "",
+   "mounce": "",
+   "related": [
+    "H2803G חָשַׁב to devise: design",
+    "H2803H חָשַׁב to devise: count",
+    "H2803J חָשַׁב to devise: think",
+    "H2804 חֲשַׁב to account",
+    "H2805 חֵ֫שֶׁב artwork",
+    "H2806 חַשְׁבַּדָּנָה Hashbaddanah",
+    "H2807 חֲשֻׁבָה Hashubah",
+    "H2808 חֶשְׁבּוֹן explanation",
+    "H2809 חֶשְׁבּוֹן Heshbon",
+    "H2810 חִשָּׁבוֹן invention",
+    "H2811G חֲשַׁבְיָ֫הוּ Hashabiah",
+    "H2811H חֲשַׁבְיָ֫הוּ Hashabiah"
+   ]
+  },
+  "H4906": {
+   "surfaces": [
+    "imagination"
+   ],
+   "sense_head": "figure",
+   "meaning_range": "1) show-piece, figure, imagination, image, idol, picture; 1a) show-piece, carved figure (of idols); 1b) imagination, conceit",
+   "lsj": "",
+   "mounce": "",
+   "related": [
+    "H7634 שָֽׂכְיָה Sachia",
+    "H7906 שֵׂ֫כוּ Secu",
+    "H7907 שֶׂכְוִי heart",
+    "H7914 שְׂכִיָּה craft",
+    "H7915 שַׂכִּין knife"
+   ]
+  },
+  "H5921A": {
+   "surfaces": [
+    "imagine"
+   ],
+   "sense_head": "upon",
+   "meaning_range": "prep; 1) upon, on the ground of, according to, on account of, on behalf of, concerning, beside, in addition to, together with, beyond, above, over, by, on to, towards, to, against; 1a) upon, on the ground of, on the basis of, on account of, because of, therefore, on behalf of, for the sake of, for, with, in spite of, notwithstanding, concerning, in the matter of, as regards; 1b) above, beyond, over (of excess); 1c) above, over (of elevation or pre-eminence); 1d) upon, to, over to, unto, in addition to, together with, with (of addition); 1e) over (of suspension or extension); 1f) by, adjoining, next, at, over, around (of contiguity or proximity); 1g) down upon, upon, on, from, up upon, up to,",
+   "lsj": "",
+   "mounce": "",
+   "related": [
+    "H0131 אֲדֻמִּים Adummim",
+    "H3588A כִּי for",
+    "H3588B כִּי [אם] that if: except",
+    "H3588C כִּי [עַל כֵּן] for as that: since",
+    "H3651C כֵּן so",
+    "H3652 כֵּן thus",
+    "H4605 מַ֫עַל above",
+    "H4607 מֹ֫עַל lifting",
+    "H4608 מַעֲלֶה ascent",
+    "H4609A מַעֲלָה thought",
+    "H4609B מַעֲלָה step",
+    "H4610 עַקְרַבִּים Akrabbim"
+   ]
+  }
+ },
+ "older": [],
+ "answer": {
+  "command": "ReadEnrichment",
+  "collection": "thought",
+  "subgroup": "supposing and imagining",
+  "ledger_id": 1516,
+  "enrichments": [
+   {
+    "sense": 22881,
+    "kind": "enrichment",
+    "obs_text": "",
+    "basis": "read | stated",
+    "grounds": ""
+   },
+   {
+    "sense": 22882,
+    "kind": "enrichment",
+    "obs_text": "",
+    "basis": "read | stated",
+    "grounds": ""
+   },
+   {
+    "sense": 22883,
+    "kind": "enrichment",
+    "obs_text": "",
+    "basis": "read | stated",
+    "grounds": ""
+   },
+   {
+    "sense": 22884,
+    "kind": "enrichment",
+    "obs_text": "",
+    "basis": "read | stated",
+    "grounds": ""
+   },
+   {
+    "sense": 22885,
+    "kind": "enrichment",
+    "obs_text": "",
+    "basis": "read | stated",
+    "grounds": ""
+   }
+  ],
+  "older": []
+ },
+ "measured": {
+  "package_chars": 25336,
+  "seconds": 0.1
+ }
+}

@@ -1,0 +1,1838 @@
+{
+ "command": "ReadEvidence",
+ "collection": "thought",
+ "subgroup": "thinking and thought",
+ "step": "2.1",
+ "item": "evidence-validation",
+ "made": "2026-11-26T06:23:10Z",
+ "batch": {
+  "observations": 40,
+  "left_after_this": 113,
+  "evidence_in_scope": 330,
+  "observations_in_scope": 558
+ },
+ "code_checks": {
+  "passes": true,
+  "findings": {
+   "unmarked": [],
+   "no_node": [],
+   "word_missing": [],
+   "traced_dead": [],
+   "duplicate_text": [],
+   "b1_not_traced_by_a_sense": [],
+   "sense_not_traced_by_2_1": [],
+   "older_open": []
+  }
+ },
+ "instruction": {
+  "what": "The evidence validation (B5) of one subgroup, after its sweep, the gate before 3.1: the code checks of its observations (shown in `code_checks`), and the reading of every evidence observation of the subgroup (its own of S1 to 2.1, and the older ones on its occurrences kept as evidence) for whether it is true, founded and coherent with the others. Inner being is not judged here; the two validations are never run together.",
+  "read": [
+   "Read the code checks first: a failing check names observations to repair (unmarked, no node, a word node missing a column without its reason, a trace to a deleted observation, two of one text, a B1 observation no sense traces, a sense the 2.1 observations on its occurrences do not trace, an older observation left open).",
+   "Take one observation at a time (`observations`, in the order of the steps): its text, basis and grounds against its verses (`verses`) and the observations it traces. Is it true of those verses? Does it say more than they show? Does it contradict another observation of the subgroup?"
+  ],
+  "write": [
+   "Fill `answer.observations`, one entry for each observation of the package: verdict true, with `why` (what in the verses and the data bears it out); or verdict repair, with `why` (what is wrong) and `actions`: the actions of the validation that repair it (cfg_setting validate.reading actions, each with its parameters, for example {\"action\": \"restate\", \"oid\": id, \"new_text\": ..., \"checked\": ..., \"reason\": ...}, or delete_neither, complete_node, add_trace).",
+   "A repair is checked as it is written; an observation that cannot be made true is deleted with its reason.",
+   "Then: Collection-Build.ps1 -Action RecordEvidence -File <the answer file> (-Check to preview), and ReadEvidence again until every evidence observation is read; the gate passes when all are read and the code checks pass."
+  ],
+  "keep": [
+   {
+    "rule": "VA-01 a-sheet-is-one-checked-transaction",
+    "text": "A sheet of validation actions is checked whole (every action named, its parameters complete) and written in one transaction: any action the tables refuse refuses the whole sheet and nothing is kept. -Check runs every action and rolls back. Every change is kept in ib_observation_change with its reason (RW-01); nothing is physically deleted."
+   },
+   {
+    "rule": "VA-02 repair-first-and-every-finding-acted-on",
+    "text": "A finding of the validation is repaired first: a wording that is untrue or stronger than its verse is restated and the restatement checked against the base data; a node missing a column is completed, or the reason the data cannot give it is recorded; a duplicate is consolidated; a node is deleted only when another live node carries its occurrence or it supports no finding of its observation. A finding is left open only when a named collection's validation will touch the observation: the deferral to that collection and the finding are recorded, and the check accepts it as deferred. A finding with no named owner is closed in the validation."
+   },
+   {
+    "rule": "VA-03 consumption-is-verified-before-deletion",
+    "text": "An older observation is deleted as consumed only when live observations carry its meaning: every word occurrence of it is on a live node of a carrier or named as not carried with its reason, the mapping is stated in words (what the old says, which carrier states each part), the traces to it are re-pointed or replaced, and the consumption is kept as `consumed_by`. An observation that holds more than one finding is split first."
+   },
+   {
+    "rule": "VA-04 neither-evidence-nor-inner-being-is-deleted",
+    "text": "An observation that is neither evidence nor inner being contributes nothing to the purposes of the observations (researcher, 2026-11-22): it is commented with its reason and the word occurrences no other live observation holds, then deleted. An observation already marked, or one another observation traces, is not deleted this way."
+   },
+   {
+    "rule": "VA-05 the-marker-follows-content-not-stage",
+    "text": "Evidence states what the data are or show, tied to a verse. Inner being states how something works in the inner being, based on evidence, a building block of the stage 5 claims. The marker (ib_observation.nature) follows the content and purpose of the observation, never its stage (RS-04): an observation of any stage may be inner being when it traces to evidence. One that states both is split. The marker is set when the observation is created, by the item that is answered (cfg_setting layer.reading items.<item>.nature); a finding file never sets it; the validation changes it only where the content shows the item's nature does not hold."
+   },
+   {
+    "rule": "VA-06 evidence-validation-gates-inner-being-validation",
+    "text": "The validation runs in two layers, never concurrently: evidence first, then inner being. The inner-being layer is judged only when the evidence layer passes (every in-scope observation marked, none without a live node, no word node missing a required column without its reason, no live trace to a deleted observation, no two of one meaning). A later evidence change reopens only the inner-being rows it touches. In the build this gate is: step 3.1 does not open before the evidence layer passes, and step 3.3 does not close before both layers pass (cfg_setting layer.reading open_gate and closing_gate)."
+   },
+   {
+    "rule": "RW-01 changed-only-by-reading",
+    "text": "No observation is changed except by a reading, and every change is recorded with its reason. An observation no longer supported by the verse is soft-deleted, with the reason."
+   },
+   {
+    "rule": "RW-03 no-duplicates-multi-node",
+    "text": "One observation per finding: the same description is never written twice. Applied to another verse, word or scope it gains a node on the existing observation."
+   },
+   {
+    "rule": "RW-04 concise-verse-specific",
+    "text": "Observation text is concise and tied to this verse's content, never a restatement of the word's dictionary sense. A transliteration is never given without its gloss."
+   },
+   {
+    "rule": "RW-06 resolved-fresh-on-evidence",
+    "text": "Verse references are resolved fresh at write time, never taken from the text written. Relations are recorded only on evidence."
+   },
+   {
+    "rule": "RW-11 missing-is-named",
+    "text": "Missing data in the base extract is named as a gap, never substituted from memory or outside knowledge."
+   }
+  ],
+  "not_in_this_read": ""
+ },
+ "observations": [
+  {
+   "observation": 23410,
+   "step": "2.1",
+   "item": "entity",
+   "kind": "pairing",
+   "text": "In the narratives the thinker is a named person whose thought is quoted: Abraham in Gen 20:11, Isaac in Gen 26:9, Jacob in Gen 31:31 and Gen 32:20, Moses in Exo 2:14, Samuel before Eliab in 1Sa 16:6, Saul toward David in 1Sa 18:11, 1Sa 18:17, 1Sa 18:21, 1Sa 18:25 and 1Sa 20:26, David in 1Sa 27:11, Achish in 1Sa 27:12, Hanun's princes in 2Sa 10:3 and 1Ch 19:3, Naaman in 2Ki 5:11, Hezekiah in 2Ki 20:19 and Isa 39:8, Sennacherib in 2Ch 32:1, Mordecai to Esther in Est 4:13, Elihu in Job 32:6, Daniel in Dan 4:19 and Dan 7:28.",
+   "basis": "read",
+   "grounds": "I will pin David to the wall",
+   "traces": [
+    22898,
+    22904,
+    22905,
+    22906,
+    22911,
+    22912
+   ],
+   "verses": [
+    "1Ch 19:3",
+    "1Sa 16:6",
+    "1Sa 18:11",
+    "1Sa 18:17",
+    "1Sa 18:21",
+    "1Sa 18:25",
+    "1Sa 20:26",
+    "1Sa 20:3",
+    "1Sa 27:11",
+    "1Sa 27:12",
+    "2Ch 13:8",
+    "2Ch 32:1",
+    "2Ki 20:19",
+    "2Ki 5:11",
+    "2Ki 7:12",
+    "2Sa 10:3",
+    "2Sa 18:27",
+    "2Sa 21:16",
+    "2Sa 3:19",
+    "2Sa 5:6",
+    "Dan 4:19",
+    "Dan 7:28",
+    "Est 4:13",
+    "Exo 2:14",
+    "Gen 20:11",
+    "Gen 26:9",
+    "Gen 31:31",
+    "Gen 32:20",
+    "Gen 32:8",
+    "Isa 39:8",
+    "Jer 3:7",
+    "Jer 40:5",
+    "Job 32:6",
+    "Judg 15:2",
+    "Judg 3:24"
+   ]
+  },
+  {
+   "observation": 23411,
+   "step": "2.1",
+   "item": "entity",
+   "kind": "pairing",
+   "text": "In Num 5:28, Judg 13:3, Judg 13:5, Judg 13:7, Isa 7:14, Mat 1:23, Luk 1:31 and Heb 11:11 the persons named with conceive are the woman, the child, Immanuel, Jesus and Sarah: they belong to the bodily sense, not to thought.",
+   "basis": "read",
+   "grounds": "the virgin shall conceive and bear a son",
+   "traces": [
+    22896
+   ],
+   "verses": [
+    "Heb 11:11",
+    "Isa 7:14",
+    "Judg 13:3",
+    "Judg 13:5",
+    "Judg 13:7",
+    "Luk 1:31",
+    "Mat 1:23",
+    "Num 5:28"
+   ]
+  },
+  {
+   "observation": 23412,
+   "step": "2.1",
+   "item": "entity",
+   "kind": "pairing",
+   "text": "In Deu 15:9, Jos 22:28, 2Sa 14:17, Job 35:2, Psa 10:4, Psa 48:9, Lam 1:9, Dan 7:25, Jon 1:6, Act 17:29, Rom 1:21, Rom 12:3, 2Cor 10:5, 2Cor 11:3, 1Pe 4:1 and the other verses of this group God, the Lord or Christ is named as the one the thought concerns or is set against (no God in Psa 10:4, the Most High in Dan 7:25, the god who may give a thought in Jon 1:6, the knowledge of God in 2Cor 10:5, Christ in 2Cor 11:3), or the persons named are hearers and brothers addressed.",
+   "basis": "read",
+   "grounds": "take every thought captive to obey Christ",
+   "traces": [
+    22899,
+    22902,
+    22903,
+    22904,
+    22905,
+    22906,
+    22907,
+    22908,
+    22909,
+    22910,
+    22911,
+    22912
+   ],
+   "verses": [
+    "1Cor 13:11",
+    "1Cor 14:20",
+    "1Cor 14:37",
+    "1Cor 4:9",
+    "1Cor 7:26",
+    "1Cor 7:40",
+    "1Pe 4:1",
+    "2Cor 10:5",
+    "2Cor 11:3",
+    "2Cor 12:19",
+    "2Cor 9:5",
+    "2Sa 14:17",
+    "Act 17:29",
+    "Act 26:8",
+    "Act 8:20",
+    "Dan 7:25",
+    "Deu 15:9",
+    "Heb 10:29",
+    "Jer 23:27",
+    "Job 35:2",
+    "Joh 16:2",
+    "Jon 1:6",
+    "Jos 22:28",
+    "Lam 1:9",
+    "Luk 13:4",
+    "Mar 7:21",
+    "Mat 18:12",
+    "Mat 21:28",
+    "Num 36:6",
+    "Phili 1:17",
+    "Phili 2:25",
+    "Phili 3:15",
+    "Phili 4:8",
+    "Pro 21:29",
+    "Psa 10:4",
+    "Psa 119:52",
+    "Psa 48:9",
+    "Psa 94:18",
+    "Rom 12:3",
+    "Rom 14:14",
+    "Rom 1:21"
+   ]
+  },
+  {
+   "observation": 23413,
+   "step": "2.1",
+   "item": "direction",
+   "kind": "relation",
+   "text": "The direction runs between God and people: from the Lord who sees, knows and searches the thoughts of man in Gen 6:5, Psa 94:11, Psa 139:23, 1Ch 28:9 and 1Cor 3:20, and who takes thought for the poor in Psa 40:17 and Psa 144:3; and from the Lord's own thoughts toward his people in Psa 40:5, above man's in Isa 55:8 and unknown to the nations in Mic 4:12.",
+   "basis": "read",
+   "grounds": "knows the thoughts of man",
+   "traces": [
+    22894,
+    22907,
+    22910,
+    22911,
+    22912
+   ],
+   "verses": [
+    "1Ch 28:9",
+    "1Ch 29:18",
+    "1Cor 2:11",
+    "1Cor 3:20",
+    "Amo 4:13",
+    "Eze 11:5",
+    "Eze 38:10",
+    "Gen 6:5",
+    "Heb 4:12",
+    "Isa 55:7",
+    "Isa 55:8",
+    "Mic 4:12",
+    "Pro 15:26",
+    "Psa 139:17",
+    "Psa 139:23",
+    "Psa 144:3",
+    "Psa 40:17",
+    "Psa 40:5",
+    "Psa 92:5",
+    "Psa 94:11"
+   ]
+  },
+  {
+   "observation": 23414,
+   "step": "2.1",
+   "item": "direction",
+   "kind": "relation",
+   "text": "The direction runs from Jesus into the thoughts of others in Mat 9:4, Mat 12:25, Luk 5:22 and Luk 6:8, from Jesus asking toward the hearer in Mat 17:25 and Mat 22:42, and from the disciples and the crowd toward Jesus in Joh 11:13, Joh 11:56 and Joh 13:29, where they mistake his meaning.",
+   "basis": "read",
+   "grounds": "But Jesus, knowing their thoughts",
+   "traces": [
+    22897,
+    22903,
+    22907,
+    22911,
+    22912
+   ],
+   "verses": [
+    "Joh 11:13",
+    "Joh 11:56",
+    "Joh 13:29",
+    "Joh 5:45",
+    "Luk 5:22",
+    "Luk 6:8",
+    "Mar 12:14",
+    "Mat 12:25",
+    "Mat 17:25",
+    "Mat 22:16",
+    "Mat 22:42",
+    "Mat 9:4"
+   ]
+  },
+  {
+   "observation": 23415,
+   "step": "2.1",
+   "item": "direction",
+   "kind": "relation",
+   "text": "In the narratives the thought runs from the thinker toward another person or a coming event: Jacob toward Esau in Gen 32:8 and Gen 32:20, Saul toward David in 1Sa 18:11, 1Sa 18:21 and 1Sa 18:25, Achish toward David in 1Sa 27:12, Hanun's princes toward David in 2Sa 10:3, Naaman toward Elisha in 2Ki 5:11, Hezekiah toward his own days in 2Ki 20:19, Sennacherib toward the fortified cities in 2Ch 32:1.",
+   "basis": "read",
+   "grounds": "I will pin David to the wall",
+   "traces": [
+    22898,
+    22904,
+    22905,
+    22906,
+    22911,
+    22912
+   ],
+   "verses": [
+    "1Ch 19:3",
+    "1Sa 16:6",
+    "1Sa 18:11",
+    "1Sa 18:17",
+    "1Sa 18:21",
+    "1Sa 18:25",
+    "1Sa 20:26",
+    "1Sa 20:3",
+    "1Sa 27:11",
+    "1Sa 27:12",
+    "2Ch 13:8",
+    "2Ch 32:1",
+    "2Ki 20:19",
+    "2Ki 5:11",
+    "2Ki 7:12",
+    "2Sa 10:3",
+    "2Sa 18:27",
+    "2Sa 21:16",
+    "2Sa 3:19",
+    "2Sa 5:6",
+    "Dan 4:19",
+    "Dan 7:28",
+    "Est 4:13",
+    "Exo 2:14",
+    "Gen 20:11",
+    "Gen 26:9",
+    "Gen 31:31",
+    "Gen 32:20",
+    "Gen 32:8",
+    "Isa 39:8",
+    "Jer 3:7",
+    "Jer 40:5",
+    "Job 32:6",
+    "Judg 15:2",
+    "Judg 3:24"
+   ]
+  },
+  {
+   "observation": 23416,
+   "step": "2.1",
+   "item": "direction",
+   "kind": "relation",
+   "text": "In Num 5:28, Judg 13:3, Judg 13:5, Judg 13:7, Isa 7:14, Mat 1:23, Luk 1:31 and Heb 11:11 no direction of a mind is stated: conceive is bodily, a woman becoming pregnant.",
+   "basis": "read",
+   "grounds": "the virgin shall conceive and bear a son",
+   "traces": [
+    22896
+   ],
+   "verses": [
+    "Heb 11:11",
+    "Isa 7:14",
+    "Judg 13:3",
+    "Judg 13:5",
+    "Judg 13:7",
+    "Luk 1:31",
+    "Mat 1:23",
+    "Num 5:28"
+   ]
+  },
+  {
+   "observation": 23417,
+   "step": "2.1",
+   "item": "direction",
+   "kind": "relation",
+   "text": "In Deu 15:9, Psa 10:4, Lam 1:9, Dan 7:25, Jon 1:6, Act 17:29, Rom 12:3, 2Cor 10:5, 2Cor 11:3 and the other verses of this group the thought runs from people toward God or away from him (no God in Psa 10:4, against the Most High in Dan 7:25, the god who may give a thought in Jon 1:6, every thought taken captive to Christ in 2Cor 10:5), or toward oneself (Rom 12:3) or toward the hearers addressed.",
+   "basis": "read",
+   "grounds": "take every thought captive to obey Christ",
+   "traces": [
+    22899,
+    22902,
+    22903,
+    22904,
+    22905,
+    22906,
+    22907,
+    22908,
+    22909,
+    22910,
+    22911,
+    22912
+   ],
+   "verses": [
+    "1Cor 13:11",
+    "1Cor 14:20",
+    "1Cor 14:37",
+    "1Cor 4:9",
+    "1Cor 7:26",
+    "1Cor 7:40",
+    "1Pe 4:1",
+    "2Cor 10:5",
+    "2Cor 11:3",
+    "2Cor 12:19",
+    "2Cor 9:5",
+    "2Sa 14:17",
+    "Act 17:29",
+    "Act 26:8",
+    "Act 8:20",
+    "Dan 7:25",
+    "Deu 15:9",
+    "Heb 10:29",
+    "Jer 23:27",
+    "Job 35:2",
+    "Joh 16:2",
+    "Jon 1:6",
+    "Jos 22:28",
+    "Lam 1:9",
+    "Luk 13:4",
+    "Mar 7:21",
+    "Mat 18:12",
+    "Mat 21:28",
+    "Num 36:6",
+    "Phili 1:17",
+    "Phili 2:25",
+    "Phili 3:15",
+    "Phili 4:8",
+    "Pro 21:29",
+    "Psa 10:4",
+    "Psa 119:52",
+    "Psa 48:9",
+    "Psa 94:18",
+    "Rom 12:3",
+    "Rom 14:14",
+    "Rom 1:21"
+   ]
+  },
+  {
+   "observation": 23418,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In Act 26:8 raising the dead is what is thought incredible: the thought judges God's act unbelievable. In 2Cor 10:5 the proud reasonings set up against knowing God are torn down and every thought is made captive: the raising is of pride against God, and the thought is brought under Christ.",
+   "basis": "read",
+   "grounds": "take every thought captive to obey Christ",
+   "traces": [
+    22908,
+    22911
+   ],
+   "verses": [
+    "2Cor 10:5",
+    "Act 26:8"
+   ]
+  },
+  {
+   "observation": 23419,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In Pro 15:26 the Lord abhors the thoughts of the wicked: the thoughts themselves are judged by him. In Lam 1:9 Jerusalem took no thought of her future, and her fall is terrible: the lack of thought is followed by the fall.",
+   "basis": "read",
+   "grounds": "The thoughts of the wicked are an abomination to the Lord",
+   "traces": [
+    22907,
+    22910
+   ],
+   "verses": [
+    "Lam 1:9",
+    "Pro 15:26"
+   ]
+  },
+  {
+   "observation": 23420,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In Mat 15:19 and Mar 7:21 evil thoughts come first in the list of what comes out of the heart, before murder, adultery and the others: the thoughts are the first of the evils that issue from the heart.",
+   "basis": "read",
+   "grounds": "out of the heart come evil thoughts",
+   "traces": [
+    22911
+   ],
+   "verses": [
+    "Mar 7:21",
+    "Mat 15:19"
+   ]
+  },
+  {
+   "observation": 23421,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In Psa 40:5 the Lord's wondrous deeds and his thoughts toward his people are named together as many: his thoughts stand with his works.",
+   "basis": "stated",
+   "grounds": "your wondrous deeds and your thoughts toward us",
+   "traces": [
+    22894
+   ],
+   "verses": [
+    "Psa 40:5"
+   ]
+  },
+  {
+   "observation": 23422,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In 2Ki 5:11 Naaman is angry and goes away saying what he had thought Elisha would do: his anger rises from the thought that was not met.",
+   "basis": "read",
+   "grounds": "But Naaman was angry and went away",
+   "traces": [
+    22905
+   ],
+   "verses": [
+    "2Ki 5:11"
+   ]
+  },
+  {
+   "observation": 23423,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In Luk 5:22 Jesus perceives their thoughts and asks why they question in their hearts: the thoughts are the questioning within. In Eph 3:20 asking and thinking are joined as what God can do beyond.",
+   "basis": "read",
+   "grounds": "Why do you question in your hearts",
+   "traces": [
+    22907,
+    22911
+   ],
+   "verses": [
+    "Eph 3:20",
+    "Luk 5:22"
+   ]
+  },
+  {
+   "observation": 23424,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In 2Cor 11:3 Paul fears the thoughts will be led astray from sincere devotion to Christ, as the serpent deceived Eve: the thoughts are what deceit leads off. In Mat 18:12 astray is the sheep of the parable, asked about with what do you think.",
+   "basis": "read",
+   "grounds": "your thoughts will be led astray",
+   "traces": [
+    22903,
+    22911
+   ],
+   "verses": [
+    "2Cor 11:3",
+    "Mat 18:12"
+   ]
+  },
+  {
+   "observation": 23425,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In Judg 15:2 the father says he thought Samson hated her and offers the younger, more beautiful sister: the mistaken thought led to the giving, and beauty is his offer in its place.",
+   "basis": "read",
+   "grounds": "Is not her younger sister more beautiful than she",
+   "traces": [
+    22905
+   ],
+   "verses": [
+    "Judg 15:2"
+   ]
+  },
+  {
+   "observation": 23426,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In Pro 14:15 the simple believes everything while the prudent gives thought to his steps: believing without weighing is set against thought. In Rom 12:3 sober thinking of oneself is by the measure of faith God gives. In Phili 3:4 and Jam 1:26 a person thinks he has reason for confidence or is religious: the thought is a self-trust the verse tests. In Heb 11:11 faith goes with the conceiving.",
+   "basis": "read",
+   "grounds": "the prudent gives thought to his steps",
+   "traces": [
+    22896,
+    22907,
+    22909,
+    22912
+   ],
+   "verses": [
+    "Heb 11:11",
+    "Jam 1:26",
+    "Phili 3:4",
+    "Pro 14:15",
+    "Rom 12:3"
+   ]
+  },
+  {
+   "observation": 23427,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In Heb 10:29 the hearers are asked to think how much worse a punishment the one deserves who has profaned the blood of the covenant: the thought is asked to weigh the profaning.",
+   "basis": "read",
+   "grounds": "How much worse punishment, do you think",
+   "traces": [
+    22912
+   ],
+   "verses": [
+    "Heb 10:29"
+   ]
+  },
+  {
+   "observation": 23428,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In Rom 12:3 Paul speaks by the grace given him when he tells them not to think too highly of themselves. In 2Cor 9:5 he thought it necessary that the gift be ready as a willing gift. In Heb 10:29 the one who outraged the Spirit of grace is the one the hearers are asked to think about.",
+   "basis": "read",
+   "grounds": "by the grace given to me I say to everyone",
+   "traces": [
+    22908,
+    22909,
+    22912
+   ],
+   "verses": [
+    "2Cor 9:5",
+    "Heb 10:29",
+    "Rom 12:3"
+   ]
+  },
+  {
+   "observation": 23429,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In 2Sa 5:6 the Jebusites say the blind and lame will ward David off, thinking he cannot come in: blind is part of their boast, which their thought rests on.",
+   "basis": "read",
+   "grounds": "the blind and the lame will ward you off",
+   "traces": [
+    22905
+   ],
+   "verses": [
+    "2Sa 5:6"
+   ]
+  },
+  {
+   "observation": 23430,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In 2Cor 11:16 and 2Cor 12:6 thinking is how others rate Paul, and boasting is what he weighs doing: let no one count him a fool, and he refrains from boasting so that no one thinks more of him than he sees.",
+   "basis": "read",
+   "grounds": "let no one think me foolish",
+   "traces": [
+    22908,
+    22912
+   ],
+   "verses": [
+    "2Cor 11:16",
+    "2Cor 12:6"
+   ]
+  },
+  {
+   "observation": 23431,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In 1Sa 18:17 Saul asks David to be valiant while he thinks to let the Philistines kill him: the call to courage hides the thought. In Job 32:6 Elihu was timid to declare his opinion. In Pro 21:29 the wicked puts on a bold face while the upright gives thought to his ways.",
+   "basis": "read",
+   "grounds": "A wicked man puts on a bold face",
+   "traces": [
+    22898,
+    22905,
+    22907
+   ],
+   "verses": [
+    "1Sa 18:17",
+    "Job 32:6",
+    "Pro 21:29"
+   ]
+  },
+  {
+   "observation": 23432,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In Gen 26:9 Abimelech calls Isaac and Isaac gives the thought behind his lie, and in 2Ki 5:11 Naaman thought the prophet would call on the Lord: call is the act the thought expected. In Jer 3:19 the Lord thought Israel would call him Father, and in Jon 1:6 the captain urges Jonah to call on his god in the hope the god will give a thought to them. In Isa 7:14, Mat 1:23 and Luk 1:31 call is naming the child, with conceive in its bodily sense.",
+   "basis": "read",
+   "grounds": "And I thought you would call me, My Father",
+   "traces": [
+    22896,
+    22899,
+    22905,
+    22907
+   ],
+   "verses": [
+    "2Ki 5:11",
+    "Gen 26:9",
+    "Isa 7:14",
+    "Jer 3:19",
+    "Jon 1:6",
+    "Luk 1:31",
+    "Mat 1:23"
+   ]
+  },
+  {
+   "observation": 23433,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In Deu 15:9 the people are to take care lest an unworthy thought be in the heart: the thought is what is to be guarded against. In Luk 8:18 take care is how to hear, and what one thinks he has may be taken. In Mat 22:16 care and opinion name Jesus not regarding a person's standing.",
+   "basis": "read",
+   "grounds": "Take care lest there be an unworthy thought in your heart",
+   "traces": [
+    22897,
+    22911,
+    22912
+   ],
+   "verses": [
+    "Deu 15:9",
+    "Luk 8:18",
+    "Mat 22:16"
+   ]
+  },
+  {
+   "observation": 23434,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In Dan 5:6, Dan 5:10 and Dan 7:28 the thoughts alarm and the color changes: the change of face goes with the alarming thoughts, and in Dan 5:10 the queen bids the king's color not change. In Dan 7:25 the one against the Most High thinks to change the times and the law: there the change is what the thought intends.",
+   "basis": "read",
+   "grounds": "his thoughts alarmed him",
+   "traces": [
+    22906,
+    22911
+   ],
+   "verses": [
+    "Dan 5:10",
+    "Dan 5:6",
+    "Dan 7:25",
+    "Dan 7:28"
+   ]
+  },
+  {
+   "observation": 23435,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In Psa 50:21 the people thought God was like themselves because he was silent, and he now rebukes them: the false thought about God is met by his rebuke.",
+   "basis": "read",
+   "grounds": "you thought that I was one like yourself",
+   "traces": [
+    22912
+   ],
+   "verses": [
+    "Psa 50:21"
+   ]
+  },
+  {
+   "observation": 23436,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In Pro 15:26 the thoughts of the wicked stand against gracious words that are pure. In Phili 4:8 whatever is pure is among what the believers are to think on: the thinking is directed to purity.",
+   "basis": "read",
+   "grounds": "whatever is pure, whatever is lovely",
+   "traces": [
+    22907,
+    22910
+   ],
+   "verses": [
+    "Phili 4:8",
+    "Pro 15:26"
+   ]
+  },
+  {
+   "observation": 23437,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In 1Sa 18:17 Saul tells David to fight the Lord's battles while he thinks to let the Philistines kill him: the fighting is the cover of the thought. In 2Ki 18:20 and Isa 36:5 the Rabshakeh asks whether they think mere words are strategy for war. In Mic 2:8 with no thought of war renders a turning back, not a thought.",
+   "basis": "read",
+   "grounds": "Only be valiant for me and fight",
+   "traces": [
+    22900,
+    22905,
+    22912
+   ],
+   "verses": [
+    "1Sa 18:17",
+    "2Ki 18:20",
+    "Isa 36:5",
+    "Mic 2:8"
+   ]
+  },
+  {
+   "observation": 23438,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In Psa 119:52 thinking of the Lord's rules from of old brings comfort: the remembering is the ground of the comfort. In Job 12:5 the thought of one at ease holds contempt for misfortune: ease shapes the thought.",
+   "basis": "read",
+   "grounds": "When I think of your rules from of old, I take comfort",
+   "traces": [
+    22907,
+    22911
+   ],
+   "verses": [
+    "Job 12:5",
+    "Psa 119:52"
+   ]
+  },
+  {
+   "observation": 23439,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In Num 36:6 the Lord commands that the daughters marry whom they think best within the clan: their judgment is free inside the command. In 1Ch 29:18 David asks the Lord to keep such thoughts in the hearts of his people and direct their hearts. In Psa 50:21 the Lord lays the charge before those who thought him like themselves. In Rom 12:3 sober thinking is by the measure God has assigned, and in 1Cor 14:37 the one who thinks he is spiritual is to acknowledge the Lord's command.",
+   "basis": "read",
+   "grounds": "Let them marry whom they think best",
+   "traces": [
+    22904,
+    22909,
+    22910,
+    22911,
+    22912
+   ],
+   "verses": [
+    "1Ch 29:18",
+    "1Cor 14:37",
+    "Dan 2:30",
+    "Num 36:6",
+    "Psa 50:21",
+    "Rom 12:3"
+   ]
+  },
+  {
+   "observation": 23440,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In Phili 4:8 whatever is worthy of praise is among what the believers are to think about: the thinking is turned to what is commendable.",
+   "basis": "stated",
+   "grounds": "if there is anything worthy of praise",
+   "traces": [
+    22907
+   ],
+   "verses": [
+    "Phili 4:8"
+   ]
+  },
+  {
+   "observation": 23441,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In Isa 55:7 the unrighteous man is to forsake his thoughts and return to the Lord, who will have compassion on him: forsaking the thoughts opens the way to mercy. In Pro 15:26 gracious words stand against the thoughts of the wicked.",
+   "basis": "read",
+   "grounds": "the unrighteous man his thoughts",
+   "traces": [
+    22910
+   ],
+   "verses": [
+    "Isa 55:7",
+    "Pro 15:26"
+   ]
+  },
+  {
+   "observation": 23442,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In 1Ti 3:7 the overseer must be well thought of by outsiders: the requirement is a good report from others, not a thought of his own.",
+   "basis": "stated",
+   "grounds": "he must be well thought of by outsiders",
+   "traces": [
+    22901
+   ],
+   "verses": [
+    "1Ti 3:7"
+   ]
+  },
+  {
+   "observation": 23443,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In Gen 38:15 Judah took Tamar for a prostitute because she had covered her face: what is hidden leads the thought astray. In 2Ki 7:12 the king thinks the Syrians hide to trap them, and in Psa 64:5 the wicked lay snares secretly, thinking none will see. In Dan 2:30 and Luk 2:35 the thoughts are revealed: what is hidden in the heart is brought out.",
+   "basis": "read",
+   "grounds": "so that thoughts from many hearts may be revealed",
+   "traces": [
+    22905,
+    22908,
+    22911
+   ],
+   "verses": [
+    "2Ki 7:12",
+    "Dan 2:30",
+    "Gen 38:15",
+    "Luk 2:35",
+    "Psa 64:5"
+   ]
+  },
+  {
+   "observation": 23444,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In Exo 2:14 Moses, asked who made him a judge, is afraid and thinks the thing is known. In Joh 5:45 the hearers are not to think Jesus will accuse them, for Moses does. In Jam 2:4 those who make distinctions become judges with evil thoughts: the judging is done from evil thoughts.",
+   "basis": "read",
+   "grounds": "become judges with evil thoughts",
+   "traces": [
+    22905,
+    22911,
+    22912
+   ],
+   "verses": [
+    "Exo 2:14",
+    "Jam 2:4",
+    "Joh 5:45"
+   ]
+  },
+  {
+   "observation": 23445,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In 1Cor 14:37 the one who thinks he is a prophet should acknowledge Paul's writing as the Lord's command: the self-view is tested by acknowledging. In Phili 3:15 where the mature think otherwise, God will reveal it to them.",
+   "basis": "read",
+   "grounds": "God will reveal that also to you",
+   "traces": [
+    22909,
+    22912
+   ],
+   "verses": [
+    "1Cor 14:37",
+    "Phili 3:15"
+   ]
+  },
+  {
+   "observation": 23446,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In Gen 6:5 the thoughts of the heart are evil continually: the evil is lasting. In 1Sa 27:12 Achish thinks David will always be his servant, and in Joh 5:39 the hearers think they have eternal life in the Scriptures: the thought claims a lasting state the verse shows otherwise.",
+   "basis": "read",
+   "grounds": "only evil continually",
+   "traces": [
+    22905,
+    22910,
+    22912
+   ],
+   "verses": [
+    "1Sa 27:12",
+    "Gen 6:5",
+    "Joh 5:39"
+   ]
+  },
+  {
+   "observation": 23447,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In Rom 14:14 Paul is persuaded nothing is unclean in itself, yet it is unclean to the one who counts it so: the thought makes it unclean for him. In 2Cor 10:5 every thought is taken captive to obey Christ: the thought is brought to obedience.",
+   "basis": "read",
+   "grounds": "unclean for anyone who thinks it unclean",
+   "traces": [
+    22908,
+    22911
+   ],
+   "verses": [
+    "2Cor 10:5",
+    "Rom 14:14"
+   ]
+  },
+  {
+   "observation": 23448,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In Gen 6:5 the wickedness of man is great, and the thoughts of his heart are only evil: the wickedness seen on earth and the evil of the thoughts are named together.",
+   "basis": "stated",
+   "grounds": "the wickedness of man was great in the earth",
+   "traces": [
+    22910
+   ],
+   "verses": [
+    "Gen 6:5"
+   ]
+  },
+  {
+   "observation": 23449,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In Job 15:35 and Isa 59:4 the wicked conceive mischief and their womb prepares deceit, with lies spoken. In Pro 12:5 the thoughts of the righteous are just against the deceitful counsels of the wicked. In 1Cor 3:18, Gal 6:3 and Jam 1:26 the one who thinks himself wise, something or religious deceives himself, and in 2Cor 11:3 the thoughts may be led astray by deceit as Eve was.",
+   "basis": "read",
+   "grounds": "he deceives himself",
+   "traces": [
+    22895,
+    22910,
+    22911,
+    22912
+   ],
+   "verses": [
+    "1Cor 3:18",
+    "2Cor 11:3",
+    "Gal 6:3",
+    "Isa 59:4",
+    "Jam 1:26",
+    "Job 15:35",
+    "Pro 12:5"
+   ]
+  }
+ ],
+ "verses": [
+  {
+   "reference": "1Cor 14:20",
+   "text": "Brothers, do not be children in your thinking. Be infants in evil, but in your thinking be mature."
+  },
+  {
+   "reference": "Job 15:35",
+   "text": "They conceive trouble and give birth to evil, and their womb prepares deceit.”"
+  },
+  {
+   "reference": "Isa 55:7",
+   "text": "let the wicked forsake his way, and the unrighteous man his thoughts; let him return to the Lord, that he may have compassion on him, and to our God, for he will abundantly pardon."
+  },
+  {
+   "reference": "Isa 59:4",
+   "text": "No one enters suit justly; no one goes to law honestly; they rely on empty pleas, they speak lies, they conceive mischief and give birth to iniquity."
+  },
+  {
+   "reference": "Judg 15:2",
+   "text": "And her father said, “I really thought that you utterly hated her, so I gave her to your companion. Is not her younger sister more beautiful than she? Please take her instead.”"
+  },
+  {
+   "reference": "1Sa 27:12",
+   "text": "And Achish trusted David, thinking, “He has made himself an utter stench to his people Israel; therefore he shall always be my servant.”"
+  },
+  {
+   "reference": "Pro 15:26",
+   "text": "The thoughts of the wicked are an abomination to the Lord, but gracious words are pure."
+  },
+  {
+   "reference": "Phili 1:17",
+   "text": "The former proclaim Christ out of selfish ambition, not sincerely but thinking to afflict me in my imprisonment."
+  },
+  {
+   "reference": "Psa 10:4",
+   "text": "In the pride of his face the wicked does not seek him; all his thoughts are, “There is no God.”"
+  },
+  {
+   "reference": "2Ki 5:11",
+   "text": "But Naaman was angry and went away, saying, “ Behold, I thought that he would surely come out to me and stand and call upon the name of the Lord his God, and wave his hand over the place and cure the leper."
+  },
+  {
+   "reference": "Mat 22:42",
+   "text": "saying, “ What do you think about the Christ? Whose son is he?” They said to him, “The son of David.”"
+  },
+  {
+   "reference": "2Cor 10:5",
+   "text": "We destroy arguments and every lofty opinion raised against the knowledge of God, and take every thought captive to obey Christ,"
+  },
+  {
+   "reference": "2Cor 11:3",
+   "text": "But I am afraid that as the serpent deceived Eve by his cunning, your thoughts will be led astray from a sincere and pure devotion to Christ."
+  },
+  {
+   "reference": "2Cor 12:19",
+   "text": "Have you been thinking all along that we have been defending ourselves to you? It is in the sight of God that we have been speaking in Christ, and all for your upbuilding, beloved."
+  },
+  {
+   "reference": "1Pe 4:1",
+   "text": "Since therefore Christ suffered in the flesh, arm yourselves with the same way of thinking, for whoever has suffered in the flesh has ceased from sin,"
+  },
+  {
+   "reference": "1Sa 16:6",
+   "text": "When they came, he looked on Eliab and thought, “ Surely the Lord’s anointed is before him.”"
+  },
+  {
+   "reference": "Psa 139:23",
+   "text": "Search me, O God, and know my heart! Try me and know my thoughts!"
+  },
+  {
+   "reference": "1Sa 27:11",
+   "text": "And David would leave neither man nor woman alive to bring news to Gath, thinking, “ lest they should tell about us and say, ‘ So David has done.’” Such was his custom all the while he lived in the country of the Philistines."
+  },
+  {
+   "reference": "Gen 31:31",
+   "text": "Jacob answered and said to Laban, “ Because I was afraid, for I thought that you would take your daughters from me by force."
+  },
+  {
+   "reference": "Exo 2:14",
+   "text": "He answered, “ Who made you a prince and a judge over us? Do you mean to kill me as you killed the Egyptian?” Then Moses was afraid, and thought, “ Surely the thing is known.”"
+  },
+  {
+   "reference": "Job 32:6",
+   "text": "And Elihu the son of Barachel the Buzite answered and said: “I am young in years, and you are aged; therefore I was timid and afraid to declare my opinion to you."
+  },
+  {
+   "reference": "2Cor 11:16",
+   "text": "I repeat, let no one think me foolish. But even if you do, accept me as a fool, so that I too may boast a little."
+  },
+  {
+   "reference": "2Cor 12:6",
+   "text": "though if I should wish to boast, I would not be a fool, for I would be speaking the truth; but I refrain from it, so that no one may think more of me than he sees in me or hears from me."
+  },
+  {
+   "reference": "Mat 17:25",
+   "text": "He said, “ Yes.” And when he came into the house, Jesus spoke to him first, saying, “ What do you think, Simon? From whom do kings of the earth take toll or tax? From their sons or from others?”"
+  },
+  {
+   "reference": "Mat 22:16",
+   "text": "And they sent their disciples to him, along with the Herodians, saying, “ Teacher, we know that you are true and teach the way of God truthfully, and you do not care about anyone’s opinion, for you are not swayed by appearances."
+  },
+  {
+   "reference": "Mar 12:14",
+   "text": "And they came and said to him, “ Teacher, we know that you are true and do not care about anyone’s opinion. For you are not swayed by appearances, but truly teach the way of God. Is it lawful to pay taxes to Caesar, or not? Should we pay them, or should we not?”"
+  },
+  {
+   "reference": "Joh 11:13",
+   "text": "Now Jesus had spoken of his death, but they thought that he meant taking rest in sleep."
+  },
+  {
+   "reference": "Joh 11:56",
+   "text": "They were looking for Jesus and saying to one another as they stood in the temple, “ What do you think? That he will not come to the feast at all?”"
+  },
+  {
+   "reference": "Joh 13:29",
+   "text": "Some thought that, because Judas had the moneybag, Jesus was telling him, “ Buy what we need for the feast,” or that he should give something to the poor."
+  },
+  {
+   "reference": "Rom 12:3",
+   "text": "For by the grace given to me I say to everyone among you not to think of himself more highly than he ought to think, but to think with sober judgment, each according to the measure of faith that God has assigned."
+  },
+  {
+   "reference": "Psa 92:5",
+   "text": "How great are your works, O Lord! Your thoughts are very deep!"
+  },
+  {
+   "reference": "Lam 1:9",
+   "text": "Her uncleanness was in her skirts; she took no thought of her future; therefore her fall is terrible; she has no comforter. “O Lord, behold my affliction, for the enemy has triumphed!”"
+  },
+  {
+   "reference": "1Sa 20:26",
+   "text": "Yet Saul did not say anything that day, for he thought, “Something has happened to him. He is not clean; surely he is not clean.”"
+  },
+  {
+   "reference": "2Sa 3:19",
+   "text": "Abner also spoke to Benjamin. And then Abner went to tell David at Hebron all that Israel and the whole house of Benjamin thought good to do."
+  },
+  {
+   "reference": "2Ki 20:19",
+   "text": "Then Hezekiah said to Isaiah, “The word of the Lord that you have spoken is good.” For he thought, “Why not, if there will be peace and security in my days?”"
+  },
+  {
+   "reference": "Psa 40:5",
+   "text": "You have multiplied, O Lord my God, your wondrous deeds and your thoughts toward us; none can compare with you! I will proclaim and tell of them, yet they are more than can be told."
+  },
+  {
+   "reference": "Isa 39:8",
+   "text": "Then Hezekiah said to Isaiah, “The word of the Lord that you have spoken is good.” For he thought, “There will be peace and security in my days.”"
+  },
+  {
+   "reference": "2Sa 10:3",
+   "text": "But the princes of the Ammonites said to Hanun their lord, “Do you think, because David has sent comforters to you, that he is honoring your father? Has not David sent his servants to you to search the city and to spy it out and to overthrow it?”"
+  },
+  {
+   "reference": "1Ch 19:3",
+   "text": "But the princes of the Ammonites said to Hanun, “Do you think, because David has sent comforters to you, that he is honoring your father? Have not his servants come to you to search and to overthrow and to spy out the land?”"
+  },
+  {
+   "reference": "Phili 3:4",
+   "text": "though I myself have reason for confidence in the flesh also. If anyone else thinks he has reason for confidence in the flesh, I have more:"
+  },
+  {
+   "reference": "Pro 21:29",
+   "text": "A wicked man puts on a bold face, but the upright gives thought to his ways."
+  },
+  {
+   "reference": "Gen 32:20",
+   "text": "and you shall say, ‘ Moreover, your servant Jacob is behind us.’” For he thought, “I may appease him with the present that goes ahead of me, and afterward I shall see his face. Perhaps he will accept me.”"
+  },
+  {
+   "reference": "Judg 3:24",
+   "text": "When he had gone, the servants came, and when they saw that the doors of the roof chamber were locked, they thought, “ Surely he is relieving himself in the closet of the cool chamber.”"
+  },
+  {
+   "reference": "2Ki 7:12",
+   "text": "And the king rose in the night and said to his servants, “I will tell you what the Syrians have done to us. They know that we are hungry. Therefore they have gone out of the camp to hide themselves in the open country, thinking, ‘When they come out of the city, we shall take them alive and get into the city.’”"
+  },
+  {
+   "reference": "Jon 1:6",
+   "text": "So the captain came and said to him, “ What do you mean, you sleeper? Arise, call out to your god! Perhaps the god will give a thought to us, that we may not perish.”"
+  },
+  {
+   "reference": "Joh 16:2",
+   "text": "They will put you out of the synagogues. Indeed, the hour is coming when whoever kills you will think he is offering service to God."
+  },
+  {
+   "reference": "Rom 1:21",
+   "text": "For although they knew God, they did not honor him as God or give thanks to him, but they became futile in their thinking, and their foolish hearts were darkened."
+  },
+  {
+   "reference": "Jam 1:26",
+   "text": "If anyone thinks he is religious and does not bridle his tongue but deceives his heart, this person’s religion is worthless."
+  },
+  {
+   "reference": "Mat 9:4",
+   "text": "But Jesus, knowing their thoughts, said, “ Why do you think evil in your hearts?"
+  },
+  {
+   "reference": "Mat 12:25",
+   "text": "Knowing their thoughts, he said to them, “ Every kingdom divided against itself is laid waste, and no city or house divided against itself will stand."
+  },
+  {
+   "reference": "Mat 21:28",
+   "text": "“ What do you think? A man had two sons. And he went to the first and said, ‘ Son, go and work in the vineyard today.’"
+  },
+  {
+   "reference": "Luk 6:8",
+   "text": "But he knew their thoughts, and he said to the man with the withered hand, “ Come and stand here.” And he rose and stood there."
+  },
+  {
+   "reference": "Act 8:20",
+   "text": "But Peter said to him, “May your silver perish with you, because you thought you could obtain the gift of God with money!"
+  },
+  {
+   "reference": "Mat 1:23",
+   "text": "“ Behold, the virgin shall conceive and bear a son, and they shall call his name Immanuel ” ( which means, God with us )."
+  },
+  {
+   "reference": "Luk 1:31",
+   "text": "And behold, you will conceive in your womb and bear a son, and you shall call his name Jesus."
+  },
+  {
+   "reference": "2Cor 9:5",
+   "text": "So I thought it necessary to urge the brothers to go on ahead to you and arrange in advance for the gift you have promised, so that it may be ready as a willing gift, not as an exaction."
+  },
+  {
+   "reference": "Gen 20:11",
+   "text": "Abraham said, “I did it because I thought, ‘ There is no fear of God at all in this place, and they will kill me because of my wife.’"
+  },
+  {
+   "reference": "Gen 26:9",
+   "text": "So Abimelech called Isaac and said, “ Behold, she is your wife. How then could you say, ‘She is my sister ’?” Isaac said to him, “ Because I thought, ‘ Lest I die because of her.’”"
+  },
+  {
+   "reference": "Gen 32:8",
+   "text": "thinking, “ If Esau comes to the one camp and attacks it, then the camp that is left will escape.”"
+  },
+  {
+   "reference": "Num 36:6",
+   "text": "This is what the Lord commands concerning the daughters of Zelophehad: ‘Let them marry whom they think best, only they shall marry within the clan of the tribe of their father."
+  },
+  {
+   "reference": "Deu 15:9",
+   "text": "Take care lest there be an unworthy thought in your heart and you say, ‘The seventh year, the year of release is near,’ and your eye look grudgingly on your poor brother, and you give him nothing, and he cry to the Lord against you, and you be guilty of sin."
+  },
+  {
+   "reference": "Jos 22:28",
+   "text": "And we thought, ‘ If this should be said to us or to our descendants in time to come, we should say, “ Behold, the copy of the altar of the Lord, which our fathers made, not for burnt offerings, nor for sacrifice, but to be a witness between us and you.”’"
+  },
+  {
+   "reference": "Judg 13:3",
+   "text": "And the angel of the Lord appeared to the woman and said to her, “Behold, you are barren and have not borne children, but you shall conceive and bear a son."
+  },
+  {
+   "reference": "Judg 13:7",
+   "text": "but he said to me, ‘Behold, you shall conceive and bear a son. So then drink no wine or strong drink, and eat nothing unclean, for the child shall be a Nazirite to God from the womb to the day of his death.’”"
+  },
+  {
+   "reference": "1Sa 18:11",
+   "text": "And Saul hurled the spear, for he thought, “I will pin David to the wall.” But David evaded him twice."
+  },
+  {
+   "reference": "1Sa 18:17",
+   "text": "Then Saul said to David, “ Here is my elder daughter Merab. I will give her to you for a wife. Only be valiant for me and fight the Lord’s battles.” For Saul thought, “Let not my hand be against him, but let the hand of the Philistines be against him.”"
+  },
+  {
+   "reference": "1Sa 18:21",
+   "text": "Saul thought, “Let me give her to him, that she may be a snare for him and that the hand of the Philistines may be against him.” Therefore Saul said to David a second time, “You shall now be my son-in-law.”"
+  },
+  {
+   "reference": "1Sa 18:25",
+   "text": "Then Saul said, “ Thus shall you say to David, ‘The king desires no bride-price except a hundred foreskins of the Philistines, that he may be avenged of the king’s enemies.’” Now Saul thought to make David fall by the hand of the Philistines."
+  },
+  {
+   "reference": "1Sa 20:3",
+   "text": "But David vowed again, saying, “Your father knows well that I have found favor in your eyes, and he thinks, ‘Do not let Jonathan know this, lest he be grieved.’ But truly, as the Lord lives and as your soul lives, there is but a step between me and death.”"
+  },
+  {
+   "reference": "2Sa 5:6",
+   "text": "And the king and his men went to Jerusalem against the Jebusites, the inhabitants of the land, who said to David, “You will not come in here, but the blind and the lame will ward you off”— thinking, “ David cannot come in here.”"
+  },
+  {
+   "reference": "2Sa 14:17",
+   "text": "And your servant thought, ‘The word of my lord the king will set me at rest,’ for my lord the king is like the angel of God to discern good and evil. The Lord your God be with you!”"
+  },
+  {
+   "reference": "2Sa 18:27",
+   "text": "The watchman said, “ I think the running of the first is like the running of Ahimaaz the son of Zadok.” And the king said, “ He is a good man and comes with good news.”"
+  },
+  {
+   "reference": "2Sa 21:16",
+   "text": "And Ishbi-benob, one of the descendants of the giants, whose spear weighed three hundred shekels of bronze, and who was armed with a new sword, thought to kill David."
+  },
+  {
+   "reference": "2Ki 18:20",
+   "text": "Do you think that mere words are strategy and power for war? In whom do you now trust, that you have rebelled against me?"
+  },
+  {
+   "reference": "2Ch 13:8",
+   "text": "“And now you think to withstand the kingdom of the Lord in the hand of the sons of David, because you are a great multitude and have with you the golden calves that Jeroboam made you for gods."
+  },
+  {
+   "reference": "2Ch 32:1",
+   "text": "After these things and these acts of faithfulness, Sennacherib king of Assyria came and invaded Judah and encamped against the fortified cities, thinking to win them for himself."
+  },
+  {
+   "reference": "Est 4:13",
+   "text": "Then Mordecai told them to reply to Esther, “Do not think to yourself that in the king’s palace you will escape any more than all the other Jews."
+  },
+  {
+   "reference": "Job 35:2",
+   "text": "“Do you think this to be just? Do you say, ‘It is my right before God,’"
+  },
+  {
+   "reference": "Psa 64:5",
+   "text": "They hold fast to their evil purpose; they talk of laying snares secretly, thinking, “ Who can see them?”"
+  },
+  {
+   "reference": "Psa 94:18",
+   "text": "When I thought, “My foot slips,” your steadfast love, O Lord, held me up."
+  },
+  {
+   "reference": "Isa 36:5",
+   "text": "Do you think that mere words are strategy and power for war? In whom do you now trust, that you have rebelled against me?"
+  },
+  {
+   "reference": "Jer 3:7",
+   "text": "And I thought, ‘ After she has done all this she will return to me,’ but she did not return, and her treacherous sister Judah saw it."
+  },
+  {
+   "reference": "Jer 3:19",
+   "text": "“‘ I said, How I would set you among my sons, and give you a pleasant land, a heritage most beautiful of all nations. And I thought you would call me, My Father, and would not turn from following me."
+  },
+  {
+   "reference": "Eze 11:5",
+   "text": "And the Spirit of the Lord fell upon me, and he said to me, “ Say, Thus says the Lord: So you think, O house of Israel. For I know the things that come into your mind."
+  },
+  {
+   "reference": "Eze 38:10",
+   "text": "“ Thus says the Lord God: On that day, thoughts will come into your mind, and you will devise an evil scheme"
+  },
+  {
+   "reference": "Dan 4:19",
+   "text": "Then Daniel, whose name was Belteshazzar, was dismayed for a while, and his thoughts alarmed him. The king answered and said, “ Belteshazzar, let not the dream or the interpretation alarm you.” Belteshazzar answered and said, “My lord, may the dream be for those who hate you and its interpretation for your enemies!"
+  },
+  {
+   "reference": "Dan 5:10",
+   "text": "The queen, because of the words of the king and his lords, came into the banqueting hall, and the queen declared, “O king, live forever! Let not your thoughts alarm you or your color change."
+  },
+  {
+   "reference": "Isa 7:14",
+   "text": "Therefore the Lord himself will give you a sign. Behold, the virgin shall conceive and bear a son, and shall call his name Immanuel."
+  },
+  {
+   "reference": "Jer 23:27",
+   "text": "who think to make my people forget my name by their dreams that they tell one another, even as their fathers forgot my name for Baal?"
+  },
+  {
+   "reference": "Amo 4:13",
+   "text": "For behold, he who forms the mountains and creates the wind, and declares to man what is his thought, who makes the morning darkness, and treads on the heights of the earth — the Lord, the God of hosts, is his name!"
+  },
+  {
+   "reference": "Psa 48:9",
+   "text": "We have thought on your steadfast love, O God, in the midst of your temple."
+  },
+  {
+   "reference": "Psa 119:52",
+   "text": "When I think of your rules from of old, I take comfort, O Lord."
+  },
+  {
+   "reference": "1Cor 4:9",
+   "text": "For I think that God has exhibited us apostles as last of all, like men sentenced to death, because we have become a spectacle to the world, to angels, and to men."
+  },
+  {
+   "reference": "Act 26:8",
+   "text": "Why is it thought incredible by any of you that God raises the dead?"
+  },
+  {
+   "reference": "Pro 12:5",
+   "text": "The thoughts of the righteous are just; the counsels of the wicked are deceitful."
+  },
+  {
+   "reference": "Heb 10:29",
+   "text": "How much worse punishment, do you think, will be deserved by the one who has trampled underfoot the Son of God, and has profaned the blood of the covenant by which he was sanctified, and has outraged the Spirit of grace?"
+  },
+  {
+   "reference": "Judg 13:5",
+   "text": "for behold, you shall conceive and bear a son. No razor shall come upon his head, for the child shall be a Nazirite to God from the womb, and he shall begin to save Israel from the hand of the Philistines.”"
+  },
+  {
+   "reference": "Pro 14:15",
+   "text": "The simple believes everything, but the prudent gives thought to his steps."
+  },
+  {
+   "reference": "Mic 4:12",
+   "text": "But they do not know the thoughts of the Lord; they do not understand his plan, that he has gathered them as sheaves to the threshing floor."
+  },
+  {
+   "reference": "Rom 14:14",
+   "text": "I know and am persuaded in the Lord Jesus that nothing is unclean in itself, but it is unclean for anyone who thinks it unclean."
+  },
+  {
+   "reference": "Num 5:28",
+   "text": "But if the woman has not defiled herself and is clean, then she shall be free and shall conceive children."
+  },
+  {
+   "reference": "1Ch 28:9",
+   "text": "“And you, Solomon my son, know the God of your father and serve him with a whole heart and with a willing mind, for the Lord searches all hearts and understands every plan and thought. If you seek him, he will be found by you, but if you forsake him, he will cast you off forever."
+  },
+  {
+   "reference": "Jer 40:5",
+   "text": "If you remain, then return to Gedaliah the son of Ahikam, son of Shaphan, whom the king of Babylon appointed governor of the cities of Judah, and dwell with him among the people. Or go wherever you think it right to go.” So the captain of the guard gave him an allowance of food and a present, and let him go."
+  },
+  {
+   "reference": "Eph 3:20",
+   "text": "Now to him who is able to do far more abundantly than all that we ask or think, according to the power at work within us,"
+  },
+  {
+   "reference": "Mat 18:12",
+   "text": "What do you think? If a man has a hundred sheep, and one of them has gone astray, does he not leave the ninety-nine on the mountains and go in search of the one that went astray?"
+  },
+  {
+   "reference": "Phili 4:8",
+   "text": "Finally, brothers, whatever is true, whatever is honorable, whatever is just, whatever is pure, whatever is lovely, whatever is commendable, if there is any excellence, if there is anything worthy of praise, think about these things."
+  },
+  {
+   "reference": "Jam 2:4",
+   "text": "have you not then made distinctions among yourselves and become judges with evil thoughts?"
+  },
+  {
+   "reference": "Luk 5:22",
+   "text": "When Jesus perceived their thoughts, he answered them, “ Why do you question in your hearts?"
+  },
+  {
+   "reference": "Heb 4:12",
+   "text": "For the word of God is living and active, sharper than any two-edged sword, piercing to the division of soul and of spirit, of joints and of marrow, and discerning the thoughts and intentions of the heart."
+  },
+  {
+   "reference": "Psa 94:11",
+   "text": "the Lord — knows the thoughts of man, that they are but a breath."
+  },
+  {
+   "reference": "Psa 144:3",
+   "text": "O Lord, what is man that you regard him, or the son of man that you think of him?"
+  },
+  {
+   "reference": "Dan 2:30",
+   "text": "But as for me, this mystery has been revealed to me, not because of any wisdom that I have more than all the living, but in order that the interpretation may be made known to the king, and that you may know the thoughts of your mind."
+  },
+  {
+   "reference": "Gen 6:5",
+   "text": "The Lord saw that the wickedness of man was great in the earth, and that every intention of the thoughts of his heart was only evil continually."
+  },
+  {
+   "reference": "Gen 38:15",
+   "text": "When Judah saw her, he thought she was a prostitute, for she had covered her face."
+  },
+  {
+   "reference": "1Cor 7:26",
+   "text": "I think that in view of the present distress it is good for a person to remain as he is."
+  },
+  {
+   "reference": "Job 12:5",
+   "text": "In the thought of one who is at ease there is contempt for misfortune; it is ready for those whose feet slip."
+  },
+  {
+   "reference": "Psa 139:17",
+   "text": "How precious to me are your thoughts, O God! How vast is the sum of them!"
+  },
+  {
+   "reference": "Joh 5:39",
+   "text": "You search the Scriptures because you think that in them you have eternal life; and it is they that bear witness about me,"
+  },
+  {
+   "reference": "1Cor 3:20",
+   "text": "and again, “The Lord knows the thoughts of the wise, that they are futile.”"
+  },
+  {
+   "reference": "1Cor 14:37",
+   "text": "If anyone thinks that he is a prophet, or spiritual, he should acknowledge that the things I am writing to you are a command of the Lord."
+  },
+  {
+   "reference": "1Cor 7:40",
+   "text": "Yet in my judgment she is happier if she remains as she is. And I think that I too have the Spirit of God."
+  },
+  {
+   "reference": "Psa 50:21",
+   "text": "These things you have done, and I have been silent; you thought that I was one like yourself. But now I rebuke you and lay the charge before you."
+  },
+  {
+   "reference": "1Ch 29:18",
+   "text": "O Lord, the God of Abraham, Isaac, and Israel, our fathers, keep forever such purposes and thoughts in the hearts of your people, and direct their hearts toward you."
+  },
+  {
+   "reference": "Mic 2:8",
+   "text": "But lately my people have risen up as an enemy; you strip the rich robe from those who pass by trustingly with no thought of war."
+  },
+  {
+   "reference": "Mar 7:21",
+   "text": "For from within, out of the heart of man, come evil thoughts, sexual immorality, theft, murder, adultery,"
+  },
+  {
+   "reference": "Mat 15:19",
+   "text": "For out of the heart come evil thoughts, murder, adultery, sexual immorality, theft, false witness, slander."
+  },
+  {
+   "reference": "Heb 11:11",
+   "text": "By faith Sarah herself received power to conceive, even when she was past the age, since she considered him faithful who had promised."
+  },
+  {
+   "reference": "Act 17:29",
+   "text": "Being then God’s offspring, we ought not to think that the divine being is like gold or silver or stone, an image formed by the art and imagination of man."
+  },
+  {
+   "reference": "1Cor 2:11",
+   "text": "For who knows a person’s thoughts except the spirit of that person, which is in him? So also no one comprehends the thoughts of God except the Spirit of God."
+  },
+  {
+   "reference": "Phili 3:15",
+   "text": "Let those of us who are mature think this way, and if in anything you think otherwise, God will reveal that also to you."
+  },
+  {
+   "reference": "1Cor 3:18",
+   "text": "Let no one deceive himself. If anyone among you thinks that he is wise in this age, let him become a fool that he may become wise."
+  },
+  {
+   "reference": "1Ti 3:7",
+   "text": "Moreover, he must be well thought of by outsiders, so that he may not fall into disgrace, into a snare of the devil."
+  },
+  {
+   "reference": "Dan 7:25",
+   "text": "He shall speak words against the Most High, and shall wear out the saints of the Most High, and shall think to change the times and the law; and they shall be given into his hand for a time, times, and half a time."
+  },
+  {
+   "reference": "Joh 5:45",
+   "text": "Do not think that I will accuse you to the Father. There is one who accuses you: Moses, on whom you have set your hope."
+  },
+  {
+   "reference": "Luk 2:35",
+   "text": "( and a sword will pierce through your own soul also ), so that thoughts from many hearts may be revealed.”"
+  },
+  {
+   "reference": "Luk 8:18",
+   "text": "Take care then how you hear, for to the one who has, more will be given, and from the one who has not, even what he thinks that he has will be taken away.”"
+  },
+  {
+   "reference": "Luk 13:4",
+   "text": "Or those eighteen on whom the tower in Siloam fell and killed them: do you think that they were worse offenders than all the others who lived in Jerusalem?"
+  },
+  {
+   "reference": "Gal 6:3",
+   "text": "For if anyone thinks he is something, when he is nothing, he deceives himself."
+  },
+  {
+   "reference": "Psa 40:17",
+   "text": "As for me, I am poor and needy, but the Lord takes thought for me. You are my help and my deliverer; do not delay, O my God!"
+  },
+  {
+   "reference": "Isa 55:8",
+   "text": "For my thoughts are not your thoughts, neither are your ways my ways, declares the Lord."
+  },
+  {
+   "reference": "1Cor 13:11",
+   "text": "When I was a child, I spoke like a child, I thought like a child, I reasoned like a child. When I became a man, I gave up childish ways."
+  },
+  {
+   "reference": "Phili 2:25",
+   "text": "I have thought it necessary to send to you Epaphroditus my brother and fellow worker and fellow soldier, and your messenger and minister to my need,"
+  },
+  {
+   "reference": "Dan 5:6",
+   "text": "Then the king’s color changed, and his thoughts alarmed him; his limbs gave way, and his knees knocked together."
+  },
+  {
+   "reference": "Dan 7:28",
+   "text": "“ Here is the end of the matter. As for me, Daniel, my thoughts greatly alarmed me, and my color changed, but I kept the matter in my heart.”"
+  }
+ ],
+ "answer": {
+  "command": "ReadEvidence",
+  "collection": "thought",
+  "subgroup": "thinking and thought",
+  "observations": [
+   {
+    "observation": 23410,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 23411,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 23412,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 23413,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 23414,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 23415,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 23416,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 23417,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 23418,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 23419,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 23420,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 23421,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 23422,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 23423,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 23424,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 23425,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 23426,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 23427,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 23428,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 23429,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 23430,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 23431,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 23432,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 23433,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 23434,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 23435,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 23436,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 23437,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 23438,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 23439,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 23440,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 23441,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 23442,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 23443,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 23444,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 23445,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 23446,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 23447,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 23448,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 23449,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   }
+  ]
+ },
+ "measured": {
+  "package_chars": 59671,
+  "seconds": 0.1
+ }
+}

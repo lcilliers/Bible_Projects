@@ -1,0 +1,1485 @@
+{
+ "command": "ReadStructure",
+ "collection": "thought",
+ "subgroup": "supposing and imagining",
+ "step": "2.1",
+ "item": "qualifier",
+ "made": "2026-11-26T05:57:54Z",
+ "batch": {
+  "rows": 1,
+  "rows_left_after_this": 39
+ },
+ "instruction": {
+  "what": "Step 2.1, the structure of one subgroup (stage 1, B3): what stands with the subgroup's words in each verse, read from the stored structure. One item at a time: double-meaning (a surface with more than one code), qualifier (negators and the word each reaches, adjectives, adverbs, prepositional qualifiers), entity (who is named or referred to), direction (from whom to whom, by the grammar), pairing (one row for each partner collection: its words in the verses shared with the subgroup). Nothing here says what anything does for the inner being; that begins at step 3.1.",
+  "read": [
+   "Take one row at a time (`rows`): what it asks, its occurrences (`as`: member, the subgroup's word; partner, the other word), and its verses.",
+   "Read each verse (`verses`) from its stored structure, one line for each word: * marks an occurrence of the subgroup; then the position, surface, Strong's code and morph, and what the pairing makes of the word (its type, the qualifier it carries, a negator, a party, the collections of a word of another collection). Nothing is evaluated that is not stored.",
+   "Where each word stands: its side and distance from the subgroup's word, from the positions. Adjacency is not scope: a negator or qualifier is read for the word it reaches by the grammar.",
+   "A pairing row shows the WordNet control for its partner collection: a pairing WordNet gives and the verses do not show is one to look for; a pairing only the verses show has no control.",
+   "Differences in meaning are read from the base data (the Strong's code, the morph, the construction), not from the English alone. The subgroup's 1.1 senses (`senses`) are what the findings build on."
+  ],
+  "write": [
+   "Fill `answer.rows`: for each row, disposition observed with its `findings`, or none with its `reason` (where the row allows none: nothing of the item stands with the subgroup in its verses).",
+   "One finding for each distinct thing the structure shows; the same finding in several verses is ONE finding naming all its occurrences; a verse that shows something different is its own finding. Together the findings name every occurrence of the row (occurrence ids or verse references), each in one finding.",
+   "kind: as the template gives it (pairing; relation for direction; face for double-meaning). obs_text: concise; names the verses it holds in, as the package writes the references (for example Act 18:4); states what the structure shows (which word, where it stands, what it reaches or gives by the grammar); never a verse restated, never what it does for the inner being.",
+   "basis: stated (the verse says it) or read (read from the structure), with `grounds`: words copied exactly from the verses it is tied to (the record checks them).",
+   "Each subgroup's surface has its own finding; none joins two subgroups. A data error is named in grounds, not fixed.",
+   "`older`: answer each older observation shown under the row, once: keep (with `nature`), restate (with `nature`, `new_text`, `checked`), merge (with `into`), consume (with `carriers` [\"this\"] or observation ids, and `mapping`), delete_neither (with `reason`), carry (with `to` and `reason`), defer (with `collection`, `nature`, `finding`). One listed under another row is answered there.",
+   "Then: Collection-Build.ps1 -Action RecordStructure -File <the answer file> (-Check to preview). The record refuses the whole file on any fault and lists every fault."
+  ],
+  "keep": [
+   {
+    "rule": "RG-14 morph-read",
+    "text": "Morph is read, not carried: where occurrences of a word show different stems or voices, record whether the subject does, undergoes or causes the act."
+   },
+   {
+    "rule": "RG-16 homonym-and-data-error",
+    "text": "A word that is only a homonym or a name, with no meaningful context, is recorded as such (tag no-human-context) and left. Data errors found while reading are flagged (tag data-error), not fixed in the reading."
+   },
+   {
+    "rule": "RG-21 grain",
+    "text": "A word is read per its lettered Strong's code (its grain), never the bare lemma (B:113). The occurrences of a word with several senses are related per grain and never aggregated across grains: related verses are same-grain occurrences."
+   },
+   {
+    "rule": "RO11 one-row-per-code",
+    "text": "One observation per finding, never a duplicate description; a finding applying to several verses or words carries several nodes, each with the word's role in it."
+   },
+   {
+    "rule": "RW-03 no-duplicates-multi-node",
+    "text": "One observation per finding: the same description is never written twice. Applied to another verse, word or scope it gains a node on the existing observation."
+   },
+   {
+    "rule": "RW-04 concise-verse-specific",
+    "text": "Observation text is concise and tied to this verse's content, never a restatement of the word's dictionary sense. A transliteration is never given without its gloss."
+   },
+   {
+    "rule": "RW-08 slants-own-rows",
+    "text": "Where the evidence points to more than one reading, each is its own observation with its own evidence."
+   },
+   {
+    "rule": "RW-09 reread-builds-on-prior",
+    "text": "A re-read includes the observations already recorded for the verse, so the reading sees prior findings and builds on them."
+   },
+   {
+    "rule": "RW-11 missing-is-named",
+    "text": "Missing data in the base extract is named as a gap, never substituted from memory or outside knowledge."
+   },
+   {
+    "rule": "RW-13 older-observations-answered-at-record",
+    "text": "Every older live observation with a live node on an occurrence of the row (a stage that is not the build's own) is answered in fill.older when the row is recorded, once: keep or restate (each with its marker), merge into a named observation, consume (live observations carry its meaning, stated in words, verified before it is deleted), delete as neither (comment first), or defer to a named collection (marked now; only the finding is left to that collection). An observation already marked by the validation, answered in a build or deferred is not asked again. A new observation whose text equals that of another live observation of the collection is refused, the other named. LayerCheck re-derives both from the tables. The end state of a collection's build is that every observation of its scope is marked and fixed or deleted, every word node complete or with its reason, and each deferral owned by a named collection."
+   },
+   {
+    "rule": "RS-04 existing-checked-accept-modify-delete",
+    "text": "When a verse is worked, every existing observation and node on it, of any stage, is checked against the verse by its wording. The stage is not an indication of the nature of an observation and is never used to filter. Each observation is accepted, modified (changed in place; the old value, the new value and the reason are kept in ib_observation_change), soft deleted (the `deleted` column, with the reason), merged (a duplicate description, into the observation that is kept) or, when its wording shows it is not verse understanding, left exactly as it is with the reason. The check's fixes are part of it and need no separate approval. Nothing is physically deleted."
+   },
+   {
+    "rule": "LR-02 nodes-are-built-from-the-data",
+    "text": "The nodes of a layer observation are the occurrences the aspect demands (a word's occurrences, the group's occurrences, the partner's occurrences in the verses they share), written by the recorder with the collection and the subgroup of each surface; they are never typed. An item answered by senses (word-sense) names, for each sense, the occurrences it holds for, and together the senses cover every occurrence; the recorder checks them against the data. The interpretation is the observation text, founded in what the evidence shows (basis stated or read, B:131) and tied to its verses (the text names them and does not restate them): the items of every step (S1, 1.1, 1.2, 2.1) state what the dictionary, the verses and the stored structure show of a word and never what a word does for the inner being; their nodes carry the role lexical and no route. The whole file is checked and written in one transaction; any problem refuses all of it. A row answered again withdraws its earlier observations with the reason."
+   },
+   {
+    "rule": "LR-03 none-needs-a-permitted-reason",
+    "text": "An aspect is recorded as none only where its item allows it (cfg_setting layer.reading none_allowed) and with its reason in words. A group definition and a group's Strong's enrichment are always observed."
+   },
+   {
+    "rule": "DA-02 a-node-per-occurrence-with-its-surfaces-collection",
+    "text": "A node is on one occurrence (verse_lexical_id) and carries the collection of its surface (a supportive node, the collection of the surface it supports); a node already on the observation for the same occurrence is not written twice, and takes the role. A node with no collection to carry, or on a verse out of scope (B:130), is not written and is listed."
+   },
+   {
+    "rule": "VA-03 consumption-is-verified-before-deletion",
+    "text": "An older observation is deleted as consumed only when live observations carry its meaning: every word occurrence of it is on a live node of a carrier or named as not carried with its reason, the mapping is stated in words (what the old says, which carrier states each part), the traces to it are re-pointed or replaced, and the consumption is kept as `consumed_by`. An observation that holds more than one finding is split first."
+   },
+   {
+    "rule": "VA-04 neither-evidence-nor-inner-being-is-deleted",
+    "text": "An observation that is neither evidence nor inner being contributes nothing to the purposes of the observations (researcher, 2026-11-22): it is commented with its reason and the word occurrences no other live observation holds, then deleted. An observation already marked, or one another observation traces, is not deleted this way."
+   }
+  ],
+  "not_in_this_read": ""
+ },
+ "senses": [
+  {
+   "sense": 22881,
+   "text": "An assumption that an act then rests on: the parents take the boy to be in the company and travel a day, the mourners take Mary to be going to the tomb, Mary takes Jesus for the gardener, the crowd takes Paul to be dead, the jailer takes the prisoners to have escaped, and the sailors take their purpose to be gained. In each verse the supposing is a belief about a present fact, and what is done follows from it and meets the facts in the verse. Verses: Luk 2:44, Joh 11:31, Joh 20:15, Act 14:19, Act 16:27, Act 27:13.",
+   "verses": [
+    "Luke.2.44",
+    "John.11.31",
+    "John.20.15",
+    "Acts.14.19",
+    "Acts.16.27",
+    "Acts.27.13"
+   ]
+  },
+  {
+   "sense": 22882,
+   "text": "A belief or opinion held or put to another: a man imagines he knows something, people are imagining that godliness is gain, Jonadab warns David not to conclude that all the sons are dead, Simon gives his judgment, the writer judges how many books the world could hold, the hearers are told they suppose wrongly about drunkenness, the crowd is asked what it supposes of John, the one who judges is asked whether he supposes he escapes, the doubter must not expect to receive, and the readers are asked whether they suppose the Scripture speaks to no purpose. The word is a view that the verse tests, corrects or leaves to the hearer. Verses: 1Cor 8:2, 1Ti 6:5, 2Sa 13:32, 2Sa 13:33, Luk 7:43, Joh 21:25, Act 2:15, Act 13:25, Rom 2:3, Jam 1:7, Jam 4:5.",
+   "verses": [
+    "1Cor.8.2",
+    "1Tim.6.5",
+    "2Sam.13.32",
+    "2Sam.13.33",
+    "Luke.7.43",
+    "John.21.25",
+    "Acts.2.15",
+    "Acts.13.25",
+    "Rom.2.3",
+    "Jas.1.7",
+    "Jas.4.5"
+   ]
+  },
+  {
+   "sense": 22883,
+   "text": "A case put as a possibility: Abraham sets one lower number of righteous after another with 'suppose', and the prophet puts a case of a son who sees his father's sins. The words are Hebrew particles of perhaps and behold that introduce a hypothetical case and carry no thinking of their own. Verses: Gen 18:28, Gen 18:29, Gen 18:30, Gen 18:31, Gen 18:32, Eze 18:14.",
+   "verses": [
+    "Gen.18.28",
+    "Gen.18.29",
+    "Gen.18.30",
+    "Gen.18.31",
+    "Gen.18.32",
+    "Ezek.18.14"
+   ]
+  },
+  {
+   "sense": 22884,
+   "text": "Imagining as devising evil: those who hate the psalmist whisper together and plan the worst against him. The Hebrew verb is of reckoning and devising, here turned toward harm. Verses: Psa 41:7.",
+   "verses": [
+    "Ps.41.7"
+   ]
+  },
+  {
+   "sense": 22885,
+   "text": "The mind's own picture or device: in Pro 18:11 the rich man's wealth is a high wall in his imagination, a conceit that is not the fact, and in Act 17:29 the image of gold or stone is formed by human design and thought. The word is what the human mind pictures or devises. Verses: Pro 18:11, Act 17:29.",
+   "verses": [
+    "Prov.18.11",
+    "Acts.17.29"
+   ]
+  }
+ ],
+ "verses": [
+  {
+   "reference": "Gen 18:28",
+   "text": "Suppose five of the fifty righteous are lacking. Will you destroy the whole city for lack of five?” And he said, “I will not destroy it if I find forty-five there.”",
+   "words": [
+    "*0 suppose H0194 HD | member of this collection; qualifier morph: adverb",
+    " 1 five H2568 HAcbsa | qualifier candidate; qualifier morph: adjective",
+    " 2 fifty H2572 HAcmpa | qualifier candidate; qualifier morph: adjective",
+    " 2 [emph.?] H9013 HSn",
+    " 3 righteous H6662 HAampa | word of another collection; qualifier morph: adjective; collections righteous",
+    " 3 [the] H9009 HTd",
+    " 4 lacking H2637 HVqi3mp | word of another collection; collections fill",
+    " 5 destroy H7843 HVhi2ms | word of another collection; collections destruction",
+    " 5 [¿] H9008 HTi",
+    " 6 whole H3605 HNcmsc",
+    " 6 whole H0853 HTo",
+    " 7 city H5892B HNcfsa",
+    " 7 [the] H9009 HTd",
+    " 8 five H2568 HAcbsa | qualifier candidate; qualifier morph: adjective",
+    " 8 in/on/with H9003 HR",
+    " 9 said H0559 HVqw3ms",
+    " 10 not H3808 HTn | negator; qualifier negator; negator",
+    " 11 destroy H7843 HVhi1cs | word of another collection; collections destruction",
+    " 12 if H0518A HTc | connective",
+    " 13 find H4672 HVqi1cs | word of another collection; collections search",
+    " 14 forty-five H0705 HAcmpa | qualifier candidate; qualifier morph: adjective",
+    " 14 forty-five H2568 HAcbsa | qualifier candidate; qualifier morph: adjective",
+    " 14 and H9002 HC | connective",
+    " 15 there H8033G HD | qualifier candidate; qualifier morph: adverb"
+   ]
+  },
+  {
+   "reference": "Gen 18:29",
+   "text": "Again he spoke to him and said, “ Suppose forty are found there.” He answered, “ For the sake of forty I will not do it.”",
+   "words": [
+    " 0 again H3254G HVhw3ms",
+    " 1 spoke H1696G HVpcc",
+    " 1 to/for H9005 HR",
+    " 1 spoke H5750 HAcmsa | qualifier candidate; qualifier morph: adjective",
+    " 2 to H0413 HRd",
+    " 3 said H0559 HVqw3ms",
+    " 3 him H9033 HSp3ms",
+    "*4 suppose H0194 HD | member of this collection; qualifier morph: adverb",
+    " 5 forty H0705 HAcmpa | qualifier candidate; qualifier morph: adjective",
+    " 6 found H4672 HVNi3mp",
+    " 7 there H8033G HD | qualifier candidate; qualifier morph: adverb",
+    " 7 [emph.?] H9013 HSn",
+    " 8 answered H0559 HVqw3ms | word of another collection; collections profess",
+    " 9 for H9003 HR",
+    " 10 sake H5668 HNcmsc",
+    " 11 forty H0705 HAcmpa | qualifier candidate; qualifier morph: adjective",
+    " 11 [the] H9009 HTd",
+    " 12 not H3808 HTn | negator; qualifier negator; negator",
+    " 13 do H6213A HVqi1cs | word of another collection; collections serve"
+   ]
+  },
+  {
+   "reference": "Gen 18:30",
+   "text": "Then he said, “ Oh let not the Lord be angry, and I will speak. Suppose thirty are found there.” He answered, “I will not do it, if I find thirty there.”",
+   "words": [
+    " 0 said H0559 HVqw3ms",
+    " 1 oh H4994 HTj",
+    " 1 oh H0408 HTn | negator; qualifier negator; negator",
+    " 2 lord H0136 HNpt",
+    " 2 to/for H9005 HR",
+    " 3 angry H2734 HVqj3ms | word of another collection; collections anger",
+    " 4 speak H1696G HVpc1cs",
+    "*5 suppose H0194 HD | member of this collection; qualifier morph: adverb",
+    " 6 thirty H7970 HAcmpa | qualifier candidate; qualifier morph: adjective",
+    " 7 found H4672 HVNi3mp",
+    " 8 there H8033G HD | qualifier candidate; qualifier morph: adverb",
+    " 8 [emph.?] H9013 HSn",
+    " 9 answered H0559 HVqw3ms | word of another collection; collections profess",
+    " 10 not H3808 HTn | negator; qualifier negator; negator",
+    " 11 do H6213A HVqi1cs | word of another collection; collections serve",
+    " 12 if H0518A HTc | connective",
+    " 13 find H4672 HVqi1cs | word of another collection; collections search",
+    " 14 thirty H7970 HAcmpa | qualifier candidate; qualifier morph: adjective",
+    " 15 there H8033G HD | qualifier candidate; qualifier morph: adverb"
+   ]
+  },
+  {
+   "reference": "Gen 18:31",
+   "text": "He said, “ Behold, I have undertaken to speak to the Lord. Suppose twenty are found there.” He answered, “ For the sake of twenty I will not destroy it.”",
+   "words": [
+    " 0 said H0559 HVqw3ms",
+    " 1 behold H2009 HTj",
+    " 2 undertaken H2974 HVhp1cs",
+    " 2 undertaken H4994 HTj",
+    " 3 speak H1696G HVpcc",
+    " 3 to/for H9005 HR",
+    " 4 to H0413 HR",
+    " 5 lord H0136 HNpt",
+    "*6 suppose H0194 HD | member of this collection; qualifier morph: adverb",
+    " 7 twenty H6242 HAcmpa | qualifier candidate; qualifier morph: adjective",
+    " 8 found H4672 HVNi3mp",
+    " 9 there H8033G HD | qualifier candidate; qualifier morph: adverb",
+    " 9 [emph.?] H9013 HSn",
+    " 10 answered H0559 HVqw3ms | word of another collection; collections profess",
+    " 11 for H9003 HR",
+    " 12 sake H5668 HNcmsc",
+    " 13 twenty H6242 HAcmpa | qualifier candidate; qualifier morph: adjective",
+    " 13 [the] H9009 HTd",
+    " 14 not H3808 HTn | negator; qualifier negator; negator",
+    " 15 destroy H7843 HVhi1cs | word of another collection; collections destruction"
+   ]
+  },
+  {
+   "reference": "Gen 18:32",
+   "text": "Then he said, “ Oh let not the Lord be angry, and I will speak again but this once. Suppose ten are found there.” He answered, “ For the sake of ten I will not destroy it.”",
+   "words": [
+    " 0 said H0559 HVqw3ms",
+    " 1 oh H4994 HTj",
+    " 1 oh H0408 HTn | negator; qualifier negator; negator",
+    " 2 lord H0136 HNpt",
+    " 2 to/for H9005 HR",
+    " 3 angry H2734 HVqj3ms | word of another collection; collections anger",
+    " 4 speak H1696G HVpc1cs",
+    " 5 again H0389 HD | qualifier candidate; qualifier morph: adverb",
+    " 6 once H6471 HNcfsa",
+    " 6 [the] H9009 HTd",
+    "*7 suppose H0194 HD | member of this collection; qualifier morph: adverb",
+    " 8 ten H6235 HNcfsa",
+    " 9 found H4672 HVNi3mp",
+    " 10 there H8033G HD | qualifier candidate; qualifier morph: adverb",
+    " 10 [emph.?] H9013 HSn",
+    " 11 answered H0559 HVqw3ms | word of another collection; collections profess",
+    " 12 for H9003 HR",
+    " 13 sake H5668 HNcmsc",
+    " 14 ten H6235 HNcfsa",
+    " 14 [the] H9009 HTd",
+    " 15 not H3808 HTn | negator; qualifier negator; negator",
+    " 16 destroy H7843 HVhi1cs | word of another collection; collections destruction"
+   ]
+  },
+  {
+   "reference": "2Sa 13:32",
+   "text": "But Jonadab the son of Shimeah, David’s brother, said, “Let not my lord suppose that they have killed all the young men, the king’s sons, for Amnon alone is dead. For by the command of Absalom this has been determined from the day he violated his sister Tamar.",
+   "words": [
+    " 0 jonadab H3122G HNpm | entity (human); party human",
+    " 1 son H1121A HNcmsc",
+    " 2 shimeah H8093 HNpm | entity (human); party human",
+    " 3 david’s H1732 HNpm | entity (human); party human",
+    " 4 brother H0251G HNcmsc",
+    " 5 said H6030B HVqw3ms",
+    " 5 said H0559 HVqw3ms",
+    " 6 not H0408 HTn | negator; qualifier negator; negator",
+    " 7 lord H0113 HNcmsc",
+    "*8 suppose H0559 HVqj3ms | member of this collection",
+    " 9 killed H4191 HVhp3cp | word of another collection; collections kill",
+    " 10 all H3605 HNcmsc",
+    " 10 my H9020 HSp1bs",
+    " 10 all H0853 HTo",
+    " 11 young men H5288 HNcmpa | entity (human); party human",
+    " 11 [the] H9009 HTd",
+    " 12 king’s H4428G HNcmsa",
+    " 12 [the] H9009 HTd",
+    " 13 sons H1121A HNcmpc",
+    " 14 for H3588A HTc | connective",
+    " 15 amnon H0550G HNpm | entity (human); party human",
+    " 16 alone H0905H HNcmsc",
+    " 16 to/for H9005 HR",
+    " 17 dead H4191 HVqp3ms | word of another collection; collections live",
+    " 17 him H9033 HSp3ms",
+    " 18 for H3588A HTc | connective",
+    " 19 by H5921A HR",
+    " 20 command H6310I HNcmsc | word of another collection; collections command",
+    " 21 absalom H0053 HNpm | entity (human); party human",
+    " 22 determined H7760B HVqsfsa | word of another collection; collections dedicate",
+    " 22 determined H1961 HVqp3fs | word of another collection; collections dedicate",
+    " 23 day H3117G HNcmsc",
+    " 23 from H9006 HR",
+    " 24 violated H6031B HVpcc | word of another collection; collections crime",
+    " 25 his H9023 HSp3ms",
+    " 26 sister H0269 HNcfsc | entity (human); party human",
+    " 27 tamar H8559H HNpf | entity (human); party human",
+    " 27 he H9043 HSp3ms",
+    " 27 tamar H0853 HTo"
+   ]
+  },
+  {
+   "reference": "2Sa 13:33",
+   "text": "Now therefore let not my lord the king so take it to heart as to suppose that all the king’s sons are dead, for Amnon alone is dead.”",
+   "words": [
+    " 0 now H6258 HD | qualifier candidate; qualifier morph: adverb",
+    " 0 and H9002 HC | connective",
+    " 1 not H0408 HTn | negator; qualifier negator; negator",
+    " 2 lord H0113 HNcmsc",
+    " 3 king H4428G HNcmsa",
+    " 3 [the] H9009 HTd",
+    " 3 my H9020 HSp1bs",
+    " 4 take H7760K HVqj3ms | word of another collection; collections snatch",
+    " 5 it H1697I HNcmsa",
+    " 5 his H9023 HSp3ms",
+    " 6 to H0413 HR",
+    " 7 heart H3820A HNcmsc | word of another collection; collections heart",
+    "*8 suppose H0559 HVqcc | member of this collection",
+    " 8 to/for H9005 HR",
+    " 9 all H3605 HNcmsc",
+    " 10 king’s H4428G HNcmsa",
+    " 10 [the] H9009 HTd",
+    " 11 sons H1121A HNcmpc",
+    " 12 dead H4191 HVqp3cp | word of another collection; collections live",
+    " 13 amnon H0550G HNpm | entity (human); party human",
+    " 13 for H3588A HTc | connective",
+    " 13 amnon H0518B HTc | connective",
+    " 14 alone H0905H HNcmsc",
+    " 14 to/for H9005 HR",
+    " 15 dead H4191 HVqp3ms | word of another collection; collections live",
+    " 15 him H9033 HSp3ms"
+   ]
+  },
+  {
+   "reference": "Pro 18:11",
+   "text": "A rich man’s wealth is his strong city, and like a high wall in his imagination.",
+   "words": [
+    " 0 rich man’s H6223 HAamsa | qualifier candidate; qualifier morph: adjective",
+    " 1 wealth H1952 HNcmsa | word of another collection; collections rich",
+    " 2 strong H5797 HNcmsc | word of another collection; collections mighty",
+    " 3 city H7151 HNcfsc",
+    " 4 high H7682 HVNrfsa",
+    " 5 wall H2346G HNcfsa",
+    " 5 like/as H9004 HR",
+    " 5 and H9002 HC | connective",
+    " 5 his H9023 HSp3ms",
+    " 6 his H9023 HSp3ms",
+    "*7 imagination H4906 HNcfsc | member of this collection",
+    " 7 in/on/with H9003 HR"
+   ]
+  },
+  {
+   "reference": "Eze 18:14",
+   "text": "“Now suppose this man fathers a son who sees all the sins that his father has done; he sees, and does not do likewise:",
+   "words": [
+    "*0 suppose H2009 HTj | member of this collection",
+    " 0 and H9002 HC",
+    " 1 man fathers H3205 HVhp3ms",
+    " 2 son H1121A HNcmsa",
+    " 3 sees H7200G HVqw3ms",
+    " 4 all H3605 HNcmsc",
+    " 4 all H0853 HTo",
+    " 5 sins H2403B HNcfpc | word of another collection; collections sin",
+    " 6 that H0834A HTr | connective",
+    " 6 his H9023 HSp3ms",
+    " 7 father H0001G HNcmsc",
+    " 8 done H6213A HVqp3ms",
+    " 9 sees H7200G HVqw3ms",
+    " 10 not H3808 HTn | negator; qualifier negator; negator",
+    " 10 and H9002 HC | connective",
+    " 11 do H6213A HVqi3ms | word of another collection; collections serve",
+    " 12 like/as H9004 HR",
+    " 12 them H9039 HTj"
+   ]
+  },
+  {
+   "reference": "Luk 2:44",
+   "text": "but supposing him to be in the group they went a day’s journey, but then they began to search for him among their relatives and acquaintances,",
+   "words": [
+    " 0 but G1161 CONJ | connective",
+    "*1 supposing G3543 V-AAP-NPM | member of this collection",
+    " 2 him G0846 P-ASM",
+    " 3 be G1511 V-PAN",
+    " 4 in G1722 PREP",
+    " 5 group G4923 N-DSF",
+    " 6 went G2064 V-2AAI-3P",
+    " 7 day’s G2250 N-GSF",
+    " 8 journey G3598 N-ASF",
+    " 9 but G2532 CONJ | connective",
+    " 10 search G0327 V-IAI-3P | word of another collection; collections search",
+    " 11 him G0846 P-ASM",
+    " 12 among G1722 PREP",
+    " 13 relatives G4773 A-DPM | qualifier candidate; qualifier morph: adjective",
+    " 14 and G2532 CONJ | connective",
+    " 15 acquaintances G1110 A-DPM | qualifier candidate; qualifier morph: adjective"
+   ]
+  },
+  {
+   "reference": "Luk 7:43",
+   "text": "Simon answered, “The one, I suppose, for whom he cancelled the larger debt.” And he said to him, “You have judged rightly.”",
+   "words": [
+    " 0 simon G1161 CONJ | connective",
+    " 0 simon G4613I N-NSM-P",
+    " 1 answered G0611 V-AOP-NSM | word of another collection; collections profess",
+    "*2 suppose G5274 V-PAI-1S | member of this collection",
+    " 3 whom G3739 R-DSM",
+    " 4 cancelled G5483 V-ADI-3S",
+    " 5 larger G4119 A-ASN-C | qualifier candidate; qualifier morph: adjective",
+    " 6 debt G5483 V-ADI-3S",
+    " 7 and G1161 CONJ | connective",
+    " 8 said G2036 V-2AAI-3S",
+    " 9 him G0846 P-DSM",
+    " 10 have judged G2919 V-AAI-2S | word of another collection; collections condemn",
+    " 11 rightly G3723 ADV | word of another collection; qualifier morph: adverb; collections upright"
+   ]
+  },
+  {
+   "reference": "Joh 11:31",
+   "text": "When the Jews who were with her in the house, consoling her, saw Mary rise quickly and go out, they followed her, supposing that she was going to the tomb to weep there.",
+   "words": [
+    " 0 when G3767 CONJ | connective",
+    " 1 jews G2453 N-NPM-PG",
+    " 2 who G3588 None",
+    " 3 were G1510 V-PAP-NPM",
+    " 4 with G3326 PREP",
+    " 5 her G0846 P-GSF",
+    " 6 in G1722 PREP",
+    " 7 house G3614G N-DSF",
+    " 8 consoling G2532 CONJ | word of another collection; collections comfort",
+    " 8 consoling G3888 V-PNP-NPM | word of another collection; collections comfort",
+    " 9 her G0846 P-ASF",
+    " 10 saw G1492H V-2AAP-NPM",
+    " 11 mary G3137J N-ASF-P",
+    " 12 rise G0450 V-2AAI-3S",
+    " 13 quickly G5030 ADV | qualifier candidate; qualifier morph: adverb",
+    " 14 and G2532 CONJ | connective",
+    " 15 go out G1831 V-2AAI-3S",
+    " 16 followed G0190 V-AAI-3P | word of another collection; collections follow",
+    " 17 her G0846 P-DSF",
+    "*18 supposing G1380 V-AAP-NPM | member of this collection",
+    " 19 that G3754G CONJ | connective",
+    " 20 going G5217 V-PAI-3S | word of another collection; collections depart",
+    " 21 to G1519 PREP",
+    " 22 tomb G3419 N-ASN",
+    " 23 to G2443 CONJ | connective",
+    " 24 weep G2799 V-AAS-3S | word of another collection; collections laugh",
+    " 25 there G1563 ADV | qualifier candidate; qualifier morph: adverb"
+   ]
+  },
+  {
+   "reference": "Joh 20:15",
+   "text": "Jesus said to her, “ Woman, why are you weeping? Whom are you seeking?” Supposing him to be the gardener, she said to him, “ Sir, if you have carried him away, tell me where you have laid him, and I will take him away.”",
+   "words": [
+    " 0 jesus G2424G N-NSM-P | entity (divine); party divine",
+    " 1 said G3004G V-PAI-3S",
+    " 2 her G0846 P-DSF",
+    " 3 woman G1135G N-VSF | entity (human); party human",
+    " 4 why G5101 I-ASN",
+    " 5 weeping G2799 V-PAI-2S | word of another collection; collections laugh",
+    " 6 whom G5101 I-ASM",
+    " 7 seeking G2212 V-PAI-2S | word of another collection; collections search",
+    "*8 supposing G1380 V-PAP-NSF | member of this collection",
+    " 9 be G1510 V-PAI-3S",
+    " 10 gardener G2780 N-NSM",
+    " 11 she G1565 D-NSF",
+    " 12 said G3004G V-PAI-3S",
+    " 13 him G0846 P-DSM",
+    " 14 sir G2962H N-VSM",
+    " 15 if G1487G COND",
+    " 16 you G4771 P-2NS",
+    " 17 carried G0941 V-AAI-2S",
+    " 18 him G0846 P-ASM",
+    " 19 tell G2036 V-2AAM-2S",
+    " 20 me G3427 P-1DS",
+    " 21 where G4226 ADV-I | qualifier candidate; qualifier morph: adverb",
+    " 22 laid G5087 V-AAI-2S",
+    " 23 him G0846 P-ASM",
+    " 24 i G2504 P-1NS",
+    " 25 take G0142 V-FAI-1S | word of another collection; collections snatch",
+    " 26 him G0846 P-ASM"
+   ]
+  },
+  {
+   "reference": "Joh 21:25",
+   "text": "Now there are also many other things that Jesus did. Were every one of them to be written, I suppose that the world itself could not contain the books that would be written.",
+   "words": [
+    " 0 now G1161 CONJ | connective",
+    " 1 are G1510 V-PAI-3S",
+    " 2 also G2532 CONJ | connective",
+    " 3 many G4183 A-NPN | qualifier candidate; qualifier morph: adjective",
+    " 4 other G0243 A-NPN | qualifier candidate; qualifier morph: adjective",
+    " 5 that G3745 R-APN",
+    " 6 jesus G2424G N-NSM-P | entity (divine); party divine",
+    " 7 did G4160G V-AAI-3S",
+    " 8 were G1437 COND | connective",
+    " 8 were G3748 R-NPN",
+    " 9 every G2596 PREP",
+    " 10 one G1520 A-ASN | qualifier candidate; qualifier morph: adjective",
+    " 11 written G1125 V-PPS-3S",
+    "*12 suppose G3633 V-PNI-1S | member of this collection",
+    " 13 world G2889 N-ASM",
+    " 14 itself G0846 P-ASM",
+    " 15 not G3761 CONJ-N | negator; qualifier negator; negator",
+    " 16 contain G5562 V-AAN",
+    " 17 books G0975 N-APN",
+    " 18 written G1125 V-PPP-APN"
+   ]
+  },
+  {
+   "reference": "Act 2:15",
+   "text": "For these people are not drunk, as you suppose, since it is only the third hour of the day.",
+   "words": [
+    " 0 for G1063 CONJ | connective",
+    " 1 these G3778 D-NPM",
+    " 2 not G3756 PRT-N | negator; qualifier negator; negator",
+    " 3 drunk G3184 V-PAI-3P",
+    " 4 as G5613 PRT | connective",
+    " 5 you G5210 P-2NP",
+    "*6 suppose G5274 V-PAI-2P | member of this collection",
+    " 7 since G1063 CONJ | connective",
+    " 8 is G1510 V-PAI-3S",
+    " 9 third G5154 A-NSF | qualifier candidate; qualifier morph: adjective",
+    " 10 hour G5610 N-NSF",
+    " 11 day G2250 N-GSF"
+   ]
+  },
+  {
+   "reference": "Act 13:25",
+   "text": "And as John was finishing his course, he said, ‘ What do you suppose that I am? I am not he. No, but behold, after me one is coming, the sandals of whose feet I am not worthy to untie.’",
+   "words": [
+    " 0 and G1161 CONJ | connective",
+    " 1 as G5613 PRT | connective",
+    " 2 john G2491G N-NSM-P",
+    " 3 finishing G4137 V-IAI-3S",
+    " 4 course G1408 N-ASM",
+    " 5 said G3004G V-IAI-3S",
+    " 6 what G5101 I-ASN",
+    "*7 suppose G5282 V-PAI-2P | member of this collection",
+    " 8 i G3165 P-1AS",
+    " 9 am G1511 V-PAN",
+    " 10 i G1473 None",
+    " 11 am G1510 V-PAI-1S",
+    " 12 not G3756 PRT-N | negator; qualifier negator; negator",
+    " 13 but G0235 CONJ | connective",
+    " 14 behold G2400 INJ",
+    " 15 after G3326 PREP",
+    " 16 me G1691 P-1AS",
+    " 17 coming G2064 V-PNI-3S",
+    " 18 sandals G5266 N-ASN",
+    " 19 whose G3739 R-GSM",
+    " 20 feet G4228 N-GPM",
+    " 21 am G1510 V-PAI-1S",
+    " 22 not G3756 PRT-N | negator; qualifier negator; negator",
+    " 23 worthy G0514 A-NSM | word of another collection; qualifier morph: adjective; collections honor",
+    " 24 untie G3089 V-AAN"
+   ]
+  },
+  {
+   "reference": "Act 16:27",
+   "text": "When the jailer woke and saw that the prison doors were open, he drew his sword and was about to kill himself, supposing that the prisoners had escaped.",
+   "words": [
+    " 0 jailer G1200 N-NSM",
+    " 1 woke G1096 V-2ADP-NSM",
+    " 1 woke G1853 A-NSM | qualifier candidate; qualifier morph: adjective",
+    " 2 and G2532 CONJ | connective",
+    " 3 saw G1492H V-2AAP-NSM",
+    " 4 the G1161 CONJ | connective",
+    " 5 prison G5438G N-GSF",
+    " 6 doors G2374 N-APF",
+    " 7 open G0455 V-2RPP-APF | word of another collection; collections open",
+    " 8 drew G4685 V-AMP-NSM",
+    " 9 sword G3162 N-ASF",
+    " 10 about G3195 V-IAI-3S",
+    " 11 kill G0337 V-PAN | word of another collection; collections kill",
+    " 12 himself G1438 F-3ASM",
+    "*13 supposing G3543 V-PAP-NSM | member of this collection",
+    " 14 prisoners G1198 N-APM",
+    " 15 escaped G1628 V-2RAN | word of another collection; collections escape"
+   ]
+  },
+  {
+   "reference": "Act 17:29",
+   "text": "Being then God’s offspring, we ought not to think that the divine being is like gold or silver or stone, an image formed by the art and imagination of man.",
+   "words": [
+    " 0 being G5225 V-PAP-NPM",
+    " 1 then G3767 CONJ | connective",
+    " 2 god’s G2316 N-GSM-T | entity (divine); party divine",
+    " 3 offspring G1085G N-NSN",
+    " 4 ought G3784 V-PAI-1P",
+    " 5 not G3756 PRT-N | negator; qualifier negator; negator",
+    " 6 think G3543 V-PAN | member of this collection",
+    " 7 divine being G2304 A-ASN | qualifier candidate; qualifier morph: adjective",
+    " 8 is G1511 V-PAN",
+    " 9 like G3664 A-ASN | qualifier candidate; qualifier morph: adjective",
+    " 10 gold G5557 N-DSM",
+    " 11 or G2228 CONJ | connective",
+    " 12 silver G0696 N-DSM",
+    " 13 or G2228 CONJ | connective",
+    " 14 stone G3037 N-DSM",
+    " 15 image formed G5480 N-DSN",
+    " 16 art G5078 N-GSF",
+    " 17 and G2532 CONJ | connective",
+    "*18 imagination G1761 N-GSF | member of this collection",
+    " 19 man G0444 N-GSM | entity (human); party human"
+   ]
+  },
+  {
+   "reference": "Act 27:13",
+   "text": "Now when the south wind blew gently, supposing that they had obtained their purpose, they weighed anchor and sailed along Crete, close to the shore.",
+   "words": [
+    " 0 now G1161 CONJ | connective",
+    " 1 south wind G3558G N-GSM",
+    " 2 blew gently G5285 V-AAP-GSM",
+    "*3 supposing G1380 V-AAP-NPM | member of this collection",
+    " 4 obtained G2902 V-RAN",
+    " 5 purpose G4286 N-GSF | word of another collection; collections intend",
+    " 6 weighed anchor G0142 V-AAP-NPM",
+    " 7 sailed G3881 V-INI-3P",
+    " 8 along G0788 ADV-C | qualifier candidate; qualifier morph: adverb",
+    " 9 crete G2914 N-ASF-L"
+   ]
+  },
+  {
+   "reference": "1Cor 8:2",
+   "text": "If anyone imagines that he knows something, he does not yet know as he ought to know.",
+   "words": [
+    " 0 if anyone G1487G COND",
+    " 0 if anyone G5100 X-NSM",
+    "*1 imagines G1380 V-PAI-3S | member of this collection",
+    "*1 imagines G1161 CONJ | member of this collection",
+    " 2 knows G1097 V-RAN | word of another collection; collections know",
+    " 3 something G5100 X-ASN",
+    " 4 not G3762 A-ASN | qualifier candidate; qualifier morph: adjective",
+    " 5 yet G3768 ADV-N | negator; qualifier negator; morph: adverb; negator",
+    " 6 know G1097 V-2AAI-3S | word of another collection; collections know",
+    " 7 as G2531 CONJ | connective",
+    " 8 ought G1163 V-PAI-3S",
+    " 9 know G1097 V-2AAN | word of another collection; collections know"
+   ]
+  },
+  {
+   "reference": "Jam 1:7",
+   "text": "For that person must not suppose that he will receive anything from the Lord;",
+   "words": [
+    " 0 for G1063 CONJ | connective",
+    " 1 that G1565 D-NSM",
+    " 2 person G0444 N-NSM | entity (human); party human",
+    " 3 not G3361 PRT-N | negator; qualifier negator; negator",
+    "*4 suppose G3633 V-PNM-3S | member of this collection",
+    " 5 that G3754G CONJ | connective",
+    " 6 receive G2983 V-FDI-3S",
+    " 7 anything G5100 X-ASN",
+    " 8 from G3844 PREP",
+    " 9 lord G2962G N-GSM-T | entity (divine); party divine"
+   ]
+  },
+  {
+   "reference": "Jam 4:5",
+   "text": "Or do you suppose it is to no purpose that the Scripture says, “He yearns jealously over the spirit that he has made to dwell in us ”?",
+   "words": [
+    " 0 or G2228 CONJ | connective",
+    "*1 suppose G1380 V-PAI-2P | member of this collection",
+    " 2 purpose G2761 ADV | word of another collection; qualifier morph: adverb; collections intend",
+    " 3 that G3754G CONJ | connective",
+    " 4 scripture G1124 N-NSF",
+    " 5 says G3004G V-PAI-3S",
+    " 6 yearns G1971 V-PAI-3S | word of another collection; collections desire",
+    " 7 jealously G5355 N-ASM | word of another collection; collections jealous",
+    " 8 spirit G4151G N-ASN",
+    " 9 that G3739 R-ASN",
+    " 10 dwell G2730 V-AAI-3S",
+    " 11 in G1722 PREP",
+    " 12 us G2254 P-1DP"
+   ]
+  }
+ ],
+ "rows": [
+  {
+   "ledger_id": 1556,
+   "item": "qualifier",
+   "subject": "",
+   "asks": "Which qualifiers (negators and the words they reach, adjectives, adverbs, prepositional qualifiers) stand with the subgroup's surfaces, and what does each give by the grammar? Adjacency is not scope: state the word the negator or qualifier reaches. One finding for each distinct thing shown; it holds the verses it holds in as its nodes.",
+   "none_allowed": true,
+   "verses": [
+    "Gen 18:28",
+    "Gen 18:29",
+    "Gen 18:30",
+    "Gen 18:31",
+    "Gen 18:32",
+    "2Sa 13:32",
+    "2Sa 13:33",
+    "Pro 18:11",
+    "Eze 18:14",
+    "Luk 2:44",
+    "Luk 7:43",
+    "Joh 11:31",
+    "Joh 20:15",
+    "Joh 21:25",
+    "Act 2:15",
+    "Act 13:25",
+    "Act 16:27",
+    "Act 17:29",
+    "Act 27:13",
+    "1Cor 8:2",
+    "Jam 1:7",
+    "Jam 4:5"
+   ],
+   "occurrences": [
+    {
+     "occurrence": 984128,
+     "reference": "Gen 18:28",
+     "surface": "suppose",
+     "strong": "H0194",
+     "as": "member"
+    },
+    {
+     "occurrence": 978657,
+     "reference": "Gen 18:29",
+     "surface": "suppose",
+     "strong": "H0194",
+     "as": "member"
+    },
+    {
+     "occurrence": 976252,
+     "reference": "Gen 18:30",
+     "surface": "suppose",
+     "strong": "H0194",
+     "as": "member"
+    },
+    {
+     "occurrence": 978677,
+     "reference": "Gen 18:31",
+     "surface": "suppose",
+     "strong": "H0194",
+     "as": "member"
+    },
+    {
+     "occurrence": 976274,
+     "reference": "Gen 18:32",
+     "surface": "suppose",
+     "strong": "H0194",
+     "as": "member"
+    },
+    {
+     "occurrence": 1140493,
+     "reference": "2Sa 13:32",
+     "surface": "suppose",
+     "strong": "H0559",
+     "as": "member"
+    },
+    {
+     "occurrence": 1142223,
+     "reference": "2Sa 13:33",
+     "surface": "suppose",
+     "strong": "H0559",
+     "as": "member"
+    },
+    {
+     "occurrence": 1277182,
+     "reference": "Pro 18:11",
+     "surface": "imagination",
+     "strong": "H4906",
+     "as": "member"
+    },
+    {
+     "occurrence": 1368762,
+     "reference": "Eze 18:14",
+     "surface": "suppose",
+     "strong": "H2009",
+     "as": "member"
+    },
+    {
+     "occurrence": 1442041,
+     "reference": "Luk 2:44",
+     "surface": "supposing",
+     "strong": "G3543",
+     "as": "member"
+    },
+    {
+     "occurrence": 1435119,
+     "reference": "Luk 7:43",
+     "surface": "suppose",
+     "strong": "G5274",
+     "as": "member"
+    },
+    {
+     "occurrence": 1456592,
+     "reference": "Joh 11:31",
+     "surface": "supposing",
+     "strong": "G1380",
+     "as": "member"
+    },
+    {
+     "occurrence": 1449562,
+     "reference": "Joh 20:15",
+     "surface": "supposing",
+     "strong": "G1380",
+     "as": "member"
+    },
+    {
+     "occurrence": 1456897,
+     "reference": "Joh 21:25",
+     "surface": "suppose",
+     "strong": "G3633",
+     "as": "member"
+    },
+    {
+     "occurrence": 1472232,
+     "reference": "Act 2:15",
+     "surface": "suppose",
+     "strong": "G5274",
+     "as": "member"
+    },
+    {
+     "occurrence": 1460693,
+     "reference": "Act 13:25",
+     "surface": "suppose",
+     "strong": "G5282",
+     "as": "member"
+    },
+    {
+     "occurrence": 1470684,
+     "reference": "Act 16:27",
+     "surface": "supposing",
+     "strong": "G3543",
+     "as": "member"
+    },
+    {
+     "occurrence": 1469845,
+     "reference": "Act 17:29",
+     "surface": "imagination",
+     "strong": "G1761",
+     "as": "member"
+    },
+    {
+     "occurrence": 1466960,
+     "reference": "Act 27:13",
+     "surface": "supposing",
+     "strong": "G1380",
+     "as": "member"
+    },
+    {
+     "occurrence": 1484787,
+     "reference": "1Cor 8:2",
+     "surface": "imagines",
+     "strong": "G1380",
+     "as": "member"
+    },
+    {
+     "occurrence": 1484788,
+     "reference": "1Cor 8:2",
+     "surface": "imagines",
+     "strong": "G1161",
+     "as": "member"
+    },
+    {
+     "occurrence": 1507385,
+     "reference": "Jam 1:7",
+     "surface": "suppose",
+     "strong": "G3633",
+     "as": "member"
+    },
+    {
+     "occurrence": 1506285,
+     "reference": "Jam 4:5",
+     "surface": "suppose",
+     "strong": "G1380",
+     "as": "member"
+    },
+    {
+     "occurrence": 984129,
+     "reference": "Gen 18:28",
+     "surface": "five",
+     "strong": "H2568",
+     "as": "partner"
+    },
+    {
+     "occurrence": 984130,
+     "reference": "Gen 18:28",
+     "surface": "fifty",
+     "strong": "H2572",
+     "as": "partner"
+    },
+    {
+     "occurrence": 984132,
+     "reference": "Gen 18:28",
+     "surface": "righteous",
+     "strong": "H6662",
+     "as": "partner"
+    },
+    {
+     "occurrence": 984141,
+     "reference": "Gen 18:28",
+     "surface": "five",
+     "strong": "H2568",
+     "as": "partner"
+    },
+    {
+     "occurrence": 984144,
+     "reference": "Gen 18:28",
+     "surface": "not",
+     "strong": "H3808",
+     "as": "partner"
+    },
+    {
+     "occurrence": 984148,
+     "reference": "Gen 18:28",
+     "surface": "forty-five",
+     "strong": "H0705",
+     "as": "partner"
+    },
+    {
+     "occurrence": 984149,
+     "reference": "Gen 18:28",
+     "surface": "forty-five",
+     "strong": "H2568",
+     "as": "partner"
+    },
+    {
+     "occurrence": 984151,
+     "reference": "Gen 18:28",
+     "surface": "there",
+     "strong": "H8033G",
+     "as": "partner"
+    },
+    {
+     "occurrence": 978653,
+     "reference": "Gen 18:29",
+     "surface": "spoke",
+     "strong": "H5750",
+     "as": "partner"
+    },
+    {
+     "occurrence": 978658,
+     "reference": "Gen 18:29",
+     "surface": "forty",
+     "strong": "H0705",
+     "as": "partner"
+    },
+    {
+     "occurrence": 978660,
+     "reference": "Gen 18:29",
+     "surface": "there",
+     "strong": "H8033G",
+     "as": "partner"
+    },
+    {
+     "occurrence": 978665,
+     "reference": "Gen 18:29",
+     "surface": "forty",
+     "strong": "H0705",
+     "as": "partner"
+    },
+    {
+     "occurrence": 978667,
+     "reference": "Gen 18:29",
+     "surface": "not",
+     "strong": "H3808",
+     "as": "partner"
+    },
+    {
+     "occurrence": 976247,
+     "reference": "Gen 18:30",
+     "surface": "oh",
+     "strong": "H0408",
+     "as": "partner"
+    },
+    {
+     "occurrence": 976253,
+     "reference": "Gen 18:30",
+     "surface": "thirty",
+     "strong": "H7970",
+     "as": "partner"
+    },
+    {
+     "occurrence": 976255,
+     "reference": "Gen 18:30",
+     "surface": "there",
+     "strong": "H8033G",
+     "as": "partner"
+    },
+    {
+     "occurrence": 976258,
+     "reference": "Gen 18:30",
+     "surface": "not",
+     "strong": "H3808",
+     "as": "partner"
+    },
+    {
+     "occurrence": 976262,
+     "reference": "Gen 18:30",
+     "surface": "thirty",
+     "strong": "H7970",
+     "as": "partner"
+    },
+    {
+     "occurrence": 976263,
+     "reference": "Gen 18:30",
+     "surface": "there",
+     "strong": "H8033G",
+     "as": "partner"
+    },
+    {
+     "occurrence": 978678,
+     "reference": "Gen 18:31",
+     "surface": "twenty",
+     "strong": "H6242",
+     "as": "partner"
+    },
+    {
+     "occurrence": 978680,
+     "reference": "Gen 18:31",
+     "surface": "there",
+     "strong": "H8033G",
+     "as": "partner"
+    },
+    {
+     "occurrence": 978685,
+     "reference": "Gen 18:31",
+     "surface": "twenty",
+     "strong": "H6242",
+     "as": "partner"
+    },
+    {
+     "occurrence": 978687,
+     "reference": "Gen 18:31",
+     "surface": "not",
+     "strong": "H3808",
+     "as": "partner"
+    },
+    {
+     "occurrence": 976266,
+     "reference": "Gen 18:32",
+     "surface": "oh",
+     "strong": "H0408",
+     "as": "partner"
+    },
+    {
+     "occurrence": 976271,
+     "reference": "Gen 18:32",
+     "surface": "again",
+     "strong": "H0389",
+     "as": "partner"
+    },
+    {
+     "occurrence": 976277,
+     "reference": "Gen 18:32",
+     "surface": "there",
+     "strong": "H8033G",
+     "as": "partner"
+    },
+    {
+     "occurrence": 976284,
+     "reference": "Gen 18:32",
+     "surface": "not",
+     "strong": "H3808",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1140491,
+     "reference": "2Sa 13:32",
+     "surface": "not",
+     "strong": "H0408",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1142211,
+     "reference": "2Sa 13:33",
+     "surface": "now",
+     "strong": "H6258",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1142213,
+     "reference": "2Sa 13:33",
+     "surface": "not",
+     "strong": "H0408",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1277172,
+     "reference": "Pro 18:11",
+     "surface": "rich man’s",
+     "strong": "H6223",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1368775,
+     "reference": "Eze 18:14",
+     "surface": "not",
+     "strong": "H3808",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1442053,
+     "reference": "Luk 2:44",
+     "surface": "relatives",
+     "strong": "G4773",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1442055,
+     "reference": "Luk 2:44",
+     "surface": "acquaintances",
+     "strong": "G1110",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1435122,
+     "reference": "Luk 7:43",
+     "surface": "larger",
+     "strong": "G4119",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1435128,
+     "reference": "Luk 7:43",
+     "surface": "rightly",
+     "strong": "G3723",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1456587,
+     "reference": "Joh 11:31",
+     "surface": "quickly",
+     "strong": "G5030",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1456599,
+     "reference": "Joh 11:31",
+     "surface": "there",
+     "strong": "G1563",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1449575,
+     "reference": "Joh 20:15",
+     "surface": "where",
+     "strong": "G4226",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1456887,
+     "reference": "Joh 21:25",
+     "surface": "many",
+     "strong": "G4183",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1456888,
+     "reference": "Joh 21:25",
+     "surface": "other",
+     "strong": "G0243",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1456895,
+     "reference": "Joh 21:25",
+     "surface": "one",
+     "strong": "G1520",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1456900,
+     "reference": "Joh 21:25",
+     "surface": "not",
+     "strong": "G3761",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1472228,
+     "reference": "Act 2:15",
+     "surface": "not",
+     "strong": "G3756",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1472235,
+     "reference": "Act 2:15",
+     "surface": "third",
+     "strong": "G5154",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1460698,
+     "reference": "Act 13:25",
+     "surface": "not",
+     "strong": "G3756",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1460708,
+     "reference": "Act 13:25",
+     "surface": "not",
+     "strong": "G3756",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1460709,
+     "reference": "Act 13:25",
+     "surface": "worthy",
+     "strong": "G0514",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1470672,
+     "reference": "Act 16:27",
+     "surface": "woke",
+     "strong": "G1853",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1469832,
+     "reference": "Act 17:29",
+     "surface": "not",
+     "strong": "G3756",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1469834,
+     "reference": "Act 17:29",
+     "surface": "divine being",
+     "strong": "G2304",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1469836,
+     "reference": "Act 17:29",
+     "surface": "like",
+     "strong": "G3664",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1466965,
+     "reference": "Act 27:13",
+     "surface": "along",
+     "strong": "G0788",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1484791,
+     "reference": "1Cor 8:2",
+     "surface": "not",
+     "strong": "G3762",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1484792,
+     "reference": "1Cor 8:2",
+     "surface": "yet",
+     "strong": "G3768",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1507384,
+     "reference": "Jam 1:7",
+     "surface": "not",
+     "strong": "G3361",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1506286,
+     "reference": "Jam 4:5",
+     "surface": "purpose",
+     "strong": "G2761",
+     "as": "partner"
+    }
+   ],
+   "older": [
+    {
+     "observation": 21470,
+     "stage": "engagement",
+     "kind": "use",
+     "nature": null,
+     "text": "Righteous is here the godly, the righteous, the upright, the wicked or the ungodly as a class of persons toward whom an act is directed or whom an event befalls (the Lord keeps the godly, do not envy the wicked, Christ died for the ungodly); the act is named by another word of the verse.",
+     "verses": [
+      "1Kgs.8.32",
+      "1Pet.3.12",
+      "1Pet.4.18",
+      "2Chr.6.23",
+      "Amos.2.6",
+      "Amos.5.12",
+      "Deut.16.19",
+      "Eccl.3.17",
+      "Eccl.8.14",
+      "Eccl.9.1",
+      "Eccl.9.2",
+      "Exod.23.7",
+      "Ezek.13.22",
+      "Ezek.18.20",
+      "Ezek.21.3",
+      "Ezek.21.4",
+      "Ezek.23.45",
+      "Gal.3.11",
+      "Gen.18.23",
+      "Gen.18.24",
+      "Gen.18.25",
+      "Gen.18.26",
+      "Gen.18.28",
+      "Hab.1.4",
+      "Hab.2.4",
+      "Heb.12.23",
+      "Isa.26.7",
+      "Isa.3.10",
+      "Jer.20.12",
+      "Job.22.19",
+      "Job.27.17",
+      "Job.34.17",
+      "Job.36.7",
+      "Lam.4.13",
+      "Luke.5.32",
+      "Mal.3.18",
+      "Mark.2.17",
+      "Matt.13.17",
+      "Matt.13.43",
+      "Matt.13.49",
+      "Matt.23.29",
+      "Matt.23.35",
+      "Matt.25.37",
+      "Matt.25.46",
+      "Matt.9.13",
+      "Prov.10.11",
+      "Prov.10.16",
+      "Prov.10.20",
+      "Prov.10.21",
+      "Prov.10.24",
+      "Prov.10.25",
+      "Prov.10.28",
+      "Prov.10.3",
+      "Prov.10.30",
+      "Prov.10.31",
+      "Prov.10.32",
+      "Prov.10.6",
+      "Prov.10.7",
+      "Prov.11.10",
+      "Prov.11.21",
+      "Prov.11.23",
+      "Prov.11.28",
+      "Prov.11.30",
+      "Prov.11.31",
+      "Prov.11.8",
+      "Prov.11.9",
+      "Prov.12.12",
+      "Prov.12.13",
+      "Prov.12.21",
+      "Prov.12.3",
+      "Prov.12.7",
+      "Prov.13.21",
+      "Prov.13.22",
+      "Prov.13.25",
+      "Prov.14.19",
+      "Prov.14.32",
+      "Prov.15.29",
+      "Prov.15.6",
+      "Prov.17.15",
+      "Prov.17.26",
+      "Prov.18.5",
+      "Prov.2.20",
+      "Prov.21.15",
+      "Prov.21.18",
+      "Prov.23.24",
+      "Prov.24.15",
+      "Prov.24.16",
+      "Prov.28.12",
+      "Prov.28.28",
+      "Prov.29.16",
+      "Prov.29.2",
+      "Prov.29.27",
+      "Prov.3.33",
+      "Prov.4.18",
+      "Prov.9.9",
+      "Ps.1.5",
+      "Ps.1.6",
+      "Ps.11.3",
+      "Ps.11.5",
+      "Ps.112.4",
+      "Ps.112.6",
+      "Ps.118.15",
+      "Ps.118.20",
+      "Ps.125.3",
+      "Ps.14.5",
+      "Ps.140.13",
+      "Ps.142.7",
+      "Ps.146.8",
+      "Ps.31.18",
+      "Ps.32.11",
+      "Ps.33.1",
+      "Ps.34.15",
+      "Ps.34.19",
+      "Ps.34.21",
+      "Ps.37.12",
+      "Ps.37.16",
+      "Ps.37.17",
+      "Ps.37.25",
+      "Ps.37.29",
+      "Ps.37.32",
+      "Ps.37.39",
+      "Ps.5.12",
+      "Ps.55.22",
+      "Ps.58.11",
+      "Ps.69.28",
+      "Ps.7.9",
+      "Ps.72.7",
+      "Ps.75.10",
+      "Ps.92.12",
+      "Ps.94.15",
+      "Ps.94.21",
+      "Ps.97.11",
+      "Ps.97.12",
+      "Rom.1.17"
+     ]
+    }
+   ]
+  }
+ ],
+ "answer": {
+  "command": "ReadStructure",
+  "collection": "thought",
+  "subgroup": "supposing and imagining",
+  "rows": [
+   {
+    "ledger_id": 1556,
+    "item": "qualifier",
+    "subject": "",
+    "disposition": "observed | none",
+    "findings": [
+     {
+      "kind": "pairing",
+      "obs_text": "",
+      "basis": "read | stated",
+      "grounds": "",
+      "occurrences": []
+     }
+    ],
+    "reason": "",
+    "older": [
+     {
+      "observation": 21470,
+      "action": "keep | restate | merge | consume | delete_neither | defer | carry",
+      "reason": ""
+     }
+    ]
+   }
+  ]
+ },
+ "measured": {
+  "package_chars": 46235,
+  "seconds": 0.01
+ }
+}

@@ -109,10 +109,16 @@ def _cell(s) -> str:
     return nr._cell(None if s is None else str(s))
 
 
+_CORPUS: list = [None, None]      # (connection, its Corpus): the ESV is normalised once per connection, not once per text (#2538: 0.56 s each, 83 builds in one test run)
+
+
 def _quote_check(conn, cfg, texts: list[str], where: str) -> list[str]:
-    corpus = quotecheck.Corpus(conn)
-    _, bad = quotecheck.check_lines(corpus, [t for x in texts if x for t in x.split("\n")],
-                                    int(cfg.required_setting("narrative.quote_min_words")), quotecheck.titles(conn))
+    lines = [t for x in texts if x for t in x.split("\n")]
+    if not any('"' in t for t in lines):      # quotecheck.parts_of pairs straight double quotes only: a text without one quotes nothing
+        return []
+    if _CORPUS[0] is not conn:
+        _CORPUS[:] = [conn, quotecheck.Corpus(conn)]
+    _, bad = quotecheck.check_lines(_CORPUS[1], lines, int(cfg.required_setting("narrative.quote_min_words")), quotecheck.titles(conn))
     return [f"{where}: \"{b}\"" for b in bad]
 
 

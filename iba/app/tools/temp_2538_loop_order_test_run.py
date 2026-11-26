@@ -34,8 +34,9 @@ def main(db, name="thought"):
     for g in p["subgroups"]:
         closed = 0
         for s in ll._steps(cfg)[0]:
-            rows = q("SELECT state, validated FROM collection_layer_item WHERE collection_id=? AND step=? AND subgroup_id=? AND deleted=0 AND state!='retired'", cid, s, g["id"])
-            if rows and all(r[0] in ("observed", "none") and r[1] for r in rows):
+            rows = q("SELECT state, validated, item FROM collection_layer_item WHERE collection_id=? AND step=? AND subgroup_id=? AND deleted=0 AND state!='retired'", cid, s, g["id"])
+            gates_missing = set(ll._gate_items(cfg).get(s, [])) - {r[2] for r in rows}      # a step with gate items (the sweep, the evidence validation of 2.1) is not closed without its gate rows
+            if rows and all(r[0] in ("observed", "none") and r[1] for r in rows) and not gates_missing:
                 closed += 1
             else:
                 break
@@ -46,7 +47,10 @@ def main(db, name="thought"):
     inflight = sorted([g for g in p["subgroups"] if not g["complete"]], key=lambda g: (-g["closed"], g["id"]))
     case("L2", "the next action names the subgroup furthest through its loop (the earliest on a tie) and its first step that is not closed", bool(inflight) and nx.get("subgroup") == inflight[0]["name"]
          and nx.get("step") == next(s for s in ll._steps(cfg)[0] if inflight[0]["steps"][s] != "closed"), f"{nx.get('subgroup')} / {nx.get('step')} / {nx.get('state')}")
-    case("L3", "the next action gives the verbs to run, naming the collection and the subgroup", bool(nx.get("commands")) and all(name in c for c in nx["commands"] if "LayerRecord" not in c) and any(nx.get("subgroup", "") in c for c in nx["commands"] if "LayerRecord" not in c) and any("LayerRecord" in c for c in nx["commands"] if nx.get("state") == "open"), nx.get("commands", [])[:1])
+    read_cmd = any("-Action Read" in c for c in nx.get("commands", []))      # since #2538 2026-11-26 LayerNext names the read command of the next open item where one answers it
+    case("L3", "the next action gives the verbs to run, naming the collection and the subgroup (a read command, or the LayerRecord cycle where no read command answers the item)",
+         bool(nx.get("commands")) and all(name in c for c in nx["commands"] if "LayerRecord" not in c) and any(nx.get("subgroup", "") in c for c in nx["commands"] if "LayerRecord" not in c)
+         and (read_cmd or any("LayerRecord" in c for c in nx["commands"] if nx.get("state") == "open") or nx.get("state") != "open"), nx.get("commands", [])[:1])
     others = [g for g in p["subgroups"] if not g["complete"] and g["id"] != inflight[0]["id"] and g["closed"] < inflight[0]["closed"]]
     if others:
         why = ll.order_gate(conn, cfg, name, others[0]["name"])

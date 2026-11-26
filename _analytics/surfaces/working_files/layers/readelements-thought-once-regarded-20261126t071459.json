@@ -1,0 +1,365 @@
+{
+ "command": "ReadElements",
+ "collection": "thought",
+ "subgroup": "once regarded",
+ "step": "3.1",
+ "made": "2026-11-26T07:14:59Z",
+ "unit": {
+  "ledger_id": 1948,
+  "to_take_up": 5,
+  "may_rest_on_besides": 1,
+  "older_inner_being": 1,
+  "earlier_readings": 0,
+  "occurrences": 1,
+  "verses": 1
+ },
+ "instruction": {
+  "what": "Step 3.1, the elements of one subgroup (stage 4, C1; the end of the loop for the subgroup): what the evidence of the subgroup shows of the elements of a behaviour of the inner being. The input is the evidence observations of the subgroup by marker (`to_take_up`, the senses first, then the 2.1 findings and the older evidence), not the verses; the verses are kept for an occasional read-back. A finding is a building block, never a claim about the behaviour as a whole (that is stage 5).",
+  "read": [
+   "Read the observations to take up, in order: the senses (1.1) and their enrichments (1.2) first, then the 2.1 findings (pairings, qualifiers, entities, direction, double meanings), then the older evidence. The inner-being workings work more with the senses than with the surfaces, so findings rest on the senses first.",
+   "For each item a finding may use (`uses`): what is done and its mode (operation, with its chain), whether a refusal or a pursuit (polarity), what it is directed at (object), the outward act (enactment), the other party with the route (party), the circumstance, and what a qualifier or a variation of the word gives the working (role, the dimension). Never the meaning of the word (stage 1).",
+   "Read the older inner-being observations (`older_inner_being`) with them: each is considered first, accepted with a trace to evidence, restated where it says more than the evidence, consumed where a finding says the same, merged, or deleted where it cannot be made true.",
+   "Go back to a verse (`verses`) only where the evidence does not settle the question, and say why."
+  ],
+  "write": [
+   "Fill `answer.findings`: each one observation, with a `key` unique in the answer, `kind` (of the item's kinds), `text`, `basis` (stated or read), `parts` with `item` (one of `uses`) and what the item needs (with `grounds`), and `nodes`: a `traced` node on each observation it rests on (from `to_take_up` or `may_rest_on_besides`) and an `occurrence` node, with its `role` chosen from the verse (characteristic, qualifier, object, relational target, enactment or standalone), on the occurrences those observations cover.",
+   "An occurrence outside the observations a finding rests on is allowed only with a `read_back` entry on the finding: {verse: the osis id, why}.",
+   "`not_used`: {observation id: reason} for every observation to take up that no finding rests on. Every one is rested on or declared, never both.",
+   "`older`: answer, once, each older inner-being observation (`older_inner_being`) that has a node on an occurrence your findings name (RW-13; the record lists any it misses, and refuses an answer to one on no named occurrence: those are shown, not demanded, IB-05): keep (with nature inner_being: it stands, traced to evidence), restate, merge, consume (carriers [\"this\"] or ids, mapping), delete_neither, or defer (collection, nature, finding).",
+   "`existing`: answer every earlier reading (`earlier_readings`: inner being of an earlier grouping on these occurrences) with accept, modify, delete, merge or leave, and its reason.",
+   "The text says what the evidence shows of the element; it names its verses; it never restates a verse and never states the behaviour as a whole.",
+   "Then: Collection-Build.ps1 -Action RecordElements -File <the answer file> (-Check to preview). The record refuses the whole file on any fault and lists every fault."
+  ],
+  "keep": [
+   {
+    "rule": "IB-02 stage-4-starts-from-the-observations",
+    "text": "Stage 4 starts from the observations, not the verses (researcher, #2526 Q7, 2026-11-21): the subgroups and the stage 3 observations on them are the input, the behaviours are discovered from analysing them, and the base data is read back into only occasionally. Every finding of step 3.1 or 3.2 rests on named observations (a traced node on each, with an occurrence node as well) and its occurrence nodes lie within the occurrences those observations cover; an occurrence outside them is allowed only where the finding records a read-back (the verse and why). Each node has a role from reading.node_roles other than lexical, chosen by the reading. A 3.3 finding carries nodes on the occurrences of both sides in the shared verses."
+   },
+   {
+    "rule": "IB-03 findings-follow-the-observation-rules",
+    "text": "A finding of a stage 4 row is checked by the rules of observationrecord.check and check_item_parts (kind, text, basis, route, parts.item and what the item needs, node roles, collection of each node) and by RG, RW and RS, which are not restated here: one observation for each finding, never a duplicate, with a node on each word it applies to (RO11, RW-03); founded in the observations and never a restatement of the verse (B:131); parts.item is one of the items the row's item uses (cfg_setting layer.reading). An observation whose nodes all bear on an act is refused: those words are nodes of the observation of the act. A finding is a building block of a behaviour and never a claim (stage 5)."
+   },
+   {
+    "rule": "IB-04 nothing-is-lost-on-the-way-to-stage-5",
+    "text": "Nothing the step reads is lost on the way to stage 5. Step 3.1: every stage 3 observation of the subgroup is rested on by a finding or declared in not_used with its reason in words. Step 3.2: every 3.1 observation of the collection is gathered into a behaviour (a traced node on it from a flag finding of type discovery) or declared in not_gathered with its reason, and the row has at least one behaviour unless it is recorded as none with its reason. A behaviour names and gathers; it makes no claim about what the behaviour is."
+   },
+   {
+    "rule": "IB-05 earlier-observations-are-shown-not-demanded",
+    "text": "An earlier inner-being observation with a node on the occurrences of a 3.1 row (any stage but lexical, layer-1, layer-2 and layer-3) is shown in the pull for information and may be actioned in `existing`: accepted, modified, deleted, merged or left, each with its reason, through observationrecord (RW-01, RW-09); nothing is demanded of it, and it counts for nothing in the check. A row answered again withdraws its earlier observations with the reason. Every older live observation with a node on an occurrence of the row is answered in fill.older at the record of the row (RW-13); this rule's `existing` actions of stage 4 are unchanged."
+   },
+   {
+    "rule": "IB-07 inner-being-observations-trace-to-evidence",
+    "text": "Every live observation marked inner_being holds at least one live traced node on a live observation marked evidence, unless it is recorded self-evidencing: it quotes its verse in full and holds a word node for every word it relies on. A traced node never points at a deleted observation. A trace points first at existing evidence; an evidence observation is created only when none states the fact and it states what the nodes and the quotation do not. An inner-being observation traced to evidence not yet marked is pending, not failed."
+   },
+   {
+    "rule": "RG-03 role-per-occurrence",
+    "text": "Find the main inner-being operation, and give every word that bears on it its role in this finding (cfg_setting reading.node_roles): characteristic, qualifier and what it gives the characteristic, object or content, relational target, or enactment. A word read in the verse that holds nothing for the inner being is standalone. The role comes from this verse, never from the cluster tag. Where a standalone word proves to qualify a characteristic, it is a qualifier of it."
+   },
+   {
+    "rule": "RG-04 qualifier-binding",
+    "text": "A qualifier gets no separate account of itself, but what it gives the characteristic it binds to is evaluated for its value and recorded as a qualification finding, applied by its nodes to the qualifier (role qualifier) and the characteristic (role characteristic). What it gives can vary widely: grade, nature, impact, size, relation, a measure, strengthening, ground, cause, object, setting or bait are examples, not a list (#2273 D9). A qualifier whose usage varies across contexts may earn its own reading later."
+   },
+   {
+    "rule": "RG-06 parties-and-route",
+    "text": "Record the parties: who bears the act, who causes it, who is acted on (source, target, impact, purpose), and the route (cfg_enum observation_route). A non-human being is never itself a HIB; a collective stays one HIB; an implied party is named as referential, never asserted."
+   },
+   {
+    "rule": "RG-10 never-not-x",
+    "text": "Never close a verse or item on 'not X'. A role label is never a verdict; the close records what the verse is. Silence about the inner being is a finding, recorded as data with its reason."
+   },
+   {
+    "rule": "RG-11 hidden-behind-act",
+    "text": "A phenomenon hidden behind a stated or refrained act may be named, with the verb, clause or stated silence that grounds it, and whether it is stated or read."
+   },
+   {
+    "rule": "RG-13 source-vs-enablement",
+    "text": "Keep the source of an interior state apart from the source of an enablement to act."
+   },
+   {
+    "rule": "RG-24 adverbial-qualifier",
+    "text": "A tagged word that works adverbially in an occurrence (a noun with a preposition qualifying the predicate, as 'in the counsel of the wicked') is a qualifier there, not the verse's characteristic. The role is per occurrence: the same word may be the characteristic elsewhere."
+   },
+   {
+    "rule": "RG-25 simile-tenor",
+    "text": "In a simile, the predicates of the vehicle (the tree that yields, does not wither) are read for what they say of the one compared (the tenor), not as the vehicle's own acts."
+   },
+   {
+    "rule": "RO11 one-row-per-code",
+    "text": "One observation per finding, never a duplicate description; a finding applying to several verses or words carries several nodes, each with the word's role in it."
+   },
+   {
+    "rule": "RW-03 no-duplicates-multi-node",
+    "text": "One observation per finding: the same description is never written twice. Applied to another verse, word or scope it gains a node on the existing observation."
+   },
+   {
+    "rule": "RW-04 concise-verse-specific",
+    "text": "Observation text is concise and tied to this verse's content, never a restatement of the word's dictionary sense. A transliteration is never given without its gloss."
+   },
+   {
+    "rule": "RW-12 marker-and-node-columns-at-creation",
+    "text": "An observation is created with its marker (ib_observation.nature, from the item answered, cfg_setting layer.reading items.<item>.nature; a finding file never sets it) and every word node with the columns of layer.reading node_required. A column the data cannot give (layer.reading node_gap_columns: an empty morph in the source row, a surface with no placement in the collection index) is left empty and its reason is kept on the node (disposition_note); any other missing column refuses the whole file and nothing is written. A trace to a deleted observation is refused (IB-07)."
+   },
+   {
+    "rule": "VA-05 the-marker-follows-content-not-stage",
+    "text": "Evidence states what the data are or show, tied to a verse. Inner being states how something works in the inner being, based on evidence, a building block of the stage 5 claims. The marker (ib_observation.nature) follows the content and purpose of the observation, never its stage (RS-04): an observation of any stage may be inner being when it traces to evidence. One that states both is split. The marker is set when the observation is created, by the item that is answered (cfg_setting layer.reading items.<item>.nature); a finding file never sets it; the validation changes it only where the content shows the item's nature does not hold."
+   }
+  ],
+  "not_in_this_read": ""
+ },
+ "asks": "What do the stage 3 observations of this subgroup (its definition, its Strong's enrichment, its pairings, qualifiers, entities, direction, relations and double meanings, with the stage 1 senses) show of the elements of a behaviour of the inner being: what is done and its mode, whether a refusal or a pursuit, what it is directed at, the outward act, the other party with the route, the circumstance, the chain of operations, and the dimensions of the working (what a qualifier or a variation of the word gives it, from the lexical variation the stage 3 observations record)? Each finding is one observation that rests on named observations (a traced node on each) and carries nodes on the occurrences those observations cover, with the role each has; an occurrence outside them is allowed only with a read-back (the verse and why). Every stage 3 observation of the subgroup is rested on by a finding or declared not used, with the reason. A finding is a building block and never a claim about the behaviour as a whole (stage 5).",
+ "uses": [
+  {
+   "item": "role",
+   "name": "its role: the qualifier and what it gives the characteristic",
+   "kinds": [
+    "qualification",
+    "statement"
+   ],
+   "bases": [
+    "stated",
+    "read"
+   ]
+  },
+  {
+   "item": "polarity",
+   "name": "whether the act is a refusal or a pursuit",
+   "kinds": [
+    "statement"
+   ],
+   "bases": [
+    "stated",
+    "read"
+   ]
+  },
+  {
+   "item": "object",
+   "name": "what the act is directed at or against",
+   "kinds": [
+    "statement"
+   ],
+   "bases": [
+    "stated",
+    "read"
+   ]
+  },
+  {
+   "item": "enactment",
+   "name": "the outward act the inner act produces, where the verse states one",
+   "kinds": [
+    "statement"
+   ],
+   "bases": [
+    "stated",
+    "read"
+   ]
+  },
+  {
+   "item": "party",
+   "name": "the other party and the sequence, with the route",
+   "kinds": [
+    "party"
+   ],
+   "bases": [
+    "stated",
+    "read"
+   ]
+  },
+  {
+   "item": "circumstance",
+   "name": "how it appears here: the circumstance of the verse",
+   "kinds": [
+    "statement"
+   ],
+   "bases": [
+    "stated"
+   ]
+  },
+  {
+   "item": "operation",
+   "name": "the operation as an action description (who or what does what), its mode, the primary one",
+   "kinds": [
+    "statement"
+   ],
+   "bases": [
+    "stated",
+    "read"
+   ]
+  },
+  {
+   "item": "chain",
+   "name": "the chain of operations the verse links in sequence",
+   "kinds": [
+    "link"
+   ],
+   "bases": [
+    "stated",
+    "read"
+   ]
+  },
+  {
+   "item": "flag",
+   "name": "a typed flag: data-quality, or discovery for the claims process",
+   "kinds": [
+    "statement"
+   ],
+   "bases": [
+    "stated",
+    "read"
+   ]
+  }
+ ],
+ "node_roles": {
+  "relevant": [
+   "characteristic",
+   "qualifier"
+  ],
+  "bears_on": [
+   "object",
+   "relational_target",
+   "enactment"
+  ],
+  "recognised": [
+   "standalone"
+  ],
+  "lexical": [
+   "lexical"
+  ]
+ },
+ "definition_of_the_subgroup": null,
+ "meaning_by_code": {
+  "G1097": {
+   "sense_head": "to know",
+   "meaning_range": "to know, come to know, recognize, understand; to have sexual relations; <b>to know,</b> whether the action be inceptive or complete and settled; <b>to perceive,</b> <ref='Mat.22.18'>Mt. 22:18</ref>; <ref='Mrk.5.29; 8:17; 12:12'>Mk. 5:29; 8:17; 12:12</ref>; <ref='Luk.8.46'>Lk. 8:46</ref>; <b>to mark, discern,</b> <ref='Mat.25.24'>Mt. 25:24</ref>; <ref='Luk.19.44'>Lk. 19:44</ref>; <b>to ascertain by examination,</b> <ref='Mrk.6.38'>Mk. 6:38</ref>; <ref='Jhn.7.51'>Jn. 7:51</ref>; <ref='Act.23.28'>A"
+  }
+ },
+ "to_take_up": [
+  {
+   "observation": 22878,
+   "stage": "layer-1",
+   "kind": "group",
+   "item": "group-definition",
+   "text": "A former way of knowing and taking account of someone by a standard: in 2Cor 5:16 Paul says he once knew Christ by the standard of the flesh and now does so no more. The Greek verb is of knowing and recognizing, here set against a present rule of taking account of no one by that standard. Verses: 2Cor 5:16.",
+   "basis": "read",
+   "verses": [
+    "2Cor.5.16"
+   ]
+  },
+  {
+   "observation": 23601,
+   "stage": "layer-1",
+   "kind": "enrichment",
+   "item": "strong-enrichment",
+   "text": "The code of once regarded is G1097 (to know, come to know, recognize, understand; to perceive, to mark, discern). The lexicon bears out knowing a person; 2Cor 5:16 uses it for a former knowing of Christ by the standard of the flesh.",
+   "basis": "read",
+   "verses": [
+    "2Cor.5.16"
+   ]
+  },
+  {
+   "observation": 23602,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "qualifier",
+   "text": "In 2Cor 5:16 the qualifiers set the time of the knowing: from now on no one is known by the flesh, and Christ, once so known, is known that way no longer. The negators reach the present regarding, and they mark the once regarded as past.",
+   "basis": "read",
+   "verses": [
+    "2Cor.5.16"
+   ]
+  },
+  {
+   "observation": 23603,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "entity",
+   "text": "In 2Cor 5:16 Christ is named as the one once known by the standard of the flesh: the former regarding was of him.",
+   "basis": "stated",
+   "verses": [
+    "2Cor.5.16"
+   ]
+  },
+  {
+   "observation": 23604,
+   "stage": "layer-2",
+   "kind": "relation",
+   "item": "direction",
+   "text": "In 2Cor 5:16 the knowing ran from Paul and those with him toward Christ, by the flesh, and now that way of knowing is given up toward everyone.",
+   "basis": "read",
+   "verses": [
+    "2Cor.5.16"
+   ]
+  }
+ ],
+ "may_rest_on_besides": [
+  {
+   "observation": 22768,
+   "stage": "lexical",
+   "kind": "term",
+   "item": "word-sense",
+   "text": "In 2Cor 5:16 'once regarded' is Paul's former way of knowing and taking account of Christ, by the standard of the flesh, which he says he has put away: a second verb of knowing (G6063) is used for how he now takes account of no one. It names a past habit of judgment, set against the present.",
+   "basis": "read",
+   "verses": [
+    "2Cor.5.16"
+   ]
+  }
+ ],
+ "older_inner_being": [
+  {
+   "observation": 15959,
+   "stage": "prior-capture",
+   "kind": "statement",
+   "text": "1.8 Flesh as a way of knowing: \"we regard no one according to the flesh. Even though we once regarded Christ according to the flesh\" (2Co 5:16); \"set their minds on the things of the flesh … the Spirit\" (Rom 8:5) [D3]; \"the desires of the flesh and the mind\" (Eph 2:3); \"his sensuous mind [mind of flesh]\" (Col 2:18); \"I myself serve the law of God with my mind, but with my flesh …\" (Rom 7:25)",
+   "answered_before": true
+  }
+ ],
+ "earlier_readings": [],
+ "occurrences": [
+  {
+   "occurrence": 1486653,
+   "reference": "2Cor 5:16",
+   "osis": "2Cor.5.16",
+   "surface": "once regarded",
+   "strong": "G1097"
+  }
+ ],
+ "verses": [
+  {
+   "reference": "2Cor.5.16",
+   "text": "From now on, therefore, we regard no one according to the flesh. Even though we once regarded Christ according to the flesh, we regard him thus no longer."
+  }
+ ],
+ "answer": {
+  "command": "ReadElements",
+  "collection": "thought",
+  "subgroup": "once regarded",
+  "ledger_id": 1948,
+  "findings": [
+   {
+    "key": "f1",
+    "kind": "",
+    "text": "",
+    "basis": "read | stated",
+    "parts": {
+     "item": "role | polarity | object | enactment | party | circumstance | operation | chain | flag",
+     "grounds": ""
+    },
+    "nodes": [
+     {
+      "occurrence": "<occurrence id>",
+      "role": "<a node role>"
+     },
+     {
+      "traced": "<id of an observation it rests on>"
+     }
+    ],
+    "read_back": []
+   }
+  ],
+  "not_used": {},
+  "older": [],
+  "existing": []
+ },
+ "measured": {
+  "package_chars": 18426,
+  "seconds": 0.39
+ }
+}

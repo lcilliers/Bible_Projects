@@ -1,0 +1,103 @@
+{
+ "command": "ReadElements",
+ "collection": "thought",
+ "subgroup": "conflicting thoughts",
+ "ledger_id": 1918,
+ "findings": [
+  {
+   "key": "reason-within",
+   "kind": "statement",
+   "text": "In Rom 2:15 conflicting thoughts are reasonings within a person that argue with one another: the person does it, in himself, as an inner debate.",
+   "basis": "read",
+   "parts": {
+    "item": "operation",
+    "grounds": "their conflicting thoughts accuse or even excuse them",
+    "mode": "done"
+   },
+   "nodes": [
+    {
+     "occurrence": 1477813,
+     "role": "characteristic"
+    },
+    {
+     "traced": 22877
+    },
+    {
+     "traced": 23575
+    },
+    {
+     "traced": 23577
+    },
+    {
+     "traced": 22766
+    }
+   ],
+   "read_back": []
+  },
+  {
+   "key": "accuse-excuse",
+   "kind": "statement",
+   "text": "In Rom 2:15 the reasonings accuse the person or else excuse him: the working takes the part of a judge over the self, in either direction.",
+   "basis": "stated",
+   "parts": {
+    "item": "role",
+    "grounds": "accuse or even excuse them"
+   },
+   "nodes": [
+    {
+     "occurrence": 1477813,
+     "role": "characteristic"
+    },
+    {
+     "traced": 23577
+    },
+    {
+     "traced": 22877
+    }
+   ],
+   "read_back": []
+  },
+  {
+   "key": "inner-court",
+   "kind": "statement",
+   "text": "In Rom 2:15 the reasonings work beside the conscience, which bears witness, and the heart, on which the work of the law is written: heart, conscience and reasonings are named together.",
+   "basis": "stated",
+   "parts": {
+    "item": "circumstance",
+    "grounds": "while their conscience also bears witness"
+   },
+   "nodes": [
+    {
+     "occurrence": 1477813,
+     "role": "characteristic"
+    },
+    {
+     "traced": 23578
+    },
+    {
+     "traced": 23580
+    },
+    {
+     "traced": 23579
+    }
+   ],
+   "read_back": []
+  }
+ ],
+ "not_used": {
+  "23576": "a finding of the structure (qualifier) that names where words stand, who is named or which codes a surface carries; it adds no element of an act of the inner being beyond what the findings rest on"
+ },
+ "older": [],
+ "existing": [
+  {
+   "observation": 22656,
+   "action": "leave",
+   "reason": "a finding of the replaced group that reaches verses of other subgroups, states words standing near the member with no element of an act, or is an interworking finding for 3.3: left for that subgroup or step"
+  },
+  {
+   "observation": 22659,
+   "action": "leave",
+   "reason": "a finding of the replaced group that reaches verses of other subgroups, states words standing near the member with no element of an act, or is an interworking finding for 3.3: left for that subgroup or step"
+  }
+ ]
+}

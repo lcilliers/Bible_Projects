@@ -1,0 +1,1137 @@
+{
+ "command": "ReadEvidence",
+ "collection": "thought",
+ "subgroup": "weighing and taking account of",
+ "step": "2.1",
+ "item": "evidence-validation",
+ "made": "2026-11-26T05:53:46Z",
+ "batch": {
+  "observations": 40,
+  "left_after_this": 35,
+  "evidence_in_scope": 196,
+  "observations_in_scope": 247
+ },
+ "code_checks": {
+  "passes": true,
+  "findings": {
+   "unmarked": [],
+   "no_node": [],
+   "word_missing": [],
+   "traced_dead": [],
+   "duplicate_text": [],
+   "b1_not_traced_by_a_sense": [],
+   "sense_not_traced_by_2_1": [],
+   "older_open": []
+  }
+ },
+ "instruction": {
+  "what": "The evidence validation (B5) of one subgroup, after its sweep, the gate before 3.1: the code checks of its observations (shown in `code_checks`), and the reading of every evidence observation of the subgroup (its own of S1 to 2.1, and the older ones on its occurrences kept as evidence) for whether it is true, founded and coherent with the others. Inner being is not judged here; the two validations are never run together.",
+  "read": [
+   "Read the code checks first: a failing check names observations to repair (unmarked, no node, a word node missing a column without its reason, a trace to a deleted observation, two of one text, a B1 observation no sense traces, a sense the 2.1 observations on its occurrences do not trace, an older observation left open).",
+   "Take one observation at a time (`observations`, in the order of the steps): its text, basis and grounds against its verses (`verses`) and the observations it traces. Is it true of those verses? Does it say more than they show? Does it contradict another observation of the subgroup?"
+  ],
+  "write": [
+   "Fill `answer.observations`, one entry for each observation of the package: verdict true, with `why` (what in the verses and the data bears it out); or verdict repair, with `why` (what is wrong) and `actions`: the actions of the validation that repair it (cfg_setting validate.reading actions, each with its parameters, for example {\"action\": \"restate\", \"oid\": id, \"new_text\": ..., \"checked\": ..., \"reason\": ...}, or delete_neither, complete_node, add_trace).",
+   "A repair is checked as it is written; an observation that cannot be made true is deleted with its reason.",
+   "Then: Collection-Build.ps1 -Action RecordEvidence -File <the answer file> (-Check to preview), and ReadEvidence again until every evidence observation is read; the gate passes when all are read and the code checks pass."
+  ],
+  "keep": [
+   {
+    "rule": "VA-01 a-sheet-is-one-checked-transaction",
+    "text": "A sheet of validation actions is checked whole (every action named, its parameters complete) and written in one transaction: any action the tables refuse refuses the whole sheet and nothing is kept. -Check runs every action and rolls back. Every change is kept in ib_observation_change with its reason (RW-01); nothing is physically deleted."
+   },
+   {
+    "rule": "VA-02 repair-first-and-every-finding-acted-on",
+    "text": "A finding of the validation is repaired first: a wording that is untrue or stronger than its verse is restated and the restatement checked against the base data; a node missing a column is completed, or the reason the data cannot give it is recorded; a duplicate is consolidated; a node is deleted only when another live node carries its occurrence or it supports no finding of its observation. A finding is left open only when a named collection's validation will touch the observation: the deferral to that collection and the finding are recorded, and the check accepts it as deferred. A finding with no named owner is closed in the validation."
+   },
+   {
+    "rule": "VA-03 consumption-is-verified-before-deletion",
+    "text": "An older observation is deleted as consumed only when live observations carry its meaning: every word occurrence of it is on a live node of a carrier or named as not carried with its reason, the mapping is stated in words (what the old says, which carrier states each part), the traces to it are re-pointed or replaced, and the consumption is kept as `consumed_by`. An observation that holds more than one finding is split first."
+   },
+   {
+    "rule": "VA-04 neither-evidence-nor-inner-being-is-deleted",
+    "text": "An observation that is neither evidence nor inner being contributes nothing to the purposes of the observations (researcher, 2026-11-22): it is commented with its reason and the word occurrences no other live observation holds, then deleted. An observation already marked, or one another observation traces, is not deleted this way."
+   },
+   {
+    "rule": "VA-05 the-marker-follows-content-not-stage",
+    "text": "Evidence states what the data are or show, tied to a verse. Inner being states how something works in the inner being, based on evidence, a building block of the stage 5 claims. The marker (ib_observation.nature) follows the content and purpose of the observation, never its stage (RS-04): an observation of any stage may be inner being when it traces to evidence. One that states both is split. The marker is set when the observation is created, by the item that is answered (cfg_setting layer.reading items.<item>.nature); a finding file never sets it; the validation changes it only where the content shows the item's nature does not hold."
+   },
+   {
+    "rule": "VA-06 evidence-validation-gates-inner-being-validation",
+    "text": "The validation runs in two layers, never concurrently: evidence first, then inner being. The inner-being layer is judged only when the evidence layer passes (every in-scope observation marked, none without a live node, no word node missing a required column without its reason, no live trace to a deleted observation, no two of one meaning). A later evidence change reopens only the inner-being rows it touches. In the build this gate is: step 3.1 does not open before the evidence layer passes, and step 3.3 does not close before both layers pass (cfg_setting layer.reading open_gate and closing_gate)."
+   },
+   {
+    "rule": "RW-01 changed-only-by-reading",
+    "text": "No observation is changed except by a reading, and every change is recorded with its reason. An observation no longer supported by the verse is soft-deleted, with the reason."
+   },
+   {
+    "rule": "RW-03 no-duplicates-multi-node",
+    "text": "One observation per finding: the same description is never written twice. Applied to another verse, word or scope it gains a node on the existing observation."
+   },
+   {
+    "rule": "RW-04 concise-verse-specific",
+    "text": "Observation text is concise and tied to this verse's content, never a restatement of the word's dictionary sense. A transliteration is never given without its gloss."
+   },
+   {
+    "rule": "RW-06 resolved-fresh-on-evidence",
+    "text": "Verse references are resolved fresh at write time, never taken from the text written. Relations are recorded only on evidence."
+   },
+   {
+    "rule": "RW-11 missing-is-named",
+    "text": "Missing data in the base extract is named as a gap, never substituted from memory or outside knowledge."
+   }
+  ],
+  "not_in_this_read": ""
+ },
+ "observations": [
+  {
+   "observation": 23192,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In Pro 12:10 wicked (H7563) stands four words after regard, on the other side of the contrast with the righteous who regard.",
+   "basis": "stated",
+   "grounds": "the mercy of the wicked",
+   "traces": [
+    22888
+   ],
+   "verses": [
+    "Pro 12:10"
+   ]
+  },
+  {
+   "observation": 23193,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In Neh 13:13 reliable (H0539) stands directly after considered as what the treasurers were counted. WordNet relates the subgroup to this collection through believe; the verse pairs counting with reliability.",
+   "basis": "stated",
+   "grounds": "they were considered reliable",
+   "traces": [
+    22887
+   ],
+   "verses": [
+    "Neh 13:13"
+   ]
+  },
+  {
+   "observation": 23194,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In Job 2:3 fast (H2388H) stands fifteen words after considered, in what the Lord says of Job: he still holds fast his integrity.",
+   "basis": "stated",
+   "grounds": "He still holds fast his integrity",
+   "traces": [
+    22886
+   ],
+   "verses": [
+    "Job 2:3"
+   ]
+  },
+  {
+   "observation": 23195,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In 1Sa 1:16 anxiety (H7879) stands eight words after regard, in Hannah's reason against being counted worthless: she spoke out of anxiety.",
+   "basis": "stated",
+   "grounds": "out of my great anxiety",
+   "traces": [
+    22887
+   ],
+   "verses": [
+    "1Sa 1:16"
+   ]
+  },
+  {
+   "observation": 23196,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In Job 1:8 and Job 2:3 fears (H3373) stands nine and ten words after considered, describing the one considered: he fears God.",
+   "basis": "stated",
+   "grounds": "who fears God and turns away from evil",
+   "traces": [
+    22886
+   ],
+   "verses": [
+    "Job 1:8",
+    "Job 2:3"
+   ]
+  },
+  {
+   "observation": 23197,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In Job 37:24 fear (H3372H) stands two words before regard, in the clause before it: men fear God, who does not regard the wise in their own conceit.",
+   "basis": "stated",
+   "grounds": "Therefore men fear him",
+   "traces": [
+    22888
+   ],
+   "verses": [
+    "Job 37:24"
+   ]
+  },
+  {
+   "observation": 23198,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In Mat 1:20 fear (G5399) stands fourteen words after considered, in what the angel says to the one considering: do not fear.",
+   "basis": "stated",
+   "grounds": "do not fear to take Mary as your wife",
+   "traces": [
+    22886
+   ],
+   "verses": [
+    "Mat 1:20"
+   ]
+  },
+  {
+   "observation": 23199,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In Job 35:13 empty (H7723H) stands three words before regard and describes what God does not regard: an empty cry.",
+   "basis": "stated",
+   "grounds": "God does not hear an empty cry",
+   "traces": [
+    22888
+   ],
+   "verses": [
+    "Job 35:13"
+   ]
+  },
+  {
+   "observation": 23200,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In 1Pe 5:12 stand firm (G2476) closes the verse, eleven words after regard, in the exhortation the letter carries.",
+   "basis": "stated",
+   "grounds": "Stand firm in it",
+   "traces": [
+    22887
+   ],
+   "verses": [
+    "1Pe 5:12"
+   ]
+  },
+  {
+   "observation": 23201,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In 1Sa 25:25 folly (H5039) stands eight words after regard, in the reason Nabal is not to be regarded: folly is with him.",
+   "basis": "stated",
+   "grounds": "folly is with him",
+   "traces": [
+    22888
+   ],
+   "verses": [
+    "1Sa 25:25"
+   ]
+  },
+  {
+   "observation": 23202,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In Pro 17:28 fool (H0191) stands two words before considered as the one counted: the silent fool is counted wise.",
+   "basis": "stated",
+   "grounds": "Even a fool who keeps silent",
+   "traces": [
+    22887
+   ],
+   "verses": [
+    "Pro 17:28"
+   ]
+  },
+  {
+   "observation": 23203,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In Deu 9:27 remember (H2142) opens the verse, five words before regard: God is asked to remember the fathers and not to regard the people's stubbornness.",
+   "basis": "stated",
+   "grounds": "Remember your servants, Abraham, Isaac, and Jacob",
+   "traces": [
+    22888
+   ],
+   "verses": [
+    "Deu 9:27"
+   ]
+  },
+  {
+   "observation": 23204,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In Pro 12:10 mercy (H7356B) stands three words after regard, on the other side of the contrast: the mercy of the wicked is cruel.",
+   "basis": "stated",
+   "grounds": "the mercy of the wicked is cruel",
+   "traces": [
+    22888
+   ],
+   "verses": [
+    "Pro 12:10"
+   ]
+  },
+  {
+   "observation": 23205,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In Deu 33:9 disowned (H5234A) stands three words after regard, in the parallel lines: not regarding father and mother, disowning brothers, ignoring children, for the sake of the word observed.",
+   "basis": "stated",
+   "grounds": "he disowned his brothers",
+   "traces": [
+    22888
+   ],
+   "verses": [
+    "Deu 33:9"
+   ]
+  },
+  {
+   "observation": 23206,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In Gen 24:22 finished (H3615G, with H1961 and H0834A at the same place) opens the verse, six words before weighing: when the camels have finished drinking, the man brings out the ring of a given weight.",
+   "basis": "stated",
+   "grounds": "When the camels had finished drinking",
+   "traces": [
+    22893
+   ],
+   "verses": [
+    "Gen 24:22"
+   ]
+  },
+  {
+   "observation": 23207,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In Mat 1:20 holy (G0040G) stands twenty-five words after considered, in the angel's words on what is conceived: from the Holy Spirit.",
+   "basis": "stated",
+   "grounds": "is from the Holy Spirit",
+   "traces": [
+    22886
+   ],
+   "verses": [
+    "Mat 1:20"
+   ]
+  },
+  {
+   "observation": 23208,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In Mar 10:42 exercise authority (G2715) stands eight words after considered, in what those considered rulers do.",
+   "basis": "stated",
+   "grounds": "their great ones exercise authority over them",
+   "traces": [
+    22887
+   ],
+   "verses": [
+    "Mar 10:42"
+   ]
+  },
+  {
+   "observation": 23209,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In Rom 2:26 precepts (G1345) stands five words before regarded, in the condition of the question: the uncircumcised who keeps the precepts is regarded as circumcised.",
+   "basis": "stated",
+   "grounds": "keeps the precepts of the law",
+   "traces": [
+    22887
+   ],
+   "verses": [
+    "Rom 2:26"
+   ]
+  },
+  {
+   "observation": 23210,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In Ezr 8:29 guard (H8245) opens the verse, three words before weigh: the gifts are guarded until they are weighed before the priests.",
+   "basis": "stated",
+   "grounds": "Guard them and keep them until you weigh them",
+   "traces": [
+    22892
+   ],
+   "verses": [
+    "Ezr 8:29"
+   ]
+  },
+  {
+   "observation": 23211,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In 2Ch 6:19, Job 35:13 and Act 28:22 hear and listening stand near regard: God is asked to regard and to listen, God does not hear nor regard an empty cry, and the leaders wish to hear Paul. WordNet relates the subgroup to this collection through heed, a synonym; the verses set hearing beside regard.",
+   "basis": "stated",
+   "grounds": "nor does the Almighty regard it",
+   "traces": [
+    22888,
+    22889
+   ],
+   "verses": [
+    "2Ch 6:19",
+    "Act 28:22",
+    "Job 35:13"
+   ]
+  },
+  {
+   "observation": 23212,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In Ecc 3:18 heart (H3820A) stands two words before with regard to: the Preacher speaks in his heart about the children of man.",
+   "basis": "stated",
+   "grounds": "I said in my heart with regard to the children of man",
+   "traces": [
+    22889
+   ],
+   "verses": [
+    "Ecc 3:18"
+   ]
+  },
+  {
+   "observation": 23213,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In Lam 4:16 honor (H6440N) stands three words after regard, in the parallel lines: the Lord regards them no more and no honor is shown to the priests.",
+   "basis": "stated",
+   "grounds": "no honor was shown to the priests",
+   "traces": [
+    22888
+   ],
+   "verses": [
+    "Lam 4:16"
+   ]
+  },
+  {
+   "observation": 23214,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In 1Ti 6:1 worthy and honor (G0514, G5092) stand three and five words after regard as what masters are counted: worthy of all honor. WordNet relates the subgroup to this collection through esteem, a synonym; the verse joins regard and honor.",
+   "basis": "stated",
+   "grounds": "worthy of all honor",
+   "traces": [
+    22887
+   ],
+   "verses": [
+    "1Ti 6:1"
+   ]
+  },
+  {
+   "observation": 23215,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In Judg 15:3 innocent (H5352) stands directly before in regard to: Samson declares himself innocent toward the Philistines.",
+   "basis": "stated",
+   "grounds": "I shall be innocent in regard to the Philistines",
+   "traces": [
+    22889
+   ],
+   "verses": [
+    "Judg 15:3"
+   ]
+  },
+  {
+   "observation": 23216,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In Job 1:8 and Job 2:3 blameless (H8535), with integrity (H8538) in Job 2:3, describes the one considered.",
+   "basis": "stated",
+   "grounds": "a blameless and upright man",
+   "traces": [
+    22886
+   ],
+   "verses": [
+    "Job 1:8",
+    "Job 2:3"
+   ]
+  },
+  {
+   "observation": 23217,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In Job 9:21 blameless (H8535) opens the verse, two words before regard: Job, blameless, does not regard himself.",
+   "basis": "stated",
+   "grounds": "I am blameless; I regard not myself",
+   "traces": [
+    22888
+   ],
+   "verses": [
+    "Job 9:21"
+   ]
+  },
+  {
+   "observation": 23218,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In Psa 44:22 and Rom 8:36 killed (H2026, G2289) stands three words before regarded, in the parallel line: they are killed all day and counted as sheep for slaughter.",
+   "basis": "stated",
+   "grounds": "we are regarded as sheep to be slaughtered",
+   "traces": [
+    22887
+   ],
+   "verses": [
+    "Psa 44:22",
+    "Rom 8:36"
+   ]
+  },
+  {
+   "observation": 23219,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In Ecc 12:9 knowledge (H1847) stands directly before weighing: the Preacher taught knowledge, weighing proverbs.",
+   "basis": "stated",
+   "grounds": "taught the people knowledge, weighing",
+   "traces": [
+    22891
+   ],
+   "verses": [
+    "Ecc 12:9"
+   ]
+  },
+  {
+   "observation": 23220,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In Mar 10:42 and Act 28:22 know (G6063, G1110) stands near the counting or the link: you know who are considered rulers; we know the sect is spoken against. WordNet relates the subgroup to this collection through see, a synonym.",
+   "basis": "stated",
+   "grounds": "You know that those who are considered rulers",
+   "traces": [
+    22887,
+    22889
+   ],
+   "verses": [
+    "Act 28:22",
+    "Mar 10:42"
+   ]
+  },
+  {
+   "observation": 23221,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In Exo 5:9 work and labor (H5656I, H6213A) stand before regard: heavier work is laid on the men so that they pay no regard to lying words.",
+   "basis": "stated",
+   "grounds": "Let heavier work be laid on the men",
+   "traces": [
+    22888
+   ],
+   "verses": [
+    "Exo 5:9"
+   ]
+  },
+  {
+   "observation": 23222,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In Psa 28:5 and Isa 5:12 works and work (H6468, H4639G, with H0413 at the same places) stand after regard as what is not regarded: the works of the Lord.",
+   "basis": "stated",
+   "grounds": "the works of the Lord or the work of his hands",
+   "traces": [
+    22888
+   ],
+   "verses": [
+    "Isa 5:12",
+    "Psa 28:5"
+   ]
+  },
+  {
+   "observation": 23223,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In Ecc 2:11 toil (H5999) stands four words after considered as what is considered: the toil the Preacher spent.",
+   "basis": "stated",
+   "grounds": "the toil I had expended in doing it",
+   "traces": [
+    22886
+   ],
+   "verses": [
+    "Ecc 2:11"
+   ]
+  },
+  {
+   "observation": 23224,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In Lam 4:2 work (H4639G) stands three words after regarded, in what the sons are counted as: the work of a potter's hands.",
+   "basis": "stated",
+   "grounds": "the work of a potter",
+   "traces": [
+    22887
+   ],
+   "verses": [
+    "Lam 4:2"
+   ]
+  },
+  {
+   "observation": 23225,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In Zep 1:11 wail (H3213) opens the verse, eight words before weigh: the call to wail is over those who weigh out silver, who are cut off.",
+   "basis": "stated",
+   "grounds": "Wail, O inhabitants of the Mortar",
+   "traces": [
+    22892
+   ],
+   "verses": [
+    "Zep 1:11"
+   ]
+  },
+  {
+   "observation": 23226,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In 2Ch 6:19 cry (H7440) stands ten words after regard, in what God is asked to regard: the cry and the prayer of his servant.",
+   "basis": "stated",
+   "grounds": "listening to the cry and to the prayer",
+   "traces": [
+    22888
+   ],
+   "verses": [
+    "2Ch 6:19"
+   ]
+  },
+  {
+   "observation": 23227,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "Where the word is attention set on a matter, live and dead name the state it reaches: in Isa 53:8 who considered that he was cut off from the land of the living, in Eze 18:28 the one who considered and turned shall live, in Rom 4:19 Abraham considered his body as good as dead, in Heb 11:19 he considered God able to raise from the dead. In 2Ki 3:14 lives is the Lord of the oath and regard is Elisha's regard for the king.",
+   "basis": "read",
+   "grounds": "he considered that God was able even to raise him",
+   "traces": [
+    22886,
+    22887,
+    22888
+   ],
+   "verses": [
+    "2Ki 3:14",
+    "Eze 18:28",
+    "Heb 11:19",
+    "Isa 53:8",
+    "Rom 4:19"
+   ]
+  },
+  {
+   "observation": 23228,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In Job 9:21 regard not and loathe stand together of Job's own self: he does not regard himself and loathes his life. In Lam 4:2 regarded as earthen pots stands against precious sons, worth their weight in gold: counting low set against valued. In Jos 7:21 weighing is the weight of the gold bar, beside coveted.",
+   "basis": "read",
+   "grounds": "I regard not myself; I loathe my life",
+   "traces": [
+    22887,
+    22888,
+    22893
+   ],
+   "verses": [
+    "Job 9:21",
+    "Jos 7:21",
+    "Lam 4:2"
+   ]
+  },
+  {
+   "observation": 23229,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In Heb 11:11 Sarah considered him faithful who had promised, and in 1Pe 5:12 Peter regards Silvanus as a faithful brother: the counting names faithfulness as its value. In Job 35:13 and Eze 18:28 surely is an emphasis on what God does not regard and on the one who shall live, not loyalty.",
+   "basis": "read",
+   "grounds": "since she considered him faithful who had promised",
+   "traces": [
+    22886,
+    22887,
+    22888
+   ],
+   "verses": [
+    "1Pe 5:12",
+    "Eze 18:28",
+    "Heb 11:11",
+    "Job 35:13"
+   ]
+  },
+  {
+   "observation": 23230,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In Dan 7:8 great things are spoken by the little horn that Daniel considered: the considering is set on the horn, the great things are its boasting.",
+   "basis": "read",
+   "grounds": "I considered the horns, and behold",
+   "traces": [
+    22886
+   ],
+   "verses": [
+    "Dan 7:8"
+   ]
+  },
+  {
+   "observation": 23231,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In Pro 17:28 the fool who keeps silent is considered wise: silence is the ground on which others count him wise. In Job 2:3 still is Job holding fast his integrity, and in Isa 33:8 the traveler ceases where there is no regard for man: neither is silence of speech.",
+   "basis": "read",
+   "grounds": "Even a fool who keeps silent is considered wise",
+   "traces": [
+    22886,
+    22887,
+    22888
+   ],
+   "verses": [
+    "Isa 33:8",
+    "Job 2:3",
+    "Pro 17:28"
+   ]
+  }
+ ],
+ "verses": [
+  {
+   "reference": "1Sa 1:16",
+   "text": "Do not regard your servant as a worthless woman, for all along I have been speaking out of my great anxiety and vexation.”"
+  },
+  {
+   "reference": "Ecc 2:11",
+   "text": "Then I considered all that my hands had done and the toil I had expended in doing it, and behold, all was vanity and a striving after wind, and there was nothing to be gained under the sun."
+  },
+  {
+   "reference": "Judg 15:3",
+   "text": "And Samson said to them, “This time I shall be innocent in regard to the Philistines, when I do them harm.”"
+  },
+  {
+   "reference": "Eze 18:28",
+   "text": "Because he considered and turned away from all the transgressions that he had committed, he shall surely live; he shall not die."
+  },
+  {
+   "reference": "Job 37:24",
+   "text": "Therefore men fear him; he does not regard any who are wise in their own conceit.”"
+  },
+  {
+   "reference": "Mat 1:20",
+   "text": "But as he considered these things, behold, an angel of the Lord appeared to him in a dream, saying, “ Joseph, son of David, do not fear to take Mary as your wife, for that which is conceived in her is from the Holy Spirit."
+  },
+  {
+   "reference": "Mar 10:42",
+   "text": "And Jesus called them to him and said to them, “You know that those who are considered rulers of the Gentiles lord it over them, and their great ones exercise authority over them."
+  },
+  {
+   "reference": "Ecc 12:9",
+   "text": "Besides being wise, the Preacher also taught the people knowledge, weighing and studying and arranging many proverbs with great care."
+  },
+  {
+   "reference": "Deu 9:27",
+   "text": "Remember your servants, Abraham, Isaac, and Jacob. Do not regard the stubbornness of this people, or their wickedness or their sin,"
+  },
+  {
+   "reference": "2Ch 6:19",
+   "text": "Yet have regard to the prayer of your servant and to his plea, O Lord my God, listening to the cry and to the prayer that your servant prays before you,"
+  },
+  {
+   "reference": "Job 1:8",
+   "text": "And the Lord said to Satan, “Have you considered my servant Job, that there is none like him on the earth, a blameless and upright man, who fears God and turns away from evil?”"
+  },
+  {
+   "reference": "Job 2:3",
+   "text": "And the Lord said to Satan, “Have you considered my servant Job, that there is none like him on the earth, a blameless and upright man, who fears God and turns away from evil? He still holds fast his integrity, although you incited me against him to destroy him without reason.”"
+  },
+  {
+   "reference": "Exo 5:9",
+   "text": "Let heavier work be laid on the men that they may labor at it and pay no regard to lying words.”"
+  },
+  {
+   "reference": "Psa 28:5",
+   "text": "Because they do not regard the works of the Lord or the work of his hands, he will tear them down and build them up no more."
+  },
+  {
+   "reference": "Isa 33:8",
+   "text": "The highways lie waste; the traveler ceases. Covenants are broken; cities are despised; there is no regard for man."
+  },
+  {
+   "reference": "1Ti 6:1",
+   "text": "Let all who are under a yoke as bondservants regard their own masters as worthy of all honor, so that the name of God and the teaching may not be reviled."
+  },
+  {
+   "reference": "1Pe 5:12",
+   "text": "By Silvanus, a faithful brother as I regard him, I have written briefly to you, exhorting and declaring that this is the true grace of God. Stand firm in it."
+  },
+  {
+   "reference": "Deu 33:9",
+   "text": "who said of his father and mother, ‘I regard them not ’; he disowned his brothers and ignored his children. For they observed your word and kept your covenant."
+  },
+  {
+   "reference": "2Ki 3:14",
+   "text": "And Elisha said, “As the Lord of hosts lives, before whom I stand, were it not that I have regard for Jehoshaphat the king of Judah, I would neither look at you nor see you."
+  },
+  {
+   "reference": "Ecc 3:18",
+   "text": "I said in my heart with regard to the children of man that God is testing them that they may see that they themselves are but beasts."
+  },
+  {
+   "reference": "1Sa 25:25",
+   "text": "Let not my lord regard this worthless fellow, Nabal, for as his name is, so is he. Nabal is his name, and folly is with him. But I your servant did not see the young men of my lord, whom you sent."
+  },
+  {
+   "reference": "Lam 4:16",
+   "text": "The Lord himself has scattered them; he will regard them no more; no honor was shown to the priests, no favor to the elders."
+  },
+  {
+   "reference": "Pro 12:10",
+   "text": "Whoever is righteous has regard for the life of his beast, but the mercy of the wicked is cruel."
+  },
+  {
+   "reference": "Job 35:13",
+   "text": "Surely God does not hear an empty cry, nor does the Almighty regard it."
+  },
+  {
+   "reference": "Jos 7:21",
+   "text": "when I saw among the spoil a beautiful cloak from Shinar, and 200 shekels of silver, and a bar of gold weighing 50 shekels, then I coveted them and took them. And see, they are hidden in the earth inside my tent, with the silver underneath.”"
+  },
+  {
+   "reference": "Pro 17:28",
+   "text": "Even a fool who keeps silent is considered wise; when he closes his lips, he is deemed intelligent."
+  },
+  {
+   "reference": "Job 9:21",
+   "text": "I am blameless; I regard not myself; I loathe my life."
+  },
+  {
+   "reference": "Isa 5:12",
+   "text": "They have lyre and harp, tambourine and flute and wine at their feasts, but they do not regard the deeds of the Lord, or see the work of his hands."
+  },
+  {
+   "reference": "Isa 53:8",
+   "text": "By oppression and judgment he was taken away; and as for his generation, who considered that he was cut off out of the land of the living, stricken for the transgression of my people?"
+  },
+  {
+   "reference": "Act 28:22",
+   "text": "But we desire to hear from you what your views are, for with regard to this sect we know that everywhere it is spoken against.”"
+  },
+  {
+   "reference": "Neh 13:13",
+   "text": "And I appointed as treasurers over the storehouses Shelemiah the priest, Zadok the scribe, and Pedaiah of the Levites, and as their assistant Hanan the son of Zaccur, son of Mattaniah, for they were considered reliable, and their duty was to distribute to their brothers."
+  },
+  {
+   "reference": "Gen 24:22",
+   "text": "When the camels had finished drinking, the man took a gold ring weighing a half shekel, and two bracelets for her arms weighing ten gold shekels,"
+  },
+  {
+   "reference": "Zep 1:11",
+   "text": "Wail, O inhabitants of the Mortar! For all the traders are no more; all who weigh out silver are cut off."
+  },
+  {
+   "reference": "Rom 4:19",
+   "text": "He did not weaken in faith when he considered his own body, which was as good as dead ( since he was about a hundred years old ), or when he considered the barrenness of Sarah’s womb."
+  },
+  {
+   "reference": "Heb 11:11",
+   "text": "By faith Sarah herself received power to conceive, even when she was past the age, since she considered him faithful who had promised."
+  },
+  {
+   "reference": "Heb 11:19",
+   "text": "He considered that God was able even to raise him from the dead, from which, figuratively speaking, he did receive him back."
+  },
+  {
+   "reference": "Ezr 8:29",
+   "text": "Guard them and keep them until you weigh them before the chief priests and the Levites and the heads of fathers’ houses in Israel at Jerusalem, within the chambers of the house of the Lord.”"
+  },
+  {
+   "reference": "Rom 2:26",
+   "text": "So, if a man who is uncircumcised keeps the precepts of the law, will not his uncircumcision be regarded as circumcision?"
+  },
+  {
+   "reference": "Rom 8:36",
+   "text": "As it is written, “For your sake we are being killed all the day long; we are regarded as sheep to be slaughtered.”"
+  },
+  {
+   "reference": "Psa 44:22",
+   "text": "Yet for your sake we are killed all the day long; we are regarded as sheep to be slaughtered."
+  },
+  {
+   "reference": "Lam 4:2",
+   "text": "The precious sons of Zion, worth their weight in fine gold, how they are regarded as earthen pots, the work of a potter’s hands!"
+  },
+  {
+   "reference": "Dan 7:8",
+   "text": "I considered the horns, and behold, there came up among them another horn, a little one, before which three of the first horns were plucked up by the roots. And behold, in this horn were eyes like the eyes of a man, and a mouth speaking great things."
+  }
+ ],
+ "answer": {
+  "command": "ReadEvidence",
+  "collection": "thought",
+  "subgroup": "weighing and taking account of",
+  "observations": [
+   {
+    "observation": 23192,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 23193,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 23194,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 23195,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 23196,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 23197,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 23198,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 23199,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 23200,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 23201,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 23202,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 23203,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 23204,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 23205,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 23206,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 23207,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 23208,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 23209,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 23210,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 23211,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 23212,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 23213,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 23214,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 23215,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 23216,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 23217,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 23218,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 23219,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 23220,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 23221,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 23222,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 23223,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 23224,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 23225,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 23226,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 23227,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 23228,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 23229,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 23230,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 23231,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   }
+  ]
+ },
+ "measured": {
+  "package_chars": 32844,
+  "seconds": 0.03
+ }
+}

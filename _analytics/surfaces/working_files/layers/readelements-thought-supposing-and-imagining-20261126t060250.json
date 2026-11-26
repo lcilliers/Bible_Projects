@@ -1,0 +1,2458 @@
+{
+ "command": "ReadElements",
+ "collection": "thought",
+ "subgroup": "supposing and imagining",
+ "step": "3.1",
+ "made": "2026-11-26T06:02:50Z",
+ "unit": {
+  "ledger_id": 1588,
+  "to_take_up": 80,
+  "may_rest_on_besides": 15,
+  "older_inner_being": 8,
+  "earlier_readings": 42,
+  "occurrences": 28,
+  "verses": 26
+ },
+ "instruction": {
+  "what": "Step 3.1, the elements of one subgroup (stage 4, C1; the end of the loop for the subgroup): what the evidence of the subgroup shows of the elements of a behaviour of the inner being. The input is the evidence observations of the subgroup by marker (`to_take_up`, the senses first, then the 2.1 findings and the older evidence), not the verses; the verses are kept for an occasional read-back. A finding is a building block, never a claim about the behaviour as a whole (that is stage 5).",
+  "read": [
+   "Read the observations to take up, in order: the senses (1.1) and their enrichments (1.2) first, then the 2.1 findings (pairings, qualifiers, entities, direction, double meanings), then the older evidence. The inner-being workings work more with the senses than with the surfaces, so findings rest on the senses first.",
+   "For each item a finding may use (`uses`): what is done and its mode (operation, with its chain), whether a refusal or a pursuit (polarity), what it is directed at (object), the outward act (enactment), the other party with the route (party), the circumstance, and what a qualifier or a variation of the word gives the working (role, the dimension). Never the meaning of the word (stage 1).",
+   "Read the older inner-being observations (`older_inner_being`) with them: each is considered first, accepted with a trace to evidence, restated where it says more than the evidence, consumed where a finding says the same, merged, or deleted where it cannot be made true.",
+   "Go back to a verse (`verses`) only where the evidence does not settle the question, and say why."
+  ],
+  "write": [
+   "Fill `answer.findings`: each one observation, with a `key` unique in the answer, `kind` (of the item's kinds), `text`, `basis` (stated or read), `parts` with `item` (one of `uses`) and what the item needs (with `grounds`), and `nodes`: a `traced` node on each observation it rests on (from `to_take_up` or `may_rest_on_besides`) and an `occurrence` node, with its `role` chosen from the verse (characteristic, qualifier, object, relational target, enactment or standalone), on the occurrences those observations cover.",
+   "An occurrence outside the observations a finding rests on is allowed only with a `read_back` entry on the finding: {verse: the osis id, why}.",
+   "`not_used`: {observation id: reason} for every observation to take up that no finding rests on. Every one is rested on or declared, never both.",
+   "`older`: answer, once, each older inner-being observation (`older_inner_being`) that has a node on an occurrence your findings name (RW-13; the record lists any it misses, and refuses an answer to one on no named occurrence: those are shown, not demanded, IB-05): keep (with nature inner_being: it stands, traced to evidence), restate, merge, consume (carriers [\"this\"] or ids, mapping), delete_neither, or defer (collection, nature, finding).",
+   "`existing`: answer every earlier reading (`earlier_readings`: inner being of an earlier grouping on these occurrences) with accept, modify, delete, merge or leave, and its reason.",
+   "The text says what the evidence shows of the element; it names its verses; it never restates a verse and never states the behaviour as a whole.",
+   "Then: Collection-Build.ps1 -Action RecordElements -File <the answer file> (-Check to preview). The record refuses the whole file on any fault and lists every fault."
+  ],
+  "keep": [
+   {
+    "rule": "IB-02 stage-4-starts-from-the-observations",
+    "text": "Stage 4 starts from the observations, not the verses (researcher, #2526 Q7, 2026-11-21): the subgroups and the stage 3 observations on them are the input, the behaviours are discovered from analysing them, and the base data is read back into only occasionally. Every finding of step 3.1 or 3.2 rests on named observations (a traced node on each, with an occurrence node as well) and its occurrence nodes lie within the occurrences those observations cover; an occurrence outside them is allowed only where the finding records a read-back (the verse and why). Each node has a role from reading.node_roles other than lexical, chosen by the reading. A 3.3 finding carries nodes on the occurrences of both sides in the shared verses."
+   },
+   {
+    "rule": "IB-03 findings-follow-the-observation-rules",
+    "text": "A finding of a stage 4 row is checked by the rules of observationrecord.check and check_item_parts (kind, text, basis, route, parts.item and what the item needs, node roles, collection of each node) and by RG, RW and RS, which are not restated here: one observation for each finding, never a duplicate, with a node on each word it applies to (RO11, RW-03); founded in the observations and never a restatement of the verse (B:131); parts.item is one of the items the row's item uses (cfg_setting layer.reading). An observation whose nodes all bear on an act is refused: those words are nodes of the observation of the act. A finding is a building block of a behaviour and never a claim (stage 5)."
+   },
+   {
+    "rule": "IB-04 nothing-is-lost-on-the-way-to-stage-5",
+    "text": "Nothing the step reads is lost on the way to stage 5. Step 3.1: every stage 3 observation of the subgroup is rested on by a finding or declared in not_used with its reason in words. Step 3.2: every 3.1 observation of the collection is gathered into a behaviour (a traced node on it from a flag finding of type discovery) or declared in not_gathered with its reason, and the row has at least one behaviour unless it is recorded as none with its reason. A behaviour names and gathers; it makes no claim about what the behaviour is."
+   },
+   {
+    "rule": "IB-05 earlier-observations-are-shown-not-demanded",
+    "text": "An earlier inner-being observation with a node on the occurrences of a 3.1 row (any stage but lexical, layer-1, layer-2 and layer-3) is shown in the pull for information and may be actioned in `existing`: accepted, modified, deleted, merged or left, each with its reason, through observationrecord (RW-01, RW-09); nothing is demanded of it, and it counts for nothing in the check. A row answered again withdraws its earlier observations with the reason. Every older live observation with a node on an occurrence of the row is answered in fill.older at the record of the row (RW-13); this rule's `existing` actions of stage 4 are unchanged."
+   },
+   {
+    "rule": "IB-07 inner-being-observations-trace-to-evidence",
+    "text": "Every live observation marked inner_being holds at least one live traced node on a live observation marked evidence, unless it is recorded self-evidencing: it quotes its verse in full and holds a word node for every word it relies on. A traced node never points at a deleted observation. A trace points first at existing evidence; an evidence observation is created only when none states the fact and it states what the nodes and the quotation do not. An inner-being observation traced to evidence not yet marked is pending, not failed."
+   },
+   {
+    "rule": "RG-03 role-per-occurrence",
+    "text": "Find the main inner-being operation, and give every word that bears on it its role in this finding (cfg_setting reading.node_roles): characteristic, qualifier and what it gives the characteristic, object or content, relational target, or enactment. A word read in the verse that holds nothing for the inner being is standalone. The role comes from this verse, never from the cluster tag. Where a standalone word proves to qualify a characteristic, it is a qualifier of it."
+   },
+   {
+    "rule": "RG-04 qualifier-binding",
+    "text": "A qualifier gets no separate account of itself, but what it gives the characteristic it binds to is evaluated for its value and recorded as a qualification finding, applied by its nodes to the qualifier (role qualifier) and the characteristic (role characteristic). What it gives can vary widely: grade, nature, impact, size, relation, a measure, strengthening, ground, cause, object, setting or bait are examples, not a list (#2273 D9). A qualifier whose usage varies across contexts may earn its own reading later."
+   },
+   {
+    "rule": "RG-06 parties-and-route",
+    "text": "Record the parties: who bears the act, who causes it, who is acted on (source, target, impact, purpose), and the route (cfg_enum observation_route). A non-human being is never itself a HIB; a collective stays one HIB; an implied party is named as referential, never asserted."
+   },
+   {
+    "rule": "RG-10 never-not-x",
+    "text": "Never close a verse or item on 'not X'. A role label is never a verdict; the close records what the verse is. Silence about the inner being is a finding, recorded as data with its reason."
+   },
+   {
+    "rule": "RG-11 hidden-behind-act",
+    "text": "A phenomenon hidden behind a stated or refrained act may be named, with the verb, clause or stated silence that grounds it, and whether it is stated or read."
+   },
+   {
+    "rule": "RG-13 source-vs-enablement",
+    "text": "Keep the source of an interior state apart from the source of an enablement to act."
+   },
+   {
+    "rule": "RG-24 adverbial-qualifier",
+    "text": "A tagged word that works adverbially in an occurrence (a noun with a preposition qualifying the predicate, as 'in the counsel of the wicked') is a qualifier there, not the verse's characteristic. The role is per occurrence: the same word may be the characteristic elsewhere."
+   },
+   {
+    "rule": "RG-25 simile-tenor",
+    "text": "In a simile, the predicates of the vehicle (the tree that yields, does not wither) are read for what they say of the one compared (the tenor), not as the vehicle's own acts."
+   },
+   {
+    "rule": "RO11 one-row-per-code",
+    "text": "One observation per finding, never a duplicate description; a finding applying to several verses or words carries several nodes, each with the word's role in it."
+   },
+   {
+    "rule": "RW-03 no-duplicates-multi-node",
+    "text": "One observation per finding: the same description is never written twice. Applied to another verse, word or scope it gains a node on the existing observation."
+   },
+   {
+    "rule": "RW-04 concise-verse-specific",
+    "text": "Observation text is concise and tied to this verse's content, never a restatement of the word's dictionary sense. A transliteration is never given without its gloss."
+   },
+   {
+    "rule": "RW-12 marker-and-node-columns-at-creation",
+    "text": "An observation is created with its marker (ib_observation.nature, from the item answered, cfg_setting layer.reading items.<item>.nature; a finding file never sets it) and every word node with the columns of layer.reading node_required. A column the data cannot give (layer.reading node_gap_columns: an empty morph in the source row, a surface with no placement in the collection index) is left empty and its reason is kept on the node (disposition_note); any other missing column refuses the whole file and nothing is written. A trace to a deleted observation is refused (IB-07)."
+   },
+   {
+    "rule": "VA-05 the-marker-follows-content-not-stage",
+    "text": "Evidence states what the data are or show, tied to a verse. Inner being states how something works in the inner being, based on evidence, a building block of the stage 5 claims. The marker (ib_observation.nature) follows the content and purpose of the observation, never its stage (RS-04): an observation of any stage may be inner being when it traces to evidence. One that states both is split. The marker is set when the observation is created, by the item that is answered (cfg_setting layer.reading items.<item>.nature); a finding file never sets it; the validation changes it only where the content shows the item's nature does not hold."
+   }
+  ],
+  "not_in_this_read": ""
+ },
+ "asks": "What do the stage 3 observations of this subgroup (its definition, its Strong's enrichment, its pairings, qualifiers, entities, direction, relations and double meanings, with the stage 1 senses) show of the elements of a behaviour of the inner being: what is done and its mode, whether a refusal or a pursuit, what it is directed at, the outward act, the other party with the route, the circumstance, the chain of operations, and the dimensions of the working (what a qualifier or a variation of the word gives it, from the lexical variation the stage 3 observations record)? Each finding is one observation that rests on named observations (a traced node on each) and carries nodes on the occurrences those observations cover, with the role each has; an occurrence outside them is allowed only with a read-back (the verse and why). Every stage 3 observation of the subgroup is rested on by a finding or declared not used, with the reason. A finding is a building block and never a claim about the behaviour as a whole (stage 5).",
+ "uses": [
+  {
+   "item": "role",
+   "name": "its role: the qualifier and what it gives the characteristic",
+   "kinds": [
+    "qualification",
+    "statement"
+   ],
+   "bases": [
+    "stated",
+    "read"
+   ]
+  },
+  {
+   "item": "polarity",
+   "name": "whether the act is a refusal or a pursuit",
+   "kinds": [
+    "statement"
+   ],
+   "bases": [
+    "stated",
+    "read"
+   ]
+  },
+  {
+   "item": "object",
+   "name": "what the act is directed at or against",
+   "kinds": [
+    "statement"
+   ],
+   "bases": [
+    "stated",
+    "read"
+   ]
+  },
+  {
+   "item": "enactment",
+   "name": "the outward act the inner act produces, where the verse states one",
+   "kinds": [
+    "statement"
+   ],
+   "bases": [
+    "stated",
+    "read"
+   ]
+  },
+  {
+   "item": "party",
+   "name": "the other party and the sequence, with the route",
+   "kinds": [
+    "party"
+   ],
+   "bases": [
+    "stated",
+    "read"
+   ]
+  },
+  {
+   "item": "circumstance",
+   "name": "how it appears here: the circumstance of the verse",
+   "kinds": [
+    "statement"
+   ],
+   "bases": [
+    "stated"
+   ]
+  },
+  {
+   "item": "operation",
+   "name": "the operation as an action description (who or what does what), its mode, the primary one",
+   "kinds": [
+    "statement"
+   ],
+   "bases": [
+    "stated",
+    "read"
+   ]
+  },
+  {
+   "item": "chain",
+   "name": "the chain of operations the verse links in sequence",
+   "kinds": [
+    "link"
+   ],
+   "bases": [
+    "stated",
+    "read"
+   ]
+  },
+  {
+   "item": "flag",
+   "name": "a typed flag: data-quality, or discovery for the claims process",
+   "kinds": [
+    "statement"
+   ],
+   "bases": [
+    "stated",
+    "read"
+   ]
+  }
+ ],
+ "node_roles": {
+  "relevant": [
+   "characteristic",
+   "qualifier"
+  ],
+  "bears_on": [
+   "object",
+   "relational_target",
+   "enactment"
+  ],
+  "recognised": [
+   "standalone"
+  ],
+  "lexical": [
+   "lexical"
+  ]
+ },
+ "definition_of_the_subgroup": null,
+ "meaning_by_code": {
+  "G1161": {
+   "sense_head": "then",
+   "meaning_range": "but, and, then, rather; a conjunctive particle, marking the superaddition of a clause, whether in opposition or in continuation, to what has preceded, and it may be variously rendered <b>but, on the other hand, and, also, now,</b> etc.; <greek>καὶ δέ</greek>, when there is a special superaddition in continuation, <b>too, yea,</b> etc. It sometimes is found at the commencement of the apodosis of a sentence, <ref='Act.11.17.'>Acts 11:17.</ref> It serves also to mark the resumption of an interrupte"
+  },
+  "G1380": {
+   "sense_head": "to think",
+   "meaning_range": "to think, consider, regard, an action of the mind and heart for processing information into understanding and choices, sometimes with a focus on appearances. Often in the impersonal form translated, \"it seems\" (<ref='Act.17.18'>Act.17:18</ref>); <b>to think, imagine, suppose, presume,</b> <ref='Mat.3.9; 6:7'>Mt. 3:9; 6:7</ref>; <b>to seem, appear,</b> <ref='Luk.10.36'>Lk. 10:36</ref>; <ref='Act.17.18'>Acts 17:18;</ref> <b>it seems; it seems good, best,</b> or <b>right, it pleases,</b> <ref='Luk."
+  },
+  "G1761": {
+   "sense_head": "reflection",
+   "meaning_range": "thought, reflection; design, idea; <b>the act of thought, reflection,</b> <ref='Mat.9.4; 12:25'>Mt. 9:4; 12:25</ref>; <ref='Heb.4.12'>Heb. 4:12;</ref> <b>the result of thought, invention, device,</b> <ref='Act.17.29'>Acts 17:29</ref>*"
+  },
+  "G3543": {
+   "sense_head": "to think",
+   "meaning_range": "to think, suppose, expect, consider; <b>to own as settled and established; to deem,</b> <ref='1Co.7.26'>1Cor. 7:26;</ref> <ref='1Ti.6.5'>1Tim. 6:5;</ref> <b>to suppose, presume, expect</b> <ref='Mat.5.17; 20:10'>Mt. 5:17; 20:10</ref>; <ref='Luk.2.44'>Lk. 2:44</ref>; <b>to be usual, customary,</b> <ref='Act.16.13'>Acts 16:13</ref>"
+  },
+  "G3633": {
+   "sense_head": "to suppose",
+   "meaning_range": "to think, suppose, imagine, presume, <ref='Jhn.21.25;'>Jhn.21:25;</ref> <ref='Phi.1.17.'>Phil. 1:17.</ref> οἰέσθω in <ref='Jas.1.7'>Jas. 1:7</ref> formed from the contracted form οἶ\\μαι*"
+  },
+  "G5274": {
+   "sense_head": "to take up/suppose",
+   "meaning_range": "to take up; to show hospitality; to reply; to suppose, think, believe; <b>to take up,</b> by placing one's self underneath what is taken up; <b>to catch away, withdraw,</b> <ref='Act.1.9'>Acts 1:9;</ref> <b>to take up</b> discourse by continuation; hence, <b>to answer,</b> <ref='Luk.10.30'>Lk. 10:30</ref>; <b>to take up</b> a notion, <b>to think, suppose,</b> <ref='Luk.7.43'>Lk. 7:43</ref>; <ref='Act.2.15'>Acts 2:15;</ref> <b>receive as a guest,</b> 3Jn. 8*"
+  },
+  "G5282": {
+   "sense_head": "to suppose",
+   "meaning_range": "to think, suppose; expect; to sense, suspect; <b>to suspect; to suppose, deem,</b> <ref='Act.13.25'>Acts 13:25;</ref> 25:18; 27:27*"
+  },
+  "H0194": {
+   "sense_head": "perhaps",
+   "meaning_range": "1) perhaps, peradventure; 2) if peradventure; 3) unless; 4) suppose"
+  },
+  "H0559": {
+   "sense_head": "to say",
+   "meaning_range": "1) to say, speak, utter; 1a) (Qal) to say, to answer, to say in one's heart, to think, to command, to promise, to intend; 1b) (Niphal) to be told, to be said, to be called; 1c) (Hithpael) to boast, to act proudly; 1d) (Hiphil) to avow, to avouch; Aramaic equivalent: <i>a.mar</i> (אֲמַר \"to say\" H0560)"
+  },
+  "H2009": {
+   "sense_head": "behold",
+   "meaning_range": "behold, lo, see, if"
+  },
+  "H2803I": {
+   "sense_head": "devise/plot/plan",
+   "meaning_range": "1) to think, plan, esteem, calculate, invent, make a judgment, imagine, count; 1a) (Qal); 1a1) to think, account; 1a2) to plan, devise, mean; 1a3) to charge, impute, reckon; 1a4) to esteem, value, regard; 1a5) to invent; 1b) (Niphal); 1b1) to be accounted, be thought, be esteemed; 1b2) to be computed, be reckoned; 1b3) to be imputed; 1c) (Piel); 1c1) to think upon, consider, be mindful of; 1c2) to think to do, devise, plan; 1c3) to count, reckon; 1d) (Hithpael) to be considered"
+  },
+  "H4906": {
+   "sense_head": "figure",
+   "meaning_range": "1) show-piece, figure, imagination, image, idol, picture; 1a) show-piece, carved figure (of idols); 1b) imagination, conceit"
+  },
+  "H5921A": {
+   "sense_head": "upon",
+   "meaning_range": "prep; 1) upon, on the ground of, according to, on account of, on behalf of, concerning, beside, in addition to, together with, beyond, above, over, by, on to, towards, to, against; 1a) upon, on the ground of, on the basis of, on account of, because of, therefore, on behalf of, for the sake of, for, with, in spite of, notwithstanding, concerning, in the matter of, as regards; 1b) above, beyond, over (of excess); 1c) above, over (of elevation or pre-eminence); 1d) upon, to, over to, unto, in addit"
+  }
+ },
+ "to_take_up": [
+  {
+   "observation": 22313,
+   "stage": "layer-1",
+   "kind": "enrichment",
+   "item": "strong-enrichment",
+   "text": "The lexicon entries bear the grouping out: the codes with the largest counts are the verbs of thinking and supposing (G1380 to think, G3543 to think, G3633 and G5282 to suppose, G5274 to take up, suppose) and the verb to say, whose Qal sense in the lexicon includes saying in one's heart and so thinking (H0559, the largest code with 40 occurrences), with H2803J (think, imagine), H1819 (to imagine, ",
+   "basis": "stated",
+   "verses": [
+    "1Cor.8.2",
+    "1Tim.6.5",
+    "Gen.18.28",
+    "Gen.18.29",
+    "Gen.18.30",
+    "Gen.18.31",
+    "Gen.18.32",
+    "2Sam.13.32",
+    "2Sam.13.33",
+    "Ezek.18.14",
+    "Luke.7.43",
+    "John.21.25"
+   ]
+  },
+  {
+   "observation": 22881,
+   "stage": "layer-1",
+   "kind": "group",
+   "item": "group-definition",
+   "text": "An assumption that an act then rests on: the parents take the boy to be in the company and travel a day, the mourners take Mary to be going to the tomb, Mary takes Jesus for the gardener, the crowd takes Paul to be dead, the jailer takes the prisoners to have escaped, and the sailors take their purpose to be gained. In each verse the supposing is a belief about a present fact, and what is done fol",
+   "basis": "read",
+   "verses": [
+    "Luke.2.44",
+    "John.11.31",
+    "John.20.15",
+    "Acts.14.19",
+    "Acts.16.27",
+    "Acts.27.13"
+   ]
+  },
+  {
+   "observation": 22882,
+   "stage": "layer-1",
+   "kind": "group",
+   "item": "group-definition",
+   "text": "A belief or opinion held or put to another: a man imagines he knows something, people are imagining that godliness is gain, Jonadab warns David not to conclude that all the sons are dead, Simon gives his judgment, the writer judges how many books the world could hold, the hearers are told they suppose wrongly about drunkenness, the crowd is asked what it supposes of John, the one who judges is ask",
+   "basis": "read",
+   "verses": [
+    "1Cor.8.2",
+    "1Tim.6.5",
+    "2Sam.13.32",
+    "2Sam.13.33",
+    "Luke.7.43",
+    "John.21.25",
+    "Acts.2.15",
+    "Acts.13.25",
+    "Rom.2.3",
+    "Jas.1.7",
+    "Jas.4.5"
+   ]
+  },
+  {
+   "observation": 22883,
+   "stage": "layer-1",
+   "kind": "group",
+   "item": "group-definition",
+   "text": "A case put as a possibility: Abraham sets one lower number of righteous after another with 'suppose', and the prophet puts a case of a son who sees his father's sins. The words are Hebrew particles of perhaps and behold that introduce a hypothetical case and carry no thinking of their own. Verses: Gen 18:28, Gen 18:29, Gen 18:30, Gen 18:31, Gen 18:32, Eze 18:14.",
+   "basis": "read",
+   "verses": [
+    "Gen.18.28",
+    "Gen.18.29",
+    "Gen.18.30",
+    "Gen.18.31",
+    "Gen.18.32",
+    "Ezek.18.14"
+   ]
+  },
+  {
+   "observation": 22884,
+   "stage": "layer-1",
+   "kind": "group",
+   "item": "group-definition",
+   "text": "Imagining as devising evil: those who hate the psalmist whisper together and plan the worst against him. The Hebrew verb is of reckoning and devising, here turned toward harm. Verses: Psa 41:7.",
+   "basis": "read",
+   "verses": [
+    "Ps.41.7"
+   ]
+  },
+  {
+   "observation": 22885,
+   "stage": "layer-1",
+   "kind": "group",
+   "item": "group-definition",
+   "text": "The mind's own picture or device: in Pro 18:11 the rich man's wealth is a high wall in his imagination, a conceit that is not the fact, and in Act 17:29 the image of gold or stone is formed by human design and thought. The word is what the human mind pictures or devises. Verses: Pro 18:11, Act 17:29.",
+   "basis": "read",
+   "verses": [
+    "Prov.18.11",
+    "Acts.17.29"
+   ]
+  },
+  {
+   "observation": 23283,
+   "stage": "layer-1",
+   "kind": "enrichment",
+   "item": "strong-enrichment",
+   "text": "The codes of supposing a present fact are G1380 (to think, consider, regard; to think, imagine, suppose, presume) and G3543 (to think, suppose, expect; to suppose, presume, expect, with Luk 2:44 named). The lexicon bears out a belief taken up about what is so, on which the act in Luk 2:44, Joh 11:31, Joh 20:15, Act 14:19, Act 16:27 and Act 27:13 then rests.",
+   "basis": "read",
+   "verses": [
+    "Luke.2.44",
+    "John.20.15",
+    "John.11.31",
+    "Acts.27.13",
+    "Acts.14.19",
+    "Acts.16.27"
+   ]
+  },
+  {
+   "observation": 23284,
+   "stage": "layer-1",
+   "kind": "enrichment",
+   "item": "strong-enrichment",
+   "text": "The codes of a view held or put to another are G1380 (to think, imagine, suppose, presume), G3543 (to deem, with 1Ti 6:5 named), G3633 (to think, suppose, imagine, presume, with Joh 21:25 and Jam 1:7 named), G5274 (to take up a notion, suppose), G5282 (to suspect, suppose, deem, with Act 13:25 named) and H0559 (to say, to say in one's heart, to think) in 2Sa 13:32 and 2Sa 13:33. The lexicon bears ",
+   "basis": "read",
+   "verses": [
+    "2Sam.13.32",
+    "2Sam.13.33",
+    "Luke.7.43",
+    "John.21.25",
+    "Acts.13.25",
+    "Acts.2.15",
+    "Rom.2.3",
+    "1Cor.8.2",
+    "1Tim.6.5",
+    "Jas.4.5",
+    "Jas.1.7"
+   ]
+  },
+  {
+   "observation": 23285,
+   "stage": "layer-1",
+   "kind": "enrichment",
+   "item": "strong-enrichment",
+   "text": "The codes of a case put as a possibility are H0194 (perhaps, peradventure; suppose) in Gen 18:28 to Gen 18:32 and H2009 (behold, lo, see, if) in Eze 18:14. The lexicon bears out particles that open a case and name no act of the mind.",
+   "basis": "read",
+   "verses": [
+    "Gen.18.30",
+    "Gen.18.32",
+    "Gen.18.29",
+    "Gen.18.31",
+    "Gen.18.28",
+    "Ezek.18.14"
+   ]
+  },
+  {
+   "observation": 23286,
+   "stage": "layer-1",
+   "kind": "enrichment",
+   "item": "strong-enrichment",
+   "text": "The code of imagining harm is H2803I (to think, plan, devise, mean, invent), whose sense head is devise, plot, plan. The lexicon bears out the planning of the worst against the psalmist in Psa 41:7. H5921A (upon, against) is the preposition in the unit, naming against whom the plan is turned.",
+   "basis": "read",
+   "verses": [
+    "Ps.41.7"
+   ]
+  },
+  {
+   "observation": 23287,
+   "stage": "layer-1",
+   "kind": "enrichment",
+   "item": "strong-enrichment",
+   "text": "The codes of the mind's own picture are H4906 (show-piece, figure, image; imagination, conceit) in Pro 18:11 and G1761 (thought, reflection; the result of thought, invention, device, with Act 17:29 named) in Act 17:29. The lexicon bears out what the mind pictures or devises, a conceit in Pro 18:11 and a design in Act 17:29.",
+   "basis": "read",
+   "verses": [
+    "Prov.18.11",
+    "Acts.17.29"
+   ]
+  },
+  {
+   "observation": 22332,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "Desire words stand with the group in 1Sa 18:25, 1Ch 28:9 and Jam 4:5: 'desires' 12 words before in 1Sa 18:25, 'willing' 9 before in 1Ch 28:9, 'yearns' 5 after in Jam 4:5. The surface 'will' of 2Sa 14:17 (4 after) and 2Ki 7:12 (13 before) is the particle and verb of the quoted speech, not a desire.",
+   "basis": "stated",
+   "verses": [
+    "1Sam.18.25",
+    "2Sam.14.17",
+    "2Kgs.7.12",
+    "1Chr.28.9",
+    "Jas.4.5"
+   ]
+  },
+  {
+   "observation": 22342,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "Heart or mind stands with the group in all ten verses. It is within three words of the member in Deu 15:9 and 2Sa 13:33 (1), Isa 10:7 (2), Eze 20:32 and Rom 1:21 (3); at 4 in 1Ch 28:9 (hearts), Mat 9:4 and 1Ti 6:5; at 6 in Eze 11:5; and at 10 in Jam 1:26 and 1Ch 28:9 (heart). The verses name the heart or mind as the place of the thought.",
+   "basis": "stated",
+   "verses": [
+    "Deut.15.9",
+    "2Sam.13.33",
+    "1Chr.28.9",
+    "Isa.10.7",
+    "Ezek.11.5",
+    "Ezek.20.32",
+    "Matt.9.4",
+    "Rom.1.21",
+    "1Tim.6.5",
+    "Jas.1.26"
+   ]
+  },
+  {
+   "observation": 22344,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "Intending stands with the group in 1Ch 28:9, Psa 64:5, Isa 10:7, Joh 11:13, Act 27:13 and Jam 4:5. The partner words are of the same kind as the member in 1Ch 28:9 (plan, 1 before), Psa 64:5 (purpose, 4 before) and Isa 10:7 (intend, 4 before); in Joh 11:13 'meant' is 2 after and is what Jesus meant, which they supposed otherwise; in Act 27:13 and Jam 4:5 'purpose' is 2 and 1 after.",
+   "basis": "stated",
+   "verses": [
+    "1Chr.28.9",
+    "Ps.64.5",
+    "Isa.10.7",
+    "John.11.13",
+    "Acts.27.13",
+    "Jas.4.5"
+   ]
+  },
+  {
+   "observation": 22346,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "Knowing stands with the group in thirteen verses. In 1Cor 8:2 (knows 1 after, know 5 after) and Ecc 9:10 (knowledge 1 after) knowledge is beside the member; in Mat 9:4 and Eze 11:5 what is known is another's thought (Jesus knowing their thoughts, the Lord knowing what comes into the mind); in 1Sa 20:3 the knowing (6 before, 3 after) is the father's knowledge of David's favour and Jonathan's not kn",
+   "basis": "stated",
+   "verses": [
+    "Exod.2.14",
+    "Ruth.4.4",
+    "1Sam.20.3",
+    "2Kgs.7.12",
+    "1Chr.28.9",
+    "Eccl.9.10",
+    "Ezek.11.5",
+    "Matt.9.4",
+    "Acts.12.9",
+    "Rom.1.21",
+    "Rom.14.14",
+    "1Cor.8.2"
+   ]
+  },
+  {
+   "observation": 22360,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "Searching and finding stand with the group in ten verses. In Gen 18:28 and Gen 18:30 'find' is the condition of each supposed number (positions not stored); in Mat 18:12 (17 after), Luk 2:44 (9 after) and Joh 20:15 the search follows or acts on the supposition; in Joh 5:39 the search of the Scriptures is 4 words before the supposition; in 1Ch 28:9 the Lord searches hearts (6 before) and 'seek' is ",
+   "basis": "stated",
+   "verses": [
+    "Gen.18.28",
+    "Gen.18.30",
+    "2Sam.10.3",
+    "1Chr.19.3",
+    "1Chr.28.9",
+    "Eccl.9.10",
+    "Matt.18.12",
+    "Luke.2.44",
+    "John.5.39",
+    "John.20.15"
+   ]
+  },
+  {
+   "observation": 22361,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "Doing and serving stand with the group in twelve verses. 'Do' is the partner in nine: Gen 18:29 and 18:30 (positions not stored), Num 33:56 (1 after), Luk 12:17 (4 after), Rom 2:3 (7 after), Eze 18:14 (11 after), 1Cor 7:36 (10 after), Ecc 9:10 (5 before) and Eph 3:20 (8 before); in Num 33:56 and Luk 12:17 the doing is what is purposed or asked within 4 words of the thought. 'Serve' is the partner ",
+   "basis": "stated",
+   "verses": [
+    "Gen.18.29",
+    "Gen.18.30",
+    "Num.33.56",
+    "1Chr.28.9",
+    "Eccl.9.10",
+    "Ezek.18.14",
+    "Luke.12.17",
+    "John.16.2",
+    "Rom.2.3",
+    "1Cor.7.36",
+    "Eph.3.20",
+    "Phil.2.25"
+   ]
+  },
+  {
+   "observation": 22369,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "Wisdom and understanding stand with the group in eight verses. The partner is within two words in Pro 14:15 (prudent, 1 before), Psa 73:16 (understand, 1 after), Ecc 9:10 (wisdom, 2 after) and 1Cor 3:18 (wise, 2 after); in 1Cor 3:18 the person thinks that he is wise, so wisdom is what is thought of oneself. In 1Ch 28:9 (3 before), 2Sa 14:17 (12 after), Rom 2:3 (11 after) and 1Cor 7:40 (7 before) t",
+   "basis": "stated",
+   "verses": [
+    "2Sam.14.17",
+    "1Chr.28.9",
+    "Ps.73.16",
+    "Prov.14.15",
+    "Eccl.9.10",
+    "Rom.2.3",
+    "1Cor.3.18",
+    "1Cor.7.40"
+   ]
+  },
+  {
+   "observation": 22431,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "qualifier",
+   "text": "Qualifiers stand with the supposing group in 58 verses with negators (79 stored pairs) and in many more with adjectives and adverbs. The negator reaches the member itself, forbidding, denying or withholding the supposition, in Mat 5:17, Mat 10:34 and Joh 5:45 (do not think, 1 word before), Act 17:29, Jam 1:7, 2Cor 11:16, 2Sa 13:32 and 2Sa 13:33, Rom 12:3 (not to think too highly of oneself), Isa 1",
+   "basis": "stated",
+   "verses": [
+    "Gen.18.28",
+    "Gen.18.29",
+    "Gen.18.30",
+    "Gen.18.31",
+    "Gen.18.32",
+    "Gen.20.11",
+    "Gen.26.9",
+    "Gen.32.8",
+    "Gen.32.20",
+    "Num.36.6",
+    "Deut.15.9",
+    "Josh.22.28"
+   ]
+  },
+  {
+   "observation": 22438,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "entity",
+   "text": "Entities are named in 89 of the 155 verses of the supposing group, 62 different ones in 187 stored pairs (118 human, 69 divine). The divine are God (31), the Lord (21), Jesus (8), Christ (5), the Most High and the possessive forms. The human are mostly the figures of the narratives who think or suppose: David (19), Saul (8), Abraham, Isaac, Jacob, Hanun, Hezekiah, Naaman, Esther, Mordecai, Judas a",
+   "basis": "stated",
+   "verses": [
+    "Gen.20.11",
+    "Gen.26.9",
+    "Gen.31.31",
+    "Gen.32.8",
+    "Gen.32.20",
+    "Exod.2.14",
+    "Num.36.6",
+    "Deut.15.9",
+    "Josh.22.28",
+    "Judg.3.24",
+    "Judg.15.2",
+    "1Sam.16.6"
+   ]
+  },
+  {
+   "observation": 22445,
+   "stage": "layer-2",
+   "kind": "relation",
+   "item": "direction",
+   "text": "The direction of the supposing changes across the verses. In most the supposer is a named person who holds a view about another person or a state of affairs: Abraham, Isaac, Jacob, Saul, David, Naaman and Hezekiah hold a quoted thought, with the human entity before the member in 72 of 118 human pairs. In Mat 17:25, Mat 18:12, Mat 21:28, Mat 22:17, Mat 22:42 and Luk 10:36 the direction is reversed:",
+   "basis": "stated",
+   "verses": [
+    "Gen.20.11",
+    "Gen.26.9",
+    "Gen.31.31",
+    "Gen.32.8",
+    "Gen.32.20",
+    "Exod.2.14",
+    "Num.36.6",
+    "Deut.15.9",
+    "Josh.22.28",
+    "Judg.3.24",
+    "Judg.15.2",
+    "1Sam.16.6"
+   ]
+  },
+  {
+   "observation": 23288,
+   "stage": "layer-2",
+   "kind": "face",
+   "item": "double-meaning",
+   "text": "The surface imagination carries two codes: H4906 in Pro 18:11, a figure or conceit, where the rich man's wealth is a high wall in his own picture of it, and G1761 in Act 17:29, the result of thought, a device, where an image is formed by human art and design. Both are what the mind pictures or devises.",
+   "basis": "read",
+   "verses": [
+    "Prov.18.11",
+    "Acts.17.29"
+   ]
+  },
+  {
+   "observation": 23289,
+   "stage": "layer-2",
+   "kind": "face",
+   "item": "double-meaning",
+   "text": "The surface imagine in Psa 41:7 carries H2803I, to plan or devise, with H5921A, the preposition against: the haters devise the worst, and the preposition names the psalmist as the one it is turned against.",
+   "basis": "read",
+   "verses": [
+    "Ps.41.7"
+   ]
+  },
+  {
+   "observation": 23290,
+   "stage": "layer-2",
+   "kind": "face",
+   "item": "double-meaning",
+   "text": "The surface imagines in 1Cor 8:2 carries G1380, to think or presume, with G1161, a conjunction that carries no thinking: the one who presumes he knows something is the subject.",
+   "basis": "read",
+   "verses": [
+    "1Cor.8.2"
+   ]
+  },
+  {
+   "observation": 23291,
+   "stage": "layer-2",
+   "kind": "face",
+   "item": "double-meaning",
+   "text": "The surface suppose in Gen 18:28 to Gen 18:32 carries H0194, perhaps, and in Eze 18:14 H2009, behold: particles that open a case put as a possibility, with no act of the mind. Abraham names a lower number each time, and the prophet sets the case of a son.",
+   "basis": "read",
+   "verses": [
+    "Gen.18.28",
+    "Gen.18.29",
+    "Gen.18.30",
+    "Gen.18.31",
+    "Gen.18.32",
+    "Ezek.18.14"
+   ]
+  },
+  {
+   "observation": 23292,
+   "stage": "layer-2",
+   "kind": "face",
+   "item": "double-meaning",
+   "text": "The surface suppose in 2Sa 13:32, 2Sa 13:33, Luk 7:43, Joh 21:25, Act 2:15, Act 13:25, Rom 2:3, Jam 1:7 and Jam 4:5 is a view held or put to another: H0559 (to say in one's heart) in the two Samuel verses, G5274 in Luk 7:43 and Act 2:15, G3633 in Joh 21:25 and Jam 1:7, G5282 in Act 13:25, G1380 in Jam 4:5, and in Rom 2:3 G1161, a conjunction under which the English places the question.",
+   "basis": "read",
+   "verses": [
+    "2Sam.13.32",
+    "2Sam.13.33",
+    "Luke.7.43",
+    "John.21.25",
+    "Acts.2.15",
+    "Acts.13.25",
+    "Rom.2.3",
+    "Jas.1.7",
+    "Jas.4.5"
+   ]
+  },
+  {
+   "observation": 23293,
+   "stage": "layer-2",
+   "kind": "face",
+   "item": "double-meaning",
+   "text": "The surface supposing carries G3543 in Luk 2:44, Act 14:19 and Act 16:27 and G1380 in Joh 11:31, Joh 20:15 and Act 27:13, both to think or suppose: in each a belief about a present fact is taken up and an act follows from it.",
+   "basis": "read",
+   "verses": [
+    "Luke.2.44",
+    "John.11.31",
+    "John.20.15",
+    "Acts.14.19",
+    "Acts.16.27",
+    "Acts.27.13"
+   ]
+  },
+  {
+   "observation": 23294,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "qualifier",
+   "text": "Where suppose opens a case, the qualifiers are the numbers of the case and the answers to it: five short of fifty, forty, thirty, twenty, ten in Gen 18:28 to Gen 18:32, with there and again; the negators reach the Lord's answer (I will not destroy) and Abraham's plea that the Lord not be angry, not the supposing. In Eze 18:14 the negator reaches the son's not doing as his father did.",
+   "basis": "read",
+   "verses": [
+    "Gen.18.28",
+    "Gen.18.29",
+    "Gen.18.30",
+    "Gen.18.31",
+    "Gen.18.32",
+    "Ezek.18.14"
+   ]
+  },
+  {
+   "observation": 23295,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "qualifier",
+   "text": "A negator reaches the supposing itself in 2Sa 13:32, 2Sa 13:33 and Jam 1:7: let not my lord suppose, must not suppose; the view is forbidden. In Act 2:15 and Act 13:25 the negator reaches what the view gets wrong (not drunk, I am not he), and in Act 17:29 the negator reaches the thinking that the divine being is like an image of human imagination.",
+   "basis": "read",
+   "verses": [
+    "2Sam.13.32",
+    "2Sam.13.33",
+    "Jas.1.7",
+    "Acts.2.15",
+    "Acts.13.25",
+    "Acts.17.29"
+   ]
+  },
+  {
+   "observation": 23296,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "qualifier",
+   "text": "In 1Cor 8:2 not and yet reach the knowing that the one who imagines lacks; in Jam 4:5 to no purpose is what the readers are asked whether they suppose of the Scripture; in Luk 7:43 larger names the debt in Simon's view and rightly is Jesus' verdict on it.",
+   "basis": "read",
+   "verses": [
+    "1Cor.8.2",
+    "Jas.4.5",
+    "Luke.7.43"
+   ]
+  },
+  {
+   "observation": 23297,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "qualifier",
+   "text": "Where supposing is a belief an act rests on, the qualifiers describe the act or its setting, not the supposing: relatives and acquaintances where they search in Luk 2:44, quickly and there in Joh 11:31, where in Joh 20:15, woke in Act 16:27, along the shore in Act 27:13; in Joh 21:25 many other things are what the writer supposes the world could not hold, and in Pro 18:11 rich names the man whose ",
+   "basis": "read",
+   "verses": [
+    "Luke.2.44",
+    "John.11.31",
+    "John.20.15",
+    "Acts.16.27",
+    "Acts.27.13",
+    "John.21.25",
+    "Prov.18.11"
+   ]
+  },
+  {
+   "observation": 23298,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "entity",
+   "text": "In 2Sa 13:32 and 2Sa 13:33 Jonadab, son of Shimeah and brother of David, speaks to the king against a view: that all the young men, the king's sons, are dead. He names Amnon as the one dead, Absalom as the one by whose command it was set, and the day Amnon violated Absalom's sister Tamar as its cause.",
+   "basis": "read",
+   "verses": [
+    "2Sam.13.32",
+    "2Sam.13.33"
+   ]
+  },
+  {
+   "observation": 23299,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "entity",
+   "text": "In Joh 20:15 the woman Mary takes Jesus, who speaks to her, for the gardener: the one supposed about is Jesus himself. In Joh 21:25 the writer supposes about the many things Jesus did and the books they would fill.",
+   "basis": "read",
+   "verses": [
+    "John.20.15",
+    "John.21.25"
+   ]
+  },
+  {
+   "observation": 23300,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "entity",
+   "text": "Man and God are named together where the view is false or forbidden: in Act 17:29 God's offspring must not think the divine like an image of man's imagination, in Rom 2:3 the man who judges is asked whether he supposes he escapes God's judgment, in 1Ti 6:5 people depraved in mind imagine godliness is gain, and in Jam 1:7 the doubting person must not suppose he will receive from the Lord.",
+   "basis": "read",
+   "verses": [
+    "Acts.17.29",
+    "Rom.2.3",
+    "1Tim.6.5",
+    "Jas.1.7"
+   ]
+  },
+  {
+   "observation": 23301,
+   "stage": "layer-2",
+   "kind": "relation",
+   "item": "direction",
+   "text": "In 2Sa 13:32 and 2Sa 13:33 the view runs from the king toward a report about his sons, and Jonadab speaks from one person to another to turn it: the supposing is the king's, the correction is Jonadab's.",
+   "basis": "read",
+   "verses": [
+    "2Sam.13.32",
+    "2Sam.13.33"
+   ]
+  },
+  {
+   "observation": 23302,
+   "stage": "layer-2",
+   "kind": "relation",
+   "item": "direction",
+   "text": "In Joh 20:15 the supposing runs from Mary toward the one in front of her: she takes Jesus for the gardener while he speaks to her.",
+   "basis": "stated",
+   "verses": [
+    "John.20.15"
+   ]
+  },
+  {
+   "observation": 23303,
+   "stage": "layer-2",
+   "kind": "relation",
+   "item": "direction",
+   "text": "In Joh 21:25 the supposing runs from the writer toward the many things Jesus did: it is a judgment of their extent.",
+   "basis": "read",
+   "verses": [
+    "John.21.25"
+   ]
+  },
+  {
+   "observation": 23304,
+   "stage": "layer-2",
+   "kind": "relation",
+   "item": "direction",
+   "text": "In Act 17:29, Rom 2:3, 1Ti 6:5 and Jam 1:7 the view runs from people toward God, his judgment, godliness or what the Lord gives, and the verse turns it back: the divine is not like man's image, the judge will not escape, godliness is not gain, the doubter will not receive.",
+   "basis": "read",
+   "verses": [
+    "Acts.17.29",
+    "Rom.2.3",
+    "1Tim.6.5",
+    "Jas.1.7"
+   ]
+  },
+  {
+   "observation": 23305,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Gen 18:30 and Gen 18:32 Abraham asks that the Lord not be angry before he puts the next case with suppose: the plea guards the putting of the case, and the anger is the Lord's that Abraham fears.",
+   "basis": "read",
+   "verses": [
+    "Gen.18.30",
+    "Gen.18.32"
+   ]
+  },
+  {
+   "observation": 23306,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In 1Ti 6:5 gain is the content of the false view: people depraved in mind imagine that godliness is a means of gain.",
+   "basis": "stated",
+   "verses": [
+    "1Tim.6.5"
+   ]
+  },
+  {
+   "observation": 23307,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Joh 11:31 the Jews who were consoling Mary in the house follow her out, supposing she goes to the tomb: the consoling is what they were doing when the supposing moved them.",
+   "basis": "read",
+   "verses": [
+    "John.11.31"
+   ]
+  },
+  {
+   "observation": 23308,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In 2Sa 13:32 command is the word of Absalom by which the deed was set: Jonadab corrects the king's view by naming that the killing was by Absalom's command, from the day Tamar was violated. The pairing with command is through the code of saying (H0559) behind suppose.",
+   "basis": "read",
+   "verses": [
+    "2Sam.13.32"
+   ]
+  },
+  {
+   "observation": 23309,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Luk 7:43 Simon gives his view and Jesus says he has judged rightly: the supposing is weighed and found correct. In Rom 2:3 the one who judges others is asked whether he supposes he will escape: judging others stands against a false view of oneself.",
+   "basis": "read",
+   "verses": [
+    "Luke.7.43",
+    "Rom.2.3"
+   ]
+  },
+  {
+   "observation": 23310,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Act 14:19 the crowds, persuaded by the Jews from Antioch and Iconium, stone Paul and drag him out, supposing him dead: the persuading moves them to the act, and the supposing ends it.",
+   "basis": "read",
+   "verses": [
+    "Acts.14.19"
+   ]
+  },
+  {
+   "observation": 23311,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In 2Sa 13:32 violated names the wrong done to Tamar, the cause Jonadab gives for Amnon's death against the king's fear that all his sons are dead.",
+   "basis": "stated",
+   "verses": [
+    "2Sam.13.32"
+   ]
+  },
+  {
+   "observation": 23312,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In 2Sa 13:32 determined names Absalom's purpose held since Tamar was violated: Jonadab sets this settled intent against the king's view.",
+   "basis": "stated",
+   "verses": [
+    "2Sam.13.32"
+   ]
+  },
+  {
+   "observation": 23313,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Joh 11:31 going is the content of the supposing: the Jews take Mary to be going to the tomb to weep there.",
+   "basis": "stated",
+   "verses": [
+    "John.11.31"
+   ]
+  },
+  {
+   "observation": 23314,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Jam 4:5 the readers are asked whether they suppose the Scripture speaks to no purpose, and what it says is that he yearns jealously over the spirit: the question presses them to take the yearning seriously.",
+   "basis": "read",
+   "verses": [
+    "Jas.4.5"
+   ]
+  },
+  {
+   "observation": 23315,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Gen 18:28, Gen 18:31 and Gen 18:32 each case Abraham puts with suppose is answered on destroying: will you destroy the city, and the Lord says he will not destroy it for the sake of the number. The case is put to hold back destruction.",
+   "basis": "read",
+   "verses": [
+    "Gen.18.28",
+    "Gen.18.31",
+    "Gen.18.32"
+   ]
+  },
+  {
+   "observation": 23316,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Act 16:27 the jailer supposes the prisoners have escaped and is about to kill himself: the false view nearly leads to his death. In Rom 2:3 the man who judges is asked if he supposes he will escape God's judgment: escape is the content of a false view in both.",
+   "basis": "read",
+   "verses": [
+    "Acts.16.27",
+    "Rom.2.3"
+   ]
+  },
+  {
+   "observation": 23317,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In 1Ti 6:5 those who imagine godliness is gain have a corrupted mind and have lost the truth: the false view is set in a depraved mind.",
+   "basis": "stated",
+   "verses": [
+    "1Tim.6.5"
+   ]
+  },
+  {
+   "observation": 23318,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Gen 18:28 lacking names the first case Abraham puts: suppose the fifty righteous lack five.",
+   "basis": "stated",
+   "verses": [
+    "Gen.18.28"
+   ]
+  },
+  {
+   "observation": 23319,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Joh 11:31 the Jews followed Mary because of what they supposed: the following is the act that rests on the supposing.",
+   "basis": "stated",
+   "verses": [
+    "John.11.31"
+   ]
+  },
+  {
+   "observation": 23320,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In 1Ti 6:5 godliness is what the false view is about: it is taken to be a way to gain, which the verse sets in minds deprived of the truth.",
+   "basis": "read",
+   "verses": [
+    "1Tim.6.5"
+   ]
+  },
+  {
+   "observation": 23321,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In 2Sa 13:33 the king is asked not to take the report to heart so as to suppose all his sons dead: the heart is where the false view would be taken up. In 1Ti 6:5 the mind of those who imagine godliness is gain is depraved: the mind is the seat of the false view.",
+   "basis": "read",
+   "verses": [
+    "2Sam.13.33",
+    "1Tim.6.5"
+   ]
+  },
+  {
+   "observation": 23322,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Act 13:25 John asks what they suppose him to be and says he is not worthy to untie the sandals of the one after him: the hearers' view of him is corrected by his own low counting of himself.",
+   "basis": "read",
+   "verses": [
+    "Acts.13.25"
+   ]
+  },
+  {
+   "observation": 23323,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Act 27:13 the sailors suppose they have obtained their purpose and set sail: the supposing is about an intent reached. In Jam 4:5 purpose is in the question whether the Scripture speaks for nothing.",
+   "basis": "read",
+   "verses": [
+    "Acts.27.13",
+    "Jas.4.5"
+   ]
+  },
+  {
+   "observation": 23324,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Jam 4:5 jealously names how he yearns over the spirit, the saying the readers are asked not to suppose empty.",
+   "basis": "stated",
+   "verses": [
+    "Jas.4.5"
+   ]
+  },
+  {
+   "observation": 23325,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In 2Sa 13:32 killed is the content of the view the king is not to hold, that all the young men were killed. In Act 16:27 the jailer is about to kill himself because of what he supposes: the view leads to the act against himself.",
+   "basis": "read",
+   "verses": [
+    "2Sam.13.32",
+    "Acts.16.27"
+   ]
+  },
+  {
+   "observation": 23326,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In 1Cor 8:2 the one who imagines he knows something does not yet know as he ought: the imagining is a claim to knowing that the verse sets against true knowledge. WordNet relates the subgroup to this collection through think; the verse sets imagining against knowing.",
+   "basis": "read",
+   "verses": [
+    "1Cor.8.2"
+   ]
+  },
+  {
+   "observation": 23327,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Joh 11:31 the Jews suppose Mary goes to the tomb to weep, and in Joh 20:15 Mary, asked why she weeps, takes Jesus for the gardener: weeping is the setting of both supposings, and in Joh 20:15 the grief carries the mistaken view.",
+   "basis": "read",
+   "verses": [
+    "John.11.31",
+    "John.20.15"
+   ]
+  },
+  {
+   "observation": 23328,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "Dead is the content of the view in 2Sa 13:32, 2Sa 13:33 and Act 14:19: the king fears all his sons are dead and is told only Amnon is, and the crowds take Paul for dead after stoning him. In each the view is mistaken.",
+   "basis": "read",
+   "verses": [
+    "2Sam.13.32",
+    "2Sam.13.33",
+    "Acts.14.19"
+   ]
+  },
+  {
+   "observation": 23329,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Psa 41:7 the ones who imagine the worst for the psalmist are those who hate him: the devising of harm comes from hatred, with whispering together.",
+   "basis": "stated",
+   "verses": [
+    "Ps.41.7"
+   ]
+  },
+  {
+   "observation": 23330,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Pro 18:11 strong describes the city the rich man takes his wealth to be: the strength is in his own picture, a high wall in his imagination.",
+   "basis": "read",
+   "verses": [
+    "Prov.18.11"
+   ]
+  },
+  {
+   "observation": 23331,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Act 16:27 the jailer sees the prison doors open and from that supposes the prisoners have escaped: the sight is the ground of the view.",
+   "basis": "read",
+   "verses": [
+    "Acts.16.27"
+   ]
+  },
+  {
+   "observation": 23332,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Gen 18:29 to Gen 18:32 each case Abraham puts with suppose is followed by the Lord's answer, and in Luk 7:43 Simon answers with his view: the supposing is spoken within an exchange. WordNet relates the subgroup to this collection through say; the codes of answer and suppose differ in Genesis.",
+   "basis": "read",
+   "verses": [
+    "Gen.18.29",
+    "Gen.18.30",
+    "Gen.18.31",
+    "Gen.18.32",
+    "Luke.7.43"
+   ]
+  },
+  {
+   "observation": 23333,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Pro 18:11 wealth is what the rich man pictures as a strong city: the imagination is of what his riches are to him.",
+   "basis": "read",
+   "verses": [
+    "Prov.18.11"
+   ]
+  },
+  {
+   "observation": 23334,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Gen 18:28 righteous names the people of Abraham's case, the fifty short by five. In 1Ti 6:5 truth is what those who imagine godliness is gain are deprived of.",
+   "basis": "read",
+   "verses": [
+    "Gen.18.28",
+    "1Tim.6.5"
+   ]
+  },
+  {
+   "observation": 23335,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Gen 18:28 and Gen 18:30 find is the Lord's answer to Abraham's case: if he finds the number there, he will not destroy. In Luk 2:44 the parents, supposing the boy in the group, travel a day before they search for him, and in Joh 20:15 Mary, asked whom she seeks, takes Jesus for the gardener: the supposing delays or misdirects the seeking.",
+   "basis": "read",
+   "verses": [
+    "Gen.18.28",
+    "Gen.18.30",
+    "Luke.2.44",
+    "John.20.15"
+   ]
+  },
+  {
+   "observation": 23336,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Gen 18:29 and Gen 18:30 do is the Lord's not doing what Abraham's case asks him to hold back. In Eze 18:14 the son of the case sees his father's sins and does not do likewise. In Rom 2:3 the one who judges does the same things and is asked if he supposes he escapes.",
+   "basis": "read",
+   "verses": [
+    "Gen.18.29",
+    "Gen.18.30",
+    "Ezek.18.14",
+    "Rom.2.3"
+   ]
+  },
+  {
+   "observation": 23337,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Eze 18:14 the prophet's case is of a son who sees all the sins his father did: the sins are what the son sees and turns from.",
+   "basis": "stated",
+   "verses": [
+    "Ezek.18.14"
+   ]
+  },
+  {
+   "observation": 23338,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In 2Sa 13:33 take is the setting of the heart on the report: the king is not to take it to heart so as to suppose all his sons dead. In Joh 20:15 Mary, taking Jesus for the gardener, offers to take the body away.",
+   "basis": "read",
+   "verses": [
+    "2Sam.13.33",
+    "John.20.15"
+   ]
+  },
+  {
+   "observation": 23339,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Luk 7:43 rightly is Jesus' verdict on Simon's view: the supposing is judged correct.",
+   "basis": "stated",
+   "verses": [
+    "Luke.7.43"
+   ]
+  },
+  {
+   "observation": 23340,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Psa 41:7 the haters whisper together against the psalmist and devise the worst for him: the whispering is the speech that goes with the devising, both turned against him.",
+   "basis": "stated",
+   "verses": [
+    "Ps.41.7"
+   ]
+  },
+  {
+   "observation": 23341,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Rom 2:3 judgment is God's, which the man who judges others is asked if he supposes he will escape: the false view is of escaping it.",
+   "basis": "stated",
+   "verses": [
+    "Rom.2.3"
+   ]
+  },
+  {
+   "observation": 20568,
+   "stage": "prior-capture",
+   "kind": "statement",
+   "item": null,
+   "text": "*enthymēsis / dianoēma* | Thoughts known by Jesus · thoughts and intentions discerned by the word · imagination that makes images of God | Mat 9:4; 12:25; Luk 11:17 · Heb 4:12 · Act 17:29 | \"an image formed by the art and imagination of man\" (Act 17:29). Imagination is the faculty of design (*ḥāšav* G) turned to making gods. This is the Greek counterpart of Hab 2:18 and the false likening of *dāmā",
+   "basis": "stated",
+   "verses": [
+    "Matt.9.4",
+    "Matt.12.25",
+    "Luke.11.17",
+    "Heb.4.12",
+    "Acts.17.29"
+   ]
+  },
+  {
+   "observation": 22608,
+   "stage": "layer-3",
+   "kind": "statement",
+   "item": "circumstance",
+   "text": "Knowing and the supposition meet in thirteen verses with different ties. In 1Cor 8:2 (1 to 8 words after) and Ecc 9:10 (1 after) knowledge is what the person thinks he has or what is absent; in Mat 9:4 and Eze 11:5 the thinking is known by another; elsewhere the knowing is 3 to 15 words away in separate clauses (Exo 2:14, Rut 4:4, 2Ki 7:12, 1Ch 28:9, Act 12:9, Rom 1:21, Rom 14:14, 2Cor 10:5).",
+   "basis": "stated",
+   "verses": [
+    "Exod.2.14",
+    "Ruth.4.4",
+    "1Sam.20.3",
+    "2Kgs.7.12",
+    "1Chr.28.9",
+    "Eccl.9.10",
+    "Ezek.11.5",
+    "Matt.9.4",
+    "Acts.12.9",
+    "Rom.1.21",
+    "Rom.14.14",
+    "1Cor.8.2"
+   ]
+  },
+  {
+   "observation": 22622,
+   "stage": "layer-3",
+   "kind": "statement",
+   "item": "circumstance",
+   "text": "Searching and finding stand with the supposition in ten verses. In Gen 18:28 and 18:30 'find' is the condition of each supposed number; in Joh 20:15 the seeking is 1 word before the supposition; in Joh 5:39 the search of the Scriptures is 4 words before; in Mat 18:12 (17 after), Luk 2:44 (9 after), 2Sa 10:3 and 1Ch 19:3 the search is in a later clause; in 1Ch 28:9 the Lord searches hearts 6 words ",
+   "basis": "stated",
+   "verses": [
+    "Gen.18.28",
+    "Gen.18.30",
+    "2Sam.10.3",
+    "1Chr.19.3",
+    "1Chr.28.9",
+    "Eccl.9.10",
+    "Matt.18.12",
+    "Luke.2.44",
+    "John.5.39",
+    "John.20.15"
+   ]
+  },
+  {
+   "observation": 22623,
+   "stage": "layer-3",
+   "kind": "statement",
+   "item": "circumstance",
+   "text": "Doing and serving stand with the supposition in twelve verses. 'Do' is the partner in nine verses (ten words, two of them in Num 33:56): Num 33:56 (1 after, 3 before), Luk 12:17 (4 after), Gen 18:29 and 18:30 (6 and 9 after), Rom 2:3, 1Cor 7:36, Eze 18:14, Ecc 9:10, Eph 3:20; 'serve' is 12 words before in 1Ch 28:9, 'service' is 2 words after in Joh 16:2 and 'minister' 16 after in Phili 2:25. In Nu",
+   "basis": "stated",
+   "verses": [
+    "Gen.18.29",
+    "Gen.18.30",
+    "Num.33.56",
+    "1Chr.28.9",
+    "Eccl.9.10",
+    "Ezek.18.14",
+    "Luke.12.17",
+    "John.16.2",
+    "Rom.2.3",
+    "1Cor.7.36",
+    "Eph.3.20",
+    "Phil.2.25"
+   ]
+  },
+  {
+   "observation": 22631,
+   "stage": "layer-3",
+   "kind": "statement",
+   "item": "circumstance",
+   "text": "Wisdom and understanding stand with the supposition in eight verses. The partner is within two words in Pro 14:15 (prudent, 1 before), Psa 73:16 (understand, 1 after), Ecc 9:10 (wisdom, 2 after) and 1Cor 3:18 (wise, 2 after), where the person thinks that he is wise; in 1Ch 28:9 (3 before), 2Sa 14:17 (12 after), Rom 2:3 (11 after) and 1Cor 7:40 (7 before) the partner is farther off.",
+   "basis": "stated",
+   "verses": [
+    "2Sam.14.17",
+    "1Chr.28.9",
+    "Ps.73.16",
+    "Prov.14.15",
+    "Eccl.9.10",
+    "Rom.2.3",
+    "1Cor.3.18",
+    "1Cor.7.40"
+   ]
+  }
+ ],
+ "may_rest_on_besides": [
+  {
+   "observation": 22751,
+   "stage": "lexical",
+   "kind": "term",
+   "item": "word-sense",
+   "text": "In Act 17:29 'imagination' is the devising of human thought: the divine being is not to be thought like an image formed by the art and design of man. It is the human faculty that plans and forms an object, here an idol.",
+   "basis": "read",
+   "verses": [
+    "Acts.17.29"
+   ]
+  },
+  {
+   "observation": 22752,
+   "stage": "lexical",
+   "kind": "term",
+   "item": "word-sense",
+   "text": "In Pro 18:11 'imagination' is the rich man's own picture of his wealth: it stands in his mind as a high wall around a strong city. The verse sets what he pictures against what the wealth actually is.",
+   "basis": "read",
+   "verses": [
+    "Prov.18.11"
+   ]
+  },
+  {
+   "observation": 22753,
+   "stage": "lexical",
+   "kind": "term",
+   "item": "word-sense",
+   "text": "In 1Cor 8:2 this code is the Greek conjunction in the clause 'if anyone imagines that he knows'; it joins the clauses and carries no sense of imagining, which the verb of G1380 carries.",
+   "basis": "read",
+   "verses": [
+    "1Cor.8.2"
+   ]
+  },
+  {
+   "observation": 22754,
+   "stage": "lexical",
+   "kind": "term",
+   "item": "word-sense",
+   "text": "In 1Cor 8:2 'imagines' is a person holding a belief about himself, that he knows something; and the verse sets it against real knowing. It is a self-held opinion.",
+   "basis": "read",
+   "verses": [
+    "1Cor.8.2"
+   ]
+  },
+  {
+   "observation": 22755,
+   "stage": "lexical",
+   "kind": "term",
+   "item": "word-sense",
+   "text": "In Psa 41:7 'imagine' is devising and planning evil: those who hate the psalmist whisper together and plan the worst against him. It is a thought turned toward harm, not an idle picture.",
+   "basis": "read",
+   "verses": [
+    "Ps.41.7"
+   ]
+  },
+  {
+   "observation": 22756,
+   "stage": "lexical",
+   "kind": "term",
+   "item": "word-sense",
+   "text": "In 1Ti 6:5 'imagining' is holding the belief that godliness is a means of gain; the verse says it of people far from the truth. It is a belief taken as true, in the verse a mistaken one.",
+   "basis": "read",
+   "verses": [
+    "1Tim.6.5"
+   ]
+  },
+  {
+   "observation": 22757,
+   "stage": "lexical",
+   "kind": "term",
+   "item": "word-sense",
+   "text": "In Rom 2:3 this code is the Greek conjunction in the question 'do you suppose'; it joins the clause and carries no sense of supposing, which the verb in the same question carries.",
+   "basis": "read",
+   "verses": [
+    "Rom.2.3"
+   ]
+  },
+  {
+   "observation": 22758,
+   "stage": "lexical",
+   "kind": "term",
+   "item": "word-sense",
+   "text": "In Jam 4:5 'suppose' is the writer asking whether the readers think the Scripture speaks to no purpose; it is a question of what they take to be so.",
+   "basis": "read",
+   "verses": [
+    "Jas.4.5"
+   ]
+  },
+  {
+   "observation": 22759,
+   "stage": "lexical",
+   "kind": "term",
+   "item": "word-sense",
+   "text": "In Joh 21:25 and Jam 1:7 'suppose' is thinking something to be so: the writer's modest judgment of how many books the world could hold, and the doubter's expectation that he will receive from the Lord. In both it is a belief held without proof.",
+   "basis": "read",
+   "verses": [
+    "John.21.25",
+    "Jas.1.7"
+   ]
+  },
+  {
+   "observation": 22760,
+   "stage": "lexical",
+   "kind": "term",
+   "item": "word-sense",
+   "text": "In Luk 7:43 and Act 2:15 'suppose' is taking something to be so: Simon answers that he takes the larger debt to be the one forgiven, and Peter says the men are not drunk as the hearers assume. It is an answer or assumption that the verse then tests.",
+   "basis": "read",
+   "verses": [
+    "Luke.7.43",
+    "Acts.2.15"
+   ]
+  },
+  {
+   "observation": 22761,
+   "stage": "lexical",
+   "kind": "term",
+   "item": "word-sense",
+   "text": "In Act 13:25 'suppose' is the surmising of the crowd about who John is; John asks what they take him to be and says he is not that one.",
+   "basis": "read",
+   "verses": [
+    "Acts.13.25"
+   ]
+  },
+  {
+   "observation": 22762,
+   "stage": "lexical",
+   "kind": "term",
+   "item": "word-sense",
+   "text": "In Gen 18:28 to 18:32 'suppose' is the Hebrew particle of possibility, 'perhaps', with which Abraham puts each lower number of righteous to the Lord. It sets a case and carries no thinking of its own.",
+   "basis": "read",
+   "verses": [
+    "Gen.18.28",
+    "Gen.18.29",
+    "Gen.18.30",
+    "Gen.18.31",
+    "Gen.18.32"
+   ]
+  },
+  {
+   "observation": 22763,
+   "stage": "lexical",
+   "kind": "term",
+   "item": "word-sense",
+   "text": "In 2Sa 13:32 and 2Sa 13:33 'suppose' is the verb of saying in the heart: Jonadab tells David not to conclude that all the king's sons are dead, since only Amnon is. It is a conclusion drawn in the mind, here a wrong one.",
+   "basis": "read",
+   "verses": [
+    "2Sam.13.32",
+    "2Sam.13.33"
+   ]
+  },
+  {
+   "observation": 22764,
+   "stage": "lexical",
+   "kind": "term",
+   "item": "word-sense",
+   "text": "In Joh 11:31, Joh 20:15 and Act 27:13 'supposing' is assuming something to be so: the Jews assume Mary is going to the tomb, Mary assumes Jesus is the gardener, and the sailors assume they have their purpose. In the three verses the assumption is held without testing; in Joh 20:15 the verse itself shows it wrong, and in the other two what follows shows the case.",
+   "basis": "read",
+   "verses": [
+    "John.11.31",
+    "John.20.15",
+    "Acts.27.13"
+   ]
+  },
+  {
+   "observation": 22765,
+   "stage": "lexical",
+   "kind": "term",
+   "item": "word-sense",
+   "text": "In Luk 2:44, Act 14:19 and Act 16:27 'supposing' is assuming a fact: that the boy is in the group, that Paul is dead, that the prisoners have escaped. Each is acted on at once, and each proves wrong or is turned aside in the verse or after it.",
+   "basis": "read",
+   "verses": [
+    "Luke.2.44",
+    "Acts.14.19",
+    "Acts.16.27"
+   ]
+  }
+ ],
+ "older_inner_being": [
+  {
+   "observation": 12424,
+   "stage": "strand-reading",
+   "kind": "key-statement",
+   "text": "The path: arising → lodging → reckoning → devising → expression (tongue, lips, eyes) → action (hand, feet)",
+   "answered_before": true
+  },
+  {
+   "observation": 20010,
+   "stage": "prior-capture",
+   "kind": "statement",
+   "text": "The forms: plotting (*\"as they scheme together against me, as they plot to take my life\"*, Psa 31:13); imagining (*\"they imagine the worst for me\"*, Psa 41:7); using the tongue (*\"Your tongue plots destruction\"*, Psa 52:2; *\"let us strike him with the tongue\"*, Jer 18:18); group plans (*\"Come, let us cut her off from being a nation!\"*, Jer 48:2; *\"they made plans to put him to death\"*, Joh 11:53); against God himself (*\"What do you plot against the Lord?\"*, Nah 1:9)",
+   "answered_before": true
+  },
+  {
+   "observation": 20490,
+   "stage": "prior-capture",
+   "kind": "statement",
+   "text": "9.3 From thought to action (Claude's reading): The verses trace a path from thought to deed: Arising. Thoughts come, often in the night (Dan 2:29; Job 4:13; Ezek 38:10; Luke 24:38).; Lodging. They stay and are dwelt on (Jer 4:14).; Reckoning. They weigh up and value things (Isa 53:4; 1 Sam 1:13).; Devising. They take the form of a plan (Ezek 38:10b; Ps 36:4).; Expression. Tongue, lips and eyes: \"your tongue plots\" (Ps 52:2), \"devise words of deceit\" (Ps 35:20), \"winks his eyes plans\" (Prov 16:30), \"whisper … imagine the worst\" (Ps 41:7).; Action. Hand and feet: \"when the morning dawns, they perform it\" (Mic 2:1); \"a heart that devises … feet that make haste\" (Prov 6:18); \"their feet run to evil … their thoughts are thoughts of iniquity\" (Isa 59:7).; The same path also runs toward good: \"When I think on my ways, I turn my feet to your testimonies\" (Ps 119:59).",
+   "answered_before": true
+  },
+  {
+   "observation": 20005,
+   "stage": "prior-capture",
+   "kind": "statement",
+   "text": "The sailors of Acts 27 plan under uncertainty. They act *\"on the chance that somehow they could reach Phoenix\"* (v12) and *\"supposing that they had obtained their purpose\"* (v13). Later they *\"planned if possible to run the ship ashore\"* (v39). Their looking ahead is hedged by what they cannot know.",
+   "answered_before": true
+  },
+  {
+   "observation": 12449,
+   "stage": "strand-reading",
+   "kind": "key-statement",
+   "text": "Imagination makes gods; the maker trusts his own creation",
+   "answered_before": true
+  },
+  {
+   "observation": 15151,
+   "stage": "prior-capture",
+   "kind": "statement",
+   "text": "The Greek picture is swelling, physioō, \"to inflate\". In Paul it is set again and again against love: Knowledge. \"This 'knowledge' puffs up, but love builds up. If anyone imagines that he knows something, he does not yet know as he ought to know. But if anyone loves God, he is known by God\" (1Co 8:1–3). Swelling knowledge is answered not by more knowledge but by being known by God; Love is not. \"Love is patient and kind; love does not envy or boast; it is not arrogant\" (1Co 13:4). Before this: \"if I have prophetic powers, and understand all mysteries and all knowledge ... but have not love, I am nothing\" (13:2); Party; \"that none of you may be puffed up in favor of one against another. For who sees anything different in you? What do you have that you did not receive? If then you received it, why do you boast as if you did not receive it?\" (1Co 4:6–7); Here Paul states what the Hebrew verses showed in story: pride holds what was received \"as if you did not receive it\"; Talk without power. \"Some are arrogant, as though I were not coming to you ... I will find out not the talk of these arrogant people but their power. For the kingdom of God does not consist in talk but in power\" (1Co 4:18–20). The arrogance rests on Paul being absent; Where grief belongs. \"And you are arrogant! Ought you not rather to mourn?\" (1Co 5:2). Pride stands where mourning should be; Without reason. \"puffed up without reason by his sensuous mind, and not holding fast to the Head\" (Col 2:18–19, carried from M09); The new convert. \"He must not be a recent convert, or he may become puffed up with conceit and fall into the condemnation of the devil\" (1Ti 3:6). The verse joins conceit to the devil's condemnation. It does not say what the devil's condemnation was. I read: it is held for 13.3 (other spirits). It is not built on here; Controversy. \"he is puffed up with conceit and understands nothing. He has an unhealthy craving for controversy and for quarrels about words, which produce envy, dissension\" (1Ti 6:4). Conceit is joined to understanding nothing, and to quarrels; With pleasure. \"swollen with conceit, lovers of pleasure rather than lovers of God, having the appearance of godliness, but denying its power\" (2Ti 3:4–5); Among the others; \"quarreling, jealousy, anger, hostility, slander, gossip, conceit, and disorder\" (2Co 12:20); \"Let us not become conceited, provoking one another, envying one another\" (Gal 5:26), after \"let us also keep in step with the Spirit\" (5:25); Conceit is named among the things that set people against each other.",
+   "answered_before": true
+  },
+  {
+   "observation": 14279,
+   "stage": "prior-capture",
+   "kind": "statement",
+   "text": "Where it comes from. Every verse, or the one next to it, names a source, and the sources are inner: Passions at war within: \"What causes quarrels and what causes fights among you? Is it not this, that your passions are at war within you? You desire and do not have, so you murder. You covet and cannot obtain, so you fight and quarrel\" (Jam 4:1–2). The outer fight is the inner war carried outward; The flesh: \"for you are still of the flesh. For while there is jealousy and strife among you, are you not of the flesh and behaving only in a human way?\" (1Cor 3:3), after \"I could not address you as spiritual people, but as people of the flesh\" (3:1); Conceit: \"Let us not become conceited, provoking one another, envying one another\" (Gal 5:26). \"He is puffed up with conceit and understands nothing. He has an unhealthy craving for controversy\" (1Ti 6:4); Appetite: the dividers \"do not serve our Lord Christ, but their own appetites [belly]\" (Rom 16:18); Envy and selfish ambition behind a good act: \"Some indeed preach Christ from envy and rivalry, but others from good will … The former proclaim Christ out of selfish ambition, not sincerely but thinking to afflict me\" (Phili 1:15–17). The same outward act, preaching, has opposite inner sources; A depraved mind: \"constant friction among people who are depraved in mind and deprived of the truth, imagining that godliness is a means of gain\" (1Ti 6:5); Controversies themselves: \"foolish, ignorant controversies … breed quarrels\" (2Ti 2:23); \"avoid foolish controversies, genealogies, dissensions, and quarrels about the law\" (Tit 3:9).",
+   "answered_before": true
+  },
+  {
+   "observation": 18120,
+   "stage": "prior-capture",
+   "kind": "statement",
+   "text": "Over them: *\"You adulterous people! Do you not know that friendship with the world is enmity with God? … Or do you suppose it is to no purpose that the Scripture says, 'He yearns jealously over the spirit that he has made to dwell in us'? But he gives more grace\"* (Jam 4:4–6).; The picture is a husband's jealousy over a divided loyalty, aimed at \"the spirit that he has made to dwell in us\".; The next words are \"But he gives more grace\". This jealousy is answered with grace, not only with wrath. Compare Eze 36, where jealousy turns outward against enemies.; I read God's jealousy as the same burning with two objects: those who harm his people, and his people's own divided heart.",
+   "answered_before": true
+  }
+ ],
+ "earlier_readings": [
+  {
+   "observation": 22507,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "A supposition is held about another person or a state of affairs and acted on, and in the verses of the Gospels and Acts it proves mistaken or unverified: Mary supposed to be going to the tomb, the gardener, the group on the journey, Paul dead, the prisoners escaped, a ghost, a spirit, a sleep, a purchase, a vision. In each the verb of thinking states the supposition and the verse then states what the people did or found."
+  },
+  {
+   "observation": 22508,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "A person holds a view of himself, which the verse then tests: that he is wise (1Cor 3:18), something (Gal 6:3), religious (Jam 1:26), a prophet (1Cor 14:37), standing (1Cor 10:12), with grounds for confidence (Phili 3:4), and that he knows (1Cor 8:2). The verb states a self-estimate, and the verse sets it beside deceiving oneself, folly or knowledge."
+  },
+  {
+   "observation": 22511,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "The supposition is forbidden, denied or withheld in twelve verses: do not think (Mat 5:17, Mat 10:34, Joh 5:45), we ought not to think (Act 17:29), that person must not suppose (Jam 1:7), let no one think me foolish (2Cor 11:16), let not my lord suppose (2Sa 13:32, 2Sa 13:33), not to think too highly (Rom 12:3, twice), do not think to yourself (Est 4:13), the heart does not so think (Isa 10:7) and no thought of her future (Lam 1:9). In each the negator reaches the member itself, one to seven words from it."
+  },
+  {
+   "observation": 22512,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "In these verses the act is a refusal as the grammar states it: Jesus rules out the supposition that he came to abolish the Law or bring peace, accuse you, or that God is like an image; Paul rules out thinking too highly of oneself and asks that no one think him foolish. The refusal is of a supposition about Jesus, about God or about oneself, and is spoken by Jesus, by Paul and by the one counselling."
+  },
+  {
+   "observation": 22513,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Where the supposition is held and acted on the act is a pursuit of its content: the people follow Mary out, go a day's journey, stone Paul, draw the sword, sail on, send a gift, give a daughter to a snare. The thought is the ground of a move toward the thing supposed."
+  },
+  {
+   "observation": 22514,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "What is held to be so is dying or perishing in Gen 26:9, Job 29:18 and Jon 1:6 (the dying stands 2 words after the member and is the content of the thought), escaping in Gen 32:8, Est 4:13, Act 16:27 and Rom 2:3 (the escape is within ten words and is part of what is supposed), and someone's being dead in 2Sa 13:32, 2Sa 13:33 and Act 14:19."
+  },
+  {
+   "observation": 22516,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "What is held to be so is a state of the one who holds it: wise (1Cor 3:18, the wise within 2 words), religious (Jam 1:26), something when he is nothing (Gal 6:3), a prophet (1Cor 14:37), standing (1Cor 10:12), knowing (1Cor 8:2), with reason for confidence (Phili 3:4, confidence 6 before and 1 after) and thinking highly of oneself (Rom 12:3, faith 6 after). In each the object of the thinking is the thinker."
+  },
+  {
+   "observation": 22517,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "What is held to be so is another person's state or act: a prostitute (Gen 38:15, her face covered 2 words after), a gardener (Joh 20:15), in the group (Luk 2:44), drunk (Act 2:15), dead (Act 14:19), a sleep (Joh 11:13), a ghost (Mar 6:49), unclean (Rom 14:14, the uncleanness 2 words before) and not clean (1Sa 20:26). The object is a person or a thing in a state the speaker has not verified."
+  },
+  {
+   "observation": 22519,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "The outward act that follows a supposition is stated in the same verse: the Jews follow Mary (Joh 11:31, going 2 words after), Joseph's people go a day's journey (Luk 2:44), the crowds stone Paul (Act 14:19), the jailer draws his sword (Act 16:27, killing 2 words before), the sailors weigh anchor (Act 27:13), Saul gives his daughter as a snare (1Sa 18:21, give 1 after), and Jacob sends a present (Gen 32:20, present 3 after). The supposition and the act it leads to stand in the one sentence."
+  },
+  {
+   "observation": 22520,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "A supposition issues in a spoken answer or a question in the exchanges of Gen 18:29 to 18:32, Gen 31:31, Exo 2:14, Est 4:13, Luk 7:43 and Luk 13:2: the supposition is put in the speaker's own words as part of a dialogue, with 'answered' 1 to 13 words from the member."
+  },
+  {
+   "observation": 22522,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Anger, hiding and hunger stand beside the thought in Gen 18:30 and Gen 18:32 (the Lord's anger), 2Ki 5:11 (Naaman's anger, 4 words before), Psa 64:5 (secretly, 1 word before), 2Ki 7:12 (hide, 2 words before; hungry, 6 before) and Gen 38:15 (the covering of her face, 2 words after). The thought arises in a person who is angry, hiding or hungry, or who is faced with something concealed."
+  },
+  {
+   "observation": 22523,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Affliction, suffering and crying stand with the thought in Lam 1:9 (affliction), 1Cor 7:26 (the present distress, 3 words after), Phili 1:17 (afflict, 1 after), 1Pe 4:1 (Christ suffered, within 2 words), Luk 13:2 (suffered), Mar 6:49 (cried out, 4 after), Joh 11:31 and Joh 20:15 (weeping) and Deu 15:9 (the cry to the Lord, 14 after). The thinking is set in verses of distress or of a response to it."
+  },
+  {
+   "observation": 22528,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Searching and finding stand with the supposition in Gen 18:28 and Gen 18:30 ('find' is the condition of each supposed number), Mat 18:12, Luk 2:44 and Joh 20:15 (the search follows the supposition or the question) and Joh 5:39 (searching the Scriptures, 4 words before the supposition). The supposition is set in a verse of a search or of a condition to be found."
+  },
+  {
+   "observation": 22529,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Sin, judging and evil stand with the supposition in Luk 13:2 (worse sinners), Eze 18:14 (a son who sees his father's sins), Rom 2:3 (you who judge), Joh 5:45 (accuse), Mat 9:4 (evil, 1 word after), Psa 64:5 (evil, 5 before), 1Cor 14:20 (evil, 2 before) and Pro 21:29 (the wicked, 5 before). In Mat 9:4 the evil is what is thought; in the others it stands in the clause of the person who thinks."
+  },
+  {
+   "observation": 22531,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Truth, righteousness and the lawful stand with the supposition in Job 35:2 (just, 2 after), Mat 22:17 (lawful, 1 after), 2Cor 12:6 (truth, 5 before), 1Ti 6:5 (truth, 1 before), Phili 4:8 (honorable and just, 13 to 15 before) and Gen 18:28 (the righteous in the case put). The thought is a judgment whether something is right, true or lawful."
+  },
+  {
+   "observation": 22533,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Small words stand in the units of the surfaces of this group and do not carry the sense of supposing: the connective G1161 in 1Cor 8:2, Rom 2:3 and 2Pe 1:13, G2532 in Rom 1:21, the particles and pronouns H3588A (Gen 20:11), H1931 (Pro 21:29), H0834A (Eze 20:32), H0853 (Neh 6:9), the preposition H0413 (Jer 40:4), the copula H1961 (Deu 15:9) and the returning H7725G (Mic 2:8). They are read in their verses as standalone and were read at stage 1 for what they do."
+  },
+  {
+   "observation": 22548,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Wealth, teaching and counsel stand with the thought in a few verses: the imagination is the wall of the rich man's wealth (Pro 18:11, wealth 6 before), the thoughts are not to be cursed in even against the rich (Ecc 10:20, rich 7 after), the counsels of the wicked stand beside the thoughts of the righteous (Pro 12:5, 3 after), and the opinion of persons is set against teaching the way of God (Mat 22:16, Mar 12:14). The thought is set beside the wealth, the counsel or the teaching of the one who holds it."
+  },
+  {
+   "observation": 22555,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Devising harm is a done act in Psa 41:7: those who hate the speaker whisper together and imagine the worst for him. The verb is the code H2803I whose lexicon sense is to plan or devise, and the unit also holds the preposition H5921A, 'upon', beside it."
+  },
+  {
+   "observation": 22556,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "The devising of Psa 41:7 is a pursuit of harm: the object is the worst for the speaker, and the verb is set among whispering and hating."
+  },
+  {
+   "observation": 22558,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "What is conceived is a son in Jdg 13:5, 13:7, Isa 7:14, Mat 1:23 and Luk 1:31, children in Num 5:28, the speaker in Psa 51:5, a people in Num 11:12, trouble, chaff and mischief in Job 15:35, Isa 33:11 and Isa 59:4, and the worst against the speaker in Psa 41:7. The conceiving of a child is the commoner object across the verses."
+  },
+  {
+   "observation": 22562,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Small words stand in the units of the surfaces of this group and do not carry the sense of conceiving or devising: the preposition H5921A in Psa 41:7, the Greek 'in' (G1722) in Mat 1:23 and the verb 'to have' (G2192) read with it, which together form the idiom rendered conceive. They are read in their verses as standalone beside the member that gives the sense; the grouping placed the whole surface 'conceive' under devising although most of its occurrences are bodily conceiving, which was left as uncertain."
+  },
+  {
+   "observation": 22582,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Anger and the supposition meet in three verses. In Gen 18:30 and Gen 18:32 the Lord's anger is what Abraham asks not to be roused, 2 and 4 words before the supposed number, and the supposition is the case he puts while the anger is held back; in 2Ki 5:11 Naaman's own anger stands 4 words before his quoted thought. The anger is the setting of the supposition, the Lord's in the first two and the thinker's in the third."
+  },
+  {
+   "observation": 22587,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Comfort and the supposition meet in three verses with different relations. In Psa 119:52 the thinking of the Lord's rules and the comfort taken are in one clause, comfort 4 words after; in Job 12:5 the at-ease (1 word after the thought) hold contempt for misfortune; in Joh 11:31 the consoling stands 10 words before the supposition that explains why they followed Mary out."
+  },
+  {
+   "observation": 22588,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Commanding and the supposition meet in five verses. In Num 36:6 the Lord's commands stand 4 words before the thought of whom they think best; in 1Cor 14:37 the command (11 words after) is what the one who thinks he is a prophet is to acknowledge; in Psa 50:21 the charge (2 after) follows the false supposition about God; in Rom 12:3 and 2Sa 13:32 the partner is 8 and 12 words after, in later clauses. The supposition is set against a command or charge."
+  },
+  {
+   "observation": 22590,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Judging and the supposition meet in four verses. In Joh 5:45 (accuse, 3 after) and Rom 2:3 (judge, 3 after) the supposition concerns accusation or judgment; in Luk 7:43 the judging (8 after) is the answer given to Simon's supposition; in Exo 2:14 'judge' is 8 words before, in the question the accuser puts to Moses. The supposition and the judging are set side by side in each."
+  },
+  {
+   "observation": 22591,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Persuading and the supposition meet in three verses: persuaded stands 8 words before the supposition of the crowds in Act 14:19 and 13 before Paul's thought of the unclean in Rom 14:14, and obeying stands 3 words after the thought taken captive in 2Cor 10:5. The persuasion is a separate earlier act in the first two, and the obedience is the end of the thought in the third."
+  },
+  {
+   "observation": 22593,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Departing and the supposition meet in four verses. In Joh 11:31 the going out is 2 words after the supposition that explains it; in 1Sa 27:11 'leave' is 5 words before the quoted thought of David; in Ecc 9:10 and Mat 18:12 the going or leaving is 7 and 12 words from the member in other clauses. Only in Joh 11:31 is the departure the act that the supposition leads to."
+  },
+  {
+   "observation": 22594,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Desire words and the supposition meet in five verses at varying distance: 'desires' 12 words before in 1Sa 18:25, 'willing' 9 before in 1Ch 28:9, 'yearns' 5 after in Jam 4:5; the surface 'will' of 2Sa 14:17 and 2Ki 7:12 is the future particle of the quoted speech and not a desire, flagged in #2536. Desire stands in the same sentence as the thought but not within it."
+  },
+  {
+   "observation": 22595,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Destroying and the supposition meet in five verses. In Gen 18:28, 18:31 and 18:32 the destroying is what the Lord is asked not to do under each supposed number; in Isa 10:7 it is 3 words after the thought and is the purpose in the heart that is said not to be what he thinks; in 2Cor 10:5 it is 12 words before and is an act on arguments. The supposition is the case on which the destroying is argued or the plan that destroying belongs to."
+  },
+  {
+   "observation": 22598,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Escaping and the supposition meet in four verses: 9 words after in Gen 32:8, 4 after in Est 4:13, 2 after in Act 16:27 and 10 after in Rom 2:3. In every verse the escape is part of what is supposed: hoped for by Jacob, denied to Esther, assumed by the jailer and put to the judge as a question."
+  },
+  {
+   "observation": 22599,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Evil and the wicked stand with the supposition in six verses. In Mat 9:4 'evil' is 1 word after the member and is what is thought; in 1Cor 14:20, Psa 64:5 and 1Ti 6:5 it or 'depraved' is 2 to 5 words before; in Pro 21:29 the wicked is 5 words before and is set against the upright who gives thought; in 2Sa 14:17 it is 14 after. The supposition is held by, or about, those described as evil."
+  },
+  {
+   "observation": 22604,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "The heart or mind stands with the supposition in ten verses, within three words in Deu 15:9 and 2Sa 13:33 (1), Isa 10:7 (2), Eze 20:32 and Rom 1:21 (3), and at 4 to 10 in 1Ch 28:9, Mat 9:4, 1Ti 6:5, Eze 11:5 and Jam 1:26. The verses place the supposition in the heart or mind of the one who holds it, and in Isa 10:7 set what the heart plans against what it thinks."
+  },
+  {
+   "observation": 22605,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Honor and its opposite stand with the supposition in six verses: 'honoring' 4 words after in 2Sa 10:3 and 1Ch 19:3, 'worthy' 16 after in Act 13:25, 'honor' 9 before in Rom 1:21, 'less honorable' 1 and 'honor' 3 after in 1Cor 12:23, and disgrace 6 after in 1Ti 3:7. The supposition concerns what is honorable or reputed in the verses nearest the member."
+  },
+  {
+   "observation": 22606,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Intending words and the supposition meet in six verses. In 1Ch 28:9 (plan, 1 before), Psa 64:5 (purpose, 4 before) and Isa 10:7 (intend, 4 before) the partner is of the same kind as the member; in Joh 11:13 'meant' is 2 words after and is what Jesus meant, which they supposed otherwise; in Act 27:13 and Jam 4:5 'purpose' is 2 and 1 after. The supposition and the purpose are set together."
+  },
+  {
+   "observation": 22607,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Killing and the supposition meet in six verses: 1 word after in 2Sa 13:32 and 2Sa 21:16, 2 words before in Luk 13:4, Joh 16:2 and Act 16:27, and 4 to 5 before in Exo 2:14. In Joh 16:2 the killer supposes he serves God and in Act 16:27 the jailer supposes the prisoners have escaped; the killing is what is supposed or intended."
+  },
+  {
+   "observation": 22610,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Crying and weeping stand with the supposition in four verses: 'cry' 14 words after in Deu 15:9, 'cried out' 4 after in Mar 6:49, weeping 6 after in Joh 11:31 and weeping before in Joh 20:15. In the three Gospel verses the crying or weeping follows or accompanies a supposition about a ghost, the tomb or the gardener."
+  },
+  {
+   "observation": 22611,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Life and death words stand with the supposition in eight verses. 'Dead' is 9, 4, 2 and 7 words after in 2Sa 13:32, 2Sa 13:33, Act 14:19 and Act 26:8, and in the first three the supposition is that someone is dead; 'alive' or 'lives' is 5 to 11 words after in 2Ki 7:12, 1Sa 20:3, 1Sa 27:11 and Luk 13:4. The state of being alive or dead is the commonest object of the supposition in this pairing."
+  },
+  {
+   "observation": 22616,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Answering and the supposition meet in nine verses: the four of Gen 18, where 'answered' is 4 words after each supposed number, Luk 7:43 (1 before), Luk 13:2 (2 before), Est 4:13 (3 before), Gen 31:31 (6 before) and Exo 2:14 (13 before). In every verse the supposition is said inside a spoken exchange of question and reply."
+  },
+  {
+   "observation": 22621,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Righteousness, truth and the lawful stand with the supposition in six verses: 'just' 2 words after in Job 35:2, 'lawful' 1 after in Mat 22:17, 'truth' 5 before in 2Cor 12:6 and 1 before in 1Ti 6:5, 'honorable' and 'just' 15 and 13 before in Phili 4:8, and 'righteous' 3 after in Gen 18:28. In Job 35:2 and Mat 22:17 the supposition is the judgment whether something is just or lawful."
+  },
+  {
+   "observation": 22625,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Sin stands with the supposition in five verses: 'sins' 5 words after in Eze 18:14, 'sinners' 5 after in Luk 13:2, 'sin' 6 after in 1Pe 4:1, 15 after in 1Cor 7:36 and 19 after in Deu 15:9. In Luk 13:2 and Eze 18:14 the sin is within the clause of what is supposed; in the other three it is in a later clause."
+  },
+  {
+   "observation": 22626,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Taking stands with the supposition in seven verses. In Luk 8:18 (taken, 2 after) and Act 8:20 (obtain, 1 after) the taking is what the supposed possession or what Simon supposed he could do; in 2Cor 10:5 'take' is 2 words before and acts on thought; in 2Sa 13:33, 2Ki 7:12, Mat 17:25 and Joh 20:15 it is a different act 4 to 17 words from the member."
+  },
+  {
+   "observation": 22663,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Wealth meets the thoughts in three verses: 'wealth' 6 words before the imagination in Pro 18:11 (the wall of the rich man's wealth), 'rich' 7 after in Ecc 10:20 (not to curse the rich even in your thoughts) and 'abundantly' 8 after in Isa 55:7. Only in Pro 18:11 is wealth the thing the imagination pictures."
+  }
+ ],
+ "occurrences": [
+  {
+   "occurrence": 1277182,
+   "reference": "Pro 18:11",
+   "osis": "Prov.18.11",
+   "surface": "imagination",
+   "strong": "H4906"
+  },
+  {
+   "occurrence": 1469845,
+   "reference": "Act 17:29",
+   "osis": "Acts.17.29",
+   "surface": "imagination",
+   "strong": "G1761"
+  },
+  {
+   "occurrence": 1247267,
+   "reference": "Psa 41:7",
+   "osis": "Ps.41.7",
+   "surface": "imagine",
+   "strong": "H2803I"
+  },
+  {
+   "occurrence": 1247269,
+   "reference": "Psa 41:7",
+   "osis": "Ps.41.7",
+   "surface": "imagine",
+   "strong": "H5921A"
+  },
+  {
+   "occurrence": 1484787,
+   "reference": "1Cor 8:2",
+   "osis": "1Cor.8.2",
+   "surface": "imagines",
+   "strong": "G1380"
+  },
+  {
+   "occurrence": 1484788,
+   "reference": "1Cor 8:2",
+   "osis": "1Cor.8.2",
+   "surface": "imagines",
+   "strong": "G1161"
+  },
+  {
+   "occurrence": 1499189,
+   "reference": "1Ti 6:5",
+   "osis": "1Tim.6.5",
+   "surface": "imagining",
+   "strong": "G3543"
+  },
+  {
+   "occurrence": 984128,
+   "reference": "Gen 18:28",
+   "osis": "Gen.18.28",
+   "surface": "suppose",
+   "strong": "H0194"
+  },
+  {
+   "occurrence": 978657,
+   "reference": "Gen 18:29",
+   "osis": "Gen.18.29",
+   "surface": "suppose",
+   "strong": "H0194"
+  },
+  {
+   "occurrence": 976252,
+   "reference": "Gen 18:30",
+   "osis": "Gen.18.30",
+   "surface": "suppose",
+   "strong": "H0194"
+  },
+  {
+   "occurrence": 978677,
+   "reference": "Gen 18:31",
+   "osis": "Gen.18.31",
+   "surface": "suppose",
+   "strong": "H0194"
+  },
+  {
+   "occurrence": 976274,
+   "reference": "Gen 18:32",
+   "osis": "Gen.18.32",
+   "surface": "suppose",
+   "strong": "H0194"
+  },
+  {
+   "occurrence": 1140493,
+   "reference": "2Sa 13:32",
+   "osis": "2Sam.13.32",
+   "surface": "suppose",
+   "strong": "H0559"
+  },
+  {
+   "occurrence": 1142223,
+   "reference": "2Sa 13:33",
+   "osis": "2Sam.13.33",
+   "surface": "suppose",
+   "strong": "H0559"
+  },
+  {
+   "occurrence": 1368762,
+   "reference": "Eze 18:14",
+   "osis": "Ezek.18.14",
+   "surface": "suppose",
+   "strong": "H2009"
+  },
+  {
+   "occurrence": 1435119,
+   "reference": "Luk 7:43",
+   "osis": "Luke.7.43",
+   "surface": "suppose",
+   "strong": "G5274"
+  },
+  {
+   "occurrence": 1456897,
+   "reference": "Joh 21:25",
+   "osis": "John.21.25",
+   "surface": "suppose",
+   "strong": "G3633"
+  },
+  {
+   "occurrence": 1472232,
+   "reference": "Act 2:15",
+   "osis": "Acts.2.15",
+   "surface": "suppose",
+   "strong": "G5274"
+  },
+  {
+   "occurrence": 1460693,
+   "reference": "Act 13:25",
+   "osis": "Acts.13.25",
+   "surface": "suppose",
+   "strong": "G5282"
+  },
+  {
+   "occurrence": 1477606,
+   "reference": "Rom 2:3",
+   "osis": "Rom.2.3",
+   "surface": "suppose",
+   "strong": "G1161"
+  },
+  {
+   "occurrence": 1507385,
+   "reference": "Jam 1:7",
+   "osis": "Jas.1.7",
+   "surface": "suppose",
+   "strong": "G3633"
+  },
+  {
+   "occurrence": 1506285,
+   "reference": "Jam 4:5",
+   "osis": "Jas.4.5",
+   "surface": "suppose",
+   "strong": "G1380"
+  },
+  {
+   "occurrence": 1442041,
+   "reference": "Luk 2:44",
+   "osis": "Luke.2.44",
+   "surface": "supposing",
+   "strong": "G3543"
+  },
+  {
+   "occurrence": 1456592,
+   "reference": "Joh 11:31",
+   "osis": "John.11.31",
+   "surface": "supposing",
+   "strong": "G1380"
+  },
+  {
+   "occurrence": 1449562,
+   "reference": "Joh 20:15",
+   "osis": "John.20.15",
+   "surface": "supposing",
+   "strong": "G1380"
+  },
+  {
+   "occurrence": 1470650,
+   "reference": "Act 14:19",
+   "osis": "Acts.14.19",
+   "surface": "supposing",
+   "strong": "G3543"
+  },
+  {
+   "occurrence": 1470684,
+   "reference": "Act 16:27",
+   "osis": "Acts.16.27",
+   "surface": "supposing",
+   "strong": "G3543"
+  },
+  {
+   "occurrence": 1466960,
+   "reference": "Act 27:13",
+   "osis": "Acts.27.13",
+   "surface": "supposing",
+   "strong": "G1380"
+  }
+ ],
+ "verses": [
+  {
+   "reference": "1Cor.8.2",
+   "text": "If anyone imagines that he knows something, he does not yet know as he ought to know."
+  },
+  {
+   "reference": "1Tim.6.5",
+   "text": "and constant friction among people who are depraved in mind and deprived of the truth, imagining that godliness is a means of gain."
+  },
+  {
+   "reference": "2Sam.13.32",
+   "text": "But Jonadab the son of Shimeah, David’s brother, said, “Let not my lord suppose that they have killed all the young men, the king’s sons, for Amnon alone is dead. For by the command of Absalom this has been determined from the day he violated his sister Tamar."
+  },
+  {
+   "reference": "2Sam.13.33",
+   "text": "Now therefore let not my lord the king so take it to heart as to suppose that all the king’s sons are dead, for Amnon alone is dead.”"
+  },
+  {
+   "reference": "Acts.13.25",
+   "text": "And as John was finishing his course, he said, ‘ What do you suppose that I am? I am not he. No, but behold, after me one is coming, the sandals of whose feet I am not worthy to untie.’"
+  },
+  {
+   "reference": "Acts.14.19",
+   "text": "But Jews came from Antioch and Iconium, and having persuaded the crowds, they stoned Paul and dragged him out of the city, supposing that he was dead."
+  },
+  {
+   "reference": "Acts.16.27",
+   "text": "When the jailer woke and saw that the prison doors were open, he drew his sword and was about to kill himself, supposing that the prisoners had escaped."
+  },
+  {
+   "reference": "Acts.17.29",
+   "text": "Being then God’s offspring, we ought not to think that the divine being is like gold or silver or stone, an image formed by the art and imagination of man."
+  },
+  {
+   "reference": "Acts.2.15",
+   "text": "For these people are not drunk, as you suppose, since it is only the third hour of the day."
+  },
+  {
+   "reference": "Acts.27.13",
+   "text": "Now when the south wind blew gently, supposing that they had obtained their purpose, they weighed anchor and sailed along Crete, close to the shore."
+  },
+  {
+   "reference": "Ezek.18.14",
+   "text": "“Now suppose this man fathers a son who sees all the sins that his father has done; he sees, and does not do likewise:"
+  },
+  {
+   "reference": "Gen.18.28",
+   "text": "Suppose five of the fifty righteous are lacking. Will you destroy the whole city for lack of five?” And he said, “I will not destroy it if I find forty-five there.”"
+  },
+  {
+   "reference": "Gen.18.29",
+   "text": "Again he spoke to him and said, “ Suppose forty are found there.” He answered, “ For the sake of forty I will not do it.”"
+  },
+  {
+   "reference": "Gen.18.30",
+   "text": "Then he said, “ Oh let not the Lord be angry, and I will speak. Suppose thirty are found there.” He answered, “I will not do it, if I find thirty there.”"
+  },
+  {
+   "reference": "Gen.18.31",
+   "text": "He said, “ Behold, I have undertaken to speak to the Lord. Suppose twenty are found there.” He answered, “ For the sake of twenty I will not destroy it.”"
+  },
+  {
+   "reference": "Gen.18.32",
+   "text": "Then he said, “ Oh let not the Lord be angry, and I will speak again but this once. Suppose ten are found there.” He answered, “ For the sake of ten I will not destroy it.”"
+  },
+  {
+   "reference": "Jas.1.7",
+   "text": "For that person must not suppose that he will receive anything from the Lord;"
+  },
+  {
+   "reference": "Jas.4.5",
+   "text": "Or do you suppose it is to no purpose that the Scripture says, “He yearns jealously over the spirit that he has made to dwell in us ”?"
+  },
+  {
+   "reference": "John.11.31",
+   "text": "When the Jews who were with her in the house, consoling her, saw Mary rise quickly and go out, they followed her, supposing that she was going to the tomb to weep there."
+  },
+  {
+   "reference": "John.20.15",
+   "text": "Jesus said to her, “ Woman, why are you weeping? Whom are you seeking?” Supposing him to be the gardener, she said to him, “ Sir, if you have carried him away, tell me where you have laid him, and I will take him away.”"
+  },
+  {
+   "reference": "John.21.25",
+   "text": "Now there are also many other things that Jesus did. Were every one of them to be written, I suppose that the world itself could not contain the books that would be written."
+  },
+  {
+   "reference": "Luke.2.44",
+   "text": "but supposing him to be in the group they went a day’s journey, but then they began to search for him among their relatives and acquaintances,"
+  },
+  {
+   "reference": "Luke.7.43",
+   "text": "Simon answered, “The one, I suppose, for whom he cancelled the larger debt.” And he said to him, “You have judged rightly.”"
+  },
+  {
+   "reference": "Prov.18.11",
+   "text": "A rich man’s wealth is his strong city, and like a high wall in his imagination."
+  },
+  {
+   "reference": "Ps.41.7",
+   "text": "All who hate me whisper together about me; they imagine the worst for me."
+  },
+  {
+   "reference": "Rom.2.3",
+   "text": "Do you suppose, O man —you who judge those who practice such things and yet do them yourself— that you will escape the judgment of God?"
+  }
+ ],
+ "answer": {
+  "command": "ReadElements",
+  "collection": "thought",
+  "subgroup": "supposing and imagining",
+  "ledger_id": 1588,
+  "findings": [
+   {
+    "key": "f1",
+    "kind": "",
+    "text": "",
+    "basis": "read | stated",
+    "parts": {
+     "item": "role | polarity | object | enactment | party | circumstance | operation | chain | flag",
+     "grounds": ""
+    },
+    "nodes": [
+     {
+      "occurrence": "<occurrence id>",
+      "role": "<a node role>"
+     },
+     {
+      "traced": "<id of an observation it rests on>"
+     }
+    ],
+    "read_back": []
+   }
+  ],
+  "not_used": {},
+  "older": [],
+  "existing": [
+   {
+    "observation": 22507,
+    "action": "accept | modify | delete | merge | leave",
+    "reason": ""
+   },
+   {
+    "observation": 22508,
+    "action": "accept | modify | delete | merge | leave",
+    "reason": ""
+   },
+   {
+    "observation": 22511,
+    "action": "accept | modify | delete | merge | leave",
+    "reason": ""
+   },
+   {
+    "observation": 22512,
+    "action": "accept | modify | delete | merge | leave",
+    "reason": ""
+   },
+   {
+    "observation": 22513,
+    "action": "accept | modify | delete | merge | leave",
+    "reason": ""
+   },
+   {
+    "observation": 22514,
+    "action": "accept | modify | delete | merge | leave",
+    "reason": ""
+   },
+   {
+    "observation": 22516,
+    "action": "accept | modify | delete | merge | leave",
+    "reason": ""
+   },
+   {
+    "observation": 22517,
+    "action": "accept | modify | delete | merge | leave",
+    "reason": ""
+   },
+   {
+    "observation": 22519,
+    "action": "accept | modify | delete | merge | leave",
+    "reason": ""
+   },
+   {
+    "observation": 22520,
+    "action": "accept | modify | delete | merge | leave",
+    "reason": ""
+   },
+   {
+    "observation": 22522,
+    "action": "accept | modify | delete | merge | leave",
+    "reason": ""
+   },
+   {
+    "observation": 22523,
+    "action": "accept | modify | delete | merge | leave",
+    "reason": ""
+   },
+   {
+    "observation": 22528,
+    "action": "accept | modify | delete | merge | leave",
+    "reason": ""
+   },
+   {
+    "observation": 22529,
+    "action": "accept | modify | delete | merge | leave",
+    "reason": ""
+   },
+   {
+    "observation": 22531,
+    "action": "accept | modify | delete | merge | leave",
+    "reason": ""
+   },
+   {
+    "observation": 22533,
+    "action": "accept | modify | delete | merge | leave",
+    "reason": ""
+   },
+   {
+    "observation": 22548,
+    "action": "accept | modify | delete | merge | leave",
+    "reason": ""
+   },
+   {
+    "observation": 22555,
+    "action": "accept | modify | delete | merge | leave",
+    "reason": ""
+   },
+   {
+    "observation": 22556,
+    "action": "accept | modify | delete | merge | leave",
+    "reason": ""
+   },
+   {
+    "observation": 22558,
+    "action": "accept | modify | delete | merge | leave",
+    "reason": ""
+   },
+   {
+    "observation": 22562,
+    "action": "accept | modify | delete | merge | leave",
+    "reason": ""
+   },
+   {
+    "observation": 22582,
+    "action": "accept | modify | delete | merge | leave",
+    "reason": ""
+   },
+   {
+    "observation": 22587,
+    "action": "accept | modify | delete | merge | leave",
+    "reason": ""
+   },
+   {
+    "observation": 22588,
+    "action": "accept | modify | delete | merge | leave",
+    "reason": ""
+   },
+   {
+    "observation": 22590,
+    "action": "accept | modify | delete | merge | leave",
+    "reason": ""
+   },
+   {
+    "observation": 22591,
+    "action": "accept | modify | delete | merge | leave",
+    "reason": ""
+   },
+   {
+    "observation": 22593,
+    "action": "accept | modify | delete | merge | leave",
+    "reason": ""
+   },
+   {
+    "observation": 22594,
+    "action": "accept | modify | delete | merge | leave",
+    "reason": ""
+   },
+   {
+    "observation": 22595,
+    "action": "accept | modify | delete | merge | leave",
+    "reason": ""
+   },
+   {
+    "observation": 22598,
+    "action": "accept | modify | delete | merge | leave",
+    "reason": ""
+   },
+   {
+    "observation": 22599,
+    "action": "accept | modify | delete | merge | leave",
+    "reason": ""
+   },
+   {
+    "observation": 22604,
+    "action": "accept | modify | delete | merge | leave",
+    "reason": ""
+   },
+   {
+    "observation": 22605,
+    "action": "accept | modify | delete | merge | leave",
+    "reason": ""
+   },
+   {
+    "observation": 22606,
+    "action": "accept | modify | delete | merge | leave",
+    "reason": ""
+   },
+   {
+    "observation": 22607,
+    "action": "accept | modify | delete | merge | leave",
+    "reason": ""
+   },
+   {
+    "observation": 22610,
+    "action": "accept | modify | delete | merge | leave",
+    "reason": ""
+   },
+   {
+    "observation": 22611,
+    "action": "accept | modify | delete | merge | leave",
+    "reason": ""
+   },
+   {
+    "observation": 22616,
+    "action": "accept | modify | delete | merge | leave",
+    "reason": ""
+   },
+   {
+    "observation": 22621,
+    "action": "accept | modify | delete | merge | leave",
+    "reason": ""
+   },
+   {
+    "observation": 22625,
+    "action": "accept | modify | delete | merge | leave",
+    "reason": ""
+   },
+   {
+    "observation": 22626,
+    "action": "accept | modify | delete | merge | leave",
+    "reason": ""
+   },
+   {
+    "observation": 22663,
+    "action": "accept | modify | delete | merge | leave",
+    "reason": ""
+   }
+  ]
+ },
+ "measured": {
+  "package_chars": 98350,
+  "seconds": 0.39
+ }
+}

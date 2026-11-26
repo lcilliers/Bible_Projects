@@ -1,0 +1,91 @@
+{
+ "command": "ReadElements",
+ "collection": "thought",
+ "subgroup": "once regarded",
+ "ledger_id": 1948,
+ "findings": [
+  {
+   "key": "former-knowing",
+   "kind": "statement",
+   "text": "In 2Cor 5:16 the once regarded is a former knowing of Christ by the standard of the flesh: the person did it in the past, and the verse reports it as given up.",
+   "basis": "read",
+   "parts": {
+    "item": "operation",
+    "grounds": "we once regarded Christ according to the flesh",
+    "mode": "reported"
+   },
+   "nodes": [
+    {
+     "occurrence": 1486653,
+     "role": "characteristic"
+    },
+    {
+     "traced": 22878
+    },
+    {
+     "traced": 23601
+    },
+    {
+     "traced": 23603
+    },
+    {
+     "traced": 22768
+    }
+   ],
+   "read_back": []
+  },
+  {
+   "key": "standard",
+   "kind": "statement",
+   "text": "In 2Cor 5:16 the flesh is the standard by which the knowing took account of Christ, and the same standard is now set aside for everyone: the working is measured by what it judges by.",
+   "basis": "stated",
+   "parts": {
+    "item": "role",
+    "grounds": "regard no one according to the flesh"
+   },
+   "nodes": [
+    {
+     "occurrence": 1486653,
+     "role": "characteristic"
+    },
+    {
+     "traced": 23602
+    },
+    {
+     "traced": 23604
+    },
+    {
+     "traced": 22878
+    }
+   ],
+   "read_back": []
+  },
+  {
+   "key": "given-up",
+   "kind": "statement",
+   "text": "In 2Cor 5:16 the knowing by the flesh is refused from now on: no longer, no one.",
+   "basis": "read",
+   "parts": {
+    "item": "polarity",
+    "grounds": "we regard him thus no longer",
+    "polarity": "refusal"
+   },
+   "nodes": [
+    {
+     "occurrence": 1486653,
+     "role": "characteristic"
+    },
+    {
+     "traced": 23602
+    },
+    {
+     "traced": 23604
+    }
+   ],
+   "read_back": []
+  }
+ ],
+ "not_used": {},
+ "older": [],
+ "existing": []
+}

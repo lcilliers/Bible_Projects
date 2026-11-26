@@ -1,0 +1,402 @@
+{
+ "command": "ReadStructure",
+ "collection": "thought",
+ "subgroup": "reasoning",
+ "step": "2.1",
+ "item": "pairing",
+ "made": "2026-11-26T04:50:47Z",
+ "batch": {
+  "rows": 2,
+  "rows_left_after_this": 0
+ },
+ "instruction": {
+  "what": "Step 2.1, the structure of one subgroup (stage 1, B3): what stands with the subgroup's words in each verse, read from the stored structure. One item at a time: double-meaning (a surface with more than one code), qualifier (negators and the word each reaches, adjectives, adverbs, prepositional qualifiers), entity (who is named or referred to), direction (from whom to whom, by the grammar), pairing (one row for each partner collection: its words in the verses shared with the subgroup). Nothing here says what anything does for the inner being; that begins at step 3.1.",
+  "read": [
+   "Take one row at a time (`rows`): what it asks, its occurrences (`as`: member, the subgroup's word; partner, the other word), and its verses.",
+   "Read each verse (`verses`) from its stored structure, one line for each word: * marks an occurrence of the subgroup; then the position, surface, Strong's code and morph, and what the pairing makes of the word (its type, the qualifier it carries, a negator, a party, the collections of a word of another collection). Nothing is evaluated that is not stored.",
+   "Where each word stands: its side and distance from the subgroup's word, from the positions. Adjacency is not scope: a negator or qualifier is read for the word it reaches by the grammar.",
+   "A pairing row shows the WordNet control for its partner collection: a pairing WordNet gives and the verses do not show is one to look for; a pairing only the verses show has no control.",
+   "Differences in meaning are read from the base data (the Strong's code, the morph, the construction), not from the English alone. The subgroup's 1.1 senses (`senses`) are what the findings build on."
+  ],
+  "write": [
+   "Fill `answer.rows`: for each row, disposition observed with its `findings`, or none with its `reason` (where the row allows none: nothing of the item stands with the subgroup in its verses).",
+   "One finding for each distinct thing the structure shows; the same finding in several verses is ONE finding naming all its occurrences; a verse that shows something different is its own finding. Together the findings name every occurrence of the row (occurrence ids or verse references), each in one finding.",
+   "kind: as the template gives it (pairing; relation for direction; face for double-meaning). obs_text: concise; names the verses it holds in, as the package writes the references (for example Act 18:4); states what the structure shows (which word, where it stands, what it reaches or gives by the grammar); never a verse restated, never what it does for the inner being.",
+   "basis: stated (the verse says it) or read (read from the structure), with `grounds`: words copied exactly from the verses it is tied to (the record checks them).",
+   "Each subgroup's surface has its own finding; none joins two subgroups. A data error is named in grounds, not fixed.",
+   "`older`: answer each older observation shown under the row, once: keep (with `nature`), restate (with `nature`, `new_text`, `checked`), merge (with `into`), consume (with `carriers` [\"this\"] or observation ids, and `mapping`), delete_neither (with `reason`), carry (with `to` and `reason`), defer (with `collection`, `nature`, `finding`). One listed under another row is answered there.",
+   "Then: Collection-Build.ps1 -Action RecordStructure -File <the answer file> (-Check to preview). The record refuses the whole file on any fault and lists every fault."
+  ],
+  "keep": [
+   {
+    "rule": "RG-14 morph-read",
+    "text": "Morph is read, not carried: where occurrences of a word show different stems or voices, record whether the subject does, undergoes or causes the act."
+   },
+   {
+    "rule": "RG-16 homonym-and-data-error",
+    "text": "A word that is only a homonym or a name, with no meaningful context, is recorded as such (tag no-human-context) and left. Data errors found while reading are flagged (tag data-error), not fixed in the reading."
+   },
+   {
+    "rule": "RG-21 grain",
+    "text": "A word is read per its lettered Strong's code (its grain), never the bare lemma (B:113). The occurrences of a word with several senses are related per grain and never aggregated across grains: related verses are same-grain occurrences."
+   },
+   {
+    "rule": "RO11 one-row-per-code",
+    "text": "One observation per finding, never a duplicate description; a finding applying to several verses or words carries several nodes, each with the word's role in it."
+   },
+   {
+    "rule": "RW-03 no-duplicates-multi-node",
+    "text": "One observation per finding: the same description is never written twice. Applied to another verse, word or scope it gains a node on the existing observation."
+   },
+   {
+    "rule": "RW-04 concise-verse-specific",
+    "text": "Observation text is concise and tied to this verse's content, never a restatement of the word's dictionary sense. A transliteration is never given without its gloss."
+   },
+   {
+    "rule": "RW-08 slants-own-rows",
+    "text": "Where the evidence points to more than one reading, each is its own observation with its own evidence."
+   },
+   {
+    "rule": "RW-09 reread-builds-on-prior",
+    "text": "A re-read includes the observations already recorded for the verse, so the reading sees prior findings and builds on them."
+   },
+   {
+    "rule": "RW-11 missing-is-named",
+    "text": "Missing data in the base extract is named as a gap, never substituted from memory or outside knowledge."
+   },
+   {
+    "rule": "RW-13 older-observations-answered-at-record",
+    "text": "Every older live observation with a live node on an occurrence of the row (a stage that is not the build's own) is answered in fill.older when the row is recorded, once: keep or restate (each with its marker), merge into a named observation, consume (live observations carry its meaning, stated in words, verified before it is deleted), delete as neither (comment first), or defer to a named collection (marked now; only the finding is left to that collection). An observation already marked by the validation, answered in a build or deferred is not asked again. A new observation whose text equals that of another live observation of the collection is refused, the other named. LayerCheck re-derives both from the tables. The end state of a collection's build is that every observation of its scope is marked and fixed or deleted, every word node complete or with its reason, and each deferral owned by a named collection."
+   },
+   {
+    "rule": "RS-04 existing-checked-accept-modify-delete",
+    "text": "When a verse is worked, every existing observation and node on it, of any stage, is checked against the verse by its wording. The stage is not an indication of the nature of an observation and is never used to filter. Each observation is accepted, modified (changed in place; the old value, the new value and the reason are kept in ib_observation_change), soft deleted (the `deleted` column, with the reason), merged (a duplicate description, into the observation that is kept) or, when its wording shows it is not verse understanding, left exactly as it is with the reason. The check's fixes are part of it and need no separate approval. Nothing is physically deleted."
+   },
+   {
+    "rule": "LR-02 nodes-are-built-from-the-data",
+    "text": "The nodes of a layer observation are the occurrences the aspect demands (a word's occurrences, the group's occurrences, the partner's occurrences in the verses they share), written by the recorder with the collection and the subgroup of each surface; they are never typed. An item answered by senses (word-sense) names, for each sense, the occurrences it holds for, and together the senses cover every occurrence; the recorder checks them against the data. The interpretation is the observation text, founded in what the evidence shows (basis stated or read, B:131) and tied to its verses (the text names them and does not restate them): the items of every step (S1, 1.1, 1.2, 2.1) state what the dictionary, the verses and the stored structure show of a word and never what a word does for the inner being; their nodes carry the role lexical and no route. The whole file is checked and written in one transaction; any problem refuses all of it. A row answered again withdraws its earlier observations with the reason."
+   },
+   {
+    "rule": "LR-03 none-needs-a-permitted-reason",
+    "text": "An aspect is recorded as none only where its item allows it (cfg_setting layer.reading none_allowed) and with its reason in words. A group definition and a group's Strong's enrichment are always observed."
+   },
+   {
+    "rule": "DA-02 a-node-per-occurrence-with-its-surfaces-collection",
+    "text": "A node is on one occurrence (verse_lexical_id) and carries the collection of its surface (a supportive node, the collection of the surface it supports); a node already on the observation for the same occurrence is not written twice, and takes the role. A node with no collection to carry, or on a verse out of scope (B:130), is not written and is listed."
+   },
+   {
+    "rule": "VA-03 consumption-is-verified-before-deletion",
+    "text": "An older observation is deleted as consumed only when live observations carry its meaning: every word occurrence of it is on a live node of a carrier or named as not carried with its reason, the mapping is stated in words (what the old says, which carrier states each part), the traces to it are re-pointed or replaced, and the consumption is kept as `consumed_by`. An observation that holds more than one finding is split first."
+   },
+   {
+    "rule": "VA-04 neither-evidence-nor-inner-being-is-deleted",
+    "text": "An observation that is neither evidence nor inner being contributes nothing to the purposes of the observations (researcher, 2026-11-22): it is commented with its reason and the word occurrences no other live observation holds, then deleted. An observation already marked, or one another observation traces, is not deleted this way."
+   }
+  ],
+  "not_in_this_read": ""
+ },
+ "senses": [
+  {
+   "sense": 22861,
+   "text": "Reasoning as argument put to other people: Paul reasons with Jews and others in the synagogue, the market and the hall of Tyrannus and before Felix, and the Lord invites the people to argue the case out together. The word is spoken argument with a hearer and a matter, aimed at persuading or setting right; the Greek verb is of discourse and the Hebrew verb of arguing a case. Verses: Act 17:2, Act 17:17, Act 18:4, Act 18:19, Act 24:25, Act 19:8, Act 19:9, Isa 1:18.",
+   "verses": [
+    "Acts.17.2",
+    "Acts.17.17",
+    "Acts.18.4",
+    "Acts.18.19",
+    "Acts.24.25",
+    "Acts.19.8",
+    "Acts.19.9",
+    "Isa.1.18"
+   ]
+  },
+  {
+   "sense": 22862,
+   "text": "Reasoning inside the mind: the reckoning of a child in 1Cor 13:11, a way of working things out that is given up in adulthood, and the reasoning in the hearts of the disciples in Luk 9:47, which Jesus knows. Both are reasoning held within a person, not argued to another. Verses: Luk 9:47, 1Cor 13:11.",
+   "verses": [
+    "Luke.9.47",
+    "1Cor.13.11"
+   ]
+  },
+  {
+   "sense": 22863,
+   "text": "Reason as understanding, the sound mind: in Dan 4 the king's reason is lost in his madness and returns to him when he lifts his eyes to heaven. The word names the faculty itself. Verses: Dan 4:34, Dan 4:36.",
+   "verses": [
+    "Dan.4.34",
+    "Dan.4.36"
+   ]
+  },
+  {
+   "sense": 22864,
+   "text": "Reason as the ground or cause of something: the cause of a coming, the ground of a charge, 'for this reason' and 'by reason of' as links to what an act or a state rests on, and the reason an act was done or a person appeared. The words are nouns and linking phrases of cause, in many Hebrew and Greek words, and carry no act of thinking. Verses: Gen 41:31, Gen 47:13, Num 18:32, Jos 5:4, 1Sa 20:29, 1Ki 11:27, Eze 19:10, Mar 12:24, Act 10:21, Act 18:14, Act 28:18, Act 28:20, Rom 15:22, Eph 3:1, Eph 3:14, 1Th 3:5, 1Th 3:7, 1Ti 1:16, 2Ti 1:6, 1Jo 3:8.",
+   "verses": [
+    "Gen.41.31",
+    "Gen.47.13",
+    "Num.18.32",
+    "Josh.5.4",
+    "1Sam.20.29",
+    "1Kgs.11.27",
+    "Ezek.19.10",
+    "Mark.12.24",
+    "Acts.10.21",
+    "Acts.18.14",
+    "Acts.28.18",
+    "Acts.28.20",
+    "Rom.15.22",
+    "Eph.3.1",
+    "Eph.3.14",
+    "1Thess.3.5",
+    "1Thess.3.7",
+    "1Tim.1.16",
+    "2Tim.1.6",
+    "1John.3.8"
+   ]
+  },
+  {
+   "sense": 22865,
+   "text": "Reason denied: 'for no reason' is the Hebrew adverb of without cause, said of fearing God for nothing and of contending with a man who has done no harm. It is the absence of a ground. Verses: Job 1:9, Pro 3:30.",
+   "verses": [
+    "Job.1.9",
+    "Prov.3.30"
+   ]
+  },
+  {
+   "sense": 22866,
+   "text": "Reason as readiness to be persuaded: the wisdom from above is 'open to reason', a trait of the person who yields to others. It is a character trait of the one reasoned with. Verses: Jam 3:17.",
+   "verses": [
+    "Jas.3.17"
+   ]
+  },
+  {
+   "sense": 22867,
+   "text": "Reason as an account given: the believer is to be ready to give a reason to anyone who asks, an explanation of the hope that is in him. It is a spoken account in answer to a question. Verses: 1Pe 3:15.",
+   "verses": [
+    "1Pet.3.15"
+   ]
+  }
+ ],
+ "verses": [
+  {
+   "reference": "Act 19:9",
+   "text": "But when some became stubborn and continued in unbelief, speaking evil of the Way before the congregation, he withdrew from them and took the disciples with him, reasoning daily in the hall of Tyrannus.",
+   "words": [
+    " 0 but G1161 CONJ | connective",
+    " 1 when G5613 PRT | connective",
+    " 2 some G5100 X-NPM",
+    " 3 stubborn G4645 V-IPI-3P | word of another collection; collections willful",
+    " 4 and G2532 CONJ | connective",
+    " 5 unbelief G0544 V-IAI-3P | word of another collection; collections believe",
+    " 6 speaking evil G2551 V-PAP-NPM | word of another collection; collections evildoer",
+    " 7 way G3598 N-ASF",
+    " 8 before G1799 PREP",
+    " 9 congregation G4128 N-GSN",
+    " 10 withdrew G0868 V-2AAP-NSM",
+    " 11 from G0575 PREP",
+    " 12 them G0846 P-GPM",
+    " 13 took G0873 V-AAI-3S | word of another collection; collections snatch",
+    " 14 disciples G3101 N-APM | entity (human); party human",
+    "*15 reasoning G1256 V-PNP-NSM | member of this collection",
+    " 16 daily G2596 PREP",
+    " 16 daily G2250 N-ASF",
+    " 17 in G1722 PREP",
+    " 18 hall G4981 N-DSF",
+    " 19 of G5100 X-GSM",
+    " 20 tyrannus G5181 N-GSM-P"
+   ]
+  },
+  {
+   "reference": "Act 24:25",
+   "text": "And as he reasoned about righteousness and self-control and the coming judgment, Felix was alarmed and said, “ Go away for the present. When I get an opportunity I will summon you.”",
+   "words": [
+    " 0 and G1161 CONJ | connective",
+    " 1 he G0846 P-GSM",
+    "*2 reasoned G1256 V-PNP-GSM | member of this collection",
+    " 3 about G4012 PREP",
+    " 4 righteousness G1343 N-GSF | word of another collection; collections righteous",
+    " 5 and G2532 CONJ | connective",
+    " 6 self-control G2532 CONJ | word of another collection; collections self-control",
+    " 6 self-control G1466 N-GSF | word of another collection; collections self-control",
+    " 7 and G2532 CONJ | connective",
+    " 8 coming G3195 V-PAP-GSN",
+    " 9 judgment G2917 N-GSN | word of another collection; collections wise",
+    " 10 felix G5344 N-NSM-P",
+    " 11 was G1096 V-2ADP-NSM",
+    " 12 alarmed G1719 A-NSM | word of another collection; qualifier morph: adjective; collections fear",
+    " 13 said G0611 V-ADI-3S",
+    " 14 go away G4198 V-PNM-2S",
+    " 15 present G3568 ADV | word of another collection; qualifier morph: adverb; collections offer",
+    " 16 when G1161 CONJ | connective",
+    " 17 get G3335 V-2AAP-NSM",
+    " 18 opportunity G2540 N-ASM",
+    " 19 will G3333 V-FMI-1S | word of another collection; collections desire",
+    " 20 you G4571 P-2AS"
+   ]
+  },
+  {
+   "reference": "Jam 3:17",
+   "text": "But the wisdom from above is first pure, then peaceable, gentle, open to reason, full of mercy and good fruits, impartial and sincere.",
+   "words": [
+    " 0 but G1161 CONJ | connective",
+    " 1 wisdom G4678 N-NSF | word of another collection; collections wise",
+    " 2 above G0509 ADV | qualifier candidate; qualifier morph: adverb",
+    " 3 is G1510 V-PAI-3S",
+    " 4 first G4413G A-ASN | qualifier candidate; qualifier morph: adjective",
+    " 5 pure G0053 A-NSF | word of another collection; qualifier morph: adjective; collections cleanse",
+    " 6 then G1899 ADV | qualifier candidate; qualifier morph: adverb",
+    " 7 peaceable G1516 A-NSF | word of another collection; qualifier morph: adjective; collections quarrel",
+    " 8 gentle G1933 A-NSF | word of another collection; qualifier morph: adjective; collections compassion",
+    "*9 reason G2138 A-NSF | member of this collection; qualifier morph: adjective",
+    " 10 full G3324 A-NSF | qualifier candidate; qualifier morph: adjective",
+    " 11 mercy G1656 N-GSN | word of another collection; collections forgive",
+    " 12 and G2532 CONJ | connective",
+    " 13 good G0018 A-GPM | qualifier candidate; qualifier qualifier subgroup: Good, better, right (a quality of something); morph: adjective",
+    " 14 fruits G2590 N-GPM",
+    " 15 impartial G0087 A-NSF | word of another collection; qualifier morph: adjective; collections impartial",
+    " 16 sincere G0505 A-NSF | word of another collection; qualifier morph: adjective; collections earnest"
+   ]
+  }
+ ],
+ "rows": [
+  {
+   "ledger_id": 1260,
+   "item": "pairing",
+   "subject": "willful",
+   "asks": "Which words of this partner collection stand with the subgroup's surfaces in the verses they share, where does each stand (side and distance, from the stored structure), and which stand out? The WordNet control for this collection is shown. Write one finding for each distinct thing the structure shows; a finding holds the verses it holds in as its nodes.",
+   "none_allowed": true,
+   "verses": [
+    "Act 19:9"
+   ],
+   "occurrences": [
+    {
+     "occurrence": 1468173,
+     "reference": "Act 19:9",
+     "surface": "reasoning",
+     "strong": "G1256",
+     "as": "member"
+    },
+    {
+     "occurrence": 1468161,
+     "reference": "Act 19:9",
+     "surface": "stubborn",
+     "strong": "G4645",
+     "as": "partner"
+    }
+   ],
+   "older": [],
+   "wordnet_control": "WordNet relates no surface of the subgroup to this collection (a verse-only pairing: no control)"
+  },
+  {
+   "ledger_id": 1261,
+   "item": "pairing",
+   "subject": "wise",
+   "asks": "Which words of this partner collection stand with the subgroup's surfaces in the verses they share, where does each stand (side and distance, from the stored structure), and which stand out? The WordNet control for this collection is shown. Write one finding for each distinct thing the structure shows; a finding holds the verses it holds in as its nodes.",
+   "none_allowed": true,
+   "verses": [
+    "Act 24:25",
+    "Jam 3:17"
+   ],
+   "occurrences": [
+    {
+     "occurrence": 1465369,
+     "reference": "Act 24:25",
+     "surface": "reasoned",
+     "strong": "G1256",
+     "as": "member"
+    },
+    {
+     "occurrence": 1506062,
+     "reference": "Jam 3:17",
+     "surface": "reason",
+     "strong": "G2138",
+     "as": "member"
+    },
+    {
+     "occurrence": 1465377,
+     "reference": "Act 24:25",
+     "surface": "judgment",
+     "strong": "G2917",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1506054,
+     "reference": "Jam 3:17",
+     "surface": "wisdom",
+     "strong": "G4678",
+     "as": "partner"
+    }
+   ],
+   "older": [],
+   "wordnet_control": {
+    "pairs": 3,
+    "types": {
+     "synonym": 3
+    },
+    "examples": [
+     {
+      "surface": "reason",
+      "partner_surface": "reasonableness",
+      "type": "synonym",
+      "weight": 1
+     },
+     {
+      "surface": "reasoning",
+      "partner_surface": "intelligent",
+      "type": "synonym",
+      "weight": 1
+     },
+     {
+      "surface": "reason",
+      "partner_surface": "understanding",
+      "type": "synonym",
+      "weight": 1
+     }
+    ]
+   }
+  }
+ ],
+ "answer": {
+  "command": "ReadStructure",
+  "collection": "thought",
+  "subgroup": "reasoning",
+  "rows": [
+   {
+    "ledger_id": 1260,
+    "item": "pairing",
+    "subject": "willful",
+    "disposition": "observed | none",
+    "findings": [
+     {
+      "kind": "pairing",
+      "obs_text": "",
+      "basis": "read | stated",
+      "grounds": "",
+      "occurrences": []
+     }
+    ],
+    "reason": "",
+    "older": []
+   },
+   {
+    "ledger_id": 1261,
+    "item": "pairing",
+    "subject": "wise",
+    "disposition": "observed | none",
+    "findings": [
+     {
+      "kind": "pairing",
+      "obs_text": "",
+      "basis": "read | stated",
+      "grounds": "",
+      "occurrences": []
+     }
+    ],
+    "reason": "",
+    "older": []
+   }
+  ]
+ },
+ "measured": {
+  "package_chars": 19450,
+  "seconds": 0.01
+ }
+}

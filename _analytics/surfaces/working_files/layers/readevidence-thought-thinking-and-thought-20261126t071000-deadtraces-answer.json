@@ -1,0 +1,70 @@
+{
+ "command": "ReadEvidence",
+ "collection": "thought",
+ "subgroup": "thinking and thought",
+ "observations": [
+  {
+   "observation": 22608,
+   "verdict": "repair",
+   "why": "read again after 3.1 of 'thinking and thought' deleted the earlier readings it traced to (restated in that subgroup's 3.1 findings); what it says of the words standing with the supposition is still there in the verses",
+   "actions": [
+    {
+     "action": "drop_unrelated_node",
+     "node_id": 94163,
+     "reason": "a trace from observation 22608 to observation 22508, an earlier reading deleted at 3.1 of 'thinking and thought' (its content restated in that subgroup's findings), so the trace supports nothing; the observation keeps its word nodes"
+    }
+   ]
+  },
+  {
+   "observation": 22622,
+   "verdict": "repair",
+   "why": "read again after 3.1 of 'thinking and thought' deleted the earlier readings it traced to (restated in that subgroup's 3.1 findings); what it says of the words standing with the supposition is still there in the verses",
+   "actions": [
+    {
+     "action": "drop_unrelated_node",
+     "node_id": 94374,
+     "reason": "a trace from observation 22622 to observation 22510, an earlier reading deleted at 3.1 of 'thinking and thought' (its content restated in that subgroup's findings), so the trace supports nothing; the observation keeps its word nodes"
+    }
+   ]
+  },
+  {
+   "observation": 22623,
+   "verdict": "repair",
+   "why": "read again after 3.1 of 'thinking and thought' deleted the earlier readings it traced to (restated in that subgroup's 3.1 findings); what it says of the words standing with the supposition is still there in the verses",
+   "actions": [
+    {
+     "action": "drop_unrelated_node",
+     "node_id": 94404,
+     "reason": "a trace from observation 22623 to observation 22509, an earlier reading deleted at 3.1 of 'thinking and thought' (its content restated in that subgroup's findings), so the trace supports nothing; the observation keeps its word nodes"
+    },
+    {
+     "action": "drop_unrelated_node",
+     "node_id": 94405,
+     "reason": "a trace from observation 22623 to observation 22514, an earlier reading deleted at 3.1 of 'thinking and thought' (its content restated in that subgroup's findings), so the trace supports nothing; the observation keeps its word nodes"
+    },
+    {
+     "action": "drop_unrelated_node",
+     "node_id": 94406,
+     "reason": "a trace from observation 22623 to observation 22520, an earlier reading deleted at 3.1 of 'thinking and thought' (its content restated in that subgroup's findings), so the trace supports nothing; the observation keeps its word nodes"
+    }
+   ]
+  },
+  {
+   "observation": 22631,
+   "verdict": "repair",
+   "why": "read again after 3.1 of 'thinking and thought' deleted the earlier readings it traced to (restated in that subgroup's 3.1 findings); what it says of the words standing with the supposition is still there in the verses",
+   "actions": [
+    {
+     "action": "drop_unrelated_node",
+     "node_id": 94536,
+     "reason": "a trace from observation 22631 to observation 22508, an earlier reading deleted at 3.1 of 'thinking and thought' (its content restated in that subgroup's findings), so the trace supports nothing; the observation keeps its word nodes"
+    },
+    {
+     "action": "drop_unrelated_node",
+     "node_id": 94537,
+     "reason": "a trace from observation 22631 to observation 22514, an earlier reading deleted at 3.1 of 'thinking and thought' (its content restated in that subgroup's findings), so the trace supports nothing; the observation keeps its word nodes"
+    }
+   ]
+  }
+ ]
+}

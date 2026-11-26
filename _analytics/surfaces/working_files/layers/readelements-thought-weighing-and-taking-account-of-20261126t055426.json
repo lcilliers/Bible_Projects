@@ -1,0 +1,4212 @@
+{
+ "command": "ReadElements",
+ "collection": "thought",
+ "subgroup": "weighing and taking account of",
+ "step": "3.1",
+ "made": "2026-11-26T05:54:26Z",
+ "unit": {
+  "ledger_id": 1515,
+  "to_take_up": 147,
+  "may_rest_on_besides": 49,
+  "older_inner_being": 14,
+  "earlier_readings": 37,
+  "occurrences": 78,
+  "verses": 67
+ },
+ "instruction": {
+  "what": "Step 3.1, the elements of one subgroup (stage 4, C1; the end of the loop for the subgroup): what the evidence of the subgroup shows of the elements of a behaviour of the inner being. The input is the evidence observations of the subgroup by marker (`to_take_up`, the senses first, then the 2.1 findings and the older evidence), not the verses; the verses are kept for an occasional read-back. A finding is a building block, never a claim about the behaviour as a whole (that is stage 5).",
+  "read": [
+   "Read the observations to take up, in order: the senses (1.1) and their enrichments (1.2) first, then the 2.1 findings (pairings, qualifiers, entities, direction, double meanings), then the older evidence. The inner-being workings work more with the senses than with the surfaces, so findings rest on the senses first.",
+   "For each item a finding may use (`uses`): what is done and its mode (operation, with its chain), whether a refusal or a pursuit (polarity), what it is directed at (object), the outward act (enactment), the other party with the route (party), the circumstance, and what a qualifier or a variation of the word gives the working (role, the dimension). Never the meaning of the word (stage 1).",
+   "Read the older inner-being observations (`older_inner_being`) with them: each is considered first, accepted with a trace to evidence, restated where it says more than the evidence, consumed where a finding says the same, merged, or deleted where it cannot be made true.",
+   "Go back to a verse (`verses`) only where the evidence does not settle the question, and say why."
+  ],
+  "write": [
+   "Fill `answer.findings`: each one observation, with a `key` unique in the answer, `kind` (of the item's kinds), `text`, `basis` (stated or read), `parts` with `item` (one of `uses`) and what the item needs (with `grounds`), and `nodes`: a `traced` node on each observation it rests on (from `to_take_up` or `may_rest_on_besides`) and an `occurrence` node, with its `role` chosen from the verse (characteristic, qualifier, object, relational target, enactment or standalone), on the occurrences those observations cover.",
+   "An occurrence outside the observations a finding rests on is allowed only with a `read_back` entry on the finding: {verse: the osis id, why}.",
+   "`not_used`: {observation id: reason} for every observation to take up that no finding rests on. Every one is rested on or declared, never both.",
+   "`older`: answer, once, each older inner-being observation (`older_inner_being`) that has a node on an occurrence your findings name (RW-13; the record lists any it misses, and refuses an answer to one on no named occurrence: those are shown, not demanded, IB-05): keep (with nature inner_being: it stands, traced to evidence), restate, merge, consume (carriers [\"this\"] or ids, mapping), delete_neither, or defer (collection, nature, finding).",
+   "`existing`: answer every earlier reading (`earlier_readings`: inner being of an earlier grouping on these occurrences) with accept, modify, delete, merge or leave, and its reason.",
+   "The text says what the evidence shows of the element; it names its verses; it never restates a verse and never states the behaviour as a whole.",
+   "Then: Collection-Build.ps1 -Action RecordElements -File <the answer file> (-Check to preview). The record refuses the whole file on any fault and lists every fault."
+  ],
+  "keep": [
+   {
+    "rule": "IB-02 stage-4-starts-from-the-observations",
+    "text": "Stage 4 starts from the observations, not the verses (researcher, #2526 Q7, 2026-11-21): the subgroups and the stage 3 observations on them are the input, the behaviours are discovered from analysing them, and the base data is read back into only occasionally. Every finding of step 3.1 or 3.2 rests on named observations (a traced node on each, with an occurrence node as well) and its occurrence nodes lie within the occurrences those observations cover; an occurrence outside them is allowed only where the finding records a read-back (the verse and why). Each node has a role from reading.node_roles other than lexical, chosen by the reading. A 3.3 finding carries nodes on the occurrences of both sides in the shared verses."
+   },
+   {
+    "rule": "IB-03 findings-follow-the-observation-rules",
+    "text": "A finding of a stage 4 row is checked by the rules of observationrecord.check and check_item_parts (kind, text, basis, route, parts.item and what the item needs, node roles, collection of each node) and by RG, RW and RS, which are not restated here: one observation for each finding, never a duplicate, with a node on each word it applies to (RO11, RW-03); founded in the observations and never a restatement of the verse (B:131); parts.item is one of the items the row's item uses (cfg_setting layer.reading). An observation whose nodes all bear on an act is refused: those words are nodes of the observation of the act. A finding is a building block of a behaviour and never a claim (stage 5)."
+   },
+   {
+    "rule": "IB-04 nothing-is-lost-on-the-way-to-stage-5",
+    "text": "Nothing the step reads is lost on the way to stage 5. Step 3.1: every stage 3 observation of the subgroup is rested on by a finding or declared in not_used with its reason in words. Step 3.2: every 3.1 observation of the collection is gathered into a behaviour (a traced node on it from a flag finding of type discovery) or declared in not_gathered with its reason, and the row has at least one behaviour unless it is recorded as none with its reason. A behaviour names and gathers; it makes no claim about what the behaviour is."
+   },
+   {
+    "rule": "IB-05 earlier-observations-are-shown-not-demanded",
+    "text": "An earlier inner-being observation with a node on the occurrences of a 3.1 row (any stage but lexical, layer-1, layer-2 and layer-3) is shown in the pull for information and may be actioned in `existing`: accepted, modified, deleted, merged or left, each with its reason, through observationrecord (RW-01, RW-09); nothing is demanded of it, and it counts for nothing in the check. A row answered again withdraws its earlier observations with the reason. Every older live observation with a node on an occurrence of the row is answered in fill.older at the record of the row (RW-13); this rule's `existing` actions of stage 4 are unchanged."
+   },
+   {
+    "rule": "IB-07 inner-being-observations-trace-to-evidence",
+    "text": "Every live observation marked inner_being holds at least one live traced node on a live observation marked evidence, unless it is recorded self-evidencing: it quotes its verse in full and holds a word node for every word it relies on. A traced node never points at a deleted observation. A trace points first at existing evidence; an evidence observation is created only when none states the fact and it states what the nodes and the quotation do not. An inner-being observation traced to evidence not yet marked is pending, not failed."
+   },
+   {
+    "rule": "RG-03 role-per-occurrence",
+    "text": "Find the main inner-being operation, and give every word that bears on it its role in this finding (cfg_setting reading.node_roles): characteristic, qualifier and what it gives the characteristic, object or content, relational target, or enactment. A word read in the verse that holds nothing for the inner being is standalone. The role comes from this verse, never from the cluster tag. Where a standalone word proves to qualify a characteristic, it is a qualifier of it."
+   },
+   {
+    "rule": "RG-04 qualifier-binding",
+    "text": "A qualifier gets no separate account of itself, but what it gives the characteristic it binds to is evaluated for its value and recorded as a qualification finding, applied by its nodes to the qualifier (role qualifier) and the characteristic (role characteristic). What it gives can vary widely: grade, nature, impact, size, relation, a measure, strengthening, ground, cause, object, setting or bait are examples, not a list (#2273 D9). A qualifier whose usage varies across contexts may earn its own reading later."
+   },
+   {
+    "rule": "RG-06 parties-and-route",
+    "text": "Record the parties: who bears the act, who causes it, who is acted on (source, target, impact, purpose), and the route (cfg_enum observation_route). A non-human being is never itself a HIB; a collective stays one HIB; an implied party is named as referential, never asserted."
+   },
+   {
+    "rule": "RG-10 never-not-x",
+    "text": "Never close a verse or item on 'not X'. A role label is never a verdict; the close records what the verse is. Silence about the inner being is a finding, recorded as data with its reason."
+   },
+   {
+    "rule": "RG-11 hidden-behind-act",
+    "text": "A phenomenon hidden behind a stated or refrained act may be named, with the verb, clause or stated silence that grounds it, and whether it is stated or read."
+   },
+   {
+    "rule": "RG-13 source-vs-enablement",
+    "text": "Keep the source of an interior state apart from the source of an enablement to act."
+   },
+   {
+    "rule": "RG-24 adverbial-qualifier",
+    "text": "A tagged word that works adverbially in an occurrence (a noun with a preposition qualifying the predicate, as 'in the counsel of the wicked') is a qualifier there, not the verse's characteristic. The role is per occurrence: the same word may be the characteristic elsewhere."
+   },
+   {
+    "rule": "RG-25 simile-tenor",
+    "text": "In a simile, the predicates of the vehicle (the tree that yields, does not wither) are read for what they say of the one compared (the tenor), not as the vehicle's own acts."
+   },
+   {
+    "rule": "RO11 one-row-per-code",
+    "text": "One observation per finding, never a duplicate description; a finding applying to several verses or words carries several nodes, each with the word's role in it."
+   },
+   {
+    "rule": "RW-03 no-duplicates-multi-node",
+    "text": "One observation per finding: the same description is never written twice. Applied to another verse, word or scope it gains a node on the existing observation."
+   },
+   {
+    "rule": "RW-04 concise-verse-specific",
+    "text": "Observation text is concise and tied to this verse's content, never a restatement of the word's dictionary sense. A transliteration is never given without its gloss."
+   },
+   {
+    "rule": "RW-12 marker-and-node-columns-at-creation",
+    "text": "An observation is created with its marker (ib_observation.nature, from the item answered, cfg_setting layer.reading items.<item>.nature; a finding file never sets it) and every word node with the columns of layer.reading node_required. A column the data cannot give (layer.reading node_gap_columns: an empty morph in the source row, a surface with no placement in the collection index) is left empty and its reason is kept on the node (disposition_note); any other missing column refuses the whole file and nothing is written. A trace to a deleted observation is refused (IB-07)."
+   },
+   {
+    "rule": "VA-05 the-marker-follows-content-not-stage",
+    "text": "Evidence states what the data are or show, tied to a verse. Inner being states how something works in the inner being, based on evidence, a building block of the stage 5 claims. The marker (ib_observation.nature) follows the content and purpose of the observation, never its stage (RS-04): an observation of any stage may be inner being when it traces to evidence. One that states both is split. The marker is set when the observation is created, by the item that is answered (cfg_setting layer.reading items.<item>.nature); a finding file never sets it; the validation changes it only where the content shows the item's nature does not hold."
+   }
+  ],
+  "not_in_this_read": ""
+ },
+ "asks": "What do the stage 3 observations of this subgroup (its definition, its Strong's enrichment, its pairings, qualifiers, entities, direction, relations and double meanings, with the stage 1 senses) show of the elements of a behaviour of the inner being: what is done and its mode, whether a refusal or a pursuit, what it is directed at, the outward act, the other party with the route, the circumstance, the chain of operations, and the dimensions of the working (what a qualifier or a variation of the word gives it, from the lexical variation the stage 3 observations record)? Each finding is one observation that rests on named observations (a traced node on each) and carries nodes on the occurrences those observations cover, with the role each has; an occurrence outside them is allowed only with a read-back (the verse and why). Every stage 3 observation of the subgroup is rested on by a finding or declared not used, with the reason. A finding is a building block and never a claim about the behaviour as a whole (stage 5).",
+ "uses": [
+  {
+   "item": "role",
+   "name": "its role: the qualifier and what it gives the characteristic",
+   "kinds": [
+    "qualification",
+    "statement"
+   ],
+   "bases": [
+    "stated",
+    "read"
+   ]
+  },
+  {
+   "item": "polarity",
+   "name": "whether the act is a refusal or a pursuit",
+   "kinds": [
+    "statement"
+   ],
+   "bases": [
+    "stated",
+    "read"
+   ]
+  },
+  {
+   "item": "object",
+   "name": "what the act is directed at or against",
+   "kinds": [
+    "statement"
+   ],
+   "bases": [
+    "stated",
+    "read"
+   ]
+  },
+  {
+   "item": "enactment",
+   "name": "the outward act the inner act produces, where the verse states one",
+   "kinds": [
+    "statement"
+   ],
+   "bases": [
+    "stated",
+    "read"
+   ]
+  },
+  {
+   "item": "party",
+   "name": "the other party and the sequence, with the route",
+   "kinds": [
+    "party"
+   ],
+   "bases": [
+    "stated",
+    "read"
+   ]
+  },
+  {
+   "item": "circumstance",
+   "name": "how it appears here: the circumstance of the verse",
+   "kinds": [
+    "statement"
+   ],
+   "bases": [
+    "stated"
+   ]
+  },
+  {
+   "item": "operation",
+   "name": "the operation as an action description (who or what does what), its mode, the primary one",
+   "kinds": [
+    "statement"
+   ],
+   "bases": [
+    "stated",
+    "read"
+   ]
+  },
+  {
+   "item": "chain",
+   "name": "the chain of operations the verse links in sequence",
+   "kinds": [
+    "link"
+   ],
+   "bases": [
+    "stated",
+    "read"
+   ]
+  },
+  {
+   "item": "flag",
+   "name": "a typed flag: data-quality, or discovery for the claims process",
+   "kinds": [
+    "statement"
+   ],
+   "bases": [
+    "stated",
+    "read"
+   ]
+  }
+ ],
+ "node_roles": {
+  "relevant": [
+   "characteristic",
+   "qualifier"
+  ],
+  "bears_on": [
+   "object",
+   "relational_target",
+   "enactment"
+  ],
+  "recognised": [
+   "standalone"
+  ],
+  "lexical": [
+   "lexical"
+  ]
+ },
+ "definition_of_the_subgroup": null,
+ "meaning_by_code": {
+  "G1097": {
+   "sense_head": "to know",
+   "meaning_range": "to know, come to know, recognize, understand; to have sexual relations; <b>to know,</b> whether the action be inceptive or complete and settled; <b>to perceive,</b> <ref='Mat.22.18'>Mt. 22:18</ref>; <ref='Mrk.5.29; 8:17; 12:12'>Mk. 5:29; 8:17; 12:12</ref>; <ref='Luk.8.46'>Lk. 8:46</ref>; <b>to mark, discern,</b> <ref='Mat.25.24'>Mt. 25:24</ref>; <ref='Luk.19.44'>Lk. 19:44</ref>; <b>to ascertain by examination,</b> <ref='Mrk.6.38'>Mk. 6:38</ref>; <ref='Jhn.7.51'>Jn. 7:51</ref>; <ref='Act.23.28'>A"
+  },
+  "G1252": {
+   "sense_head": "to judge/doubt",
+   "meaning_range": "to make a distinction, judge a dispute; (<i>middle</i>/<i>passive</i>) to doubt, hesitate, waver; <b>to separate, sever; to make a distinction</b>, or <b>difference,</b> <ref='Act.15.9'>Acts 15:9;</ref> <ref='1Co.11.29'>1Cor. 11:29;</ref> <b>to make to differ, distinguish, prefer, confer a superiority,</b> <ref='1Co.4.7'>1Cor. 4:7;</ref> <b>to examine, scrutinize, estimate,</b> <ref='1Co.11.31'>1Cor. 11:31;</ref> 14:29; <b>to discern, discriminate,</b> <ref='Mat.16.3'>Mt. 16:3</ref>; <b>to judge"
+  },
+  "G1380": {
+   "sense_head": "to think",
+   "meaning_range": "to think, consider, regard, an action of the mind and heart for processing information into understanding and choices, sometimes with a focus on appearances. Often in the impersonal form translated, \"it seems\" (<ref='Act.17.18'>Act.17:18</ref>); <b>to think, imagine, suppose, presume,</b> <ref='Mat.3.9; 6:7'>Mt. 3:9; 6:7</ref>; <b>to seem, appear,</b> <ref='Luk.10.36'>Lk. 10:36</ref>; <ref='Act.17.18'>Acts 17:18;</ref> <b>it seems; it seems good, best,</b> or <b>right, it pleases,</b> <ref='Luk."
+  },
+  "G1760": {
+   "sense_head": "to reflect on",
+   "meaning_range": "to think, ponder, reflect; <b>to revolve thoroughly in the mind, consider carefully, ponder, reflect,</b> <ref='Act.10.19'>Acts 10:19</ref>*"
+  },
+  "G2233": {
+   "sense_head": "to govern",
+   "meaning_range": "to lead the way; to take the lead, <ref='Act.14.12;'>Acts 14:12;</ref> to be chief, to preside, govern, rule, <ref='Mat.2.6;'>Mat.2:6;</ref> <ref='Act.7.10;'>Acts 7:10;</ref> ἡγούμενος, a chief officer in the church, <ref='Heb.13.7, 17, 24;'>Heb. 13:7, 17, 24;</ref> also, to think, consider, count, esteem, regard, <ref='Act.26.2;'>Acts 26:2;</ref> <ref='2Co.9.5'>2Cor. 9:5</ref>"
+  },
+  "G2657": {
+   "sense_head": "to observe",
+   "meaning_range": "to pay attention, notice, observe; consider, contemplate; this word has a strong implication that the attention paid is intense, and the contemplation is broad and thorough, resulting in complete understanding; <b>to perceive, understand, apprehend,</b> <ref='Luk.20.23'>Lk. 20:23</ref>; <b>to observe, consider, contemplate, pay attention to</b> <ref='Luk.12.24, 27'>Lk. 12:24, 27</ref>; <b>to discern, detect, notice</b> <ref='Mat.7.3'>Mt. 7:3</ref>; <b>to have regard to, make account of,</b> <ref"
+  },
+  "G3049": {
+   "sense_head": "to count",
+   "meaning_range": "to credit, count, reckon; regard, think, consider; (1) <i>primarily</i> <b>to count, calculate; to count, enumerate, consider</b> <ref='Mrk.15.28'>Mk. 15:28</ref>; <ref='Luk.22.37'>Lk. 22:37</ref>; <b>to set down</b> as a matter of account, <ref='1Co.13.5'>1Cor. 13:5;</ref> <ref='2Co.3.5'>2Cor. 3:5;</ref> 12:6; <b>to impute, credit, count, consider, reckon</b> <ref='Rom.4.3'>Rom. 4:3;</ref> <ref='2Co.5.19'>2Cor. 5:19;</ref> <ref='2Ti.4.16'>2Tim. 4:16;</ref> <b>to account,</b> <ref='Rom.2.26'>Rom"
+  },
+  "G3313": {
+   "sense_head": "part",
+   "meaning_range": "part, share, portion; (pl.) <b>district, region part, portion, division,</b> of a whole, <ref='Luk.11.36; 15:12'>Lk. 11:36; 15:12</ref>; <ref='Act.5.2'>Acts 5:2;</ref> <ref='Eph.4.16'>Eph. 4:16;</ref> <b>a piece, fragment,</b> <ref='Luk.24.42'>Lk. 24:42</ref>; <ref='Jhn.19.23'>Jn. 19:23</ref>; <b>a party, faction,</b> <ref='Act.23.9'>Acts 23:9;</ref> allotted <b>portion, lot, destiny,</b> <ref='Mat.24.51'>Mt. 24:51</ref>; <ref='Luk.12.46'>Lk. 12:46</ref>; <b>a calling, craft,</b> <ref='Act.19.27"
+  },
+  "G3756": {
+   "sense_head": "no",
+   "meaning_range": "no, not, not at all, in no way, (with G3361) absolutely not. At the beginning of a Greek question, it anticipates a positive response; negative adverb, originally the <i>genitive</i> of <greek>ὅς</greek>, spelled <greek>οὐκ</greek> if followed by a word beginning with a vowel and a smooth breathing, <greek>οὐχ</greek> if followed by a vowel and rough breathing, <b>not, no,</b> <ref='Mat.5.37; 12:43; 23:37'>Mt. 5:37; 12:43; 23:37</ref>; for the peculiarities of its usage (especially as distinct f"
+  },
+  "G4012": {
+   "sense_head": "about",
+   "meaning_range": "(gen.) about, concerning, in regard to; (acc.) around, about, nearby; <i>primarily</i> of place, (1) <i>genitive</i>, <b>about, around; about, concerning, respecting,</b> <ref='Mat.2.8; 11:10; 22:31'>Mt. 2:8; 11:10; 22:31</ref>; <ref='Jhn.8.18'>Jn. 8:18</ref>; <ref='Rom.8.3'>Rom. 8:3</ref>, and frequently ;; (2) <i>accusative</i>, of place, <b>about, around, round about,</b> <ref='Mat.3.4'>Mt. 3:4</ref>; <ref='Mrk.3.34'>Mk. 3:34</ref>; <ref='Luk.13.8'>Lk. 13:8</ref>; <greek>οἱ περι τινα</greek>,"
+  },
+  "G6063": {
+   "sense_head": "to know",
+   "meaning_range": "to know of anything, to know, i.e. get knowledge of, understand, perceiveof any fact; the force and meaning of something which has definite meaning; to know how, to be skilled into have regard for one, cherish, pay attention to (<ref='1Th.5.12'>1Th. 5:12</ref>); to know, understand; Occurs as Perfect with Present meaning and as Pluperfect with Imperfect meaning."
+  },
+  "H0239": {
+   "sense_head": "to ponder",
+   "meaning_range": "(Piel) weigh, test, prove, consider"
+  },
+  "H0408": {
+   "sense_head": "not",
+   "meaning_range": "1) not, no, nor, neither, nothing (as wish or preference); 1a) do not, let not (with a verb); 1b) let there not be (with a verb understood); 1c) not, no (with substantive); 1d) nothing (as substantive); Aramaic equivalent: <i>al</i> (אַל \"not\" H0409)"
+  },
+  "H0595": {
+   "sense_head": "I",
+   "meaning_range": "I (first pers. sing.); Another spelling of <i>a.ni</i> (אֲנִי, אָֽנֹכִ֫י \"I\" H0589)"
+  },
+  "H0853": {
+   "sense_head": "[Obj.]",
+   "meaning_range": "sign of the definite direct object, not translated in English but generally preceding and indicating the accusative; Aramaic equivalent: <i>yat</i> (יָת \"whom\" H3487)"
+  },
+  "H0995": {
+   "sense_head": "to understand",
+   "meaning_range": "1) to discern, understand, consider; 1a) (Qal); 1a1) to perceive, discern; 1a2) to understand, know (with the mind); 1a3) to observe, mark, give heed to, distinguish, consider; 1a4) to have discernment, insight, understanding; 1b) (Niphal) to be discerning, intelligent, discreet, have understanding; 1c) (Hiphil); 1c1) to understand; 1c2) to cause to understand, give understanding, teach; 1d) (Hithpolel) to show oneself discerning or attentive, consider diligently; 1e) (Polel) to teach, instruct;"
+  },
+  "H1700": {
+   "sense_head": "cause",
+   "meaning_range": "cause, manner, reason; Aramaic equivalent: <i>div.rah</i> (דִּבְרָה \"cause\" H1701)"
+  },
+  "H1934": {
+   "sense_head": "to be",
+   "meaning_range": "1) to come to pass, become, be; 1a) (P'al); 1a1) to come to pass; 1a2) to come into being, arise, become, come to be; 1a2a) to let become known (with participle of knowing); 1a3) to be"
+  },
+  "H2803H": {
+   "sense_head": "count/regard as",
+   "meaning_range": "1) to think, plan, esteem, calculate, invent, make a judgment, imagine, count; 1a) (Qal); 1a1) to think, account; 1a2) to plan, devise, mean; 1a3) to charge, impute, reckon; 1a4) to esteem, value, regard; 1a5) to invent; 1b) (Niphal); 1b1) to be accounted, be thought, be esteemed; 1b2) to be computed, be reckoned; 1b3) to be imputed; 1c) (Piel); 1c1) to think upon, consider, be mindful of; 1c2) to think to do, devise, plan; 1c3) to count, reckon; 1d) (Hithpael) to be considered"
+  },
+  "H2803J": {
+   "sense_head": "think/imagine",
+   "meaning_range": "1) to think, plan, esteem, calculate, invent, make a judgment, imagine, count; 1a) (Qal); 1a1) to think, account; 1a2) to plan, devise, mean; 1a3) to charge, impute, reckon; 1a4) to esteem, value, regard; 1a5) to invent; 1b) (Niphal); 1b1) to be accounted, be thought, be esteemed; 1b2) to be computed, be reckoned; 1b3) to be imputed; 1c) (Piel); 1c1) to think upon, consider, be mindful of; 1c2) to think to do, devise, plan; 1c3) to count, reckon; 1d) (Hithpael) to be considered"
+  },
+  "H3045": {
+   "sense_head": "to know",
+   "meaning_range": "1) to know; 1a) (Qal); 1a1) to know; 1a1a) to know, learn to know; 1a1b) to perceive; 1a1c) to perceive and see, find out and discern; 1a1d) to discriminate, distinguish; 1a1e) to know by experience; 1a1f) to recognise, admit, acknowledge, confess; 1a1g) to consider; 1a2) to know, be acquainted with; 1a3) to know (a person carnally); 1a4) to know how, be skilful in; 1a5) to have knowledge, be wise; 1b) (Niphal); 1b1) to be made known, be or become known, be revealed; 1b2) to make oneself known; "
+  },
+  "H3808": {
+   "sense_head": "not",
+   "meaning_range": "1) not, no; 1a) not (with verb-absolute prohibition); 1b) not (with modifier-negation); 1c) nothing (subst); 1d) without (with particle); 1e) before (of time); Aramaic equivalent: <i>la</i> (לָא \"not\" H3809)"
+  },
+  "H3820A": {
+   "sense_head": "heart",
+   "meaning_range": "1) inner man, mind, will, heart, understanding; 1a) inner part, midst; 1a1) midst (of things); 1a2) heart (of man); 1a3) soul, heart (of man); 1a4) mind, knowledge, thinking, reflection, memory; 1a5) inclination, resolution, determination (of will); 1a6) conscience; 1a7) heart (of moral character); 1a8) as seat of appetites; 1a9) as seat of emotions and passions 1a10) as seat of courage"
+  },
+  "H4948": {
+   "sense_head": "weight",
+   "meaning_range": "heaviness, weight"
+  },
+  "H5027": {
+   "sense_head": "to look",
+   "meaning_range": "1) to look, regard; 1a) (Piel) to look; 1b) (Hiphil); 1b1) tolook; 1b2) to regard, show regard to, pay attention to, consider; 1b3) to look upon, regard, show regard to"
+  },
+  "H5187": {
+   "sense_head": "laden",
+   "meaning_range": "laden"
+  },
+  "H5234A": {
+   "sense_head": "to recognize",
+   "meaning_range": "1) to recognise, acknowledge, know, respect, discern, regard; 1a) (Niphal) to be recognised; 1b) (Piel) to regard; 1c) (Hiphil); 1c1) to regard, observe, pay attention to, pay regard to, notice; 1c2) to recognise (as formerly known), perceive; 1c3) to be willing to recognise or acknowledge, acknowledge with honour; 1c4) to be acquainted with; 1c5) to distinguish, understand; 1d) (Hithpael) to make oneself known"
+  },
+  "H5375Q": {
+   "sense_head": "kindness/honour/favour/lift(head/face)",
+   "meaning_range": "1) to lift, bear up, carry, take; 1a) (Qal); 1a1) to lift, lift up; 1a2) to bear, carry, support, sustain, endure; 1a3) to take, take away, carry off, forgive; 1b) (Niphal); 1b1) to be lifted up, be exalted; 1b2) to lift oneself up, rise up; 1b3) to be borne, be carried; 1b4) to be taken away, be carried off, be swept away; 1c) (Piel); 1c1) to lift up, exalt, support, aid, assist; 1c2) to desire, long (fig.); 1c3) to carry, bear continuously; 1c4) to take, take away; 1d) (Hithpael) to lift onese"
+  },
+  "H5414I": {
+   "sense_head": "make",
+   "meaning_range": "1) to give, put, set; 1a) (Qal); 1a1) to give, bestow, grant, permit, ascribe, employ, devote, consecrate, dedicate, pay wages, sell, exchange, lend, commit, entrust, give over, deliver up, yield produce, occasion, produce, requite to, report, mention, utter, stretch out, extend; 1a2) to put, set, put on, put upon, set, appoint, assign, designate; 1a3) to make, constitute; 1b) (Niphal); 1b1) to be given, be bestowed, be provided, be entrusted to, be granted to, be permitted, be issued, be publis"
+  },
+  "H6188": {
+   "sense_head": "be uncircumcised",
+   "meaning_range": "1) to remain uncircumcised, count uncircumcised, count as foreskin; 1a) (Qal); 1a1) to regard as uncircumcised; 1a2) to remain unharvested (fig.); 1b) (Niphal) to be counted as uncircumcised"
+  },
+  "H6437G": {
+   "sense_head": "to turn",
+   "meaning_range": "1) to turn; 1a) (Qal); 1a1) to turn toward or from or away; 1a2) to turn and do; 1a3) to turn, decline (of day); 1a4) to turn toward, approach (of evening); 1a5) to turn and look, look, look back or at or after or for; 1b) (Piel) to turn away, put out of the way, make clear, clear away; 1c) (Hiphil); 1c1) to turn; 1c2) to make a turn, show signs of turning, turn back; 1d) (Hophal) to be turned back"
+  },
+  "H6485I": {
+   "sense_head": "visit/inspect",
+   "meaning_range": "1) to attend to, muster, number, reckon, visit, punish, appoint, look after, care for; 1a) (Qal); 1a1) to pay attention to, observe; 1a2) to attend to; 1a3) to seek, look about for; 1a4) to seek in vain, need, miss, lack; 1a5) to visit; 1a6) to visit upon, punish; 1a7) to pass in review, muster, number; 1a8) to appoint, assign, lay upon as a charge, deposit; 1b) (Niphal); 1b1) to be sought, be needed, be missed, be lacking; 1b2) to be visited; 1b3) to be visited upon; 1b4) to be appointed; 1b5) "
+  },
+  "H7200G": {
+   "sense_head": "see/show",
+   "meaning_range": "1) to see, look at, inspect, perceive, consider; 1a) (Qal); 1a1) to see; 1a2) to see, perceive; 1a3) to see, have vision; 1a4) to look at, see, regard, look after, see after, learn about, observe, watch, look upon, look out, find out; 1a5) to see, observe, consider, look at, give attention to, discern, distinguish; 1a6) to look at, gaze at; 1a7) to provide, choose; 1b) (Niphal); 1b1) to appear, present oneself; 1b2) to be seen; 1b3) to be visible; 1c) (Pual) to be seen; 1d) (Hiphil); 1d1) to cau"
+  },
+  "H7200H": {
+   "sense_head": "examine/consider",
+   "meaning_range": "1) to see, look at, inspect, perceive, consider; 1a) (Qal); 1a1) to see; 1a2) to see, perceive; 1a3) to see, have vision; 1a4) to look at, see, regard, look after, see after, learn about, observe, watch, look upon, look out, find out; 1a5) to see, observe, consider, look at, give attention to, discern, distinguish; 1a6) to look at, gaze at; 1a7) to provide, choose; 1b) (Niphal); 1b1) to appear, present oneself; 1b2) to be seen; 1b3) to be visible; 1c) (Pual) to be seen; 1d) (Hiphil); 1d1) to cau"
+  },
+  "H7760K": {
+   "sense_head": "consider",
+   "meaning_range": "1) to put, place, set, appoint, make; 1a) (Qal); 1a1) to put, set, lay, put or lay upon, lay (violent) hands on; 1a2) to set, direct, direct toward; 1a2a) to extend (compassion) (fig); 1a3) to set, ordain, establish, found, appoint, constitute, make, determine, fix; 1a4) to set, station, put, set in place, plant, fix; 1a5) to make, make for, transform into, constitute, fashion, work, bring to pass, appoint, give; 1b) (Hiphil) to set or make for a sign; 1c) (Hophal) to be set"
+  },
+  "H7789": {
+   "sense_head": "to see",
+   "meaning_range": "1) to see, behold, observe, regard; 1a) (Qal); 1a1) to behold, observe; 1a2) to regard; 1a3) to watch, watch (stealthily), lie in wait"
+  },
+  "H7878": {
+   "sense_head": "to muse",
+   "meaning_range": "1) to put forth, mediate, muse, commune, speak, complain, ponder, sing; 1a) (Qal); 1a1) to complain; 1a2) to muse, meditate upon, study, ponder; 1a3) to talk, sing, speak; 1b) (Polel) to meditate, consider, put forth thoughts"
+  },
+  "H7896K": {
+   "sense_head": "consider",
+   "meaning_range": "1) to put, set; 1a) (Qal); 1a1) to put, lay (hand upon); 1a2) to set, station, appoint, fix, set mind to; 1a3) to constitute, make (one something), make like, perform; 1a4) to take one's stand; 1a5) to lay waste; 1b) (Hophal) to be imposed, be set upon"
+  },
+  "H7919A": {
+   "sense_head": "be prudent",
+   "meaning_range": "1) to be prudent, be circumspect, wisely understand, prosper; 1a) (Qal) to be prudent, be circumspect; 1b) (Hiphil); 1b1) to look at or upon, have insight; 1b2) to give attention to, consider, ponder, be prudent; 1b3) to have insight, have comprehension; 1b3a) insight, comprehension (subst); 1b4) to cause to consider, give insight, teach; 1b4a) the teachers, the wise; 1b5) to act circumspectly, act prudently, act wisely; 1b6) to prosper, have success; 1b7) to cause to prosper; Aramaic equivalent"
+  },
+  "H7920": {
+   "sense_head": "to contemplate",
+   "meaning_range": "(Ithpael) to consider, contemplate; Aramaic of <i>sa.khal</i> (שָׂכַל \"be prudent\" H7919A)"
+  },
+  "H8104J": {
+   "sense_head": "careful/dilligent",
+   "meaning_range": "1) to keep, guard, observe, give heed; 1a) (Qal); 1a1) to keep, have charge of; 1a2) to keep, guard, keep watch and ward, protect, save life; 1a2a) watch, watchman (participle); 1a3) to watch for, wait for; 1a4) to watch, observe; 1a5) to keep, retain, treasure up (in memory); 1a6) to keep (within bounds), restrain; 1a7) to observe, celebrate, keep (sabbath or covenant or commands), perform (vow); 1a8) to keep, preserve, protect; 1a9) to keep, reserve; 1b) (Niphal); 1b1) to be on one's guard, ta"
+  },
+  "H8159": {
+   "sense_head": "to gaze",
+   "meaning_range": "1) to look at or to, regard, gaze at or about; 1a) (Qal) to gaze at, regard, behold, look about; 1b) (Hiphil) to look away, cause gaze to turn away; 1c) (Hithpael) to look in dismay, gaze about (in anxiety)"
+  },
+  "H8254": {
+   "sense_head": "to weigh",
+   "meaning_range": "1) to weigh, weigh out, pay out; 1a) (Qal); 1a1) to weigh; 1a2) to weigh out (a price); 1a3) of grief (fig); 1b) (Niphal); 1b1) to be weighed; 1b2) to be weighed out; Aramaic equivalent: <i>te.qal</i> (תְּקַל \"to weigh\" H8625A)"
+  },
+  "H9006": {
+   "sense_head": "from",
+   "meaning_range": "Prefix mem: from"
+  }
+ },
+ "to_take_up": [
+  {
+   "observation": 22886,
+   "stage": "layer-1",
+   "kind": "group",
+   "item": "group-definition",
+   "text": "Considering a matter: turning attention and thought to it, looking it over, setting the heart on it. The Lord asks Satan whether he has fixed on Job, the observer sets his heart on the field and takes instruction, the Preacher looks over all his works, the generation gives no thought to the servant's being cut off, the sinner sees his transgressions and turns, the seer contemplates the horns, Jose",
+   "basis": "read",
+   "verses": [
+    "Job.1.8",
+    "Job.2.3",
+    "Prov.24.32",
+    "Eccl.2.11",
+    "Isa.53.8",
+    "Ezek.18.28",
+    "Dan.7.8",
+    "Matt.1.20",
+    "Rom.4.19"
+   ]
+  },
+  {
+   "observation": 22887,
+   "stage": "layer-1",
+   "kind": "group",
+   "item": "group-definition",
+   "text": "Reckoning something or someone as a certain thing: how a person or thing is counted, judged or esteemed. Sarah counts the promiser faithful, Abraham concludes that God can raise the dead, Moses counts the reproach of Christ greater than treasure, rulers are held to be rulers, the silent fool is held wise, silver is counted as nothing, the men are counted reliable, the people are counted as foreign",
+   "basis": "read",
+   "verses": [
+    "1Kgs.10.21",
+    "2Chr.9.20",
+    "Neh.13.13",
+    "Prov.17.28",
+    "Mark.10.42",
+    "Heb.11.11",
+    "Heb.11.19",
+    "Heb.11.26",
+    "Lev.19.23",
+    "1Sam.1.16",
+    "Jer.24.5",
+    "1Cor.4.1"
+   ]
+  },
+  {
+   "observation": 22888,
+   "stage": "layer-1",
+   "kind": "group",
+   "item": "group-definition",
+   "text": "Having regard: giving notice and heed to someone or something, or refusing it. The Lord has no regard for Cain's offering, the psalmist asks God to have regard for the covenant and the vine, the wicked do not regard the Lord's works, God does not regard those wise in their own conceit, Levi disregards his kin, the righteous have regard for the life of the beast, the Medes have no regard for silver",
+   "basis": "read",
+   "verses": [
+    "Gen.4.5",
+    "Exod.5.9",
+    "Deut.9.27",
+    "Deut.33.9",
+    "1Sam.25.25",
+    "2Kgs.3.14",
+    "2Chr.5.11",
+    "2Chr.6.19",
+    "Job.9.21",
+    "Job.34.27",
+    "Job.35.13",
+    "Job.37.24"
+   ]
+  },
+  {
+   "observation": 22889,
+   "stage": "layer-1",
+   "kind": "group",
+   "item": "group-definition",
+   "text": "'With regard to' as a linking phrase of respect: it marks the matter spoken of, a festival or a sect or the children of man or the Philistines. The words are prepositions and nouns of concern and carry no act of thinking. Verses: Judg 15:3, Ecc 3:18, Act 28:22, Col 2:16.",
+   "basis": "read",
+   "verses": [
+    "Judg.15.3",
+    "Eccl.3.18",
+    "Acts.28.22",
+    "Col.2.16"
+   ]
+  },
+  {
+   "observation": 22890,
+   "stage": "layer-1",
+   "kind": "group",
+   "item": "group-definition",
+   "text": "Regarding by a standard: Paul says he knew and took account of Christ once by the standard of the flesh and now takes account of no one by it. The Greek verbs are of knowing, used for the rule by which a person is judged. Verses: 2Cor 5:16.",
+   "basis": "read",
+   "verses": [
+    "2Cor.5.16"
+   ]
+  },
+  {
+   "observation": 22891,
+   "stage": "layer-1",
+   "kind": "group",
+   "item": "group-definition",
+   "text": "Weighing in the mind: the prophets' words are to be weighed by the others who judge them, and the Preacher weighs, studies and arranges proverbs. The word is an act of testing and judging what is said or learned. Verses: 1Cor 14:29, Ecc 12:9.",
+   "basis": "read",
+   "verses": [
+    "1Cor.14.29",
+    "Eccl.12.9"
+   ]
+  },
+  {
+   "observation": 22892,
+   "stage": "layer-1",
+   "kind": "group",
+   "item": "group-definition",
+   "text": "Weighing out metal on scales: the traders weigh out silver, and the gifts are to be weighed before the priests. It is the act of measuring by weight, with no act of thinking. Verses: Ezr 8:29, Zep 1:11.",
+   "basis": "read",
+   "verses": [
+    "Ezra.8.29",
+    "Zeph.1.11"
+   ]
+  },
+  {
+   "observation": 22893,
+   "stage": "layer-1",
+   "kind": "group",
+   "item": "group-definition",
+   "text": "Weight as a stated measure: a ring and bracelets of a given weight in shekels, a bar of gold of fifty shekels, and the balances of the hair. The word is the weight of an object. Verses: Gen 24:22, Jos 7:21, Eze 5:1.",
+   "basis": "read",
+   "verses": [
+    "Gen.24.22",
+    "Josh.7.21",
+    "Ezek.5.1"
+   ]
+  },
+  {
+   "observation": 23129,
+   "stage": "layer-1",
+   "kind": "enrichment",
+   "item": "strong-enrichment",
+   "text": "The codes of considering are verbs of setting, turning and looking: H7760K and H7896K (to put, set; set mind to), H6437G (to turn), H7200H (to see, consider), H7878 (to muse), H7920 (to consider, contemplate), G2657 (to pay attention, contemplate, with intense attention) and G1760 (to reflect on). With them H3820A (heart) is the seat set on the matter, as in Job 1:8 and Pro 24:32. The lexicon bear",
+   "basis": "read",
+   "verses": [
+    "Job.1.8",
+    "Job.2.3",
+    "Prov.24.32",
+    "Eccl.2.11",
+    "Isa.53.8",
+    "Ezek.18.28",
+    "Dan.7.8",
+    "Matt.1.20",
+    "Rom.4.19"
+   ]
+  },
+  {
+   "observation": 23130,
+   "stage": "layer-1",
+   "kind": "enrichment",
+   "item": "strong-enrichment",
+   "text": "The codes of reckoning are H2803H and H2803J (to think, account, esteem, reckon), G3049 (to credit, count, reckon; regard), G2233 (to think, consider, count), G1380 (to think, consider, regard), H5234A (to regard, acknowledge), H5414I (to give, set, make) and H6188 (to count uncircumcised). The lexicon bears out counting a person or thing as something, as in Heb 11:26, Isa 29:16 and 1Sa 1:16.",
+   "basis": "read",
+   "verses": [
+    "Gen.31.15",
+    "Lev.19.23",
+    "1Sam.1.16",
+    "1Kgs.10.21",
+    "2Chr.9.20",
+    "Neh.13.13",
+    "Ps.44.22",
+    "Prov.17.28",
+    "Isa.29.16",
+    "Isa.29.17",
+    "Jer.24.5",
+    "Lam.4.2"
+   ]
+  },
+  {
+   "observation": 23131,
+   "stage": "layer-1",
+   "kind": "enrichment",
+   "item": "strong-enrichment",
+   "text": "The codes of having regard are verbs of looking and heeding: H8159 (to gaze, regard), H5027 (to look, regard), H7789 (to behold, regard), H7200G (to see, regard), H0995 (to discern, give heed), H6437G (to turn toward), H6485I (to pay attention to), H8104J (to keep, give heed), H7919A (to give attention to), H3045 (to know), and H5375Q (to lift the face, show favour). The lexicon bears out regard g",
+   "basis": "read",
+   "verses": [
+    "Gen.4.5",
+    "Exod.5.9",
+    "Deut.9.27",
+    "Deut.33.9",
+    "1Sam.25.25",
+    "2Kgs.3.14",
+    "2Chr.6.19",
+    "2Chr.5.11",
+    "Job.37.24",
+    "Job.35.13",
+    "Job.9.21",
+    "Job.34.27"
+   ]
+  },
+  {
+   "observation": 23132,
+   "stage": "layer-1",
+   "kind": "enrichment",
+   "item": "strong-enrichment",
+   "text": "The codes of with regard to are prepositions and nouns of concern: G4012 (about, concerning, in regard to), G3313 (part, share), H1700 (cause, manner, reason) and H9006 (from). The lexicon bears out a linking phrase of respect in Judg 15:3, Ecc 3:18, Act 28:22 and Col 2:16, naming no act of thinking.",
+   "basis": "read",
+   "verses": [
+    "Judg.15.3",
+    "Eccl.3.18",
+    "Acts.28.22",
+    "Col.2.16"
+   ]
+  },
+  {
+   "observation": 23133,
+   "stage": "layer-1",
+   "kind": "enrichment",
+   "item": "strong-enrichment",
+   "text": "The codes of regarding by a standard are G6063 and G1097, verbs of knowing (to know, recognize, understand). The lexicon gives knowing, which 2Cor 5:16 uses for the rule by which a person is regarded.",
+   "basis": "read",
+   "verses": [
+    "2Cor.5.16"
+   ]
+  },
+  {
+   "observation": 23134,
+   "stage": "layer-1",
+   "kind": "enrichment",
+   "item": "strong-enrichment",
+   "text": "The codes of weighing in the mind are H0239 (weigh, test, prove, consider) and G1252 (to make a distinction, judge a dispute). The lexicon bears out testing and judging what is said or learned, in Ecc 12:9 and 1Cor 14:29.",
+   "basis": "read",
+   "verses": [
+    "Eccl.12.9",
+    "1Cor.14.29"
+   ]
+  },
+  {
+   "observation": 23135,
+   "stage": "layer-1",
+   "kind": "enrichment",
+   "item": "strong-enrichment",
+   "text": "The codes of weighing out are H8254 (to weigh, weigh out, pay out) and H5187 (laden). The lexicon bears out H8254 in Ezr 8:29; the lexicon of H5187 gives only laden, while Zep 1:11 renders it as weighing out silver: the data and the rendering differ.",
+   "basis": "read",
+   "verses": [
+    "Ezra.8.29",
+    "Zeph.1.11"
+   ]
+  },
+  {
+   "observation": 23136,
+   "stage": "layer-1",
+   "kind": "enrichment",
+   "item": "strong-enrichment",
+   "text": "The code of weight is H4948 (heaviness, weight). The lexicon bears out a stated weight of an object in Gen 24:22, Jos 7:21 and Eze 5:1.",
+   "basis": "read",
+   "verses": [
+    "Gen.24.22",
+    "Josh.7.21",
+    "Ezek.5.1"
+   ]
+  },
+  {
+   "observation": 23137,
+   "stage": "layer-2",
+   "kind": "face",
+   "item": "double-meaning",
+   "text": "The surface considered carries many codes in two uses. Of attention set on a matter: H7760K with H3820A in Job 1:8 and Job 2:3 (set the heart), H7896K in Pro 24:32, H6437G in Ecc 2:11, H7878 in Isa 53:8, H7200H in Eze 18:28, H7920 in Dan 7:8, G1760 in Mat 1:20, G2657 in Rom 4:19. Of counting as something: H2803H in 1Ki 10:21, 2Ch 9:20 and Neh 13:13, H2803J in Pro 17:28, G1380 in Mar 10:42, G2233 i",
+   "basis": "read",
+   "verses": [
+    "1Kgs.10.21",
+    "2Chr.9.20",
+    "Neh.13.13",
+    "Job.1.8",
+    "Job.2.3",
+    "Prov.17.28",
+    "Prov.24.32",
+    "Eccl.2.11",
+    "Isa.53.8",
+    "Ezek.18.28",
+    "Dan.7.8",
+    "Matt.1.20"
+   ]
+  },
+  {
+   "observation": 23138,
+   "stage": "layer-2",
+   "kind": "face",
+   "item": "double-meaning",
+   "text": "The surface regard carries over twenty codes in three uses. Of looking and heeding: H8159 in Gen 4:5, Exo 5:9 and Psa 119:117, H5027, H7200G, H6437G, H7789, H0995 in Psa 28:5, H7919A, H6485I, H3045, H8104J, and H5375Q in 2Ki 3:14 (to lift the face). Of counting as something: H2803H, H5234A, H5414I, H6188 in Lev 19:23, G3049, G2233, and G6063 with G1097 in 2Cor 5:16. Of a link of respect: H9006 in ",
+   "basis": "read",
+   "verses": [
+    "Gen.4.5",
+    "Exod.5.9",
+    "Lev.19.23",
+    "Deut.9.27",
+    "Deut.33.9",
+    "Judg.15.3",
+    "1Sam.1.16",
+    "1Sam.25.25",
+    "2Kgs.3.14",
+    "2Chr.5.11",
+    "2Chr.6.19",
+    "Job.9.21"
+   ]
+  },
+  {
+   "observation": 23139,
+   "stage": "layer-2",
+   "kind": "face",
+   "item": "double-meaning",
+   "text": "The surface regarded carries four codes, all of counting as something: H2803H in Gen 31:15, Psa 44:22, Lam 4:2 and Hos 8:12, H2803J in Isa 29:16 and Isa 29:17, G1380 in Luk 22:24, G3049 in Rom 2:26 and Rom 8:36.",
+   "basis": "read",
+   "verses": [
+    "Gen.31.15",
+    "Ps.44.22",
+    "Isa.29.16",
+    "Isa.29.17",
+    "Lam.4.2",
+    "Hos.8.12",
+    "Luke.22.24",
+    "Rom.2.26",
+    "Rom.8.36"
+   ]
+  },
+  {
+   "observation": 23140,
+   "stage": "layer-2",
+   "kind": "face",
+   "item": "double-meaning",
+   "text": "The surface weigh carries three codes: H8254 in Ezr 8:29, weighing the gifts on scales, H5187 in Zep 1:11, whose lexicon gives laden though the verse renders it weighing out silver, and G1252 in 1Cor 14:29, judging what the prophets say. Two are weighing by measure, one is weighing in the mind.",
+   "basis": "read",
+   "verses": [
+    "Ezra.8.29",
+    "Zeph.1.11",
+    "1Cor.14.29"
+   ]
+  },
+  {
+   "observation": 23141,
+   "stage": "layer-2",
+   "kind": "face",
+   "item": "double-meaning",
+   "text": "The surface weighing carries two codes: H4948 in Gen 24:22, Jos 7:21 and Eze 5:1, the weight of an object in shekels or the balances, and H0239 in Ecc 12:9, the Preacher's weighing of proverbs in the mind.",
+   "basis": "read",
+   "verses": [
+    "Gen.24.22",
+    "Josh.7.21",
+    "Eccl.12.9",
+    "Ezek.5.1"
+   ]
+  },
+  {
+   "observation": 23142,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "qualifier",
+   "text": "A negator reaches the regard itself in Gen 4:5, Deu 33:9, 1Sa 1:16, 1Sa 25:25, Job 9:21, Job 34:27, Job 35:13, Job 37:24, Psa 28:5, Isa 5:12, Isa 13:17, Isa 33:8, Lam 4:16, 2Th 3:15 and 2Cor 5:16: the regard is withheld (no regard, regard not, do not regard, regard no more, regard no one). The other qualifiers of these verses reach other words: very (the anger), cruel and wise of other persons.",
+   "basis": "read",
+   "verses": [
+    "Gen.4.5",
+    "Deut.33.9",
+    "1Sam.1.16",
+    "1Sam.25.25",
+    "Job.9.21",
+    "Job.34.27",
+    "Job.35.13",
+    "Job.37.24",
+    "Ps.28.5",
+    "Isa.5.12",
+    "Isa.13.17",
+    "Isa.33.8"
+   ]
+  },
+  {
+   "observation": 23143,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "qualifier",
+   "text": "In Gen 31:15, Isa 29:17 and Rom 2:26 the negator opens a question that expects yes: are we not regarded as foreigners, will not the field be regarded as a forest, will not the uncircumcision be regarded as circumcision.",
+   "basis": "read",
+   "verses": [
+    "Gen.31.15",
+    "Isa.29.17",
+    "Rom.2.26"
+   ]
+  },
+  {
+   "observation": 23144,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "qualifier",
+   "text": "Where the word is counting as something, the qualifier gives the value counted: forbidden in Lev 19:23, wise in Pro 17:28, good in Jer 24:5, earthen against precious in Lam 4:2, strange in Hos 8:12, greatest in Luk 22:24, rulers in Mar 10:42, worthy of all honor in 1Ti 6:1, faithful in Heb 11:11 and 1Pe 5:12, able in Heb 11:19, greater in Heb 11:26; in 1Ki 10:21 silver is counted as nothing, and i",
+   "basis": "read",
+   "verses": [
+    "Lev.19.23",
+    "Prov.17.28",
+    "Jer.24.5",
+    "Lam.4.2",
+    "Hos.8.12",
+    "Luke.22.24",
+    "Mark.10.42",
+    "1Tim.6.1",
+    "Heb.11.11",
+    "Heb.11.19",
+    "Heb.11.26",
+    "1Pet.5.12"
+   ]
+  },
+  {
+   "observation": 23145,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "qualifier",
+   "text": "Where the word is attention set on a matter, the qualifiers describe what is considered or the one considering, not the act: Job is blameless and upright in Job 1:8 and Job 2:3, the body is as good as dead in Rom 4:19, the horns are another, little and three in Dan 7:8, the land is of the living in Isa 53:8, the Preacher is wise in Ecc 12:9, the prophets two or three in 1Cor 14:29; in Mat 1:20 and",
+   "basis": "read",
+   "verses": [
+    "Job.1.8",
+    "Job.2.3",
+    "Rom.4.19",
+    "Dan.7.8",
+    "Isa.53.8",
+    "Matt.1.20",
+    "Ezek.18.28",
+    "Eccl.12.9",
+    "1Cor.14.29"
+   ]
+  },
+  {
+   "observation": 23146,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "qualifier",
+   "text": "Where regard is given, the qualifiers name who gives it or what stands against it: in Pro 12:10 righteous names the one whose regard reaches even his animal, set against the cruel mercy of the wicked; in 2Ki 3:14 the oath on the Lord who lives frames Elisha's regard for the king.",
+   "basis": "read",
+   "verses": [
+    "2Kgs.3.14",
+    "Prov.12.10"
+   ]
+  },
+  {
+   "observation": 23147,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "qualifier",
+   "text": "Where the word is a weight or a link, the qualifiers reach the objects or the matter: two bracelets in Gen 24:22, a beautiful cloak, 200 shekels and a bar of 50 in Jos 7:21, a sharp sword in Eze 5:1; in Col 2:16 the negator reaches the passing of judgment and with regard to is a link; in Act 28:22 everywhere reaches the speaking against the sect.",
+   "basis": "read",
+   "verses": [
+    "Gen.24.22",
+    "Josh.7.21",
+    "Ezek.5.1",
+    "Col.2.16",
+    "Acts.28.22"
+   ]
+  },
+  {
+   "observation": 23148,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "entity",
+   "text": "God is named as the one who gives or withholds regard: the Lord to Cain in Gen 4:5, the Almighty to the empty cry in Job 35:13, God to the wise in their own conceit in Job 37:24, the Lord to man in Psa 144:3, the Lord to the exiles in Jer 24:5, and the Lord who will regard his people no more in Lam 4:16.",
+   "basis": "read",
+   "verses": [
+    "Gen.4.5",
+    "Job.35.13",
+    "Job.37.24",
+    "Ps.144.3",
+    "Jer.24.5",
+    "Lam.4.16"
+   ]
+  },
+  {
+   "observation": 23149,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "entity",
+   "text": "God is named as the one asked to regard or not to regard: not the stubbornness of the people for the sake of Abraham, Isaac and Jacob in Deu 9:27, the prayer of his servant in 2Ch 6:19, the vine in Psa 80:14.",
+   "basis": "read",
+   "verses": [
+    "Deut.9.27",
+    "2Chr.6.19",
+    "Ps.80.14"
+   ]
+  },
+  {
+   "observation": 23150,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "entity",
+   "text": "In Job 1:8 and Job 2:3 the Lord names Job as the one to be considered and puts the question to the one he speaks to: the considering is asked of another, and Job, God's servant, is its object.",
+   "basis": "read",
+   "verses": [
+    "Job.1.8",
+    "Job.2.3"
+   ]
+  },
+  {
+   "observation": 23151,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "entity",
+   "text": "In Psa 28:5 and Isa 5:12 the Lord is named as the one whose works and deeds people do not regard.",
+   "basis": "stated",
+   "verses": [
+    "Ps.28.5",
+    "Isa.5.12"
+   ]
+  },
+  {
+   "observation": 23152,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "entity",
+   "text": "The persons named in the accounts of faith and of a decision are those who consider and those they consider: Sarah, who counts the promiser faithful, in Heb 11:11; God, counted able, in Heb 11:19; Christ, whose reproach is counted, in Heb 11:26; Sarah, whose womb is considered, in Rom 4:19; and in Mat 1:20 Joseph, son of David, considering while an angel of the Lord comes.",
+   "basis": "read",
+   "verses": [
+    "Heb.11.11",
+    "Heb.11.19",
+    "Heb.11.26",
+    "Rom.4.19",
+    "Matt.1.20"
+   ]
+  },
+  {
+   "observation": 23153,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "entity",
+   "text": "People are named as those regarded or counted as something: Nabal in 1Sa 25:25, a brother in 2Th 3:15 and 1Pe 5:12, servants of Christ in 1Cor 4:1, Christ known by the flesh in 2Cor 5:16, masters in 1Ti 6:1, rulers named by Jesus in Mar 10:42, the potter in Isa 29:16, the sons of Zion in Lam 4:2, man in Isa 33:8, the men in Exo 5:9, the treasurers in Neh 13:13, and Solomon whose silver counts for ",
+   "basis": "read",
+   "verses": [
+    "1Sam.25.25",
+    "2Thess.3.15",
+    "1Pet.5.12",
+    "1Cor.4.1",
+    "2Cor.5.16",
+    "1Tim.6.1",
+    "Mark.10.42",
+    "Isa.29.16",
+    "Lam.4.2",
+    "Isa.33.8",
+    "Exod.5.9",
+    "Neh.13.13"
+   ]
+  },
+  {
+   "observation": 23154,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "entity",
+   "text": "Where the word is a weight, a link or regard for a king, the persons named are the doers around it: the man with the ring in Gen 24:22, the priests before whom the gifts are weighed in Ezr 8:29, the son of man in Eze 5:1, Samson in Judg 15:3, man and God in Ecc 3:18, Elisha, the Lord and Jehoshaphat in 2Ki 3:14, the priests in 2Ch 5:11.",
+   "basis": "read",
+   "verses": [
+    "Gen.24.22",
+    "Ezra.8.29",
+    "Ezek.5.1",
+    "Judg.15.3",
+    "Eccl.3.18",
+    "2Kgs.3.14",
+    "2Chr.5.11"
+   ]
+  },
+  {
+   "observation": 23155,
+   "stage": "layer-2",
+   "kind": "relation",
+   "item": "direction",
+   "text": "The regard runs from God to people in Gen 4:5, Job 35:13, Job 37:24, Psa 144:3, Jer 24:5 and Lam 4:16: given to man and to the exiles, withheld from Cain, the empty cry, the wise in their own conceit, and a scattered people.",
+   "basis": "stated",
+   "verses": [
+    "Gen.4.5",
+    "Job.35.13",
+    "Job.37.24",
+    "Ps.144.3",
+    "Jer.24.5",
+    "Lam.4.16"
+   ]
+  },
+  {
+   "observation": 23156,
+   "stage": "layer-2",
+   "kind": "relation",
+   "item": "direction",
+   "text": "The regard is asked from people to God in Deu 9:27, 2Ch 6:19 and Psa 80:14: they ask him to regard the prayer and the vine, and not to regard the stubbornness of the people.",
+   "basis": "stated",
+   "verses": [
+    "Deut.9.27",
+    "2Chr.6.19",
+    "Ps.80.14"
+   ]
+  },
+  {
+   "observation": 23157,
+   "stage": "layer-2",
+   "kind": "relation",
+   "item": "direction",
+   "text": "In Psa 28:5 and Isa 5:12 the regard that should run from people to God's works is refused: they do not regard his deeds.",
+   "basis": "stated",
+   "verses": [
+    "Ps.28.5",
+    "Isa.5.12"
+   ]
+  },
+  {
+   "observation": 23158,
+   "stage": "layer-2",
+   "kind": "relation",
+   "item": "direction",
+   "text": "In Job 1:8 and Job 2:3 the question runs from the Lord to the one he speaks to, about Job: the considering asked for is directed at a third person.",
+   "basis": "read",
+   "verses": [
+    "Job.1.8",
+    "Job.2.3"
+   ]
+  },
+  {
+   "observation": 23159,
+   "stage": "layer-2",
+   "kind": "relation",
+   "item": "direction",
+   "text": "Where a person or thing is counted as something, the regard runs from one person to another, or to a thing: a brother not counted an enemy in 2Th 3:15, masters counted worthy in 1Ti 6:1, the potter not counted as clay in Isa 29:16, silver counted as nothing in 1Ki 10:21, and the others of 1Sa 25:25, 1Pe 5:12, 1Cor 4:1, 2Cor 5:16, Mar 10:42, Lam 4:2, Isa 33:8, Exo 5:9, Neh 13:13 and 2Ch 9:20.",
+   "basis": "read",
+   "verses": [
+    "1Sam.25.25",
+    "2Thess.3.15",
+    "1Pet.5.12",
+    "1Cor.4.1",
+    "2Cor.5.16",
+    "1Tim.6.1",
+    "Mark.10.42",
+    "Isa.29.16",
+    "Lam.4.2",
+    "Isa.33.8",
+    "Exod.5.9",
+    "Neh.13.13"
+   ]
+  },
+  {
+   "observation": 23160,
+   "stage": "layer-2",
+   "kind": "relation",
+   "item": "direction",
+   "text": "In Heb 11:11, Heb 11:19, Heb 11:26, Rom 4:19 and Mat 1:20 the considering runs from the one who believes toward God's promise and power, toward the reproach of Christ, toward one's own body, or toward a decision to be taken.",
+   "basis": "read",
+   "verses": [
+    "Heb.11.11",
+    "Heb.11.19",
+    "Heb.11.26",
+    "Rom.4.19",
+    "Matt.1.20"
+   ]
+  },
+  {
+   "observation": 23161,
+   "stage": "layer-2",
+   "kind": "relation",
+   "item": "direction",
+   "text": "Where the word is a weight or a link, no direction of a mind is stated: the weight of a ring, gifts weighed, the balances, in regard to the Philistines or the children of man; in 2Ki 3:14 the regard runs from Elisha to the king.",
+   "basis": "read",
+   "verses": [
+    "Gen.24.22",
+    "Ezra.8.29",
+    "Ezek.5.1",
+    "Judg.15.3",
+    "Eccl.3.18",
+    "2Kgs.3.14",
+    "2Chr.5.11"
+   ]
+  },
+  {
+   "observation": 23162,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Gen 4:5 angry (H2734) stands three words after regard: the Lord's lack of regard for Cain's offering is followed at once by Cain's anger.",
+   "basis": "stated",
+   "verses": [
+    "Gen.4.5"
+   ]
+  },
+  {
+   "observation": 23163,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In 1Sa 1:16 vexation (H3708A) stands nine words after regard, in the reason Hannah gives against being counted worthless: she has spoken out of anxiety and vexation.",
+   "basis": "read",
+   "verses": [
+    "1Sam.1.16"
+   ]
+  },
+  {
+   "observation": 23164,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Jos 7:21 beautiful (H2896A) describes the cloak Achan saw, nine words before the weighing of the gold bar: both are in his list of what he saw and coveted.",
+   "basis": "stated",
+   "verses": [
+    "Josh.7.21"
+   ]
+  },
+  {
+   "observation": 23165,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Rom 4:19 and Heb 11:11 faith (G4102G) stands before the considering, as its frame: not weakening in faith when he considered his body, by faith Sarah counted the promiser faithful. WordNet relates the subgroup to this collection through see and respect; the verses pair the considering with faith.",
+   "basis": "read",
+   "verses": [
+    "Rom.4.19",
+    "Heb.11.11"
+   ]
+  },
+  {
+   "observation": 23166,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Judg 15:3 harm (H7451C, with H0589 and H5973A at the same place) stands three words after in regard to: Samson declares himself innocent toward the Philistines in the harm he will do.",
+   "basis": "stated",
+   "verses": [
+    "Judg.15.3"
+   ]
+  },
+  {
+   "observation": 23167,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Ecc 2:11 gained (H3504) stands thirteen words after considered, at the end of what the considering found: nothing to be gained under the sun.",
+   "basis": "read",
+   "verses": [
+    "Eccl.2.11"
+   ]
+  },
+  {
+   "observation": 23168,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In 1Pe 5:12 grace (G5485) stands nine words after regard, in what the letter declares: the true grace of God; the regard is of Silvanus as faithful.",
+   "basis": "stated",
+   "verses": [
+    "1Pet.5.12"
+   ]
+  },
+  {
+   "observation": 23169,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Psa 28:5 build (H1129) stands seven words after regard, in the consequence of not regarding the Lord's works: he will tear them down and not build them up.",
+   "basis": "stated",
+   "verses": [
+    "Ps.28.5"
+   ]
+  },
+  {
+   "observation": 23170,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Mar 10:42 called (G4341) stands six words before considered: Jesus calls the disciples to him, then speaks of those considered rulers.",
+   "basis": "stated",
+   "verses": [
+    "Mark.10.42"
+   ]
+  },
+  {
+   "observation": 23171,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Heb 11:26 reproach (G3680) stands directly after considered as what is counted: the reproach of Christ counted greater wealth than Egypt's treasures.",
+   "basis": "stated",
+   "verses": [
+    "Heb.11.26"
+   ]
+  },
+  {
+   "observation": 23172,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Ezr 8:29 chief (H8269) stands two words after weigh: the weighing is to be done before the chief priests.",
+   "basis": "stated",
+   "verses": [
+    "Ezra.8.29"
+   ]
+  },
+  {
+   "observation": 23173,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In 1Ki 10:21 and 2Ch 9:20 pure (H5462) describes the gold five words before considered: all was of pure gold, and silver was counted as nothing.",
+   "basis": "stated",
+   "verses": [
+    "1Kgs.10.21",
+    "2Chr.9.20"
+   ]
+  },
+  {
+   "observation": 23174,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Lev 19:23 forbidden (H6190H, H6189) stands two and six words after regard as what the fruit is to be counted: forbidden for three years.",
+   "basis": "stated",
+   "verses": [
+    "Lev.19.23"
+   ]
+  },
+  {
+   "observation": 23175,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Neh 13:13 duty (H5921A) stands two words after considered: the treasurers were counted reliable, and their duty follows, to distribute to their brothers. WordNet relates the subgroup to this collection through respect; the verse pairs counting with duty.",
+   "basis": "read",
+   "verses": [
+    "Neh.13.13"
+   ]
+  },
+  {
+   "observation": 23176,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Jos 7:21 hidden (H2934) stands six words after the weighing of the gold bar, at the end of Achan's account: the gold bar whose weight he names is among what he hid.",
+   "basis": "stated",
+   "verses": [
+    "Josh.7.21"
+   ]
+  },
+  {
+   "observation": 23177,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Col 2:16 judgment on (G2919) stands eight words before with regard to: no one is to judge them in the matters the link names.",
+   "basis": "stated",
+   "verses": [
+    "Col.2.16"
+   ]
+  },
+  {
+   "observation": 23178,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Psa 119:117 continually (H8548) stands two words after regard and qualifies it: the speaker asks to have regard for the statutes without end.",
+   "basis": "stated",
+   "verses": [
+    "Ps.119.117"
+   ]
+  },
+  {
+   "observation": 23179,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Isa 53:8 transgression (H6588) stands eight words after considered, in what the generation did not consider: the one cut off was stricken for the transgression of the people.",
+   "basis": "read",
+   "verses": [
+    "Isa.53.8"
+   ]
+  },
+  {
+   "observation": 23180,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Deu 9:27 wickedness (H7562, with H2088 and H0413 at the same place) stands three words after regard as what God is asked not to regard: the stubbornness, wickedness and sin of the people.",
+   "basis": "stated",
+   "verses": [
+    "Deut.9.27"
+   ]
+  },
+  {
+   "observation": 23181,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Pro 12:10 cruel (H0394) stands five words after regard, on the other side of the contrast: the righteous regard the life of their beast, the mercy of the wicked is cruel.",
+   "basis": "stated",
+   "verses": [
+    "Prov.12.10"
+   ]
+  },
+  {
+   "observation": 23182,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Exo 5:9 lying (H8267) stands directly after regard as its object: the men are to pay no regard to lying words.",
+   "basis": "stated",
+   "verses": [
+    "Exod.5.9"
+   ]
+  },
+  {
+   "observation": 23183,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In 2Ch 5:11 consecrated (H6942G) stands two words before regard: every priest present was set apart, and the regard that is set aside is for the divisions of their service.",
+   "basis": "stated",
+   "verses": [
+    "2Chr.5.11"
+   ]
+  },
+  {
+   "observation": 23184,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Eze 18:28 committed (H6213H) stands six words after considered, in what the man considered: the transgressions he had committed, from which he turned away.",
+   "basis": "stated",
+   "verses": [
+    "Ezek.18.28"
+   ]
+  },
+  {
+   "observation": 23185,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Isa 13:17 delight (H2654A) stands three words after regard, in the parallel line: no regard for silver, no delight in gold.",
+   "basis": "stated",
+   "verses": [
+    "Isa.13.17"
+   ]
+  },
+  {
+   "observation": 23186,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Lam 4:16 favor (H2603A) stands seven words after regard, in the parallel lines: the Lord regards them no more, and no favor is shown to the elders.",
+   "basis": "stated",
+   "verses": [
+    "Lam.4.16"
+   ]
+  },
+  {
+   "observation": 23187,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Act 28:22 desire (G0515) stands seven words before with regard to: the leaders desire to hear Paul's views, and the link names the sect spoken against.",
+   "basis": "stated",
+   "verses": [
+    "Acts.28.22"
+   ]
+  },
+  {
+   "observation": 23188,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Job 2:3 destroy (H1104) stands eighteen words after considered, at the end of the Lord's words: Satan incited him to destroy Job without reason.",
+   "basis": "stated",
+   "verses": [
+    "Job.2.3"
+   ]
+  },
+  {
+   "observation": 23189,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Psa 74:20 violence (H2555) stands seven words after regard, in the reason the covenant is to be regarded: the dark places are full of violence.",
+   "basis": "stated",
+   "verses": [
+    "Ps.74.20"
+   ]
+  },
+  {
+   "observation": 23190,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Eze 18:28 die (H4191) closes the verse, ten words after considered: the one who considered and turned away shall not die.",
+   "basis": "stated",
+   "verses": [
+    "Ezek.18.28"
+   ]
+  },
+  {
+   "observation": 23191,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Job 1:8 and Job 2:3 evil (H7451B) stands twelve and thirteen words after considered, in the description of the one considered: he turns away from evil.",
+   "basis": "stated",
+   "verses": [
+    "Job.1.8",
+    "Job.2.3"
+   ]
+  },
+  {
+   "observation": 23192,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Pro 12:10 wicked (H7563) stands four words after regard, on the other side of the contrast with the righteous who regard.",
+   "basis": "stated",
+   "verses": [
+    "Prov.12.10"
+   ]
+  },
+  {
+   "observation": 23193,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Neh 13:13 reliable (H0539) stands directly after considered as what the treasurers were counted. WordNet relates the subgroup to this collection through believe; the verse pairs counting with reliability.",
+   "basis": "stated",
+   "verses": [
+    "Neh.13.13"
+   ]
+  },
+  {
+   "observation": 23194,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Job 2:3 fast (H2388H) stands fifteen words after considered, in what the Lord says of Job: he still holds fast his integrity.",
+   "basis": "stated",
+   "verses": [
+    "Job.2.3"
+   ]
+  },
+  {
+   "observation": 23195,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In 1Sa 1:16 anxiety (H7879) stands eight words after regard, in Hannah's reason against being counted worthless: she spoke out of anxiety.",
+   "basis": "stated",
+   "verses": [
+    "1Sam.1.16"
+   ]
+  },
+  {
+   "observation": 23196,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Job 1:8 and Job 2:3 fears (H3373) stands nine and ten words after considered, describing the one considered: he fears God.",
+   "basis": "stated",
+   "verses": [
+    "Job.1.8",
+    "Job.2.3"
+   ]
+  },
+  {
+   "observation": 23197,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Job 37:24 fear (H3372H) stands two words before regard, in the clause before it: men fear God, who does not regard the wise in their own conceit.",
+   "basis": "stated",
+   "verses": [
+    "Job.37.24"
+   ]
+  },
+  {
+   "observation": 23198,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Mat 1:20 fear (G5399) stands fourteen words after considered, in what the angel says to the one considering: do not fear.",
+   "basis": "stated",
+   "verses": [
+    "Matt.1.20"
+   ]
+  },
+  {
+   "observation": 23199,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Job 35:13 empty (H7723H) stands three words before regard and describes what God does not regard: an empty cry.",
+   "basis": "stated",
+   "verses": [
+    "Job.35.13"
+   ]
+  },
+  {
+   "observation": 23200,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In 1Pe 5:12 stand firm (G2476) closes the verse, eleven words after regard, in the exhortation the letter carries.",
+   "basis": "stated",
+   "verses": [
+    "1Pet.5.12"
+   ]
+  },
+  {
+   "observation": 23201,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In 1Sa 25:25 folly (H5039) stands eight words after regard, in the reason Nabal is not to be regarded: folly is with him.",
+   "basis": "stated",
+   "verses": [
+    "1Sam.25.25"
+   ]
+  },
+  {
+   "observation": 23202,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Pro 17:28 fool (H0191) stands two words before considered as the one counted: the silent fool is counted wise.",
+   "basis": "stated",
+   "verses": [
+    "Prov.17.28"
+   ]
+  },
+  {
+   "observation": 23203,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Deu 9:27 remember (H2142) opens the verse, five words before regard: God is asked to remember the fathers and not to regard the people's stubbornness.",
+   "basis": "stated",
+   "verses": [
+    "Deut.9.27"
+   ]
+  },
+  {
+   "observation": 23204,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Pro 12:10 mercy (H7356B) stands three words after regard, on the other side of the contrast: the mercy of the wicked is cruel.",
+   "basis": "stated",
+   "verses": [
+    "Prov.12.10"
+   ]
+  },
+  {
+   "observation": 23205,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Deu 33:9 disowned (H5234A) stands three words after regard, in the parallel lines: not regarding father and mother, disowning brothers, ignoring children, for the sake of the word observed.",
+   "basis": "stated",
+   "verses": [
+    "Deut.33.9"
+   ]
+  },
+  {
+   "observation": 23206,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Gen 24:22 finished (H3615G, with H1961 and H0834A at the same place) opens the verse, six words before weighing: when the camels have finished drinking, the man brings out the ring of a given weight.",
+   "basis": "stated",
+   "verses": [
+    "Gen.24.22"
+   ]
+  },
+  {
+   "observation": 23207,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Mat 1:20 holy (G0040G) stands twenty-five words after considered, in the angel's words on what is conceived: from the Holy Spirit.",
+   "basis": "stated",
+   "verses": [
+    "Matt.1.20"
+   ]
+  },
+  {
+   "observation": 23208,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Mar 10:42 exercise authority (G2715) stands eight words after considered, in what those considered rulers do.",
+   "basis": "stated",
+   "verses": [
+    "Mark.10.42"
+   ]
+  },
+  {
+   "observation": 23209,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Rom 2:26 precepts (G1345) stands five words before regarded, in the condition of the question: the uncircumcised who keeps the precepts is regarded as circumcised.",
+   "basis": "stated",
+   "verses": [
+    "Rom.2.26"
+   ]
+  },
+  {
+   "observation": 23210,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Ezr 8:29 guard (H8245) opens the verse, three words before weigh: the gifts are guarded until they are weighed before the priests.",
+   "basis": "stated",
+   "verses": [
+    "Ezra.8.29"
+   ]
+  },
+  {
+   "observation": 23211,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In 2Ch 6:19, Job 35:13 and Act 28:22 hear and listening stand near regard: God is asked to regard and to listen, God does not hear nor regard an empty cry, and the leaders wish to hear Paul. WordNet relates the subgroup to this collection through heed, a synonym; the verses set hearing beside regard.",
+   "basis": "stated",
+   "verses": [
+    "2Chr.6.19",
+    "Job.35.13",
+    "Acts.28.22"
+   ]
+  },
+  {
+   "observation": 23212,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Ecc 3:18 heart (H3820A) stands two words before with regard to: the Preacher speaks in his heart about the children of man.",
+   "basis": "stated",
+   "verses": [
+    "Eccl.3.18"
+   ]
+  },
+  {
+   "observation": 23213,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Lam 4:16 honor (H6440N) stands three words after regard, in the parallel lines: the Lord regards them no more and no honor is shown to the priests.",
+   "basis": "stated",
+   "verses": [
+    "Lam.4.16"
+   ]
+  },
+  {
+   "observation": 23214,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In 1Ti 6:1 worthy and honor (G0514, G5092) stand three and five words after regard as what masters are counted: worthy of all honor. WordNet relates the subgroup to this collection through esteem, a synonym; the verse joins regard and honor.",
+   "basis": "stated",
+   "verses": [
+    "1Tim.6.1"
+   ]
+  },
+  {
+   "observation": 23215,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Judg 15:3 innocent (H5352) stands directly before in regard to: Samson declares himself innocent toward the Philistines.",
+   "basis": "stated",
+   "verses": [
+    "Judg.15.3"
+   ]
+  },
+  {
+   "observation": 23216,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Job 1:8 and Job 2:3 blameless (H8535), with integrity (H8538) in Job 2:3, describes the one considered.",
+   "basis": "stated",
+   "verses": [
+    "Job.1.8",
+    "Job.2.3"
+   ]
+  },
+  {
+   "observation": 23217,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Job 9:21 blameless (H8535) opens the verse, two words before regard: Job, blameless, does not regard himself.",
+   "basis": "stated",
+   "verses": [
+    "Job.9.21"
+   ]
+  },
+  {
+   "observation": 23218,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Psa 44:22 and Rom 8:36 killed (H2026, G2289) stands three words before regarded, in the parallel line: they are killed all day and counted as sheep for slaughter.",
+   "basis": "stated",
+   "verses": [
+    "Ps.44.22",
+    "Rom.8.36"
+   ]
+  },
+  {
+   "observation": 23219,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Ecc 12:9 knowledge (H1847) stands directly before weighing: the Preacher taught knowledge, weighing proverbs.",
+   "basis": "stated",
+   "verses": [
+    "Eccl.12.9"
+   ]
+  },
+  {
+   "observation": 23220,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Mar 10:42 and Act 28:22 know (G6063, G1110) stands near the counting or the link: you know who are considered rulers; we know the sect is spoken against. WordNet relates the subgroup to this collection through see, a synonym.",
+   "basis": "stated",
+   "verses": [
+    "Mark.10.42",
+    "Acts.28.22"
+   ]
+  },
+  {
+   "observation": 23221,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Exo 5:9 work and labor (H5656I, H6213A) stand before regard: heavier work is laid on the men so that they pay no regard to lying words.",
+   "basis": "stated",
+   "verses": [
+    "Exod.5.9"
+   ]
+  },
+  {
+   "observation": 23222,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Psa 28:5 and Isa 5:12 works and work (H6468, H4639G, with H0413 at the same places) stand after regard as what is not regarded: the works of the Lord.",
+   "basis": "stated",
+   "verses": [
+    "Ps.28.5",
+    "Isa.5.12"
+   ]
+  },
+  {
+   "observation": 23223,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Ecc 2:11 toil (H5999) stands four words after considered as what is considered: the toil the Preacher spent.",
+   "basis": "stated",
+   "verses": [
+    "Eccl.2.11"
+   ]
+  },
+  {
+   "observation": 23224,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Lam 4:2 work (H4639G) stands three words after regarded, in what the sons are counted as: the work of a potter's hands.",
+   "basis": "stated",
+   "verses": [
+    "Lam.4.2"
+   ]
+  },
+  {
+   "observation": 23225,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Zep 1:11 wail (H3213) opens the verse, eight words before weigh: the call to wail is over those who weigh out silver, who are cut off.",
+   "basis": "stated",
+   "verses": [
+    "Zeph.1.11"
+   ]
+  },
+  {
+   "observation": 23226,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In 2Ch 6:19 cry (H7440) stands ten words after regard, in what God is asked to regard: the cry and the prayer of his servant.",
+   "basis": "stated",
+   "verses": [
+    "2Chr.6.19"
+   ]
+  },
+  {
+   "observation": 23227,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "Where the word is attention set on a matter, live and dead name the state it reaches: in Isa 53:8 who considered that he was cut off from the land of the living, in Eze 18:28 the one who considered and turned shall live, in Rom 4:19 Abraham considered his body as good as dead, in Heb 11:19 he considered God able to raise from the dead. In 2Ki 3:14 lives is the Lord of the oath and regard is Elisha",
+   "basis": "read",
+   "verses": [
+    "2Kgs.3.14",
+    "Isa.53.8",
+    "Ezek.18.28",
+    "Rom.4.19",
+    "Heb.11.19"
+   ]
+  },
+  {
+   "observation": 23228,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Job 9:21 regard not and loathe stand together of Job's own self: he does not regard himself and loathes his life. In Lam 4:2 regarded as earthen pots stands against precious sons, worth their weight in gold: counting low set against valued. In Jos 7:21 weighing is the weight of the gold bar, beside coveted.",
+   "basis": "read",
+   "verses": [
+    "Job.9.21",
+    "Lam.4.2",
+    "Josh.7.21"
+   ]
+  },
+  {
+   "observation": 23229,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Heb 11:11 Sarah considered him faithful who had promised, and in 1Pe 5:12 Peter regards Silvanus as a faithful brother: the counting names faithfulness as its value. In Job 35:13 and Eze 18:28 surely is an emphasis on what God does not regard and on the one who shall live, not loyalty.",
+   "basis": "read",
+   "verses": [
+    "Job.35.13",
+    "Ezek.18.28",
+    "Heb.11.11",
+    "1Pet.5.12"
+   ]
+  },
+  {
+   "observation": 23230,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Dan 7:8 great things are spoken by the little horn that Daniel considered: the considering is set on the horn, the great things are its boasting.",
+   "basis": "read",
+   "verses": [
+    "Dan.7.8"
+   ]
+  },
+  {
+   "observation": 23231,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Pro 17:28 the fool who keeps silent is considered wise: silence is the ground on which others count him wise. In Job 2:3 still is Job holding fast his integrity, and in Isa 33:8 the traveler ceases where there is no regard for man: neither is silence of speech.",
+   "basis": "read",
+   "verses": [
+    "Job.2.3",
+    "Prov.17.28",
+    "Isa.33.8"
+   ]
+  },
+  {
+   "observation": 23232,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In 2Ch 5:11 the priests there had all consecrated themselves, not keeping to their divisions: regard is keeping to an order, present is being there; neither offers.",
+   "basis": "read",
+   "verses": [
+    "2Chr.5.11"
+   ]
+  },
+  {
+   "observation": 23233,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Isa 53:8 oppression is what took the servant away, and the question is who of his generation considered it: the considering is of what was done to him by oppression.",
+   "basis": "read",
+   "verses": [
+    "Isa.53.8"
+   ]
+  },
+  {
+   "observation": 23234,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In 1Pe 5:12 Peter regards Silvanus as faithful and, by him, writes exhorting and declaring: the regard of the writer for the carrier stands beside the preaching of the letter.",
+   "basis": "read",
+   "verses": [
+    "1Pet.5.12"
+   ]
+  },
+  {
+   "observation": 23235,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In 1Sa 1:16 Hannah asks Eli not to regard her as a worthless woman, and in 1Sa 25:25 Abigail asks David not to regard Nabal: regarding is counting a person as worthless. In Job 37:24 God does not regard the wise in their own conceit: conceit is what he withholds regard from. In Ecc 2:11 the Preacher considered all his toil, and it was vanity.",
+   "basis": "read",
+   "verses": [
+    "1Sam.1.16",
+    "1Sam.25.25",
+    "Job.37.24",
+    "Eccl.2.11"
+   ]
+  },
+  {
+   "observation": 23236,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Heb 11:11 the one Sarah considered faithful is the one who had promised: the counting rests on the promise.",
+   "basis": "read",
+   "verses": [
+    "Heb.11.11"
+   ]
+  },
+  {
+   "observation": 23237,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Luk 22:24 the disciples dispute over who among them should be counted the greatest: being regarded is the prize the dispute is about.",
+   "basis": "read",
+   "verses": [
+    "Luke.22.24"
+   ]
+  },
+  {
+   "observation": 23238,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In 1Pe 5:12 true names the grace Peter declares; regard is his counting of Silvanus as faithful: the two stand in one verse without joining.",
+   "basis": "read",
+   "verses": [
+    "1Pet.5.12"
+   ]
+  },
+  {
+   "observation": 23239,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Deu 33:9 the Levite who says he does not regard father and mother is the one who kept the Lord's covenant: withholding regard from kin stands with keeping. In Rom 2:26 the uncircumcised man who keeps the precepts is counted as circumcised: the keeping is the ground of the counting. In Ezr 8:29 keep and weigh are guarding the gifts and weighing them by measure.",
+   "basis": "read",
+   "verses": [
+    "Deut.33.9",
+    "Ezra.8.29",
+    "Rom.2.26"
+   ]
+  },
+  {
+   "observation": 23240,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Heb 11:26 Moses counted the reproach of Christ above the treasures of Egypt because he looked to the reward: the counting is set by what he looked toward.",
+   "basis": "read",
+   "verses": [
+    "Heb.11.26"
+   ]
+  },
+  {
+   "observation": 23241,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Heb 11:26 the counting weighs two riches: reproach for Christ is counted greater wealth than Egypt's treasures.",
+   "basis": "read",
+   "verses": [
+    "Heb.11.26"
+   ]
+  },
+  {
+   "observation": 23242,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Pro 12:10 the righteous is the one whose regard reaches the life of his beast, set against the cruel mercy of the wicked: regard here is caring knowledge of another's life.",
+   "basis": "read",
+   "verses": [
+    "Prov.12.10"
+   ]
+  },
+  {
+   "observation": 23243,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Psa 119:117 the psalmist asks to be held up and kept safe so that he may have regard for the statutes continually: being kept safe is what lets the regard last.",
+   "basis": "read",
+   "verses": [
+    "Ps.119.117"
+   ]
+  },
+  {
+   "observation": 23244,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Isa 33:8 the absence of regard for man stands in the list with despised cities and broken covenants. In 1Ti 6:1 servants count their masters worthy of honor so that God's name is not reviled: the counting guards against reviling. In Act 28:22 regard is the link word for the sect spoken against everywhere.",
+   "basis": "read",
+   "verses": [
+    "Isa.33.8",
+    "Acts.28.22",
+    "1Tim.6.1"
+   ]
+  },
+  {
+   "observation": 23245,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Judg 15:3 in regard to is the link naming the Philistines toward whom Samson will be innocent when he does them harm; serve is not in view, do is his doing of harm.",
+   "basis": "read",
+   "verses": [
+    "Judg.15.3"
+   ]
+  },
+  {
+   "observation": 23246,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Isa 33:8 broken covenants stand in the same list as no regard for man: the withdrawal of regard is one of the marks of the breaking.",
+   "basis": "read",
+   "verses": [
+    "Isa.33.8"
+   ]
+  },
+  {
+   "observation": 23247,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Deu 9:27 Moses asks the Lord not to regard the people's stubbornness, wickedness and sin: not regarding is withholding the reckoning of the sin. In Eze 18:28 the wicked man considered and turned from his transgressions: considering is the start of turning from sin.",
+   "basis": "read",
+   "verses": [
+    "Deut.9.27",
+    "Ezek.18.28"
+   ]
+  },
+  {
+   "observation": 23248,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Heb 11:19 the counting is of God as able to raise from the dead: Abraham counts on God's power.",
+   "basis": "read",
+   "verses": [
+    "Heb.11.19"
+   ]
+  },
+  {
+   "observation": 23249,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Gen 24:22, Jos 7:21 and Eze 5:1 weighing is the weight of what is taken: the ring and bracelets the man took, the gold bar Achan took, the balances the son of man takes. In Mat 1:20 Joseph is considering these things when the angel tells him not to fear to take Mary: the considering stands before the taking.",
+   "basis": "read",
+   "verses": [
+    "Gen.24.22",
+    "Josh.7.21",
+    "Ezek.5.1",
+    "Matt.1.20"
+   ]
+  },
+  {
+   "observation": 23250,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Rom 4:19 Abraham's faith did not weaken when he considered his own body: considering the body as good as dead did not weaken him.",
+   "basis": "read",
+   "verses": [
+    "Rom.4.19"
+   ]
+  },
+  {
+   "observation": 23251,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Ecc 2:11 the Preacher considered all his work and toil and found it vanity and a striving after wind: the considering is a review of his toil that reaches its verdict.",
+   "basis": "read",
+   "verses": [
+    "Eccl.2.11"
+   ]
+  },
+  {
+   "observation": 23252,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In 2Ch 6:19 Solomon asks the Lord to have regard to the prayer and plea of his servant: regard is God's turning toward the supplication, and the verse gives it with listening to the cry.",
+   "basis": "read",
+   "verses": [
+    "2Chr.6.19"
+   ]
+  },
+  {
+   "observation": 23253,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Pro 24:32 the watcher saw and considered the sluggard's field, set his heart on it, and received instruction: considering is the step between seeing and being taught. In Ecc 12:9 the Preacher's weighing of proverbs is part of his teaching the people knowledge. In 1Ti 6:1 servants count masters worthy of honor so that the teaching is not reviled.",
+   "basis": "read",
+   "verses": [
+    "Prov.24.32",
+    "Eccl.12.9",
+    "1Tim.6.1"
+   ]
+  },
+  {
+   "observation": 23254,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Ecc 3:18 with regard to links the Preacher's word in his heart to the children of man, whom God is testing so that they see they are like beasts.",
+   "basis": "read",
+   "verses": [
+    "Eccl.3.18"
+   ]
+  },
+  {
+   "observation": 23255,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Job 34:27 the ones who turned aside from following God had no regard for his ways: the turning aside and the lack of regard are one fault. In Eze 18:28 the man considered and turned away from his transgressions: the considering leads the turning. In Isa 29:17 turned is Lebanon made a field, and regarded is the field counted as a forest.",
+   "basis": "read",
+   "verses": [
+    "Job.34.27",
+    "Isa.29.17",
+    "Ezek.18.28"
+   ]
+  },
+  {
+   "observation": 23256,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Rom 2:26 the uncircumcised man who keeps the law's precepts has his uncircumcision counted as circumcision: the counting reckons a state as its opposite on the ground of keeping.",
+   "basis": "read",
+   "verses": [
+    "Rom.2.26"
+   ]
+  },
+  {
+   "observation": 23257,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Job 1:8 and Job 2:3 the Lord asks Satan whether he has set his heart on Job, and names Job blameless and upright: the considering is turned to a man whose uprightness the Lord states.",
+   "basis": "read",
+   "verses": [
+    "Job.1.8",
+    "Job.2.3"
+   ]
+  },
+  {
+   "observation": 23258,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In 2Th 3:15 the believers are told not to count the disobedient man an enemy but to warn him as a brother: how he is regarded decides how he is warned.",
+   "basis": "read",
+   "verses": [
+    "2Thess.3.15"
+   ]
+  },
+  {
+   "observation": 23259,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Deu 33:9 the Levite who regards not father and mother is the one who observed the Lord's word: withholding regard from kin stands with watching over the word.",
+   "basis": "read",
+   "verses": [
+    "Deut.33.9"
+   ]
+  },
+  {
+   "observation": 23260,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Deu 9:27 Moses asks the Lord not to regard the stubbornness of the people: the willful hardness is what he asks the Lord to look past.",
+   "basis": "read",
+   "verses": [
+    "Deut.9.27"
+   ]
+  },
+  {
+   "observation": 23261,
+   "stage": "layer-2",
+   "kind": "pairing",
+   "item": "pairing",
+   "text": "In Job 37:24 God does not regard those wise in their own conceit. In Pro 17:28 the fool who keeps silent is counted wise and intelligent. In Ecc 12:9 the wise Preacher weighs proverbs. In Isa 29:16 the potter counted as clay is the reversal of the maker, said of those who claim he has no understanding. In Isa 53:8 judgment is what took the servant away while his generation did not consider it.",
+   "basis": "read",
+   "verses": [
+    "Job.37.24",
+    "Prov.17.28",
+    "Eccl.12.9",
+    "Isa.29.16",
+    "Isa.53.8"
+   ]
+  },
+  {
+   "observation": 12412,
+   "stage": "strand-reading",
+   "kind": "key-statement",
+   "item": null,
+   "text": "yēṣer (\"intention\", \"inclination\") is the same word as the potter's thing formed, and as our frame.",
+   "basis": "read",
+   "verses": [
+    "Gen.6.5",
+    "Gen.8.21",
+    "Deut.31.21",
+    "1Chr.28.9",
+    "Isa.29.16",
+    "Hab.2.18",
+    "Ps.103.14"
+   ]
+  },
+  {
+   "observation": 21713,
+   "stage": "engagement",
+   "kind": "statement",
+   "item": null,
+   "text": "Weigh names the inner operation of judging what is said: let the others weigh what is said.",
+   "basis": "read",
+   "verses": [
+    "1Cor.14.29"
+   ]
+  },
+  {
+   "observation": 21714,
+   "stage": "engagement",
+   "kind": "silence",
+   "item": null,
+   "text": "Weigh here is weighing silver or goods on a scale; no inner operation.",
+   "basis": "read",
+   "verses": [
+    "Ezra.8.29",
+    "Zeph.1.11"
+   ]
+  },
+  {
+   "observation": 21715,
+   "stage": "engagement",
+   "kind": "statement",
+   "item": null,
+   "text": "Weighing names the inner operation of pondering: the Preacher weighing and studying and arranging proverbs.",
+   "basis": "read",
+   "verses": [
+    "Eccl.12.9"
+   ]
+  },
+  {
+   "observation": 21716,
+   "stage": "engagement",
+   "kind": "silence",
+   "item": null,
+   "text": "Weighing here is the weight of a ring, a bar of gold or hair in shekels; no inner operation.",
+   "basis": "read",
+   "verses": [
+    "Ezek.5.1",
+    "Gen.24.22",
+    "Josh.7.21"
+   ]
+  },
+  {
+   "observation": 22505,
+   "stage": "layer-3",
+   "kind": "statement",
+   "item": "flag",
+   "text": "The sense head of H6424 in Pro 5:21, flagged in #2533 when it read 'to envy', now reads to weigh, make level, balance, as its lexicon range does; the codes H0595 and H1934 in Pro 24:32 and Dan 7:8 are the pronoun I and a verb of being aligned into the units of 'considered'. They are not acts of attention; the verse acts are the verbs of setting the heart and contemplating beside them.",
+   "basis": "stated",
+   "verses": [
+    "Prov.5.21",
+    "Prov.24.32",
+    "Dan.7.8"
+   ]
+  }
+ ],
+ "may_rest_on_besides": [
+  {
+   "observation": 22702,
+   "stage": "lexical",
+   "kind": "term",
+   "item": "word-sense",
+   "text": "In Mar 10:42 'considered' is said of those who are thought to be rulers of the Gentiles: it is their standing as seen by others, what they are held to be, not an act of the one who thinks.",
+   "basis": "read",
+   "verses": [
+    "Mark.10.42"
+   ]
+  },
+  {
+   "observation": 22703,
+   "stage": "lexical",
+   "kind": "term",
+   "item": "word-sense",
+   "text": "In Mat 1:20 'considered' is Joseph turning over in his mind what he had resolved about Mary, the point at which the angel appears to him.",
+   "basis": "read",
+   "verses": [
+    "Matt.1.20"
+   ]
+  },
+  {
+   "observation": 22704,
+   "stage": "lexical",
+   "kind": "term",
+   "item": "word-sense",
+   "text": "In Heb 11:11 and Heb 11:26 'considered' is a reckoned judgment: Sarah judges the one who promised to be faithful, and Moses counts the reproach of Christ greater wealth than Egypt's treasures. It is a conclusion reached, with the thing weighed named in each verse.",
+   "basis": "read",
+   "verses": [
+    "Heb.11.11",
+    "Heb.11.26"
+   ]
+  },
+  {
+   "observation": 22705,
+   "stage": "lexical",
+   "kind": "term",
+   "item": "word-sense",
+   "text": "In Rom 4:19 'considered' is Abraham fixing his attention on his own body and on the barrenness of Sarah's womb, the facts he looked at without his faith weakening.",
+   "basis": "read",
+   "verses": [
+    "Rom.4.19"
+   ]
+  },
+  {
+   "observation": 22706,
+   "stage": "lexical",
+   "kind": "term",
+   "item": "word-sense",
+   "text": "In Heb 11:19 'considered' is a reckoned conclusion: Abraham reasons that God can raise the dead, and the verse says he received Isaac back in that figure.",
+   "basis": "read",
+   "verses": [
+    "Heb.11.19"
+   ]
+  },
+  {
+   "observation": 22707,
+   "stage": "lexical",
+   "kind": "term",
+   "item": "word-sense",
+   "text": "In Rom 4:19 this code is the Greek negative particle that the English folds into 'did not weaken in faith when he considered'. It carries no sense of considering; the consideration is the verb of G2657 in the same verse.",
+   "basis": "read",
+   "verses": [
+    "Rom.4.19"
+   ]
+  },
+  {
+   "observation": 22708,
+   "stage": "lexical",
+   "kind": "term",
+   "item": "word-sense",
+   "text": "In Dan 7:8 this code is the Aramaic verb to be, which with the participle of H7920 makes the continuing 'I was considering': it carries the going on of the act, and the considering itself is H7920 in the same verse, the seer's attentive look at the horns.",
+   "basis": "read",
+   "verses": [
+    "Dan.7.8"
+   ]
+  },
+  {
+   "observation": 22709,
+   "stage": "lexical",
+   "kind": "term",
+   "item": "word-sense",
+   "text": "In 1Ki 10:21, 2Ch 9:20 and Neh 13:13 'considered' is counted as: silver is counted as nothing in Solomon's days, and the men appointed over the storehouses are counted reliable. It is a valuation, an account made of a thing or a person.",
+   "basis": "read",
+   "verses": [
+    "1Kgs.10.21",
+    "2Chr.9.20",
+    "Neh.13.13"
+   ]
+  },
+  {
+   "observation": 22710,
+   "stage": "lexical",
+   "kind": "term",
+   "item": "word-sense",
+   "text": "In Pro 17:28 'considered' is being counted as wise: the fool who holds his tongue is taken by others to be wise. It is how a person is reckoned by observers, not what he thinks.",
+   "basis": "read",
+   "verses": [
+    "Prov.17.28"
+   ]
+  },
+  {
+   "observation": 22711,
+   "stage": "lexical",
+   "kind": "term",
+   "item": "word-sense",
+   "text": "In Job 1:8, Job 2:3 and Pro 24:32 the Hebrew behind 'considered' is the word for heart in a phrase of setting the heart on something: the Lord asks Satan whether he has fixed his heart on Job, and the observer in Proverbs sets his heart on the field and takes instruction. It is giving thought, with the heart as its place.",
+   "basis": "read",
+   "verses": [
+    "Job.1.8",
+    "Job.2.3",
+    "Prov.24.32"
+   ]
+  },
+  {
+   "observation": 22712,
+   "stage": "lexical",
+   "kind": "term",
+   "item": "word-sense",
+   "text": "In Ecc 2:11 'considered' is the Preacher turning to look over all his hands had done and the toil spent: a survey of his works that ends in the verdict that all was vanity.",
+   "basis": "read",
+   "verses": [
+    "Eccl.2.11"
+   ]
+  },
+  {
+   "observation": 22713,
+   "stage": "lexical",
+   "kind": "term",
+   "item": "word-sense",
+   "text": "In Eze 18:28 'considered' is the sinner seeing his transgressions and turning from them; the seeing is the step before the turning and the verse says he will live because of it.",
+   "basis": "read",
+   "verses": [
+    "Ezek.18.28"
+   ]
+  },
+  {
+   "observation": 22714,
+   "stage": "lexical",
+   "kind": "term",
+   "item": "word-sense",
+   "text": "In Job 1:8 and Job 2:3 'considered' is the verb of setting, in the phrase of setting the heart on Job: the Lord asks whether Satan has fixed attention on his servant.",
+   "basis": "read",
+   "verses": [
+    "Job.1.8",
+    "Job.2.3"
+   ]
+  },
+  {
+   "observation": 22715,
+   "stage": "lexical",
+   "kind": "term",
+   "item": "word-sense",
+   "text": "In Isa 53:8 'considered' is the generation of the servant giving thought to his being cut off: the question asks who among them took it to heart or gave it a thought.",
+   "basis": "read",
+   "verses": [
+    "Isa.53.8"
+   ]
+  },
+  {
+   "observation": 22716,
+   "stage": "lexical",
+   "kind": "term",
+   "item": "word-sense",
+   "text": "In Pro 24:32 'considered' is the observer setting his heart on what he has seen, the verb of setting with the heart as its object, after which he takes instruction.",
+   "basis": "read",
+   "verses": [
+    "Prov.24.32"
+   ]
+  },
+  {
+   "observation": 22717,
+   "stage": "lexical",
+   "kind": "term",
+   "item": "word-sense",
+   "text": "In Dan 7:8 'considered' (Aramaic) is the seer contemplating the horns, the intent looking at what he sees; the same scene as the other code, in the one verse.",
+   "basis": "read",
+   "verses": [
+    "Dan.7.8"
+   ]
+  },
+  {
+   "observation": 22718,
+   "stage": "lexical",
+   "kind": "term",
+   "item": "word-sense",
+   "text": "In Luk 22:24 'regarded' is being accounted the greatest: the dispute among the disciples is over who is to be held of highest standing.",
+   "basis": "read",
+   "verses": [
+    "Luke.22.24"
+   ]
+  },
+  {
+   "observation": 22719,
+   "stage": "lexical",
+   "kind": "term",
+   "item": "word-sense",
+   "text": "In Rom 2:26 and Rom 8:36 'regarded' is being counted as something: the uncircumcised keeping the law is counted as circumcision, and the believers are counted as sheep for slaughter.",
+   "basis": "read",
+   "verses": [
+    "Rom.2.26",
+    "Rom.8.36"
+   ]
+  },
+  {
+   "observation": 22720,
+   "stage": "lexical",
+   "kind": "term",
+   "item": "word-sense",
+   "text": "In Gen 31:15, Psa 44:22, Lam 4:2 and Hos 8:12 'regarded' is being counted as: as foreigners, as sheep to be slaughtered, as earthen pots, and the laws as a strange thing. It is how someone or something is reckoned by another.",
+   "basis": "read",
+   "verses": [
+    "Gen.31.15",
+    "Ps.44.22",
+    "Lam.4.2",
+    "Hos.8.12"
+   ]
+  },
+  {
+   "observation": 22721,
+   "stage": "lexical",
+   "kind": "term",
+   "item": "word-sense",
+   "text": "In Isa 29:16 and Isa 29:17 'regarded' is being counted as: the potter as if he were clay, and the field as if it were a forest. It is a reckoning set against the order of things.",
+   "basis": "read",
+   "verses": [
+    "Isa.29.16",
+    "Isa.29.17"
+   ]
+  },
+  {
+   "observation": 22722,
+   "stage": "lexical",
+   "kind": "term",
+   "item": "word-sense",
+   "text": "In 2Cor 5:16 'regard' is knowing or taking account of a person in some way: Paul says that from now on he takes account of no one according to the flesh, even of Christ, as once he did.",
+   "basis": "read",
+   "verses": [
+    "2Cor.5.16"
+   ]
+  },
+  {
+   "observation": 22723,
+   "stage": "lexical",
+   "kind": "term",
+   "item": "word-sense",
+   "text": "In 2Th 3:15 and 1Ti 6:1 'regard' is counting someone as something: the brother who is warned is not counted an enemy, and masters are counted worthy of honor by the servants.",
+   "basis": "read",
+   "verses": [
+    "2Thess.3.15",
+    "1Tim.6.1"
+   ]
+  },
+  {
+   "observation": 22724,
+   "stage": "lexical",
+   "kind": "term",
+   "item": "word-sense",
+   "text": "In 1Co 4:1 and 1Pe 5:12 'regard' is counting someone as something: servants of Christ and stewards, and Silvanus as a faithful brother in the writer's judgment.",
+   "basis": "read",
+   "verses": [
+    "1Cor.4.1",
+    "1Pet.5.12"
+   ]
+  },
+  {
+   "observation": 22725,
+   "stage": "lexical",
+   "kind": "term",
+   "item": "word-sense",
+   "text": "In Col 2:16 'regard' is part of the phrase 'with regard to': it marks the matter in respect of which no one is to judge, a festival, a new moon or a Sabbath. It carries no sense of thinking.",
+   "basis": "read",
+   "verses": [
+    "Col.2.16"
+   ]
+  },
+  {
+   "observation": 22726,
+   "stage": "lexical",
+   "kind": "term",
+   "item": "word-sense",
+   "text": "In 2Cor 5:16 this code is the Greek verb of knowing in the perfect, 'we have known' Christ according to the flesh; it is the counting or taking account of him that Paul says he now gives up.",
+   "basis": "read",
+   "verses": [
+    "2Cor.5.16"
+   ]
+  },
+  {
+   "observation": 22727,
+   "stage": "lexical",
+   "kind": "term",
+   "item": "word-sense",
+   "text": "In Exo 5:9 this code is the Hebrew negative particle in the phrase 'pay no regard': it carries the 'no' of the command and not the sense of regarding, which the verb of H8159 in the same verse carries.",
+   "basis": "read",
+   "verses": [
+    "Exod.5.9"
+   ]
+  },
+  {
+   "observation": 22728,
+   "stage": "lexical",
+   "kind": "term",
+   "item": "word-sense",
+   "text": "In Psa 28:5 'regard' is discerning or attending to the works of the Lord and the work of his hands; the verse says those who do not regard them will be torn down.",
+   "basis": "read",
+   "verses": [
+    "Ps.28.5"
+   ]
+  },
+  {
+   "observation": 22729,
+   "stage": "lexical",
+   "kind": "term",
+   "item": "word-sense",
+   "text": "In Ecc 3:18 'with regard to' is a Hebrew noun of matter or cause in the phrase 'concerning the children of man'; it marks what the saying is about and carries no thinking of its own.",
+   "basis": "read",
+   "verses": [
+    "Eccl.3.18"
+   ]
+  },
+  {
+   "observation": 22730,
+   "stage": "lexical",
+   "kind": "term",
+   "item": "word-sense",
+   "text": "In Isa 13:17 and Isa 33:8 'regard' is valuing or counting: the Medes put no value on silver, and in the ruined land there is no account taken of man.",
+   "basis": "read",
+   "verses": [
+    "Isa.13.17",
+    "Isa.33.8"
+   ]
+  },
+  {
+   "observation": 22731,
+   "stage": "lexical",
+   "kind": "term",
+   "item": "word-sense",
+   "text": "In Job 9:21, Psa 144:3 and Pro 12:10 'regard' is knowing and taking notice with care: Job says he does not take notice of himself, the psalmist asks what man is that God takes notice of him, and the righteous man knows and cares for his beast's life.",
+   "basis": "read",
+   "verses": [
+    "Job.9.21",
+    "Ps.144.3",
+    "Prov.12.10"
+   ]
+  },
+  {
+   "observation": 22732,
+   "stage": "lexical",
+   "kind": "term",
+   "item": "word-sense",
+   "text": "In Job 9:21 this code is the Hebrew negative particle of 'I regard not myself'; it carries the 'not', and the verb of H3045 carries the regarding.",
+   "basis": "read",
+   "verses": [
+    "Job.9.21"
+   ]
+  },
+  {
+   "observation": 22733,
+   "stage": "lexical",
+   "kind": "term",
+   "item": "word-sense",
+   "text": "In 1Sa 25:25 'regard' is the heart in the phrase of setting the heart on something: Abigail asks that her lord not give his heart to the worthless Nabal, that is, not take him to heart.",
+   "basis": "read",
+   "verses": [
+    "1Sam.25.25"
+   ]
+  },
+  {
+   "observation": 22734,
+   "stage": "lexical",
+   "kind": "term",
+   "item": "word-sense",
+   "text": "In Psa 74:20, Isa 5:12 and Lam 4:16 'regard' is looking at and paying attention: asking God to look to the covenant, the feasters not looking on the Lord's deeds, and the Lord who scattered his people looking on them no more.",
+   "basis": "read",
+   "verses": [
+    "Ps.74.20",
+    "Isa.5.12",
+    "Lam.4.16"
+   ]
+  },
+  {
+   "observation": 22735,
+   "stage": "lexical",
+   "kind": "term",
+   "item": "word-sense",
+   "text": "In Jer 24:5 'regard as good' is recognizing and acknowledging: the Lord says he will look on the good figs, the exiles, as good, taking them as such.",
+   "basis": "read",
+   "verses": [
+    "Jer.24.5"
+   ]
+  },
+  {
+   "observation": 22736,
+   "stage": "lexical",
+   "kind": "term",
+   "item": "word-sense",
+   "text": "In 2Ki 3:14 'have regard for' is the idiom of lifting the face: Elisha says it is only for Jehoshaphat's sake, out of respect for him, that he attends to the king of Israel.",
+   "basis": "read",
+   "verses": [
+    "2Kgs.3.14"
+   ]
+  },
+  {
+   "observation": 22737,
+   "stage": "lexical",
+   "kind": "term",
+   "item": "word-sense",
+   "text": "In 1Sa 1:16 'regard as' is the verb of setting or putting: Hannah asks Eli not to set her down as a worthless woman, that is, not to take her for one.",
+   "basis": "read",
+   "verses": [
+    "1Sam.1.16"
+   ]
+  },
+  {
+   "observation": 22738,
+   "stage": "lexical",
+   "kind": "term",
+   "item": "word-sense",
+   "text": "In Lev 19:23 'regard as' is the verb of treating a fruit as uncircumcised: the tree's fruit is to be counted forbidden for three years and not eaten.",
+   "basis": "read",
+   "verses": [
+    "Lev.19.23"
+   ]
+  },
+  {
+   "observation": 22739,
+   "stage": "lexical",
+   "kind": "term",
+   "item": "word-sense",
+   "text": "In Deu 9:27 and 2Ch 6:19 'regard' is the verb of turning toward: Moses asks God not to turn to the people's stubbornness, and Solomon asks him to turn to the prayer of his servant. It is where the attention is directed.",
+   "basis": "read",
+   "verses": [
+    "Deut.9.27",
+    "2Chr.6.19"
+   ]
+  },
+  {
+   "observation": 22740,
+   "stage": "lexical",
+   "kind": "term",
+   "item": "word-sense",
+   "text": "In Psa 80:14 'have regard for' is the verb of visiting and attending to: the psalmist asks God to look down and attend to the vine, in a prayer to turn again.",
+   "basis": "read",
+   "verses": [
+    "Ps.80.14"
+   ]
+  },
+  {
+   "observation": 22741,
+   "stage": "lexical",
+   "kind": "term",
+   "item": "word-sense",
+   "text": "In Deu 33:9 and Job 37:24 'regard' is the verb of seeing: Levi says of his father and mother that he does not see them, and God does not look on those who are wise in their own conceit. The sense is giving notice, or refusing it.",
+   "basis": "read",
+   "verses": [
+    "Deut.33.9",
+    "Job.37.24"
+   ]
+  },
+  {
+   "observation": 22742,
+   "stage": "lexical",
+   "kind": "term",
+   "item": "word-sense",
+   "text": "In Job 35:13 'regard' is the Almighty looking upon and taking notice of a cry: the verse says an empty cry is not heard and not regarded by him.",
+   "basis": "read",
+   "verses": [
+    "Job.35.13"
+   ]
+  },
+  {
+   "observation": 22743,
+   "stage": "lexical",
+   "kind": "term",
+   "item": "word-sense",
+   "text": "In Job 34:27 'regard' is giving thought and insight: those who turned aside from God gave no heed to any of his ways, with no insight into them.",
+   "basis": "read",
+   "verses": [
+    "Job.34.27"
+   ]
+  },
+  {
+   "observation": 22744,
+   "stage": "lexical",
+   "kind": "term",
+   "item": "word-sense",
+   "text": "In 2Ch 5:11 'without regard to' is the verb of keeping or observing in the phrase about the priests' divisions: all who were present had consecrated themselves and did not hold to the order of their courses.",
+   "basis": "read",
+   "verses": [
+    "2Chr.5.11"
+   ]
+  },
+  {
+   "observation": 22745,
+   "stage": "lexical",
+   "kind": "term",
+   "item": "word-sense",
+   "text": "In Gen 4:5, Exo 5:9 and Psa 119:117 'regard' is the verb of looking with favor and heed: the Lord had no regard for Cain and his offering, the men are to give no heed to lying words, and the psalmist asks to heed the statutes always.",
+   "basis": "read",
+   "verses": [
+    "Gen.4.5",
+    "Exod.5.9",
+    "Ps.119.117"
+   ]
+  },
+  {
+   "observation": 22746,
+   "stage": "lexical",
+   "kind": "term",
+   "item": "word-sense",
+   "text": "In Ecc 12:9 'weighing' is the Preacher giving careful thought to proverbs, weighing, studying and arranging them. It is a mental act of testing and ordering, said of a wise teacher.",
+   "basis": "read",
+   "verses": [
+    "Eccl.12.9"
+   ]
+  },
+  {
+   "observation": 22747,
+   "stage": "lexical",
+   "kind": "term",
+   "item": "word-sense",
+   "text": "In Gen 24:22, Jos 7:21 and Eze 5:1 'weighing' is the weight of an object in stated measures: a ring of half a shekel, bracelets of ten, and a bar of fifty, and the balances of the hair. It is a measure, with no inner operation.",
+   "basis": "read",
+   "verses": [
+    "Gen.24.22",
+    "Josh.7.21",
+    "Ezek.5.1"
+   ]
+  },
+  {
+   "observation": 22748,
+   "stage": "lexical",
+   "kind": "term",
+   "item": "word-sense",
+   "text": "In 1Cor 14:29 'weigh' is judging and discerning what the prophets say: the others are to assess it. The verse sets the weighing in the listeners, after two or three have spoken.",
+   "basis": "read",
+   "verses": [
+    "1Cor.14.29"
+   ]
+  },
+  {
+   "observation": 22749,
+   "stage": "lexical",
+   "kind": "term",
+   "item": "word-sense",
+   "text": "In Zep 1:11 'weigh out' is the traders' weighing of silver on scales; the verse says all who do so are cut off. It is the act of measuring metal, with no inner operation.",
+   "basis": "read",
+   "verses": [
+    "Zeph.1.11"
+   ]
+  },
+  {
+   "observation": 22750,
+   "stage": "lexical",
+   "kind": "term",
+   "item": "word-sense",
+   "text": "In Ezr 8:29 'weigh' is the weighing out of the temple gifts before the priests and the heads of houses, on a scale, at Jerusalem. It is a measuring act with no inner operation.",
+   "basis": "read",
+   "verses": [
+    "Ezra.8.29"
+   ]
+  }
+ ],
+ "older_inner_being": [
+  {
+   "observation": 12505,
+   "stage": "strand-reading",
+   "kind": "key-statement",
+   "text": "People value and regard: \"Are we not regarded by him as foreigners?\" (Gen 31:15); \"Let not my lord hold me guilty\" (2Sa 19:19); \"who have no regard for silver\" (Isa 13:17); \"there is no regard for man\" (Isa 33:8); \"they were considered reliable\" (Neh 13:13); God's laws \"would be regarded as a strange thing\" (Hos 8:12); \"The precious sons of Zion\" \"how they are regarded as earthen pots\" (Lam 4:2); \"will be counted as cursing\" (Pro 27:14). And a person is regarded: \"we are regarded as sheep to be slaughtered\" (Psa 44:22); \"I am counted among those who go down to the pit\" (Psa 88:4); Israel \"not counting itself among the nations\" (Num 23:9).",
+   "answered_before": true
+  },
+  {
+   "observation": 20527,
+   "stage": "prior-capture",
+   "kind": "face",
+   "text": "Face: Reckoning set aside by trust; Verses: 2Ki 12:15; 22:7; Neh 13:13; What differs: \"they dealt honestly\"; \"considered reliable\"; Why (basis): Where there is honesty, the count is not asked for (S)",
+   "answered_before": true
+  },
+  {
+   "observation": 17086,
+   "stage": "prior-capture",
+   "kind": "statement",
+   "text": "Blameless soul-life: \"I am blameless; I regard not myself; I loathe my life\" (Job 9:21) — integrity with self-rejection; \"Bloodthirsty men hate one who is blameless and seek the life of the upright\" (Pro 29:10).",
+   "answered_before": true
+  },
+  {
+   "observation": 20022,
+   "stage": "prior-capture",
+   "kind": "statement",
+   "text": "Being regarded: *\"we are regarded as sheep to be slaughtered\"* (Psa 44:22) and *\"I am counted among those who go down to the pit\"* (Psa 88:4).",
+   "answered_before": true
+  },
+  {
+   "observation": 16528,
+   "stage": "prior-capture",
+   "kind": "statement",
+   "text": "The righteous regard animal life: \"Whoever is righteous has regard for the life [*nephesh*] of his beast\" (Pro 12:10).",
+   "answered_before": true
+  },
+  {
+   "observation": 20021,
+   "stage": "prior-capture",
+   "kind": "statement",
+   "text": "People valuing: *\"we esteemed him not\"* (Isa 53:3); *\"those who feared the Lord … esteemed his name\"* (Mal 3:16); *\"no regard for silver\"* (Isa 13:17); *\"there is no regard for man\"* (Isa 33:8)",
+   "answered_before": true
+  },
+  {
+   "observation": 18877,
+   "stage": "prior-capture",
+   "kind": "statement",
+   "text": "Hiding from God: In each scene where a person hides from God, something of God is perceived first: a sound (Genesis 3:10), God naming himself (Exodus 3:6), \"the terror of the Lord, and … the splendor of his majesty\" (Isaiah 2:10), \"the face of him who is seated on the throne, and … the wrath of the Lamb\" (Revelation 6:16).; Adam hid because he knew he was naked (Genesis 3:10).; Moses \"hid his face, for he was afraid to look at God\" (Exodus 3:6), and no wrong is named.; At the end, people call \"to the mountains and rocks, 'Fall on us and hide us'\", for \"who can stand?\" (Revelation 6:16–17).; Job names the one condition on which he will not hide: \"Only grant me two things, then I will not hide myself from your face: withdraw your hand far from me, and let not dread of you terrify me\" (Job 13:20–21). In his words, it is the dread that makes a person hide.; None of it works. \"Can a man hide himself in secret places so that I cannot see him? declares the Lord. Do I not fill heaven and earth?\" (Jeremiah 23:24). \"There is no gloom or deep darkness where evildoers may hide themselves\" (Job 34:22). Isaiah names what the attempt does: \"Ah, you who hide deep from the Lord your counsel … and who say, 'Who sees us? Who knows us?' You turn things upside down! Shall the potter be regarded as the clay\" (Isaiah 29:15–16).; That nothing is hidden from God is the same fact for everyone, and it falls very differently.; For the one who suffers it is comfort: \"O Lord, all my longing is before you; my sighing is not hidden from you\" (Psalm 38:9).; For the one being made it is wonder: \"My frame was not hidden from you, when I was being made in secret\" (Psalm 139:15), and the psalmist answers, \"my soul knows it very well\" (139:14).; For the one who has done wrong it is judgement: \"I know Ephraim, and Israel is not hidden from me; for now, O Ephraim, you have played the whore\" (Hosea 5:3).",
+   "answered_before": true
+  },
+  {
+   "observation": 19220,
+   "stage": "prior-capture",
+   "kind": "statement",
+   "text": "Where it comes from: the attempt to hide. \"Ah, you who hide deep from the Lord your counsel … and who say, 'Who sees us? Who knows us?'\" (Isa 29:15). The next verse names what that attempt does: \"You turn things upside down! Shall the potter be regarded as the clay …?\" (29:16). Hiding from God inverts creature and creator.",
+   "answered_before": true
+  },
+  {
+   "observation": 18165,
+   "stage": "prior-capture",
+   "kind": "statement",
+   "text": "The stirred person still acts as himself. Cyrus makes a proclamation and writes it down. The Medes *\"have no regard for silver and do not delight in gold\"* (Isa 13:17), and Cyrus works *\"not for price or reward\"* (45:13). Both stirred agents are men who cannot be bought. I read that God stirs a spirit already suited to the task. The verses do not say whether the stirring makes it so.",
+   "answered_before": true
+  },
+  {
+   "observation": 20120,
+   "stage": "prior-capture",
+   "kind": "statement",
+   "text": "A resolve reached after weighing, then turned. *\"her husband Joseph, being a just man and unwilling to put her to shame, resolved to divorce her quietly\"* (Mat 1:19). The next verse: *\"But as he considered these things, behold, an angel of the Lord appeared to him in a dream\"* (1:20). The resolve was still being weighed, and God redirected it.",
+   "answered_before": true
+  },
+  {
+   "observation": 20179,
+   "stage": "prior-capture",
+   "kind": "statement",
+   "text": "Joseph. *\"being a just man and unwilling to put her to shame, resolved to divorce her quietly. But as he considered these things, behold, an angel of the Lord appeared to him in a dream\"* (Mat 1:19–20). He was unwilling to shame her, he resolved, and he went on considering. Then God spoke into the considering.",
+   "answered_before": true
+  },
+  {
+   "observation": 15959,
+   "stage": "prior-capture",
+   "kind": "statement",
+   "text": "1.8 Flesh as a way of knowing: \"we regard no one according to the flesh. Even though we once regarded Christ according to the flesh\" (2Co 5:16); \"set their minds on the things of the flesh … the Spirit\" (Rom 8:5) [D3]; \"the desires of the flesh and the mind\" (Eph 2:3); \"his sensuous mind [mind of flesh]\" (Col 2:18); \"I myself serve the law of God with my mind, but with my flesh …\" (Rom 7:25)",
+   "answered_before": true
+  },
+  {
+   "observation": 17267,
+   "stage": "prior-capture",
+   "kind": "statement",
+   "text": "b. Greek *sarx*: *Neutral uses continue:* one flesh; all flesh; \"the Word became flesh\" (Joh 1:14); \"in the days of his flesh\" (Heb 5:7); \"flesh and blood\" (Heb 2:14; Mat 16:17); \"a thorn … in the flesh\" (2Co 12:7); \"our bodies had no rest … fighting without and fear within\" (2Co 7:5).; *Pauline and Petrine ethical flesh — flesh as an inner orientation:*; \"the desires of the flesh and the desires of the eyes\" (1Jo 2:16); \"the passions of our flesh, carrying out the desires of the flesh and the mind\" (Eph 2:3); \"the works of the flesh\" (Gal 5:19); \"crucified the flesh with its passions and desires\" (Gal 5:24); \"nothing good dwells in me, that is, in my flesh. For I have the desire to do what is right, but not the ability to carry it out\" (Rom 7:18); \"I myself serve the law of God with my mind, but with my flesh I serve the law of sin\" (Rom 7:25); \"the mind that is set on the flesh is hostile to God\" (Rom 8:7); \"sensuous mind\" = mind of the flesh (Col 2:18) [lexical]; \"confidence in the flesh\" (Phili 3:3–4); \"boast according to the flesh\" (2Co 11:18); \"judge according to the flesh\" (Joh 8:15); \"regard no one according to the flesh\" (2Co 5:16); \"plans according to the flesh\" (2Co 1:17); [Claude reading] Flesh here is no longer just the body. It is a way the inner person is *oriented*, with its own desires and \"mind\".",
+   "answered_before": true
+  },
+  {
+   "observation": 12433,
+   "stage": "strand-reading",
+   "kind": "key-statement",
+   "text": "Faith reckons: Abraham \"considered that God was able even to raise him from the dead\"",
+   "answered_before": true
+  }
+ ],
+ "earlier_readings": [
+  {
+   "observation": 22460,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Regard is given as a done act in 2Ki 3:14 (Elisha has regard for Jehoshaphat), Pro 12:10 (the righteous man's care for his beast), Psa 144:3 (the Lord regards man) and 2Cor 5:16 (Christ once regarded according to the flesh). The act is a taking account of a person or a creature, and the subjects are a prophet, a righteous man, the Lord and the apostles."
+  },
+  {
+   "observation": 22461,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Regard and its counting-as are foreseen in Jer 24:5 (the Lord will regard the exiles as good), Isa 29:17 (the fruitful field shall be counted as a forest) and Rom 2:26 (the uncircumcised will be counted as circumcision). The act stands in the future and gives a standing that does not yet hold."
+  },
+  {
+   "observation": 22462,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Regard is asked or commanded in Psa 74:20, Psa 80:14 and 2Ch 6:19 (that the Lord have regard for the covenant, the vine and the prayer) and in 1Ti 6:1 and 1Cor 4:1 (that bondservants regard their masters as worthy, that the apostles be taken as servants). The act is put as what should be done, by God in the first three and by persons in the last two."
+  },
+  {
+   "observation": 22463,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Regard is negated in thirteen verses: Gen 4:5, Deu 33:9, 1Sa 25:25, Job 34:27, Job 35:13, Job 37:24, Psa 28:5, Isa 5:12, Isa 13:17, Isa 33:8, Lam 4:16, 2Th 3:15 and Exo 5:9. The negator reaches the member in each (no regard, do not regard, nor does he regard), and the subjects are Cain's rival, the Levite, a lord, the wicked, God and the feasters, so the denial runs both from persons and from God."
+  },
+  {
+   "observation": 22464,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "In these thirteen verses the act is a refusal as the grammar states it: the regard is withheld from an offering, a person, the Lord's works, silver, man or a prayer. The refusal is spoken of God in Gen 4:5, Job 35:13, Job 37:24 and Lam 4:16, and of persons in the others."
+  },
+  {
+   "observation": 22465,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Where regard is given or asked, the act is a pursuit of its object: the Lord is asked to look to the covenant, the vine and the prayer, Elisha acts out of regard for Jehoshaphat, and the righteous cares for his beast. The pursuit runs from persons to God's works and to persons, and from God to persons."
+  },
+  {
+   "observation": 22466,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "What the regard is directed at differs by verse: the Lord's works and deeds (Psa 28:5, Isa 5:12), the covenant, the vine and the prayer (Psa 74:20, Psa 80:14, 2Ch 6:19), persons (Nabal in 1Sa 25:25, Jehoshaphat in 2Ki 3:14, the exiles in Jer 24:5, the parents in Deu 33:9), Cain's offering (Gen 4:5), an empty cry (Job 35:13) and the self-wise (Job 37:24). Persons and the works of God are the commonest objects."
+  },
+  {
+   "observation": 22467,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "After 'regarded' and 'regard' the complement gives the standing: foreigners (Gen 31:15), a strange thing (Hos 8:12), the greatest (Luk 22:24), worthy of honor (1Ti 6:1). Each complement is a qualifier of the counting or regarding, naming what the person or thing is counted as."
+  },
+  {
+   "observation": 22468,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "The negator is a qualifier of the regard it reaches, turning the act into a denial: 'no' in Gen 4:5, 'not' in Job 37:24 and Psa 28:5 and Isa 5:12, 'no' in Isa 13:17 and Isa 33:8 and Lam 4:16. In each verse the negator is 1 word before or after the member and the verse states what it reaches."
+  },
+  {
+   "observation": 22469,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Regard is bound up with worth in three verses: it is asked not to be given to a woman or a man as worthless (1Sa 1:16, 1Sa 25:25) and God does not give it to those wise in their own conceit (Job 37:24). The worth or the conceit of the person regarded is named in the same sentence, within three words of the member."
+  },
+  {
+   "observation": 22470,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "A word of contempt stands in the same sentence as the regard in Isa 33:8 (despised, 2 before), Act 28:22 (spoken against, 9 after) and 1Ti 6:1 (reviled, 11 after). The regard is set in a verse that also names the low standing of a city, a sect or a name."
+  },
+  {
+   "observation": 22471,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Hearing and regard are paired in 2Ch 6:19 (listening, 8 after), Job 35:13 (hear, 4 before) and Act 28:22 (hear, 6 before): the regard is asked or denied together with a hearing, of a prayer, an empty cry or the views of a sect."
+  },
+  {
+   "observation": 22472,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "The surface 'regard' also holds the prepositional idiom 'with regard to' in Act 28:22 (G4012), Col 2:16 (G3313), Ecc 3:18 (H1700) and Jdg 15:3 (H9006): these are not an act of taking account of anyone and are read in their verses as standalone. The negators H0408 and H3808 in Exo 5:9 and Job 9:21 are aligned into the unit of the surface and are read as negators, not as acts of regard."
+  },
+  {
+   "observation": 22487,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Attending is commanded in Jos 1:8 (the Book of the Law is to be meditated on day and night) and in 1Cor 14:29 (the others are to weigh what the prophets say). The negator of Jos 1:8 reaches 'depart' (the Book shall not depart from the mouth), so the command to meditate stands beside a command that the Law not depart."
+  },
+  {
+   "observation": 22488,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "The Lord's own attending is stated in Job 1:8 and Job 2:3 (the Lord asks Satan whether he has set his heart on his servant Job) and in Pro 5:21 (the Lord weighs all a man's paths). The act is a looking at a person or a person's ways by the Lord, with Job as the object in the first two and the man's paths in the third."
+  },
+  {
+   "observation": 22489,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Considering and counting as a done act appears in Neh 13:13 and 2Ch 9:20 (reckoned reliable, silver reckoned as nothing), Pro 17:28 (the silent fool counted wise), Heb 11:11, 11:19 and 11:26 (Sarah counting him faithful, Abraham concluding that God can raise the dead, Moses counting the reproach of Christ greater than treasures) and Mar 10:42 (those reputed to rule). The act is a judgment of standing or worth."
+  },
+  {
+   "observation": 22490,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "In 1Ki 10:21 the reckoning is negated: silver was not counted as anything in Solomon's days, and the negator reaches 'considered'. It is the only negated member of the group in the stored pairs that the negator reaches directly; in Jos 1:8, Eze 18:28, Mat 1:20 and Rom 4:19 the negators reach other verbs."
+  },
+  {
+   "observation": 22491,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "In 1Ki 10:21 the act is a refusal of worth: silver is counted as nothing, which the verse sets against the gold of Solomon's vessels."
+  },
+  {
+   "observation": 22495,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "The object of the considering is a person or the person's body in Job 1:8 and 2:3 (the servant Job), Rom 4:19 (Abraham's own body, as good as dead), Heb 11:11 (the one who promised), Eze 18:28 (the transgressions turned from), Ecc 2:11 (the work of his own hands) and Dan 7:8 (the horns). The objects are persons, bodies, deeds and the things seen in a vision."
+  },
+  {
+   "observation": 22498,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "A second verb of musing stands in the same clause in Psa 77:12 (ponder, 3 before) and Psa 143:5 (ponder, 3 after), and the meditation of the heart is set between wisdom (1 before) and understanding (2 after) in Psa 49:3; in Pro 17:28 the silent fool is counted wise and intelligent. Wisdom and understanding stand beside the attending within four words in these verses."
+  },
+  {
+   "observation": 22500,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Life and death are stated beside the considering in Eze 18:28 (the one who considers and turns away shall live, 8 after), Rom 4:19 (his body as good as dead, 4 after) and Heb 11:19 (raised from the dead, 7 after). In the last two what is considered is the state of death; in the first life is what follows the considering."
+  },
+  {
+   "observation": 22501,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Fear and evil stand with the considering in Job 1:8 and Job 2:3 (the fear of God 9 to 10 words after, evil turned from 12 to 13 after), in Job 15:4 (fear of God and meditation both hindered, 2 words) and in Pro 15:28 (the wicked 3 words after the ponder). The attention of the Lord rests on one who fears God and turns from evil; the meditation is set beside what is done away with."
+  },
+  {
+   "observation": 22503,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Weighing up as an evaluative act appears in Ecc 12:9, where the Preacher weighs proverbs with care and wisdom stands 6 words before; the physical weighing out of Ezr 8:29 is a counting of vessels before the priests. The evaluative weighing is one act of the attention of the Preacher among teaching, studying and arranging."
+  },
+  {
+   "observation": 22504,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "The surface 'weighing' is a weight in Gen 24:22 (twice), Jos 7:21 and Eze 5:1, a measure of shekels and not an act of the mind, and the surface 'weigh' is a physical weighing out in Ezr 8:29 and Zep 1:11 (laden); 'taking' stands beside the weights in the first three (took, 2 to 4 words). These occurrences are read as standalone: they are in the group because the surface also carries an evaluative use (1Cor 14:29, Ecc 12:9), and their placement was left as uncertain in the grouping."
+  },
+  {
+   "observation": 22632,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Destruction words and the attending meet in three verses. In Psa 38:12 the ruin is 1 word before the meditating and the meditating is on treachery; in Psa 119:78 the speaker meditates on the precepts after being wronged (3 words before); in Job 2:3 the destroying is 18 words after the Lord's considering of Job, in a later clause. Harm stands beside the attending in the Psalm verses, as its object or its occasion."
+  },
+  {
+   "observation": 22633,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Evil and the wicked meet the attending in three verses. In Job 1:8 and Job 2:3 the evil that Job turns from stands 12 and 13 words after the Lord's considering, as part of the description of the one considered; in Pro 15:28 the wicked is 3 words after the heart of the righteous that ponders, and is set against it. The evil belongs to the one described or contrasted, not to the act of attending."
+  },
+  {
+   "observation": 22634,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Fear meets the attending in four verses: the fear of God is 9 and 10 words after the Lord's considering of Job in Job 1:8 and Job 2:3 and describes him, in Job 15:4 fear and meditation are both hindered (2 words), and in Mat 1:20 fear is 14 words after Joseph's considering, in the angel's words. The fear of God is the standing of the one considered or what meditation is set beside."
+  },
+  {
+   "observation": 22636,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Precepts and authority meet the attending in four verses. In Psa 119:15, 119:27 and 119:78 the precepts are within two words of the meditating and are its object; in Mar 10:42 those who exercise authority stand 8 words after the members reputed to rule, so the reputed ruling and the exercise of authority are set together. The precepts are the thing meditated on; authority is the standing counted."
+  },
+  {
+   "observation": 22638,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Works meet the attending in four verses. In Psa 77:12 (1 word before), Psa 143:5 (4 after) and Psa 145:5 (1 before) the works are God's and are the object of the meditating; in Ecc 2:11 the toil (4 after) is the speaker's own, considered. The attending is directed to God's works in three and to one's own work in one."
+  },
+  {
+   "observation": 22639,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Life and death meet the attending in four verses: 'living' 5 words after in Isa 53:8, 'live' 8 after in Eze 18:28 (life as the outcome of considering and turning away), and 'dead' 4 and 7 after in Rom 4:19 and Heb 11:19 (a body as good as dead and the raising of the dead as what is considered). The considered matter is death in two verses and the result is life in one."
+  },
+  {
+   "observation": 22640,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Love meets the attending in two verses: 'love' is 1 word before the meditating in Psa 119:48 and 3 before in Psa 119:97, where the love of the commandments or the law comes first and the meditation follows. In Jos 7:21 the partner is covetousness 3 words after the surface 'weighing', which is a weight of gold there and not an attending."
+  },
+  {
+   "observation": 22642,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Taking meets the surface 'weighing' in three verses where it is a weight of gold or a balance: 'took' 3 words before in Gen 24:22, 4 after in Jos 7:21 and 'take' 2 and 13 before in Eze 5:1; only in Mat 1:20 does 'take' (15 words after) belong to Joseph's considering, in the words 'do not fear to take Mary'. The weights are not acts of the mind and are read as standalone."
+  },
+  {
+   "observation": 22643,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Wisdom and understanding meet the attending in seven verses. A second verb of musing stands in the same clause in Psa 77:12 and Psa 143:5 (3 words); in Psa 49:3 the meditation lies between wisdom (1 before) and understanding (2 after); in Pro 17:28 the silent fool is considered wise (1 after) and intelligent (4); in Psa 119:27 understanding is 3 before, in Ecc 12:9 'wise' is 6 before the weighing and in Isa 53:8 'judgment' is 4 before."
+  },
+  {
+   "observation": 22649,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Hearing meets the regard in three verses: listening is 8 words after in 2Ch 6:19 where the regard and the hearing are asked together, hearing is 4 before in Job 35:13 where an empty cry is neither heard nor regarded by God, and 6 before in Act 28:22. The word 'surely' in Job 35:13 is not a word of hearing (#2536). Hearing and regard are paired as what is given or withheld together."
+  },
+  {
+   "observation": 22650,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Works meet the regard in four verses: the Lord's works are 1 and 3 words after the regard in Psa 28:5 and 5 after in Isa 5:12, where they are what is not regarded; in Exo 5:9 the work (5 before) and labor (1 before) are the burden laid on the men, who are to pay no regard to lying words; in Lam 4:2 the work of a potter's hands (3 after) is what the sons of Zion are regarded as. The works are the object of the regard in the first two."
+  },
+  {
+   "observation": 22651,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Worthlessness and conceit meet the regard in three verses: 'worthless' is 2 words after in 1Sa 1:16 (regard asked not to be given as to a worthless woman) and 1 after in 1Sa 25:25 (Nabal, the worthless fellow), and 'conceit' is 3 after in Job 37:24 (God does not regard the wise in their own conceit). The regard is refused or asked against a person described as worthless or conceited."
+  },
+  {
+   "observation": 22652,
+   "stage": "layer-3",
+   "kind": "statement",
+   "text": "Contempt meets the regard in three verses: 'despised' 2 words before in Isa 33:8 (no regard for man), 'spoken against' 9 after in Act 28:22 and 'reviled' 11 after in 1Ti 6:1. In each verse a word of contempt is in the same sentence as the regard, either as what accompanies the lack of regard or as what the regard is asked to guard against."
+  }
+ ],
+ "occurrences": [
+  {
+   "occurrence": 1168915,
+   "reference": "1Ki 10:21",
+   "osis": "1Kgs.10.21",
+   "surface": "considered",
+   "strong": "H2803H"
+  },
+  {
+   "occurrence": 1217488,
+   "reference": "2Ch 9:20",
+   "osis": "2Chr.9.20",
+   "surface": "considered",
+   "strong": "H2803H"
+  },
+  {
+   "occurrence": 1228583,
+   "reference": "Neh 13:13",
+   "osis": "Neh.13.13",
+   "surface": "considered",
+   "strong": "H2803H"
+  },
+  {
+   "occurrence": 1236992,
+   "reference": "Job 1:8",
+   "osis": "Job.1.8",
+   "surface": "considered",
+   "strong": "H7760K"
+  },
+  {
+   "occurrence": 1236994,
+   "reference": "Job 1:8",
+   "osis": "Job.1.8",
+   "surface": "considered",
+   "strong": "H3820A"
+  },
+  {
+   "occurrence": 1237020,
+   "reference": "Job 2:3",
+   "osis": "Job.2.3",
+   "surface": "considered",
+   "strong": "H3820A"
+  },
+  {
+   "occurrence": 1237021,
+   "reference": "Job 2:3",
+   "osis": "Job.2.3",
+   "surface": "considered",
+   "strong": "H7760K"
+  },
+  {
+   "occurrence": 1281668,
+   "reference": "Pro 17:28",
+   "osis": "Prov.17.28",
+   "surface": "considered",
+   "strong": "H2803J"
+  },
+  {
+   "occurrence": 1281983,
+   "reference": "Pro 24:32",
+   "osis": "Prov.24.32",
+   "surface": "considered",
+   "strong": "H7896K"
+  },
+  {
+   "occurrence": 1281984,
+   "reference": "Pro 24:32",
+   "osis": "Prov.24.32",
+   "surface": "considered",
+   "strong": "H0595"
+  },
+  {
+   "occurrence": 1281985,
+   "reference": "Pro 24:32",
+   "osis": "Prov.24.32",
+   "surface": "considered",
+   "strong": "H3820A"
+  },
+  {
+   "occurrence": 1285010,
+   "reference": "Ecc 2:11",
+   "osis": "Eccl.2.11",
+   "surface": "considered",
+   "strong": "H6437G"
+  },
+  {
+   "occurrence": 1309721,
+   "reference": "Isa 53:8",
+   "osis": "Isa.53.8",
+   "surface": "considered",
+   "strong": "H7878"
+  },
+  {
+   "occurrence": 1351521,
+   "reference": "Eze 18:28",
+   "osis": "Ezek.18.28",
+   "surface": "considered",
+   "strong": "H7200H"
+  },
+  {
+   "occurrence": 1384214,
+   "reference": "Dan 7:8",
+   "osis": "Dan.7.8",
+   "surface": "considered",
+   "strong": "H1934"
+  },
+  {
+   "occurrence": 1384215,
+   "reference": "Dan 7:8",
+   "osis": "Dan.7.8",
+   "surface": "considered",
+   "strong": "H7920"
+  },
+  {
+   "occurrence": 1405514,
+   "reference": "Mat 1:20",
+   "osis": "Matt.1.20",
+   "surface": "considered",
+   "strong": "G1760"
+  },
+  {
+   "occurrence": 1422175,
+   "reference": "Mar 10:42",
+   "osis": "Mark.10.42",
+   "surface": "considered",
+   "strong": "G1380"
+  },
+  {
+   "occurrence": 1478905,
+   "reference": "Rom 4:19",
+   "osis": "Rom.4.19",
+   "surface": "considered",
+   "strong": "G2657"
+  },
+  {
+   "occurrence": 1478906,
+   "reference": "Rom 4:19",
+   "osis": "Rom.4.19",
+   "surface": "considered",
+   "strong": "G3756"
+  },
+  {
+   "occurrence": 1504739,
+   "reference": "Heb 11:11",
+   "osis": "Heb.11.11",
+   "surface": "considered",
+   "strong": "G2233"
+  },
+  {
+   "occurrence": 1505097,
+   "reference": "Heb 11:19",
+   "osis": "Heb.11.19",
+   "surface": "considered",
+   "strong": "G3049"
+  },
+  {
+   "occurrence": 1502093,
+   "reference": "Heb 11:26",
+   "osis": "Heb.11.26",
+   "surface": "considered",
+   "strong": "G2233"
+  },
+  {
+   "occurrence": 976222,
+   "reference": "Gen 4:5",
+   "osis": "Gen.4.5",
+   "surface": "regard",
+   "strong": "H8159"
+  },
+  {
+   "occurrence": 1008612,
+   "reference": "Exo 5:9",
+   "osis": "Exod.5.9",
+   "surface": "regard",
+   "strong": "H8159"
+  },
+  {
+   "occurrence": 1008615,
+   "reference": "Exo 5:9",
+   "osis": "Exod.5.9",
+   "surface": "regard",
+   "strong": "H0408"
+  },
+  {
+   "occurrence": 1039316,
+   "reference": "Lev 19:23",
+   "osis": "Lev.19.23",
+   "surface": "regard",
+   "strong": "H6188"
+  },
+  {
+   "occurrence": 1071429,
+   "reference": "Deu 9:27",
+   "osis": "Deut.9.27",
+   "surface": "regard",
+   "strong": "H6437G"
+  },
+  {
+   "occurrence": 1074743,
+   "reference": "Deu 33:9",
+   "osis": "Deut.33.9",
+   "surface": "regard",
+   "strong": "H7200G"
+  },
+  {
+   "occurrence": 1101508,
+   "reference": "Judg 15:3",
+   "osis": "Judg.15.3",
+   "surface": "regard",
+   "strong": "H9006"
+  },
+  {
+   "occurrence": 1117262,
+   "reference": "1Sa 1:16",
+   "osis": "1Sam.1.16",
+   "surface": "regard",
+   "strong": "H5414I"
+  },
+  {
+   "occurrence": 1128679,
+   "reference": "1Sa 25:25",
+   "osis": "1Sam.25.25",
+   "surface": "regard",
+   "strong": "H3820A"
+  },
+  {
+   "occurrence": 1128681,
+   "reference": "1Sa 25:25",
+   "osis": "1Sam.25.25",
+   "surface": "regard",
+   "strong": "H0853"
+  },
+  {
+   "occurrence": 1175017,
+   "reference": "2Ki 3:14",
+   "osis": "2Kgs.3.14",
+   "surface": "regard",
+   "strong": "H5375Q"
+  },
+  {
+   "occurrence": 1208622,
+   "reference": "2Ch 5:11",
+   "osis": "2Chr.5.11",
+   "surface": "regard",
+   "strong": "H8104J"
+  },
+  {
+   "occurrence": 1201964,
+   "reference": "2Ch 6:19",
+   "osis": "2Chr.6.19",
+   "surface": "regard",
+   "strong": "H6437G"
+  },
+  {
+   "occurrence": 1241760,
+   "reference": "Job 9:21",
+   "osis": "Job.9.21",
+   "surface": "regard",
+   "strong": "H3045"
+  },
+  {
+   "occurrence": 1241761,
+   "reference": "Job 9:21",
+   "osis": "Job.9.21",
+   "surface": "regard",
+   "strong": "H3808"
+  },
+  {
+   "occurrence": 1244033,
+   "reference": "Job 34:27",
+   "osis": "Job.34.27",
+   "surface": "regard",
+   "strong": "H7919A"
+  },
+  {
+   "occurrence": 1240118,
+   "reference": "Job 35:13",
+   "osis": "Job.35.13",
+   "surface": "regard",
+   "strong": "H7789"
+  },
+  {
+   "occurrence": 1236028,
+   "reference": "Job 37:24",
+   "osis": "Job.37.24",
+   "surface": "regard",
+   "strong": "H7200G"
+  },
+  {
+   "occurrence": 1254240,
+   "reference": "Psa 28:5",
+   "osis": "Ps.28.5",
+   "surface": "regard",
+   "strong": "H0995"
+  },
+  {
+   "occurrence": 1260839,
+   "reference": "Psa 74:20",
+   "osis": "Ps.74.20",
+   "surface": "regard",
+   "strong": "H5027"
+  },
+  {
+   "occurrence": 1267157,
+   "reference": "Psa 80:14",
+   "osis": "Ps.80.14",
+   "surface": "regard",
+   "strong": "H6485I"
+  },
+  {
+   "occurrence": 1274414,
+   "reference": "Psa 119:117",
+   "osis": "Ps.119.117",
+   "surface": "regard",
+   "strong": "H8159"
+  },
+  {
+   "occurrence": 1266947,
+   "reference": "Psa 144:3",
+   "osis": "Ps.144.3",
+   "surface": "regard",
+   "strong": "H3045"
+  },
+  {
+   "occurrence": 1278466,
+   "reference": "Pro 12:10",
+   "osis": "Prov.12.10",
+   "surface": "regard",
+   "strong": "H3045"
+  },
+  {
+   "occurrence": 1286409,
+   "reference": "Ecc 3:18",
+   "osis": "Eccl.3.18",
+   "surface": "regard",
+   "strong": "H1700"
+  },
+  {
+   "occurrence": 1309329,
+   "reference": "Isa 5:12",
+   "osis": "Isa.5.12",
+   "surface": "regard",
+   "strong": "H5027"
+  },
+  {
+   "occurrence": 1307624,
+   "reference": "Isa 13:17",
+   "osis": "Isa.13.17",
+   "surface": "regard",
+   "strong": "H2803H"
+  },
+  {
+   "occurrence": 1299003,
+   "reference": "Isa 33:8",
+   "osis": "Isa.33.8",
+   "surface": "regard",
+   "strong": "H2803H"
+  },
+  {
+   "occurrence": 1328689,
+   "reference": "Jer 24:5",
+   "osis": "Jer.24.5",
+   "surface": "regard",
+   "strong": "H5234A"
+  },
+  {
+   "occurrence": 1347024,
+   "reference": "Lam 4:16",
+   "osis": "Lam.4.16",
+   "surface": "regard",
+   "strong": "H5027"
+  },
+  {
+   "occurrence": 1468254,
+   "reference": "Act 28:22",
+   "osis": "Acts.28.22",
+   "surface": "regard",
+   "strong": "G4012"
+  },
+  {
+   "occurrence": 1480709,
+   "reference": "1Cor 4:1",
+   "osis": "1Cor.4.1",
+   "surface": "regard",
+   "strong": "G3049"
+  },
+  {
+   "occurrence": 1486647,
+   "reference": "2Cor 5:16",
+   "osis": "2Cor.5.16",
+   "surface": "regard",
+   "strong": "G6063"
+  },
+  {
+   "occurrence": 1486657,
+   "reference": "2Cor 5:16",
+   "osis": "2Cor.5.16",
+   "surface": "regard",
+   "strong": "G1097"
+  },
+  {
+   "occurrence": 1495800,
+   "reference": "Col 2:16",
+   "osis": "Col.2.16",
+   "surface": "regard",
+   "strong": "G3313"
+  },
+  {
+   "occurrence": 1498128,
+   "reference": "2Th 3:15",
+   "osis": "2Thess.3.15",
+   "surface": "regard",
+   "strong": "G2233"
+  },
+  {
+   "occurrence": 1499071,
+   "reference": "1Ti 6:1",
+   "osis": "1Tim.6.1",
+   "surface": "regard",
+   "strong": "G2233"
+  },
+  {
+   "occurrence": 1508222,
+   "reference": "1Pe 5:12",
+   "osis": "1Pet.5.12",
+   "surface": "regard",
+   "strong": "G3049"
+  },
+  {
+   "occurrence": 995552,
+   "reference": "Gen 31:15",
+   "osis": "Gen.31.15",
+   "surface": "regarded",
+   "strong": "H2803H"
+  },
+  {
+   "occurrence": 1273162,
+   "reference": "Psa 44:22",
+   "osis": "Ps.44.22",
+   "surface": "regarded",
+   "strong": "H2803H"
+  },
+  {
+   "occurrence": 1300532,
+   "reference": "Isa 29:16",
+   "osis": "Isa.29.16",
+   "surface": "regarded",
+   "strong": "H2803J"
+  },
+  {
+   "occurrence": 1313897,
+   "reference": "Isa 29:17",
+   "osis": "Isa.29.17",
+   "surface": "regarded",
+   "strong": "H2803J"
+  },
+  {
+   "occurrence": 1348003,
+   "reference": "Lam 4:2",
+   "osis": "Lam.4.2",
+   "surface": "regarded",
+   "strong": "H2803H"
+  },
+  {
+   "occurrence": 1387799,
+   "reference": "Hos 8:12",
+   "osis": "Hos.8.12",
+   "surface": "regarded",
+   "strong": "H2803H"
+  },
+  {
+   "occurrence": 1442038,
+   "reference": "Luk 22:24",
+   "osis": "Luke.22.24",
+   "surface": "regarded",
+   "strong": "G1380"
+  },
+  {
+   "occurrence": 1479951,
+   "reference": "Rom 2:26",
+   "osis": "Rom.2.26",
+   "surface": "regarded",
+   "strong": "G3049"
+  },
+  {
+   "occurrence": 1480169,
+   "reference": "Rom 8:36",
+   "osis": "Rom.8.36",
+   "surface": "regarded",
+   "strong": "G3049"
+  },
+  {
+   "occurrence": 1221812,
+   "reference": "Ezr 8:29",
+   "osis": "Ezra.8.29",
+   "surface": "weigh",
+   "strong": "H8254"
+  },
+  {
+   "occurrence": 1398261,
+   "reference": "Zep 1:11",
+   "osis": "Zeph.1.11",
+   "surface": "weigh",
+   "strong": "H5187"
+  },
+  {
+   "occurrence": 1483695,
+   "reference": "1Cor 14:29",
+   "osis": "1Cor.14.29",
+   "surface": "weigh",
+   "strong": "G1252"
+  },
+  {
+   "occurrence": 998078,
+   "reference": "Gen 24:22",
+   "osis": "Gen.24.22",
+   "surface": "weighing",
+   "strong": "H4948"
+  },
+  {
+   "occurrence": 998086,
+   "reference": "Gen 24:22",
+   "osis": "Gen.24.22",
+   "surface": "weighing",
+   "strong": "H4948"
+  },
+  {
+   "occurrence": 1094995,
+   "reference": "Jos 7:21",
+   "osis": "Josh.7.21",
+   "surface": "weighing",
+   "strong": "H4948"
+  },
+  {
+   "occurrence": 1286093,
+   "reference": "Ecc 12:9",
+   "osis": "Eccl.12.9",
+   "surface": "weighing",
+   "strong": "H0239"
+  },
+  {
+   "occurrence": 1374196,
+   "reference": "Eze 5:1",
+   "osis": "Ezek.5.1",
+   "surface": "weighing",
+   "strong": "H4948"
+  }
+ ],
+ "verses": [
+  {
+   "reference": "1Cor.14.29",
+   "text": "Let two or three prophets speak, and let the others weigh what is said."
+  },
+  {
+   "reference": "1Cor.4.1",
+   "text": "This is how one should regard us, as servants of Christ and stewards of the mysteries of God."
+  },
+  {
+   "reference": "1Kgs.10.21",
+   "text": "All King Solomon’s drinking vessels were of gold, and all the vessels of the House of the Forest of Lebanon were of pure gold. None were of silver; silver was not considered as anything in the days of Solomon."
+  },
+  {
+   "reference": "1Pet.5.12",
+   "text": "By Silvanus, a faithful brother as I regard him, I have written briefly to you, exhorting and declaring that this is the true grace of God. Stand firm in it."
+  },
+  {
+   "reference": "1Sam.1.16",
+   "text": "Do not regard your servant as a worthless woman, for all along I have been speaking out of my great anxiety and vexation.”"
+  },
+  {
+   "reference": "1Sam.25.25",
+   "text": "Let not my lord regard this worthless fellow, Nabal, for as his name is, so is he. Nabal is his name, and folly is with him. But I your servant did not see the young men of my lord, whom you sent."
+  },
+  {
+   "reference": "1Tim.6.1",
+   "text": "Let all who are under a yoke as bondservants regard their own masters as worthy of all honor, so that the name of God and the teaching may not be reviled."
+  },
+  {
+   "reference": "2Chr.5.11",
+   "text": "And when the priests came out of the Holy Place ( for all the priests who were present had consecrated themselves, without regard to their divisions,"
+  },
+  {
+   "reference": "2Chr.6.19",
+   "text": "Yet have regard to the prayer of your servant and to his plea, O Lord my God, listening to the cry and to the prayer that your servant prays before you,"
+  },
+  {
+   "reference": "2Chr.9.20",
+   "text": "All King Solomon’s drinking vessels were of gold, and all the vessels of the House of the Forest of Lebanon were of pure gold. Silver was not considered as anything in the days of Solomon."
+  },
+  {
+   "reference": "2Cor.5.16",
+   "text": "From now on, therefore, we regard no one according to the flesh. Even though we once regarded Christ according to the flesh, we regard him thus no longer."
+  },
+  {
+   "reference": "2Kgs.3.14",
+   "text": "And Elisha said, “As the Lord of hosts lives, before whom I stand, were it not that I have regard for Jehoshaphat the king of Judah, I would neither look at you nor see you."
+  },
+  {
+   "reference": "2Thess.3.15",
+   "text": "Do not regard him as an enemy, but warn him as a brother."
+  },
+  {
+   "reference": "Acts.28.22",
+   "text": "But we desire to hear from you what your views are, for with regard to this sect we know that everywhere it is spoken against.”"
+  },
+  {
+   "reference": "Col.2.16",
+   "text": "Therefore let no one pass judgment on you in questions of food and drink, or with regard to a festival or a new moon or a Sabbath."
+  },
+  {
+   "reference": "Dan.7.8",
+   "text": "I considered the horns, and behold, there came up among them another horn, a little one, before which three of the first horns were plucked up by the roots. And behold, in this horn were eyes like the eyes of a man, and a mouth speaking great things."
+  },
+  {
+   "reference": "Deut.33.9",
+   "text": "who said of his father and mother, ‘I regard them not ’; he disowned his brothers and ignored his children. For they observed your word and kept your covenant."
+  },
+  {
+   "reference": "Deut.9.27",
+   "text": "Remember your servants, Abraham, Isaac, and Jacob. Do not regard the stubbornness of this people, or their wickedness or their sin,"
+  },
+  {
+   "reference": "Eccl.12.9",
+   "text": "Besides being wise, the Preacher also taught the people knowledge, weighing and studying and arranging many proverbs with great care."
+  },
+  {
+   "reference": "Eccl.2.11",
+   "text": "Then I considered all that my hands had done and the toil I had expended in doing it, and behold, all was vanity and a striving after wind, and there was nothing to be gained under the sun."
+  },
+  {
+   "reference": "Eccl.3.18",
+   "text": "I said in my heart with regard to the children of man that God is testing them that they may see that they themselves are but beasts."
+  },
+  {
+   "reference": "Exod.5.9",
+   "text": "Let heavier work be laid on the men that they may labor at it and pay no regard to lying words.”"
+  },
+  {
+   "reference": "Ezek.18.28",
+   "text": "Because he considered and turned away from all the transgressions that he had committed, he shall surely live; he shall not die."
+  },
+  {
+   "reference": "Ezek.5.1",
+   "text": "“And you, O son of man, take a sharp sword. Use it as a barber’s razor and pass it over your head and your beard. Then take balances for weighing and divide the hair."
+  },
+  {
+   "reference": "Ezra.8.29",
+   "text": "Guard them and keep them until you weigh them before the chief priests and the Levites and the heads of fathers’ houses in Israel at Jerusalem, within the chambers of the house of the Lord.”"
+  },
+  {
+   "reference": "Gen.24.22",
+   "text": "When the camels had finished drinking, the man took a gold ring weighing a half shekel, and two bracelets for her arms weighing ten gold shekels,"
+  },
+  {
+   "reference": "Gen.31.15",
+   "text": "Are we not regarded by him as foreigners? For he has sold us, and he has indeed devoured our money."
+  },
+  {
+   "reference": "Gen.4.5",
+   "text": "but for Cain and his offering he had no regard. So Cain was very angry, and his face fell."
+  },
+  {
+   "reference": "Heb.11.11",
+   "text": "By faith Sarah herself received power to conceive, even when she was past the age, since she considered him faithful who had promised."
+  },
+  {
+   "reference": "Heb.11.19",
+   "text": "He considered that God was able even to raise him from the dead, from which, figuratively speaking, he did receive him back."
+  },
+  {
+   "reference": "Heb.11.26",
+   "text": "He considered the reproach of Christ greater wealth than the treasures of Egypt, for he was looking to the reward."
+  },
+  {
+   "reference": "Hos.8.12",
+   "text": "Were I to write for him my laws by the ten thousands, they would be regarded as a strange thing."
+  },
+  {
+   "reference": "Isa.13.17",
+   "text": "Behold, I am stirring up the Medes against them, who have no regard for silver and do not delight in gold."
+  },
+  {
+   "reference": "Isa.29.16",
+   "text": "You turn things upside down! Shall the potter be regarded as the clay, that the thing made should say of its maker, “He did not make me”; or the thing formed say of him who formed it, “He has no understanding ”?"
+  },
+  {
+   "reference": "Isa.29.17",
+   "text": "Is it not yet a very little while until Lebanon shall be turned into a fruitful field, and the fruitful field shall be regarded as a forest?"
+  },
+  {
+   "reference": "Isa.33.8",
+   "text": "The highways lie waste; the traveler ceases. Covenants are broken; cities are despised; there is no regard for man."
+  },
+  {
+   "reference": "Isa.5.12",
+   "text": "They have lyre and harp, tambourine and flute and wine at their feasts, but they do not regard the deeds of the Lord, or see the work of his hands."
+  },
+  {
+   "reference": "Isa.53.8",
+   "text": "By oppression and judgment he was taken away; and as for his generation, who considered that he was cut off out of the land of the living, stricken for the transgression of my people?"
+  },
+  {
+   "reference": "Jer.24.5",
+   "text": "“ Thus says the Lord, the God of Israel: Like these good figs, so I will regard as good the exiles from Judah, whom I have sent away from this place to the land of the Chaldeans."
+  },
+  {
+   "reference": "Job.1.8",
+   "text": "And the Lord said to Satan, “Have you considered my servant Job, that there is none like him on the earth, a blameless and upright man, who fears God and turns away from evil?”"
+  },
+  {
+   "reference": "Job.2.3",
+   "text": "And the Lord said to Satan, “Have you considered my servant Job, that there is none like him on the earth, a blameless and upright man, who fears God and turns away from evil? He still holds fast his integrity, although you incited me against him to destroy him without reason.”"
+  },
+  {
+   "reference": "Job.34.27",
+   "text": "because they turned aside from following him and had no regard for any of his ways,"
+  },
+  {
+   "reference": "Job.35.13",
+   "text": "Surely God does not hear an empty cry, nor does the Almighty regard it."
+  },
+  {
+   "reference": "Job.37.24",
+   "text": "Therefore men fear him; he does not regard any who are wise in their own conceit.”"
+  },
+  {
+   "reference": "Job.9.21",
+   "text": "I am blameless; I regard not myself; I loathe my life."
+  },
+  {
+   "reference": "Josh.7.21",
+   "text": "when I saw among the spoil a beautiful cloak from Shinar, and 200 shekels of silver, and a bar of gold weighing 50 shekels, then I coveted them and took them. And see, they are hidden in the earth inside my tent, with the silver underneath.”"
+  },
+  {
+   "reference": "Judg.15.3",
+   "text": "And Samson said to them, “This time I shall be innocent in regard to the Philistines, when I do them harm.”"
+  },
+  {
+   "reference": "Lam.4.16",
+   "text": "The Lord himself has scattered them; he will regard them no more; no honor was shown to the priests, no favor to the elders."
+  },
+  {
+   "reference": "Lam.4.2",
+   "text": "The precious sons of Zion, worth their weight in fine gold, how they are regarded as earthen pots, the work of a potter’s hands!"
+  },
+  {
+   "reference": "Lev.19.23",
+   "text": "“ When you come into the land and plant any kind of tree for food, then you shall regard its fruit as forbidden. Three years it shall be forbidden to you; it must not be eaten."
+  },
+  {
+   "reference": "Luke.22.24",
+   "text": "A dispute also arose among them, as to which of them was to be regarded as the greatest."
+  },
+  {
+   "reference": "Mark.10.42",
+   "text": "And Jesus called them to him and said to them, “You know that those who are considered rulers of the Gentiles lord it over them, and their great ones exercise authority over them."
+  },
+  {
+   "reference": "Matt.1.20",
+   "text": "But as he considered these things, behold, an angel of the Lord appeared to him in a dream, saying, “ Joseph, son of David, do not fear to take Mary as your wife, for that which is conceived in her is from the Holy Spirit."
+  },
+  {
+   "reference": "Neh.13.13",
+   "text": "And I appointed as treasurers over the storehouses Shelemiah the priest, Zadok the scribe, and Pedaiah of the Levites, and as their assistant Hanan the son of Zaccur, son of Mattaniah, for they were considered reliable, and their duty was to distribute to their brothers."
+  },
+  {
+   "reference": "Prov.12.10",
+   "text": "Whoever is righteous has regard for the life of his beast, but the mercy of the wicked is cruel."
+  },
+  {
+   "reference": "Prov.17.28",
+   "text": "Even a fool who keeps silent is considered wise; when he closes his lips, he is deemed intelligent."
+  },
+  {
+   "reference": "Prov.24.32",
+   "text": "Then I saw and considered it; I looked and received instruction."
+  },
+  {
+   "reference": "Ps.119.117",
+   "text": "Hold me up, that I may be safe and have regard for your statutes continually!"
+  },
+  {
+   "reference": "Ps.144.3",
+   "text": "O Lord, what is man that you regard him, or the son of man that you think of him?"
+  },
+  {
+   "reference": "Ps.28.5",
+   "text": "Because they do not regard the works of the Lord or the work of his hands, he will tear them down and build them up no more."
+  },
+  {
+   "reference": "Ps.44.22",
+   "text": "Yet for your sake we are killed all the day long; we are regarded as sheep to be slaughtered."
+  },
+  {
+   "reference": "Ps.74.20",
+   "text": "Have regard for the covenant, for the dark places of the land are full of the habitations of violence."
+  },
+  {
+   "reference": "Ps.80.14",
+   "text": "Turn again, O God of hosts! Look down from heaven, and see; have regard for this vine,"
+  },
+  {
+   "reference": "Rom.2.26",
+   "text": "So, if a man who is uncircumcised keeps the precepts of the law, will not his uncircumcision be regarded as circumcision?"
+  },
+  {
+   "reference": "Rom.4.19",
+   "text": "He did not weaken in faith when he considered his own body, which was as good as dead ( since he was about a hundred years old ), or when he considered the barrenness of Sarah’s womb."
+  },
+  {
+   "reference": "Rom.8.36",
+   "text": "As it is written, “For your sake we are being killed all the day long; we are regarded as sheep to be slaughtered.”"
+  },
+  {
+   "reference": "Zeph.1.11",
+   "text": "Wail, O inhabitants of the Mortar! For all the traders are no more; all who weigh out silver are cut off."
+  }
+ ],
+ "answer": {
+  "command": "ReadElements",
+  "collection": "thought",
+  "subgroup": "weighing and taking account of",
+  "ledger_id": 1515,
+  "findings": [
+   {
+    "key": "f1",
+    "kind": "",
+    "text": "",
+    "basis": "read | stated",
+    "parts": {
+     "item": "role | polarity | object | enactment | party | circumstance | operation | chain | flag",
+     "grounds": ""
+    },
+    "nodes": [
+     {
+      "occurrence": "<occurrence id>",
+      "role": "<a node role>"
+     },
+     {
+      "traced": "<id of an observation it rests on>"
+     }
+    ],
+    "read_back": []
+   }
+  ],
+  "not_used": {},
+  "older": [],
+  "existing": [
+   {
+    "observation": 22460,
+    "action": "accept | modify | delete | merge | leave",
+    "reason": ""
+   },
+   {
+    "observation": 22461,
+    "action": "accept | modify | delete | merge | leave",
+    "reason": ""
+   },
+   {
+    "observation": 22462,
+    "action": "accept | modify | delete | merge | leave",
+    "reason": ""
+   },
+   {
+    "observation": 22463,
+    "action": "accept | modify | delete | merge | leave",
+    "reason": ""
+   },
+   {
+    "observation": 22464,
+    "action": "accept | modify | delete | merge | leave",
+    "reason": ""
+   },
+   {
+    "observation": 22465,
+    "action": "accept | modify | delete | merge | leave",
+    "reason": ""
+   },
+   {
+    "observation": 22466,
+    "action": "accept | modify | delete | merge | leave",
+    "reason": ""
+   },
+   {
+    "observation": 22467,
+    "action": "accept | modify | delete | merge | leave",
+    "reason": ""
+   },
+   {
+    "observation": 22468,
+    "action": "accept | modify | delete | merge | leave",
+    "reason": ""
+   },
+   {
+    "observation": 22469,
+    "action": "accept | modify | delete | merge | leave",
+    "reason": ""
+   },
+   {
+    "observation": 22470,
+    "action": "accept | modify | delete | merge | leave",
+    "reason": ""
+   },
+   {
+    "observation": 22471,
+    "action": "accept | modify | delete | merge | leave",
+    "reason": ""
+   },
+   {
+    "observation": 22472,
+    "action": "accept | modify | delete | merge | leave",
+    "reason": ""
+   },
+   {
+    "observation": 22487,
+    "action": "accept | modify | delete | merge | leave",
+    "reason": ""
+   },
+   {
+    "observation": 22488,
+    "action": "accept | modify | delete | merge | leave",
+    "reason": ""
+   },
+   {
+    "observation": 22489,
+    "action": "accept | modify | delete | merge | leave",
+    "reason": ""
+   },
+   {
+    "observation": 22490,
+    "action": "accept | modify | delete | merge | leave",
+    "reason": ""
+   },
+   {
+    "observation": 22491,
+    "action": "accept | modify | delete | merge | leave",
+    "reason": ""
+   },
+   {
+    "observation": 22495,
+    "action": "accept | modify | delete | merge | leave",
+    "reason": ""
+   },
+   {
+    "observation": 22498,
+    "action": "accept | modify | delete | merge | leave",
+    "reason": ""
+   },
+   {
+    "observation": 22500,
+    "action": "accept | modify | delete | merge | leave",
+    "reason": ""
+   },
+   {
+    "observation": 22501,
+    "action": "accept | modify | delete | merge | leave",
+    "reason": ""
+   },
+   {
+    "observation": 22503,
+    "action": "accept | modify | delete | merge | leave",
+    "reason": ""
+   },
+   {
+    "observation": 22504,
+    "action": "accept | modify | delete | merge | leave",
+    "reason": ""
+   },
+   {
+    "observation": 22632,
+    "action": "accept | modify | delete | merge | leave",
+    "reason": ""
+   },
+   {
+    "observation": 22633,
+    "action": "accept | modify | delete | merge | leave",
+    "reason": ""
+   },
+   {
+    "observation": 22634,
+    "action": "accept | modify | delete | merge | leave",
+    "reason": ""
+   },
+   {
+    "observation": 22636,
+    "action": "accept | modify | delete | merge | leave",
+    "reason": ""
+   },
+   {
+    "observation": 22638,
+    "action": "accept | modify | delete | merge | leave",
+    "reason": ""
+   },
+   {
+    "observation": 22639,
+    "action": "accept | modify | delete | merge | leave",
+    "reason": ""
+   },
+   {
+    "observation": 22640,
+    "action": "accept | modify | delete | merge | leave",
+    "reason": ""
+   },
+   {
+    "observation": 22642,
+    "action": "accept | modify | delete | merge | leave",
+    "reason": ""
+   },
+   {
+    "observation": 22643,
+    "action": "accept | modify | delete | merge | leave",
+    "reason": ""
+   },
+   {
+    "observation": 22649,
+    "action": "accept | modify | delete | merge | leave",
+    "reason": ""
+   },
+   {
+    "observation": 22650,
+    "action": "accept | modify | delete | merge | leave",
+    "reason": ""
+   },
+   {
+    "observation": 22651,
+    "action": "accept | modify | delete | merge | leave",
+    "reason": ""
+   },
+   {
+    "observation": 22652,
+    "action": "accept | modify | delete | merge | leave",
+    "reason": ""
+   }
+  ]
+ },
+ "measured": {
+  "package_chars": 149610,
+  "seconds": 0.43
+ }
+}

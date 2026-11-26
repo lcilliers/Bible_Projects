@@ -1,0 +1,1295 @@
+{
+ "command": "ReadWords",
+ "collection": "thought",
+ "subgroup": "meditating and pondering",
+ "step": "S1",
+ "made": "2026-11-25T19:34:07Z",
+ "batch": {
+  "words": 12,
+  "words_left_after_this": 1
+ },
+ "instruction": {
+  "what": "Step S1, the words of one subgroup (stage 1, the lexical analysis): each word -- a surface with its lettered Strong's code -- read in the verse of each of its occurrences, for what it is and how it is used there. Nothing here says what a word does for the inner being; that begins at step 3.1.",
+  "read": [
+   "Take one word at a time, and within it one occurrence at a time, in the verse of that occurrence.",
+   "Read the evidence in this order: the verse text and the occurrence's stored structure (morph, unit, surface_kind, negator, party_kind, narrative); then the meaning sources for the code read together (sense_head, meaning_range, lsj, mounce), none picked and the others dropped; then the English rendering against the literal sense: does the English add or hide?",
+   "Judge the meaning in context from the Strong's code and the verse, not from the English surface alone. Where occurrences show different stems or voices, say whether the subject does, undergoes or causes the act.",
+   "The prompts are areas to explore; a prompt that does not apply is not answered."
+  ],
+  "write": [
+   "Fill `answer.rows`: for each word, its `readings`. One reading for each distinct way the word is used: the occurrences where it is used the same way are listed together in that reading's `occurrences` (occurrence ids or verse references); an occurrence used differently is its own reading.",
+   "kind: term; face where the use in a verse departs from the word's usual sense.",
+   "obs_text: concise; names the verse or verses; states what the word is and how it is used there (its object, setting, construction, what the morph shows); never the dictionary range, never the verse restated.",
+   "basis: stated (the verse says it) or read (read from the structure or the context). grounds: what in the verse shows it.",
+   "Every occurrence of the word is in exactly one reading; none is left out. A homonym or a name is recorded as such; a data error is named in grounds, not fixed.",
+   "`older`: the older observations on the word's occurrences. Read each with the word (they are what was recorded before) and answer each in the row's `older`, once: keep (with `nature` evidence or inner_being: it stands as it is); restate (with `nature`, `new_text` and `checked`: what in the base data the new text was checked against); merge (with `into`: a live observation saying the same); consume (with `carriers`, [\"this\"] for this row's readings or observation ids, and `mapping`: what the old one says and which carrier states each part); delete_neither (with `reason`: it is neither evidence nor inner being); carry (with `to` a later step, 1.1 or 2.1, and `reason`: what that step is to consider); defer (with `collection`, `nature` and `finding`: another collection owns the rest). An older observation listed under another word is answered there.",
+   "Then: Collection-Build.ps1 -Action RecordWords -File <the answer file> (-Check to preview). The record refuses the whole file on any fault and lists every fault."
+  ],
+  "keep": [
+   {
+    "rule": "RG-08 the-original",
+    "text": "For every word that names an inner or bodily act, look at the original: the root's range in all three meaning sources read together, never one picked and the others dropped; the ESV renderings across its verses; whether the English adds or hides; the literal sense beside the rendering. Where more than one reading is open, record each, and mark the choice 'I read'."
+   },
+   {
+    "rule": "RG-14 morph-read",
+    "text": "Morph is read, not carried: where occurrences of a word show different stems or voices, record whether the subject does, undergoes or causes the act."
+   },
+   {
+    "rule": "RG-16 homonym-and-data-error",
+    "text": "A word that is only a homonym or a name, with no meaningful context, is recorded as such (tag no-human-context) and left. Data errors found while reading are flagged (tag data-error), not fixed in the reading."
+   },
+   {
+    "rule": "RG-17 catalogue-as-prompts",
+    "text": "The question catalogue's questions are prompts for the areas to explore. A question that does not apply is not answered, and no answer is manufactured beyond what the verse shows."
+   },
+   {
+    "rule": "RG-21 grain",
+    "text": "A word is read per its lettered Strong's code (its grain), never the bare lemma (B:113). The occurrences of a word with several senses are related per grain and never aggregated across grains: related verses are same-grain occurrences."
+   },
+   {
+    "rule": "RG-22 content-words-carry-impact",
+    "text": "Content words carry the inner-being impact and are read even when no cluster tags them. Function words (particles, prepositions, conjunctions, suffixes, pronouns) get no observation of their own, except negators and connectives, which are read for what they do (RG-07). A T2 word never stands alone: it is read as the qualifier of what it binds to."
+   },
+   {
+    "rule": "RW-03 no-duplicates-multi-node",
+    "text": "One observation per finding: the same description is never written twice. Applied to another verse, word or scope it gains a node on the existing observation."
+   },
+   {
+    "rule": "RW-04 concise-verse-specific",
+    "text": "Observation text is concise and tied to this verse's content, never a restatement of the word's dictionary sense. A transliteration is never given without its gloss."
+   },
+   {
+    "rule": "RW-08 slants-own-rows",
+    "text": "Where the evidence points to more than one reading, each is its own observation with its own evidence."
+   },
+   {
+    "rule": "RW-09 reread-builds-on-prior",
+    "text": "A re-read includes the observations already recorded for the verse, so the reading sees prior findings and builds on them."
+   },
+   {
+    "rule": "RW-13 older-observations-answered-at-record",
+    "text": "Every older live observation with a live node on an occurrence of the row (a stage that is not the build's own) is answered in fill.older when the row is recorded, once: keep or restate (each with its marker), merge into a named observation, consume (live observations carry its meaning, stated in words, verified before it is deleted), delete as neither (comment first), or defer to a named collection (marked now; only the finding is left to that collection). An observation already marked by the validation, answered in a build or deferred is not asked again. A new observation whose text equals that of another live observation of the collection is refused, the other named. LayerCheck re-derives both from the tables. The end state of a collection's build is that every observation of its scope is marked and fixed or deleted, every word node complete or with its reason, and each deferral owned by a named collection."
+   },
+   {
+    "rule": "RS-04 existing-checked-accept-modify-delete",
+    "text": "When a verse is worked, every existing observation and node on it, of any stage, is checked against the verse by its wording. The stage is not an indication of the nature of an observation and is never used to filter. Each observation is accepted, modified (changed in place; the old value, the new value and the reason are kept in ib_observation_change), soft deleted (the `deleted` column, with the reason), merged (a duplicate description, into the observation that is kept) or, when its wording shows it is not verse understanding, left exactly as it is with the reason. The check's fixes are part of it and need no separate approval. Nothing is physically deleted."
+   },
+   {
+    "rule": "VA-03 consumption-is-verified-before-deletion",
+    "text": "An older observation is deleted as consumed only when live observations carry its meaning: every word occurrence of it is on a live node of a carrier or named as not carried with its reason, the mapping is stated in words (what the old says, which carrier states each part), the traces to it are re-pointed or replaced, and the consumption is kept as `consumed_by`. An observation that holds more than one finding is split first."
+   },
+   {
+    "rule": "VA-04 neither-evidence-nor-inner-being-is-deleted",
+    "text": "An observation that is neither evidence nor inner being contributes nothing to the purposes of the observations (researcher, 2026-11-22): it is commented with its reason and the word occurrences no other live observation holds, then deleted. An observation already marked, or one another observation traces, is not deleted this way."
+   }
+  ],
+  "not_in_this_read": ""
+ },
+ "prompts": [
+  {
+   "code": "M0.1.1",
+   "question": "In this verse, looking at this specific occurrence (its surface form and morph_code), what does this term's name/form show about its essential nature here?"
+  },
+  {
+   "code": "M0.1.2",
+   "question": "In this verse, drawing on this term's lexicon entries but grounded in how it is actually used in this occurrence, what does it mean at the definitional level?"
+  },
+  {
+   "code": "M0.1.3",
+   "question": "In this verse, what directional, relational, or constitutional implication does this term's name carry as it functions in this specific occurrence?"
+  },
+  {
+   "code": "M0.4.1",
+   "question": "What is the grammatical/stem form of this term in this verse?"
+  },
+  {
+   "code": "M0.5.1",
+   "question": "In this verse, what does this term's root meaning show about how it operates in this specific occurrence?"
+  },
+  {
+   "code": "M0.5.2",
+   "question": "In this verse, what does this occurrence's own grammatical form (per its morph_code — e.g. noun, verb, adjective, participle) show about how the term operates here?"
+  },
+  {
+   "code": "M0.5.3",
+   "question": "In this verse, given this term's known semantic range — the breadth of meaning it can carry, including idiomatic, analogical, or combinatorial senses — where does this occurrence sit within that range, and what does that show about how the term operates here?"
+  },
+  {
+   "code": "M0.5.4",
+   "question": "In this verse, does this occurrence express a specific aspect — disposition versus act, received versus given, condition versus quality? Record which, or none."
+  },
+  {
+   "code": "M0.5.5",
+   "question": "In this verse, among this term's own related terms, is there one that functions as this occurrence's structural opposite? Record it, or none."
+  },
+  {
+   "code": "M0.5.6",
+   "question": "In this verse, among this term's own related terms, is there a person-type term relevant to this occurrence — one for a person who habitually possesses or exercises it? Record it, or none."
+  },
+  {
+   "code": "M0.5.7",
+   "question": "In this verse, among this term's own related terms, is there a supplication or seeking term relevant to this occurrence — one for the act of seeking it from another? Record it, or none."
+  },
+  {
+   "code": "M0.5.8",
+   "question": "In this verse, does this term's Testament context (OT Hebrew vs. NT Greek) affect how this specific occurrence should be interpreted, and if so, how? Record none if the Testament context makes no interpretive difference here."
+  },
+  {
+   "code": "M0.5.9",
+   "question": "In this verse, if this term is newly coined in the NT period, what does that coinage show about how it functions in this occurrence? Record none if not applicable or not relevant to this occurrence."
+  },
+  {
+   "code": "M0.5.11",
+   "question": "In this verse, where this occurrence's meaning diverges from the term's usual sense elsewhere, what nuance does that divergence carry here, and how does it compare to the word's other occurrences? Pay particular attention to this occurrence's own surface form/rendering — a marked or atypical surface form is often the visible trace of the divergence itself, not a separate fact. Record none if this occurrence matches the term's usual sense."
+  }
+ ],
+ "words": [
+  {
+   "ledger_id": 813,
+   "word": "meditates",
+   "strong": "H1897",
+   "lexicon": {
+    "sense_head": "to mutter",
+    "meaning_range": "1) to moan, growl, utter, muse, mutter, meditate, devise, plot, speak; 1a) (Qal); 1a1) to roar, growl, groan; 1a2) to utter, speak; 1a3) to meditate, devise, muse, imagine; 1b) (Poal) to utter; 1c) (Hiphil) to mutter",
+    "lsj": "",
+    "mounce": "",
+    "related": [
+     "H1899 הֶ֫גֶה moaning",
+     "H1900 הָגוּת meditation",
+     "H1901 הָגִיג meditation",
+     "H1902G הִגָּיוֹן Higgaion",
+     "H1902H הִגָּיוֹן meditation"
+    ]
+   },
+   "occurrences": [
+    {
+     "occurrence": 1264096,
+     "reference": "Psa 1:2",
+     "morph": "HVqi3ms",
+     "unit": "meditates",
+     "surface_kind": "own",
+     "negator": false,
+     "party_kind": null,
+     "narrative": null,
+     "verse": "but his delight is in the law of the Lord, and on his law he meditates day and night."
+    }
+   ],
+   "older": [
+    {
+     "observation": 12418,
+     "stage": "strand-reading",
+     "kind": "key-statement",
+     "nature": null,
+     "text": "hāgāh joins meditating, muttering and uttering in one word.",
+     "verses": [
+      "Ps.1.2",
+      "Josh.1.8",
+      "Ps.37.30",
+      "Prov.8.7",
+      "Job.27.4",
+      "Isa.59.3",
+      "Isa.59.13",
+      "Prov.24.2",
+      "Ps.2.1",
+      "Ps.38.12"
+     ]
+    },
+    {
+     "observation": 12425,
+     "stage": "strand-reading",
+     "kind": "key-statement",
+     "nature": null,
+     "text": "The same path runs toward good: \"When I think on my ways, I turn my feet\"; meditate day and night \"so that you may be careful to do\"",
+     "verses": [
+      "Ps.119.59",
+      "Josh.1.8",
+      "Ps.1.2"
+     ]
+    },
+    {
+     "observation": 17568,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "nature": null,
+     "text": "Psa 1:2. *\"but his delight is in the law of the Lord, and on his law he meditates day and night.\"*",
+     "verses": [
+      "Ps.1.2"
+     ]
+    }
+   ]
+  },
+  {
+   "ledger_id": 814,
+   "word": "meditate",
+   "strong": "H1897",
+   "lexicon": {
+    "sense_head": "to mutter",
+    "meaning_range": "1) to moan, growl, utter, muse, mutter, meditate, devise, plot, speak; 1a) (Qal); 1a1) to roar, growl, groan; 1a2) to utter, speak; 1a3) to meditate, devise, muse, imagine; 1b) (Poal) to utter; 1c) (Hiphil) to mutter",
+    "lsj": "",
+    "mounce": "",
+    "related": [
+     "H1899 הֶ֫גֶה moaning",
+     "H1900 הָגוּת meditation",
+     "H1901 הָגִיג meditation",
+     "H1902G הִגָּיוֹן Higgaion",
+     "H1902H הִגָּיוֹן meditation"
+    ]
+   },
+   "occurrences": [
+    {
+     "occurrence": 1098636,
+     "reference": "Jos 1:8",
+     "morph": "HVqq2ms",
+     "unit": "meditate",
+     "surface_kind": "own",
+     "negator": false,
+     "party_kind": null,
+     "narrative": null,
+     "verse": "This Book of the Law shall not depart from your mouth, but you shall meditate on it day and night, so that you may be careful to do according to all that is written in it. For then you will make your way prosperous, and then you will have good success."
+    },
+    {
+     "occurrence": 1246989,
+     "reference": "Psa 38:12",
+     "morph": "HVqi3mp",
+     "unit": "meditate",
+     "surface_kind": "own",
+     "negator": false,
+     "party_kind": null,
+     "narrative": null,
+     "verse": "Those who seek my life lay their snares; those who seek my hurt speak of ruin and meditate treachery all day long."
+    },
+    {
+     "occurrence": 1270659,
+     "reference": "Psa 63:6",
+     "morph": "HVqi1cs",
+     "unit": "meditate",
+     "surface_kind": "own",
+     "negator": false,
+     "party_kind": null,
+     "narrative": null,
+     "verse": "when I remember you upon my bed, and meditate on you in the watches of the night;"
+    },
+    {
+     "occurrence": 1267554,
+     "reference": "Psa 143:5",
+     "morph": "HVqp1cs",
+     "unit": "meditate",
+     "surface_kind": "own",
+     "negator": false,
+     "party_kind": null,
+     "narrative": null,
+     "verse": "I remember the days of old; I meditate on all that you have done; I ponder the work of your hands."
+    }
+   ],
+   "older": [
+    {
+     "observation": 12409,
+     "stage": "strand-reading",
+     "kind": "key-statement",
+     "nature": null,
+     "text": "The bed hosts both deliberate plotting and meditation on God.",
+     "verses": [
+      "Ps.36.4",
+      "Mic.2.1",
+      "Ps.63.6"
+     ]
+    },
+    {
+     "observation": 16982,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "nature": null,
+     "text": "12.2 The heart devising and muttering violence — one verb, opposite content: *hāgâ* \"mutter, meditate\" [lexical]: \"The heart of the righteous ponders how to answer, but the mouth of the wicked pours out evil things\" (Pro 15:28); \"for their hearts devise [*mutter*] violence, and their lips talk of trouble\" (Pro 24:2); \"conceiving and uttering from the heart lying words\" (Isa 59:13); \"Your heart will muse on the terror\" (Isa 33:18); \"those who seek my life … meditate treachery all day long\" (Psa 38:12); [Claude reading] The heart's inner murmuring is the same act for the righteous and the violent. Its content (how to answer / violence / lies / terror) decides its moral character. The heart is an organ of rehearsal.; Also: \"who plan evil things in their heart and stir up wars continually\" (Psa 140:2); \"in your hearts you devise wrongs; your hands deal out violence\" (Psa 58:2); \"war was in his heart\" (Psa 55:21).",
+     "verses": [
+      "Prov.15.28",
+      "Prov.24.2",
+      "Isa.59.13",
+      "Isa.33.18",
+      "Ps.38.12",
+      "Ps.140.2",
+      "Ps.58.2",
+      "Ps.55.21"
+     ]
+    }
+   ],
+   "older_answered_under_another_word": [
+    {
+     "observation": 12418,
+     "answered_under": "meditates|H1897"
+    },
+    {
+     "observation": 12425,
+     "answered_under": "meditates|H1897"
+    }
+   ]
+  },
+  {
+   "ledger_id": 815,
+   "word": "meditate",
+   "strong": "H7742",
+   "lexicon": {
+    "sense_head": "to meditate",
+    "meaning_range": "1) (Qal) to meditate, muse, commune, speak, complain; 1a) meaning uncertain",
+    "lsj": "",
+    "mounce": "",
+    "related": [
+     "H4880A מָשׁוֹט oar",
+     "H4880B מִשּׁוֹט oar",
+     "H7751A שׁוּט to rove",
+     "H7751B שׁוּט to row",
+     "H7752 שׁוֹט whip",
+     "H7850 שֹׁטֵט scourge",
+     "H7885 שַׁ֫יִט oar"
+    ]
+   },
+   "occurrences": [
+    {
+     "occurrence": 996626,
+     "reference": "Gen 24:63",
+     "morph": "HVqcc",
+     "unit": "field",
+     "surface_kind": "own",
+     "negator": false,
+     "party_kind": null,
+     "narrative": null,
+     "verse": "And Isaac went out to meditate in the field toward evening. And he lifted up his eyes and saw, and behold, there were camels coming."
+    }
+   ],
+   "older": []
+  },
+  {
+   "ledger_id": 816,
+   "word": "meditate",
+   "strong": "H7878",
+   "lexicon": {
+    "sense_head": "to muse",
+    "meaning_range": "1) to put forth, mediate, muse, commune, speak, complain, ponder, sing; 1a) (Qal); 1a1) to complain; 1a2) to muse, meditate upon, study, ponder; 1a3) to talk, sing, speak; 1b) (Polel) to meditate, consider, put forth thoughts",
+    "lsj": "",
+    "mounce": "",
+    "related": [
+     "H7808 שֵׂחַ thought",
+     "H7879 שִׂיחַ complaint",
+     "H7881 שִׂיחָה meditation"
+    ]
+   },
+   "occurrences": [
+    {
+     "occurrence": 1263232,
+     "reference": "Psa 77:3",
+     "morph": "HVqc1cs",
+     "unit": "meditate",
+     "surface_kind": "own",
+     "negator": false,
+     "party_kind": null,
+     "narrative": null,
+     "verse": "When I remember God, I moan; when I meditate, my spirit faints. Selah"
+    },
+    {
+     "occurrence": 1263242,
+     "reference": "Psa 77:6",
+     "morph": "HVqc1cs",
+     "unit": "meditate",
+     "surface_kind": "own",
+     "negator": false,
+     "party_kind": null,
+     "narrative": null,
+     "verse": "I said, “Let me remember my song in the night; let me meditate in my heart.” Then my spirit made a diligent search:"
+    },
+    {
+     "occurrence": 1267517,
+     "reference": "Psa 77:12",
+     "morph": "HVqc1cs",
+     "unit": "meditate",
+     "surface_kind": "own",
+     "negator": false,
+     "party_kind": null,
+     "narrative": null,
+     "verse": "I will ponder all your work, and meditate on your mighty deeds."
+    },
+    {
+     "occurrence": 1267534,
+     "reference": "Psa 119:15",
+     "morph": "HVqc1cs",
+     "unit": "meditate",
+     "surface_kind": "own",
+     "negator": false,
+     "party_kind": null,
+     "narrative": null,
+     "verse": "I will meditate on your precepts and fix my eyes on your ways."
+    },
+    {
+     "occurrence": 1251807,
+     "reference": "Psa 119:23",
+     "morph": "HVqi3ms",
+     "unit": "meditate",
+     "surface_kind": "own",
+     "negator": false,
+     "party_kind": null,
+     "narrative": null,
+     "verse": "Even though princes sit plotting against me, your servant will meditate on your statutes."
+    },
+    {
+     "occurrence": 1266382,
+     "reference": "Psa 119:27",
+     "morph": "HVqc1cs",
+     "unit": "meditate",
+     "surface_kind": "own",
+     "negator": false,
+     "party_kind": null,
+     "narrative": null,
+     "verse": "Make me understand the way of your precepts, and I will meditate on your wondrous works."
+    },
+    {
+     "occurrence": 1265205,
+     "reference": "Psa 119:48",
+     "morph": "HVqc1cs",
+     "unit": "meditate",
+     "surface_kind": "own",
+     "negator": false,
+     "party_kind": null,
+     "narrative": null,
+     "verse": "I will lift up my hands toward your commandments, which I love, and I will meditate on your statutes."
+    },
+    {
+     "occurrence": 1263698,
+     "reference": "Psa 119:78",
+     "morph": "HVqi1cs",
+     "unit": "meditate",
+     "surface_kind": "own",
+     "negator": false,
+     "party_kind": null,
+     "narrative": null,
+     "verse": "Let the insolent be put to shame, because they have wronged me with falsehood; as for me, I will meditate on your precepts."
+    },
+    {
+     "occurrence": 1267546,
+     "reference": "Psa 119:148",
+     "morph": "HVqcc",
+     "unit": "meditate",
+     "surface_kind": "own",
+     "negator": false,
+     "party_kind": null,
+     "narrative": null,
+     "verse": "My eyes are awake before the watches of the night, that I may meditate on your promise."
+    },
+    {
+     "occurrence": 1265917,
+     "reference": "Psa 145:5",
+     "morph": "HVqc1cs",
+     "unit": "meditate",
+     "surface_kind": "own",
+     "negator": false,
+     "party_kind": null,
+     "narrative": null,
+     "verse": "On the glorious splendor of your majesty, and on your wondrous works, I will meditate."
+    }
+   ],
+   "older": [
+    {
+     "observation": 15122,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "nature": null,
+     "text": "Psalm 119 gives one person's whole experience of the insolent: \"The insolent utterly deride me, but I do not turn away from your law\" (119:51); \"The insolent smear me with lies, but with my whole heart I keep your precepts; their heart is unfeeling like fat\" (119:69–70); \"they have wronged me with falsehood; as for me, I will meditate on your precepts\" (119:78); \"The insolent have dug pitfalls for me; they do not live according to your law\" (119:85); \"let not the insolent oppress me\" (119:122); The insolent wander from the commandments (119:21). Against them each time, the speaker holds the law, meditates, and asks for a pledge.",
+     "verses": [
+      "Ps.119.51",
+      "Ps.119.69",
+      "Ps.119.70",
+      "Ps.119.78",
+      "Ps.119.122",
+      "Ps.119.21"
+     ]
+    },
+    {
+     "observation": 15920,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "nature": null,
+     "text": "Fainting across every component: heart: \"the whole heart faint\" // \"the whole head is sick\" (Isa 1:5); Lam 1:22; Psa 61:2; spirit [H]: Psa 142:3; 143:4; \"When I remember God, I moan; when I meditate, my spirit faints\" (Psa 77:3); soul: \"hungry and thirsty, their soul fainted within them\" (Psa 107:5); flesh: \"my flesh faints for you\" (Psa 63:1); life: \"When my life was fainting away, I remembered the Lord, and my prayer came to you\" (Jon 2:7) — fainting turns into remembering and prayer; Revisit 2026-09-28: In the same book, Jonah \"was faint\" under the east wind and asked to die (Jon 4:8). Fainting in ch. 2 turns to prayer; fainting in ch. 4 turns to a death-wish (Batch G §6).; For spirit-fainting in meditation (Psa 77:3), memory works either way: it deepens the fainting (Psa 77) or turns it (Psa 42:6). See Batch F §9.4.; bosom: \"their life is poured out on their mothers' bosom\" (Lam 2:12)",
+     "verses": [
+      "Isa.1.5",
+      "Lam.1.22",
+      "Ps.61.2",
+      "Ps.142.3",
+      "Ps.143.4",
+      "Ps.77.3",
+      "Ps.107.5",
+      "Ps.63.1",
+      "Jonah.2.7",
+      "Jonah.4.8",
+      "Lam.2.12"
+     ]
+    },
+    {
+     "observation": 15954,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "nature": null,
+     "text": "Inner inquiry in sequence: \"let me meditate in my heart.' Then my spirit made a diligent search\" (Psa 77:6). The heart meditates, then the spirit searches.",
+     "verses": [
+      "Ps.77.6"
+     ]
+    },
+    {
+     "observation": 16012,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "nature": null,
+     "text": "Remembering and the spirit: \"When I remember God, I moan; when I meditate, my spirit faints\" (Psa 77:3); \"Let me remember my song … meditate in my heart. Then my spirit made a diligent search\" (Psa 77:6) [H].",
+     "verses": [
+      "Ps.77.3",
+      "Ps.77.6"
+     ]
+    },
+    {
+     "observation": 17569,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "nature": null,
+     "text": "Psa 119:24. *\"Your testimonies are my delight; they are my counselors.\"* The verse before reads: *\"Even though princes sit plotting against me, your servant will meditate on your statutes\"* (119:23).",
+     "verses": [
+      "Ps.119.24",
+      "Ps.119.23"
+     ]
+    }
+   ]
+  },
+  {
+   "ledger_id": 817,
+   "word": "meditation",
+   "strong": "H1900",
+   "lexicon": {
+    "sense_head": "meditation",
+    "meaning_range": "meditation, utterance, musing",
+    "lsj": "",
+    "mounce": "",
+    "related": [
+     "H1897 הָגָה to mutter",
+     "H1899 הֶ֫גֶה moaning",
+     "H1902G הִגָּיוֹן Higgaion",
+     "H1902H הִגָּיוֹן meditation"
+    ]
+   },
+   "occurrences": [
+    {
+     "occurrence": 1251540,
+     "reference": "Psa 49:3",
+     "morph": "HNcfsc",
+     "unit": "meditation",
+     "surface_kind": "own",
+     "negator": false,
+     "party_kind": null,
+     "narrative": null,
+     "verse": "My mouth shall speak wisdom; the meditation of my heart shall be understanding."
+    }
+   ],
+   "older": [
+    {
+     "observation": 16254,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "nature": null,
+     "text": "Heart and speech in step: \"My mouth shall speak wisdom; the meditation of my heart shall be understanding\" (Psa 49:3); \"My heart became hot within me. As I mused, the fire burned; then I spoke with my tongue\" (Psa 39:3); \"there is in my heart as it were a burning fire … I am weary with holding it in\" (Jer 20:9)",
+     "verses": [
+      "Ps.49.3",
+      "Ps.39.3",
+      "Jer.20.9"
+     ]
+    },
+    {
+     "observation": 17236,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "nature": null,
+     "text": "d. Thinking, planning, understanding, remembering: *Plans and devising:* Pro 16:1, 9; 19:21; 6:14, 18; 24:2; 12:20; Psa 140:2; 58:2; Zec 7:10; 8:17; Isa 10:7; Act 5:4; Eze 38:10.; *Understanding and knowing:*; \"a heart to understand\" (Deu 29:4); \"understanding mind\" (1Ki 3:9); \"understand with their hearts\" (Isa 6:10; Mat 13:15; Joh 12:40; Act 28:27); \"an intelligent heart acquires knowledge\" (Pro 18:15); \"the heart of the hasty will understand\" (Isa 32:4); *Remembering and \"laying to heart\":*; Isa 47:7; 57:1, 11; 42:25; Mal 2:2; Jer 12:11; Ecc 7:2; 9:1; Deu 4:39; 32:46; 1Sa 21:12; \"call to mind\" (Lam 3:21; Deu 30:1); \"come into mind\" (Jer 3:16; 7:31; 19:5; 32:35; 44:21; 51:50; Isa 65:17); Haggai's repeated \"Consider your ways\" is literally *set your heart* (Hag 1:5, 7; 2:15, 18) [lexical].; *Searching and investigating:* \"I applied my heart to seek and to search out\" (Ecc 1:13, 17; 7:25; 8:9, 16); \"great searchings of heart\" (Judg 5:15–16).; *Pondering and treasuring:* Mary \"treasured up all these things, pondering them in her heart\" (Luk 2:19, 51); \"ponder in your own hearts on your beds\" (Psa 4:4); \"the meditation of my heart\" (Psa 19:14; 49:3).; *Questioning and reasoning:* Mar 2:6, 8; Luk 3:15; 5:22; 9:47; 24:38.",
+     "verses": [
+      "Prov.16.9",
+      "Prov.19.21",
+      "Prov.6.18",
+      "Deut.29.4",
+      "1Kgs.3.9",
+      "Isa.6.10",
+      "Matt.13.15",
+      "John.12.40",
+      "Acts.28.27",
+      "Prov.18.15",
+      "Isa.32.4",
+      "Lam.3.21",
+      "Deut.30.1",
+      "Jer.3.16",
+      "Jer.7.31",
+      "Jer.19.5",
+      "Jer.32.35",
+      "Jer.44.21",
+      "Jer.51.50",
+      "Isa.65.17",
+      "Hag.1.5",
+      "Hag.1.7",
+      "Hag.2.15",
+      "Hag.2.18",
+      "Eccl.1.13",
+      "Eccl.1.17",
+      "Eccl.7.25",
+      "Eccl.8.9",
+      "Eccl.8.16",
+      "Judg.5.15",
+      "Judg.5.16",
+      "Luke.2.19",
+      "Luke.2.51",
+      "Ps.4.4",
+      "Ps.19.14",
+      "Ps.49.3",
+      "Mark.2.6",
+      "Luke.3.15",
+      "Luke.9.47"
+     ]
+    }
+   ]
+  },
+  {
+   "ledger_id": 818,
+   "word": "meditation",
+   "strong": "H1902H",
+   "lexicon": {
+    "sense_head": "meditation",
+    "meaning_range": "1) meditation, resounding music, musing; 1a) resounding music; 1b) meditation, plotting",
+    "lsj": "",
+    "mounce": "",
+    "related": [
+     "H1897 הָגָה to mutter",
+     "H1899 הֶ֫גֶה moaning",
+     "H1900 הָגוּת meditation",
+     "H1902G הִגָּיוֹן Higgaion"
+    ]
+   },
+   "occurrences": [
+    {
+     "occurrence": 1264774,
+     "reference": "Psa 19:14",
+     "morph": "HNcmsc",
+     "unit": "meditation",
+     "surface_kind": "own",
+     "negator": false,
+     "party_kind": null,
+     "narrative": null,
+     "verse": "Let the words of my mouth and the meditation of my heart be acceptable in your sight, O Lord, my rock and my redeemer."
+    }
+   ],
+   "older": [
+    {
+     "observation": 18986,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "nature": null,
+     "text": "The passage. The verse before is *\"Who can discern his errors? Declare me innocent from hidden faults\"* (19:12). The verse after is *\"Let the words of my mouth and the meditation of my heart be acceptable in your sight\"* (19:14).",
+     "verses": [
+      "Ps.19.12",
+      "Ps.19.14"
+     ]
+    },
+    {
+     "observation": 20463,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "nature": null,
+     "text": "meditate / meditation / muse | H1897 *hāgāh*, H7878 *śîaḥ*, H1902 *higgāyôn* | Ps 19:14 | Thought as inner murmuring",
+     "verses": [
+      "Ps.19.14"
+     ]
+    }
+   ],
+   "older_answered_under_another_word": [
+    {
+     "observation": 17236,
+     "answered_under": "meditation|H1900"
+    }
+   ]
+  },
+  {
+   "ledger_id": 819,
+   "word": "meditation",
+   "strong": "H7879",
+   "lexicon": {
+    "sense_head": "complaint",
+    "meaning_range": "1) meditation, complaint, musing; 1a) plaint, complaint; 1b) following are uncertain; 1b1) musing; 1b2) anxiety, trouble; 1b3) talk",
+    "lsj": "",
+    "mounce": "",
+    "related": [
+     "H7808 שֵׂחַ thought",
+     "H7878 שִׂיחַ to muse",
+     "H7881 שִׂיחָה meditation"
+    ]
+   },
+   "occurrences": [
+    {
+     "occurrence": 1264935,
+     "reference": "Psa 104:34",
+     "morph": "HNcmsc",
+     "unit": "meditation",
+     "surface_kind": "shared",
+     "negator": false,
+     "party_kind": null,
+     "narrative": null,
+     "verse": "May my meditation be pleasing to him, for I rejoice in the Lord."
+    }
+   ],
+   "older": []
+  },
+  {
+   "ledger_id": 820,
+   "word": "meditation",
+   "strong": "H7881",
+   "lexicon": {
+    "sense_head": "meditation",
+    "meaning_range": "1) meditation, reflection, prayer, devotion, complaint, musing; 1a) complaint; 1b) musing, study (of object)",
+    "lsj": "",
+    "mounce": "",
+    "related": [
+     "H7808 שֵׂחַ thought",
+     "H7878 שִׂיחַ to muse",
+     "H7879 שִׂיחַ complaint"
+    ]
+   },
+   "occurrences": [
+    {
+     "occurrence": 1237518,
+     "reference": "Job 15:4",
+     "morph": "HNcfsa",
+     "unit": "meditation",
+     "surface_kind": "own",
+     "negator": false,
+     "party_kind": null,
+     "narrative": null,
+     "verse": "But you are doing away with the fear of God and hindering meditation before God."
+    },
+    {
+     "occurrence": 1265213,
+     "reference": "Psa 119:97",
+     "morph": "HNcfsc",
+     "unit": "meditation",
+     "surface_kind": "own",
+     "negator": false,
+     "party_kind": null,
+     "narrative": null,
+     "verse": "Mem Oh how I love your law! It is my meditation all the day."
+    },
+    {
+     "occurrence": 1270969,
+     "reference": "Psa 119:99",
+     "morph": "HNcfsa",
+     "unit": "meditation",
+     "surface_kind": "own",
+     "negator": false,
+     "party_kind": null,
+     "narrative": null,
+     "verse": "I have more understanding than all my teachers, for your testimonies are my meditation."
+    }
+   ],
+   "older": [
+    {
+     "observation": 19578,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "nature": null,
+     "text": "Led to: In Eliphaz's account: *\"you are doing away with the fear of God and hindering meditation before God\"* (v4); *\"your iniquity teaches your mouth\"* (v5).",
+     "verses": [
+      "Job.15.4",
+      "Job.15.5"
+     ]
+    },
+    {
+     "observation": 20304,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "nature": null,
+     "text": "Job 15:5 — Eliphaz: \"your iniquity teaches your mouth, and you choose the tongue of the crafty\": Eliphaz weighs Job by his words. He opens with *\"Should a wise man answer with windy knowledge\"* (v2), and charges *\"you are doing away with the fear of God and hindering meditation before God\"* (v4). Then he names the choice: *\"For your iniquity teaches your mouth, and you choose the tongue of the crafty\"* (v5). He reads it this way: something inside, iniquity, teaches the mouth; the mouth then chooses a crafty tongue; From that he gives the verdict: *\"Your own mouth condemns you, and not I; your own lips testify against you\"* (v6).; He takes his evaluation further inside. He moves from the mouth to the heart, eyes and spirit: *\"Why does your heart carry you away, and why do your eyes flash, that you turn your spirit against God and bring such words out of your mouth?\"* (v12–13). For Eliphaz, the words show what the heart has chosen.; His grounds for judging are age and tradition: *\"Both the gray-haired and the aged are among us, older than your father\"* (v10); *\"what wise men have told, without hiding it from their fathers\"* (v18); His picture of the outcome is the wicked man's end (v20–35).; Set against the book's frame, his charge *\"you are doing away with the fear of God\"* (v4) runs against the narrator's and the Lord's *\"one who feared God\"* (1:1, 8). The Lord's verdict in 42:7 is on how Eliphaz spoke of God, not directly on this charge. Still, the man Eliphaz says has chosen the tongue of the crafty is the one the Lord twice calls *\"my servant Job\"* (42:7–8).",
+     "verses": [
+      "Job.15.2",
+      "Job.15.4",
+      "Job.15.5",
+      "Job.15.6",
+      "Job.15.12",
+      "Job.15.13",
+      "Job.15.10",
+      "Job.15.18",
+      "Job.15.20",
+      "Job.1.1",
+      "Job.1.8",
+      "Job.42.8"
+     ]
+    }
+   ]
+  },
+  {
+   "ledger_id": 821,
+   "word": "musing",
+   "strong": "H7879",
+   "lexicon": {
+    "sense_head": "complaint",
+    "meaning_range": "1) meditation, complaint, musing; 1a) plaint, complaint; 1b) following are uncertain; 1b1) musing; 1b2) anxiety, trouble; 1b3) talk",
+    "lsj": "",
+    "mounce": "",
+    "related": [
+     "H7808 שֵׂחַ thought",
+     "H7878 שִׂיחַ to muse",
+     "H7881 שִׂיחָה meditation"
+    ]
+   },
+   "occurrences": [
+    {
+     "occurrence": 1158768,
+     "reference": "1Ki 18:27",
+     "morph": "HNcmsa",
+     "unit": "musing",
+     "surface_kind": "own",
+     "negator": false,
+     "party_kind": null,
+     "narrative": null,
+     "verse": "And at noon Elijah mocked them, saying, “ Cry aloud, for he is a god. Either he is musing, or he is relieving himself, or he is on a journey, or perhaps he is asleep and must be awakened.”"
+    }
+   ],
+   "older": []
+  },
+  {
+   "ledger_id": 822,
+   "word": "pondering",
+   "strong": "G1760",
+   "lexicon": {
+    "sense_head": "to reflect on",
+    "meaning_range": "to think, ponder, reflect; <b>to revolve thoroughly in the mind, consider carefully, ponder, reflect,</b> <ref='Act.10.19'>Acts 10:19</ref>*",
+    "lsj": "<b> ἐνθῡμ-έομαι</b>, <br /> <i>future</i> <b>-ήσομαι</b>[<a href=\"javascript:void(0)\" title=\" 5th c.BC: Lysias Orator 12.45\">Refs 5th c.BC+</a>], later <b>-ηθήσομαι</b> [<a href=\"javascript:void(0)\" title=\"2nd-3rd c.AD: Philostratus Sophista “Vitae Sophistarum” 2.26.3, 1st-2nd c.AD: Epictetus Philosophus “Enchiridion” 21, etc.\">Refs 1st c.AD+</a>]: <i>aorist</i> ἐνεθυμήθην [<a href=\"javascript:void(0)\" title=\" 5th-6th c.BC: Aristophanes Comicus “Ranae” 40, 5th c.BC: Thucydides Historicus 2.62, 5th c.BC: Lysias Orator 31.27, etc.\">Refs 5th c.BC+</a>]: <i>perfect</i> ἐντεθύμημαι [<a href=\"javascript:void(0)\" title=\" 5th c.BC: Thucydides Historicus 1.120 \">Refs 5th c.BC+</a>]: <i>pluperfect</i>",
+    "mounce": "to think, ponder, reflect",
+    "related": [
+     "G1722 ἐν in/on/among",
+     "G1761 ἐνθύμησις reflection",
+     "G2372 θυμός wrath"
+    ]
+   },
+   "occurrences": [
+    {
+     "occurrence": 1464018,
+     "reference": "Act 10:19",
+     "morph": "V-PNP-GSM",
+     "unit": "pondering",
+     "surface_kind": "own",
+     "negator": false,
+     "party_kind": null,
+     "narrative": null,
+     "verse": "And while Peter was pondering the vision, the Spirit said to him, “ Behold, three men are looking for you."
+    }
+   ],
+   "older": [
+    {
+     "observation": 4733,
+     "stage": "verse-reading",
+     "kind": "no-impact",
+     "nature": null,
+     "text": "In Acts.10.19 enthymeomai is used in its plain base sense 'ponder/consider carefully,' matching the tree's sole NT occurrence gloss with no additional divergence noted (this is its only NT occurrence, so no comparative pattern across multiple occurrences exists).",
+     "verses": [
+      "Acts.10.19"
+     ]
+    }
+   ]
+  },
+  {
+   "ledger_id": 823,
+   "word": "pondering",
+   "strong": "G4820",
+   "lexicon": {
+    "sense_head": "to ponder/confer",
+    "meaning_range": "to dispute with; to confer with, meet with; to ponder; to engage in (war); (<i>middle</i>) to help, assist; <i>primarily</i> <b>to throw together;</b> <i>absolute</i> <b>to meet and join,</b> <ref='Act.20.14'>Acts 20:14;</ref> <b>to meet</b> in war, <b>to encounter, engage with,</b> <ref='Luk.14.31'>Lk. 14:31</ref>; <b>to encounter</b> in discourse or dispute, <ref='Act.17.18'>Acts 17:18;</ref> <b>to consult together,</b> <ref='Act.4.15'>Acts 4:15;</ref> <i>middle</i> <b>to contribute, be of service to, to aid,</b> <ref='Act.18.27'>Acts 18:27;</ref> <greek>συμβάλλειν ἐν τῇ καρδιᾳ</greek>, <b>to revolve in mind, ponder upon,</b> <ref='Luk.2.19'>Lk. 2:19</ref>*",
+    "lsj": "<b> συμβάλλω</b>, <br /> <i>future</i> -βᾰλῶ: <i>aorist</i> -έβᾰλον, <i>infinitive</i> -βᾰλεῖν: <i>perfect</i> -βέβληκα: <i>aorist 1</i> <i>passive</i> -εβλήθην:—of these tenses [<a href=\"javascript:void(0)\" title=\" 8th c.BC: Homerus Epicus uses only \">Refs 8th c.BC+</a>]<i>present</i> <i>active</i>, <i>aorist</i> <i>active</i> and <i>middle</i>, but most commonly <i>Epic dialect</i> <i>intransitive</i> <i>aorist</i> forms συμβλήτην, -βλήμεναι, <i>middle</i> σύμβλητο, -βληντο, -βλήμενος, <i>subjunctive</i> <i>2nd pers.</i> <i>singular</i> -βλήεαι probably conjecture for -βλήσεαι in [<a href=\"javascript:void(0)\" title=\" 8th c.BC: Ilias Homerus Epicus “Illiad” 20.335 \">Refs 8th c.BC+</a>], <i>",
+    "mounce": "to dispute with; to confer with, meet with; to ponder; to engage in (war); (<i>middle</i>) to help, assist",
+    "related": [
+     "G0306 ἀναβάλλω to defer",
+     "G0474 ἀντιβάλλω to discuss",
+     "G0577 ἀποβάλλω to throw away",
+     "G0641 ἀπορρίπτω to throw off",
+     "G0906G βάλλω to throw: throw",
+     "G0906H βάλλω to throw: put",
+     "G0906I βάλλω to throw: sow",
+     "G0906J βάλλω to throw: pour",
+     "G0906K βάλλω to throw: hit",
+     "G1225 διαβάλλω to accuse",
+     "G1544 ἐκβάλλω to expel",
+     "G1685 ἐμβάλλω to throw in"
+    ]
+   },
+   "occurrences": [
+    {
+     "occurrence": 1442875,
+     "reference": "Luk 2:19",
+     "morph": "V-PAP-NSF",
+     "unit": "pondering",
+     "surface_kind": "own",
+     "negator": false,
+     "party_kind": null,
+     "narrative": null,
+     "verse": "But Mary treasured up all these things, pondering them in her heart."
+    }
+   ],
+   "older": []
+  },
+  {
+   "ledger_id": 824,
+   "word": "ponders",
+   "strong": "H1897",
+   "lexicon": {
+    "sense_head": "to mutter",
+    "meaning_range": "1) to moan, growl, utter, muse, mutter, meditate, devise, plot, speak; 1a) (Qal); 1a1) to roar, growl, groan; 1a2) to utter, speak; 1a3) to meditate, devise, muse, imagine; 1b) (Poal) to utter; 1c) (Hiphil) to mutter",
+    "lsj": "",
+    "mounce": "",
+    "related": [
+     "H1899 הֶ֫גֶה moaning",
+     "H1900 הָגוּת meditation",
+     "H1901 הָגִיג meditation",
+     "H1902G הִגָּיוֹן Higgaion",
+     "H1902H הִגָּיוֹן meditation"
+    ]
+   },
+   "occurrences": [
+    {
+     "occurrence": 1277997,
+     "reference": "Pro 15:28",
+     "morph": "HVqi3ms",
+     "unit": "ponders",
+     "surface_kind": "own",
+     "negator": false,
+     "party_kind": null,
+     "narrative": null,
+     "verse": "The heart of the righteous ponders how to answer, but the mouth of the wicked pours out evil things."
+    }
+   ],
+   "older": [
+    {
+     "observation": 12426,
+     "stage": "strand-reading",
+     "kind": "key-statement",
+     "nature": null,
+     "text": "Thinking before speaking: \"The heart of the righteous ponders how to answer, but the mouth of the wicked pours out\"",
+     "verses": [
+      "Prov.15.28"
+     ]
+    },
+    {
+     "observation": 15997,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "nature": null,
+     "text": "Revisit 2026-09-28: \"uttering from the heart lying words\" (Isa 59:13) uses *hāgâ* \"mutter\". The same verb gives \"the heart of the righteous ponders how to answer\" (Pro 15:28) and \"their hearts devise violence\" (Pro 24:2). The heart is an organ of rehearsal, and its content decides its moral character (Batch F §12.2).",
+     "verses": [
+      "Isa.59.13",
+      "Prov.15.28",
+      "Prov.24.2"
+     ]
+    },
+    {
+     "observation": 16531,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "nature": null,
+     "text": "1.8 ◆ Fringe: \"because the way is long … the avenger of blood in hot anger [*his heart is hot*]\" (Deu 19:6) — a heated heart; \"being put to death in the flesh but made alive in the spirit\" (1Pe 3:18) [U]; \"Naaman … his flesh was restored like the flesh of a little child, and he was clean\" (2Ki 5:14) — flesh renewed with ritual cleanness; \"The heart of the righteous ponders how to answer, but the mouth of the wicked pours out evil\" (Pro 15:28) — heart before mouth",
+     "verses": [
+      "Deut.19.6",
+      "1Pet.3.18",
+      "2Kgs.5.14",
+      "Prov.15.28"
+     ]
+    }
+   ],
+   "older_answered_under_another_word": [
+    {
+     "observation": 16982,
+     "answered_under": "meditate|H1897"
+    }
+   ]
+  }
+ ],
+ "answer": {
+  "command": "ReadWords",
+  "collection": "thought",
+  "subgroup": "meditating and pondering",
+  "rows": [
+   {
+    "ledger_id": 813,
+    "word": "meditates|H1897",
+    "readings": [
+     {
+      "kind": "term | face",
+      "obs_text": "",
+      "basis": "stated | read",
+      "grounds": "",
+      "occurrences": []
+     }
+    ],
+    "older": [
+     {
+      "observation": 12418,
+      "action": "keep | restate | merge | consume | delete_neither | defer | carry",
+      "reason": ""
+     },
+     {
+      "observation": 12425,
+      "action": "keep | restate | merge | consume | delete_neither | defer | carry",
+      "reason": ""
+     },
+     {
+      "observation": 17568,
+      "action": "keep | restate | merge | consume | delete_neither | defer | carry",
+      "reason": ""
+     }
+    ]
+   },
+   {
+    "ledger_id": 814,
+    "word": "meditate|H1897",
+    "readings": [
+     {
+      "kind": "term | face",
+      "obs_text": "",
+      "basis": "stated | read",
+      "grounds": "",
+      "occurrences": []
+     }
+    ],
+    "older": [
+     {
+      "observation": 12409,
+      "action": "keep | restate | merge | consume | delete_neither | defer | carry",
+      "reason": ""
+     },
+     {
+      "observation": 16982,
+      "action": "keep | restate | merge | consume | delete_neither | defer | carry",
+      "reason": ""
+     }
+    ]
+   },
+   {
+    "ledger_id": 815,
+    "word": "meditate|H7742",
+    "readings": [
+     {
+      "kind": "term | face",
+      "obs_text": "",
+      "basis": "stated | read",
+      "grounds": "",
+      "occurrences": []
+     }
+    ],
+    "older": []
+   },
+   {
+    "ledger_id": 816,
+    "word": "meditate|H7878",
+    "readings": [
+     {
+      "kind": "term | face",
+      "obs_text": "",
+      "basis": "stated | read",
+      "grounds": "",
+      "occurrences": []
+     }
+    ],
+    "older": [
+     {
+      "observation": 15122,
+      "action": "keep | restate | merge | consume | delete_neither | defer | carry",
+      "reason": ""
+     },
+     {
+      "observation": 15920,
+      "action": "keep | restate | merge | consume | delete_neither | defer | carry",
+      "reason": ""
+     },
+     {
+      "observation": 15954,
+      "action": "keep | restate | merge | consume | delete_neither | defer | carry",
+      "reason": ""
+     },
+     {
+      "observation": 16012,
+      "action": "keep | restate | merge | consume | delete_neither | defer | carry",
+      "reason": ""
+     },
+     {
+      "observation": 17569,
+      "action": "keep | restate | merge | consume | delete_neither | defer | carry",
+      "reason": ""
+     }
+    ]
+   },
+   {
+    "ledger_id": 817,
+    "word": "meditation|H1900",
+    "readings": [
+     {
+      "kind": "term | face",
+      "obs_text": "",
+      "basis": "stated | read",
+      "grounds": "",
+      "occurrences": []
+     }
+    ],
+    "older": [
+     {
+      "observation": 16254,
+      "action": "keep | restate | merge | consume | delete_neither | defer | carry",
+      "reason": ""
+     },
+     {
+      "observation": 17236,
+      "action": "keep | restate | merge | consume | delete_neither | defer | carry",
+      "reason": ""
+     }
+    ]
+   },
+   {
+    "ledger_id": 818,
+    "word": "meditation|H1902H",
+    "readings": [
+     {
+      "kind": "term | face",
+      "obs_text": "",
+      "basis": "stated | read",
+      "grounds": "",
+      "occurrences": []
+     }
+    ],
+    "older": [
+     {
+      "observation": 18986,
+      "action": "keep | restate | merge | consume | delete_neither | defer | carry",
+      "reason": ""
+     },
+     {
+      "observation": 20463,
+      "action": "keep | restate | merge | consume | delete_neither | defer | carry",
+      "reason": ""
+     }
+    ]
+   },
+   {
+    "ledger_id": 819,
+    "word": "meditation|H7879",
+    "readings": [
+     {
+      "kind": "term | face",
+      "obs_text": "",
+      "basis": "stated | read",
+      "grounds": "",
+      "occurrences": []
+     }
+    ],
+    "older": []
+   },
+   {
+    "ledger_id": 820,
+    "word": "meditation|H7881",
+    "readings": [
+     {
+      "kind": "term | face",
+      "obs_text": "",
+      "basis": "stated | read",
+      "grounds": "",
+      "occurrences": []
+     }
+    ],
+    "older": [
+     {
+      "observation": 19578,
+      "action": "keep | restate | merge | consume | delete_neither | defer | carry",
+      "reason": ""
+     },
+     {
+      "observation": 20304,
+      "action": "keep | restate | merge | consume | delete_neither | defer | carry",
+      "reason": ""
+     }
+    ]
+   },
+   {
+    "ledger_id": 821,
+    "word": "musing|H7879",
+    "readings": [
+     {
+      "kind": "term | face",
+      "obs_text": "",
+      "basis": "stated | read",
+      "grounds": "",
+      "occurrences": []
+     }
+    ],
+    "older": []
+   },
+   {
+    "ledger_id": 822,
+    "word": "pondering|G1760",
+    "readings": [
+     {
+      "kind": "term | face",
+      "obs_text": "",
+      "basis": "stated | read",
+      "grounds": "",
+      "occurrences": []
+     }
+    ],
+    "older": [
+     {
+      "observation": 4733,
+      "action": "keep | restate | merge | consume | delete_neither | defer | carry",
+      "reason": ""
+     }
+    ]
+   },
+   {
+    "ledger_id": 823,
+    "word": "pondering|G4820",
+    "readings": [
+     {
+      "kind": "term | face",
+      "obs_text": "",
+      "basis": "stated | read",
+      "grounds": "",
+      "occurrences": []
+     }
+    ],
+    "older": []
+   },
+   {
+    "ledger_id": 824,
+    "word": "ponders|H1897",
+    "readings": [
+     {
+      "kind": "term | face",
+      "obs_text": "",
+      "basis": "stated | read",
+      "grounds": "",
+      "occurrences": []
+     }
+    ],
+    "older": [
+     {
+      "observation": 12426,
+      "action": "keep | restate | merge | consume | delete_neither | defer | carry",
+      "reason": ""
+     },
+     {
+      "observation": 15997,
+      "action": "keep | restate | merge | consume | delete_neither | defer | carry",
+      "reason": ""
+     },
+     {
+      "observation": 16531,
+      "action": "keep | restate | merge | consume | delete_neither | defer | carry",
+      "reason": ""
+     }
+    ]
+   }
+  ]
+ },
+ "measured": {
+  "package_chars": 43334,
+  "seconds": 0.16
+ }
+}

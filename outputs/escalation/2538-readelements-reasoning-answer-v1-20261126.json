@@ -1,0 +1,642 @@
+{
+ "command": "ReadElements",
+ "collection": "thought",
+ "subgroup": "reasoning",
+ "ledger_id": 1294,
+ "findings": [
+  {
+   "key": "speech",
+   "kind": "statement",
+   "text": "In Act 17:2, Act 17:17, Act 18:4, Act 18:19, Act 19:8, Act 19:9 and Act 24:25 reasoning is an operation of speech: one person argues a matter with hearers, from the Scriptures and with persuading beside it, in the synagogue, the market and the hall; it is done, and done again over Sabbaths, days and months.",
+   "basis": "read",
+   "parts": {
+    "item": "operation",
+    "grounds": "reasoned with them from the Scriptures",
+    "mode": "done"
+   },
+   "nodes": [
+    {
+     "occurrence": 1472385,
+     "role": "characteristic"
+    },
+    {
+     "occurrence": 1469987,
+     "role": "characteristic"
+    },
+    {
+     "occurrence": 1472390,
+     "role": "characteristic"
+    },
+    {
+     "occurrence": 1472413,
+     "role": "characteristic"
+    },
+    {
+     "occurrence": 1461836,
+     "role": "characteristic"
+    },
+    {
+     "occurrence": 1468173,
+     "role": "characteristic"
+    },
+    {
+     "occurrence": 1465369,
+     "role": "characteristic"
+    },
+    {
+     "traced": 22861
+    },
+    {
+     "traced": 22913
+    },
+    {
+     "traced": 22963
+    },
+    {
+     "traced": 22952
+    },
+    {
+     "traced": 22923
+    },
+    {
+     "traced": 22937
+    }
+   ],
+   "read_back": []
+  },
+  {
+   "key": "speech-object",
+   "kind": "statement",
+   "text": "What the spoken reasoning is directed at, where the verses give it: the Scriptures in Act 17:2, the kingdom of God in Act 19:8, and righteousness, self-control and the judgment to come in Act 24:25.",
+   "basis": "read",
+   "parts": {
+    "item": "object",
+    "grounds": "reasoned about righteousness"
+   },
+   "nodes": [
+    {
+     "occurrence": 1472385,
+     "role": "characteristic"
+    },
+    {
+     "occurrence": 1461836,
+     "role": "characteristic"
+    },
+    {
+     "occurrence": 1465369,
+     "role": "characteristic"
+    },
+    {
+     "traced": 22861
+    },
+    {
+     "traced": 23014
+    },
+    {
+     "traced": 23018
+    },
+    {
+     "traced": 23027
+    },
+    {
+     "traced": 22934
+    }
+   ],
+   "read_back": []
+  },
+  {
+   "key": "felix",
+   "kind": "link",
+   "text": "In Act 24:25 the reasoning about righteousness, self-control and judgment is followed by the hearer's alarm and by his putting it off: Felix sends Paul away for the present and will call him later.",
+   "basis": "read",
+   "parts": {
+    "item": "chain",
+    "grounds": "Felix was alarmed"
+   },
+   "nodes": [
+    {
+     "occurrence": 1465369,
+     "role": "characteristic"
+    },
+    {
+     "traced": 22861
+    },
+    {
+     "traced": 22981
+    },
+    {
+     "traced": 23004
+    },
+    {
+     "traced": 22967
+    }
+   ],
+   "read_back": []
+  },
+  {
+   "key": "hardening",
+   "kind": "link",
+   "text": "In Act 19:9 the hearers' hardening, their unbelief and their speaking evil of the Way come before the reasoning moves: Paul withdraws, takes the disciples with him, and reasons daily in the hall of Tyrannus.",
+   "basis": "read",
+   "parts": {
+    "item": "chain",
+    "grounds": "some became stubborn"
+   },
+   "nodes": [
+    {
+     "occurrence": 1468173,
+     "role": "characteristic"
+    },
+    {
+     "traced": 22861
+    },
+    {
+     "traced": 23026
+    },
+    {
+     "traced": 22947
+    },
+    {
+     "traced": 22978
+    },
+    {
+     "traced": 23024
+    }
+   ],
+   "read_back": []
+  },
+  {
+   "key": "within",
+   "kind": "statement",
+   "text": "In Luk 9:47 and 1Cor 13:11 reasoning is held within the person and addressed to no one: in the hearts of those of Luk 9:47, and as the reckoning of a child in 1Cor 13:11.",
+   "basis": "read",
+   "parts": {
+    "item": "operation",
+    "grounds": "the reasoning of their hearts",
+    "mode": "done"
+   },
+   "nodes": [
+    {
+     "occurrence": 1441942,
+     "role": "characteristic"
+    },
+    {
+     "occurrence": 1484836,
+     "role": "characteristic"
+    },
+    {
+     "traced": 22862
+    },
+    {
+     "traced": 22914
+    },
+    {
+     "traced": 22939
+    },
+    {
+     "traced": 22990
+    }
+   ],
+   "read_back": []
+  },
+  {
+   "key": "known",
+   "kind": "link",
+   "text": "In Luk 9:47 the reasoning held in the hearts is known by Jesus, and he answers it with an act, not a word: he takes a child and sets him by his side.",
+   "basis": "read",
+   "parts": {
+    "item": "chain",
+    "grounds": "took a child and put him by his side"
+   },
+   "nodes": [
+    {
+     "occurrence": 1441942,
+     "role": "characteristic"
+    },
+    {
+     "traced": 22862
+    },
+    {
+     "traced": 22998
+    },
+    {
+     "traced": 23023
+    },
+    {
+     "traced": 22933
+    }
+   ],
+   "read_back": []
+  },
+  {
+   "key": "child",
+   "kind": "statement",
+   "text": "In 1Cor 13:11 like a child gives the reasoning its quality: a child's way of reckoning, set with a child's speaking and thinking, and given up when the speaker became a man.",
+   "basis": "read",
+   "parts": {
+    "item": "role",
+    "grounds": "I reasoned like a child"
+   },
+   "nodes": [
+    {
+     "occurrence": 1484836,
+     "role": "characteristic"
+    },
+    {
+     "traced": 22862
+    },
+    {
+     "traced": 22924
+    },
+    {
+     "traced": 23019
+    }
+   ],
+   "read_back": []
+  },
+  {
+   "key": "restored",
+   "kind": "link",
+   "text": "In Dan 4:34 and Dan 4:36 the king's reason returns after he lifts his eyes to heaven, and blessing, praise and honor of the Most High follow; with it his majesty and splendor return and he is set again in his kingdom.",
+   "basis": "stated",
+   "parts": {
+    "item": "chain",
+    "grounds": "my reason returned to me"
+   },
+   "nodes": [
+    {
+     "occurrence": 1383059,
+     "role": "characteristic"
+    },
+    {
+     "occurrence": 1380829,
+     "role": "characteristic"
+    },
+    {
+     "traced": 22863
+    },
+    {
+     "traced": 22915
+    },
+    {
+     "traced": 22944
+    },
+    {
+     "traced": 22951
+    },
+    {
+     "traced": 22958
+    },
+    {
+     "traced": 22992
+    },
+    {
+     "traced": 23012
+    },
+    {
+     "traced": 22940
+    },
+    {
+     "traced": 23003
+    },
+    {
+     "traced": 22983
+    }
+   ],
+   "read_back": []
+  },
+  {
+   "key": "yielding",
+   "kind": "statement",
+   "text": "In Jam 3:17 open to reason is a quality of the wisdom from above, set among pure, peaceable, gentle, full of mercy, impartial and sincere: a readiness to yield to another, given as a trait of that wisdom.",
+   "basis": "read",
+   "parts": {
+    "item": "role",
+    "grounds": "open to reason"
+   },
+   "nodes": [
+    {
+     "occurrence": 1506062,
+     "role": "characteristic"
+    },
+    {
+     "traced": 22866
+    },
+    {
+     "traced": 22918
+    },
+    {
+     "traced": 22925
+    },
+    {
+     "traced": 23028
+    },
+    {
+     "traced": 22959
+    },
+    {
+     "traced": 23009
+    },
+    {
+     "traced": 22954
+    },
+    {
+     "traced": 22987
+    },
+    {
+     "traced": 22972
+    },
+    {
+     "traced": 22996
+    }
+   ],
+   "read_back": []
+  },
+  {
+   "key": "defense",
+   "kind": "statement",
+   "text": "In 1Pe 3:15 the outward act is a spoken defense of the hope, given to anyone who asks: the readiness is constant, the honoring of Christ in the heart is set before it, and it is made with gentleness and respect.",
+   "basis": "read",
+   "parts": {
+    "item": "enactment",
+    "grounds": "make a defense to anyone who asks"
+   },
+   "nodes": [
+    {
+     "occurrence": 1508012,
+     "role": "characteristic"
+    },
+    {
+     "traced": 22867
+    },
+    {
+     "traced": 22919
+    },
+    {
+     "traced": 22946
+    },
+    {
+     "traced": 22961
+    },
+    {
+     "traced": 23010
+    },
+    {
+     "traced": 22960
+    },
+    {
+     "traced": 22993
+    },
+    {
+     "traced": 22995
+    },
+    {
+     "traced": 22991
+    },
+    {
+     "traced": 22989
+    }
+   ],
+   "read_back": []
+  },
+  {
+   "key": "together",
+   "kind": "statement",
+   "text": "In Isa 1:18 the Lord calls the people to reason the case out together, and what the reasoning concerns is their sins, red as scarlet, to be made white.",
+   "basis": "read",
+   "parts": {
+    "item": "operation",
+    "grounds": "let us reason together",
+    "mode": "commanded"
+   },
+   "nodes": [
+    {
+     "occurrence": 1299563,
+     "role": "characteristic"
+    },
+    {
+     "traced": 22861
+    },
+    {
+     "traced": 22938
+    },
+    {
+     "traced": 22932
+    },
+    {
+     "traced": 23021
+    }
+   ],
+   "read_back": []
+  },
+  {
+   "key": "not-knowing",
+   "kind": "link",
+   "text": "In Mar 12:24 being wrong rests on not knowing: those Jesus answers are in error because they lack knowledge of the Scriptures and of what God can do.",
+   "basis": "stated",
+   "parts": {
+    "item": "chain",
+    "grounds": "because you know neither the Scriptures"
+   },
+   "nodes": [
+    {
+     "occurrence": 1424698,
+     "role": "standalone"
+    },
+    {
+     "occurrence": 1424699,
+     "role": "standalone"
+    },
+    {
+     "traced": 22864
+    },
+    {
+     "traced": 22977
+    },
+    {
+     "traced": 22997
+    }
+   ],
+   "read_back": []
+  },
+  {
+   "key": "denied",
+   "kind": "statement",
+   "text": "In Job 1:9 and Pro 3:30 the ground of an act is denied or questioned: whether the fear of God is for nothing, and contending with one who has done no harm.",
+   "basis": "stated",
+   "parts": {
+    "item": "circumstance",
+    "grounds": "for no reason"
+   },
+   "nodes": [
+    {
+     "occurrence": 1236012,
+     "role": "standalone"
+    },
+    {
+     "occurrence": 1276385,
+     "role": "standalone"
+    },
+    {
+     "traced": 22865
+    },
+    {
+     "traced": 22917
+    },
+    {
+     "traced": 22942
+    },
+    {
+     "traced": 22980
+    },
+    {
+     "traced": 23008
+    },
+    {
+     "traced": 22949
+    }
+   ],
+   "read_back": []
+  }
+ ],
+ "not_used": {
+  "22916": "the sense of cause and its enrichment: linking words that name the ground of an act; the one act of the inner being they hold here (Mar 12:24) is taken up in the finding not-knowing",
+  "22920": "a finding of the structure (double-meaning) that names where words stand or who is named; it holds no element of an act of the inner being beyond what the findings already rest on",
+  "22921": "a finding of the structure (double-meaning) that names where words stand or who is named; it holds no element of an act of the inner being beyond what the findings already rest on",
+  "22922": "a finding of the structure (double-meaning) that names where words stand or who is named; it holds no element of an act of the inner being beyond what the findings already rest on",
+  "22926": "a finding of the structure (qualifier) that names where words stand or who is named; it holds no element of an act of the inner being beyond what the findings already rest on",
+  "22927": "a finding of the structure (qualifier) that names where words stand or who is named; it holds no element of an act of the inner being beyond what the findings already rest on",
+  "22928": "a finding of the structure (qualifier) that names where words stand or who is named; it holds no element of an act of the inner being beyond what the findings already rest on",
+  "22929": "a finding of the structure (qualifier) that names where words stand or who is named; it holds no element of an act of the inner being beyond what the findings already rest on",
+  "22930": "a finding of the structure (qualifier) that names where words stand or who is named; it holds no element of an act of the inner being beyond what the findings already rest on",
+  "22931": "a finding of the structure (entity) that names where words stand or who is named; it holds no element of an act of the inner being beyond what the findings already rest on",
+  "22935": "a finding of the structure (entity) that names where words stand or who is named; it holds no element of an act of the inner being beyond what the findings already rest on",
+  "22936": "a finding of the structure (entity) that names where words stand or who is named; it holds no element of an act of the inner being beyond what the findings already rest on",
+  "22941": "a finding of the structure (direction) that names where words stand or who is named; it holds no element of an act of the inner being beyond what the findings already rest on",
+  "22943": "a finding of the structure (direction) that names where words stand or who is named; it holds no element of an act of the inner being beyond what the findings already rest on",
+  "22945": "a finding of the structure (pairing) that names where words stand or who is named; it holds no element of an act of the inner being beyond what the findings already rest on",
+  "22948": "a finding of the structure (pairing) that names where words stand or who is named; it holds no element of an act of the inner being beyond what the findings already rest on",
+  "22950": "a finding of the structure (pairing) that names where words stand or who is named; it holds no element of an act of the inner being beyond what the findings already rest on",
+  "22953": "a finding of the structure (pairing) that names where words stand or who is named; it holds no element of an act of the inner being beyond what the findings already rest on",
+  "22955": "a finding of the structure (pairing) that names where words stand or who is named; it holds no element of an act of the inner being beyond what the findings already rest on",
+  "22956": "a finding of the structure (pairing) that names where words stand or who is named; it holds no element of an act of the inner being beyond what the findings already rest on",
+  "22957": "a finding of the structure (pairing) that names where words stand or who is named; it holds no element of an act of the inner being beyond what the findings already rest on",
+  "22962": "a finding of the structure (pairing) that names where words stand or who is named; it holds no element of an act of the inner being beyond what the findings already rest on",
+  "22964": "a finding of the structure (pairing) that names where words stand or who is named; it holds no element of an act of the inner being beyond what the findings already rest on",
+  "22965": "a finding of the structure (pairing) that names where words stand or who is named; it holds no element of an act of the inner being beyond what the findings already rest on",
+  "22966": "a finding of the structure (pairing) that names where words stand or who is named; it holds no element of an act of the inner being beyond what the findings already rest on",
+  "22968": "a finding of the structure (pairing) that names where words stand or who is named; it holds no element of an act of the inner being beyond what the findings already rest on",
+  "22969": "a finding of the structure (pairing) that names where words stand or who is named; it holds no element of an act of the inner being beyond what the findings already rest on",
+  "22970": "a finding of the structure (pairing) that names where words stand or who is named; it holds no element of an act of the inner being beyond what the findings already rest on",
+  "22971": "a finding of the structure (pairing) that names where words stand or who is named; it holds no element of an act of the inner being beyond what the findings already rest on",
+  "22973": "a finding of the structure (pairing) that names where words stand or who is named; it holds no element of an act of the inner being beyond what the findings already rest on",
+  "22974": "a finding of the structure (pairing) that names where words stand or who is named; it holds no element of an act of the inner being beyond what the findings already rest on",
+  "22975": "a finding of the structure (pairing) that names where words stand or who is named; it holds no element of an act of the inner being beyond what the findings already rest on",
+  "22976": "a finding of the structure (pairing) that names where words stand or who is named; it holds no element of an act of the inner being beyond what the findings already rest on",
+  "22979": "a finding of the structure (pairing) that names where words stand or who is named; it holds no element of an act of the inner being beyond what the findings already rest on",
+  "22982": "a finding of the structure (pairing) that names where words stand or who is named; it holds no element of an act of the inner being beyond what the findings already rest on",
+  "22984": "a finding of the structure (pairing) that names where words stand or who is named; it holds no element of an act of the inner being beyond what the findings already rest on",
+  "22985": "a finding of the structure (pairing) that names where words stand or who is named; it holds no element of an act of the inner being beyond what the findings already rest on",
+  "22986": "a finding of the structure (pairing) that names where words stand or who is named; it holds no element of an act of the inner being beyond what the findings already rest on",
+  "22988": "a finding of the structure (pairing) that names where words stand or who is named; it holds no element of an act of the inner being beyond what the findings already rest on",
+  "22994": "a finding of the structure (pairing) that names where words stand or who is named; it holds no element of an act of the inner being beyond what the findings already rest on",
+  "22999": "a finding of the structure (pairing) that names where words stand or who is named; it holds no element of an act of the inner being beyond what the findings already rest on",
+  "23000": "a finding of the structure (pairing) that names where words stand or who is named; it holds no element of an act of the inner being beyond what the findings already rest on",
+  "23001": "a finding of the structure (pairing) that names where words stand or who is named; it holds no element of an act of the inner being beyond what the findings already rest on",
+  "23002": "a finding of the structure (pairing) that names where words stand or who is named; it holds no element of an act of the inner being beyond what the findings already rest on",
+  "23005": "a finding of the structure (pairing) that names where words stand or who is named; it holds no element of an act of the inner being beyond what the findings already rest on",
+  "23006": "a finding of the structure (pairing) that names where words stand or who is named; it holds no element of an act of the inner being beyond what the findings already rest on",
+  "23007": "a finding of the structure (pairing) that names where words stand or who is named; it holds no element of an act of the inner being beyond what the findings already rest on",
+  "23011": "a finding of the structure (pairing) that names where words stand or who is named; it holds no element of an act of the inner being beyond what the findings already rest on",
+  "23013": "a finding of the structure (pairing) that names where words stand or who is named; it holds no element of an act of the inner being beyond what the findings already rest on",
+  "23015": "a finding of the structure (pairing) that names where words stand or who is named; it holds no element of an act of the inner being beyond what the findings already rest on",
+  "23016": "a finding of the structure (pairing) that names where words stand or who is named; it holds no element of an act of the inner being beyond what the findings already rest on",
+  "23017": "a finding of the structure (pairing) that names where words stand or who is named; it holds no element of an act of the inner being beyond what the findings already rest on",
+  "23020": "a finding of the structure (pairing) that names where words stand or who is named; it holds no element of an act of the inner being beyond what the findings already rest on",
+  "23022": "a finding of the structure (pairing) that names where words stand or who is named; it holds no element of an act of the inner being beyond what the findings already rest on",
+  "23025": "a finding of the structure (pairing) that names where words stand or who is named; it holds no element of an act of the inner being beyond what the findings already rest on"
+ },
+ "older": [],
+ "existing": [
+  {
+   "observation": 22473,
+   "action": "delete",
+   "reason": "a 3.1 finding of the group this subgroup replaced; this reading states its content in the finding(s) speech, resting on the subgroup's evidence"
+  },
+  {
+   "observation": 22474,
+   "action": "delete",
+   "reason": "a 3.1 finding of the group this subgroup replaced; this reading states its content in the finding(s) within, resting on the subgroup's evidence"
+  },
+  {
+   "observation": 22475,
+   "action": "delete",
+   "reason": "a 3.1 finding of the group this subgroup replaced; this reading states its content in the finding(s) child, resting on the subgroup's evidence"
+  },
+  {
+   "observation": 22476,
+   "action": "delete",
+   "reason": "a 3.1 finding of the group this subgroup replaced; this reading states its content in the finding(s) speech-object, resting on the subgroup's evidence"
+  },
+  {
+   "observation": 22477,
+   "action": "leave",
+   "reason": "a finding of the replaced group that this reading does not restate (an interworking finding for 3.3, or a ground phrase with no act of the inner being, for 3.2): left for that step"
+  },
+  {
+   "observation": 22478,
+   "action": "leave",
+   "reason": "a finding of the replaced group that this reading does not restate (an interworking finding for 3.3, or a ground phrase with no act of the inner being, for 3.2): left for that step"
+  },
+  {
+   "observation": 22479,
+   "action": "delete",
+   "reason": "a 3.1 finding of the group this subgroup replaced; this reading states its content in the finding(s) not-knowing, resting on the subgroup's evidence"
+  },
+  {
+   "observation": 22480,
+   "action": "delete",
+   "reason": "a 3.1 finding of the group this subgroup replaced; this reading states its content in the finding(s) denied, resting on the subgroup's evidence"
+  },
+  {
+   "observation": 22481,
+   "action": "delete",
+   "reason": "a 3.1 finding of the group this subgroup replaced; this reading states its content in the finding(s) denied, resting on the subgroup's evidence"
+  },
+  {
+   "observation": 22482,
+   "action": "delete",
+   "reason": "a 3.1 finding of the group this subgroup replaced; this reading states its content in the finding(s) child and speech, resting on the subgroup's evidence"
+  },
+  {
+   "observation": 22483,
+   "action": "delete",
+   "reason": "a 3.1 finding of the group this subgroup replaced; this reading states its content in the finding(s) speech, within and together, resting on the subgroup's evidence"
+  },
+  {
+   "observation": 22644,
+   "action": "leave",
+   "reason": "a finding of the replaced group that this reading does not restate (an interworking finding for 3.3, or a ground phrase with no act of the inner being, for 3.2): left for that step"
+  },
+  {
+   "observation": 22645,
+   "action": "leave",
+   "reason": "a finding of the replaced group that this reading does not restate (an interworking finding for 3.3, or a ground phrase with no act of the inner being, for 3.2): left for that step"
+  },
+  {
+   "observation": 22646,
+   "action": "leave",
+   "reason": "a finding of the replaced group that this reading does not restate (an interworking finding for 3.3, or a ground phrase with no act of the inner being, for 3.2): left for that step"
+  },
+  {
+   "observation": 22647,
+   "action": "leave",
+   "reason": "a finding of the replaced group that this reading does not restate (an interworking finding for 3.3, or a ground phrase with no act of the inner being, for 3.2): left for that step"
+  },
+  {
+   "observation": 22648,
+   "action": "leave",
+   "reason": "a finding of the replaced group that this reading does not restate (an interworking finding for 3.3, or a ground phrase with no act of the inner being, for 3.2): left for that step"
+  }
+ ]
+}

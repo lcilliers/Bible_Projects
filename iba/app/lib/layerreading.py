@@ -280,6 +280,9 @@ def derive(conn, cfg, L, step: str) -> list[dict]:
         out += [{"item": "group-definition", "subgroup_id": g, "subject": ""} for g in gids]
     if "strong-enrichment" in items:
         out += [{"item": "strong-enrichment", "subgroup_id": g, "subject": ""} for g in gids]
+    for gate in ("sweep", "evidence-validation"):      # the gates at the end of 2.1 (B4, B5; #2538): one ledger-only row for each subgroup, answered by ReadSweep and ReadEvidence
+        if gate in items:
+            out += [{"item": gate, "subgroup_id": g, "subject": ""} for g in gids]
     if any(i in items for i in ("pairing", "qualifier", "entity", "direction", "double-meaning")):
         # step 2.1 (researcher 2026-11-24 and 2026-11-25): the rows come from the data, one for each (subgroup, item), and for the pairing one for each partner collection; each is answered by the findings
         # it holds, a finding being one observation with a node for each occurrence (each verse) it holds in ("the same surface for multiple verses = multiple nodes, not multiple observations; the
@@ -644,7 +647,8 @@ def pull(conn, cfg, name: str, step: str, out_dir: pathlib.Path, subgroup: str |
     sd = step_def(s, step)
     L = load(conn, cfg, name, pairs=needs_pairs(sd) or bool(subgroup), subgroup=subgroup)      # a subgroup pull carries its verses in full (verse-lexical words), so the pairs are built
     only = subgroup_id(L, subgroup)     # None: the whole collection (the loop below reuses the name gid for the group of each row)
-    rows = [r for r in _rows(conn, L["cid"], step) if (r[6] == "open" or (r[6] == "observed" and r[9] == 0)) and (only is None or r[4] == only) and r[3] != bv.OLD_ITEM]
+    rows = [r for r in _rows(conn, L["cid"], step) if (r[6] == "open" or (r[6] == "observed" and r[9] == 0)) and (only is None or r[4] == only) and r[3] != bv.OLD_ITEM
+            and not s["items"].get(r[3], {}).get("ledger_only")]      # a ledger-only row (the sweep, the evidence validation) is answered by its own command, not by a pull
     old_open = conn.execute("SELECT id, subject, step, reason FROM collection_layer_item WHERE collection_id=? AND item=? AND deleted=0 AND state='open'" + (" AND subgroup_id=?" if only else ""),
                             [L["cid"], bv.OLD_ITEM] + ([only] if only else [])).fetchall()
     if not rows and not old_open:
@@ -756,8 +760,12 @@ def trace_targets(conn, oid: int, vl_ids, rules: list, cid: int) -> list[int]:
     ids = sorted(set(vl_ids))
     for rule in rules or []:
         for part in _chunks(ids):
-            q = ("SELECT DISTINCT o.id FROM ib_node n JOIN ib_observation o ON o.id=n.observation_id JOIN collection_layer_item c ON o.stable_key LIKE 'layer:' || c.id || ':%' "
-                 "WHERE n.deleted=0 AND o.deleted=0 AND c.deleted=0 AND c.state!='retired' AND c.collection_id=? AND n.traced_observation_id IS NULL AND o.stage=? "
+            # the ledger row is read from the key ('layer:<row id>:...') and found by its primary key; a LIKE join walked every row of the collection for each observation (#2538)
+            q = ("SELECT DISTINCT o.id FROM ib_node n JOIN ib_observation o ON o.id=n.observation_id "
+                 "JOIN collection_layer_item c ON c.id=CAST(substr(o.stable_key, 7, instr(substr(o.stable_key, 7), ':') - 1) AS INTEGER) "
+                 "WHERE o.stable_key LIKE 'layer:%' AND n.deleted=0 AND o.deleted=0 AND c.deleted=0 AND c.state!='retired' AND c.collection_id=? AND n.traced_observation_id IS NULL AND o.stage=? "
+                 # a row of a group that is deleted or retired is not the subgroup's earlier step (#2538: a subgroup opened alone after a regrouping saw the old group's 1.1 sense)
+                 "AND NOT EXISTS (SELECT 1 FROM collection_subgroup g WHERE g.id=c.subgroup_id AND (g.deleted=1 OR g.status='retired')) "
                  + ("AND o.tag=? " if rule.get("tag") else "") + f"AND o.id!=? AND n.verse_lexical_id IN ({','.join('?' * len(part))})")
             a = [cid, rule["stage"]] + ([rule["tag"]] if rule.get("tag") else []) + [oid] + part
             for (x,) in conn.execute(q, a):
@@ -828,6 +836,12 @@ def _text_rules(cfg, conn, s, idef, text: str, basis, grounds, nodes, where: str
     (B:131, more than reading.observation_items max_verse_words_copied consecutive words), a quotation is the ESV's wording (the quote check of the narrative and the readings), a read
     observation names its grounds in the words of the verse (parts.grounds, RS-08), and where the item says so the text names the verses it is tied to (B:131)."""
     minr = s["min_reason_chars"]
+    lacking = sorted({x["verse_id"] for x, _ in nodes if not x.get("text") and x.get("verse_id")})      # an occurrence from the pairing load (2.1) carries no verse text: read it (#2538)
+    if lacking:
+        text_of = {}
+        for part in _chunks(lacking):
+            text_of.update({v[0]: v[1] for v in conn.execute(f"SELECT id, text FROM verse WHERE id IN ({','.join('?' * len(part))})", part)})
+        nodes = [({**x, "text": text_of.get(x.get("verse_id")) or ""} if not x.get("text") else x, r) for x, r in nodes]
     for x, _ in nodes:
         cp = orec.copies_verse(cfg, [text], x.get("text") or "")
         if cp:
@@ -896,6 +910,9 @@ def record(conn, cfg, run_id: str, data: dict, keep: bool) -> dict:
             continue
         item, gid, subject = lr[3], lr[4], lr[5]
         idef = s["items"][item]
+        if idef.get("ledger_only"):
+            errors.append(f"{where}: a {item} row is answered by its own command (ReadSweep or ReadEvidence), not by a working file")
+            continue
         fill = row.get("fill") or row
         disp = fill.get("disposition")
         if idef.get("multi") and disp not in ("adopt", "none"):
@@ -1180,6 +1197,16 @@ def check(conn, cfg, run_id: str, name: str, dry: bool = False, subgroup: str | 
                 continue
             if item == bv.OLD_ITEM:      # an old observation's row: its fate is on the record
                 fail = bv.old_fate_ok(conn, int(subject), reason, cfg) if str(subject).isdigit() else "its subject is not an observation"
+                if fail:
+                    problems.append(f"{label}: {fail}")
+                else:
+                    ok_ += 1
+                if not dry:
+                    conn.execute(f"UPDATE collection_layer_item SET checked_at={NOW}, validated=?, updated_at={NOW}, run_id=? WHERE id=?", (0 if fail else 1, run_id, lid))
+                continue
+            if item in ("sweep", "evidence-validation"):      # the gates at the end of 2.1 (B4, B5): judged from the tables by readcommands (#2538)
+                from . import readcommands as rcm
+                fail = (rcm.sweep_ok(conn, cfg, s, L, L["cid"], gid) if item == "sweep" else rcm.evidence_ok(conn, cfg, L, L["cid"], gid)) if state == "observed" else "answered as none"
                 if fail:
                     problems.append(f"{label}: {fail}")
                 else:

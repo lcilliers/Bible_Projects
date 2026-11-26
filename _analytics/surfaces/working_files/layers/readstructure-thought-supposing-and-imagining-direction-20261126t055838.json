@@ -1,0 +1,611 @@
+{
+ "command": "ReadStructure",
+ "collection": "thought",
+ "subgroup": "supposing and imagining",
+ "step": "2.1",
+ "item": "direction",
+ "made": "2026-11-26T05:58:38Z",
+ "batch": {
+  "rows": 1,
+  "rows_left_after_this": 37
+ },
+ "instruction": {
+  "what": "Step 2.1, the structure of one subgroup (stage 1, B3): what stands with the subgroup's words in each verse, read from the stored structure. One item at a time: double-meaning (a surface with more than one code), qualifier (negators and the word each reaches, adjectives, adverbs, prepositional qualifiers), entity (who is named or referred to), direction (from whom to whom, by the grammar), pairing (one row for each partner collection: its words in the verses shared with the subgroup). Nothing here says what anything does for the inner being; that begins at step 3.1.",
+  "read": [
+   "Take one row at a time (`rows`): what it asks, its occurrences (`as`: member, the subgroup's word; partner, the other word), and its verses.",
+   "Read each verse (`verses`) from its stored structure, one line for each word: * marks an occurrence of the subgroup; then the position, surface, Strong's code and morph, and what the pairing makes of the word (its type, the qualifier it carries, a negator, a party, the collections of a word of another collection). Nothing is evaluated that is not stored.",
+   "Where each word stands: its side and distance from the subgroup's word, from the positions. Adjacency is not scope: a negator or qualifier is read for the word it reaches by the grammar.",
+   "A pairing row shows the WordNet control for its partner collection: a pairing WordNet gives and the verses do not show is one to look for; a pairing only the verses show has no control.",
+   "Differences in meaning are read from the base data (the Strong's code, the morph, the construction), not from the English alone. The subgroup's 1.1 senses (`senses`) are what the findings build on."
+  ],
+  "write": [
+   "Fill `answer.rows`: for each row, disposition observed with its `findings`, or none with its `reason` (where the row allows none: nothing of the item stands with the subgroup in its verses).",
+   "One finding for each distinct thing the structure shows; the same finding in several verses is ONE finding naming all its occurrences; a verse that shows something different is its own finding. Together the findings name every occurrence of the row (occurrence ids or verse references), each in one finding.",
+   "kind: as the template gives it (pairing; relation for direction; face for double-meaning). obs_text: concise; names the verses it holds in, as the package writes the references (for example Act 18:4); states what the structure shows (which word, where it stands, what it reaches or gives by the grammar); never a verse restated, never what it does for the inner being.",
+   "basis: stated (the verse says it) or read (read from the structure), with `grounds`: words copied exactly from the verses it is tied to (the record checks them).",
+   "Each subgroup's surface has its own finding; none joins two subgroups. A data error is named in grounds, not fixed.",
+   "`older`: answer each older observation shown under the row, once: keep (with `nature`), restate (with `nature`, `new_text`, `checked`), merge (with `into`), consume (with `carriers` [\"this\"] or observation ids, and `mapping`), delete_neither (with `reason`), carry (with `to` and `reason`), defer (with `collection`, `nature`, `finding`). One listed under another row is answered there.",
+   "Then: Collection-Build.ps1 -Action RecordStructure -File <the answer file> (-Check to preview). The record refuses the whole file on any fault and lists every fault."
+  ],
+  "keep": [
+   {
+    "rule": "RG-14 morph-read",
+    "text": "Morph is read, not carried: where occurrences of a word show different stems or voices, record whether the subject does, undergoes or causes the act."
+   },
+   {
+    "rule": "RG-16 homonym-and-data-error",
+    "text": "A word that is only a homonym or a name, with no meaningful context, is recorded as such (tag no-human-context) and left. Data errors found while reading are flagged (tag data-error), not fixed in the reading."
+   },
+   {
+    "rule": "RG-21 grain",
+    "text": "A word is read per its lettered Strong's code (its grain), never the bare lemma (B:113). The occurrences of a word with several senses are related per grain and never aggregated across grains: related verses are same-grain occurrences."
+   },
+   {
+    "rule": "RO11 one-row-per-code",
+    "text": "One observation per finding, never a duplicate description; a finding applying to several verses or words carries several nodes, each with the word's role in it."
+   },
+   {
+    "rule": "RW-03 no-duplicates-multi-node",
+    "text": "One observation per finding: the same description is never written twice. Applied to another verse, word or scope it gains a node on the existing observation."
+   },
+   {
+    "rule": "RW-04 concise-verse-specific",
+    "text": "Observation text is concise and tied to this verse's content, never a restatement of the word's dictionary sense. A transliteration is never given without its gloss."
+   },
+   {
+    "rule": "RW-08 slants-own-rows",
+    "text": "Where the evidence points to more than one reading, each is its own observation with its own evidence."
+   },
+   {
+    "rule": "RW-09 reread-builds-on-prior",
+    "text": "A re-read includes the observations already recorded for the verse, so the reading sees prior findings and builds on them."
+   },
+   {
+    "rule": "RW-11 missing-is-named",
+    "text": "Missing data in the base extract is named as a gap, never substituted from memory or outside knowledge."
+   },
+   {
+    "rule": "RW-13 older-observations-answered-at-record",
+    "text": "Every older live observation with a live node on an occurrence of the row (a stage that is not the build's own) is answered in fill.older when the row is recorded, once: keep or restate (each with its marker), merge into a named observation, consume (live observations carry its meaning, stated in words, verified before it is deleted), delete as neither (comment first), or defer to a named collection (marked now; only the finding is left to that collection). An observation already marked by the validation, answered in a build or deferred is not asked again. A new observation whose text equals that of another live observation of the collection is refused, the other named. LayerCheck re-derives both from the tables. The end state of a collection's build is that every observation of its scope is marked and fixed or deleted, every word node complete or with its reason, and each deferral owned by a named collection."
+   },
+   {
+    "rule": "RS-04 existing-checked-accept-modify-delete",
+    "text": "When a verse is worked, every existing observation and node on it, of any stage, is checked against the verse by its wording. The stage is not an indication of the nature of an observation and is never used to filter. Each observation is accepted, modified (changed in place; the old value, the new value and the reason are kept in ib_observation_change), soft deleted (the `deleted` column, with the reason), merged (a duplicate description, into the observation that is kept) or, when its wording shows it is not verse understanding, left exactly as it is with the reason. The check's fixes are part of it and need no separate approval. Nothing is physically deleted."
+   },
+   {
+    "rule": "LR-02 nodes-are-built-from-the-data",
+    "text": "The nodes of a layer observation are the occurrences the aspect demands (a word's occurrences, the group's occurrences, the partner's occurrences in the verses they share), written by the recorder with the collection and the subgroup of each surface; they are never typed. An item answered by senses (word-sense) names, for each sense, the occurrences it holds for, and together the senses cover every occurrence; the recorder checks them against the data. The interpretation is the observation text, founded in what the evidence shows (basis stated or read, B:131) and tied to its verses (the text names them and does not restate them): the items of every step (S1, 1.1, 1.2, 2.1) state what the dictionary, the verses and the stored structure show of a word and never what a word does for the inner being; their nodes carry the role lexical and no route. The whole file is checked and written in one transaction; any problem refuses all of it. A row answered again withdraws its earlier observations with the reason."
+   },
+   {
+    "rule": "LR-03 none-needs-a-permitted-reason",
+    "text": "An aspect is recorded as none only where its item allows it (cfg_setting layer.reading none_allowed) and with its reason in words. A group definition and a group's Strong's enrichment are always observed."
+   },
+   {
+    "rule": "DA-02 a-node-per-occurrence-with-its-surfaces-collection",
+    "text": "A node is on one occurrence (verse_lexical_id) and carries the collection of its surface (a supportive node, the collection of the surface it supports); a node already on the observation for the same occurrence is not written twice, and takes the role. A node with no collection to carry, or on a verse out of scope (B:130), is not written and is listed."
+   },
+   {
+    "rule": "VA-03 consumption-is-verified-before-deletion",
+    "text": "An older observation is deleted as consumed only when live observations carry its meaning: every word occurrence of it is on a live node of a carrier or named as not carried with its reason, the mapping is stated in words (what the old says, which carrier states each part), the traces to it are re-pointed or replaced, and the consumption is kept as `consumed_by`. An observation that holds more than one finding is split first."
+   },
+   {
+    "rule": "VA-04 neither-evidence-nor-inner-being-is-deleted",
+    "text": "An observation that is neither evidence nor inner being contributes nothing to the purposes of the observations (researcher, 2026-11-22): it is commented with its reason and the word occurrences no other live observation holds, then deleted. An observation already marked, or one another observation traces, is not deleted this way."
+   }
+  ],
+  "not_in_this_read": ""
+ },
+ "senses": [
+  {
+   "sense": 22881,
+   "text": "An assumption that an act then rests on: the parents take the boy to be in the company and travel a day, the mourners take Mary to be going to the tomb, Mary takes Jesus for the gardener, the crowd takes Paul to be dead, the jailer takes the prisoners to have escaped, and the sailors take their purpose to be gained. In each verse the supposing is a belief about a present fact, and what is done follows from it and meets the facts in the verse. Verses: Luk 2:44, Joh 11:31, Joh 20:15, Act 14:19, Act 16:27, Act 27:13.",
+   "verses": [
+    "Luke.2.44",
+    "John.11.31",
+    "John.20.15",
+    "Acts.14.19",
+    "Acts.16.27",
+    "Acts.27.13"
+   ]
+  },
+  {
+   "sense": 22882,
+   "text": "A belief or opinion held or put to another: a man imagines he knows something, people are imagining that godliness is gain, Jonadab warns David not to conclude that all the sons are dead, Simon gives his judgment, the writer judges how many books the world could hold, the hearers are told they suppose wrongly about drunkenness, the crowd is asked what it supposes of John, the one who judges is asked whether he supposes he escapes, the doubter must not expect to receive, and the readers are asked whether they suppose the Scripture speaks to no purpose. The word is a view that the verse tests, corrects or leaves to the hearer. Verses: 1Cor 8:2, 1Ti 6:5, 2Sa 13:32, 2Sa 13:33, Luk 7:43, Joh 21:25, Act 2:15, Act 13:25, Rom 2:3, Jam 1:7, Jam 4:5.",
+   "verses": [
+    "1Cor.8.2",
+    "1Tim.6.5",
+    "2Sam.13.32",
+    "2Sam.13.33",
+    "Luke.7.43",
+    "John.21.25",
+    "Acts.2.15",
+    "Acts.13.25",
+    "Rom.2.3",
+    "Jas.1.7",
+    "Jas.4.5"
+   ]
+  },
+  {
+   "sense": 22883,
+   "text": "A case put as a possibility: Abraham sets one lower number of righteous after another with 'suppose', and the prophet puts a case of a son who sees his father's sins. The words are Hebrew particles of perhaps and behold that introduce a hypothetical case and carry no thinking of their own. Verses: Gen 18:28, Gen 18:29, Gen 18:30, Gen 18:31, Gen 18:32, Eze 18:14.",
+   "verses": [
+    "Gen.18.28",
+    "Gen.18.29",
+    "Gen.18.30",
+    "Gen.18.31",
+    "Gen.18.32",
+    "Ezek.18.14"
+   ]
+  },
+  {
+   "sense": 22884,
+   "text": "Imagining as devising evil: those who hate the psalmist whisper together and plan the worst against him. The Hebrew verb is of reckoning and devising, here turned toward harm. Verses: Psa 41:7.",
+   "verses": [
+    "Ps.41.7"
+   ]
+  },
+  {
+   "sense": 22885,
+   "text": "The mind's own picture or device: in Pro 18:11 the rich man's wealth is a high wall in his imagination, a conceit that is not the fact, and in Act 17:29 the image of gold or stone is formed by human design and thought. The word is what the human mind pictures or devises. Verses: Pro 18:11, Act 17:29.",
+   "verses": [
+    "Prov.18.11",
+    "Acts.17.29"
+   ]
+  }
+ ],
+ "verses": [
+  {
+   "reference": "2Sa 13:32",
+   "text": "But Jonadab the son of Shimeah, David’s brother, said, “Let not my lord suppose that they have killed all the young men, the king’s sons, for Amnon alone is dead. For by the command of Absalom this has been determined from the day he violated his sister Tamar.",
+   "words": [
+    " 0 jonadab H3122G HNpm | entity (human); party human",
+    " 1 son H1121A HNcmsc",
+    " 2 shimeah H8093 HNpm | entity (human); party human",
+    " 3 david’s H1732 HNpm | entity (human); party human",
+    " 4 brother H0251G HNcmsc",
+    " 5 said H6030B HVqw3ms",
+    " 5 said H0559 HVqw3ms",
+    " 6 not H0408 HTn | negator; qualifier negator; negator",
+    " 7 lord H0113 HNcmsc",
+    "*8 suppose H0559 HVqj3ms | member of this collection",
+    " 9 killed H4191 HVhp3cp | word of another collection; collections kill",
+    " 10 all H3605 HNcmsc",
+    " 10 my H9020 HSp1bs",
+    " 10 all H0853 HTo",
+    " 11 young men H5288 HNcmpa | entity (human); party human",
+    " 11 [the] H9009 HTd",
+    " 12 king’s H4428G HNcmsa",
+    " 12 [the] H9009 HTd",
+    " 13 sons H1121A HNcmpc",
+    " 14 for H3588A HTc | connective",
+    " 15 amnon H0550G HNpm | entity (human); party human",
+    " 16 alone H0905H HNcmsc",
+    " 16 to/for H9005 HR",
+    " 17 dead H4191 HVqp3ms | word of another collection; collections live",
+    " 17 him H9033 HSp3ms",
+    " 18 for H3588A HTc | connective",
+    " 19 by H5921A HR",
+    " 20 command H6310I HNcmsc | word of another collection; collections command",
+    " 21 absalom H0053 HNpm | entity (human); party human",
+    " 22 determined H7760B HVqsfsa | word of another collection; collections dedicate",
+    " 22 determined H1961 HVqp3fs | word of another collection; collections dedicate",
+    " 23 day H3117G HNcmsc",
+    " 23 from H9006 HR",
+    " 24 violated H6031B HVpcc | word of another collection; collections crime",
+    " 25 his H9023 HSp3ms",
+    " 26 sister H0269 HNcfsc | entity (human); party human",
+    " 27 tamar H8559H HNpf | entity (human); party human",
+    " 27 he H9043 HSp3ms",
+    " 27 tamar H0853 HTo"
+   ]
+  },
+  {
+   "reference": "2Sa 13:33",
+   "text": "Now therefore let not my lord the king so take it to heart as to suppose that all the king’s sons are dead, for Amnon alone is dead.”",
+   "words": [
+    " 0 now H6258 HD | qualifier candidate; qualifier morph: adverb",
+    " 0 and H9002 HC | connective",
+    " 1 not H0408 HTn | negator; qualifier negator; negator",
+    " 2 lord H0113 HNcmsc",
+    " 3 king H4428G HNcmsa",
+    " 3 [the] H9009 HTd",
+    " 3 my H9020 HSp1bs",
+    " 4 take H7760K HVqj3ms | word of another collection; collections snatch",
+    " 5 it H1697I HNcmsa",
+    " 5 his H9023 HSp3ms",
+    " 6 to H0413 HR",
+    " 7 heart H3820A HNcmsc | word of another collection; collections heart",
+    "*8 suppose H0559 HVqcc | member of this collection",
+    " 8 to/for H9005 HR",
+    " 9 all H3605 HNcmsc",
+    " 10 king’s H4428G HNcmsa",
+    " 10 [the] H9009 HTd",
+    " 11 sons H1121A HNcmpc",
+    " 12 dead H4191 HVqp3cp | word of another collection; collections live",
+    " 13 amnon H0550G HNpm | entity (human); party human",
+    " 13 for H3588A HTc | connective",
+    " 13 amnon H0518B HTc | connective",
+    " 14 alone H0905H HNcmsc",
+    " 14 to/for H9005 HR",
+    " 15 dead H4191 HVqp3ms | word of another collection; collections live",
+    " 15 him H9033 HSp3ms"
+   ]
+  },
+  {
+   "reference": "Joh 20:15",
+   "text": "Jesus said to her, “ Woman, why are you weeping? Whom are you seeking?” Supposing him to be the gardener, she said to him, “ Sir, if you have carried him away, tell me where you have laid him, and I will take him away.”",
+   "words": [
+    " 0 jesus G2424G N-NSM-P | entity (divine); party divine",
+    " 1 said G3004G V-PAI-3S",
+    " 2 her G0846 P-DSF",
+    " 3 woman G1135G N-VSF | entity (human); party human",
+    " 4 why G5101 I-ASN",
+    " 5 weeping G2799 V-PAI-2S | word of another collection; collections laugh",
+    " 6 whom G5101 I-ASM",
+    " 7 seeking G2212 V-PAI-2S | word of another collection; collections search",
+    "*8 supposing G1380 V-PAP-NSF | member of this collection",
+    " 9 be G1510 V-PAI-3S",
+    " 10 gardener G2780 N-NSM",
+    " 11 she G1565 D-NSF",
+    " 12 said G3004G V-PAI-3S",
+    " 13 him G0846 P-DSM",
+    " 14 sir G2962H N-VSM",
+    " 15 if G1487G COND",
+    " 16 you G4771 P-2NS",
+    " 17 carried G0941 V-AAI-2S",
+    " 18 him G0846 P-ASM",
+    " 19 tell G2036 V-2AAM-2S",
+    " 20 me G3427 P-1DS",
+    " 21 where G4226 ADV-I | qualifier candidate; qualifier morph: adverb",
+    " 22 laid G5087 V-AAI-2S",
+    " 23 him G0846 P-ASM",
+    " 24 i G2504 P-1NS",
+    " 25 take G0142 V-FAI-1S | word of another collection; collections snatch",
+    " 26 him G0846 P-ASM"
+   ]
+  },
+  {
+   "reference": "Joh 21:25",
+   "text": "Now there are also many other things that Jesus did. Were every one of them to be written, I suppose that the world itself could not contain the books that would be written.",
+   "words": [
+    " 0 now G1161 CONJ | connective",
+    " 1 are G1510 V-PAI-3S",
+    " 2 also G2532 CONJ | connective",
+    " 3 many G4183 A-NPN | qualifier candidate; qualifier morph: adjective",
+    " 4 other G0243 A-NPN | qualifier candidate; qualifier morph: adjective",
+    " 5 that G3745 R-APN",
+    " 6 jesus G2424G N-NSM-P | entity (divine); party divine",
+    " 7 did G4160G V-AAI-3S",
+    " 8 were G1437 COND | connective",
+    " 8 were G3748 R-NPN",
+    " 9 every G2596 PREP",
+    " 10 one G1520 A-ASN | qualifier candidate; qualifier morph: adjective",
+    " 11 written G1125 V-PPS-3S",
+    "*12 suppose G3633 V-PNI-1S | member of this collection",
+    " 13 world G2889 N-ASM",
+    " 14 itself G0846 P-ASM",
+    " 15 not G3761 CONJ-N | negator; qualifier negator; negator",
+    " 16 contain G5562 V-AAN",
+    " 17 books G0975 N-APN",
+    " 18 written G1125 V-PPP-APN"
+   ]
+  },
+  {
+   "reference": "Act 17:29",
+   "text": "Being then God’s offspring, we ought not to think that the divine being is like gold or silver or stone, an image formed by the art and imagination of man.",
+   "words": [
+    " 0 being G5225 V-PAP-NPM",
+    " 1 then G3767 CONJ | connective",
+    " 2 god’s G2316 N-GSM-T | entity (divine); party divine",
+    " 3 offspring G1085G N-NSN",
+    " 4 ought G3784 V-PAI-1P",
+    " 5 not G3756 PRT-N | negator; qualifier negator; negator",
+    " 6 think G3543 V-PAN | member of this collection",
+    " 7 divine being G2304 A-ASN | qualifier candidate; qualifier morph: adjective",
+    " 8 is G1511 V-PAN",
+    " 9 like G3664 A-ASN | qualifier candidate; qualifier morph: adjective",
+    " 10 gold G5557 N-DSM",
+    " 11 or G2228 CONJ | connective",
+    " 12 silver G0696 N-DSM",
+    " 13 or G2228 CONJ | connective",
+    " 14 stone G3037 N-DSM",
+    " 15 image formed G5480 N-DSN",
+    " 16 art G5078 N-GSF",
+    " 17 and G2532 CONJ | connective",
+    "*18 imagination G1761 N-GSF | member of this collection",
+    " 19 man G0444 N-GSM | entity (human); party human"
+   ]
+  },
+  {
+   "reference": "Rom 2:3",
+   "text": "Do you suppose, O man —you who judge those who practice such things and yet do them yourself— that you will escape the judgment of God?",
+   "words": [
+    "*0 suppose G1161 CONJ | member of this collection",
+    " 1 o G5599 INJ",
+    " 2 man G0444 N-VSM | entity (human); party human",
+    " 3 judge G2919 V-PAP-VSM | word of another collection; collections condemn",
+    " 4 practice G4238 V-PAP-APM",
+    " 5 things G5108 D-APN",
+    " 6 and G2532 CONJ | connective",
+    " 7 do G4160G V-PAP-VSM | word of another collection; collections serve",
+    " 8 that G3754G CONJ | connective",
+    " 9 you G4771 P-2NS",
+    " 10 escape G1628 V-FDI-2S | word of another collection; collections escape",
+    " 11 judgment G2917 N-ASN | word of another collection; collections wise",
+    " 12 god G2316 N-GSM-T | entity (divine); party divine"
+   ]
+  },
+  {
+   "reference": "1Ti 6:5",
+   "text": "and constant friction among people who are depraved in mind and deprived of the truth, imagining that godliness is a means of gain.",
+   "words": [
+    " 0 constant friction G3859 N-NPF",
+    " 1 people G0444 N-GPM | entity (human); party human",
+    " 2 depraved G1311 V-RPP-GPM | word of another collection; collections evildoer",
+    " 3 mind G3563 N-ASM | word of another collection; collections heart",
+    " 4 and G2532 CONJ | connective",
+    " 5 deprived G0650 V-RPP-GPM",
+    " 6 truth G0225 N-GSF | word of another collection; collections righteous",
+    "*7 imagining G3543 V-PAP-GPM | member of this collection",
+    " 8 godliness G2150 N-ASF | word of another collection; collections godly",
+    " 9 is G1511 V-PAN",
+    " 10 gain G4200 N-ASM | word of another collection; collections benefit"
+   ]
+  },
+  {
+   "reference": "Jam 1:7",
+   "text": "For that person must not suppose that he will receive anything from the Lord;",
+   "words": [
+    " 0 for G1063 CONJ | connective",
+    " 1 that G1565 D-NSM",
+    " 2 person G0444 N-NSM | entity (human); party human",
+    " 3 not G3361 PRT-N | negator; qualifier negator; negator",
+    "*4 suppose G3633 V-PNM-3S | member of this collection",
+    " 5 that G3754G CONJ | connective",
+    " 6 receive G2983 V-FDI-3S",
+    " 7 anything G5100 X-ASN",
+    " 8 from G3844 PREP",
+    " 9 lord G2962G N-GSM-T | entity (divine); party divine"
+   ]
+  }
+ ],
+ "rows": [
+  {
+   "ledger_id": 1558,
+   "item": "direction",
+   "subject": "",
+   "asks": "Does the direction of travel the text states (from whom to whom, by the grammar) change across the verses of the subgroup? One finding for each distinct direction; it holds the verses it holds in as its nodes.",
+   "none_allowed": true,
+   "verses": [
+    "2Sa 13:32",
+    "2Sa 13:33",
+    "Joh 20:15",
+    "Joh 21:25",
+    "Act 17:29",
+    "Rom 2:3",
+    "1Ti 6:5",
+    "Jam 1:7"
+   ],
+   "occurrences": [
+    {
+     "occurrence": 1140493,
+     "reference": "2Sa 13:32",
+     "surface": "suppose",
+     "strong": "H0559",
+     "as": "member"
+    },
+    {
+     "occurrence": 1142223,
+     "reference": "2Sa 13:33",
+     "surface": "suppose",
+     "strong": "H0559",
+     "as": "member"
+    },
+    {
+     "occurrence": 1449562,
+     "reference": "Joh 20:15",
+     "surface": "supposing",
+     "strong": "G1380",
+     "as": "member"
+    },
+    {
+     "occurrence": 1456897,
+     "reference": "Joh 21:25",
+     "surface": "suppose",
+     "strong": "G3633",
+     "as": "member"
+    },
+    {
+     "occurrence": 1469845,
+     "reference": "Act 17:29",
+     "surface": "imagination",
+     "strong": "G1761",
+     "as": "member"
+    },
+    {
+     "occurrence": 1477606,
+     "reference": "Rom 2:3",
+     "surface": "suppose",
+     "strong": "G1161",
+     "as": "member"
+    },
+    {
+     "occurrence": 1499189,
+     "reference": "1Ti 6:5",
+     "surface": "imagining",
+     "strong": "G3543",
+     "as": "member"
+    },
+    {
+     "occurrence": 1507385,
+     "reference": "Jam 1:7",
+     "surface": "suppose",
+     "strong": "G3633",
+     "as": "member"
+    },
+    {
+     "occurrence": 1140484,
+     "reference": "2Sa 13:32",
+     "surface": "jonadab",
+     "strong": "H3122G",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1140486,
+     "reference": "2Sa 13:32",
+     "surface": "shimeah",
+     "strong": "H8093",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1140487,
+     "reference": "2Sa 13:32",
+     "surface": "david’s",
+     "strong": "H1732",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1140498,
+     "reference": "2Sa 13:32",
+     "surface": "young men",
+     "strong": "H5288",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1140504,
+     "reference": "2Sa 13:32",
+     "surface": "amnon",
+     "strong": "H0550G",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1140512,
+     "reference": "2Sa 13:32",
+     "surface": "absalom",
+     "strong": "H0053",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1140519,
+     "reference": "2Sa 13:32",
+     "surface": "sister",
+     "strong": "H0269",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1140520,
+     "reference": "2Sa 13:32",
+     "surface": "tamar",
+     "strong": "H8559H",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1142230,
+     "reference": "2Sa 13:33",
+     "surface": "amnon",
+     "strong": "H0550G",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1449554,
+     "reference": "Joh 20:15",
+     "surface": "jesus",
+     "strong": "G2424G",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1449557,
+     "reference": "Joh 20:15",
+     "surface": "woman",
+     "strong": "G1135G",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1456890,
+     "reference": "Joh 21:25",
+     "surface": "jesus",
+     "strong": "G2424G",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1469829,
+     "reference": "Act 17:29",
+     "surface": "god’s",
+     "strong": "G2316",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1469846,
+     "reference": "Act 17:29",
+     "surface": "man",
+     "strong": "G0444",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1477608,
+     "reference": "Rom 2:3",
+     "surface": "man",
+     "strong": "G0444",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1477618,
+     "reference": "Rom 2:3",
+     "surface": "god",
+     "strong": "G2316",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1499183,
+     "reference": "1Ti 6:5",
+     "surface": "people",
+     "strong": "G0444",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1507383,
+     "reference": "Jam 1:7",
+     "surface": "person",
+     "strong": "G0444",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1507390,
+     "reference": "Jam 1:7",
+     "surface": "lord",
+     "strong": "G2962G",
+     "as": "partner"
+    }
+   ],
+   "older": []
+  }
+ ],
+ "answer": {
+  "command": "ReadStructure",
+  "collection": "thought",
+  "subgroup": "supposing and imagining",
+  "rows": [
+   {
+    "ledger_id": 1558,
+    "item": "direction",
+    "subject": "",
+    "disposition": "observed | none",
+    "findings": [
+     {
+      "kind": "relation",
+      "obs_text": "",
+      "basis": "read | stated",
+      "grounds": "",
+      "occurrences": []
+     }
+    ],
+    "reason": "",
+    "older": []
+   }
+  ]
+ },
+ "measured": {
+  "package_chars": 24818,
+  "seconds": 0.01
+ }
+}

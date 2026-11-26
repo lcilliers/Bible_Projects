@@ -100,7 +100,7 @@ def find(conn: sqlite3.Connection, project_root: pathlib.Path) -> list[str]:
             bad_kinds = ({item.get("kind")} | set(item.get("kinds", []))) & inner_kinds
             if bad_kinds:
                 errors.append(f"layer.reading item {key!r} is written as the inner-being kind {sorted(bad_kinds)}")
-            if re.search(r"inner.being", item.get("asks") or "", re.I):
+            if re.search(r"inner.being", item.get("asks") or "", re.I) and not item.get("ledger_only"):      # a ledger-only gate (the sweep, the evidence validation, #2538) writes no observation of its own: it sorts observations by their marker, so it names the marker
                 errors.append(f"layer.reading item {key!r} asks about the inner being: the lexical stages state what the dictionary, the verses and the structure show")
 
     # 4b. the items of stage 4 (steps of layer 3, #2528): each names the observation items it uses (reading.observation_items), none of them the meaning of the word (stage 1) and each a

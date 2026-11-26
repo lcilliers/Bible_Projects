@@ -1,0 +1,1383 @@
+{
+ "command": "ReadStructure",
+ "collection": "thought",
+ "subgroup": "weighing and taking account of",
+ "step": "2.1",
+ "item": "pairing",
+ "made": "2026-11-26T05:50:51Z",
+ "batch": {
+  "rows": 9,
+  "rows_left_after_this": 0
+ },
+ "instruction": {
+  "what": "Step 2.1, the structure of one subgroup (stage 1, B3): what stands with the subgroup's words in each verse, read from the stored structure. One item at a time: double-meaning (a surface with more than one code), qualifier (negators and the word each reaches, adjectives, adverbs, prepositional qualifiers), entity (who is named or referred to), direction (from whom to whom, by the grammar), pairing (one row for each partner collection: its words in the verses shared with the subgroup). Nothing here says what anything does for the inner being; that begins at step 3.1.",
+  "read": [
+   "Take one row at a time (`rows`): what it asks, its occurrences (`as`: member, the subgroup's word; partner, the other word), and its verses.",
+   "Read each verse (`verses`) from its stored structure, one line for each word: * marks an occurrence of the subgroup; then the position, surface, Strong's code and morph, and what the pairing makes of the word (its type, the qualifier it carries, a negator, a party, the collections of a word of another collection). Nothing is evaluated that is not stored.",
+   "Where each word stands: its side and distance from the subgroup's word, from the positions. Adjacency is not scope: a negator or qualifier is read for the word it reaches by the grammar.",
+   "A pairing row shows the WordNet control for its partner collection: a pairing WordNet gives and the verses do not show is one to look for; a pairing only the verses show has no control.",
+   "Differences in meaning are read from the base data (the Strong's code, the morph, the construction), not from the English alone. The subgroup's 1.1 senses (`senses`) are what the findings build on."
+  ],
+  "write": [
+   "Fill `answer.rows`: for each row, disposition observed with its `findings`, or none with its `reason` (where the row allows none: nothing of the item stands with the subgroup in its verses).",
+   "One finding for each distinct thing the structure shows; the same finding in several verses is ONE finding naming all its occurrences; a verse that shows something different is its own finding. Together the findings name every occurrence of the row (occurrence ids or verse references), each in one finding.",
+   "kind: as the template gives it (pairing; relation for direction; face for double-meaning). obs_text: concise; names the verses it holds in, as the package writes the references (for example Act 18:4); states what the structure shows (which word, where it stands, what it reaches or gives by the grammar); never a verse restated, never what it does for the inner being.",
+   "basis: stated (the verse says it) or read (read from the structure), with `grounds`: words copied exactly from the verses it is tied to (the record checks them).",
+   "Each subgroup's surface has its own finding; none joins two subgroups. A data error is named in grounds, not fixed.",
+   "`older`: answer each older observation shown under the row, once: keep (with `nature`), restate (with `nature`, `new_text`, `checked`), merge (with `into`), consume (with `carriers` [\"this\"] or observation ids, and `mapping`), delete_neither (with `reason`), carry (with `to` and `reason`), defer (with `collection`, `nature`, `finding`). One listed under another row is answered there.",
+   "Then: Collection-Build.ps1 -Action RecordStructure -File <the answer file> (-Check to preview). The record refuses the whole file on any fault and lists every fault."
+  ],
+  "keep": [
+   {
+    "rule": "RG-14 morph-read",
+    "text": "Morph is read, not carried: where occurrences of a word show different stems or voices, record whether the subject does, undergoes or causes the act."
+   },
+   {
+    "rule": "RG-16 homonym-and-data-error",
+    "text": "A word that is only a homonym or a name, with no meaningful context, is recorded as such (tag no-human-context) and left. Data errors found while reading are flagged (tag data-error), not fixed in the reading."
+   },
+   {
+    "rule": "RG-21 grain",
+    "text": "A word is read per its lettered Strong's code (its grain), never the bare lemma (B:113). The occurrences of a word with several senses are related per grain and never aggregated across grains: related verses are same-grain occurrences."
+   },
+   {
+    "rule": "RO11 one-row-per-code",
+    "text": "One observation per finding, never a duplicate description; a finding applying to several verses or words carries several nodes, each with the word's role in it."
+   },
+   {
+    "rule": "RW-03 no-duplicates-multi-node",
+    "text": "One observation per finding: the same description is never written twice. Applied to another verse, word or scope it gains a node on the existing observation."
+   },
+   {
+    "rule": "RW-04 concise-verse-specific",
+    "text": "Observation text is concise and tied to this verse's content, never a restatement of the word's dictionary sense. A transliteration is never given without its gloss."
+   },
+   {
+    "rule": "RW-08 slants-own-rows",
+    "text": "Where the evidence points to more than one reading, each is its own observation with its own evidence."
+   },
+   {
+    "rule": "RW-09 reread-builds-on-prior",
+    "text": "A re-read includes the observations already recorded for the verse, so the reading sees prior findings and builds on them."
+   },
+   {
+    "rule": "RW-11 missing-is-named",
+    "text": "Missing data in the base extract is named as a gap, never substituted from memory or outside knowledge."
+   },
+   {
+    "rule": "RW-13 older-observations-answered-at-record",
+    "text": "Every older live observation with a live node on an occurrence of the row (a stage that is not the build's own) is answered in fill.older when the row is recorded, once: keep or restate (each with its marker), merge into a named observation, consume (live observations carry its meaning, stated in words, verified before it is deleted), delete as neither (comment first), or defer to a named collection (marked now; only the finding is left to that collection). An observation already marked by the validation, answered in a build or deferred is not asked again. A new observation whose text equals that of another live observation of the collection is refused, the other named. LayerCheck re-derives both from the tables. The end state of a collection's build is that every observation of its scope is marked and fixed or deleted, every word node complete or with its reason, and each deferral owned by a named collection."
+   },
+   {
+    "rule": "RS-04 existing-checked-accept-modify-delete",
+    "text": "When a verse is worked, every existing observation and node on it, of any stage, is checked against the verse by its wording. The stage is not an indication of the nature of an observation and is never used to filter. Each observation is accepted, modified (changed in place; the old value, the new value and the reason are kept in ib_observation_change), soft deleted (the `deleted` column, with the reason), merged (a duplicate description, into the observation that is kept) or, when its wording shows it is not verse understanding, left exactly as it is with the reason. The check's fixes are part of it and need no separate approval. Nothing is physically deleted."
+   },
+   {
+    "rule": "LR-02 nodes-are-built-from-the-data",
+    "text": "The nodes of a layer observation are the occurrences the aspect demands (a word's occurrences, the group's occurrences, the partner's occurrences in the verses they share), written by the recorder with the collection and the subgroup of each surface; they are never typed. An item answered by senses (word-sense) names, for each sense, the occurrences it holds for, and together the senses cover every occurrence; the recorder checks them against the data. The interpretation is the observation text, founded in what the evidence shows (basis stated or read, B:131) and tied to its verses (the text names them and does not restate them): the items of every step (S1, 1.1, 1.2, 2.1) state what the dictionary, the verses and the stored structure show of a word and never what a word does for the inner being; their nodes carry the role lexical and no route. The whole file is checked and written in one transaction; any problem refuses all of it. A row answered again withdraws its earlier observations with the reason."
+   },
+   {
+    "rule": "LR-03 none-needs-a-permitted-reason",
+    "text": "An aspect is recorded as none only where its item allows it (cfg_setting layer.reading none_allowed) and with its reason in words. A group definition and a group's Strong's enrichment are always observed."
+   },
+   {
+    "rule": "DA-02 a-node-per-occurrence-with-its-surfaces-collection",
+    "text": "A node is on one occurrence (verse_lexical_id) and carries the collection of its surface (a supportive node, the collection of the surface it supports); a node already on the observation for the same occurrence is not written twice, and takes the role. A node with no collection to carry, or on a verse out of scope (B:130), is not written and is listed."
+   },
+   {
+    "rule": "VA-03 consumption-is-verified-before-deletion",
+    "text": "An older observation is deleted as consumed only when live observations carry its meaning: every word occurrence of it is on a live node of a carrier or named as not carried with its reason, the mapping is stated in words (what the old says, which carrier states each part), the traces to it are re-pointed or replaced, and the consumption is kept as `consumed_by`. An observation that holds more than one finding is split first."
+   },
+   {
+    "rule": "VA-04 neither-evidence-nor-inner-being-is-deleted",
+    "text": "An observation that is neither evidence nor inner being contributes nothing to the purposes of the observations (researcher, 2026-11-22): it is commented with its reason and the word occurrences no other live observation holds, then deleted. An observation already marked, or one another observation traces, is not deleted this way."
+   }
+  ],
+  "not_in_this_read": ""
+ },
+ "senses": [
+  {
+   "sense": 22886,
+   "text": "Considering a matter: turning attention and thought to it, looking it over, setting the heart on it. The Lord asks Satan whether he has fixed on Job, the observer sets his heart on the field and takes instruction, the Preacher looks over all his works, the generation gives no thought to the servant's being cut off, the sinner sees his transgressions and turns, the seer contemplates the horns, Joseph turns over what he resolved, and Abraham fixes his attention on his own body without his faith weakening. In each the consideration is an act of the mind taking in a matter, usually before a turn or a conclusion. Verses: Job 1:8, Job 2:3, Pro 24:32, Ecc 2:11, Isa 53:8, Eze 18:28, Dan 7:8, Mat 1:20, Rom 4:19.",
+   "verses": [
+    "Job.1.8",
+    "Job.2.3",
+    "Prov.24.32",
+    "Eccl.2.11",
+    "Isa.53.8",
+    "Ezek.18.28",
+    "Dan.7.8",
+    "Matt.1.20",
+    "Rom.4.19"
+   ]
+  },
+  {
+   "sense": 22887,
+   "text": "Reckoning something or someone as a certain thing: how a person or thing is counted, judged or esteemed. Sarah counts the promiser faithful, Abraham concludes that God can raise the dead, Moses counts the reproach of Christ greater than treasure, rulers are held to be rulers, the silent fool is held wise, silver is counted as nothing, the men are counted reliable, the people are counted as foreigners, as sheep, as pots, the laws as strange, the potter as clay, the disciples dispute who is held greatest, the uncircumcised is counted as circumcised, servants are counted as masters worthy of honor, the Lord counts the exiles good. The word is a reckoning or valuation, the standing given by a judgment. Verses: 1Ki 10:21, 2Ch 9:20, Neh 13:13, Pro 17:28, Mar 10:42, Heb 11:11, Heb 11:19, Heb 11:26, Lev 19:23, 1Sa 1:16, Jer 24:5, 1Cor 4:1, 2Th 3:15, 1Ti 6:1, 1Pe 5:12, Gen 31:15, Psa 44:22, Isa 29:16, Isa 29:17, Lam 4:2, Hos 8:12, Luk 22:24, Rom 2:26, Rom 8:36.",
+   "verses": [
+    "1Kgs.10.21",
+    "2Chr.9.20",
+    "Neh.13.13",
+    "Prov.17.28",
+    "Mark.10.42",
+    "Heb.11.11",
+    "Heb.11.19",
+    "Heb.11.26",
+    "Lev.19.23",
+    "1Sam.1.16",
+    "Jer.24.5",
+    "1Cor.4.1",
+    "2Thess.3.15",
+    "1Tim.6.1",
+    "1Pet.5.12",
+    "Gen.31.15",
+    "Ps.44.22",
+    "Isa.29.16",
+    "Isa.29.17",
+    "Lam.4.2",
+    "Hos.8.12",
+    "Luke.22.24",
+    "Rom.2.26",
+    "Rom.8.36"
+   ]
+  },
+  {
+   "sense": 22888,
+   "text": "Having regard: giving notice and heed to someone or something, or refusing it. The Lord has no regard for Cain's offering, the psalmist asks God to have regard for the covenant and the vine, the wicked do not regard the Lord's works, God does not regard those wise in their own conceit, Levi disregards his kin, the righteous have regard for the life of the beast, the Medes have no regard for silver, and none is shown to the priests. The word is attention that turns toward a person or matter with favor or care, or is withheld. Verses: Gen 4:5, Exo 5:9, Deu 9:27, Deu 33:9, 1Sa 25:25, 2Ki 3:14, 2Ch 5:11, 2Ch 6:19, Job 9:21, Job 34:27, Job 35:13, Job 37:24, Psa 28:5, Psa 74:20, Psa 80:14, Psa 119:117, Psa 144:3, Pro 12:10, Isa 5:12, Isa 13:17, Isa 33:8, Lam 4:16.",
+   "verses": [
+    "Gen.4.5",
+    "Exod.5.9",
+    "Deut.9.27",
+    "Deut.33.9",
+    "1Sam.25.25",
+    "2Kgs.3.14",
+    "2Chr.5.11",
+    "2Chr.6.19",
+    "Job.9.21",
+    "Job.34.27",
+    "Job.35.13",
+    "Job.37.24",
+    "Ps.28.5",
+    "Ps.74.20",
+    "Ps.80.14",
+    "Ps.119.117",
+    "Ps.144.3",
+    "Prov.12.10",
+    "Isa.5.12",
+    "Isa.13.17",
+    "Isa.33.8",
+    "Lam.4.16"
+   ]
+  },
+  {
+   "sense": 22889,
+   "text": "'With regard to' as a linking phrase of respect: it marks the matter spoken of, a festival or a sect or the children of man or the Philistines. The words are prepositions and nouns of concern and carry no act of thinking. Verses: Judg 15:3, Ecc 3:18, Act 28:22, Col 2:16.",
+   "verses": [
+    "Judg.15.3",
+    "Eccl.3.18",
+    "Acts.28.22",
+    "Col.2.16"
+   ]
+  },
+  {
+   "sense": 22890,
+   "text": "Regarding by a standard: Paul says he knew and took account of Christ once by the standard of the flesh and now takes account of no one by it. The Greek verbs are of knowing, used for the rule by which a person is judged. Verses: 2Cor 5:16.",
+   "verses": [
+    "2Cor.5.16"
+   ]
+  },
+  {
+   "sense": 22891,
+   "text": "Weighing in the mind: the prophets' words are to be weighed by the others who judge them, and the Preacher weighs, studies and arranges proverbs. The word is an act of testing and judging what is said or learned. Verses: 1Cor 14:29, Ecc 12:9.",
+   "verses": [
+    "1Cor.14.29",
+    "Eccl.12.9"
+   ]
+  },
+  {
+   "sense": 22892,
+   "text": "Weighing out metal on scales: the traders weigh out silver, and the gifts are to be weighed before the priests. It is the act of measuring by weight, with no act of thinking. Verses: Ezr 8:29, Zep 1:11.",
+   "verses": [
+    "Ezra.8.29",
+    "Zeph.1.11"
+   ]
+  },
+  {
+   "sense": 22893,
+   "text": "Weight as a stated measure: a ring and bracelets of a given weight in shekels, a bar of gold of fifty shekels, and the balances of the hair. The word is the weight of an object. Verses: Gen 24:22, Jos 7:21, Eze 5:1.",
+   "verses": [
+    "Gen.24.22",
+    "Josh.7.21",
+    "Ezek.5.1"
+   ]
+  }
+ ],
+ "verses": [
+  {
+   "reference": "Deu 9:27",
+   "text": "Remember your servants, Abraham, Isaac, and Jacob. Do not regard the stubbornness of this people, or their wickedness or their sin,",
+   "words": [
+    " 0 remember H2142 HVqv2ms | word of another collection; collections forget",
+    " 1 servants H5650 HNcmpc | entity (human); party human",
+    " 1 to/for H9005 HR",
+    " 2 abraham H0085 HNpm | entity (human); party human",
+    " 2 to/for H9005 HR",
+    " 2 your H9021 HSp2ms",
+    " 3 isaac H3327 HNpm | entity (human); party human",
+    " 3 to/for H9005 HR",
+    " 4 jacob H3290 HNpm | entity (human); party human",
+    " 4 and H9002 HC | connective",
+    " 4 to/for H9005 HR",
+    "*5 regard H6437G HVqj2ms | member of this collection",
+    " 5 not H0408 HTn | negator",
+    " 6 stubbornness H7190 HNcmsc | word of another collection; collections willful",
+    " 6 stubbornness H0413 HR | word of another collection; collections willful",
+    " 7 people H5971A HNcmsa",
+    " 7 [the] H9009 HTd",
+    " 8 wickedness H7562 HNcmsc | word of another collection; collections cruel",
+    " 8 wickedness H2088 HTm | word of another collection; collections cruel",
+    " 8 [the] H9009 HTd",
+    " 8 wickedness H0413 HR | word of another collection; collections cruel",
+    " 8 and H9002 HC | connective",
+    " 9 their H9023 HSp3ms",
+    " 10 sin H2403B HNcfsc | word of another collection; collections sin",
+    " 10 his H9023 HSp3ms",
+    " 10 sin H0413 HR | word of another collection; collections sin",
+    " 10 and H9002 HC | connective"
+   ]
+  },
+  {
+   "reference": "Deu 33:9",
+   "text": "who said of his father and mother, ‘I regard them not ’; he disowned his brothers and ignored his children. For they observed your word and kept your covenant.",
+   "words": [
+    " 0 said H0559 HVqrmsa",
+    " 0 [the] H9009 HTd",
+    " 1 father H0001G HNcmsc",
+    " 1 to/for H9005 HR",
+    " 2 mother H0517 HNcfsc",
+    " 2 to/for H9005 HR",
+    " 2 and H9002 HC | connective",
+    " 2 his H9023 HSp3ms",
+    "*3 regard H7200G HVqp1cs | member of this collection",
+    " 4 not H3808 HTn | negator; qualifier negator; negator",
+    " 4 his H9023 HSp3ms",
+    " 5 he H9023 HSp3ms",
+    " 6 disowned H3808 HTn | negator; qualifier negator; negator",
+    " 6 disowned H5234A HVhp3ms | word of another collection; collections forsake",
+    " 7 brothers H0251G HNcmpc",
+    " 7 him H9033 HSp3ms",
+    " 7 brothers H0853 HTo",
+    " 7 and H9002 HC | connective",
+    " 8 ignored H3808 HTn | negator; qualifier negator; negator",
+    " 8 his H9023 HSp3ms",
+    " 8 ignored H3045 HVqp3ms",
+    " 9 children H1121A HNcmpc",
+    " 9 children H0853 HTo",
+    " 9 and H9002 HC | connective",
+    " 10 observed H8104G HVqp3cp | word of another collection; collections watch",
+    " 10 for H3588A HTc | connective",
+    " 11 word H0565A HNcfsc",
+    " 12 kept H5341 HVqi3mp | word of another collection; collections remove",
+    " 12 your H9021 HSp2ms",
+    " 13 covenant H1285 HNcfsc",
+    " 13 and H9002 HC | connective",
+    " 13 your H9021 HSp2ms"
+   ]
+  },
+  {
+   "reference": "Job 1:8",
+   "text": "And the Lord said to Satan, “Have you considered my servant Job, that there is none like him on the earth, a blameless and upright man, who fears God and turns away from evil?”",
+   "words": [
+    " 0 lord H3068G HNpt | entity (divine); party divine",
+    " 1 said H0559 HVqw3ms",
+    " 2 to H0413 HR",
+    " 3 satan H7854 HNtmsa",
+    " 3 [the] H9009 HTd",
+    "*4 considered H7760K HVqp2ms | member of this collection",
+    " 4 [¿] H9008 HTi",
+    "*4 considered H3820A HNcmsc | member of this collection",
+    " 5 servant H5650 HNcmsc | entity (human); party human",
+    " 5 your H9021 HSp2ms",
+    " 5 servant H5921A HR",
+    " 6 job H0347 HNpm | entity (human); party human",
+    " 6 my H9020 HSp1bs",
+    " 7 none H0369 HNcmsc",
+    " 7 none H3588A HTc | connective",
+    " 8 like H3644G HR",
+    " 9 earth H0776G HNcfsa",
+    " 9 in/on/with H9003 HRd",
+    " 9 him H9033 HSp3ms",
+    " 10 blameless H8535 HAamsa | word of another collection; qualifier morph: adjective; collections innocent",
+    " 11 upright H3477G HAamsa | word of another collection; qualifier morph: adjective; collections upright",
+    " 11 and H9002 HC | connective",
+    " 12 man H0376G HNcmsa | entity (human); party human",
+    " 13 fears H3373 HAamsc | word of another collection; qualifier morph: adjective; collections fear",
+    " 14 god H0430G HNcmpa | entity (divine); party divine",
+    " 15 away H5493I HVqrmsa",
+    " 16 evil H7451B HAamsa | word of another collection; qualifier qualifier subgroup: Bad (a quality of something); morph: adjective; collections evildoer",
+    " 16 from H9006 HR"
+   ]
+  },
+  {
+   "reference": "Job 2:3",
+   "text": "And the Lord said to Satan, “Have you considered my servant Job, that there is none like him on the earth, a blameless and upright man, who fears God and turns away from evil? He still holds fast his integrity, although you incited me against him to destroy him without reason.”",
+   "words": [
+    " 0 lord H3068G HNpt | entity (divine); party divine",
+    " 1 said H0559 HVqw3ms",
+    " 2 to H0413 HR",
+    " 3 satan H7854 HNtmsa",
+    " 3 [the] H9009 HTd",
+    "*4 considered H3820A HNcmsc | member of this collection",
+    "*4 considered H7760K HVqp2ms | member of this collection",
+    " 4 [¿] H9008 HTi",
+    " 5 servant H5650 HNcmsc | entity (human); party human",
+    " 5 your H9021 HSp2ms",
+    " 5 servant H0413 HR",
+    " 6 job H0347 HNpm | entity (human); party human",
+    " 6 my H9020 HSp1bs",
+    " 7 that H3588A HTc | connective",
+    " 8 none H0369 HNcmsc",
+    " 9 like him H3644G HR",
+    " 10 earth H0776G HNcfsa",
+    " 10 in/on/with H9003 HRd",
+    " 10 him H9033 HSp3ms",
+    " 11 blameless H8535 HAamsa | word of another collection; qualifier morph: adjective; collections innocent",
+    " 12 upright H3477G HAamsa | word of another collection; qualifier morph: adjective; collections upright",
+    " 12 and H9002 HC | connective",
+    " 13 man H0376G HNcmsa | entity (human); party human",
+    " 14 fears H3373 HAamsc | word of another collection; qualifier morph: adjective; collections fear",
+    " 15 god H0430G HNcmpa | entity (divine); party divine",
+    " 16 away H5493I HVqrmsa",
+    " 17 evil H7451B HAamsa | word of another collection; qualifier qualifier subgroup: Bad (a quality of something); morph: adjective; collections evildoer",
+    " 17 from H9006 HR",
+    " 18 still H5750 HAcmsc | word of another collection; qualifier morph: adjective; collections mute",
+    " 18 and H9002 HC | connective",
+    " 19 fast H2388H HVhrmsa | word of another collection; collections fast",
+    " 19 he H9043 HSp3ms",
+    " 20 integrity H8538 HNcfsc | word of another collection; collections innocent",
+    " 20 in/on/with H9003 HR",
+    " 21 incited H5496 HVhw2ms",
+    " 21 his H9023 HSp3ms",
+    " 22 destroy H1104 HVpcc | word of another collection; collections destruction",
+    " 22 to/for H9005 HR",
+    " 22 me H9030 HSp1bs",
+    " 22 in/on/with H9003 HR",
+    " 22 him H9033 HSp3ms",
+    " 23 without reason H2600 HD | qualifier candidate; qualifier morph: adverb",
+    " 23 him H9033 HSp3ms"
+   ]
+  },
+  {
+   "reference": "Job 34:27",
+   "text": "because they turned aside from following him and had no regard for any of his ways,",
+   "words": [
+    " 0 because H0834A HTr | connective",
+    " 1 turned aside H5493I HVqp3cp | word of another collection; collections turn",
+    " 1 turned aside H5921A HR | word of another collection; collections turn",
+    " 1 turned aside H3651C HD | word of another collection; qualifier morph: adverb; collections turn",
+    " 2 following him H0310A HAcmpc | qualifier candidate; qualifier morph: adjective",
+    " 2 from H9006 HR",
+    " 3 no H3808 HTn | negator; qualifier negator; negator",
+    " 3 his H9023 HSp3bs",
+    "*4 regard H7919A HVhp3cp | member of this collection",
+    " 5 any H3605 HNcmsc",
+    " 6 ways H1870G HNcmpc",
+    " 6 him H9033 HSp3ms",
+    " 6 and H9002 HC | connective"
+   ]
+  },
+  {
+   "reference": "Job 37:24",
+   "text": "Therefore men fear him; he does not regard any who are wise in their own conceit.”",
+   "words": [
+    " 0 therefore H3651C HD | qualifier candidate; qualifier morph: adverb",
+    " 0 to/for H9005 HR",
+    " 1 men H0582 HNcmpa | entity (human); party human",
+    " 1 him H9033 HSp3ms",
+    " 2 fear H3372H HVqp3cp | word of another collection; collections fear",
+    " 3 not H3808 HTn | negator; qualifier negator; negator",
+    "*4 regard H7200G HVqi3ms | member of this collection",
+    " 5 any H3605 HNcmsc",
+    " 6 wise H2450 HAampc | word of another collection; qualifier morph: adjective; collections wise",
+    " 7 conceit H3820A HNcmsa | word of another collection; collections pride"
+   ]
+  },
+  {
+   "reference": "Pro 17:28",
+   "text": "Even a fool who keeps silent is considered wise; when he closes his lips, he is deemed intelligent.",
+   "words": [
+    " 0 even H1571 HD | qualifier candidate; qualifier morph: adverb",
+    " 1 fool H0191 HAamsa | word of another collection; qualifier morph: adjective; collections folly",
+    " 2 silent H2790B HVhrmsa | word of another collection; collections mute",
+    "*3 considered H2803J HVNi3ms | member of this collection",
+    " 4 wise H2450 HAamsa | word of another collection; qualifier morph: adjective; collections wise",
+    " 5 closes H0331 HVqrmsa",
+    " 6 lips H8193G HNcfdc",
+    " 7 intelligent H0995 HVNrmsa | word of another collection; collections wise",
+    " 7 his H9023 HSp3ms"
+   ]
+  },
+  {
+   "reference": "Pro 24:32",
+   "text": "Then I saw and considered it; I looked and received instruction.",
+   "words": [
+    " 0 saw H2372 HVqw1cs",
+    "*1 considered H7896K HVqi1cs | member of this collection",
+    "*1 considered H0595 HPp1bs | member of this collection",
+    "*1 considered H3820A HNcmsc | member of this collection",
+    " 2 i H9020 HSp1bs",
+    " 3 looked H7200G HVqp1cs",
+    " 4 received H3947H HVqp1cs",
+    " 5 instruction H4148H HNcmsa | word of another collection; collections teach"
+   ]
+  },
+  {
+   "reference": "Ecc 3:18",
+   "text": "I said in my heart with regard to the children of man that God is testing them that they may see that they themselves are but beasts.",
+   "words": [
+    " 0 i H0589 HPp1bs",
+    " 1 said H0559 HVqp1cs",
+    " 2 heart H3820A HNcmsc | word of another collection; collections heart",
+    " 2 in/on/with H9003 HR",
+    " 3 with H5921A HR",
+    " 3 my H9020 HSp1bs",
+    "*4 regard H1700 HNcfsc | member of this collection",
+    " 5 children H1121A HNcmpc",
+    " 6 man H0120G HNcmsa | entity (human); party human",
+    " 6 [the] H9009 HTd",
+    " 7 god H0430G HNcmpa | entity (divine); party divine",
+    " 7 [the] H9009 HTd",
+    " 7 them H9038 HSp3mp",
+    " 8 testing H1305 HVqcc | word of another collection; collections trial",
+    " 8 to/for H9005 HR",
+    " 9 see H7200G HVqcc",
+    " 9 and H9002 HC | connective",
+    " 9 to/for H9005 HR",
+    " 10 they H1992 HPp3mp",
+    " 11 themselves H1992 HPp3mp",
+    " 11 which/that H9007 HTr",
+    " 11 to/for H9005 HRd",
+    " 11 them H9038 HSp3mp",
+    " 12 beasts H0929 HNcfsa"
+   ]
+  },
+  {
+   "reference": "Ecc 12:9",
+   "text": "Besides being wise, the Preacher also taught the people knowledge, weighing and studying and arranging many proverbs with great care.",
+   "words": [
+    " 0 besides H3148 HNcmsa",
+    " 0 and H9002 HC | connective",
+    " 1 wise H2450 HAamsa | word of another collection; qualifier morph: adjective; collections wise",
+    " 2 preacher H6953 HNcfsa",
+    " 2 preacher H1961 HVqp3ms",
+    " 2 which/that H9007 HTr",
+    " 3 also H5750 HAcmsa | qualifier candidate; qualifier morph: adjective",
+    " 4 taught H3925G HVpp3ms | word of another collection; collections teach",
+    " 5 people H5971A HNcmsa",
+    " 5 [the] H9009 HTd",
+    " 5 people H0853 HTo",
+    " 6 knowledge H1847 HNcfsa | word of another collection; collections know",
+    "*7 weighing H0239 HVpq3ms | member of this collection",
+    " 8 studying H2713 HVpq3ms",
+    " 9 arranging H8626 HVpp3ms",
+    " 10 many H7235A HVhaa",
+    " 11 proverbs H4912 HNcmpa"
+   ]
+  },
+  {
+   "reference": "Isa 29:16",
+   "text": "You turn things upside down! Shall the potter be regarded as the clay, that the thing made should say of its maker, “He did not make me”; or the thing formed say of him who formed it, “He has no understanding ”?",
+   "words": [
+    " 0 upside down H2017 HNcmsc",
+    " 1 potter H3335H HNcmsa | entity (human); party human",
+    " 1 [the] H9009 HTd",
+    "*2 regarded H2803J HVNi3ms | member of this collection",
+    " 3 clay H2563A HNcmsc",
+    " 3 like/as H9004 HR",
+    " 3 your H9026 HSp2mp",
+    " 3 clay H0518H HTc | connective",
+    " 4 that H3588A HTc | connective",
+    " 5 thing made H4639G HNcmsa",
+    " 6 say H0559 HVqi3ms",
+    " 7 maker H6213H HVqrmsc",
+    " 7 to/for H9005 HR",
+    " 8 not H3808 HTn | negator; qualifier negator; negator",
+    " 8 him H9033 HSp3ms",
+    " 9 make H6213H HVqp3ms",
+    " 10 thing formed H3336 HNcmsa",
+    " 10 and H9002 HC | connective",
+    " 10 me H9030 HSp1bs",
+    " 11 formed H3335G HVqrmsc",
+    " 11 to/for H9005 HR",
+    " 11 say H0559 HVqp3ms",
+    " 12 no H3808 HTn | negator; qualifier negator; negator",
+    " 12 him H9033 HSp3ms",
+    " 13 understanding H0995 HVhp3ms | word of another collection; collections wise"
+   ]
+  },
+  {
+   "reference": "Isa 29:17",
+   "text": "Is it not yet a very little while until Lebanon shall be turned into a fruitful field, and the fruitful field shall be regarded as a forest?",
+   "words": [
+    " 0 not H3808 HTn | negator; qualifier negator; negator",
+    " 0 [¿] H9008 HTi",
+    " 1 yet H5750 HAcmsa | qualifier candidate; qualifier morph: adjective",
+    " 2 very H4213 HNcmsa",
+    " 3 little while H4592 HNcmsc",
+    " 4 lebanon H3844G HNpl",
+    " 5 turned H7725G HVqq3ms | word of another collection; collections turn",
+    " 6 fruitful field H3759 HNcmsa",
+    " 6 to/for H9005 HRd",
+    " 7 fruitful field H3759 HNcmsa",
+    " 7 and H9002 HC | connective",
+    " 7 [the] H9009 HTd",
+    "*8 regarded H2803J HVNi3ms | member of this collection",
+    " 9 forest H3293A HNcmsa",
+    " 9 to/for H9005 HRd"
+   ]
+  },
+  {
+   "reference": "Isa 53:8",
+   "text": "By oppression and judgment he was taken away; and as for his generation, who considered that he was cut off out of the land of the living, stricken for the transgression of my people?",
+   "words": [
+    " 0 by H9006 HR",
+    " 1 oppression H6115 HNcmsa | word of another collection; collections oppress",
+    " 2 judgment H4941G HNcmsa | word of another collection; collections wise",
+    " 3 away H3947G HVPp3ms",
+    " 4 generation H1755 HNcmsc",
+    " 4 generation H0853 HTo",
+    " 4 and H9002 HC | connective",
+    " 5 who H4310 HPi",
+    " 5 his H9023 HSp3ms",
+    "*6 considered H7878 HVpi3ms | member of this collection",
+    " 7 that H3588A HTc | connective",
+    " 8 cut off H1504 HVNp3ms",
+    " 9 from H9006 HR",
+    " 9 and H9002 HC | connective",
+    " 10 land H0776G HNcfsc",
+    " 11 living H2416A HAampa | word of another collection; qualifier morph: adjective; collections live",
+    " 12 stricken H5061 HNcmsa",
+    " 12 my H9020 HSp1bs",
+    " 12 to/for H9005 HR",
+    " 12 them H9038 HSp3mp",
+    " 13 for H9006 HR",
+    " 14 transgression H6588 HNcmsc | word of another collection; collections crime",
+    " 14 from H9006 HR",
+    " 15 people H5971A HNcmsc"
+   ]
+  },
+  {
+   "reference": "Eze 18:28",
+   "text": "Because he considered and turned away from all the transgressions that he had committed, he shall surely live; he shall not die.",
+   "words": [
+    "*0 considered H7200H HVqw3ms | member of this collection",
+    " 1 turned away H7725O HVqw3ms | word of another collection; collections turn",
+    " 2 from H9006 HR",
+    " 3 all H3605 HNcmsc",
+    " 4 transgressions H6588 HNcmpc | word of another collection; collections sin",
+    " 5 that H0834A HTr | connective",
+    " 5 his H9023 HSp3ms",
+    " 6 committed H6213H HVqp3ms | word of another collection; collections dedicate",
+    " 7 surely H2421 HVqaa | word of another collection; collections loyalty",
+    " 8 live H2421 HVqi3ms | word of another collection; collections live",
+    " 9 not H3808 HTn | negator; qualifier negator; negator",
+    " 10 die H4191 HVqi3ms | word of another collection; collections die"
+   ]
+  },
+  {
+   "reference": "Rom 2:26",
+   "text": "So, if a man who is uncircumcised keeps the precepts of the law, will not his uncircumcision be regarded as circumcision?",
+   "words": [
+    " 0 so G3767 CONJ | connective",
+    " 1 if G1437 COND | connective",
+    " 2 uncircumcised G0203 N-NSF | word of another collection; collections uncircumcised",
+    " 3 keeps G5442G V-PAS-3S | word of another collection; collections remove",
+    " 4 precepts G1345 N-APN | word of another collection; collections govern",
+    " 5 law G3551 N-GSM",
+    " 6 not G3780 PRT-N | negator; qualifier negator; negator",
+    " 7 his G0846 P-GSM",
+    " 8 uncircumcision G0203 N-NSF | word of another collection; collections uncircumcised",
+    "*9 regarded G3049 V-FPI-3S | member of this collection",
+    " 10 as G1519 PREP",
+    " 11 circumcision G4061 N-ASF"
+   ]
+  },
+  {
+   "reference": "2Th 3:15",
+   "text": "Do not regard him as an enemy, but warn him as a brother.",
+   "words": [
+    " 0 not G2532 CONJ | connective",
+    " 0 not G3361 PRT-N | negator; qualifier negator; negator",
+    "*1 regard G2233 V-PNM-2P | member of this collection",
+    " 2 as G5613 PRT | connective",
+    " 3 enemy G2190 N-ASM",
+    " 4 but G0235 CONJ | connective",
+    " 5 warn G3560 V-PAM-2P | word of another collection; collections warn",
+    " 6 as G5613 PRT | connective",
+    " 7 brother G0080 N-ASM | entity (human); party human"
+   ]
+  },
+  {
+   "reference": "1Ti 6:1",
+   "text": "Let all who are under a yoke as bondservants regard their own masters as worthy of all honor, so that the name of God and the teaching may not be reviled.",
+   "words": [
+    " 0 all G3745 K-NPM",
+    " 1 are G1526 V-PAI-3P",
+    " 2 under G5259H PREP",
+    " 3 yoke G2218 N-ASM",
+    " 4 bondservants G1401 N-NPM",
+    "*5 regard G2233 V-PNM-3P | member of this collection",
+    " 6 own G2398 A-APM | qualifier candidate; qualifier morph: adjective",
+    " 7 masters G1203 N-APM",
+    " 8 worthy G0514 A-APM | word of another collection; qualifier morph: adjective; collections honor",
+    " 9 all G3956 A-GSF | qualifier candidate; qualifier morph: adjective",
+    " 10 honor G5092 N-GSF | word of another collection; collections honor",
+    " 11 name G3686 N-NSN",
+    " 12 god G2316 N-GSM-T | entity (divine); party divine",
+    " 13 and G2532 CONJ | connective",
+    " 14 teaching G1319 N-NSF | word of another collection; collections teach",
+    " 15 not G3363 CONJ | connective",
+    " 16 reviled G0987 V-PPS-3S | word of another collection; collections scoff"
+   ]
+  }
+ ],
+ "rows": [
+  {
+   "ledger_id": 1436,
+   "item": "pairing",
+   "subject": "teach",
+   "asks": "Which words of this partner collection stand with the subgroup's surfaces in the verses they share, where does each stand (side and distance, from the stored structure), and which stand out? The WordNet control for this collection is shown. Write one finding for each distinct thing the structure shows; a finding holds the verses it holds in as its nodes.",
+   "none_allowed": true,
+   "verses": [
+    "Pro 24:32",
+    "Ecc 12:9",
+    "1Ti 6:1"
+   ],
+   "occurrences": [
+    {
+     "occurrence": 1281983,
+     "reference": "Pro 24:32",
+     "surface": "considered",
+     "strong": "H7896K",
+     "as": "member"
+    },
+    {
+     "occurrence": 1281984,
+     "reference": "Pro 24:32",
+     "surface": "considered",
+     "strong": "H0595",
+     "as": "member"
+    },
+    {
+     "occurrence": 1281985,
+     "reference": "Pro 24:32",
+     "surface": "considered",
+     "strong": "H3820A",
+     "as": "member"
+    },
+    {
+     "occurrence": 1286093,
+     "reference": "Ecc 12:9",
+     "surface": "weighing",
+     "strong": "H0239",
+     "as": "member"
+    },
+    {
+     "occurrence": 1499071,
+     "reference": "1Ti 6:1",
+     "surface": "regard",
+     "strong": "G2233",
+     "as": "member"
+    },
+    {
+     "occurrence": 1281989,
+     "reference": "Pro 24:32",
+     "surface": "instruction",
+     "strong": "H4148H",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1286088,
+     "reference": "Ecc 12:9",
+     "surface": "taught",
+     "strong": "H3925G",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1499080,
+     "reference": "1Ti 6:1",
+     "surface": "teaching",
+     "strong": "G1319",
+     "as": "partner"
+    }
+   ],
+   "older": [],
+   "wordnet_control": {
+    "pairs": 1,
+    "types": {
+     "synonym": 1
+    },
+    "examples": [
+     {
+      "surface": "considered",
+      "partner_surface": "study",
+      "type": "synonym",
+      "weight": 1
+     }
+    ]
+   }
+  },
+  {
+   "ledger_id": 1437,
+   "item": "pairing",
+   "subject": "trial",
+   "asks": "Which words of this partner collection stand with the subgroup's surfaces in the verses they share, where does each stand (side and distance, from the stored structure), and which stand out? The WordNet control for this collection is shown. Write one finding for each distinct thing the structure shows; a finding holds the verses it holds in as its nodes.",
+   "none_allowed": true,
+   "verses": [
+    "Ecc 3:18"
+   ],
+   "occurrences": [
+    {
+     "occurrence": 1286409,
+     "reference": "Ecc 3:18",
+     "surface": "regard",
+     "strong": "H1700",
+     "as": "member"
+    },
+    {
+     "occurrence": 1286416,
+     "reference": "Ecc 3:18",
+     "surface": "testing",
+     "strong": "H1305",
+     "as": "partner"
+    }
+   ],
+   "older": [],
+   "wordnet_control": "WordNet relates no surface of the subgroup to this collection (a verse-only pairing: no control)"
+  },
+  {
+   "ledger_id": 1438,
+   "item": "pairing",
+   "subject": "turn",
+   "asks": "Which words of this partner collection stand with the subgroup's surfaces in the verses they share, where does each stand (side and distance, from the stored structure), and which stand out? The WordNet control for this collection is shown. Write one finding for each distinct thing the structure shows; a finding holds the verses it holds in as its nodes.",
+   "none_allowed": true,
+   "verses": [
+    "Job 34:27",
+    "Isa 29:17",
+    "Eze 18:28"
+   ],
+   "occurrences": [
+    {
+     "occurrence": 1244033,
+     "reference": "Job 34:27",
+     "surface": "regard",
+     "strong": "H7919A",
+     "as": "member"
+    },
+    {
+     "occurrence": 1313897,
+     "reference": "Isa 29:17",
+     "surface": "regarded",
+     "strong": "H2803J",
+     "as": "member"
+    },
+    {
+     "occurrence": 1351521,
+     "reference": "Eze 18:28",
+     "surface": "considered",
+     "strong": "H7200H",
+     "as": "member"
+    },
+    {
+     "occurrence": 1244026,
+     "reference": "Job 34:27",
+     "surface": "turned aside",
+     "strong": "H5493I",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1244027,
+     "reference": "Job 34:27",
+     "surface": "turned aside",
+     "strong": "H5921A",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1244028,
+     "reference": "Job 34:27",
+     "surface": "turned aside",
+     "strong": "H3651C",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1313891,
+     "reference": "Isa 29:17",
+     "surface": "turned",
+     "strong": "H7725G",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1351522,
+     "reference": "Eze 18:28",
+     "surface": "turned away",
+     "strong": "H7725O",
+     "as": "partner"
+    }
+   ],
+   "older": [],
+   "wordnet_control": "WordNet relates no surface of the subgroup to this collection (a verse-only pairing: no control)"
+  },
+  {
+   "ledger_id": 1439,
+   "item": "pairing",
+   "subject": "uncircumcised",
+   "asks": "Which words of this partner collection stand with the subgroup's surfaces in the verses they share, where does each stand (side and distance, from the stored structure), and which stand out? The WordNet control for this collection is shown. Write one finding for each distinct thing the structure shows; a finding holds the verses it holds in as its nodes.",
+   "none_allowed": true,
+   "verses": [
+    "Rom 2:26"
+   ],
+   "occurrences": [
+    {
+     "occurrence": 1479951,
+     "reference": "Rom 2:26",
+     "surface": "regarded",
+     "strong": "G3049",
+     "as": "member"
+    },
+    {
+     "occurrence": 1479944,
+     "reference": "Rom 2:26",
+     "surface": "uncircumcised",
+     "strong": "G0203",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1479950,
+     "reference": "Rom 2:26",
+     "surface": "uncircumcision",
+     "strong": "G0203",
+     "as": "partner"
+    }
+   ],
+   "older": [],
+   "wordnet_control": "WordNet relates no surface of the subgroup to this collection (a verse-only pairing: no control)"
+  },
+  {
+   "ledger_id": 1440,
+   "item": "pairing",
+   "subject": "upright",
+   "asks": "Which words of this partner collection stand with the subgroup's surfaces in the verses they share, where does each stand (side and distance, from the stored structure), and which stand out? The WordNet control for this collection is shown. Write one finding for each distinct thing the structure shows; a finding holds the verses it holds in as its nodes.",
+   "none_allowed": true,
+   "verses": [
+    "Job 1:8",
+    "Job 2:3"
+   ],
+   "occurrences": [
+    {
+     "occurrence": 1236992,
+     "reference": "Job 1:8",
+     "surface": "considered",
+     "strong": "H7760K",
+     "as": "member"
+    },
+    {
+     "occurrence": 1236994,
+     "reference": "Job 1:8",
+     "surface": "considered",
+     "strong": "H3820A",
+     "as": "member"
+    },
+    {
+     "occurrence": 1237020,
+     "reference": "Job 2:3",
+     "surface": "considered",
+     "strong": "H3820A",
+     "as": "member"
+    },
+    {
+     "occurrence": 1237021,
+     "reference": "Job 2:3",
+     "surface": "considered",
+     "strong": "H7760K",
+     "as": "member"
+    },
+    {
+     "occurrence": 1237007,
+     "reference": "Job 1:8",
+     "surface": "upright",
+     "strong": "H3477G",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1237035,
+     "reference": "Job 2:3",
+     "surface": "upright",
+     "strong": "H3477G",
+     "as": "partner"
+    }
+   ],
+   "older": [],
+   "wordnet_control": "WordNet relates no surface of the subgroup to this collection (a verse-only pairing: no control)"
+  },
+  {
+   "ledger_id": 1441,
+   "item": "pairing",
+   "subject": "warn",
+   "asks": "Which words of this partner collection stand with the subgroup's surfaces in the verses they share, where does each stand (side and distance, from the stored structure), and which stand out? The WordNet control for this collection is shown. Write one finding for each distinct thing the structure shows; a finding holds the verses it holds in as its nodes.",
+   "none_allowed": true,
+   "verses": [
+    "2Th 3:15"
+   ],
+   "occurrences": [
+    {
+     "occurrence": 1498128,
+     "reference": "2Th 3:15",
+     "surface": "regard",
+     "strong": "G2233",
+     "as": "member"
+    },
+    {
+     "occurrence": 1498132,
+     "reference": "2Th 3:15",
+     "surface": "warn",
+     "strong": "G3560",
+     "as": "partner"
+    }
+   ],
+   "older": [],
+   "wordnet_control": "WordNet relates no surface of the subgroup to this collection (a verse-only pairing: no control)"
+  },
+  {
+   "ledger_id": 1442,
+   "item": "pairing",
+   "subject": "watch",
+   "asks": "Which words of this partner collection stand with the subgroup's surfaces in the verses they share, where does each stand (side and distance, from the stored structure), and which stand out? The WordNet control for this collection is shown. Write one finding for each distinct thing the structure shows; a finding holds the verses it holds in as its nodes.",
+   "none_allowed": true,
+   "verses": [
+    "Deu 33:9"
+   ],
+   "occurrences": [
+    {
+     "occurrence": 1074743,
+     "reference": "Deu 33:9",
+     "surface": "regard",
+     "strong": "H7200G",
+     "as": "member"
+    },
+    {
+     "occurrence": 1074759,
+     "reference": "Deu 33:9",
+     "surface": "observed",
+     "strong": "H8104G",
+     "as": "partner"
+    }
+   ],
+   "older": [
+    {
+     "observation": 14552,
+     "stage": "prior-capture",
+     "kind": "statement",
+     "nature": null,
+     "text": "How it co-exists. The test is passed by putting God above kin: Levi \"said of his father and mother, 'I regard them not'; he disowned his brothers and ignored his children. For they observed your word\" (33:9). Contrast U1 §2 (KS), where kinship grounds the refusal of strife.",
+     "verses": [
+      "Deut.33.9"
+     ]
+    }
+   ],
+   "wordnet_control": {
+    "pairs": 6,
+    "types": {
+     "synonym": 5,
+     "same_base": 1
+    },
+    "examples": [
+     {
+      "surface": "regard",
+      "partner_surface": "gaze",
+      "type": "synonym",
+      "weight": 1
+     },
+     {
+      "surface": "regard",
+      "partner_surface": "consider",
+      "type": "synonym",
+      "weight": 2
+     },
+     {
+      "surface": "considered",
+      "partner_surface": "consider",
+      "type": "same_base",
+      "weight": 9
+     },
+     {
+      "surface": "regarded",
+      "partner_surface": "consider",
+      "type": "synonym",
+      "weight": 2
+     },
+     {
+      "surface": "weigh",
+      "partner_surface": "consider",
+      "type": "synonym",
+      "weight": 1
+     }
+    ]
+   }
+  },
+  {
+   "ledger_id": 1443,
+   "item": "pairing",
+   "subject": "willful",
+   "asks": "Which words of this partner collection stand with the subgroup's surfaces in the verses they share, where does each stand (side and distance, from the stored structure), and which stand out? The WordNet control for this collection is shown. Write one finding for each distinct thing the structure shows; a finding holds the verses it holds in as its nodes.",
+   "none_allowed": true,
+   "verses": [
+    "Deu 9:27"
+   ],
+   "occurrences": [
+    {
+     "occurrence": 1071429,
+     "reference": "Deu 9:27",
+     "surface": "regard",
+     "strong": "H6437G",
+     "as": "member"
+    },
+    {
+     "occurrence": 1071431,
+     "reference": "Deu 9:27",
+     "surface": "stubbornness",
+     "strong": "H7190",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1071432,
+     "reference": "Deu 9:27",
+     "surface": "stubbornness",
+     "strong": "H0413",
+     "as": "partner"
+    }
+   ],
+   "older": [],
+   "wordnet_control": "WordNet relates no surface of the subgroup to this collection (a verse-only pairing: no control)"
+  },
+  {
+   "ledger_id": 1444,
+   "item": "pairing",
+   "subject": "wise",
+   "asks": "Which words of this partner collection stand with the subgroup's surfaces in the verses they share, where does each stand (side and distance, from the stored structure), and which stand out? The WordNet control for this collection is shown. Write one finding for each distinct thing the structure shows; a finding holds the verses it holds in as its nodes.",
+   "none_allowed": true,
+   "verses": [
+    "Job 37:24",
+    "Pro 17:28",
+    "Ecc 12:9",
+    "Isa 29:16",
+    "Isa 53:8"
+   ],
+   "occurrences": [
+    {
+     "occurrence": 1236028,
+     "reference": "Job 37:24",
+     "surface": "regard",
+     "strong": "H7200G",
+     "as": "member"
+    },
+    {
+     "occurrence": 1281668,
+     "reference": "Pro 17:28",
+     "surface": "considered",
+     "strong": "H2803J",
+     "as": "member"
+    },
+    {
+     "occurrence": 1286093,
+     "reference": "Ecc 12:9",
+     "surface": "weighing",
+     "strong": "H0239",
+     "as": "member"
+    },
+    {
+     "occurrence": 1300532,
+     "reference": "Isa 29:16",
+     "surface": "regarded",
+     "strong": "H2803J",
+     "as": "member"
+    },
+    {
+     "occurrence": 1309721,
+     "reference": "Isa 53:8",
+     "surface": "considered",
+     "strong": "H7878",
+     "as": "member"
+    },
+    {
+     "occurrence": 1236030,
+     "reference": "Job 37:24",
+     "surface": "wise",
+     "strong": "H2450",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1281669,
+     "reference": "Pro 17:28",
+     "surface": "wise",
+     "strong": "H2450",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1281672,
+     "reference": "Pro 17:28",
+     "surface": "intelligent",
+     "strong": "H0995",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1286083,
+     "reference": "Ecc 12:9",
+     "surface": "wise",
+     "strong": "H2450",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1300553,
+     "reference": "Isa 29:16",
+     "surface": "understanding",
+     "strong": "H0995",
+     "as": "partner"
+    },
+    {
+     "occurrence": 1309714,
+     "reference": "Isa 53:8",
+     "surface": "judgment",
+     "strong": "H4941G",
+     "as": "partner"
+    }
+   ],
+   "older": [
+    {
+     "observation": 20545,
+     "stage": "prior-capture",
+     "kind": "face",
+     "nature": null,
+     "text": "Face: The potter's formed thing; Verses: Isa 29:16; What differs: The formed thing says of its former, \"He has no understanding\"; Why: Creature denies creator (S)",
+     "verses": [
+      "Isa.29.16"
+     ]
+    }
+   ],
+   "wordnet_control": {
+    "pairs": 10,
+    "types": {
+     "synonym": 8,
+     "same_base": 2
+    },
+    "examples": [
+     {
+      "surface": "regard",
+      "partner_surface": "considers",
+      "type": "synonym",
+      "weight": 2
+     },
+     {
+      "surface": "considered",
+      "partner_surface": "considers",
+      "type": "same_base",
+      "weight": 9
+     },
+     {
+      "surface": "regard",
+      "partner_surface": "consider",
+      "type": "synonym",
+      "weight": 2
+     },
+     {
+      "surface": "considered",
+      "partner_surface": "consider",
+      "type": "same_base",
+      "weight": 9
+     },
+     {
+      "surface": "regarded",
+      "partner_surface": "consider",
+      "type": "synonym",
+      "weight": 2
+     }
+    ]
+   }
+  }
+ ],
+ "answer": {
+  "command": "ReadStructure",
+  "collection": "thought",
+  "subgroup": "weighing and taking account of",
+  "rows": [
+   {
+    "ledger_id": 1436,
+    "item": "pairing",
+    "subject": "teach",
+    "disposition": "observed | none",
+    "findings": [
+     {
+      "kind": "pairing",
+      "obs_text": "",
+      "basis": "read | stated",
+      "grounds": "",
+      "occurrences": []
+     }
+    ],
+    "reason": "",
+    "older": []
+   },
+   {
+    "ledger_id": 1437,
+    "item": "pairing",
+    "subject": "trial",
+    "disposition": "observed | none",
+    "findings": [
+     {
+      "kind": "pairing",
+      "obs_text": "",
+      "basis": "read | stated",
+      "grounds": "",
+      "occurrences": []
+     }
+    ],
+    "reason": "",
+    "older": []
+   },
+   {
+    "ledger_id": 1438,
+    "item": "pairing",
+    "subject": "turn",
+    "disposition": "observed | none",
+    "findings": [
+     {
+      "kind": "pairing",
+      "obs_text": "",
+      "basis": "read | stated",
+      "grounds": "",
+      "occurrences": []
+     }
+    ],
+    "reason": "",
+    "older": []
+   },
+   {
+    "ledger_id": 1439,
+    "item": "pairing",
+    "subject": "uncircumcised",
+    "disposition": "observed | none",
+    "findings": [
+     {
+      "kind": "pairing",
+      "obs_text": "",
+      "basis": "read | stated",
+      "grounds": "",
+      "occurrences": []
+     }
+    ],
+    "reason": "",
+    "older": []
+   },
+   {
+    "ledger_id": 1440,
+    "item": "pairing",
+    "subject": "upright",
+    "disposition": "observed | none",
+    "findings": [
+     {
+      "kind": "pairing",
+      "obs_text": "",
+      "basis": "read | stated",
+      "grounds": "",
+      "occurrences": []
+     }
+    ],
+    "reason": "",
+    "older": []
+   },
+   {
+    "ledger_id": 1441,
+    "item": "pairing",
+    "subject": "warn",
+    "disposition": "observed | none",
+    "findings": [
+     {
+      "kind": "pairing",
+      "obs_text": "",
+      "basis": "read | stated",
+      "grounds": "",
+      "occurrences": []
+     }
+    ],
+    "reason": "",
+    "older": []
+   },
+   {
+    "ledger_id": 1442,
+    "item": "pairing",
+    "subject": "watch",
+    "disposition": "observed | none",
+    "findings": [
+     {
+      "kind": "pairing",
+      "obs_text": "",
+      "basis": "read | stated",
+      "grounds": "",
+      "occurrences": []
+     }
+    ],
+    "reason": "",
+    "older": [
+     {
+      "observation": 14552,
+      "action": "keep | restate | merge | consume | delete_neither | defer | carry",
+      "reason": ""
+     }
+    ]
+   },
+   {
+    "ledger_id": 1443,
+    "item": "pairing",
+    "subject": "willful",
+    "disposition": "observed | none",
+    "findings": [
+     {
+      "kind": "pairing",
+      "obs_text": "",
+      "basis": "read | stated",
+      "grounds": "",
+      "occurrences": []
+     }
+    ],
+    "reason": "",
+    "older": []
+   },
+   {
+    "ledger_id": 1444,
+    "item": "pairing",
+    "subject": "wise",
+    "disposition": "observed | none",
+    "findings": [
+     {
+      "kind": "pairing",
+      "obs_text": "",
+      "basis": "read | stated",
+      "grounds": "",
+      "occurrences": []
+     }
+    ],
+    "reason": "",
+    "older": [
+     {
+      "observation": 20545,
+      "action": "keep | restate | merge | consume | delete_neither | defer | carry",
+      "reason": ""
+     }
+    ]
+   }
+  ]
+ },
+ "measured": {
+  "package_chars": 46658,
+  "seconds": 0.02
+ }
+}

@@ -1,0 +1,2001 @@
+{
+ "command": "ReadEnrichment",
+ "collection": "thought",
+ "subgroup": "thinking and thought",
+ "step": "1.2",
+ "made": "2026-11-26T06:05:27Z",
+ "unit": {
+  "ledger_id": 1589,
+  "senses": 19,
+  "occurrences": 212,
+  "codes": 66,
+  "older": 0
+ },
+ "instruction": {
+  "what": "Step 1.2, the enrichment of one subgroup (stage 1, B2): for each sense of step 1.1, what the Strong's codes of its occurrences say. The lexicon is the point of this read. Nothing here says what a sense does for the inner being; that begins at step 3.1.",
+  "read": [
+   "Take one sense at a time (`senses`: its text from step 1.1, its codes, words and occurrences).",
+   "Read the lexicon of each of its codes (`codes`: sense_head, meaning_range, lsj, mounce, related), the three meaning sources read together, none picked and the others dropped.",
+   "Validate the sense against its codes: do the lexicon entries bear out the meaning the sense names? Where they do not, say so in the enrichment; the sense is not changed here.",
+   "Where one surface carries several codes in the sense, read what each code adds."
+  ],
+  "write": [
+   "Fill `answer.enrichments`: one entry for each sense, named by `sense` (the id of its 1.1 observation); every sense has exactly one. The enrichment takes the sense's occurrences.",
+   "kind: enrichment. obs_text: a short definition from the lexicon entries; names the codes that link the sense to its usage and what different codes of one surface add; names verses the sense holds in, as the package writes the references (for example Psa 77:6); concise; never the lexicon copied whole, never a verse restated, never what the sense does for the inner being.",
+   "basis: read, with `grounds`: words copied exactly from the lexicon of a code of the sense (sense_head, meaning_range, lsj or mounce; the record checks them); or stated, where a verse says it.",
+   "Where the lexicon does not bear out the sense, the enrichment says so with its grounds; a missing lexicon entry is named, never filled from memory (RW-11).",
+   "`older`: answer each older observation shown, once: keep (with `nature`), restate (with `nature`, `new_text`, `checked`), merge (with `into`), consume (with `carriers` [\"this\"] for this answer's enrichments or observation ids, and `mapping`), delete_neither (with `reason`), carry (with `to` 2.1 and `reason`), defer (with `collection`, `nature`, `finding`).",
+   "Then: Collection-Build.ps1 -Action RecordEnrichment -File <the answer file> (-Check to preview). The record refuses the whole file on any fault and lists every fault."
+  ],
+  "keep": [
+   {
+    "rule": "RG-08 the-original",
+    "text": "For every word that names an inner or bodily act, look at the original: the root's range in all three meaning sources read together, never one picked and the others dropped; the ESV renderings across its verses; whether the English adds or hides; the literal sense beside the rendering. Where more than one reading is open, record each, and mark the choice 'I read'."
+   },
+   {
+    "rule": "RG-21 grain",
+    "text": "A word is read per its lettered Strong's code (its grain), never the bare lemma (B:113). The occurrences of a word with several senses are related per grain and never aggregated across grains: related verses are same-grain occurrences."
+   },
+   {
+    "rule": "RO11 one-row-per-code",
+    "text": "One observation per finding, never a duplicate description; a finding applying to several verses or words carries several nodes, each with the word's role in it."
+   },
+   {
+    "rule": "RW-03 no-duplicates-multi-node",
+    "text": "One observation per finding: the same description is never written twice. Applied to another verse, word or scope it gains a node on the existing observation."
+   },
+   {
+    "rule": "RW-04 concise-verse-specific",
+    "text": "Observation text is concise and tied to this verse's content, never a restatement of the word's dictionary sense. A transliteration is never given without its gloss."
+   },
+   {
+    "rule": "RW-09 reread-builds-on-prior",
+    "text": "A re-read includes the observations already recorded for the verse, so the reading sees prior findings and builds on them."
+   },
+   {
+    "rule": "RW-11 missing-is-named",
+    "text": "Missing data in the base extract is named as a gap, never substituted from memory or outside knowledge."
+   },
+   {
+    "rule": "RW-13 older-observations-answered-at-record",
+    "text": "Every older live observation with a live node on an occurrence of the row (a stage that is not the build's own) is answered in fill.older when the row is recorded, once: keep or restate (each with its marker), merge into a named observation, consume (live observations carry its meaning, stated in words, verified before it is deleted), delete as neither (comment first), or defer to a named collection (marked now; only the finding is left to that collection). An observation already marked by the validation, answered in a build or deferred is not asked again. A new observation whose text equals that of another live observation of the collection is refused, the other named. LayerCheck re-derives both from the tables. The end state of a collection's build is that every observation of its scope is marked and fixed or deleted, every word node complete or with its reason, and each deferral owned by a named collection."
+   },
+   {
+    "rule": "RS-04 existing-checked-accept-modify-delete",
+    "text": "When a verse is worked, every existing observation and node on it, of any stage, is checked against the verse by its wording. The stage is not an indication of the nature of an observation and is never used to filter. Each observation is accepted, modified (changed in place; the old value, the new value and the reason are kept in ib_observation_change), soft deleted (the `deleted` column, with the reason), merged (a duplicate description, into the observation that is kept) or, when its wording shows it is not verse understanding, left exactly as it is with the reason. The check's fixes are part of it and need no separate approval. Nothing is physically deleted."
+   },
+   {
+    "rule": "LR-02 nodes-are-built-from-the-data",
+    "text": "The nodes of a layer observation are the occurrences the aspect demands (a word's occurrences, the group's occurrences, the partner's occurrences in the verses they share), written by the recorder with the collection and the subgroup of each surface; they are never typed. An item answered by senses (word-sense) names, for each sense, the occurrences it holds for, and together the senses cover every occurrence; the recorder checks them against the data. The interpretation is the observation text, founded in what the evidence shows (basis stated or read, B:131) and tied to its verses (the text names them and does not restate them): the items of every step (S1, 1.1, 1.2, 2.1) state what the dictionary, the verses and the stored structure show of a word and never what a word does for the inner being; their nodes carry the role lexical and no route. The whole file is checked and written in one transaction; any problem refuses all of it. A row answered again withdraws its earlier observations with the reason."
+   },
+   {
+    "rule": "VA-03 consumption-is-verified-before-deletion",
+    "text": "An older observation is deleted as consumed only when live observations carry its meaning: every word occurrence of it is on a live node of a carrier or named as not carried with its reason, the mapping is stated in words (what the old says, which carrier states each part), the traces to it are re-pointed or replaced, and the consumption is kept as `consumed_by`. An observation that holds more than one finding is split first."
+   },
+   {
+    "rule": "VA-04 neither-evidence-nor-inner-being-is-deleted",
+    "text": "An observation that is neither evidence nor inner being contributes nothing to the purposes of the observations (researcher, 2026-11-22): it is commented with its reason and the word occurrences no other live observation holds, then deleted. An observation already marked, or one another observation traces, is not deleted this way."
+   }
+  ],
+  "not_in_this_read": ""
+ },
+ "prompts": [],
+ "senses": [
+  {
+   "sense": 22894,
+   "text": "God's thoughts, and the contrast with man's: his thoughts toward his people are many and very deep, the nations do not know the Lord's thoughts, his thoughts are not man's and are as high above them as the heavens, and his thoughts are precious to the psalmist. The thoughts are the Lord's own purposes and mind. Verses: Psa 40:5, Psa 92:5, Psa 139:17, Isa 55:8, Isa 55:9, Mic 4:12.",
+   "codes": [
+    "H4284",
+    "H7454"
+   ],
+   "words": [
+    "thoughts|H4284",
+    "thoughts|H7454"
+   ],
+   "occurrences": [
+    "Psa 92:5",
+    "Psa 40:5",
+    "Mic 4:12",
+    "Isa 55:9",
+    "Isa 55:9",
+    "Psa 139:17",
+    "Isa 55:8",
+    "Isa 55:8"
+   ]
+  },
+  {
+   "sense": 22895,
+   "text": "Conceiving evil as if in a womb: wicked people conceive trouble, chaff and mischief and give birth to evil, stubble and iniquity. The same verb of conceiving is turned to what a person forms within and brings out in act. Verses: Job 15:35, Isa 33:11, Isa 59:4.",
+   "codes": [
+    "H2029"
+   ],
+   "words": [
+    "conceive|H2029"
+   ],
+   "occurrences": [
+    "Job 15:35",
+    "Isa 59:4",
+    "Isa 33:11"
+   ]
+  },
+  {
+   "sense": 22896,
+   "text": "Conceiving a child: the woman becomes pregnant and bears, in the promises and announcements of a son, in the question of the barren, in the cleansed woman who will conceive, in the confession of the psalmist that his mother conceived him in sin, and in the sign of the virgin. The words are Hebrew and Greek verbs and nouns of pregnancy and seed, and the English 'conceive' is bodily. Verses: Num 5:28, Num 11:12, Judg 13:3, Judg 13:5, Judg 13:7, Psa 51:5, Isa 7:14, Mat 1:23, Luk 1:31, Heb 11:11.",
+   "codes": [
+    "G1722",
+    "G2192",
+    "G2602",
+    "G4690G",
+    "G4815",
+    "H2029",
+    "H2030A",
+    "H2232",
+    "H3179"
+   ],
+   "words": [
+    "conceive|G1722",
+    "conceive|G2192",
+    "conceive|G2602",
+    "conceive|G4690G",
+    "conceive|G4815",
+    "conceive|H2029",
+    "conceive|H2030A",
+    "conceive|H2232",
+    "conceive|H3179"
+   ],
+   "occurrences": [
+    "Psa 51:5",
+    "Mat 1:23",
+    "Mat 1:23",
+    "Luk 1:31",
+    "Num 11:12",
+    "Judg 13:3",
+    "Judg 13:7",
+    "Isa 7:14",
+    "Judg 13:5",
+    "Num 5:28",
+    "Heb 11:11",
+    "Heb 11:11"
+   ]
+  },
+  {
+   "sense": 22897,
+   "text": "'Opinion' in the phrase about not caring for anyone's opinion: the Greek verb is of looking, and the phrase is that Jesus does not look at the person's face, that is, does not weigh people by standing. It is regard for status, not a view held. Verses: Mat 22:16, Mar 12:14.",
+   "codes": [
+    "G0991"
+   ],
+   "words": [
+    "opinion|G0991"
+   ],
+   "occurrences": [
+    "Mat 22:16",
+    "Mar 12:14"
+   ]
+  },
+  {
+   "sense": 22898,
+   "text": "Opinion as a view that a person holds and declares: Elihu is afraid to declare his opinion and then insists on it, and the fool takes pleasure only in declaring what his heart holds. It is a person's own view, set against understanding. Verses: Job 32:6, Job 32:10, Job 32:17, Pro 18:2.",
+   "codes": [
+    "H1843",
+    "H3820A"
+   ],
+   "words": [
+    "opinion|H1843",
+    "opinion|H3820A"
+   ],
+   "occurrences": [
+    "Job 32:6",
+    "Job 32:10",
+    "Job 32:17",
+    "Pro 18:2"
+   ]
+  },
+  {
+   "sense": 22899,
+   "text": "'Perhaps' as the captain's hope that the god may give a thought to them: the Hebrew particle of possibility, carrying no thinking of its own. Verses: Jon 1:6.",
+   "codes": [
+    "H0194"
+   ],
+   "words": [
+    "thought|H0194"
+   ],
+   "occurrences": [
+    "Jon 1:6"
+   ]
+  },
+  {
+   "sense": 22900,
+   "text": "'With no thought of war' as turning back from war: the Hebrew verb is of returning, said of the trusting passers-by who are stripped. It is a turning back, not a thought. Verses: Mic 2:8.",
+   "codes": [
+    "H7725G"
+   ],
+   "words": [
+    "thought|H7725G"
+   ],
+   "occurrences": [
+    "Mic 2:8"
+   ]
+  },
+  {
+   "sense": 22901,
+   "text": "'Well thought of' as a good report: the Greek noun is of testimony, the overseer must have a good report from outsiders. It is how others speak of him, not what he thinks. Verses: 1Ti 3:7.",
+   "codes": [
+    "G3141"
+   ],
+   "words": [
+    "thought|G3141"
+   ],
+   "occurrences": [
+    "1Ti 3:7"
+   ]
+  },
+  {
+   "sense": 22902,
+   "text": "Thinking as the way the mind works, its understanding or frame: the thinking of people who knew God becomes futile, the believers are to be mature and not children in their thinking, and they are to arm themselves with Christ's way of thinking. It is the mind's mode, with a measure of maturity or futility. Verses: Rom 1:21, 1Cor 14:20, 1Pe 4:1.",
+   "codes": [
+    "G1261",
+    "G1771",
+    "G2532",
+    "G5424"
+   ],
+   "words": [
+    "thinking|G1261",
+    "thinking|G1771",
+    "thinking|G2532",
+    "thinking|G5424"
+   ],
+   "occurrences": [
+    "1Cor 14:20",
+    "1Cor 14:20",
+    "1Pe 4:1",
+    "Rom 1:21",
+    "Rom 1:21"
+   ]
+  },
+  {
+   "sense": 22903,
+   "text": "A question that asks for a hearer's view: 'what do you think?' is put to Simon, to the hearers, to the lawyer, to the chief priests and to those looking for Jesus. It asks the person to give a judgment he already forms. Verses: Mat 17:25, Mat 18:12, Mat 21:28, Mat 22:17, Mat 22:42, Luk 10:36, Joh 11:56.",
+   "codes": [
+    "G1380"
+   ],
+   "words": [
+    "think|G1380"
+   ],
+   "occurrences": [
+    "Mat 22:42",
+    "Mat 17:25",
+    "Joh 11:56",
+    "Mat 21:28",
+    "Mat 22:17",
+    "Mat 18:12",
+    "Luk 10:36"
+   ]
+  },
+  {
+   "sense": 22904,
+   "text": "What seems right or best in someone's eyes: the Hebrew word for eye in the idiom of what appears good to a person, rendered think, think best or thought good. It is a person's own judgment of what is good or fitting. Verses: Num 36:6, 2Sa 10:3, 1Ch 19:3, Jer 40:4, Jer 40:5, 2Sa 3:19.",
+   "codes": [
+    "H0413",
+    "H5869I"
+   ],
+   "words": [
+    "think|H0413",
+    "think|H5869I",
+    "thought|H5869I"
+   ],
+   "occurrences": [
+    "2Sa 3:19",
+    "2Sa 10:3",
+    "1Ch 19:3",
+    "Num 36:6",
+    "Jer 40:4",
+    "Jer 40:5"
+   ]
+  },
+  {
+   "sense": 22905,
+   "text": "A thought quoted as inner speech: the Hebrew verb of saying introduces what a person says in himself, and the quoted sentence gives the thought; the Greek of Luk 12:17 does the same with the rich man's words to himself. The thought is inner speech, usually about what others will do or what will follow, and the verse often shows it wrong. Verses: Gen 32:8, 1Sa 27:11, 1Sa 27:12, 2Sa 5:6, 2Ki 7:12, 2Ch 32:1, Neh 6:9, Psa 64:5, 1Sa 20:3, Gen 20:11, Gen 26:9, Gen 31:31, Gen 32:20, Exo 2:14, Jos 22:28, Judg 3:24, Judg 15:2, Rut 4:4, 1Sa 16:6, 1Sa 18:11, 1Sa 18:17, 1Sa 18:21, 1Sa 20:26, 2Sa 14:15, 2Sa 14:17, 2Sa 21:16, 2Ki 5:11, 2Ki 20:19, Job 29:18, Psa 94:18, Isa 39:8, Jer 3:7, Jer 3:19, Eze 20:32, Luk 12:17.",
+   "codes": [
+    "G1260",
+    "G3004G",
+    "H0559",
+    "H0834A",
+    "H0853",
+    "H3588A"
+   ],
+   "words": [
+    "thinking|H0559",
+    "thinking|H0853",
+    "thinks|H0559",
+    "thought|G1260",
+    "thought|G3004G",
+    "thought|H0559",
+    "thought|H0834A",
+    "thought|H3588A"
+   ],
+   "occurrences": [
+    "Judg 15:2",
+    "1Sa 27:12",
+    "2Ki 5:11",
+    "1Sa 16:6",
+    "1Sa 27:11",
+    "Gen 31:31",
+    "Exo 2:14",
+    "2Sa 14:15",
+    "Neh 6:9",
+    "Neh 6:9",
+    "Luk 12:17",
+    "Luk 12:17",
+    "1Sa 20:26",
+    "2Ki 20:19",
+    "Isa 39:8",
+    "Job 29:18",
+    "Gen 32:20",
+    "Judg 3:24",
+    "2Ki 7:12",
+    "Gen 20:11",
+    "Gen 20:11",
+    "Gen 26:9",
+    "Gen 32:8",
+    "Jos 22:28",
+    "Rut 4:4",
+    "1Sa 18:11",
+    "1Sa 18:17",
+    "1Sa 18:21",
+    "1Sa 20:3",
+    "2Sa 5:6",
+    "2Sa 14:17",
+    "2Sa 21:16",
+    "2Ch 32:1",
+    "Psa 64:5",
+    "Psa 94:18",
+    "Jer 3:7",
+    "Jer 3:19",
+    "Eze 20:32",
+    "Eze 20:32"
+   ]
+  },
+  {
+   "sense": 22906,
+   "text": "Planning or intending: the Assyrian's heart is set on destroying nations, the prophets intend to make the people forget the name, the Lord plans for his people what they planned, and the one who speaks against God intends to change times and laws. The verbs are of devising and purpose. Verses: Job 6:26, Isa 10:7, Jer 23:27, Dan 7:25, Num 33:56, 1Sa 18:25.",
+   "codes": [
+    "H1819",
+    "H2803I",
+    "H2803J",
+    "H5452"
+   ],
+   "words": [
+    "think|H2803I",
+    "think|H2803J",
+    "think|H5452",
+    "thought|H1819",
+    "thought|H2803I"
+   ],
+   "occurrences": [
+    "1Sa 18:25",
+    "Jer 23:27",
+    "Job 6:26",
+    "Num 33:56",
+    "Dan 7:25",
+    "Isa 10:7"
+   ]
+  },
+  {
+   "sense": 22907,
+   "text": "Giving thought to something: calling to mind, reflecting on, attending to, taking thought for or turning the mind to what is named: the psalmist thinks on his ways and on the Lord's rules, the Lord takes thought for the poor, the prudent give thought to their steps, the believer is to think on what is excellent, Jerusalem took no thought of her end. The word is attention of the mind to a matter or person. Verses: Psa 119:52, Psa 119:59, Psa 144:3, Mat 9:4, Eph 3:20, Phili 4:8, Heb 11:15, Psa 40:17, Psa 48:9, Psa 73:16, Pro 14:15, Pro 21:29, Lam 1:9, Jon 1:6.",
+   "codes": [
+    "G1760",
+    "G1761",
+    "G3049",
+    "G3421",
+    "G3539",
+    "H0995",
+    "H1819",
+    "H1931",
+    "H2142",
+    "H2803I",
+    "H2803J",
+    "H6245B"
+   ],
+   "words": [
+    "thinking|G3421",
+    "think|G1760",
+    "think|G3049",
+    "think|G3539",
+    "think|H2142",
+    "think|H2803J",
+    "thoughts|G1761",
+    "thought|H0995",
+    "thought|H1819",
+    "thought|H1931",
+    "thought|H2142",
+    "thought|H2803I",
+    "thought|H2803J",
+    "thought|H6245B"
+   ],
+   "occurrences": [
+    "Psa 73:16",
+    "Lam 1:9",
+    "Pro 21:29",
+    "Pro 21:29",
+    "Jon 1:6",
+    "Mat 9:4",
+    "Mat 9:4",
+    "Psa 48:9",
+    "Psa 119:52",
+    "Pro 14:15",
+    "Eph 3:20",
+    "Phili 4:8",
+    "Psa 144:3",
+    "Psa 40:17",
+    "Heb 11:15",
+    "Psa 119:59"
+   ]
+  },
+  {
+   "sense": 22908,
+   "text": "Reckoning something as so, judging or counting: Paul judges it necessary, a thing is counted unclean by the one who holds it so, the unbelief of Act 26:8 is judged incredible, Judah takes the covered woman for a prostitute, and Job 41:32 counts the deep as white-haired. The word is a judgment that counts or takes something as of a certain kind. Verses: Job 35:2, Job 41:32, 2Cor 12:6, 2Pe 1:13, Rom 14:14, Gen 38:15, Act 26:8, 2Cor 9:5, Phili 2:25.",
+   "codes": [
+    "G1161",
+    "G2233",
+    "G2919",
+    "G3049",
+    "H2803J"
+   ],
+   "words": [
+    "thinks|G3049",
+    "think|G1161",
+    "think|G2233",
+    "think|G3049",
+    "think|H2803J",
+    "thought|G2233",
+    "thought|G2919",
+    "thought|H2803J"
+   ],
+   "occurrences": [
+    "2Cor 12:6",
+    "2Cor 9:5",
+    "Job 35:2",
+    "Act 26:8",
+    "Rom 14:14",
+    "Gen 38:15",
+    "2Pe 1:13",
+    "2Pe 1:13",
+    "Phili 2:25",
+    "Job 41:32"
+   ]
+  },
+  {
+   "sense": 22909,
+   "text": "Being minded: the way a person is set in mind, to rate oneself soberly in Rom 12:3, to hold the same mind or another in Phili 3:15, and the child's mindedness given up in 1Cor 13:11. The Greek verb is of being of a mind or having an attitude. Verses: Rom 12:3, Phili 3:15, 1Cor 13:11.",
+   "codes": [
+    "G5426"
+   ],
+   "words": [
+    "think|G5426",
+    "thought|G5426"
+   ],
+   "occurrences": [
+    "Rom 12:3",
+    "Rom 12:3",
+    "Phili 3:15",
+    "Phili 3:15",
+    "1Cor 13:11"
+   ]
+  },
+  {
+   "sense": 22910,
+   "text": "Thoughts as purposes and devices: the intention of the heart in Gen 6:5, the schemes of the wicked, the thoughts the righteous and the wicked hold, the thoughts to be forsaken, and the wicked thoughts that lodge within. The word is of purpose, plan and device, and the verses place it in the heart. Verses: 1Ch 28:9, Gen 6:5, 1Ch 29:18, Job 21:27, Psa 10:4, Psa 56:5, Psa 94:11, Pro 12:5, Pro 15:26, Isa 55:7, Isa 59:7, Isa 66:18, Jer 4:14, Lam 3:62.",
+   "codes": [
+    "H1902H",
+    "H4209",
+    "H4284"
+   ],
+   "words": [
+    "thoughts|H1902H",
+    "thoughts|H4209",
+    "thoughts|H4284",
+    "thought|H4284"
+   ],
+   "occurrences": [
+    "Isa 55:7",
+    "Isa 59:7",
+    "Isa 59:7",
+    "Jer 4:14",
+    "Pro 15:26",
+    "Psa 10:4",
+    "Pro 12:5",
+    "Psa 56:5",
+    "Job 21:27",
+    "1Ch 28:9",
+    "Isa 66:18",
+    "Psa 94:11",
+    "Gen 6:5",
+    "1Ch 29:18",
+    "Lam 3:62"
+   ]
+  },
+  {
+   "sense": 22911,
+   "text": "Thoughts as what arises and is held in the mind, known to God or others: they come out of the heart, are perceived by Jesus, are alarmed or answered, are known by the spirit of the person or by the Lord, are shaped by ease, and are led astray. The words are nouns of thought, reasoning and musing, in many Hebrew, Aramaic and Greek words, with the heart or the mind as their place. Verses: Deu 15:9, Job 12:5, Ecc 9:10, Amo 4:13, 2Cor 10:5, Job 20:2, Psa 139:2, Psa 139:23, Ecc 10:20, Eze 38:10, Dan 2:29, Dan 2:30, Dan 4:19, Dan 5:6, Dan 5:10, Dan 7:28, Mat 12:25, Mat 15:19, Mar 7:21, Luk 1:51, Luk 2:35, Luk 5:22, Luk 6:8, Luk 11:17, 1Cor 2:11, 1Cor 3:20, 2Cor 11:3, Heb 4:12, Jam 2:4.",
+   "codes": [
+    "G1261",
+    "G1270",
+    "G1271",
+    "G1761",
+    "G3540",
+    "G3588",
+    "H1697G",
+    "H1697I",
+    "H1961",
+    "H2808",
+    "H4093",
+    "H5587B",
+    "H6248",
+    "H7454",
+    "H7476",
+    "H7808",
+    "H8312"
+   ],
+   "words": [
+    "thoughts|G1261",
+    "thoughts|G1270",
+    "thoughts|G1271",
+    "thoughts|G1761",
+    "thoughts|G3540",
+    "thoughts|G3588",
+    "thoughts|H1697I",
+    "thoughts|H4093",
+    "thoughts|H5587B",
+    "thoughts|H7454",
+    "thoughts|H7476",
+    "thoughts|H8312",
+    "thought|G3540",
+    "thought|H1697G",
+    "thought|H1961",
+    "thought|H2808",
+    "thought|H6248",
+    "thought|H7808"
+   ],
+   "occurrences": [
+    "2Cor 10:5",
+    "2Cor 11:3",
+    "Psa 139:23",
+    "Mat 12:25",
+    "Luk 6:8",
+    "Luk 11:17",
+    "Deu 15:9",
+    "Deu 15:9",
+    "Eze 38:10",
+    "Dan 4:19",
+    "Dan 5:10",
+    "Amo 4:13",
+    "Ecc 10:20",
+    "Jam 2:4",
+    "Luk 5:22",
+    "Heb 4:12",
+    "Psa 139:2",
+    "Dan 2:29",
+    "Dan 2:30",
+    "Job 12:5",
+    "1Cor 3:20",
+    "Mar 7:21",
+    "Mat 15:19",
+    "1Cor 2:11",
+    "Luk 2:35",
+    "Luk 1:51",
+    "Job 20:2",
+    "Ecc 9:10",
+    "Dan 5:6",
+    "Dan 7:28"
+   ]
+  },
+  {
+   "sense": 22912,
+   "text": "Supposing, holding a belief or imagining something to be so: the belief is stated or put in question, often about oneself or about another, and the verse tests, corrects or reproves it. The hearers think the Gentiles' many words will be heard, that Jesus cannot appeal to his Father, that he came to give peace, that they are wise, stand, or are religious; in the Hebrew verses the speaker is told what the hearer thinks or the Lord says what the house of Israel thinks. The word is a belief held and not yet tested. Verses: 2Sa 18:27, 2Ki 18:20, 2Ch 13:8, Est 4:13, Isa 36:5, Eze 11:5, Mat 5:17, Mat 6:7, Mat 10:34, Mat 26:53, Luk 12:51, Luk 13:2, Luk 13:4, Joh 5:39, Joh 5:45, Joh 16:2, Act 17:29, 1Cor 4:9, 1Cor 7:26, 1Cor 7:40, 1Cor 12:23, 2Cor 11:16, Heb 10:29, 2Cor 12:19, Phili 1:17, Luk 8:18, 1Cor 3:18, 1Cor 7:36, 1Cor 10:12, 1Cor 14:37, Gal 6:3, Phili 3:4, Jam 1:26, Psa 50:21, Mat 20:10, Mar 6:49, Luk 24:37, Joh 11:13, Joh 13:29, Act 8:20, Act 12:9.",
+   "codes": [
+    "G1380",
+    "G3543",
+    "G3633",
+    "H0559",
+    "H1819",
+    "H7200H"
+   ],
+   "words": [
+    "thinking|G1380",
+    "thinking|G3633",
+    "thinks|G1380",
+    "thinks|G3543",
+    "think|G1380",
+    "think|G3543",
+    "think|H0559",
+    "think|H1819",
+    "think|H7200H",
+    "thought|G1380",
+    "thought|G3543",
+    "thought|H1819"
+   ],
+   "occurrences": [
+    "Phili 1:17",
+    "2Cor 12:19",
+    "2Cor 11:16",
+    "Luk 12:51",
+    "Joh 11:13",
+    "Joh 13:29",
+    "Phili 3:4",
+    "Mat 5:17",
+    "Mat 10:34",
+    "Joh 16:2",
+    "Jam 1:26",
+    "Luk 13:2",
+    "Act 8:20",
+    "Mat 26:53",
+    "2Sa 18:27",
+    "2Ki 18:20",
+    "2Ch 13:8",
+    "Est 4:13",
+    "Isa 36:5",
+    "Eze 11:5",
+    "1Cor 4:9",
+    "Heb 10:29",
+    "1Cor 7:36",
+    "Mar 6:49",
+    "1Cor 7:26",
+    "Joh 5:39",
+    "1Cor 14:37",
+    "1Cor 7:40",
+    "Psa 50:21",
+    "Luk 24:37",
+    "Act 17:29",
+    "1Cor 3:18",
+    "Joh 5:45",
+    "Mat 6:7",
+    "Luk 8:18",
+    "Luk 13:4",
+    "Act 12:9",
+    "1Cor 10:12",
+    "1Cor 12:23",
+    "Gal 6:3",
+    "Mat 20:10"
+   ]
+  }
+ ],
+ "occurrences_in_no_sense": [],
+ "codes": {
+  "G0991": {
+   "surfaces": [
+    "opinion"
+   ],
+   "sense_head": "to see",
+   "meaning_range": "to see, look at; to watch out, beware, pay attention; <b>to have the faculty of sight, to see,</b> Mt. 12:22; <b>to exercise sight, to see,</b> <ref='Mat.6.4'>Mt. 6:4</ref>; <b>to look</b> towards or at, <ref='Mat.22.16'>Mt. 22:16</ref>; <b>to face,</b> <ref='Act.27.12'>Acts 27:12;</ref> <b>to take heed,</b> <ref='Mat.24.4'>Mt. 24:4</ref>; in NT, <greek>βλέπειν ἀπό</greek>, <b>to beware of, shun,</b> <ref='Mrk.8.15'>Mk. 8:15</ref>; <i>transitive</i>, <b>to cast a look on,</b> <ref='Mat.5.28'>Mt. 5:28</ref>; <b>to see, behold,</b> <ref='Mat.13.17'>Mt. 13:17</ref>; <b>to observe,</b> <ref='Mat.7.3'>Mt. 7:3</ref>; <b>to have an eye to, see to,</b> <ref='Mrk.13.9'>Mk. 13:9</ref>; <ref='Col.4.17'",
+   "lsj": "<b> βλέπω</b>, <br /> [<a href=\"javascript:void(0)\" title=\" 6th c.BC: Solon Lyricus 11.8, etc.\">Refs 6th c.BC+</a>]: <i>imperfect</i> ἔβλεπον [<a href=\"javascript:void(0)\" title=\" Batrachomyomachia 67 \">Refs</a>]: <i>future</i> βλέψομαι [<a href=\"javascript:void(0)\" title=\" 4th c.BC: Demosthenes Orator 25.98 \">Refs 4th c.BC+</a>], <i>Doric dialect</i> <i>infinitive</i> βλεψεῖσθαι [<a href=\"javascript:void(0)\" title=\" “IG” 4.951.75 (Epid.), later βλέψω LXX.Isa.6.9, 2nd c.AD: Aristides Rhetor 2.46J., etc.: \">LXX+2nd c.AD+</a>]<i>aorist</i> ἔβλεψα (see. below): <i>perfect</i> βέβλεφα (ἀπο-) [<a href=\"javascript:void(0)\" title=\" Antip.Stoic. 3.254 (codices 5th c.AD: Stobaeus, Joannes)\">Refs 5th ",
+   "mounce": "to see, look at; to watch out, beware, pay attention",
+   "related": [
+    "G0308 ἀναβλέπω to look up/again",
+    "G0309 ἀνάβλεψις recovery of sight",
+    "G0578 ἀποβλέπω to look ahead",
+    "G0990 βλέμμα a look",
+    "G1227 διαβλέπω to see clearly",
+    "G1689 ἐμβλέπω to look into/upon",
+    "G1914 ἐπιβλέπω to look upon/at",
+    "G4017 περιβλέπω to look around",
+    "G4265 προβλέπω to foresee/plan"
+   ]
+  },
+  "G1161": {
+   "surfaces": [
+    "think"
+   ],
+   "sense_head": "then",
+   "meaning_range": "but, and, then, rather; a conjunctive particle, marking the superaddition of a clause, whether in opposition or in continuation, to what has preceded, and it may be variously rendered <b>but, on the other hand, and, also, now,</b> etc.; <greek>καὶ δέ</greek>, when there is a special superaddition in continuation, <b>too, yea,</b> etc. It sometimes is found at the commencement of the apodosis of a sentence, <ref='Act.11.17.'>Acts 11:17.</ref> It serves also to mark the resumption of an interrupted discourse, <ref='2Co.2.10'>2Cor. 2:10;</ref> <ref='Gal.2.6'>Gal. 2:6</ref>",
+   "lsj": "<b> δέ</b>, <br /> <b>but</b>: adversative and copulative Particle, <br /><Level2><b>__I</b></Level2> answering to μέν (which see), τὴν νῦν μὲν Βοιωτίαν, πρότερον δὲ Καδμηίδα γῆν καλουμένην [<a href=\"javascript:void(0)\" title=\" 5th c.BC: Thucydides Historicus 1.12, etc. \">Refs 5th c.BC+</a>]<br /><Level2><b>__II</b></Level2> without preceding μέν, <br /><Level3><b>__II.1</b></Level3> adversative, expressing distinct opposition, αἰεί τοι τὰ κάκ᾽ ἐστὶ φίλα.. μαντεύεσθαι, ἐσθλὸν δ᾽ οὔτε τί πω εἶπας[<a href=\"javascript:void(0)\" title=\" lines 1.108; ὀρθῶς ἔλεξας, οὐ φίλως δέ μοι λέγεις 5th c.BC: Euripides Tragicus “Orestes” 100, compare 5th c.BC: Sophocles Tragicus “Antigone” 85, etc.; τέθνηκεν ἀ",
+   "mounce": "but, and, then, rather",
+   "related": [
+    "G1211 δή so"
+   ]
+  },
+  "G1260": {
+   "surfaces": [
+    "thought"
+   ],
+   "sense_head": "to discuss",
+   "meaning_range": "to think, wonder about; to talk, discuss, argue; <i>primarily</i> <b>to make a settlement of accounts; to reason, deliberate, ponder, consider,</b> <ref='Mat.16.7, 8'>Mt. 16:7, 8</ref>; <ref='Mrk.2.6, 8'>Mk. 2:6, 8</ref>; <ref='Jhn.11.50'>Jn. 11:50</ref>; <b>to dispute, contend, talk, discuss, argue</b> <ref='Mrk.9.33'>Mk. 9:33</ref>",
+   "lsj": "<b> διαλογ-ίζομαι</b>, <br /> <i>perfect</i> <b>-λελόγισμαι</b>[<a href=\"javascript:void(0)\" title=\" 4th c.BC: Amphis Comicus 33.9 \">Refs 4th c.BC+</a>]:—<b>balance accounts,</b> πρός τινα [<a href=\"javascript:void(0)\" title=\" 4th c.BC: Demosthenes Orator 52.3; τινί “PSI” 5.510.10 (3rd c.BC)\">Refs 4th c.BC+</a>]:—<i>passive</i>, [<a href=\"javascript:void(0)\" title=\" “SIG” 241 C 127 (Delph., 4th c.BC). \">Refs 4th c.BC+</a>]<br /><Level3><b>__2</b></Level3> <b>calculate exactly,</b> ὁπόσον.. [<a href=\"javascript:void(0)\" title=\" 4th-3rd c.BC: Diphilus Comicus 43.15, compare 4th c.BC: Amphis Comicus [same place] \">Refs 4th c.BC+</a>]; <b>consider,</b> ἀεί τι δ. καλόν [<a href=\"javascript:void(0",
+   "mounce": "to think, wonder about; to talk, discuss, argue",
+   "related": [
+    "G1223 διά through/because of",
+    "G1261 διαλογισμός reasoning",
+    "G3049 λογίζομαι to count"
+   ]
+  },
+  "G1261": {
+   "surfaces": [
+    "thinking",
+    "thoughts"
+   ],
+   "sense_head": "reasoning",
+   "meaning_range": "thought, doubt; argument, dispute; <b>reasoning, thought, cogitation, purpose,</b> <ref='Mat.15.19'>Mt. 15:19</ref>; <ref='Mrk.7.21'>Mk. 7:21</ref>; <b>discourse, dispute, disputation, contention, argument </b> <ref='Luk.9.46'>Lk. 9:46</ref>; <b>doubt, hesitation, scruple,</b> <ref='Luk.24.38'>Lk. 24:38</ref>",
+   "lsj": "<b> διαλογ-ισμός</b>, ὁ, <br /> <b>balancing of accounts,</b> [<a href=\"javascript:void(0)\" title=\" 4th c.BC: Demosthenes Orator 36.23, “PRev.Laws” 17.17 (_plural_), “IG” 5(1).1432.6 (from Messene), etc.: hence, \">Refs 4th c.BC+</a>]<br /><Level2><b>__II</b></Level2> <b>calculation, consideration,</b> [<a href=\"javascript:void(0)\" title=\" 5th-6th c.BC: Plato Philosophus “Axiochus” 367a; δ. λαβεῖν περὶ σφῶν αὐτῶν 1st c.BC-1st c.AD: Strabo Geographus 5.3.7 \">Refs 5th c.BC+</a>]; ὁ δ. οὗτος this <b>consideration,</b> [<a href=\"javascript:void(0)\" title=\" 1st c.BC: Philodemus Gadarensis Epigrammaticus “D.” 1.15. \">Refs 1st c.BC+</a>]<br /><Level2><b>__III</b></Level2> <b>debate, argument, discus",
+   "mounce": "thought, doubt; argument, dispute",
+   "related": [
+    "G1260 διαλογίζομαι to discuss"
+   ]
+  },
+  "G1270": {
+   "surfaces": [
+    "thoughts"
+   ],
+   "sense_head": "thought",
+   "meaning_range": "<b>thought,</b> <ref='Luk.11.17'>Lk. 11:17</ref>*",
+   "lsj": "<b> διανό-ημα</b>, ατος, τό, <br /> <b>thought, notion,</b> [<a href=\"javascript:void(0)\" title=\" 5th-6th c.BC: Xenophon Historicus “Historia Graeca (Hellenica)” 7.5.19, 5th-6th c.BC: Isocrates Orator 3.9, 5th-6th c.BC: Plato Philosophus “Symposium” 210d; διανοήματος εὐτέλεια 1st-2nd c.AD: Plutarchus Biographus et Philosophus 2.40c \">Refs 5th c.BC+</a>]; <b>thought,</b> opposed to words, [<a href=\"javascript:void(0)\" title=\" 5th-6th c.BC: Plato Philosophus “Protagoras” 348d, 1st c.BC: Philodemus Philosophus “περὶ ποιημάτων” 2.30, 40 \">Refs 5th c.BC+</a>]: <i>plural</i>, <b>meanings</b> of words, [<a href=\"javascript:void(0)\" title=\" [prev. author] “Rh.” 2.190 S\">Refs</a>].; especially <b>whi",
+   "mounce": "thought",
+   "related": [
+    "G1223 διά through/because of",
+    "G3539 νοέω to understand"
+   ]
+  },
+  "G1271": {
+   "surfaces": [
+    "thoughts"
+   ],
+   "sense_head": "mind",
+   "meaning_range": "mind, thinking, understanding; this is a part of the inner person that thinks and processes information into understanding, including the making of choices, the seat of which is the heart; <i>primarily</i> <b>thought, intention; the mind, intellect, understanding,</b> <ref='Mat.22.37'>Mt. 22:37</ref>; <ref='Mrk.12.30'>Mk. 12:30</ref>; <ref='Luk.10.27'>Lk. 10:27</ref>; <b>an operation of the understanding, thought, imagination,</b> <ref='Luk.1.51'>Lk. 1:51</ref>; <b>insight, comprehension,understanding</b> <ref='1Jn.5.20'>1Jn. 5:20;</ref> <b>mode of thinking and feeling, disposition of mind and heart, the affection,</b> <ref='Eph.2.3'>Eph. 2:3;</ref> <ref='Col.1.21'>Col. 1:21</ref>",
+   "lsj": "<b> διάνοιᾰ</b>, ἡ, <br /> <i>Aeolic dialect</i> <b>διανοιΐα</b> [<a href=\"javascript:void(0)\" title=\" 7th-6th c.BC: Alcaeus Lyricus “Supp.” 1a.1 (nisi to be read δι᾽ ἀνοιΐα[ν])\">Refs 7th c.BC+</a>], <i>poetry</i> also <b>διανοίᾱ</b> <i>accusative</i> to [<a href=\"javascript:void(0)\" title=\" 12th c.AD: Eustathius Episcopus Thessalonicensis 1679.29 \">Refs</a>]:— <b>thought,</b> i.e. <b>intention, purpose,</b> [<a href=\"javascript:void(0)\" title=\" 5th c.BC: Herodotus Historicus 1.46, 90, 5th-6th c.BC: Andocides Orator 4.35, etc.\">Refs 5th c.BC+</a>]; τῇ διανοίᾳ in the <b>spirit</b> of his action, [<a href=\"javascript:void(0)\" title=\" 4th c.BC: Demosthenes Orator 21.219; ὤλοντ᾽ ἀσεβεῖ διανοίᾳ 4",
+   "mounce": "mind, thinking, understanding; this is a part of the inner person that thinks and processes information into understanding, including the making of choices, the seat of which is the heart",
+   "related": [
+    "G0143 αἰσθάνομαι to perceive",
+    "G1223 διά through/because of",
+    "G1272 διανοίγω to open up",
+    "G1771 ἔννοια thought/purpose",
+    "G1950 ἐπιλανθάνω to forget",
+    "G1963 ἐπίνοια thought",
+    "G3105 μαίνομαι to rave",
+    "G3539 νοέω to understand",
+    "G3543 νομίζω to think",
+    "G3563 νοῦς mind",
+    "G4307 πρόνοια foresight",
+    "G5283 ὑπόνοια suspicion"
+   ]
+  },
+  "G1380": {
+   "surfaces": [
+    "think",
+    "thinking",
+    "thinks",
+    "thought"
+   ],
+   "sense_head": "to think",
+   "meaning_range": "to think, consider, regard, an action of the mind and heart for processing information into understanding and choices, sometimes with a focus on appearances. Often in the impersonal form translated, \"it seems\" (<ref='Act.17.18'>Act.17:18</ref>); <b>to think, imagine, suppose, presume,</b> <ref='Mat.3.9; 6:7'>Mt. 3:9; 6:7</ref>; <b>to seem, appear,</b> <ref='Luk.10.36'>Lk. 10:36</ref>; <ref='Act.17.18'>Acts 17:18;</ref> <b>it seems; it seems good, best,</b> or <b>right, it pleases,</b> <ref='Luk.1.3'>Lk. 1:3</ref>; <ref='Act.15.22, 25'>Acts 15:22, 25</ref>",
+   "lsj": "<b> δοκέω</b> <br /> [<a href=\"javascript:void(0)\" title=\" 8th c.BC: Ilias Homerus Epicus “Illiad” 7.192, _Attic dialect_ \">Refs 8th c.BC+</a>]<i>imperfect</i> ἐδόκουν, <i>Epic dialect</i> δοκέεσκον [<a href=\"javascript:void(0)\" title=\" “Anthologia Graeca” 5.298 (6th c.AD: Agathias Historicus et Epigrammaticus)\">Refs 6th c.AD+</a>]: —<i>middle</i>, δοκέοντο [<a href=\"javascript:void(0)\" title=\" 3rd c.AD: Oppianus Apamensis Epicus “Cynegetica” 4.296 \">Refs 3rd c.AD+</a>]: <i>participle</i> δοκεύμενος[<a href=\"javascript:void(0)\" title=\" [prev. work] 109 \">Refs</a>]: the <i>future</i> and other tenses are twofold: <br /><Level3><b>__1</b></Level3> <i>future</i> δόξω and <i>aorist 1</i> ἔδοξα [",
+   "mounce": "to think, consider, regard, an action of the mind and heart for processing information into understanding and choices, sometimes with a focus on appearances. Often in the impersonal form translated, \"it seems\" (<ref='Act.17.18'>Act.17:18</ref>)",
+   "related": [
+    ""
+   ]
+  },
+  "G1722": {
+   "surfaces": [
+    "conceive"
+   ],
+   "sense_head": "in/on/among",
+   "meaning_range": "Spatially: in, inside, at, among, with; logically: by means of, with, because of; of time: during, while; followed by the <i>dative</i>, <b>in,</b> <ref='Mat.8.6'>Mt. 8:6</ref>; <ref='Mrk.12.26'>Mk. 12:26</ref>; <ref='Rev.6.6'>Rev. 6:6;</ref> <b>upon,</b> <ref='Luk.8.32'>Lk. 8:32</ref>; <b>among,</b> <ref='Mat.11.11'>Mt. 11:11</ref>; <b>before, in the presence of,</b> <ref='Mrk.8.38'>Mk. 8:38</ref>; <b>in the sight, estimation of,</b> <ref='1Co.14.11'>1Cor. 14:11;</ref> <b>before,</b> judicially, <ref='1Co.6.2'>1Cor. 6:2;</ref> <b>in,</b> of state, occupation, habit, <ref='Mat.21.22'>Mt. 21:22</ref>; <ref='Luk.7.25'>Lk. 7:25</ref>; <ref='Rom.4.10'>Rom. 4:10;</ref> <b>in the case of,</b> <ref",
+   "lsj": "<b> ἐν</b>, <br /> <i>poetry</i> <b>ἐνί</b>, <b>εἰν</b>, <b>εἰνί</b> [<a href=\"javascript:void(0)\" title=\"(8th c.BC: Ilias Homerus Epicus “Illiad” 8.199, etc.)\">Refs 8th c.BC+</a>], forms used by <i>Epic dialect</i> and Lyric Poets as the metre requires, but only as <i>false reading</i> in Trag., εἰν [<a href=\"javascript:void(0)\" title=\" 5th c.BC: Sophocles Tragicus “Antigone” 1241; εἰνί 5th c.BC: Euripides Tragicus “Heraclidae” 893: 4th c.AD(?): Arcadius Grammaticus and 5th c.AD: Cypria \">Refs 5th c.BC+</a>] <b>ἰν</b> [<a href=\"javascript:void(0)\" title=\" “IG” 5(2).3.5, +others, “Inscription Cyprian dialect” 135.9 H., +others \">Refs</a>]<br /><Level1><b>__</b></Level1>PREP. WITH DAT. AND AC",
+   "mounce": "Spatially: in, inside, at, among, with; logically: by means of, with, because of; of time: during, while",
+   "related": [
+    ""
+   ]
+  },
+  "G1760": {
+   "surfaces": [
+    "think"
+   ],
+   "sense_head": "to reflect on",
+   "meaning_range": "to think, ponder, reflect; <b>to revolve thoroughly in the mind, consider carefully, ponder, reflect,</b> <ref='Act.10.19'>Acts 10:19</ref>*",
+   "lsj": "<b> ἐνθῡμ-έομαι</b>, <br /> <i>future</i> <b>-ήσομαι</b>[<a href=\"javascript:void(0)\" title=\" 5th c.BC: Lysias Orator 12.45\">Refs 5th c.BC+</a>], later <b>-ηθήσομαι</b> [<a href=\"javascript:void(0)\" title=\"2nd-3rd c.AD: Philostratus Sophista “Vitae Sophistarum” 2.26.3, 1st-2nd c.AD: Epictetus Philosophus “Enchiridion” 21, etc.\">Refs 1st c.AD+</a>]: <i>aorist</i> ἐνεθυμήθην [<a href=\"javascript:void(0)\" title=\" 5th-6th c.BC: Aristophanes Comicus “Ranae” 40, 5th c.BC: Thucydides Historicus 2.62, 5th c.BC: Lysias Orator 31.27, etc.\">Refs 5th c.BC+</a>]: <i>perfect</i> ἐντεθύμημαι [<a href=\"javascript:void(0)\" title=\" 5th c.BC: Thucydides Historicus 1.120 \">Refs 5th c.BC+</a>]: <i>pluperfect</i>",
+   "mounce": "to think, ponder, reflect",
+   "related": [
+    "G1722 ἐν in/on/among",
+    "G1761 ἐνθύμησις reflection",
+    "G2372 θυμός wrath"
+   ]
+  },
+  "G1761": {
+   "surfaces": [
+    "thoughts"
+   ],
+   "sense_head": "reflection",
+   "meaning_range": "thought, reflection; design, idea; <b>the act of thought, reflection,</b> <ref='Mat.9.4; 12:25'>Mt. 9:4; 12:25</ref>; <ref='Heb.4.12'>Heb. 4:12;</ref> <b>the result of thought, invention, device,</b> <ref='Act.17.29'>Acts 17:29</ref>*",
+   "lsj": "<b> ἐνθῡμ-ησις</b>, εως, ἡ, <br /> <b>consideration, esteem,</b> [<a href=\"javascript:void(0)\" title=\" 5th c.BC: Euripides Tragicus “Fragmenta” 246. \">Refs 5th c.BC+</a>]<br /><Level2><b>__II</b></Level2> <b>consideration, reflection,</b> [<a href=\"javascript:void(0)\" title=\" 5th c.BC: Thucydides Historicus 1.132, NT.Matt.9.4 (_plural_), 2nd-3rd c.AD: Symmachus LXX.Job.21.27, Vett. Val.301.8, etc. \">NT+5th c.BC+</a>]<br /><Level3><b>__II.2</b></Level3> <b>idea, conception,</b> εἰς ἐ. ἐσθήτων ἦλθον [<a href=\"javascript:void(0)\" title=\" 4th c.BC: Diogenes Cynicus Philosophus Oen.10; τὰς ἐ. ὀξύς 2nd c.AD: Lucianus Sophista “Salt.” 81. \">Refs 4th c.BC+</a>]<br /><Level2><b>__III</b></Level2> <b>",
+   "mounce": "thought, reflection; design, idea",
+   "related": [
+    "G1760 ἐνθυμέομαι to reflect on"
+   ]
+  },
+  "G1771": {
+   "surfaces": [
+    "thinking"
+   ],
+   "sense_head": "thought/purpose",
+   "meaning_range": "attitude, thought; <b>notion, idea; thought, purpose, intention,attitude</b> <ref='Heb.4.12'>Heb. 4:12;</ref> <ref='1Pe.4.1'>1Pet. 4:1</ref>*",
+   "lsj": "<b> ἔννοια</b>, ἡ, <br /> (νοῦς) <b>act of thinking, reflection, cogitation</b> (συντονία διανοίας [<a href=\"javascript:void(0)\" title=\" 5th-6th c.BC: Plato Philosophus “Definitiones” 414a); ἄξιον ἐννοίας [prev. author] “Lg.” 657a, +others \">Refs 5th c.BC+</a>]<br /><Level3><b>__2</b></Level3> <b>notion, conception,</b> χρόνου ἔννοια [<a href=\"javascript:void(0)\" title=\" [prev. author] “Ti.” 47a; ἐν ταῖς περὶ τὸ ὂν.. ἐννοίαις [prev. author] “Phlb.” 59d \">Refs</a>]; ἔ. λαβεῖν to form <b>an idea,</b> opposed to αἴσθησιν λαβεῖν, [<a href=\"javascript:void(0)\" title=\" [prev. author] “Phd.” 73c; τοῦ καλοῦ ἔ. ἔχειν 4th c.BC: Aristoteles Philosophus “Ethica Nicomachea” 1179b15; ἐννοίας χάριν λέγειν ",
+   "mounce": "attitude, thought",
+   "related": [
+    "G0143 αἰσθάνομαι to perceive",
+    "G1271 διάνοια mind",
+    "G1272 διανοίγω to open up",
+    "G1722 ἐν in/on/among",
+    "G1950 ἐπιλανθάνω to forget",
+    "G1963 ἐπίνοια thought",
+    "G3105 μαίνομαι to rave",
+    "G3539 νοέω to understand",
+    "G3543 νομίζω to think",
+    "G3563 νοῦς mind",
+    "G4307 πρόνοια foresight",
+    "G5283 ὑπόνοια suspicion"
+   ]
+  },
+  "G2192": {
+   "surfaces": [
+    "conceive"
+   ],
+   "sense_head": "to have/be",
+   "meaning_range": "(tr.) to have, hold, keep; (intr.) to be; pluperfect., <greek>ἐσχήκειν</greek>, <b>to hold,</b> <ref='Rev.1.16'>Rev. 1:16;</ref> <b>to seize, possess</b> a person, <ref='Mrk.16.8'>Mk. 16:8</ref>; <b>to have, possess,</b> <ref='Mat.7.29'>Mt. 7:29</ref>, and frequently ; <b>to have, have ready, be furnished with,</b> <ref='Mat.5.23'>Mt. 5:23</ref>; <ref='Jhn.5.36; 6:68'>Jn. 5:36; 6:68</ref>; <b>to have</b> as a matter of crimination, <ref='Mat.5.23'>Mt. 5:23</ref>; <ref='Mrk.11.25'>Mk. 11:25</ref>; <b>to have</b> at command, <ref='Mat.27.65'>Mt. 27:65</ref>; <b>to have</b> the power, <b>be able,</b> <ref='Mat.18.25'>Mt. 18:25</ref>; <ref='Luk.14.14'>Lk. 14:14</ref>; <ref='Act.4.14'>Acts 4:14;<",
+   "lsj": "<b> ἔχω</b>, <br /> <br /><Level1><b>__A</b></Level1><i>2nd pers.</i> <i>singular</i> ἔχεισθα conjecture in [<a href=\"javascript:void(0)\" title=\" 6th c.BC: Theognis Elegiacus 1316 (ἔχοισθα codex), ἔχῃσθα conjecture in 7th-6th c.BC: Sappho Lyrica 21 (ἔχεισθα codex)\">Refs 7th c.BC+</a>]; <i>2nd pers.</i> <i>singular</i> <i>subjunctive</i> ἔχῃσθα [<a href=\"javascript:void(0)\" title=\" 8th c.BC: Ilias Homerus Epicus “Illiad” 19.180: \">Refs 8th c.BC+</a>]<i>imperfect</i> εἶχον, <i>Epic dialect</i> ἔχον [<a href=\"javascript:void(0)\" title=\" 8th c.BC: Odyssea Homerus Epicus “Odyssey” 2.22, +others\">Refs 8th c.BC+</a>], <i>Ionic dialect</i> and <i>poetry</i> ἔχεσκον [<a href=\"javascript:void(0)\" titl",
+   "mounce": "(tr.) to have, hold, keep; (intr.) to be",
+   "related": [
+    ""
+   ]
+  },
+  "G2233": {
+   "surfaces": [
+    "think",
+    "thought"
+   ],
+   "sense_head": "to govern",
+   "meaning_range": "to lead the way; to take the lead, <ref='Act.14.12;'>Acts 14:12;</ref> to be chief, to preside, govern, rule, <ref='Mat.2.6;'>Mat.2:6;</ref> <ref='Act.7.10;'>Acts 7:10;</ref> ἡγούμενος, a chief officer in the church, <ref='Heb.13.7, 17, 24;'>Heb. 13:7, 17, 24;</ref> also, to think, consider, count, esteem, regard, <ref='Act.26.2;'>Acts 26:2;</ref> <ref='2Co.9.5'>2Cor. 9:5</ref>",
+   "lsj": "<b> ἡγέομαι</b>, <br /> <i>Doric dialect</i> <b>ἁγ-</b> (irregular <i>present</i> <i>participle</i> ἁγώμενος [<a href=\"javascript:void(0)\" title=\" “Hymnus Curetum [3rd c.BC (?)]” 4), \">Refs</a>]<i>imperfect</i> ἡγούμην[<a href=\"javascript:void(0)\" title=\" lines12.28, etc.\">Refs</a>], <i>Ionic dialect</i> <b>-εύμην</b>[<a href=\"javascript:void(0)\" title=\" 5th c.BC: Herodotus Historicus 2.115, ἡγέοντο [prev. author] 9.15 \">Refs 5th c.BC+</a>]: <i>future</i> ἡγήσομαι [<a href=\"javascript:void(0)\" title=\" 8th c.BC: Ilias Homerus Epicus “Illiad” 14.374, etc.\">Refs 8th c.BC+</a>]: <i>aorist 1</i> ἡγησάμην [<a href=\"javascript:void(0)\" title=\" 8th c.BC: Odyssea Homerus Epicus “Odyssey” 14.48, etc.:",
+   "mounce": "to govern",
+   "related": [
+    "G1334 διηγέομαι to relate fully",
+    "G2230 ἡγεμονεύω to govern",
+    "G2231 ἡγεμονία reign",
+    "G2232 ἡγεμών ruler",
+    "G3594 ὁδηγέω to guide",
+    "G4285 προηγέομαι to prefer",
+    "G5524 χορηγέω to provide"
+   ]
+  },
+  "G2532": {
+   "surfaces": [
+    "thinking"
+   ],
+   "sense_head": "and",
+   "meaning_range": "(as a connective) and; (connecting and continuing) and then, then; (as a disjuntive) but, yet, however; (as an adv.) also, even, likewise; (1) <b>and,</b> <ref='Mat.2.2, 3, 11; 4:22'>Mt. 2:2, 3, 11; 4:22</ref>); (2) <greek>και και</greek>, <b>both and;</b>; (3) as a cumulative particle, <b>also, too,</b> <ref='Mat.5.39'>Mt. 5:39</ref>; <ref='Jhn.8.19'>Jn. 8:19</ref>; <ref='1Co.11.6'>1Cor. 11:6;</ref>; (4) emphatic, <b>even, also,</b> <ref='Mat.10.30'>Mt. 10:30</ref>; <ref='1Co.2.10'>1Cor. 2:10;</ref> in NT adversative, <b>but,</b> <ref='Mat.11.19'>Mt. 11:19</ref>; also introductory of the apodosis of a sentence, <ref='Gal.3.28'>Gal. 3:28;</ref> <ref='Jas.2.4'>Jas. 2:4</ref>",
+   "lsj": "<b> καί</b>, <br /> <i>conjunction</i>, copulative, joining words and sentences, <br /><Level1><b>__A</b></Level1> <b>and</b>; also <i>adverb</i>, <b>even, also, just</b>, frequently expressing emphatic assertion or assent, corresponding as positive to the negative οὐ (μή) or οὐδέ (μηδέ). copulative, <b>and</b>, <br /><Level2><b>__A.I</b></Level2> joining words or sentences to those preceding, ἦ, καὶ κυανέῃσιν ἐπ᾽ ὀφρύσινεῦσε Κρονίων [<a href=\"javascript:void(0)\" title=\" 8th c.BC: Ilias Homerus Epicus “Illiad” 1.528, etc.\">Refs 8th c.BC+</a>]: repeated with two or more Nouns, αἱ δὲ ἔλαφοι κ. δορκάδες κ. οἱ ἄγριοι οἶες κ. οἱ ὄνοι οἱ ἄγριοι [<a href=\"javascript:void(0)\" title=\" 5th-6th c.BC: X",
+   "mounce": "(as a connective) and; (connecting and continuing) and then, then; (as a disjuntive) but, yet, however; (as an adv.) also, even, likewise",
+   "related": [
+    ""
+   ]
+  },
+  "G2602": {
+   "surfaces": [
+    "conceive"
+   ],
+   "sense_head": "beginning",
+   "meaning_range": "creation (of the world), beginning, foundation; <i>primarily</i> <b>a casting down; laying the foundation, foundation; beginning, commencement, creation (of the world)</b> <ref='Mat.13.35; 25:34'>Mt. 13:35; 25:34</ref>; <b>conception</b> in the womb, <ref='Heb.11.11'>Heb. 11:11</ref>",
+   "lsj": "<b> καταβολ-ή</b>, ἡ, <br /> <b>throwing down</b>: hence, <b>sowing,</b> [<a href=\"javascript:void(0)\" title=\" Corp.Herm. 9.6 \">Refs</a>]; especially of <b>begetting</b>, κ. σπέρματος, σπερμάτων, [<a href=\"javascript:void(0)\" title=\" 5th-6th c.BC: Philolaus Philosophus 13, 2nd c.AD: Lucianus Sophista “Am.” 19, cf. NT.Heb.11.11, 2nd c.AD: Arrianus Historicus “Epicteti Dissertationes” 1.13.3 \">NT+5th c.BC+</a>]; ἡ Ῥωμύλου σπορὰ καὶ κ. [<a href=\"javascript:void(0)\" title=\" 1st-2nd c.AD: Plutarchus Biographus et Philosophus 2.320b. \">Refs 1st c.AD+</a>]<br /><Level4><b>__b</b></Level4> <b>congenital defect</b>, ἀπὸ ξυγγενικῆς αἰτίας καὶ κ. [<a href=\"javascript:void(0)\" title=\" 1st-2nd c.AD: Plut",
+   "mounce": "creation (of the world), beginning, foundation",
+   "related": [
+    "G2598 καταβάλλω to lay/throw down"
+   ]
+  },
+  "G2919": {
+   "surfaces": [
+    "thought"
+   ],
+   "sense_head": "to judge",
+   "meaning_range": "to decide, consider, as preferring one thing over another or determining the correctness of a matter; by extension: to judge, pass judgment on, condemn in a legal sense; pluperfect, <greek>κεκρίκει</greek> (3 <i>singular</i>), <i>primarily</i> <b>to separate; to make a distinction between; to exercise judgment upon; to estimate,</b> <ref='Rom.14.5'>Rom. 14:5;</ref> <b>to judge, to assume censorial power over, to call to account,</b> <ref='Mat.7.1'>Mt. 7:1</ref>; <ref='Luk.6.37'>Lk. 6:37</ref>; <ref='Rom.2.1, 3; 14.3, 4, 10, 13'>Rom. 2:1, 3; 14:3, 4, 10, 13</ref>; <ref='Col.2.16'>Col. 2:16;</ref> <ref='Jas.4.11, 12'>Jas. 4:11, 12</ref>; <b>to bring under question,</b> <ref='Rom.14.22'>Rom. 14",
+   "lsj": "<b> κρίνω</b> [ῑ], <br /> <i>Epic dialect</i> 3rd.<i>person</i> etc for 1st.<i>person</i>, 2nd.<i>person</i> <i>singular</i> <i>indicative</i> κρίνησι (δια-) <i>false reading</i> in [<a href=\"javascript:void(0)\" title=\" 3rd c.BC: Theocritus Poeta Bucolicus 25.46 \">Refs 3rd c.BC+</a>]: <i>future</i> κρῐνῶ, <i>Epic dialect</i>, <i>Ionic dialect</i> κρῐνέω (δια-) [<a href=\"javascript:void(0)\" title=\" 8th c.BC: Ilias Homerus Epicus “Illiad” 2.387 \">Refs 8th c.BC+</a>]: <i>aorist</i> [<a href=\"javascript:void(0)\" title=\" ἔκρῑνα 8th c.BC: Odyssea Homerus Epicus “Odyssey” 18.264 \">Refs 8th c.BC+</a>], etc.: <i>perfect</i> [<a href=\"javascript:void(0)\" title=\" κέκρῐκα Plato Philosophus [{5-6th c.BC}",
+   "mounce": "to decide, consider, as preferring one thing over another or determining the correctness of a matter; by extension: to judge, pass judgment on, condemn in a legal sense",
+   "related": [
+    "G2917 κρίμα judgment",
+    "G2923 κριτής judge"
+   ]
+  },
+  "G3004G": {
+   "surfaces": [
+    "thought"
+   ],
+   "sense_head": "to say: says",
+   "meaning_range": "- properly, to \"lay\" forth, i.e. (figuratively) relate (in words (usually of systematic or set discourse; whereas G2036 and G5346 generally refer to an individual expression or speech respectively; while G4483 is properly to break silence merely, and G2980 means an extended or random harangue)); by implication, to mean",
+   "lsj": "<b> λέγω</b>, <br /> <br /><Level1><b>__B</b></Level1> <b>pick up</b>, etc.: tenses for <i>signification</i> 1 and 11, <i>future</i> λέξω [<a href=\"javascript:void(0)\" title=\" 8th c.BC: Odyssea Homerus Epicus “Odyssey” 24.224 \">Refs 8th c.BC+</a>]: <i>aorist</i> ἔλεξα [<a href=\"javascript:void(0)\" title=\" 4th-5th c.BC: Aeschylus Tragicus “Persae” 292 \">Refs 4th c.BC+</a>]:—<i>middle</i>, <i>future</i> in <i>passive</i> sense λέξομαι [<a href=\"javascript:void(0)\" title=\" 5th c.BC: Euripides Tragicus “Alcestis” 322 \">Refs 5th c.BC+</a>]: <i>aorist</i> ἐλεξάμην [<a href=\"javascript:void(0)\" title=\" 8th c.BC: Ilias Homerus Epicus “Illiad” 21.27 (_transitive_)\">Refs 8th c.BC+</a>]; <i>Epic dialec",
+   "mounce": ": speak/ask<br>- properly, to \"lay\" forth, i.e. (figuratively) relate (in words (usually of systematic or set discourse; whereas G2036 and G5346 generally refer to an individual expression or speech respectively; while G4483 is properly to break silence merely, and G2980 means an extended or random harangue)); by implication, to mean",
+   "related": [
+    "G0483 ἀντιλέγω to dispute",
+    "G0557 ἀπελεγμός discredit",
+    "G1246 διακατελέγχομαι to refute",
+    "G1256 διαλέγω to dispute",
+    "G1649 ἔλεγξις rebuke",
+    "G1650 ἔλεγχος rebuke",
+    "G1651 ἐλέγχω to rebuke",
+    "G1827 ἐξελέγχω to convict",
+    "G1951 ἐπιλέγω to call/choose",
+    "G2639 καταλέγω to enrol",
+    "G2980 λαλέω to speak",
+    "G3004G λέγω to say: says"
+   ]
+  },
+  "G3049": {
+   "surfaces": [
+    "think",
+    "thinks"
+   ],
+   "sense_head": "to count",
+   "meaning_range": "to credit, count, reckon; regard, think, consider; (1) <i>primarily</i> <b>to count, calculate; to count, enumerate, consider</b> <ref='Mrk.15.28'>Mk. 15:28</ref>; <ref='Luk.22.37'>Lk. 22:37</ref>; <b>to set down</b> as a matter of account, <ref='1Co.13.5'>1Cor. 13:5;</ref> <ref='2Co.3.5'>2Cor. 3:5;</ref> 12:6; <b>to impute, credit, count, consider, reckon</b> <ref='Rom.4.3'>Rom. 4:3;</ref> <ref='2Co.5.19'>2Cor. 5:19;</ref> <ref='2Ti.4.16'>2Tim. 4:16;</ref> <b>to account,</b> <ref='Rom.2.26'>Rom. 2:26;</ref> 8:36; <greek>εἰς οὐδὲν λογισθῆναι</greek>, <b>to be set at nought, despised,</b> <ref='Act.19.27'>Acts 19:27;</ref> <b>to regard, deem, consider,</b> <ref='Rom.6.11'>Rom. 6:11;</ref> 14:",
+   "lsj": "<b> λογ-ίζομαι</b>, <br /> <i>Attic dialect</i> <i>future</i> -ιοῦμαι [<a href=\"javascript:void(0)\" title=\" [prev. author = 5th-6th c.BC: Aristophanes Comicus] “Ra.” 1263, 5th c.BC: Thucydides Historicus 5.87, etc.\">Refs 5th c.BC+</a>]: <i>aorist</i> ἐλογισάμην [<a href=\"javascript:void(0)\" title=\" 5th c.BC: Euripides Tragicus “Orestes” 555, 5th c.BC: Thucydides Historicus 6.31, etc.\">Refs 5th c.BC+</a>]: <i>perfect</i> λελόγισμαι [<a href=\"javascript:void(0)\" title=\" 5th c.BC: Lysias Orator 32.24,27, 4th c.BC: Demosthenes Orator 28.12 \">Refs 5th c.BC+</a>]:—<i>passive</i>, see below 111: (λόγος):—properly of numerical calculation, <b>count, reckon</b>, οὐκ ἐπισταμένους λογίζεσθαι [<a href=\"",
+   "mounce": "to credit, count, reckon; regard, think, consider",
+   "related": [
+    "G3056 λόγος word"
+   ]
+  },
+  "G3141": {
+   "surfaces": [
+    "thought"
+   ],
+   "sense_head": "testimony",
+   "meaning_range": "testimony, evidence; (good) reputation; judicial <b>evidence,</b> <ref='Mrk.14.55, 56, 59'>Mk. 14:55, 56, 59</ref>; <ref='Luk.22.71'>Lk. 22:71</ref>; <b>testimony</b> in general, <ref='Tit.1.13'>Tit. 1:13;</ref> <ref='1Jn.5.9'>1Jn. 5:9</ref> <b>testimony, declaration</b> in a matter of fact or doctrine, <ref='Jhn.1.19; 3:11'>Jn. 1:19; 3:11</ref>; <ref='Act.22.18'>Acts 22:18;</ref> <b>attestation</b> to character, <ref='Jhn.5.34, 36'>Jn. 5:34, 36</ref>; <b>reputation,</b> <ref='1Ti.3.7'>1Tim. 3:7</ref>",
+   "lsj": "<b> μαρτῠρ-ία</b>, ἡ, <br /> <b>testimony</b>, Διονύσου μαρτυρίῃσι [<a href=\"javascript:void(0)\" title=\" 8th c.BC: Odyssea Homerus Epicus “Odyssey” 11.325, compare 8th-7th c.BC: Hesiodus Epicus “Opera et Dies” 282 (_plural_): frequently both _sing._ and _plural_, μ. τινός\">Refs 8th c.BC+</a>] his <b>evidence</b>, [<a href=\"javascript:void(0)\" title=\" 5th c.BC: Antipho Orator 2.2.7; μ. παρέχεσθαι 5th-6th c.BC: Plato Philosophus “Symposium” 179b; εἰς μ. κληθῆναι [prev. author] “Lg.” 937a \">Refs 5th c.BC+</a>]; μαρτυριῶν ἀπέχεσθαι to refuse to give <b>evidence</b>, [<a href=\"javascript:void(0)\" title=\" 5th-6th c.BC: Aristophanes Comicus “Equites” 1316; ἐμβάλλεσθαι μ. ψευδῆ 4th c.BC: Demosthenes",
+   "mounce": "testimony, evidence; (good) reputation",
+   "related": [
+    "G0267 ἀμάρτυρος without witness",
+    "G1263 διαμαρτύρομαι to testify solemnly",
+    "G1957 ἐπιμαρτυρέω to testify to",
+    "G2649 καταμαρτυρέω to testify against",
+    "G3140 μαρτυρέω to testify",
+    "G3142 μαρτύριον testimony",
+    "G3143 μαρτύρομαι to testify",
+    "G3144 μάρτυς witness",
+    "G4303 προμαρτύρομαι to predict",
+    "G4828 συμμαρτυρέω to testify with",
+    "G4901 συνεπιμαρτυρέω to testify with",
+    "G5575 ψευδομάρτυρ false witness"
+   ]
+  },
+  "G3421": {
+   "surfaces": [
+    "thinking"
+   ],
+   "sense_head": "to remember",
+   "meaning_range": "to remember; to think of; <b>to remember, recollect, call to mind,</b> <ref='Mat.16.9'>Mt. 16:9</ref>; <ref='Luk.17.32'>Lk. 17:32</ref>; <ref='Act.20.31'>Acts 20:31;</ref> <b>to be mindful of, to fix the thoughts upon,</b> <ref='Heb.11.15'>Heb. 11:15;</ref> <b>to make mention, mention, speak of,</b> <ref='Heb.11.22'>Heb. 11:22</ref>",
+   "lsj": "<b> μνημον-εύω</b>, <br /> <i>perfect</i> ἐμνημόνευκα [<a href=\"javascript:void(0)\" title=\" 5th-6th c.BC: Plato Philosophus “Phaedo” 103b (ἀπ-), 1st c.AD: Josephus Historicus “contra Apionem” 1.1; μεμνημόνευκα 2nd c.AD: Rufus Medicus cited in 4th c.AD: Oribasius Medicus 44.17.2 \">Refs 5th c.BC+</a>]:—<i>passive</i>, <i>future</i> μνημονευθήσομαι [<a href=\"javascript:void(0)\" title=\" 5th-6th c.BC: Isocrates Orator 12.128 \">Refs 5th c.BC+</a>]; also μνημονεύσομαι in <i>passive</i> sense (see. infr. B): <i>aorist</i> ἐμνημονεύθην[<a href=\"javascript:void(0)\" title=\" [prev. work]192: _perfect_ ἐμνημόνευμαι (δι-) 5th-6th c.BC: Plato Philosophus “Critias” 117e \">Refs 5th c.BC+</a>]:—<i>middle</i>,",
+   "mounce": "to remember; to think of",
+   "related": [
+    "G3420 μνήμη remembrance"
+   ]
+  },
+  "G3539": {
+   "surfaces": [
+    "think"
+   ],
+   "sense_head": "to understand",
+   "meaning_range": "to understand, see with insight, reflect; <b>to perceive, observe, see with insight; to mark</b>, attentively, <ref='Mat.24.15'>Mt. 24:15</ref>; <ref='Mrk.13.14'>Mk. 13:14</ref>; <ref='2Ti.2.7'>2Tim. 2:7;</ref> <b>to understand, comprehend,</b> <ref='Mat.15.17'>Mt. 15:17</ref>; <b>to conceive,</b> <ref='Eph.3.20'>Eph. 3:20</ref>",
+   "lsj": "<b> νο-έω</b>, <br /> <i>Aeolic dialect</i> <b>νόημι</b> (which see): <i>Epic dialect</i> <i>aorist 1</i> νόησα [<a href=\"javascript:void(0)\" title=\" 8th c.BC: Ilias Homerus Epicus “Illiad” 8.91 \">Refs 8th c.BC+</a>]; <i>Ionic dialect</i> ἔνωσα (ἐν-) [<a href=\"javascript:void(0)\" title=\" 5th c.BC: Herodotus Historicus 1.86: \">Refs 5th c.BC+</a>]<i>perfect</i> νενόηκα, <i>Ionic dialect</i> νένωκα (ἐν-) [<a href=\"javascript:void(0)\" title=\" [prev. author] 3.6 \">Refs</a>]; <i>imperative</i> νενόηθι Hilgard <b>Excerpta e libris Herodiani</b> [<a href=\"javascript:void(0)\" title=\" 30 \">Refs</a>]:—<i>middle</i>, <i>Epic dialect</i> <i>aorist</i> νοήσατο [<a href=\"javascript:void(0)\" title=\" 8th c.B",
+   "mounce": "to understand, see with insight, reflect",
+   "related": [
+    "G0050 ἀγνοέω be ignorant",
+    "G0143 αἰσθάνομαι to perceive",
+    "G1271 διάνοια mind",
+    "G1272 διανοίγω to open up",
+    "G1771 ἔννοια thought/purpose",
+    "G1950 ἐπιλανθάνω to forget",
+    "G1963 ἐπίνοια thought",
+    "G3105 μαίνομαι to rave",
+    "G3540 νόημα mind/thought",
+    "G3543 νομίζω to think",
+    "G3563 νοῦς mind",
+    "G4307 πρόνοια foresight"
+   ]
+  },
+  "G3540": {
+   "surfaces": [
+    "thought",
+    "thoughts"
+   ],
+   "sense_head": "mind/thought",
+   "meaning_range": "mind, thought, mind; scheme, design, plot; <b>the mind, the understanding, intellect,</b> <ref='2Co.3.14'>2Cor. 3:14;</ref> 4:4; <ref='Php.4.7'>Phil. 4:7;</ref> <b>the heart, soul, affections, feelings, disposition,</b> <ref='2Co.11.3'>2Cor. 11:3;</ref> <b>a conception of the mind, thought, purpose, device, design, plot, scheme</b> <ref='2Co.2.11'>2Cor. 2:11;</ref> 10:5*",
+   "lsj": "<b> νό-ημα</b>, ατος, τό, <br /> <i>Ionic dialect</i> <b>νῶμα</b> [<a href=\"javascript:void(0)\" title=\" 5th c.BC: Empedocles Poeta Philosophus 110.10 \">Refs 5th c.BC+</a>] (but νόημα [<a href=\"javascript:void(0)\" title=\" 105.3)\">Refs</a>]: (νοέω):—<b>that which is perceived, perception, thought,</b> τῶν νέες ὠκεῖαι, ὡς εἰ πτερὸν ἠὲ νόημα [<a href=\"javascript:void(0)\" title=\" 8th c.BC: Odyssea Homerus Epicus “Odyssey” 7.36 (compare ὀξύτερον νοήματος 4th c.AD: Libanius Sophista “Orationes” 59.148 \">Refs 8th c.BC+</a>]; ἅμα νοήματι 'in the twinkling of an eye', [<a href=\"javascript:void(0)\" title=\" 4th-3rd c.BC: Epicurus Philosophus “Epistulae” 1p.11U.: hence ἡ ἅμα ν. περίοδος\">Refs 4th c.BC+</",
+   "mounce": "mind, thought, mind; scheme, design, plot",
+   "related": [
+    "G3539 νοέω to understand"
+   ]
+  },
+  "G3543": {
+   "surfaces": [
+    "think",
+    "thinks",
+    "thought"
+   ],
+   "sense_head": "to think",
+   "meaning_range": "to think, suppose, expect, consider; <b>to own as settled and established; to deem,</b> <ref='1Co.7.26'>1Cor. 7:26;</ref> <ref='1Ti.6.5'>1Tim. 6:5;</ref> <b>to suppose, presume, expect</b> <ref='Mat.5.17; 20:10'>Mt. 5:17; 20:10</ref>; <ref='Luk.2.44'>Lk. 2:44</ref>; <b>to be usual, customary,</b> <ref='Act.16.13'>Acts 16:13</ref>",
+   "lsj": "<b> νομ-ίζω</b>, <br /> <i>future</i> νομιῶ [<a href=\"javascript:void(0)\" title=\" 5th-6th c.BC: Aristophanes Comicus “Aves” 571, 5th c.BC: Thucydides Historicus 4.87, etc.\">Refs 5th c.BC+</a>]; <i>Ionic dialect</i> <i>1st pers.</i> <i>plural</i> νομιοῦμεν [<a href=\"javascript:void(0)\" title=\" 5th c.BC: Herodotus Historicus 2.17; later νομίσω 3rd c.AD(?): Longus Scriptor Eroticus 1.1 codices, 5th-6th c.AD: Procopius Gazaeus Rhetor “Epistulae - Epistolographi” 12: \">Refs 5th c.BC+</a>]<i>aorist</i> ἐνόμισα, <i>poetry</i> νόμισα [<a href=\"javascript:void(0)\" title=\" 5th c.BC: Pindarus Lyricus “I.” 5(4).2 \">Refs 5th c.BC+</a>]: <i>perfect</i> νενόμικα [<a href=\"javascript:void(0)\" title=\" 4th c.",
+   "mounce": "to think, suppose, expect, consider",
+   "related": [
+    "G0143 αἰσθάνομαι to perceive",
+    "G1271 διάνοια mind",
+    "G1272 διανοίγω to open up",
+    "G1771 ἔννοια thought/purpose",
+    "G1950 ἐπιλανθάνω to forget",
+    "G1963 ἐπίνοια thought",
+    "G3105 μαίνομαι to rave",
+    "G3539 νοέω to understand",
+    "G3551 νόμος law",
+    "G4307 πρόνοια foresight",
+    "G5283 ὑπόνοια suspicion"
+   ]
+  },
+  "G3588": {
+   "surfaces": [
+    "thoughts"
+   ],
+   "sense_head": "the/this/who",
+   "meaning_range": "(often not translated) the, this, that, who; the prepositive article, answering, to a considerable extent, to the English definite article; but, for the principle and facts of its usage, consult a grammar; <greek>ὁ μὲν ὁ δέ</greek>, <b>the one the other,</b> <ref='Php.1.16, 17'>Phil. 1:16, 17</ref>; <ref='Heb.7.5, 6, 20, 21, 23, 24'>Heb. 7:5, 6, 20, 21, 23, 24</ref>; <i>plural</i> <b>some others,</b> <ref='Mat.13.23; 22:5, 6'>Mt. 13:23; 22:5, 6</ref>; <greek>ὁ δέ</greek>, <b>but he,</b> <ref='Mat.4.4; 12:48'>Mt. 4:4; 12:48</ref>; <greek>οἱ δέ</greek>, <b>but others,</b> <ref='Mat.28.17'>Mt. 28:17</ref>; used, in a poetic quotation, for a personal pronoun, <ref='Act.17.28'>Acts 17:28</ref>",
+   "lsj": "<b> ὁ</b>, <br /> <b>ἡ</b>, τό, is, when thus written, <br /><Level1><b>__A</b></Level1> <i>demonstrative</i> Pronoun. <br /><Level1><b>__B </b></Level1> in <i>Attic dialect</i>, definite or prepositive Article. <br /><Level1><b>__C </b></Level1> in <i>Epic dialect</i>, the so-called postpositive Article, = relative Pronoun, ὅς, ἥ, ὅ.—The <i>nominative</i> <i>masculine</i> and <i>feminine</i> <i>singular</i> and <i>plural</i>, ὁ, ἡ, οἱ, αἱ, have no accent in codices and most printed books, except when used as the relative; but ὁ, ἡ, οἱ, αἱ differ only in writing from ὃ, ἣ, οἳ, α; the <i>nominative</i> forms of the article are said by Hdn.Gr.1.474 to be oxytone, and by [<a href=\"javascript:vo",
+   "mounce": "(often not translated) the, this, that, who",
+   "related": [
+    "G3588 ὁ the/this/who",
+    "G5120 τοῦ his"
+   ]
+  },
+  "G3633": {
+   "surfaces": [
+    "thinking"
+   ],
+   "sense_head": "to suppose",
+   "meaning_range": "to think, suppose, imagine, presume, <ref='Jhn.21.25;'>Jhn.21:25;</ref> <ref='Phi.1.17.'>Phil. 1:17.</ref> οἰέσθω in <ref='Jas.1.7'>Jas. 1:7</ref> formed from the contracted form οἶ\\μαι*",
+   "lsj": "<b> οἴομαι</b>, <br /> in [<a href=\"javascript:void(0)\" title=\" 8th c.BC: Homerus Epicus \">Refs 8th c.BC+</a>] always un <i>contraction</i> <b>ὀΐομαι</b> (except οἴομαι [<a href=\"javascript:void(0)\" title=\" 8th c.BC: Odyssea Homerus Epicus “Odyssey” 10.193, οἴοιτο 17.580, 22.12)\">Refs 8th c.BC+</a>], see below:—the shortened form <b>οἶμαι</b> is the one chiefly used in Trag., οἴομαι only in [<a href=\"javascript:void(0)\" title=\" 4th-5th c.BC: Aeschylus Tragicus “Choephori” 758, 5th c.BC: Sophocles Tragicus “Oedipus Coloneus” 28 \">Refs 5th c.BC+</a>]; but οἴομαι is frequently in [<a href=\"javascript:void(0)\" title=\" 5th-6th c.BC: Aristophanes Comicus (“Eq.” 407, +others); 5th c.BC: Herodotus H",
+   "mounce": "to suppose",
+   "related": [
+    "G3634 οἷος such as"
+   ]
+  },
+  "G4690G": {
+   "surfaces": [
+    "conceive"
+   ],
+   "sense_head": "seed: offspring",
+   "meaning_range": "seed, the part of a plant or animal that can propagate the species (cf. \"sperm\"); by extension: children, offspring, descendants; <b>seed,</b> <ref='Mat.13.24, 27, 37, 38'>Mt. 13:24, 27, 37, 38</ref>; <b>semen virile,</b> <ref='Heb.11.11'>Heb. 11:11;</ref> <b>offspring, posterity,</b> <ref='Mat.22.24, 25'>Mt. 22:24, 25</ref>; <ref='Jhn.7.42'>Jn. 7:42</ref>; <b>a seed</b> of future generations, <ref='Rom.9.29'>Rom. 9:29;</ref> in NT <i>metaphorically</i> <b>a seed</b> or <b>principle</b> of spiritual life, <ref='1Jn.3.9'>1Jn. 3:9</ref>",
+   "lsj": "<b> σπέρμ-α</b>, ατος, τό, <br /> (σπείρω) <b>seed</b>, only once in [<a href=\"javascript:void(0)\" title=\" 8th c.BC: Homerus Epicus, in _metaphorically_ sense, see below 1.2: \">Refs 8th c.BC+</a>]<br /><Level2><b>__I</b></Level2> mostly, <b>seed</b> of plants, σ. ἀνιέναι, κρύπτειν, [<a href=\"javascript:void(0)\" title=\" “hymnus ad Cererem” 307, compare 5th c.BC: Herodotus Historicus 3.97: _plural_, 8th-7th c.BC: Hesiodus Epicus “Opera et Dies” 446 \">Refs 8th c.BC+</a>]; σ. τῇ γῇ διδόναι, ἐμβαλεῖν, [<a href=\"javascript:void(0)\" title=\" 5th-6th c.BC: Xenophon Historicus “Oeconomicus” 17.8, 10: proverbial, εἰς πέλαγος σ. βαλεῖν “epigram Gr.” 1038.8 (from Pamphylia) \">Refs 5th c.BC+</a>]; of frui",
+   "mounce": ": offspring<br>seed, the part of a plant or animal that can propagate the species (cf. \"sperm\"); by extension: children, offspring, descendants",
+   "related": [
+    "G4687 σπείρω to sow",
+    "G4690G σπέρμα seed: offspring",
+    "G4690H σπέρμα seed(s)"
+   ]
+  },
+  "G4815": {
+   "surfaces": [
+    "conceive"
+   ],
+   "sense_head": "to seize/conceive/help",
+   "meaning_range": "to seize, arrest, capture; to become pregnant, conceive; to help, come to the aid of; <b>to catch; to seize, apprehend, arrest, capture</b> <ref='Mat.26.55'>Mt. 26:55</ref>; <ref='Act.1.16'>Acts 1:16;</ref> <b>to catch,</b> as prey, <ref='Luk.5.9'>Lk. 5:9</ref>; <b>to conceive, become pregnant,</b> <ref='Luk.1.24, 31, 36; 2:21'>Lk. 1:24, 31, 36; 2:21</ref>; <i>metaphorically</i> <ref='Jas.1.15'>Jas. 1:15;</ref> <i>middle</i> <b>to help, aid, assist,</b> <ref='Luk.5.7'>Lk. 5:7</ref>; <ref='Php.4.3'>Phil. 4:3</ref>",
+   "lsj": "<b> συλλαμβάνω</b>, <br /> <i>future</i> -λήψομαι: <i>perfect</i> -είληφα, <i>passive</i> -είλημμαι: <i>aorist</i> συνέλᾰβον, <i>infinitive</i> συλλᾰβεῖν:—<i>middle</i>, <i>present</i> in [<a href=\"javascript:void(0)\" title=\" 4th-3rd c.BC: Philemo Comicus 53.4 \">Refs 4th c.BC+</a>]: <i>aorist</i> συνελαβόμην [<a href=\"javascript:void(0)\" title=\" 5th c.BC: Herodotus Historicus 3.49, etc.\">Refs 5th c.BC+</a>]:—<i>passive</i> (see. below; in [<a href=\"javascript:void(0)\" title=\" 5th-6th c.BC: Xenophon Historicus “Anabasis” 7.2.14 συλληφθήσεται has been restored for συλλήψεται)\">Refs 5th c.BC+</a>]:—<b>collect, gather together</b>, especially <b>rally</b> scattered troops, τῆς στρατιῆς τοὺς περι",
+   "mounce": "to seize, arrest, capture; to become pregnant, conceive; to help, come to the aid of",
+   "related": [
+    "G0353 ἀναλαμβάνω to take up",
+    "G0482 ἀντιλαμβάνω to help",
+    "G0618 ἀπολαμβάνω to get back",
+    "G1949 ἐπιλαμβάνω to catch",
+    "G2638 καταλαμβάνω to grasp",
+    "G2983 λαμβάνω to take",
+    "G3880 παραλαμβάνω to take",
+    "G4301 προλαμβάνω to take beforehand",
+    "G4355 προσλαμβάνω to take",
+    "G4838 συμπαραλαμβάνω to take along with",
+    "G4843 συμπεριλαμβάνω to embrace",
+    "G4862 σύν with"
+   ]
+  },
+  "G5424": {
+   "surfaces": [
+    "thinking"
+   ],
+   "sense_head": "thinking",
+   "meaning_range": "(<i>plural</i>) thinking, understanding; <i>primarily</i> <b>the diaphragm, midriff; the mind, intellect, understanding,</b> <ref='1Co.14.20'>1Cor. 14:20</ref> (2x)*",
+   "lsj": "<b> φρήν</b>, ἡ, <br /> <i>genitive</i> φρενός, <i>plural</i> φρένες, <i>genitive</i> φρενῶν, <i>dative</i> φρεσί: older <i>dative</i> <i>plural</i> φρασί (ν) [<a href=\"javascript:void(0)\" title=\" “IG” 12.971 (6th c.BC), 5th c.BC: Pindarus Lyricus “N.” 3.62, “BMus.Inscription” 909 (Halic., 1st c.BC): (see. entry near the end)\">Refs 6th c.BC+</a>]: <br /><Level2><b>__I</b></Level2> <b>midriff,</b> κραδία φρένα λακτίζει [<a href=\"javascript:void(0)\" title=\" 4th-5th c.BC: Aeschylus Tragicus “Prometheus Vinctus” 881 (_anapaest meter_)\">Refs 4th c.BC+</a>]; elsewhere always in <i>plural</i>, ἔνθα φρένες ἔρχαται ἀμφ᾽ ἁδινὸν κῆρ [<a href=\"javascript:void(0)\" title=\" 8th c.BC: Ilias Homerus Epicus “",
+   "mounce": "(<i>plural</i>) thinking, understanding",
+   "related": [
+    "G5426 φρονέω to reason",
+    "G5429 φρόνιμος thoughtful",
+    "G5431 φροντίζω be careful"
+   ]
+  },
+  "G5426": {
+   "surfaces": [
+    "think",
+    "thought"
+   ],
+   "sense_head": "to reason",
+   "meaning_range": "to think, regard, hold an opinion; to set one’s mind on; to have a (certain) attitude; <b>to think, to mind; to be of opinion,</b> <ref='Act.28.22'>Acts 28:22;</ref> <ref='Php.1.7'>Phil. 1:7;</ref> <b>to take thought, be considerate,</b> <ref='Php.4.10'>Phil. 4:10;</ref> <b>to entertain sentiments</b> or <b>inclinations</b> of a specific kind, <b>to be minded,</b> <ref='Rom.12.16'>Rom. 12:16;</ref> 15:5; <ref='1Co.13.11'>1Cor. 13:11;</ref> <ref='2Co.13.11'>2Cor. 13:11;</ref> <ref='Gal.5.10'>Gal. 5:10;</ref> <ref='Php.2.2'>Phil. 2:2;</ref> 3:16; 4:2; <b>to be in a</b> certain <b>frame of mind,</b> <ref='Rom.12.3'>Rom. 12:3;</ref> <ref='Php.2.5'>Phil. 2:5;</ref> <b>to imagine, entertain concei",
+   "lsj": "<b> φρον-έω</b>, <br /> <i>Epic dialect</i> <i>subjunctive</i> φρονέῃσι [<a href=\"javascript:void(0)\" title=\" 8th c.BC: Odyssea Homerus Epicus “Odyssey” 7.75 \">Refs 8th c.BC+</a>]: <i>Epic dialect</i> <i>imperfect</i> φρόνεον [<a href=\"javascript:void(0)\" title=\" 8th c.BC: Ilias Homerus Epicus “Illiad” 17.286, φρονέεσκον 3rd c.BC: Apollonius Rhodius Epicus 4.1164 \">Refs 8th c.BC+</a>]: <i>future</i> <b>-ήσω</b>[<a href=\"javascript:void(0)\" title=\" 5th-6th c.BC: Aristophanes Comicus “Ecclesiazusae” 630 (_anapaest meter_)\">Refs 5th c.BC+</a>], etc.: <i>aorist</i> ἐφρόνησα [<a href=\"javascript:void(0)\" title=\" 5th c.BC: Herodotus Historicus 1.60, 4th-5th c.BC: Aeschylus Tragicus “Eumenides” 115",
+   "mounce": "to reason,  think, regard, hold an opinion; to set one’s mind on; to have a (certain) attitude",
+   "related": [
+    "G5424 φρήν thinking",
+    "G5427 φρόνημα purpose",
+    "G5428 φρόνησις understanding"
+   ]
+  },
+  "H0194": {
+   "surfaces": [
+    "thought"
+   ],
+   "sense_head": "perhaps",
+   "meaning_range": "1) perhaps, peradventure; 2) if peradventure; 3) unless; 4) suppose",
+   "lsj": "",
+   "mounce": "",
+   "related": [
+    "H0176A אוֹ or",
+    "H0199 אוּלָם but"
+   ]
+  },
+  "H0413": {
+   "surfaces": [
+    "think"
+   ],
+   "sense_head": "to[wards]",
+   "meaning_range": "1) to, toward, unto (of motion); 2) into (limit is actually entered); 2a) in among; 3) toward (of direction, not necessarily physical motion); 4) against (motion or direction of a hostile character); 5) in addition to, to; 6) concerning, in regard to, in reference to, on account of; 7) according to (rule or standard); 8) at, by, against (of one's presence); 9) in between, in within, to within, unto (idea of motion to)",
+   "lsj": "",
+   "mounce": "",
+   "related": [
+    "H0454A אֶלְיְהוֹעֵינַי Eliehoenai",
+    "H0454B אֶלְיוֹעֵינַי Elioenai",
+    "H0454G אֶלְיְהוֹעֵינַי Eliehoenai",
+    "H0454H אֶלְיוֹעֵינַי Elioenai",
+    "H0454I אֶלְיוֹעֵינַי Elioenai",
+    "H0454J אֶלְיוֹעֵינַי Elioenai",
+    "H0454K אֶלְיוֹעֵינַי Elioenai",
+    "H0454L אֶלְיוֹעֵינַי Elioenai",
+    "H0462 אֱלִיעֵינַי Elienai"
+   ]
+  },
+  "H0559": {
+   "surfaces": [
+    "think",
+    "thinking",
+    "thinks",
+    "thought"
+   ],
+   "sense_head": "to say",
+   "meaning_range": "1) to say, speak, utter; 1a) (Qal) to say, to answer, to say in one's heart, to think, to command, to promise, to intend; 1b) (Niphal) to be told, to be said, to be called; 1c) (Hithpael) to boast, to act proudly; 1d) (Hiphil) to avow, to avouch; Aramaic equivalent: <i>a.mar</i> (אֲמַר \"to say\" H0560)",
+   "lsj": "",
+   "mounce": "",
+   "related": [
+    "H0201 אוֹמָר Omar",
+    "H0204 אֹן On",
+    "H0534 אָמִיר top",
+    "H0560 אֲמַר to say",
+    "H0561 אֵמֶר word",
+    "H0562 אֹמֶר word",
+    "H0564G אִמֵּר Immer",
+    "H0564H אִמֵּר Immer",
+    "H0564I אִמֵּר Immer",
+    "H0564J אִמֵּר Immer",
+    "H0565A אִמְרָה word",
+    "H0565B אֶמְרָה threat"
+   ]
+  },
+  "H0834A": {
+   "surfaces": [
+    "thought"
+   ],
+   "sense_head": "which",
+   "meaning_range": "A: 1) (relative part.); 1a) which, who; 1b) that which; 2) (conj); 2a) that (in obj clause); 2b) when; 2c) since; 2d) as; 2e) conditional if; B:  Beth+  1) in (that) which; 2) (adv); 2a) where; 3) (conj); 3a) in that, inasmuch as; 3b) on account of; C:  Mem+ 1) from (or than) that which; 2) from (the place) where; 3) from (the fact) that, since; D: Kaph+; 1) (conj.), according as, as, when; 1a) according to that which, according as, as; 1b) with a causal force: in so far as, since; 1c) with a temporal force: when",
+   "lsj": "",
+   "mounce": "",
+   "related": [
+    ""
+   ]
+  },
+  "H0853": {
+   "surfaces": [
+    "thinking"
+   ],
+   "sense_head": "[Obj.]",
+   "meaning_range": "sign of the definite direct object, not translated in English but generally preceding and indicating the accusative; Aramaic equivalent: <i>yat</i> (יָת \"whom\" H3487)",
+   "lsj": "",
+   "mounce": "",
+   "related": [
+    "H0226G אוֹת sign: miraculous",
+    "H0226H אוֹת sign:  indicator",
+    "H0865 אֶתְמוֹל previously",
+    "H3487 יָת whom"
+   ]
+  },
+  "H0995": {
+   "surfaces": [
+    "thought"
+   ],
+   "sense_head": "to understand",
+   "meaning_range": "1) to discern, understand, consider; 1a) (Qal); 1a1) to perceive, discern; 1a2) to understand, know (with the mind); 1a3) to observe, mark, give heed to, distinguish, consider; 1a4) to have discernment, insight, understanding; 1b) (Niphal) to be discerning, intelligent, discreet, have understanding; 1c) (Hiphil); 1c1) to understand; 1c2) to cause to understand, give understanding, teach; 1d) (Hithpolel) to show oneself discerning or attentive, consider diligently; 1e) (Polel) to teach, instruct; 2) (TWOT) prudent, regard",
+   "lsj": "",
+   "mounce": "",
+   "related": [
+    "H0946 בּוּנָה Bunah",
+    "H0996G בַּ֫יִן between",
+    "H0996H בַּ֫יִן between: among",
+    "H0998 בִּינָה understanding",
+    "H1002 בִּירָה palace",
+    "H1003 בִּירָנִית fortress",
+    "H1004A בֵּית place",
+    "H1004B בַּ֫יִת house: home",
+    "H1004G בַּ֫יִת Beth-[ashbea]",
+    "H1004H בַּ֫יִת Beth [Haggan]",
+    "H1004I בַּ֫יִת Beth-[togarmah]",
+    "H1004J בַּ֫יִת House [of the Forest]"
+   ]
+  },
+  "H1697G": {
+   "surfaces": [
+    "thought"
+   ],
+   "sense_head": "word/speech/command",
+   "meaning_range": "1) speech, word, speaking, thing; 1a) speech; 1b) saying, utterance; 1c) word, words; 1d) business, occupation, acts, matter, case, something, manner (by extension)",
+   "lsj": "",
+   "mounce": "",
+   "related": [
+    "H1682 דְּבוֹרָה bee",
+    "H1683G דְּבוֹרָה Deborah",
+    "H1683H דְּבוֹרָה Deborah",
+    "H1687 דְּבִיר sanctuary",
+    "H1688A דְּבִיר Debir",
+    "H1688B לִדְבִר Debir",
+    "H1688G דְּבִיר Debir",
+    "H1688H דְּבִיר Debir",
+    "H1696G דָבַר to speak: speak",
+    "H1696H דָבַר to speak: subdue",
+    "H1696I דָבַר to speak: promise",
+    "H1697H דָּבָר word: speaking"
+   ]
+  },
+  "H1697I": {
+   "surfaces": [
+    "thoughts"
+   ],
+   "sense_head": "thing/matter",
+   "meaning_range": "1) speech, word, speaking, thing; 1a) speech; 1b) saying, utterance; 1c) word, words; 1d) business, occupation, acts, matter, case, something, manner (by extension)",
+   "lsj": "",
+   "mounce": "",
+   "related": [
+    "H1682 דְּבוֹרָה bee",
+    "H1683G דְּבוֹרָה Deborah",
+    "H1683H דְּבוֹרָה Deborah",
+    "H1687 דְּבִיר sanctuary",
+    "H1688A דְּבִיר Debir",
+    "H1688B לִדְבִר Debir",
+    "H1688G דְּבִיר Debir",
+    "H1688H דְּבִיר Debir",
+    "H1696G דָבַר to speak: speak",
+    "H1696H דָבַר to speak: subdue",
+    "H1696I דָבַר to speak: promise",
+    "H1697G דָּבָר word"
+   ]
+  },
+  "H1819": {
+   "surfaces": [
+    "think",
+    "thought"
+   ],
+   "sense_head": "to resemble",
+   "meaning_range": "1) to be like, resemble; 1a) (Qal) to be like, resemble; 1b) (Piel); 1b1) to liken, compare; 1b2) to imagine, think; 1c) (Hithpael) to make oneself like; 1d) (Niphal); Aramaic equivalent: <i>de.mah</i> (דְּמָה \"be like\" H1821)",
+   "lsj": "",
+   "mounce": "",
+   "related": [
+    "H1821 דְּמָה be like",
+    "H1823 דְּמוּת likeness",
+    "H1825 דִּמְיֹן likeness"
+   ]
+  },
+  "H1843": {
+   "surfaces": [
+    "opinion"
+   ],
+   "sense_head": "knowledge",
+   "meaning_range": "1) knowledge, opinion; 1a) God's knowledge; 1b) judgment, opinion",
+   "lsj": "",
+   "mounce": "",
+   "related": [
+    "H1844 דֵּעָה knowledge",
+    "H1845 דְּעוּאֵל Deuel",
+    "H1847 דַּ֫עַת knowledge",
+    "H1862 דַּרְדַּע Darda",
+    "H3037G יַדּוּעַ Jaddua",
+    "H3037H יַדּוּעַ Jaddua",
+    "H3043G יְדִיעֲאֵל Jediael",
+    "H3043H יְדִיעֲאֵל Jediael",
+    "H3043I יְדִיעֲאֵל Jediael",
+    "H3043J יְדִיעֲאֵל Jediael",
+    "H3045 יָדַע to know",
+    "H3047 יָדָע Jada"
+   ]
+  },
+  "H1902H": {
+   "surfaces": [
+    "thoughts"
+   ],
+   "sense_head": "meditation",
+   "meaning_range": "1) meditation, resounding music, musing; 1a) resounding music; 1b) meditation, plotting",
+   "lsj": "",
+   "mounce": "",
+   "related": [
+    "H1897 הָגָה to mutter",
+    "H1899 הֶ֫גֶה moaning",
+    "H1900 הָגוּת meditation",
+    "H1902G הִגָּיוֹן Higgaion"
+   ]
+  },
+  "H1931": {
+   "surfaces": [
+    "thought"
+   ],
+   "sense_head": "he/she/it",
+   "meaning_range": "pron 3p s; 1) he, she, it; 1a) himself (with emphasis); 1b) resuming subj with emphasis; 1c) (with minimum emphasis following predicate); 1d) (anticipating subj); 1e) (emphasising predicate); 1f) that, it (neuter) demons pron; 2) that (with article)",
+   "lsj": "",
+   "mounce": "",
+   "related": [
+    "H1932 הוּא he/she/it",
+    "H2007 הֵנָּה they [fem.]",
+    "H3058G יֵהוּא Jehu",
+    "H3058H יֵהוּא Jehu",
+    "H3058I יֵהוּא Jehu",
+    "H3058J יֵהוּא Jehu",
+    "H3058K יֵהוּא Jehu"
+   ]
+  },
+  "H1961": {
+   "surfaces": [
+    "thought"
+   ],
+   "sense_head": "to be",
+   "meaning_range": "1) to be, become, come to pass, exist, happen, fall out; 1a) (Qal); 1a1) ---; 1a1a) to happen, fall out, occur, take place, come about, come to pass; 1a1b) to come about, come to pass; 1a2) to come into being, become; 1a2a) to arise, appear, come; 1a2b) to become; 1a2b1) to become; 1a2b2) to become like; 1a2b3) to be instituted, be established; 1a3) to be; 1a3a) to exist, be in existence; 1a3b) to abide, remain, continue (with word of place or time); 1a3c) to stand, lie, be in, be at, be situated (with word of locality); 1a3d) to accompany, be with; 1b) (Niphal); 1b1) to occur, come to pass, be done, be brought about; 1b2) to be done, be finished, be gone",
+   "lsj": "",
+   "mounce": "",
+   "related": [
+    "H1933A הָוָא to fall",
+    "H1933B הָוָה to be"
+   ]
+  },
+  "H2029": {
+   "surfaces": [
+    "conceive"
+   ],
+   "sense_head": "to conceive",
+   "meaning_range": "1) to conceive, become pregnant, bear, be with child, be conceived, progenitor; 1a) (Qal) to conceive, become pregnant; 1b) (Pual) to be conceived; 1c) (Poel) to conceive, contrive, devise",
+   "lsj": "",
+   "mounce": "",
+   "related": [
+    "H2030A הָרָה pregnant",
+    "H2030B הָרִיָּה pregnant",
+    "H2031 הַרְהֹר fantasies",
+    "H2032 הֵרָיוֹן conception",
+    "H2033 הֲרוֹרִי Harod",
+    "H2036 הֹרָם Horam",
+    "H2037 הָרֻם Harum",
+    "H2038 הַרְמוֹן Harmon",
+    "H2039G הָרָן Haran",
+    "H2039H הָרָן Haran"
+   ]
+  },
+  "H2030A": {
+   "surfaces": [
+    "conceive"
+   ],
+   "sense_head": "pregnant",
+   "meaning_range": "pregnant; Also means: <i>ha.riy.yah</i> (הָרִיָּה \"pregnant\" H2030B)",
+   "lsj": "",
+   "mounce": "",
+   "related": [
+    "H2029 הָרָה to conceive",
+    "H2030B הָרִיָּה pregnant",
+    "H2031 הַרְהֹר fantasies",
+    "H2032 הֵרָיוֹן conception",
+    "H2033 הֲרוֹרִי Harod",
+    "H2036 הֹרָם Horam",
+    "H2037 הָרֻם Harum",
+    "H2038 הַרְמוֹן Harmon",
+    "H2039G הָרָן Haran",
+    "H2039H הָרָן Haran"
+   ]
+  },
+  "H2142": {
+   "surfaces": [
+    "think",
+    "thought"
+   ],
+   "sense_head": "to remember",
+   "meaning_range": "1) to remember, recall, call to mind; 1a) (Qal) to remember, recall; 1b) (Niphal) to be brought to remembrance, be remembered, be thought of, be brought to mind; 1c) (Hiphil); 1c1) to cause to remember, remind; 1c2) to cause to be remembered, keep in remembrance; 1c3) to mention; 1c4) to record; 1c5) to make a memorial, make remembrance",
+   "lsj": "",
+   "mounce": "",
+   "related": [
+    "H0234 אַזְכָּרָה memorial",
+    "H2138 זָכוּר male",
+    "H2139G זַכּוּר Zaccur",
+    "H2139H זַכּוּר Zaccur",
+    "H2139I זַכּוּר Zaccur",
+    "H2139J זַכּוּר Zaccur",
+    "H2139K זַכּוּר Zaccur",
+    "H2139L זַכּוּר Zaccur",
+    "H2139M זַכּוּר Zaccur",
+    "H2139N זַכּוּר Zaccur",
+    "H2143 זֵ֫כֶר memorial",
+    "H2144 זֶ֫כֶר Zecher"
+   ]
+  },
+  "H2232": {
+   "surfaces": [
+    "conceive"
+   ],
+   "sense_head": "to sow",
+   "meaning_range": "1) to sow, scatter seed; 1a) (Qal); 1a1) to sow; 1a2) producing, yielding seed; 1b) (Niphal); 1b1) to be sown; 1b2) to become pregnant, be made pregnant; 1c) (Pual) to be sown; 1d) (Hiphil) to produce seed, yield seed",
+   "lsj": "",
+   "mounce": "",
+   "related": [
+    "H2220 זְרוֹעַ arm",
+    "H2221 זֵרוּעַ sowing",
+    "H2233G זֶ֫רַע seed",
+    "H2233H זֶ֫רַע seed: children",
+    "H2233I זֶ֫רַע seed: semen",
+    "H2235A זֵרֹעַ vegetable",
+    "H2235B זֵֽרְעֹן vegetable",
+    "H3157G יִזְרְעֶאל Jezreel",
+    "H3157H יִזְרְעֶאל Jezreel",
+    "H3157I יִזְרְעֶאל Jezreel",
+    "H3157J יִזְרְעֶאל Jezreel",
+    "H3157K יִזְרְעֶאל Jezreel"
+   ]
+  },
+  "H2803I": {
+   "surfaces": [
+    "think",
+    "thought"
+   ],
+   "sense_head": "devise/plot/plan",
+   "meaning_range": "1) to think, plan, esteem, calculate, invent, make a judgment, imagine, count; 1a) (Qal); 1a1) to think, account; 1a2) to plan, devise, mean; 1a3) to charge, impute, reckon; 1a4) to esteem, value, regard; 1a5) to invent; 1b) (Niphal); 1b1) to be accounted, be thought, be esteemed; 1b2) to be computed, be reckoned; 1b3) to be imputed; 1c) (Piel); 1c1) to think upon, consider, be mindful of; 1c2) to think to do, devise, plan; 1c3) to count, reckon; 1d) (Hithpael) to be considered",
+   "lsj": "",
+   "mounce": "",
+   "related": [
+    "H2803G חָשַׁב to devise: design",
+    "H2803H חָשַׁב to devise: count",
+    "H2803J חָשַׁב to devise: think",
+    "H2804 חֲשַׁב to account",
+    "H2805 חֵ֫שֶׁב artwork",
+    "H2806 חַשְׁבַּדָּנָה Hashbaddanah",
+    "H2807 חֲשֻׁבָה Hashubah",
+    "H2808 חֶשְׁבּוֹן explanation",
+    "H2809 חֶשְׁבּוֹן Heshbon",
+    "H2810 חִשָּׁבוֹן invention",
+    "H2811G חֲשַׁבְיָ֫הוּ Hashabiah",
+    "H2811H חֲשַׁבְיָ֫הוּ Hashabiah"
+   ]
+  },
+  "H2803J": {
+   "surfaces": [
+    "think",
+    "thought"
+   ],
+   "sense_head": "think/imagine",
+   "meaning_range": "1) to think, plan, esteem, calculate, invent, make a judgment, imagine, count; 1a) (Qal); 1a1) to think, account; 1a2) to plan, devise, mean; 1a3) to charge, impute, reckon; 1a4) to esteem, value, regard; 1a5) to invent; 1b) (Niphal); 1b1) to be accounted, be thought, be esteemed; 1b2) to be computed, be reckoned; 1b3) to be imputed; 1c) (Piel); 1c1) to think upon, consider, be mindful of; 1c2) to think to do, devise, plan; 1c3) to count, reckon; 1d) (Hithpael) to be considered",
+   "lsj": "",
+   "mounce": "",
+   "related": [
+    "H2803G חָשַׁב to devise: design",
+    "H2803H חָשַׁב to devise: count",
+    "H2803I חָשַׁב to devise: devise",
+    "H2804 חֲשַׁב to account",
+    "H2805 חֵ֫שֶׁב artwork",
+    "H2806 חַשְׁבַּדָּנָה Hashbaddanah",
+    "H2807 חֲשֻׁבָה Hashubah",
+    "H2808 חֶשְׁבּוֹן explanation",
+    "H2809 חֶשְׁבּוֹן Heshbon",
+    "H2810 חִשָּׁבוֹן invention",
+    "H2811G חֲשַׁבְיָ֫הוּ Hashabiah",
+    "H2811H חֲשַׁבְיָ֫הוּ Hashabiah"
+   ]
+  },
+  "H2808": {
+   "surfaces": [
+    "thought"
+   ],
+   "sense_head": "explanation",
+   "meaning_range": "account, reasoning, reckoning",
+   "lsj": "",
+   "mounce": "",
+   "related": [
+    "H2803G חָשַׁב to devise: design",
+    "H2803H חָשַׁב to devise: count",
+    "H2803I חָשַׁב to devise: devise",
+    "H2803J חָשַׁב to devise: think",
+    "H2804 חֲשַׁב to account",
+    "H2805 חֵ֫שֶׁב artwork",
+    "H2806 חַשְׁבַּדָּנָה Hashbaddanah",
+    "H2807 חֲשֻׁבָה Hashubah",
+    "H2809 חֶשְׁבּוֹן Heshbon",
+    "H2810 חִשָּׁבוֹן invention",
+    "H2811G חֲשַׁבְיָ֫הוּ Hashabiah",
+    "H2811H חֲשַׁבְיָ֫הוּ Hashabiah"
+   ]
+  },
+  "H3179": {
+   "surfaces": [
+    "conceive"
+   ],
+   "sense_head": "to conceive",
+   "meaning_range": "1) to be hot, conceive; 1a) (Qal); 1a1) to be hot, become hot; 1a2) to mate (of animals); 1a3) to be or become hot (fig. of anger); 1b) (Piel); 1b1) to conceive (sexually); 1b2) to be in heat (of animals)",
+   "lsj": "",
+   "mounce": "",
+   "related": [
+    "H2528 חֱמָא rage",
+    "H2529A חֶמְאָה curd",
+    "H2529B חֵמָה heat",
+    "H2534 חֵמָה rage",
+    "H3181 יַחְמַי Jahmai"
+   ]
+  },
+  "H3588A": {
+   "surfaces": [
+    "thought"
+   ],
+   "sense_head": "for",
+   "meaning_range": "1) that, for, because, when, as though, as, because that, but, then, certainly, except, surely, since; 1a) that; 1a1) yea, indeed; 1b) when (of time); 1b1) when, if, though (with a concessive force); 1c) because, since (causal connection); 1d) but (after negative); 1e) that if, for if, indeed if, for though, but if; 1f) but rather, but; 1g) except that; 1h) only, nevertheless; 1i) surely; 1j) that is; 1k) but if; 1l) for though; 1m) forasmuch as, for therefore",
+   "lsj": "",
+   "mounce": "",
+   "related": [
+    "H0518A אִם if",
+    "H0518H אִם if: surely no",
+    "H0518I אִם if: surely yes",
+    "H0518J אִם if: until",
+    "H3588B כִּי [אם] that if: except",
+    "H3588C כִּי [עַל כֵּן] for as that: since",
+    "H3589 כִּיד ruin",
+    "H3651A כֵּן right",
+    "H3651C כֵּן so",
+    "H5921A עַל upon",
+    "H5921B [כִּי] עַל [כֵּן] as"
+   ]
+  },
+  "H3820A": {
+   "surfaces": [
+    "opinion"
+   ],
+   "sense_head": "heart",
+   "meaning_range": "1) inner man, mind, will, heart, understanding; 1a) inner part, midst; 1a1) midst (of things); 1a2) heart (of man); 1a3) soul, heart (of man); 1a4) mind, knowledge, thinking, reflection, memory; 1a5) inclination, resolution, determination (of will); 1a6) conscience; 1a7) heart (of moral character); 1a8) as seat of appetites; 1a9) as seat of emotions and passions 1a10) as seat of courage",
+   "lsj": "",
+   "mounce": "",
+   "related": [
+    "H1079 בָּל mind",
+    "H3820B לֵב Leb",
+    "H3821 לֵב heart",
+    "H3823A לָבַב to encourage",
+    "H3823B לִבֵּב to bake",
+    "H3824 לֵבָב heart",
+    "H3826 לִבָּה heart",
+    "H3834 לְבִבָה cake",
+    "H6965A קָמָי [Leb]-kamai",
+    "H6965B קוּם to arise: rise",
+    "H6965H קוּם to arise: raise",
+    "H6965I קוּם to arise: establish"
+   ]
+  },
+  "H4093": {
+   "surfaces": [
+    "thoughts"
+   ],
+   "sense_head": "knowledge",
+   "meaning_range": "1) knowledge, thought; 1a) knowledge; 1b) mind, thought, place of knowledge; Aramaic equivalent: <i>man.da</i> (מַנְדַּע \"knowledge\" H4486)",
+   "lsj": "",
+   "mounce": "",
+   "related": [
+    "H1843 דֵּעַ knowledge",
+    "H1844 דֵּעָה knowledge",
+    "H1845 דְּעוּאֵל Deuel",
+    "H1847 דַּ֫עַת knowledge",
+    "H3037G יַדּוּעַ Jaddua",
+    "H3037H יַדּוּעַ Jaddua",
+    "H3043G יְדִיעֲאֵל Jediael",
+    "H3043H יְדִיעֲאֵל Jediael",
+    "H3043I יְדִיעֲאֵל Jediael",
+    "H3043J יְדִיעֲאֵל Jediael",
+    "H3045 יָדַע to know",
+    "H3047 יָדָע Jada"
+   ]
+  },
+  "H4209": {
+   "surfaces": [
+    "thoughts"
+   ],
+   "sense_head": "plot",
+   "meaning_range": "1) purpose, discretion, device, plot; 1a) purpose; 1b) discretion; 1c) devices (evil)",
+   "lsj": "",
+   "mounce": "",
+   "related": [
+    "H2154 זִמָּה wickedness",
+    "H2155G זִמָּה Zimmah",
+    "H2155H זִמָּה Zimmah",
+    "H2157 זַמְזֻמִּים Zamzummin",
+    "H2161 זָמַם to plan",
+    "H2162 זָמָם plan"
+   ]
+  },
+  "H4284": {
+   "surfaces": [
+    "thought",
+    "thoughts"
+   ],
+   "sense_head": "plot",
+   "meaning_range": "1) thought, device; 1a) thought; 1b) device, plan, purpose; 1c) invention",
+   "lsj": "",
+   "mounce": "",
+   "related": [
+    "H2803G חָשַׁב to devise: design",
+    "H2803H חָשַׁב to devise: count",
+    "H2803I חָשַׁב to devise: devise",
+    "H2803J חָשַׁב to devise: think",
+    "H2804 חֲשַׁב to account",
+    "H2805 חֵ֫שֶׁב artwork",
+    "H2806 חַשְׁבַּדָּנָה Hashbaddanah",
+    "H2807 חֲשֻׁבָה Hashubah",
+    "H2808 חֶשְׁבּוֹן explanation",
+    "H2809 חֶשְׁבּוֹן Heshbon",
+    "H2810 חִשָּׁבוֹן invention",
+    "H2811G חֲשַׁבְיָ֫הוּ Hashabiah"
+   ]
+  },
+  "H5452": {
+   "surfaces": [
+    "think"
+   ],
+   "sense_head": "to intend",
+   "meaning_range": "(P'al) to think, intend; Aramaic of <i>sa.var</i> (שָׂבַר \"to await\" H7663B)",
+   "lsj": "",
+   "mounce": "",
+   "related": [
+    "H5453 סִבְרַ֫יִם Sibraim",
+    "H5457 סְגִ֑ד to do homage",
+    "H5460 סְגַן prefect",
+    "H5463 סְגַר to shut",
+    "H5481 סוּמְפּוֹנְיָה bagpipe",
+    "H7663B שָׂבַר to await"
+   ]
+  },
+  "H5587B": {
+   "surfaces": [
+    "thoughts"
+   ],
+   "sense_head": "disquietings",
+   "meaning_range": "disquietings",
+   "lsj": "",
+   "mounce": "",
+   "related": [
+    "H5586 סָעַף to lop",
+    "H5587A סְעִפָּה division",
+    "H8312 שַׂרְעַפִּים anxiety"
+   ]
+  },
+  "H5869I": {
+   "surfaces": [
+    "think",
+    "thought"
+   ],
+   "sense_head": "appearance",
+   "meaning_range": "1) eye; 1a) eye; 1a1) of physical eye; 1a2) as showing mental qualities; 1a3) of mental and spiritual faculties (fig.)",
+   "lsj": "",
+   "mounce": "",
+   "related": [
+    "H4599 מַעְיָן spring",
+    "H5770 עִין to watch",
+    "H5869A עַ֫יִן eye",
+    "H5869B עַ֫יִן Fountain [Gate]",
+    "H5869G עַ֫יִן Fountain of [Drangons]",
+    "H5869H עַ֫יִן eye: seeing",
+    "H5869J עַ֫יִן eye: before[the eyes]",
+    "H5869K עַ֫יִן eye: sin",
+    "H5869M עַ֫יִן spring",
+    "H5870 עַ֫יִן eye",
+    "H5871G עַ֫יִן Ain",
+    "H5871H עַ֫יִן Ain"
+   ]
+  },
+  "H6245B": {
+   "surfaces": [
+    "thought"
+   ],
+   "sense_head": "to think",
+   "meaning_range": "(Hithpael) to think; Aramaic equivalent: <i>a.shit</i> (עֲשִׁת \"to plan\" H6246)",
+   "lsj": "",
+   "mounce": "",
+   "related": [
+    "H6219 עָשׁוֹת smooth",
+    "H6245A עָשַׁת to gleam",
+    "H6246 עֲשִׁת to plan",
+    "H6247 עֶ֫שֶׁת plate",
+    "H6248 עַשְׁתּוּת thought",
+    "H6249 עַשְׁתֵּי eleven",
+    "H6250 עֶשְׁתֹּנָה thought",
+    "H6251 עַשְׁתָּרוֹת young",
+    "H6252G עַשְׁתָּרוֹת Ashtaroth",
+    "H6252H עַשְׁתָּרוֹת Ashtaroth",
+    "H6253 עַשְׁתֹּ֫רֶת Ashtoreth",
+    "H6254 עַשְׁתְּרָתִי Ashterathite"
+   ]
+  },
+  "H6248": {
+   "surfaces": [
+    "thought"
+   ],
+   "sense_head": "thought",
+   "meaning_range": "thought, idea",
+   "lsj": "",
+   "mounce": "",
+   "related": [
+    "H6245A עָשַׁת to gleam",
+    "H6245B עָשַׁת to think",
+    "H6249 עַשְׁתֵּי eleven",
+    "H6250 עֶשְׁתֹּנָה thought",
+    "H6251 עַשְׁתָּרוֹת young",
+    "H6252G עַשְׁתָּרוֹת Ashtaroth",
+    "H6252H עַשְׁתָּרוֹת Ashtaroth",
+    "H6253 עַשְׁתֹּ֫רֶת Ashtoreth",
+    "H6254 עַשְׁתְּרָתִי Ashterathite",
+    "H6255 עַשְׁתְּרֹת קַרְנַיִם Ashteroth-karnaim"
+   ]
+  },
+  "H7200H": {
+   "surfaces": [
+    "think"
+   ],
+   "sense_head": "examine/consider",
+   "meaning_range": "1) to see, look at, inspect, perceive, consider; 1a) (Qal); 1a1) to see; 1a2) to see, perceive; 1a3) to see, have vision; 1a4) to look at, see, regard, look after, see after, learn about, observe, watch, look upon, look out, find out; 1a5) to see, observe, consider, look at, give attention to, discern, distinguish; 1a6) to look at, gaze at; 1a7) to provide, choose; 1b) (Niphal); 1b1) to appear, present oneself; 1b2) to be seen; 1b3) to be visible; 1c) (Pual) to be seen; 1d) (Hiphil); 1d1) to cause to see, show; 1d2) to cause to look intently at, behold, cause to gaze at; 1e) (Hophal); 1e1) to be caused to see, be shown; 1e2) to be exhibited to; 1f) (Hithpael) to look at each other, face",
+   "lsj": "",
+   "mounce": "",
+   "related": [
+    "H3070 יִרְאֶה Provider [God]",
+    "H3376 יִרְאִיָּיה Irijah",
+    "H4758 מַרְאֶה appearance",
+    "H4759A מַרְאָה vision",
+    "H4759B מַרְאָה mirror",
+    "H7200G רָאָה to see: see",
+    "H7200I רָאָה to see: behold!",
+    "H7200J רָאָה to see: select",
+    "H7200K רָאָה to see: enjoy",
+    "H7200L רָאָה to see: seer",
+    "H7200M רָאָה to see: approach",
+    "H7200N רָאָה Provider [God]"
+   ]
+  },
+  "H7454": {
+   "surfaces": [
+    "thoughts"
+   ],
+   "sense_head": "thought",
+   "meaning_range": "purpose, aim, thought",
+   "lsj": "",
+   "mounce": "",
+   "related": [
+    "H7462A בֵּית־עֵ֫קֶד הָרֹעִים House of Shepherds",
+    "H7462B רָעָה to pasture",
+    "H7462C רָעָה to accompany",
+    "H7462D רָעָה to befriend",
+    "H7469 רְעוּת longing",
+    "H7475 רַעְיוֹן striving"
+   ]
+  },
+  "H7476": {
+   "surfaces": [
+    "thoughts"
+   ],
+   "sense_head": "thought",
+   "meaning_range": "thought; Aramaic of <i>ra.yon</i> (רַעְיוֹן \"striving\" H7475)",
+   "lsj": "",
+   "mounce": "",
+   "related": [
+    "H7470 רְעוּ pleasure",
+    "H7475 רַעְיוֹן striving",
+    "H7487 רַעֲנַן luxuriant"
+   ]
+  },
+  "H7725G": {
+   "surfaces": [
+    "thought"
+   ],
+   "sense_head": "return",
+   "meaning_range": "1) to return, turn back; 1a) (Qal); 1a1) to turn back, return; 1a1a) to turn back; 1a1b) to return, come or go back; 1a1c) to return unto, go back, come back; 1a1d) of dying; 1a1e) of human relations (fig); 1a1f) of spiritual relations (fig); 1a1f1) to turn back (from God), apostatise; 1a1f2) to turn away (of God); 1a1f3) to turn back (to God), repent; 1a1f4) turn back (from evil); 1a1g) of inanimate things; 1a1h) in repetition; 1b) (Polel); 1b1) to bring back; 1b2) to restore, refresh, repair (fig); 1b3) to lead away (enticingly); 1b4) to show turning, apostatise; 1c) (Pual) restored (participle); 1d) (Hiphil) to cause to return, bring back; 1d1) to bring back, allow to return, put back, dr",
+   "lsj": "",
+   "mounce": "",
+   "related": [
+    "H3142 י֥וּשַׁב חֶ֖סֶד Jushab-hesed",
+    "H3432 יָשֻׁבִי Jashubite",
+    "H3433 יָשֻׁ֫בִי לָ֑חֶם Lehem",
+    "H3434G יָשׇׁבְעָם Jashobeam",
+    "H3434H יָשׇׁבְעָם Jashobeam",
+    "H3437G יָשׁוּב Jashub",
+    "H3437H יָשׁוּב Jashub",
+    "H4877 מְשׁוֹבָב Meshobab",
+    "H4878 מְשׁוּבָה faithlessness",
+    "H7725H שׁוּב to return: rescue",
+    "H7725I שׁוּב to return: turn back",
+    "H7725J שׁוּב to return: again"
+   ]
+  },
+  "H7808": {
+   "surfaces": [
+    "thought"
+   ],
+   "sense_head": "thought",
+   "meaning_range": "thought",
+   "lsj": "",
+   "mounce": "",
+   "related": [
+    "H7878 שִׂיחַ to muse",
+    "H7879 שִׂיחַ complaint",
+    "H7881 שִׂיחָה meditation"
+   ]
+  },
+  "H8312": {
+   "surfaces": [
+    "thoughts"
+   ],
+   "sense_head": "anxiety",
+   "meaning_range": "disquieting thoughts, thoughts",
+   "lsj": "",
+   "mounce": "",
+   "related": [
+    "H5587A סְעִפָּה division",
+    "H5587B שְׂעִפִּים disquietings"
+   ]
+  }
+ },
+ "older": [],
+ "answer": {
+  "command": "ReadEnrichment",
+  "collection": "thought",
+  "subgroup": "thinking and thought",
+  "ledger_id": 1589,
+  "enrichments": [
+   {
+    "sense": 22894,
+    "kind": "enrichment",
+    "obs_text": "",
+    "basis": "read | stated",
+    "grounds": ""
+   },
+   {
+    "sense": 22895,
+    "kind": "enrichment",
+    "obs_text": "",
+    "basis": "read | stated",
+    "grounds": ""
+   },
+   {
+    "sense": 22896,
+    "kind": "enrichment",
+    "obs_text": "",
+    "basis": "read | stated",
+    "grounds": ""
+   },
+   {
+    "sense": 22897,
+    "kind": "enrichment",
+    "obs_text": "",
+    "basis": "read | stated",
+    "grounds": ""
+   },
+   {
+    "sense": 22898,
+    "kind": "enrichment",
+    "obs_text": "",
+    "basis": "read | stated",
+    "grounds": ""
+   },
+   {
+    "sense": 22899,
+    "kind": "enrichment",
+    "obs_text": "",
+    "basis": "read | stated",
+    "grounds": ""
+   },
+   {
+    "sense": 22900,
+    "kind": "enrichment",
+    "obs_text": "",
+    "basis": "read | stated",
+    "grounds": ""
+   },
+   {
+    "sense": 22901,
+    "kind": "enrichment",
+    "obs_text": "",
+    "basis": "read | stated",
+    "grounds": ""
+   },
+   {
+    "sense": 22902,
+    "kind": "enrichment",
+    "obs_text": "",
+    "basis": "read | stated",
+    "grounds": ""
+   },
+   {
+    "sense": 22903,
+    "kind": "enrichment",
+    "obs_text": "",
+    "basis": "read | stated",
+    "grounds": ""
+   },
+   {
+    "sense": 22904,
+    "kind": "enrichment",
+    "obs_text": "",
+    "basis": "read | stated",
+    "grounds": ""
+   },
+   {
+    "sense": 22905,
+    "kind": "enrichment",
+    "obs_text": "",
+    "basis": "read | stated",
+    "grounds": ""
+   },
+   {
+    "sense": 22906,
+    "kind": "enrichment",
+    "obs_text": "",
+    "basis": "read | stated",
+    "grounds": ""
+   },
+   {
+    "sense": 22907,
+    "kind": "enrichment",
+    "obs_text": "",
+    "basis": "read | stated",
+    "grounds": ""
+   },
+   {
+    "sense": 22908,
+    "kind": "enrichment",
+    "obs_text": "",
+    "basis": "read | stated",
+    "grounds": ""
+   },
+   {
+    "sense": 22909,
+    "kind": "enrichment",
+    "obs_text": "",
+    "basis": "read | stated",
+    "grounds": ""
+   },
+   {
+    "sense": 22910,
+    "kind": "enrichment",
+    "obs_text": "",
+    "basis": "read | stated",
+    "grounds": ""
+   },
+   {
+    "sense": 22911,
+    "kind": "enrichment",
+    "obs_text": "",
+    "basis": "read | stated",
+    "grounds": ""
+   },
+   {
+    "sense": 22912,
+    "kind": "enrichment",
+    "obs_text": "",
+    "basis": "read | stated",
+    "grounds": ""
+   }
+  ],
+  "older": []
+ },
+ "measured": {
+  "package_chars": 88823,
+  "seconds": 0.05
+ }
+}

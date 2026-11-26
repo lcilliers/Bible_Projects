@@ -1,0 +1,1093 @@
+{
+ "command": "ReadEvidence",
+ "collection": "thought",
+ "subgroup": "weighing and taking account of",
+ "step": "2.1",
+ "item": "evidence-validation",
+ "made": "2026-11-26T05:52:08Z",
+ "batch": {
+  "observations": 40,
+  "left_after_this": 155,
+  "evidence_in_scope": 196,
+  "observations_in_scope": 247
+ },
+ "code_checks": {
+  "passes": true,
+  "findings": {
+   "unmarked": [],
+   "no_node": [],
+   "word_missing": [],
+   "traced_dead": [],
+   "duplicate_text": [],
+   "b1_not_traced_by_a_sense": [],
+   "sense_not_traced_by_2_1": [],
+   "older_open": []
+  }
+ },
+ "instruction": {
+  "what": "The evidence validation (B5) of one subgroup, after its sweep, the gate before 3.1: the code checks of its observations (shown in `code_checks`), and the reading of every evidence observation of the subgroup (its own of S1 to 2.1, and the older ones on its occurrences kept as evidence) for whether it is true, founded and coherent with the others. Inner being is not judged here; the two validations are never run together.",
+  "read": [
+   "Read the code checks first: a failing check names observations to repair (unmarked, no node, a word node missing a column without its reason, a trace to a deleted observation, two of one text, a B1 observation no sense traces, a sense the 2.1 observations on its occurrences do not trace, an older observation left open).",
+   "Take one observation at a time (`observations`, in the order of the steps): its text, basis and grounds against its verses (`verses`) and the observations it traces. Is it true of those verses? Does it say more than they show? Does it contradict another observation of the subgroup?"
+  ],
+  "write": [
+   "Fill `answer.observations`, one entry for each observation of the package: verdict true, with `why` (what in the verses and the data bears it out); or verdict repair, with `why` (what is wrong) and `actions`: the actions of the validation that repair it (cfg_setting validate.reading actions, each with its parameters, for example {\"action\": \"restate\", \"oid\": id, \"new_text\": ..., \"checked\": ..., \"reason\": ...}, or delete_neither, complete_node, add_trace).",
+   "A repair is checked as it is written; an observation that cannot be made true is deleted with its reason.",
+   "Then: Collection-Build.ps1 -Action RecordEvidence -File <the answer file> (-Check to preview), and ReadEvidence again until every evidence observation is read; the gate passes when all are read and the code checks pass."
+  ],
+  "keep": [
+   {
+    "rule": "VA-01 a-sheet-is-one-checked-transaction",
+    "text": "A sheet of validation actions is checked whole (every action named, its parameters complete) and written in one transaction: any action the tables refuse refuses the whole sheet and nothing is kept. -Check runs every action and rolls back. Every change is kept in ib_observation_change with its reason (RW-01); nothing is physically deleted."
+   },
+   {
+    "rule": "VA-02 repair-first-and-every-finding-acted-on",
+    "text": "A finding of the validation is repaired first: a wording that is untrue or stronger than its verse is restated and the restatement checked against the base data; a node missing a column is completed, or the reason the data cannot give it is recorded; a duplicate is consolidated; a node is deleted only when another live node carries its occurrence or it supports no finding of its observation. A finding is left open only when a named collection's validation will touch the observation: the deferral to that collection and the finding are recorded, and the check accepts it as deferred. A finding with no named owner is closed in the validation."
+   },
+   {
+    "rule": "VA-03 consumption-is-verified-before-deletion",
+    "text": "An older observation is deleted as consumed only when live observations carry its meaning: every word occurrence of it is on a live node of a carrier or named as not carried with its reason, the mapping is stated in words (what the old says, which carrier states each part), the traces to it are re-pointed or replaced, and the consumption is kept as `consumed_by`. An observation that holds more than one finding is split first."
+   },
+   {
+    "rule": "VA-04 neither-evidence-nor-inner-being-is-deleted",
+    "text": "An observation that is neither evidence nor inner being contributes nothing to the purposes of the observations (researcher, 2026-11-22): it is commented with its reason and the word occurrences no other live observation holds, then deleted. An observation already marked, or one another observation traces, is not deleted this way."
+   },
+   {
+    "rule": "VA-05 the-marker-follows-content-not-stage",
+    "text": "Evidence states what the data are or show, tied to a verse. Inner being states how something works in the inner being, based on evidence, a building block of the stage 5 claims. The marker (ib_observation.nature) follows the content and purpose of the observation, never its stage (RS-04): an observation of any stage may be inner being when it traces to evidence. One that states both is split. The marker is set when the observation is created, by the item that is answered (cfg_setting layer.reading items.<item>.nature); a finding file never sets it; the validation changes it only where the content shows the item's nature does not hold."
+   },
+   {
+    "rule": "VA-06 evidence-validation-gates-inner-being-validation",
+    "text": "The validation runs in two layers, never concurrently: evidence first, then inner being. The inner-being layer is judged only when the evidence layer passes (every in-scope observation marked, none without a live node, no word node missing a required column without its reason, no live trace to a deleted observation, no two of one meaning). A later evidence change reopens only the inner-being rows it touches. In the build this gate is: step 3.1 does not open before the evidence layer passes, and step 3.3 does not close before both layers pass (cfg_setting layer.reading open_gate and closing_gate)."
+   },
+   {
+    "rule": "RW-01 changed-only-by-reading",
+    "text": "No observation is changed except by a reading, and every change is recorded with its reason. An observation no longer supported by the verse is soft-deleted, with the reason."
+   },
+   {
+    "rule": "RW-03 no-duplicates-multi-node",
+    "text": "One observation per finding: the same description is never written twice. Applied to another verse, word or scope it gains a node on the existing observation."
+   },
+   {
+    "rule": "RW-04 concise-verse-specific",
+    "text": "Observation text is concise and tied to this verse's content, never a restatement of the word's dictionary sense. A transliteration is never given without its gloss."
+   },
+   {
+    "rule": "RW-06 resolved-fresh-on-evidence",
+    "text": "Verse references are resolved fresh at write time, never taken from the text written. Relations are recorded only on evidence."
+   },
+   {
+    "rule": "RW-11 missing-is-named",
+    "text": "Missing data in the base extract is named as a gap, never substituted from memory or outside knowledge."
+   }
+  ],
+  "not_in_this_read": ""
+ },
+ "observations": [
+  {
+   "observation": 22702,
+   "step": "S1",
+   "item": "word-sense",
+   "kind": "term",
+   "text": "In Mar 10:42 'considered' is said of those who are thought to be rulers of the Gentiles: it is their standing as seen by others, what they are held to be, not an act of the one who thinks.",
+   "basis": "read",
+   "grounds": "those who are considered rulers",
+   "traces": [],
+   "verses": [
+    "Mar 10:42"
+   ]
+  },
+  {
+   "observation": 22703,
+   "step": "S1",
+   "item": "word-sense",
+   "kind": "term",
+   "text": "In Mat 1:20 'considered' is Joseph turning over in his mind what he had resolved about Mary, the point at which the angel appears to him.",
+   "basis": "read",
+   "grounds": "as he considered these things",
+   "traces": [],
+   "verses": [
+    "Mat 1:20"
+   ]
+  },
+  {
+   "observation": 22704,
+   "step": "S1",
+   "item": "word-sense",
+   "kind": "term",
+   "text": "In Heb 11:11 and Heb 11:26 'considered' is a reckoned judgment: Sarah judges the one who promised to be faithful, and Moses counts the reproach of Christ greater wealth than Egypt's treasures. It is a conclusion reached, with the thing weighed named in each verse.",
+   "basis": "read",
+   "grounds": "she considered him faithful",
+   "traces": [],
+   "verses": [
+    "Heb 11:11",
+    "Heb 11:26"
+   ]
+  },
+  {
+   "observation": 22705,
+   "step": "S1",
+   "item": "word-sense",
+   "kind": "term",
+   "text": "In Rom 4:19 'considered' is Abraham fixing his attention on his own body and on the barrenness of Sarah's womb, the facts he looked at without his faith weakening.",
+   "basis": "read",
+   "grounds": "when he considered his own body",
+   "traces": [],
+   "verses": [
+    "Rom 4:19"
+   ]
+  },
+  {
+   "observation": 22706,
+   "step": "S1",
+   "item": "word-sense",
+   "kind": "term",
+   "text": "In Heb 11:19 'considered' is a reckoned conclusion: Abraham reasons that God can raise the dead, and the verse says he received Isaac back in that figure.",
+   "basis": "read",
+   "grounds": "He considered that God was able",
+   "traces": [],
+   "verses": [
+    "Heb 11:19"
+   ]
+  },
+  {
+   "observation": 22707,
+   "step": "S1",
+   "item": "word-sense",
+   "kind": "term",
+   "text": "In Rom 4:19 this code is the Greek negative particle that the English folds into 'did not weaken in faith when he considered'. It carries no sense of considering; the consideration is the verb of G2657 in the same verse.",
+   "basis": "read",
+   "grounds": "He did not weaken in faith",
+   "traces": [],
+   "verses": [
+    "Rom 4:19"
+   ]
+  },
+  {
+   "observation": 22708,
+   "step": "S1",
+   "item": "word-sense",
+   "kind": "term",
+   "text": "In Dan 7:8 'considered' is the seer's close watching of the horns as another comes up among them: an attentive look at what he sees in the vision, told in the first person.",
+   "basis": "read",
+   "grounds": "I considered the horns",
+   "traces": [],
+   "verses": [
+    "Dan 7:8"
+   ]
+  },
+  {
+   "observation": 22709,
+   "step": "S1",
+   "item": "word-sense",
+   "kind": "term",
+   "text": "In 1Ki 10:21, 2Ch 9:20 and Neh 13:13 'considered' is counted as: silver is counted as nothing in Solomon's days, and the men appointed over the storehouses are counted reliable. It is a valuation, an account made of a thing or a person.",
+   "basis": "read",
+   "grounds": "silver was not considered as anything",
+   "traces": [],
+   "verses": [
+    "1Ki 10:21",
+    "2Ch 9:20",
+    "Neh 13:13"
+   ]
+  },
+  {
+   "observation": 22710,
+   "step": "S1",
+   "item": "word-sense",
+   "kind": "term",
+   "text": "In Pro 17:28 'considered' is being counted as wise: the fool who holds his tongue is taken by others to be wise. It is how a person is reckoned by observers, not what he thinks.",
+   "basis": "read",
+   "grounds": "is considered wise",
+   "traces": [],
+   "verses": [
+    "Pro 17:28"
+   ]
+  },
+  {
+   "observation": 22711,
+   "step": "S1",
+   "item": "word-sense",
+   "kind": "term",
+   "text": "In Job 1:8, Job 2:3 and Pro 24:32 the Hebrew behind 'considered' is the word for heart in a phrase of setting the heart on something: the Lord asks Satan whether he has fixed his heart on Job, and the observer in Proverbs sets his heart on the field and takes instruction. It is giving thought, with the heart as its place.",
+   "basis": "read",
+   "grounds": "Have you considered my servant Job",
+   "traces": [],
+   "verses": [
+    "Job 1:8",
+    "Job 2:3",
+    "Pro 24:32"
+   ]
+  },
+  {
+   "observation": 22712,
+   "step": "S1",
+   "item": "word-sense",
+   "kind": "term",
+   "text": "In Ecc 2:11 'considered' is the Preacher turning to look over all his hands had done and the toil spent: a survey of his works that ends in the verdict that all was vanity.",
+   "basis": "read",
+   "grounds": "Then I considered all that my hands",
+   "traces": [],
+   "verses": [
+    "Ecc 2:11"
+   ]
+  },
+  {
+   "observation": 22713,
+   "step": "S1",
+   "item": "word-sense",
+   "kind": "term",
+   "text": "In Eze 18:28 'considered' is the sinner seeing his transgressions and turning from them; the seeing is the step before the turning and the verse says he will live because of it.",
+   "basis": "read",
+   "grounds": "Because he considered and turned away",
+   "traces": [],
+   "verses": [
+    "Eze 18:28"
+   ]
+  },
+  {
+   "observation": 22714,
+   "step": "S1",
+   "item": "word-sense",
+   "kind": "term",
+   "text": "In Job 1:8 and Job 2:3 'considered' is the verb of setting, in the phrase of setting the heart on Job: the Lord asks whether Satan has fixed attention on his servant.",
+   "basis": "read",
+   "grounds": "Have you considered my servant Job",
+   "traces": [],
+   "verses": [
+    "Job 1:8",
+    "Job 2:3"
+   ]
+  },
+  {
+   "observation": 22715,
+   "step": "S1",
+   "item": "word-sense",
+   "kind": "term",
+   "text": "In Isa 53:8 'considered' is the generation of the servant giving thought to his being cut off: the question asks who among them took it to heart or gave it a thought.",
+   "basis": "read",
+   "grounds": "who considered that he was cut off",
+   "traces": [],
+   "verses": [
+    "Isa 53:8"
+   ]
+  },
+  {
+   "observation": 22716,
+   "step": "S1",
+   "item": "word-sense",
+   "kind": "term",
+   "text": "In Pro 24:32 'considered' is the observer setting his heart on what he has seen, the verb of setting with the heart as its object, after which he takes instruction.",
+   "basis": "read",
+   "grounds": "I saw and considered it",
+   "traces": [],
+   "verses": [
+    "Pro 24:32"
+   ]
+  },
+  {
+   "observation": 22717,
+   "step": "S1",
+   "item": "word-sense",
+   "kind": "term",
+   "text": "In Dan 7:8 'considered' (Aramaic) is the seer contemplating the horns, the intent looking at what he sees; the same scene as the other code, in the one verse.",
+   "basis": "read",
+   "grounds": "I considered the horns",
+   "traces": [],
+   "verses": [
+    "Dan 7:8"
+   ]
+  },
+  {
+   "observation": 22718,
+   "step": "S1",
+   "item": "word-sense",
+   "kind": "term",
+   "text": "In Luk 22:24 'regarded' is being accounted the greatest: the dispute among the disciples is over who is to be held of highest standing.",
+   "basis": "read",
+   "grounds": "to be regarded as the greatest",
+   "traces": [],
+   "verses": [
+    "Luk 22:24"
+   ]
+  },
+  {
+   "observation": 22719,
+   "step": "S1",
+   "item": "word-sense",
+   "kind": "term",
+   "text": "In Rom 2:26 and Rom 8:36 'regarded' is being counted as something: the uncircumcised keeping the law is counted as circumcision, and the believers are counted as sheep for slaughter.",
+   "basis": "read",
+   "grounds": "will not his uncircumcision be regarded",
+   "traces": [],
+   "verses": [
+    "Rom 2:26",
+    "Rom 8:36"
+   ]
+  },
+  {
+   "observation": 22720,
+   "step": "S1",
+   "item": "word-sense",
+   "kind": "term",
+   "text": "In Gen 31:15, Psa 44:22, Lam 4:2 and Hos 8:12 'regarded' is being counted as: as foreigners, as sheep to be slaughtered, as earthen pots, and the laws as a strange thing. It is how someone or something is reckoned by another.",
+   "basis": "read",
+   "grounds": "we are regarded as sheep",
+   "traces": [],
+   "verses": [
+    "Gen 31:15",
+    "Hos 8:12",
+    "Lam 4:2",
+    "Psa 44:22"
+   ]
+  },
+  {
+   "observation": 22721,
+   "step": "S1",
+   "item": "word-sense",
+   "kind": "term",
+   "text": "In Isa 29:16 and Isa 29:17 'regarded' is being counted as: the potter as if he were clay, and the field as if it were a forest. It is a reckoning set against the order of things.",
+   "basis": "read",
+   "grounds": "Shall the potter be regarded as the clay",
+   "traces": [],
+   "verses": [
+    "Isa 29:16",
+    "Isa 29:17"
+   ]
+  },
+  {
+   "observation": 22722,
+   "step": "S1",
+   "item": "word-sense",
+   "kind": "term",
+   "text": "In 2Cor 5:16 'regard' is knowing or taking account of a person in some way: Paul says that from now on he takes account of no one according to the flesh, even of Christ, as once he did.",
+   "basis": "read",
+   "grounds": "we regard no one according to the flesh",
+   "traces": [],
+   "verses": [
+    "2Cor 5:16"
+   ]
+  },
+  {
+   "observation": 22723,
+   "step": "S1",
+   "item": "word-sense",
+   "kind": "term",
+   "text": "In 2Th 3:15 and 1Ti 6:1 'regard' is counting someone as something: the brother who is warned is not counted an enemy, and masters are counted worthy of honor by the servants.",
+   "basis": "read",
+   "grounds": "Do not regard him as an enemy",
+   "traces": [],
+   "verses": [
+    "1Ti 6:1",
+    "2Th 3:15"
+   ]
+  },
+  {
+   "observation": 22724,
+   "step": "S1",
+   "item": "word-sense",
+   "kind": "term",
+   "text": "In 1Co 4:1 and 1Pe 5:12 'regard' is counting someone as something: servants of Christ and stewards, and Silvanus as a faithful brother in the writer's judgment.",
+   "basis": "read",
+   "grounds": "one should regard us",
+   "traces": [],
+   "verses": [
+    "1Cor 4:1",
+    "1Pe 5:12"
+   ]
+  },
+  {
+   "observation": 22725,
+   "step": "S1",
+   "item": "word-sense",
+   "kind": "term",
+   "text": "In Col 2:16 'regard' is part of the phrase 'with regard to': it marks the matter in respect of which no one is to judge, a festival, a new moon or a Sabbath. It carries no sense of thinking.",
+   "basis": "read",
+   "grounds": "with regard to a festival",
+   "traces": [],
+   "verses": [
+    "Col 2:16"
+   ]
+  },
+  {
+   "observation": 22726,
+   "step": "S1",
+   "item": "word-sense",
+   "kind": "term",
+   "text": "In 2Cor 5:16 this code is the Greek verb of knowing in the perfect, 'we have known' Christ according to the flesh; it is the counting or taking account of him that Paul says he now gives up.",
+   "basis": "read",
+   "grounds": "we once regarded Christ according to",
+   "traces": [],
+   "verses": [
+    "2Cor 5:16"
+   ]
+  },
+  {
+   "observation": 22727,
+   "step": "S1",
+   "item": "word-sense",
+   "kind": "term",
+   "text": "In Exo 5:9 this code is the Hebrew negative particle in the phrase 'pay no regard': it carries the 'no' of the command and not the sense of regarding, which the verb of H8159 in the same verse carries.",
+   "basis": "read",
+   "grounds": "pay no regard to lying words",
+   "traces": [],
+   "verses": [
+    "Exo 5:9"
+   ]
+  },
+  {
+   "observation": 22728,
+   "step": "S1",
+   "item": "word-sense",
+   "kind": "term",
+   "text": "In Psa 28:5 'regard' is discerning or attending to the works of the Lord and the work of his hands; the verse says those who do not regard them will be torn down.",
+   "basis": "read",
+   "grounds": "they do not regard the works of the Lord",
+   "traces": [],
+   "verses": [
+    "Psa 28:5"
+   ]
+  },
+  {
+   "observation": 22729,
+   "step": "S1",
+   "item": "word-sense",
+   "kind": "term",
+   "text": "In Ecc 3:18 'with regard to' is a Hebrew noun of matter or cause in the phrase 'concerning the children of man'; it marks what the saying is about and carries no thinking of its own.",
+   "basis": "read",
+   "grounds": "with regard to the children of man",
+   "traces": [],
+   "verses": [
+    "Ecc 3:18"
+   ]
+  },
+  {
+   "observation": 22730,
+   "step": "S1",
+   "item": "word-sense",
+   "kind": "term",
+   "text": "In Isa 13:17 and Isa 33:8 'regard' is valuing or counting: the Medes put no value on silver, and in the ruined land there is no account taken of man.",
+   "basis": "read",
+   "grounds": "no regard for silver",
+   "traces": [],
+   "verses": [
+    "Isa 13:17",
+    "Isa 33:8"
+   ]
+  },
+  {
+   "observation": 22731,
+   "step": "S1",
+   "item": "word-sense",
+   "kind": "term",
+   "text": "In Job 9:21, Psa 144:3 and Pro 12:10 'regard' is knowing and taking notice with care: Job says he does not take notice of himself, the psalmist asks what man is that God takes notice of him, and the righteous man knows and cares for his beast's life.",
+   "basis": "read",
+   "grounds": "that you regard him",
+   "traces": [],
+   "verses": [
+    "Job 9:21",
+    "Pro 12:10",
+    "Psa 144:3"
+   ]
+  },
+  {
+   "observation": 22732,
+   "step": "S1",
+   "item": "word-sense",
+   "kind": "term",
+   "text": "In Job 9:21 this code is the Hebrew negative particle of 'I regard not myself'; it carries the 'not', and the verb of H3045 carries the regarding.",
+   "basis": "read",
+   "grounds": "I regard not myself",
+   "traces": [],
+   "verses": [
+    "Job 9:21"
+   ]
+  },
+  {
+   "observation": 22733,
+   "step": "S1",
+   "item": "word-sense",
+   "kind": "term",
+   "text": "In 1Sa 25:25 'regard' is the heart in the phrase of setting the heart on something: Abigail asks that her lord not give his heart to the worthless Nabal, that is, not take him to heart.",
+   "basis": "read",
+   "grounds": "Let not my lord regard this worthless fellow",
+   "traces": [],
+   "verses": [
+    "1Sa 25:25"
+   ]
+  },
+  {
+   "observation": 22734,
+   "step": "S1",
+   "item": "word-sense",
+   "kind": "term",
+   "text": "In Psa 74:20, Isa 5:12 and Lam 4:16 'regard' is looking at and paying attention: asking God to look to the covenant, the feasters not looking on the Lord's deeds, and the Lord no longer looking on the priests with favor.",
+   "basis": "read",
+   "grounds": "they do not regard the deeds of the Lord",
+   "traces": [],
+   "verses": [
+    "Isa 5:12",
+    "Lam 4:16",
+    "Psa 74:20"
+   ]
+  },
+  {
+   "observation": 22735,
+   "step": "S1",
+   "item": "word-sense",
+   "kind": "term",
+   "text": "In Jer 24:5 'regard as good' is recognizing and acknowledging: the Lord says he will look on the good figs, the exiles, as good, taking them as such.",
+   "basis": "read",
+   "grounds": "so I will regard as good the exiles",
+   "traces": [],
+   "verses": [
+    "Jer 24:5"
+   ]
+  },
+  {
+   "observation": 22736,
+   "step": "S1",
+   "item": "word-sense",
+   "kind": "term",
+   "text": "In 2Ki 3:14 'have regard for' is the idiom of lifting the face: Elisha says it is only for Jehoshaphat's sake, out of respect for him, that he attends to the king of Israel.",
+   "basis": "read",
+   "grounds": "I have regard for Jehoshaphat the king",
+   "traces": [],
+   "verses": [
+    "2Ki 3:14"
+   ]
+  },
+  {
+   "observation": 22737,
+   "step": "S1",
+   "item": "word-sense",
+   "kind": "term",
+   "text": "In 1Sa 1:16 'regard as' is the verb of setting or putting: Hannah asks Eli not to set her down as a worthless woman, that is, not to take her for one.",
+   "basis": "read",
+   "grounds": "Do not regard your servant as a worthless woman",
+   "traces": [],
+   "verses": [
+    "1Sa 1:16"
+   ]
+  },
+  {
+   "observation": 22738,
+   "step": "S1",
+   "item": "word-sense",
+   "kind": "term",
+   "text": "In Lev 19:23 'regard as' is the verb of treating a fruit as uncircumcised: the tree's fruit is to be counted forbidden for three years and not eaten.",
+   "basis": "read",
+   "grounds": "you shall regard its fruit as forbidden",
+   "traces": [],
+   "verses": [
+    "Lev 19:23"
+   ]
+  },
+  {
+   "observation": 22739,
+   "step": "S1",
+   "item": "word-sense",
+   "kind": "term",
+   "text": "In Deu 9:27 and 2Ch 6:19 'regard' is the verb of turning toward: Moses asks God not to turn to the people's stubbornness, and Solomon asks him to turn to the prayer of his servant. It is where the attention is directed.",
+   "basis": "read",
+   "grounds": "Do not regard the stubbornness of this people",
+   "traces": [],
+   "verses": [
+    "2Ch 6:19",
+    "Deu 9:27"
+   ]
+  },
+  {
+   "observation": 22740,
+   "step": "S1",
+   "item": "word-sense",
+   "kind": "term",
+   "text": "In Psa 80:14 'have regard for' is the verb of visiting and attending to: the psalmist asks God to look down and attend to the vine, in a prayer to turn again.",
+   "basis": "read",
+   "grounds": "have regard for this vine",
+   "traces": [],
+   "verses": [
+    "Psa 80:14"
+   ]
+  },
+  {
+   "observation": 22741,
+   "step": "S1",
+   "item": "word-sense",
+   "kind": "term",
+   "text": "In Deu 33:9 and Job 37:24 'regard' is the verb of seeing: Levi did not look on his father and mother in a way that favored them, and God does not look on those who are wise in their own conceit. The sense is giving notice, or refusing it.",
+   "basis": "read",
+   "grounds": "he does not regard any who are wise",
+   "traces": [],
+   "verses": [
+    "Deu 33:9",
+    "Job 37:24"
+   ]
+  }
+ ],
+ "verses": [
+  {
+   "reference": "1Sa 1:16",
+   "text": "Do not regard your servant as a worthless woman, for all along I have been speaking out of my great anxiety and vexation.”"
+  },
+  {
+   "reference": "Ecc 2:11",
+   "text": "Then I considered all that my hands had done and the toil I had expended in doing it, and behold, all was vanity and a striving after wind, and there was nothing to be gained under the sun."
+  },
+  {
+   "reference": "1Cor 4:1",
+   "text": "This is how one should regard us, as servants of Christ and stewards of the mysteries of God."
+  },
+  {
+   "reference": "2Cor 5:16",
+   "text": "From now on, therefore, we regard no one according to the flesh. Even though we once regarded Christ according to the flesh, we regard him thus no longer."
+  },
+  {
+   "reference": "Heb 11:26",
+   "text": "He considered the reproach of Christ greater wealth than the treasures of Egypt, for he was looking to the reward."
+  },
+  {
+   "reference": "Eze 18:28",
+   "text": "Because he considered and turned away from all the transgressions that he had committed, he shall surely live; he shall not die."
+  },
+  {
+   "reference": "Job 37:24",
+   "text": "Therefore men fear him; he does not regard any who are wise in their own conceit.”"
+  },
+  {
+   "reference": "Mat 1:20",
+   "text": "But as he considered these things, behold, an angel of the Lord appeared to him in a dream, saying, “ Joseph, son of David, do not fear to take Mary as your wife, for that which is conceived in her is from the Holy Spirit."
+  },
+  {
+   "reference": "Mar 10:42",
+   "text": "And Jesus called them to him and said to them, “You know that those who are considered rulers of the Gentiles lord it over them, and their great ones exercise authority over them."
+  },
+  {
+   "reference": "Deu 9:27",
+   "text": "Remember your servants, Abraham, Isaac, and Jacob. Do not regard the stubbornness of this people, or their wickedness or their sin,"
+  },
+  {
+   "reference": "2Ch 6:19",
+   "text": "Yet have regard to the prayer of your servant and to his plea, O Lord my God, listening to the cry and to the prayer that your servant prays before you,"
+  },
+  {
+   "reference": "Job 1:8",
+   "text": "And the Lord said to Satan, “Have you considered my servant Job, that there is none like him on the earth, a blameless and upright man, who fears God and turns away from evil?”"
+  },
+  {
+   "reference": "Job 2:3",
+   "text": "And the Lord said to Satan, “Have you considered my servant Job, that there is none like him on the earth, a blameless and upright man, who fears God and turns away from evil? He still holds fast his integrity, although you incited me against him to destroy him without reason.”"
+  },
+  {
+   "reference": "Exo 5:9",
+   "text": "Let heavier work be laid on the men that they may labor at it and pay no regard to lying words.”"
+  },
+  {
+   "reference": "Psa 28:5",
+   "text": "Because they do not regard the works of the Lord or the work of his hands, he will tear them down and build them up no more."
+  },
+  {
+   "reference": "Isa 33:8",
+   "text": "The highways lie waste; the traveler ceases. Covenants are broken; cities are despised; there is no regard for man."
+  },
+  {
+   "reference": "2Th 3:15",
+   "text": "Do not regard him as an enemy, but warn him as a brother."
+  },
+  {
+   "reference": "1Ti 6:1",
+   "text": "Let all who are under a yoke as bondservants regard their own masters as worthy of all honor, so that the name of God and the teaching may not be reviled."
+  },
+  {
+   "reference": "1Pe 5:12",
+   "text": "By Silvanus, a faithful brother as I regard him, I have written briefly to you, exhorting and declaring that this is the true grace of God. Stand firm in it."
+  },
+  {
+   "reference": "Deu 33:9",
+   "text": "who said of his father and mother, ‘I regard them not ’; he disowned his brothers and ignored his children. For they observed your word and kept your covenant."
+  },
+  {
+   "reference": "2Ki 3:14",
+   "text": "And Elisha said, “As the Lord of hosts lives, before whom I stand, were it not that I have regard for Jehoshaphat the king of Judah, I would neither look at you nor see you."
+  },
+  {
+   "reference": "Ecc 3:18",
+   "text": "I said in my heart with regard to the children of man that God is testing them that they may see that they themselves are but beasts."
+  },
+  {
+   "reference": "Isa 29:16",
+   "text": "You turn things upside down! Shall the potter be regarded as the clay, that the thing made should say of its maker, “He did not make me”; or the thing formed say of him who formed it, “He has no understanding ”?"
+  },
+  {
+   "reference": "Jer 24:5",
+   "text": "“ Thus says the Lord, the God of Israel: Like these good figs, so I will regard as good the exiles from Judah, whom I have sent away from this place to the land of the Chaldeans."
+  },
+  {
+   "reference": "1Sa 25:25",
+   "text": "Let not my lord regard this worthless fellow, Nabal, for as his name is, so is he. Nabal is his name, and folly is with him. But I your servant did not see the young men of my lord, whom you sent."
+  },
+  {
+   "reference": "Lam 4:16",
+   "text": "The Lord himself has scattered them; he will regard them no more; no honor was shown to the priests, no favor to the elders."
+  },
+  {
+   "reference": "Pro 12:10",
+   "text": "Whoever is righteous has regard for the life of his beast, but the mercy of the wicked is cruel."
+  },
+  {
+   "reference": "Col 2:16",
+   "text": "Therefore let no one pass judgment on you in questions of food and drink, or with regard to a festival or a new moon or a Sabbath."
+  },
+  {
+   "reference": "Psa 74:20",
+   "text": "Have regard for the covenant, for the dark places of the land are full of the habitations of violence."
+  },
+  {
+   "reference": "Isa 13:17",
+   "text": "Behold, I am stirring up the Medes against them, who have no regard for silver and do not delight in gold."
+  },
+  {
+   "reference": "Gen 31:15",
+   "text": "Are we not regarded by him as foreigners? For he has sold us, and he has indeed devoured our money."
+  },
+  {
+   "reference": "Pro 17:28",
+   "text": "Even a fool who keeps silent is considered wise; when he closes his lips, he is deemed intelligent."
+  },
+  {
+   "reference": "Job 9:21",
+   "text": "I am blameless; I regard not myself; I loathe my life."
+  },
+  {
+   "reference": "Psa 144:3",
+   "text": "O Lord, what is man that you regard him, or the son of man that you think of him?"
+  },
+  {
+   "reference": "Psa 80:14",
+   "text": "Turn again, O God of hosts! Look down from heaven, and see; have regard for this vine,"
+  },
+  {
+   "reference": "Pro 24:32",
+   "text": "Then I saw and considered it; I looked and received instruction."
+  },
+  {
+   "reference": "Isa 5:12",
+   "text": "They have lyre and harp, tambourine and flute and wine at their feasts, but they do not regard the deeds of the Lord, or see the work of his hands."
+  },
+  {
+   "reference": "Isa 53:8",
+   "text": "By oppression and judgment he was taken away; and as for his generation, who considered that he was cut off out of the land of the living, stricken for the transgression of my people?"
+  },
+  {
+   "reference": "Neh 13:13",
+   "text": "And I appointed as treasurers over the storehouses Shelemiah the priest, Zadok the scribe, and Pedaiah of the Levites, and as their assistant Hanan the son of Zaccur, son of Mattaniah, for they were considered reliable, and their duty was to distribute to their brothers."
+  },
+  {
+   "reference": "Lev 19:23",
+   "text": "“ When you come into the land and plant any kind of tree for food, then you shall regard its fruit as forbidden. Three years it shall be forbidden to you; it must not be eaten."
+  },
+  {
+   "reference": "Rom 4:19",
+   "text": "He did not weaken in faith when he considered his own body, which was as good as dead ( since he was about a hundred years old ), or when he considered the barrenness of Sarah’s womb."
+  },
+  {
+   "reference": "Heb 11:11",
+   "text": "By faith Sarah herself received power to conceive, even when she was past the age, since she considered him faithful who had promised."
+  },
+  {
+   "reference": "Heb 11:19",
+   "text": "He considered that God was able even to raise him from the dead, from which, figuratively speaking, he did receive him back."
+  },
+  {
+   "reference": "Luk 22:24",
+   "text": "A dispute also arose among them, as to which of them was to be regarded as the greatest."
+  },
+  {
+   "reference": "Hos 8:12",
+   "text": "Were I to write for him my laws by the ten thousands, they would be regarded as a strange thing."
+  },
+  {
+   "reference": "Rom 2:26",
+   "text": "So, if a man who is uncircumcised keeps the precepts of the law, will not his uncircumcision be regarded as circumcision?"
+  },
+  {
+   "reference": "Rom 8:36",
+   "text": "As it is written, “For your sake we are being killed all the day long; we are regarded as sheep to be slaughtered.”"
+  },
+  {
+   "reference": "Psa 44:22",
+   "text": "Yet for your sake we are killed all the day long; we are regarded as sheep to be slaughtered."
+  },
+  {
+   "reference": "Isa 29:17",
+   "text": "Is it not yet a very little while until Lebanon shall be turned into a fruitful field, and the fruitful field shall be regarded as a forest?"
+  },
+  {
+   "reference": "1Ki 10:21",
+   "text": "All King Solomon’s drinking vessels were of gold, and all the vessels of the House of the Forest of Lebanon were of pure gold. None were of silver; silver was not considered as anything in the days of Solomon."
+  },
+  {
+   "reference": "2Ch 9:20",
+   "text": "All King Solomon’s drinking vessels were of gold, and all the vessels of the House of the Forest of Lebanon were of pure gold. Silver was not considered as anything in the days of Solomon."
+  },
+  {
+   "reference": "Lam 4:2",
+   "text": "The precious sons of Zion, worth their weight in fine gold, how they are regarded as earthen pots, the work of a potter’s hands!"
+  },
+  {
+   "reference": "Dan 7:8",
+   "text": "I considered the horns, and behold, there came up among them another horn, a little one, before which three of the first horns were plucked up by the roots. And behold, in this horn were eyes like the eyes of a man, and a mouth speaking great things."
+  }
+ ],
+ "answer": {
+  "command": "ReadEvidence",
+  "collection": "thought",
+  "subgroup": "weighing and taking account of",
+  "observations": [
+   {
+    "observation": 22702,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 22703,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 22704,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 22705,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 22706,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 22707,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 22708,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 22709,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 22710,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 22711,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 22712,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 22713,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 22714,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 22715,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 22716,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 22717,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 22718,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 22719,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 22720,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 22721,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 22722,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 22723,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 22724,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 22725,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 22726,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 22727,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 22728,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 22729,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 22730,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 22731,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 22732,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 22733,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 22734,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 22735,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 22736,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 22737,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 22738,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 22739,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 22740,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 22741,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   }
+  ]
+ },
+ "measured": {
+  "package_chars": 34899,
+  "seconds": 0.03
+ }
+}

@@ -48,7 +48,7 @@ def main(db, scratch):
     # ── configuration and the boundary of the stages
     case("B1", "no item of the lexical stages takes an inner-being node role, a route or an inner-being kind, and none asks about the inner being",
          all(v.get("member_role") == "lexical" and v.get("partner_role", "lexical") == "lexical" and not v.get("route") and v["kind"] not in ("party", "qualification", "statement", "silence", "use")
-             and "inner being" not in v["asks"].lower() and "inner-being" not in v["asks"].lower() for k, v in s["items"].items() if k not in {i for st in s["steps"] if st["layer"] >= 3 for i in st["items"]}),
+             and "inner being" not in v["asks"].lower() and "inner-being" not in v["asks"].lower() for k, v in s["items"].items() if k not in {i for st in s["steps"] if st["layer"] >= 3 for i in st["items"]} and not v.get("ledger_only")),      # a ledger-only gate writes no observation (#2538, 2026-11-26)
          {k: (v["kind"], v.get("member_role")) for k, v in s["items"].items()})    # the items of stage 4 (steps of layer 3, #2528) are the inner-being analysis and are outside this boundary
     case("B2", "the boundary check of the alignment check finds nothing on the live configuration", [e for e in la.find(conn, ROOT) if "layer.reading" in e] == [], [e for e in la.find(conn, ROOT) if "layer.reading" in e])
     case("B3", "the steps, grants, settings and four method rules of the grouping are registered",

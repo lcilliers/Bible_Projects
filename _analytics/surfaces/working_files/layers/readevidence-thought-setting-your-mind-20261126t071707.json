@@ -1,0 +1,271 @@
+{
+ "command": "ReadEvidence",
+ "collection": "thought",
+ "subgroup": "setting your mind",
+ "step": "2.1",
+ "item": "evidence-validation",
+ "made": "2026-11-26T07:17:07Z",
+ "batch": {
+  "observations": 8,
+  "left_after_this": 0,
+  "evidence_in_scope": 8,
+  "observations_in_scope": 12
+ },
+ "code_checks": {
+  "passes": true,
+  "findings": {
+   "unmarked": [],
+   "no_node": [],
+   "word_missing": [],
+   "traced_dead": [],
+   "duplicate_text": [],
+   "b1_not_traced_by_a_sense": [],
+   "sense_not_traced_by_2_1": [],
+   "older_open": []
+  }
+ },
+ "instruction": {
+  "what": "The evidence validation (B5) of one subgroup, after its sweep, the gate before 3.1: the code checks of its observations (shown in `code_checks`), and the reading of every evidence observation of the subgroup (its own of S1 to 2.1, and the older ones on its occurrences kept as evidence) for whether it is true, founded and coherent with the others. Inner being is not judged here; the two validations are never run together.",
+  "read": [
+   "Read the code checks first: a failing check names observations to repair (unmarked, no node, a word node missing a column without its reason, a trace to a deleted observation, two of one text, a B1 observation no sense traces, a sense the 2.1 observations on its occurrences do not trace, an older observation left open).",
+   "Take one observation at a time (`observations`, in the order of the steps): its text, basis and grounds against its verses (`verses`) and the observations it traces. Is it true of those verses? Does it say more than they show? Does it contradict another observation of the subgroup?"
+  ],
+  "write": [
+   "Fill `answer.observations`, one entry for each observation of the package: verdict true, with `why` (what in the verses and the data bears it out); or verdict repair, with `why` (what is wrong) and `actions`: the actions of the validation that repair it (cfg_setting validate.reading actions, each with its parameters, for example {\"action\": \"restate\", \"oid\": id, \"new_text\": ..., \"checked\": ..., \"reason\": ...}, or delete_neither, complete_node, add_trace).",
+   "A repair is checked as it is written; an observation that cannot be made true is deleted with its reason.",
+   "Then: Collection-Build.ps1 -Action RecordEvidence -File <the answer file> (-Check to preview), and ReadEvidence again until every evidence observation is read; the gate passes when all are read and the code checks pass."
+  ],
+  "keep": [
+   {
+    "rule": "VA-01 a-sheet-is-one-checked-transaction",
+    "text": "A sheet of validation actions is checked whole (every action named, its parameters complete) and written in one transaction: any action the tables refuse refuses the whole sheet and nothing is kept. -Check runs every action and rolls back. Every change is kept in ib_observation_change with its reason (RW-01); nothing is physically deleted."
+   },
+   {
+    "rule": "VA-02 repair-first-and-every-finding-acted-on",
+    "text": "A finding of the validation is repaired first: a wording that is untrue or stronger than its verse is restated and the restatement checked against the base data; a node missing a column is completed, or the reason the data cannot give it is recorded; a duplicate is consolidated; a node is deleted only when another live node carries its occurrence or it supports no finding of its observation. A finding is left open only when a named collection's validation will touch the observation: the deferral to that collection and the finding are recorded, and the check accepts it as deferred. A finding with no named owner is closed in the validation."
+   },
+   {
+    "rule": "VA-03 consumption-is-verified-before-deletion",
+    "text": "An older observation is deleted as consumed only when live observations carry its meaning: every word occurrence of it is on a live node of a carrier or named as not carried with its reason, the mapping is stated in words (what the old says, which carrier states each part), the traces to it are re-pointed or replaced, and the consumption is kept as `consumed_by`. An observation that holds more than one finding is split first."
+   },
+   {
+    "rule": "VA-04 neither-evidence-nor-inner-being-is-deleted",
+    "text": "An observation that is neither evidence nor inner being contributes nothing to the purposes of the observations (researcher, 2026-11-22): it is commented with its reason and the word occurrences no other live observation holds, then deleted. An observation already marked, or one another observation traces, is not deleted this way."
+   },
+   {
+    "rule": "VA-05 the-marker-follows-content-not-stage",
+    "text": "Evidence states what the data are or show, tied to a verse. Inner being states how something works in the inner being, based on evidence, a building block of the stage 5 claims. The marker (ib_observation.nature) follows the content and purpose of the observation, never its stage (RS-04): an observation of any stage may be inner being when it traces to evidence. One that states both is split. The marker is set when the observation is created, by the item that is answered (cfg_setting layer.reading items.<item>.nature); a finding file never sets it; the validation changes it only where the content shows the item's nature does not hold."
+   },
+   {
+    "rule": "VA-06 evidence-validation-gates-inner-being-validation",
+    "text": "The validation runs in two layers, never concurrently: evidence first, then inner being. The inner-being layer is judged only when the evidence layer passes (every in-scope observation marked, none without a live node, no word node missing a required column without its reason, no live trace to a deleted observation, no two of one meaning). A later evidence change reopens only the inner-being rows it touches. In the build this gate is: step 3.1 does not open before the evidence layer passes, and step 3.3 does not close before both layers pass (cfg_setting layer.reading open_gate and closing_gate)."
+   },
+   {
+    "rule": "RW-01 changed-only-by-reading",
+    "text": "No observation is changed except by a reading, and every change is recorded with its reason. An observation no longer supported by the verse is soft-deleted, with the reason."
+   },
+   {
+    "rule": "RW-03 no-duplicates-multi-node",
+    "text": "One observation per finding: the same description is never written twice. Applied to another verse, word or scope it gains a node on the existing observation."
+   },
+   {
+    "rule": "RW-04 concise-verse-specific",
+    "text": "Observation text is concise and tied to this verse's content, never a restatement of the word's dictionary sense. A transliteration is never given without its gloss."
+   },
+   {
+    "rule": "RW-06 resolved-fresh-on-evidence",
+    "text": "Verse references are resolved fresh at write time, never taken from the text written. Relations are recorded only on evidence."
+   },
+   {
+    "rule": "RW-11 missing-is-named",
+    "text": "Missing data in the base extract is named as a gap, never substituted from memory or outside knowledge."
+   }
+  ],
+  "not_in_this_read": ""
+ },
+ "observations": [
+  {
+   "observation": 22769,
+   "step": "S1",
+   "item": "word-sense",
+   "kind": "term",
+   "text": "In Mar 8:33 'setting your mind' is the mind's set or direction: Jesus tells Peter that his thinking is turned toward the things of men and not the things of God. The Greek verb is of having a mind to or minding something, and the verse names the two objects it can be set on.",
+   "basis": "read",
+   "grounds": "not setting your mind on the things",
+   "traces": [],
+   "verses": [
+    "Mar 8:33"
+   ]
+  },
+  {
+   "observation": 22880,
+   "step": "1.1",
+   "item": "group-definition",
+   "kind": "group",
+   "text": "The mind's set or direction: in Mar 8:33 Jesus tells Peter that his mind is set on the things of men and not of God. The Greek verb is of thinking and minding, and the verse gives the two objects the mind can be set on. Verses: Mar 8:33.",
+   "basis": "read",
+   "grounds": "to think, regard, hold an opinion",
+   "traces": [
+    22769
+   ],
+   "verses": [
+    "Mar 8:33"
+   ]
+  },
+  {
+   "observation": 23608,
+   "step": "1.2",
+   "item": "strong-enrichment",
+   "kind": "enrichment",
+   "text": "The code of setting your mind is G5426 (to think, regard; to set one's mind on; to have a certain attitude; to be minded). The lexicon bears out a mind set on an object; in Mar 8:33 the objects are the things of God or the things of man.",
+   "basis": "read",
+   "grounds": "to think, regard, hold an opinion",
+   "traces": [
+    22880
+   ],
+   "verses": [
+    "Mar 8:33"
+   ]
+  },
+  {
+   "observation": 23609,
+   "step": "2.1",
+   "item": "qualifier",
+   "kind": "pairing",
+   "text": "In Mar 8:33 the negator reaches the setting of the mind itself: what Peter's mind is set on is denied to be God's and named as man's.",
+   "basis": "stated",
+   "grounds": "you are not setting your mind on the things of God",
+   "traces": [
+    22880
+   ],
+   "verses": [
+    "Mar 8:33"
+   ]
+  },
+  {
+   "observation": 23610,
+   "step": "2.1",
+   "item": "entity",
+   "kind": "pairing",
+   "text": "In Mar 8:33 the entities are Jesus, who rebukes, Peter, whose mind is in question, the disciples who see it, and God and man as the two possible objects of the mind.",
+   "basis": "read",
+   "grounds": "he rebuked Peter and said",
+   "traces": [
+    22880
+   ],
+   "verses": [
+    "Mar 8:33"
+   ]
+  },
+  {
+   "observation": 23611,
+   "step": "2.1",
+   "item": "direction",
+   "kind": "relation",
+   "text": "In Mar 8:33 Peter's mind runs toward what belongs to man rather than toward what belongs to God, and Jesus' rebuke runs back against that set.",
+   "basis": "read",
+   "grounds": "Get behind me, Satan",
+   "traces": [
+    22880
+   ],
+   "verses": [
+    "Mar 8:33"
+   ]
+  },
+  {
+   "observation": 23612,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In Mar 8:33 the rebuke of Peter is given for where his mind is set: the rebuke answers the set of mind.",
+   "basis": "read",
+   "grounds": "he rebuked Peter and said",
+   "traces": [
+    22880
+   ],
+   "verses": [
+    "Mar 8:33"
+   ]
+  },
+  {
+   "observation": 23613,
+   "step": "2.1",
+   "item": "pairing",
+   "kind": "pairing",
+   "text": "In Mar 8:33 turning is Jesus' turning to see the disciples before he rebukes Peter: it is the outward setting of the rebuke, not a turning of the mind.",
+   "basis": "read",
+   "grounds": "But turning and seeing his disciples",
+   "traces": [
+    22880
+   ],
+   "verses": [
+    "Mar 8:33"
+   ]
+  }
+ ],
+ "verses": [
+  {
+   "reference": "Mar 8:33",
+   "text": "But turning and seeing his disciples, he rebuked Peter and said, “ Get behind me, Satan! For you are not setting your mind on the things of God, but on the things of man.”"
+  }
+ ],
+ "answer": {
+  "command": "ReadEvidence",
+  "collection": "thought",
+  "subgroup": "setting your mind",
+  "observations": [
+   {
+    "observation": 22769,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 22880,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 23608,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 23609,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 23610,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 23611,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 23612,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   },
+   {
+    "observation": 23613,
+    "verdict": "true | repair",
+    "why": "",
+    "actions": []
+   }
+  ]
+ },
+ "measured": {
+  "package_chars": 10845,
+  "seconds": 0.01
+ }
+}

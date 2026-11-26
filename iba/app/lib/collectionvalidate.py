@@ -121,7 +121,7 @@ def pull(conn, cfg, cid: int) -> dict:
         for n in ns:
             if n[2] is not None and n[3] is None:                       # a traced node: names another observation, carries no word column
                 traced_nodes += 1
-                if not live.get(n[2], False):
+                if not live.get(n[2], False) and o["nature"] != "inner_being":      # an inner-being observation's dead trace is the inner-being layer's (trace_gaps dead_trace; VA-06), as in the subgroup's B5 (#2538)
                     findings["traced_dead"].append((oid, n[0], n[2]))
                 continue
             word_nodes += 1
