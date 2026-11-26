@@ -299,6 +299,55 @@ def _folder_purpose_lookup(cfg) -> list[tuple[str, str, str]]:
                  key=lambda t: -len(t[0]))
 
 
+def _entry(fpath, rel: str, fname: str, ext: str, stat, fp_rules) -> dict:
+    """The scanned columns of one file (one row of file_manifest)."""
+    fp_category = fp_currency = None
+    rel_lower = rel.lower()
+    for folder_path, fp_cat, fp_cur in fp_rules:
+        prefix = folder_path.lower() + "/"
+        if rel_lower.startswith(prefix):
+            fp_category, fp_currency = fp_cat, fp_cur
+            break
+    category = fp_category or classify_category(rel)
+    file_type = classify_type(fname, category, rel)
+    # an archive/ segment overrides a folder_purpose currency set on a parent folder (#2232)
+    currency = "archived" if in_archive(rel) else (fp_currency or compute_currency(rel))
+    return {"path": rel, "category": category, "file_type": file_type, "currency": currency,
+            "archived": 1 if currency == "archived" else 0,
+            "registry": extract_registry(fname), "word": extract_word(fname),
+            "cluster": extract_cluster(fname), "vcb_batch": extract_vcb_batch(fname),
+            "version": extract_version(fname), "date": extract_date(fname), "ext": ext,
+            "size_bytes": stat.st_size,
+            "modified_at": datetime.datetime.fromtimestamp(stat.st_mtime, tz=datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")}
+
+
+def register_files(cfg, paths) -> int:
+    """Bring the rows of the named files in line with the disk, as a rebuild would for them alone (#2637 v20 K4): a file on disk is added or
+    updated in its scanned columns, a named path no longer on disk is removed. The commands that write a report register it (and the
+    earlier version they moved to the archive) with this, so no full rebuild is needed. The caller commits. Returns the rows written."""
+    conn = cfg.conn
+    fp_rules = _folder_purpose_lookup(cfg)
+    now = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    cols = ("path",) + _SCAN_COLS + ("scanned_at",)
+    sets = ", ".join(f"{c}=excluded.{c}" for c in _SCAN_COLS + ("scanned_at",))
+    n = 0
+    for raw in paths:
+        fpath = pathlib.Path(raw)
+        fpath = fpath if fpath.is_absolute() else PROJECT_ROOT / fpath
+        try:
+            rel = fpath.resolve().relative_to(PROJECT_ROOT.resolve()).as_posix()
+        except ValueError:
+            continue
+        if fpath.is_file():
+            e = _entry(fpath, rel, fpath.name, fpath.suffix.lower(), fpath.stat(), fp_rules)
+            conn.execute(f"INSERT INTO file_manifest ({', '.join(cols)}) VALUES ({', '.join(':' + c for c in cols)}) ON CONFLICT(path) DO UPDATE SET {sets}",
+                         {**e, "scanned_at": now})
+        else:
+            conn.execute("DELETE FROM file_manifest WHERE path=?", (rel,))
+        n += 1
+    return n
+
+
 def _scan(cfg) -> list[dict]:
     skip_dirs = set(cfg.setting("manifest.skip_dirs", _SKIP_DIRS_DEFAULT))
     exclude_exts = set(cfg.setting("manifest.exclude_exts", _EXCLUDE_EXTS_DEFAULT))
@@ -316,27 +365,7 @@ def _scan(cfg) -> list[dict]:
                 stat = fpath.stat()
             except OSError:
                 continue
-            fp_category = fp_currency = None
-            rel_lower = rel.lower()
-            for folder_path, fp_cat, fp_cur in fp_rules:
-                prefix = folder_path.lower() + "/"
-                if rel_lower.startswith(prefix):
-                    fp_category, fp_currency = fp_cat, fp_cur
-                    break
-            category = fp_category or classify_category(rel)
-            file_type = classify_type(fname, category, rel)
-            # an archive/ segment overrides a folder_purpose currency set on a parent folder (#2232)
-            currency = "archived" if in_archive(rel) else (fp_currency or compute_currency(rel))
-            entries.append({
-                "path": rel, "category": category, "file_type": file_type, "currency": currency,
-                "archived": 1 if currency == "archived" else 0,
-                "registry": extract_registry(fname), "word": extract_word(fname),
-                "cluster": extract_cluster(fname), "vcb_batch": extract_vcb_batch(fname),
-                "version": extract_version(fname), "date": extract_date(fname), "ext": ext,
-                "size_bytes": stat.st_size,
-                "modified_at": datetime.datetime.fromtimestamp(
-                    stat.st_mtime, tz=datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
-            })
+            entries.append(_entry(fpath, rel, fname, ext, stat, fp_rules))
     entries.sort(key=lambda e: e["path"])
     return entries
 

@@ -110,6 +110,7 @@ def view(conn, pkg: dict) -> list[str]:
     lines = [head, "## What to do\n\n", ins.get("what", "") + "\n\n", "Read:\n"] + [f"- {x}\n" for x in ins.get("read", [])]
     lines += ["\nWrite:\n"] + [f"- {x}\n" for x in ins.get("write", [])]
     lines += ["\n## Refused when (by rule)\n\n"] + [f"- {k}: {'; '.join(v)}\n" for k, v in (ins.get("refused_when") or {}).items()]
+    lines += ["\n## Limits\n\n"] + [f"- {k}: {v}\n" for k, v in (ins.get("limits") or {}).items()]
     lines += ["\n## The rules\n\n"] + [f"- {r['rule']}: {r['text']}\n" for r in ins.get("keep", [])]
     for k, v in pkg.items():
         if k in ("instruction", "answer", "command", "collection", "subgroup", "step"):
@@ -167,7 +168,11 @@ def instruction(conn, rt: dict) -> dict:
     types = json.loads(conn.execute("SELECT value FROM cfg_setting WHERE key='layer.read_types'").fetchone()[0])
     read = next((k for k, v in types.items() if isinstance(v, dict) and v.get("command") and v.get("command") == rt.get("command")), None)
     refusals = refusalrules.for_read(refusalrules.load(conn), read) if read else {}
-    return {"what": rt["what"], "read": rt["read"], "write": rt["write"], "keep": keep, "refused_when": refusals,
+    lay = json.loads(conn.execute("SELECT value FROM cfg_setting WHERE key='layer.reading'").fetchone()[0])
+    oi = json.loads(conn.execute("SELECT value FROM cfg_setting WHERE key='reading.observation_items'").fetchone()[0])
+    limits = {"grounds and every reason: characters at least": lay["min_reason_chars"], "observation text: characters at least": lay["min_text_chars"],
+              "consecutive verse words a text may copy, at most": oi["max_verse_words_copied"]}      # the numbers the recorder applies (#2637 v20 K6)
+    return {"what": rt["what"], "read": rt["read"], "write": rt["write"], "keep": keep, "refused_when": refusals, "limits": limits,
             "not_in_this_read": rt.get("not_in_this_read", "")}
 
 
@@ -956,7 +961,12 @@ def evidence_scope(conn, cfg, L: dict, cid: int, gid: int) -> dict:
         for (oid,) in conn.execute("SELECT id FROM ib_observation WHERE stable_key >= ? AND stable_key < ? AND deleted=0", (f"layer:{lid}:", f"layer:{lid};")):
             out[oid] = {"step": step, "item": item}
     occ = [o["vl_id"] for o in L["d"]["occurrences"] if o["group"] == gid]
-    for (oid,) in _ids_in(conn, "SELECT DISTINCT n.observation_id FROM ib_node n WHERE n.deleted=0 AND n.traced_observation_id IS NULL AND n.verse_lexical_id IN ({ids})", occ, cfg):
+    for oid, vl in conn.execute("SELECT DISTINCT observation_id, verse_lexical_id FROM ib_node WHERE deleted=0 AND verse_lexical_id IS NOT NULL AND collection_id=? "
+                                "AND subgroup_id=?", (cid, gid)).fetchall():      # a node that carries the subgroup is in its scope (LR-05), as the 3.1 open gate judges it; a word node is one on an occurrence, whether or not it also traces (#2637 v20 K1)
+        out.setdefault(oid, {"step": None, "item": None})
+        if vl is not None and vl not in occ:
+            occ.append(vl)
+    for (oid,) in _ids_in(conn, "SELECT DISTINCT n.observation_id FROM ib_node n WHERE n.deleted=0 AND n.verse_lexical_id IN ({ids})", occ, cfg):
         out.setdefault(oid, {"step": None, "item": None})
     for r in _ids_in(conn, "SELECT id, stage, tag, nature, obs_text, basis, parts, deleted FROM ib_observation WHERE id IN ({ids})", list(out), cfg):
         if r[7]:
@@ -1077,8 +1087,9 @@ def read_evidence(conn, cfg, run_id: str, name: str, subgroup: str, out_dir: pat
             conn.execute(f"UPDATE collection_layer_item SET state='observed', answered_at={lr.NOW}, reason=?, updated_at={lr.NOW}, run_id=? WHERE id=?",
                          (f"validated: the code checks pass and all {len(ev)} evidence observations are read", run_id, row[0]))
             _check_written(conn, cfg, run_id, name, gname)
-        what = "every evidence observation is read" + ("" if chk["passes"] else "; the code checks do NOT pass: " + "; ".join(f"{k} {v[:5]}" for k, v in chk["findings"].items() if v))
-        raise (ReadNext if chk["passes"] else ReadError)(f"the evidence validation of {gname!r}: {what}. Next: " + next_after_gate(conn, cid, gid, name, gname))
+        if chk["passes"]:
+            raise ReadNext(f"the evidence validation of {gname!r}: every evidence observation is read. Next: " + next_after_gate(conn, cid, gid, name, gname))
+        # every observation is read but a code check fails: a package of the repairs alone, with the failing checks and the actions (#2637 v20 K1)
     traced = {}
     for r in _ids_in(conn, "SELECT observation_id, traced_observation_id FROM ib_node WHERE deleted=0 AND traced_observation_id IS NOT NULL AND observation_id IN ({ids})", unread, cfg):
         traced.setdefault(r[0], []).append(r[1])
@@ -1094,6 +1105,7 @@ def read_evidence(conn, cfg, run_id: str, name: str, subgroup: str, out_dir: pat
             break
         batch.append(x)
         size += n
+    from . import collectionvalidate as cv
     refs, verses = _verses_of(conn, cfg, [x["observation"] for x in batch])
     for x in batch:
         x["verses"] = sorted(set(refs.get(x["observation"], [])))
@@ -1103,8 +1115,10 @@ def read_evidence(conn, cfg, run_id: str, name: str, subgroup: str, out_dir: pat
            "batch": {"observations": len(batch), "left_after_this": len(unread) - len(batch), "evidence_in_scope": len(ev), "observations_in_scope": chk["observations"]},
            "code_checks": {"passes": chk["passes"], "findings": chk["findings"]},
            "instruction": instruction(conn, rt), "observations": batch, "verses": verses,
+           "validation_actions": {k: list(cv._signature(f)[1]) for k, f in sorted(cv._actions(cfg).items())},
            "answer": {"command": "ReadEvidence", "collection": L["name"], "subgroup": gname,
-                      "observations": [{"observation": x["observation"], "verdict": "true | repair", "why": "", "actions": []} for x in batch]}}
+                      "observations": [{"observation": x["observation"], "verdict": "true | repair", "why": "", "actions": []} for x in batch],
+                      "repairs": []}}
     secs = round(time.monotonic() - t0, 2)
     chars = len(json.dumps(pkg, ensure_ascii=False))
     pkg["measured"] = {"package_chars": chars, "seconds": secs}
@@ -1153,7 +1167,8 @@ def record_evidence(conn, cfg, run_id: str, data: dict, keep: bool, collect: boo
         if verdict == "true" and a.get("actions"):
             errors.append(f"{where}: a true observation takes no action")
         actions += a.get("actions") or []
-    if not items:
+    actions += [x for x in (data.get("repairs") or []) if isinstance(x, dict)]      # repairs of the code checks, on observations outside this package (#2637 v20 K1)
+    if not items and not data.get("repairs"):
         errors.append("the answer holds no observation")
     if errors and not collect:
         raise ReadError("the answer is refused whole, nothing written:\n  " + "\n  ".join(errors))

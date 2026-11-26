@@ -1,0 +1,1549 @@
+{
+  "command": "ReadStructure",
+  "collection": "strive",
+  "subgroup": "exertion toward an end",
+  "step": "2.1",
+  "item": "pairing",
+  "made": "2026-11-26T15:46:12Z",
+  "batch": {
+    "rows": 10,
+    "rows_left_after_this": 25
+  },
+  "instruction": {
+    "what": "Step 2.1, the structure of one subgroup (stage 1, B3): what stands with the subgroup's words in each verse, read from the stored structure. One item at a time: double-meaning (a surface with more than one code), qualifier (negators and the word each reaches, adjectives, adverbs, prepositional qualifiers), entity (who is named or referred to), direction (from whom to whom, by the grammar), pairing (one row for each partner collection: its words in the verses shared with the subgroup). Nothing here says what anything does for the inner being; that begins at step 3.1.",
+    "read": [
+      "Take one row at a time (`rows`): what it asks, its occurrences (`as`: member, the subgroup's word; partner, the other word), and its verses.",
+      "Read each verse (`verses`) from its stored structure, one line for each word: * marks an occurrence of the subgroup; then the position, surface, Strong's code and morph, and what the pairing makes of the word (its type, the qualifier it carries, a negator, a party, the collections of a word of another collection). Nothing is evaluated that is not stored.",
+      "Where each word stands: its side and distance from the subgroup's word, from the positions. Adjacency is not scope: a negator or qualifier is read for the word it reaches by the grammar.",
+      "A pairing row shows the WordNet control for its partner collection: a pairing WordNet gives and the verses do not show is one to look for; a pairing only the verses show has no control.",
+      "Differences in meaning are read from the base data (the Strong's code, the morph, the construction), not from the English alone. The subgroup's 1.1 senses (`senses`) are what the findings build on."
+    ],
+    "write": [
+      "Fill `answer.rows`: for each row, disposition observed with its `findings`, or none with its `reason` (where the row allows none: nothing of the item stands with the subgroup in its verses).",
+      "One finding for each distinct thing the structure shows; the same finding in several verses is ONE finding naming all its occurrences; a verse that shows something different is its own finding. Together the findings name every occurrence of the row (occurrence ids or verse references), each in one finding.",
+      "kind: as the template gives it (pairing; relation for direction; face for double-meaning). obs_text: concise; names the verses it holds in, as the package writes the references (for example Act 18:4); states what the structure shows (which word, where it stands, what it reaches or gives by the grammar); never a verse restated, never what it does for the inner being.",
+      "basis: stated (the verse says it) or read (read from the structure), with `grounds`: words copied exactly from the verses it is tied to (the record checks them).",
+      "Each subgroup's surface has its own finding; none joins two subgroups. A data error is named in grounds, not fixed.",
+      "`older`: answer each older observation shown under the row, once: keep (with `nature`), restate (with `nature`, `new_text`, `checked`), merge (with `into`), consume (with `carriers` [\"this\"] or observation ids, and `mapping`), delete_neither (with `reason`), carry (with `to` and `reason`), defer (with `collection`, `nature`, `finding`). One listed under another row is answered there.",
+      "Where a reading, sense, enrichment or finding holds every occurrence of the row's subject, `occurrences` may be \"all\": the recorder names them.",
+      "Then: Collection-Build.ps1 -Action CheckAnswer -File <the answer file>: every problem at once, each with its rule, nothing written; correct the answer until it finds none, then -Action RecordStructure -File <the answer file>. The record refuses the whole file on any fault and lists every fault."
+    ],
+    "keep": [
+      {
+        "rule": "RG-14 morph-read",
+        "text": "Morph is read, not carried: where occurrences of a word show different stems or voices, record whether the subject does, undergoes or causes the act."
+      },
+      {
+        "rule": "RG-16 homonym-and-data-error",
+        "text": "A word that is only a homonym or a name, with no meaningful context, is recorded as such (tag no-human-context) and left. Data errors found while reading are flagged (tag data-error), not fixed in the reading."
+      },
+      {
+        "rule": "RG-21 grain",
+        "text": "A word is read per its lettered Strong's code (its grain), never the bare lemma (B:113). The occurrences of a word with several senses are related per grain and never aggregated across grains: related verses are same-grain occurrences."
+      },
+      {
+        "rule": "RO11 one-row-per-code",
+        "text": "One observation per finding, never a duplicate description; a finding applying to several verses or words carries several nodes, each with the word's role in it."
+      },
+      {
+        "rule": "RW-03 no-duplicates-multi-node",
+        "text": "One observation per finding: the same description is never written twice. Applied to another verse, word or scope it gains a node on the existing observation."
+      },
+      {
+        "rule": "RW-04 concise-verse-specific",
+        "text": "Observation text is concise and tied to this verse's content, never a restatement of the word's dictionary sense. A transliteration is never given without its gloss."
+      },
+      {
+        "rule": "RW-08 slants-own-rows",
+        "text": "Where the evidence points to more than one reading, each is its own observation with its own evidence."
+      },
+      {
+        "rule": "RW-09 reread-builds-on-prior",
+        "text": "A re-read includes the observations already recorded for the verse, so the reading sees prior findings and builds on them."
+      },
+      {
+        "rule": "RW-11 missing-is-named",
+        "text": "Missing data in the base extract is named as a gap, never substituted from memory or outside knowledge."
+      },
+      {
+        "rule": "RW-13 older-observations-answered-at-record",
+        "text": "Every older live observation with a live node on an occurrence of the row (a stage that is not the build's own) is answered in fill.older when the row is recorded, once: keep or restate (each with its marker), merge into a named observation, consume (live observations carry its meaning, stated in words, verified before it is deleted), delete as neither (comment first), or defer to a named collection (marked now; only the finding is left to that collection). An observation already marked by the validation, answered in a build or deferred is not asked again. A new observation whose text equals that of another live observation of the collection is refused, the other named. LayerCheck re-derives both from the tables. The end state of a collection's build is that every observation of its scope is marked and fixed or deleted, every word node complete or with its reason, and each deferral owned by a named collection."
+      },
+      {
+        "rule": "RS-04 existing-checked-accept-modify-delete",
+        "text": "When a verse is worked, every existing observation and node on it, of any stage, is checked against the verse by its wording. The stage is not an indication of the nature of an observation and is never used to filter. Each observation is accepted, modified (changed in place; the old value, the new value and the reason are kept in ib_observation_change), soft deleted (the `deleted` column, with the reason), merged (a duplicate description, into the observation that is kept) or, when its wording shows it is not verse understanding, left exactly as it is with the reason. The check's fixes are part of it and need no separate approval. Nothing is physically deleted."
+      },
+      {
+        "rule": "LR-02 nodes-are-built-from-the-data",
+        "text": "The nodes of a layer observation are the occurrences the aspect demands (a word's occurrences, the group's occurrences, the partner's occurrences in the verses they share), written by the recorder with the collection and the subgroup of each surface; they are never typed. An item answered by senses (word-sense) names, for each sense, the occurrences it holds for, and together the senses cover every occurrence; the recorder checks them against the data. The interpretation is the observation text, founded in what the evidence shows (basis stated or read, B:131) and tied to its verses (the text names them and does not restate them): the items of every step (S1, 1.1, 1.2, 2.1) state what the dictionary, the verses and the stored structure show of a word and never what a word does for the inner being; their nodes carry the role lexical and no route. The whole file is checked and written in one transaction; any problem refuses all of it. A row answered again withdraws its earlier observations with the reason."
+      },
+      {
+        "rule": "LR-03 none-needs-a-permitted-reason",
+        "text": "An aspect is recorded as none only where its item allows it (cfg_setting layer.reading none_allowed) and with its reason in words. A group definition and a group's Strong's enrichment are always observed."
+      },
+      {
+        "rule": "DA-02 a-node-per-occurrence-with-its-surfaces-collection",
+        "text": "A node is on one occurrence (verse_lexical_id) and carries the collection of its surface (a supportive node, the collection of the surface it supports); a node already on the observation for the same occurrence is not written twice, and takes the role. A node with no collection to carry, or on a verse out of scope (B:130), is not written and is listed."
+      },
+      {
+        "rule": "VA-03 consumption-is-verified-before-deletion",
+        "text": "An older observation is deleted as consumed only when live observations carry its meaning: every word occurrence of it is on a live node of a carrier or named as not carried with its reason, the mapping is stated in words (what the old says, which carrier states each part), the traces to it are re-pointed or replaced, and the consumption is kept as `consumed_by`. An observation that holds more than one finding is split first."
+      },
+      {
+        "rule": "VA-04 neither-evidence-nor-inner-being-is-deleted",
+        "text": "An observation that is neither evidence nor inner being contributes nothing to the purposes of the observations (researcher, 2026-11-22): it is commented with its reason and the word occurrences no other live observation holds, then deleted. An observation already marked, or one another observation traces, is not deleted this way."
+      },
+      {
+        "rule": "IB-07 inner-being-observations-trace-to-evidence",
+        "text": "Every live observation marked inner_being holds at least one live traced node on a live observation marked evidence, or on a live inner-being observation that itself traces to evidence (the trace chain of stage 4: a 3.2 behaviour traces the 3.1 elements it gathers, a 3.3 match the 3.1 and 3.2 observations it comes from; at most three links), unless it is recorded self-evidencing: it quotes its verse in full and holds a word node for every word it relies on. A traced node never points at a deleted observation. A trace points first at existing evidence; an evidence observation is created only when none states the fact and it states what the nodes and the quotation do not. An inner-being observation traced to evidence not yet marked is pending, not failed."
+      },
+      {
+        "rule": "LR-01 a-step-opens-on-gates-and-derives-its-ledger",
+        "text": "A step of the layered reading opens only when the grouping is finished (every surface placed in a subgroup or isolated with its reason, every subgroup holding a surface) and the previous step is closed; with -Subgroup the needs and gates are judged for that subgroup alone (#2538). Step S1 is read after the grouping; step 1.1 needs step S1 closed: every word of the subgroup (surface and lettered Strong's code) answered and validated. Opening derives one ledger row for each aspect the data demands (cfg_setting layer.reading); an aspect the data no longer demands is retired, a new one is added, and a second open changes nothing."
+      },
+      {
+        "rule": "PC-01 the-command-names-a-live-unit",
+        "text": "A read or record command names a live collection, a live subgroup of it where the read is by subgroup, and a step or item the layered reading knows. A command that names one that does not exist is refused and writes nothing."
+      },
+      {
+        "rule": "PC-02 the-answer-is-the-packet-form",
+        "text": "An answer is the output form its read wrote: the `command` of that read; every entry an object, or a list, where the form has one; each field in its place with its type (a key unique in the answer, a text, a reason in words); each item answered once; and at least one entry where the form asks for entries. A file in another shape is refused whole and nothing is written."
+      },
+      {
+        "rule": "PC-03 names-are-those-the-packet-offers",
+        "text": "Every ledger row, occurrence, observation, sense, node, verse and collection an answer names is one the packet offered for this unit, or a key the answer itself defines, and is live in the database. A name outside them is refused."
+      },
+      {
+        "rule": "PC-04 values-from-the-allowed-lists",
+        "text": "Every coded value of an answer (kind, basis, item, part, role, route, mode, polarity, flag type, disposition, verdict, action, nature, stage, status) is one of the values the configuration allows for it (cfg_enum, cfg_setting layer.reading, reading.observation_items, validate.reading), as the packet lists them. Any other value is refused."
+      },
+      {
+        "rule": "PC-05 the-unit-is-at-its-step",
+        "text": "A read or record runs only where the ledger has its unit at that step: the row open, or answered and not yet validated, and the steps before it closed (S1 before 1.1; the 2.1 rows before the sweep; the sweep before the evidence validation; its gate before 3.1; every subgroup through 3.1 before 3.2). Out of order it is refused, and the message names what comes first."
+      },
+      {
+        "rule": "PC-06 within-the-configured-limits",
+        "text": "A read writes its packet within the time and size the configuration sets (cfg_setting layer.read_types: limits, package_max_chars, read_max_seconds). A read that would exceed them is refused, nothing is written, and the limit is named."
+      },
+      {
+        "rule": "PC-07 the-config-the-code-needs-is-present",
+        "text": "The code of the reading runs only where the configuration it reads is in place (the settings, steps, items, natures, enums and rules it names). Where the code is ahead of the configuration, the command is refused and names what is missing."
+      },
+      {
+        "rule": "RG-06 parties-and-route",
+        "text": "Record the parties: who bears the act, who causes it, who is acted on (source, target, impact, purpose), and the route (cfg_enum observation_route), whose meaning is cfg_behaviour_rule 72 (route-verses-hib-other-beings-data-only): A another being in its own right, B another being with the human inner being, C no bearing, data only; a verse may take A and B. A non-human being is never itself a HIB; a collective stays one HIB; an implied party is named as referential, never asserted."
+      },
+      {
+        "rule": "RW-01 changed-only-by-reading",
+        "text": "No observation is changed except by a reading, and every change is recorded with its reason. An observation no longer supported by the verse is soft-deleted, with the reason."
+      },
+      {
+        "rule": "RW-12 marker-and-node-columns-at-creation",
+        "text": "An observation is created with its marker (ib_observation.nature, from the item answered, cfg_setting layer.reading items.<item>.nature; a finding file never sets it) and every word node with the columns of layer.reading node_required. A column the data cannot give (layer.reading node_gap_columns: an empty morph in the source row, a surface with no placement in the collection index) is left empty and its reason is kept on the node (disposition_note); any other missing column refuses the whole file and nothing is written. A trace to a deleted observation is refused (IB-07)."
+      },
+      {
+        "rule": "RW-14 every-lookup-is-pinpointed",
+        "text": "A lookup of related data in the build or the validation is by an indexed column and takes a chunk of ids (cfg_setting layer.scan chunk); none runs once for each item of a list, and a statement that uses more work than layer.scan max_vm_ops is stopped and named, nothing written (lib/scanguard.py). The tests refuse a statement of the build whose query plan scans a table (layer.scan scan_ok lists the temporary tables a statement may scan)."
+      },
+      {
+        "rule": "VA-05 the-marker-follows-content-not-stage",
+        "text": "Evidence states what the data are or show, tied to a verse. Inner being states how something works in the inner being, based on evidence, a building block of the stage 5 claims. The marker (ib_observation.nature) follows the content and purpose of the observation, never its stage (RS-04): an observation of any stage may be inner being when it traces to evidence. One that states both is split. The marker is set when the observation is created, by the item that is answered (cfg_setting layer.reading items.<item>.nature); a finding file never sets it; the validation changes it only where the content shows the item's nature does not hold."
+      }
+    ],
+    "refused_when": {
+      "DA-02": [
+        "belongs to collection",
+        "the nodes do not carry the collections"
+      ],
+      "IB-07": [
+        "is not marked evidence: an inner-being observation traces to evidence",
+        "an observation does not trace itself"
+      ],
+      "LR-01": [
+        "is not closed (every row answered"
+      ],
+      "LR-02": [
+        "the text names none of them",
+        "names its grounds in the words of the verse",
+        "are not words of the lexicon entries",
+        "are not words of the verses",
+        "the data holds no occurrence for this aspect",
+        "names the occurrences it is about",
+        "names no occurrence (fill occurrences",
+        "are already in another sense",
+        "are in no sense",
+        "no occurrence to adopt for"
+      ],
+      "LR-03": [
+        "cannot be recorded as none",
+        "none needs its reason"
+      ],
+      "PC-01": [
+        "is not a step of the layered reading",
+        "is not a live subgroup of",
+        "no live collection",
+        "has no live subgroup",
+        "-Item must be one of",
+        "cannot read ",
+        " are required",
+        " is required"
+      ],
+      "PC-02": [
+        "answer (its `command` must be",
+        "is a list of {observation, action, reason",
+        "the answer holds no ",
+        "(fill.senses): at least one",
+        "this is not the answer of a read"
+      ],
+      "PC-03": [
+        "not a ledger row of",
+        "is not a 2.1 row of subgroup",
+        "occurrences that are not occurrences of",
+        "is not an older live observation on the occurrences of this row",
+        "is not an open old observation of this subgroup",
+        "adopt names a live observation",
+        "a deferral names a live collection",
+        "has no matching live verse_lexical row",
+        "both must be different live observations",
+        " is not an occurrence of ",
+        "is not a live observation",
+        "is not a live node",
+        "does not exist",
+        " is not a ",
+        "merge names a live observation to keep",
+        "defer names a live collection"
+      ],
+      "PC-04": [
+        "kind must be one of",
+        "basis must be one of",
+        "role must be one of",
+        "route must be one of",
+        "tag must be one of",
+        "stage must be one of",
+        "nature must be one of",
+        "disposition must be observed",
+        "is not a node role",
+        "cannot be modified (allowed:",
+        "not in live cfg_enum ib_observation",
+        ", the item takes ",
+        "action is one of",
+        "names its marker, nature one of"
+      ],
+      "PC-05": [
+        "only an open or an unvalidated row is recorded",
+        " row is answered by its own command",
+        "the evidence validation of ",
+        "has no open row",
+        "is open; other items are",
+        "its group is retired or missing",
+        "carry names a LATER step of",
+        "the loop is for one subgroup at a time",
+        "partner collection "
+      ],
+      "PC-06": [
+        " took more than "
+      ],
+      "PC-07": [
+        "cfg_setting layer.reading is missing",
+        "cfg_setting layer.scan",
+        "layer.reading step ",
+        "(apply iba/app/migration/archive/",
+        "the code is ahead of the config",
+        "have no nature in cfg_setting layer.reading",
+        "the read names rule(s) not active",
+        "is empty: run install_nature",
+        "are not ib_observation.tag values",
+        " is missing"
+      ],
+      "RG-06": [
+        "carries its route",
+        "this item takes no route"
+      ],
+      "RW-01": [
+        "needs its reason, in words",
+        "say in words what was checked",
+        "say what it states that the existing record does not",
+        "state the finding the collection is to close",
+        "say in words which words it relies on",
+        "say in words why the word supports no finding",
+        "is the last word node of observation",
+        "already holds that occurrence: drop the node instead",
+        "its occurrence is on no live node of",
+        "carry gives its reason in words"
+      ],
+      "RW-03": [
+        "is already live as observation",
+        "the same text as",
+        "a merge is for the same description"
+      ],
+      "RW-04": [
+        "restates the verse",
+        "the observation text is missing or under",
+        "is a bare negation with no actual content",
+        "is not the ESV's wording"
+      ],
+      "RW-09": [
+        "adopt needs its reason in words"
+      ],
+      "RW-12": [
+        "morph_code is empty but",
+        ") has no "
+      ],
+      "RW-13": [
+        "are still open in the ledger",
+        "have no answer in fill.older",
+        "its fate is not recorded",
+        "is not in the change log of observation",
+        "the change log does not show it"
+      ],
+      "RW-14": [
+        "the statement used more than"
+      ],
+      "VA-03": [
+        "name the carrying observations",
+        "the mapping is stated in words",
+        "occurrence(s) are on no node of",
+        "not carried needs its reason"
+      ],
+      "VA-04": [
+        "only an observation that is neither is deleted here",
+        "repair those traces first"
+      ],
+      "VA-05": [
+        "is an inner-being finding (its nodes carry an inner-being role)",
+        "a deferred observation is marked now"
+      ]
+    },
+    "not_in_this_read": ""
+  },
+  "senses": [
+    {
+      "sense": 23951,
+      "text": "Exertion toward a goal: effort spent to reach or to do something, in 1Th 2:17, Gal 2:17, Luk 13:24, 1Ti 4:10, Heb 12:14, 1Cor 14:12, Heb 4:11 and Ecc 2:22; the goal is named in each, a meeting, a standing before God, entry, peace and holiness, excelling, rest, or in Ecc 2:22 the labour itself.",
+      "verses": [
+        "1Thess.2.17",
+        "Gal.2.17",
+        "Luke.13.24",
+        "1Tim.4.10",
+        "Heb.12.14",
+        "1Cor.14.12",
+        "Heb.4.11",
+        "Eccl.2.22"
+      ]
+    },
+    {
+      "sense": 23952,
+      "text": "Contention against an opponent: disputing with another or rousing oneself against another, in Isa 45:9 against one's maker, in Pro 28:4 by those who keep the law against the wicked, and in Isa 41:11 where Israel's opponents are named by their dispute with Israel.",
+      "verses": [
+        "Isa.45.9",
+        "Prov.28.4",
+        "Isa.41.11"
+      ]
+    },
+    {
+      "sense": 23953,
+      "text": "Physical fighting: a bodily fight between men in Exo 21:22 and warfare between peoples in Psa 60:1, both with the verb natsah.",
+      "verses": [
+        "Exod.21.22",
+        "Ps.60.1"
+      ]
+    },
+    {
+      "sense": 23954,
+      "text": "Jacob's contending with God: the struggle with God, or with the angel, in which Jacob prevailed, told in Gen 32:28, Hos 12:3 and Hos 12:4 with sarah and sur.",
+      "verses": [
+        "Gen.32.28",
+        "Hos.12.4",
+        "Hos.12.3"
+      ]
+    },
+    {
+      "sense": 23955,
+      "text": "A reaching after wind: in Ecc 1:14, Ecc 1:17, Ecc 2:11, Ecc 2:17, Ecc 2:26, Ecc 4:4, Ecc 4:6, Ecc 4:16 and Ecc 6:9 two related nouns, reut and rayon, name a striving after wind, a reaching after what gives nothing to hold.",
+      "verses": [
+        "Eccl.2.17",
+        "Eccl.2.11",
+        "Eccl.4.4",
+        "Eccl.4.6",
+        "Eccl.6.9",
+        "Eccl.2.26",
+        "Eccl.1.14",
+        "Eccl.4.16",
+        "Eccl.1.17"
+      ]
+    }
+  ],
+  "verses": [
+    {
+      "reference": "Pro 28:4",
+      "text": "Those who forsake the law praise the wicked, but those who keep the law strive against them.",
+      "words": [
+        " 0 forsake H5800A HVqrmpc | word of another collection; collections forsake",
+        " 1 law H8451 HNcfsa",
+        " 2 praise H1984B HVpi3mp | word of another collection; collections commend",
+        " 3 wicked H7563 HNcmsa | word of another collection; collections evildoer",
+        " 4 keep H8104G HVqrmpc | word of another collection; collections remove",
+        " 5 law H8451 HNcfsa",
+        "*6 strive H1624 HVti3mp | member of this collection",
+        " 7 in/on/with H9003 HR",
+        " 7 them H9038 HSp3mp"
+      ]
+    },
+    {
+      "reference": "Ecc 1:17",
+      "text": "And I applied my heart to know wisdom and to know madness and folly. I perceived that this also is but a striving after wind.",
+      "words": [
+        " 0 applied H5414H HVqw1cs",
+        " 1 heart H3820A HNcmsc | word of another collection; collections heart",
+        " 1 [emph.?] H9012 HSh",
+        " 2 know H3045 HVqcc | word of another collection; collections know",
+        " 2 to/for H9005 HR",
+        " 2 my H9020 HSp1bs",
+        " 3 wisdom H2451 HNcfsa | word of another collection; collections wise",
+        " 4 know H3045 HNcfsa | word of another collection; collections know",
+        " 5 madness H1947 HNcfpa | word of another collection; collections folly",
+        " 5 and H9002 HC | connective",
+        " 6 folly H5531A HNcfsa | word of another collection; collections folly",
+        " 7 perceived H3045 HVqp1cs | word of another collection; collections know",
+        " 8 this H2088 HTm",
+        " 9 also H1571 HD | qualifier candidate; qualifier morph: adverb",
+        " 9 which/that H9007 HTr",
+        " 9 also H1931 HPp3ms",
+        "*10 striving H7475 HNcmsc | member of this collection",
+        " 11 wind H7307H HNcfsa"
+      ]
+    },
+    {
+      "reference": "Ecc 2:22",
+      "text": "What has a man from all the toil and striving of heart with which he toils beneath the sun?",
+      "words": [
+        " 0 what H4100 HPi",
+        " 0 what H3588A HTc | connective",
+        " 1 has H1933B HVqrmsa",
+        " 2 man H0120G HNcmsa | entity (human); party human",
+        " 2 to/for H9005 HRd",
+        " 3 all H3605 HNcmsc",
+        " 4 toil H5999 HNcbsc | word of another collection; collections labor",
+        " 4 in/on/with H9003 HR",
+        "*5 striving H7475 HNcmsc | member of this collection",
+        " 5 in/on/with H9003 HR",
+        " 5 and H9002 HC",
+        " 5 his H9023 HSp3ms",
+        " 6 heart H3820A HNcmsc | word of another collection; collections heart",
+        " 7 which H1931 HPp3ms",
+        " 7 which/that H9007 HTr",
+        " 7 his H9023 HSp3ms",
+        " 8 toils H6001B HAamsa | qualifier candidate; qualifier morph: adjective",
+        " 9 beneath H8478G HNcmsc",
+        " 10 sun H8121 HNcbsa",
+        " 10 [the] H9009 HTd"
+      ]
+    },
+    {
+      "reference": "Ecc 2:26",
+      "text": "For to the one who pleases him God has given wisdom and knowledge and joy, but to the sinner he has given the business of gathering and collecting, only to give to one who pleases God. This also is vanity and a striving after wind.",
+      "words": [
+        " 0 for H3588A HTc | connective",
+        " 1 one H0120G HNcmsa | entity (human); party human",
+        " 1 to/for H9005 HR",
+        " 2 pleases H2896A HAamsa | word of another collection; qualifier qualifier subgroup: Good, better, well (a quality of something); morph: adjective; collections delight",
+        " 2 which/that H9007 HTr",
+        " 3 him H6440G HNcmpc",
+        " 3 to/for H9005 HR",
+        " 4 given H5414G HVqp3ms | word of another collection; collections share",
+        " 4 his H9023 HSp3ms",
+        " 5 wisdom H2451 HNcfsa | word of another collection; collections wise",
+        " 6 knowledge H1847 HNcfsa | word of another collection; collections know",
+        " 6 and H9002 HC | connective",
+        " 7 joy H8057 HNcfsa | word of another collection; collections delight",
+        " 7 and H9002 HC | connective",
+        " 8 sinner H2398 HVqrmsa | word of another collection; collections sin",
+        " 8 and H9002 HC | connective",
+        " 8 to/for H9005 HRd",
+        " 9 given H5414G HVqp3ms | word of another collection; collections share",
+        " 10 business H6045 HNcmsa",
+        " 11 gathering H0622 HVqcc",
+        " 11 to/for H9005 HR",
+        " 12 collecting H3664 HVqcc",
+        " 12 and H9002 HC | connective",
+        " 12 to/for H9005 HR",
+        " 13 give H5414G HVqcc | word of another collection; collections share",
+        " 13 to/for H9005 HR",
+        " 14 pleases H2896A HAamsa | word of another collection; qualifier qualifier subgroup: Good, better, well (a quality of something); morph: adjective; collections delight",
+        " 14 to/for H9005 HR",
+        " 14 pleases H6440G HNcmpc | word of another collection; collections delight",
+        " 15 god H0430G HNcmpa | entity (divine); party divine",
+        " 15 [the] H9009 HTd",
+        " 15 to/for H9005 HR",
+        " 16 this H2088 HTm",
+        " 17 also H1571 HD | qualifier candidate; qualifier morph: adverb",
+        " 18 vanity H1892 HNcmsa | word of another collection; collections pride",
+        "*19 striving H7469 HNcfsc | member of this collection",
+        " 19 and H9002 HC",
+        " 20 wind H7307H HNcfsa"
+      ]
+    },
+    {
+      "reference": "Ecc 4:4",
+      "text": "Then I saw that all toil and all skill in work come from a man’s envy of his neighbor. This also is vanity and a striving after wind.",
+      "words": [
+        " 0 i H0589 HPp1bs",
+        " 1 saw that H7200G HVqq1cs",
+        " 2 all H3605 HNcmsc",
+        " 2 all H0853 HTo",
+        " 3 toil H5999 HNcbsa | word of another collection; collections labor",
+        " 4 all H3605 HNcmsc",
+        " 4 all H0853 HTo",
+        " 4 and H9002 HC | connective",
+        " 5 skill H3788 HNcmsc | word of another collection; collections skill",
+        " 6 work H4639G HNcmsa | word of another collection; collections labor",
+        " 6 [the] H9009 HTd",
+        " 7 man’s H0376I HNcmsa",
+        " 8 envy H7068 HNcfsc | word of another collection; collections jealous",
+        " 8 envy H3588A HTc | word of another collection; collections jealous",
+        " 8 envy H1931 HPp3fs | word of another collection; collections jealous",
+        " 9 neighbor H7453 HNcmsc | entity (human); party human",
+        " 9 from H9006 HR",
+        " 10 this H2088 HTm",
+        " 11 also H1571 HD | qualifier candidate; qualifier morph: adverb",
+        " 11 his H9023 HSp3ms",
+        " 12 vanity H1892 HNcmsa | word of another collection; collections pride",
+        "*13 striving H7469 HNcfsc | member of this collection",
+        " 13 and H9002 HC",
+        " 14 wind H7307H HNcfsa"
+      ]
+    },
+    {
+      "reference": "Ecc 4:16",
+      "text": "There was no end of all the people, all of whom he led. Yet those who come later will not rejoice in him. Surely this also is vanity and a striving after wind.",
+      "words": [
+        " 0 no H0369 HNcmsc",
+        " 1 end H7093 HNcmsa",
+        " 2 all H3605 HNcmsc",
+        " 2 to/for H9005 HR",
+        " 3 people H5971A HNcmsa",
+        " 3 [the] H9009 HTd",
+        " 4 all H3605 HNcmsa",
+        " 4 to/for H9005 HR",
+        " 5 led H6440G HNcmpc | word of another collection; collections govern",
+        " 5 to/for H9005 HR",
+        " 5 led H0834A HTr | word of another collection; collections govern",
+        " 5 led H1961 HVqp3ms | word of another collection; collections govern",
+        " 6 yet H1571 HD | qualifier candidate; qualifier morph: adverb",
+        " 6 their H9028 HSp3mp",
+        " 7 come later H0314 HAampa | qualifier candidate; qualifier morph: adjective",
+        " 7 [the] H9009 HTd",
+        " 8 not H3808 HTn | negator; qualifier negator; negator",
+        " 9 rejoice H8055 HVqi3mp | word of another collection; collections gladden",
+        " 10 surely H3588A HTc | word of another collection; collections loyalty",
+        " 10 in/on/with H9003 HRd",
+        " 10 him H9033 HSp3ms",
+        " 11 also H1571 HD | qualifier candidate; qualifier morph: adverb",
+        " 12 vanity H1892 HNcmsa | word of another collection; collections pride",
+        " 12 vanity H2088 HTm | word of another collection; collections pride",
+        "*13 striving H7475 HNcmsc | member of this collection",
+        " 13 and H9002 HC",
+        " 14 wind H7307H HNcfsa"
+      ]
+    },
+    {
+      "reference": "Isa 41:11",
+      "text": "Behold, all who are incensed against you shall be put to shame and confounded; those who strive against you shall be as nothing and shall perish.",
+      "words": [
+        " 0 behold H2005 HTj",
+        " 1 all H3605 HNcmsa",
+        " 2 incensed H2734 HVNrmpa | word of another collection; collections anger",
+        " 2 [the] H9009 HTd",
+        " 3 put to shame H0954 HVqi3mp | word of another collection; collections honor",
+        " 4 confounded H3637 HVNu3mp | word of another collection; collections confusion",
+        " 5 those H0582 HNcmpc | entity (human); party human",
+        "*6 strive H7379 HNcmsc | member of this collection",
+        " 6 your H9021 HSp2ms",
+        " 7 be H1961 HVqi3mp",
+        " 8 nothing H0369 HNcmsa",
+        " 8 like/as H9004 HR",
+        " 8 in/on/with H9003 HR",
+        " 8 you H9031 HSp2ms",
+        " 9 perish H0006 HVqu3mp | word of another collection; collections die"
+      ]
+    },
+    {
+      "reference": "1Th 2:17",
+      "text": "But since we were torn away from you, brothers, for a short time, in person not in heart, we endeavored the more eagerly and with great desire to see you face to face,",
+      "words": [
+        " 0 but G1161 CONJ | connective",
+        " 1 we G2249 P-1NP",
+        " 2 torn away G0642 V-APP-NPM",
+        " 3 from G0575 PREP",
+        " 4 you G5216 P-2GP",
+        " 5 brothers G0080 N-VPM | entity (human); party human",
+        " 6 for G4314 PREP",
+        " 7 short G5610 N-GSF",
+        " 8 time G2540 N-ASM",
+        " 9 person G4383 N-DSN",
+        " 10 not G3756 PRT-N | negator; qualifier negator; negator",
+        " 11 heart G2588 N-DSF | word of another collection; collections heart",
+        "*12 endeavored G4704 V-AAI-1P | member of this collection",
+        " 13 more eagerly G4056 ADV-C | qualifier candidate; qualifier morph: adverb",
+        " 14 with G1722 PREP",
+        " 15 great G4183 A-DSF | qualifier candidate; qualifier morph: adjective",
+        " 16 desire G1939 N-DSF | word of another collection; collections desire",
+        " 17 see G1492H V-2AAN",
+        " 18 you G5216 P-2GP",
+        " 19 face G4383 N-ASN"
+      ]
+    },
+    {
+      "reference": "1Ti 4:10",
+      "text": "For to this end we toil and strive, because we have our hope set on the living God, who is the Savior of all people, especially of those who believe.",
+      "words": [
+        " 0 for G1063 CONJ | connective",
+        " 1 to G1519 PREP",
+        " 2 this G3778 D-ASN",
+        " 3 toil G2872 V-PAI-1P | word of another collection; collections labor",
+        " 4 and G2532 CONJ | connective",
+        "*5 strive G0075 V-PNI-1P | member of this collection",
+        " 6 because G3754H CONJ | connective",
+        " 7 hope G1679 V-RAI-1P | word of another collection; collections hope",
+        " 8 on G1909 PREP",
+        " 9 living G2198 V-PAP-DSM | word of another collection; collections live",
+        " 10 god G2316 N-DSM-T | entity (divine); party divine",
+        " 11 who G3739 R-NSM",
+        " 12 is G1510 V-PAI-3S",
+        " 13 savior G4990 N-NSM",
+        " 14 all G3956 A-GPM | qualifier candidate; qualifier morph: adjective",
+        " 15 people G0444 N-GPM | entity (human); party human",
+        " 16 especially G3122 ADV | qualifier candidate; qualifier morph: adverb",
+        " 17 believe G4103 A-GPM | word of another collection; qualifier morph: adjective; collections believe"
+      ]
+    },
+    {
+      "reference": "Heb 12:14",
+      "text": "Strive for peace with everyone, and for the holiness without which no one will see the Lord.",
+      "words": [
+        "*0 strive G1377 V-PAM-2P | member of this collection",
+        " 1 peace G1515 N-ASF | word of another collection; collections quarrel",
+        " 2 with G3326 PREP",
+        " 3 everyone G3956 A-GPM | qualifier candidate; qualifier morph: adjective",
+        " 4 and G2532 CONJ | connective",
+        " 5 holiness G0038 N-ASM | word of another collection; collections godly",
+        " 6 without G5565 PREP",
+        " 7 which G3739 R-GSM",
+        " 8 no one G3762 A-NSM | qualifier candidate; qualifier morph: adjective",
+        " 9 see G3708G V-FDI-3S",
+        " 10 lord G2962G N-ASM-T | entity (divine); party divine"
+      ]
+    }
+  ],
+  "rows": [
+    {
+      "ledger_id": 2272,
+      "item": "pairing",
+      "subject": "folly",
+      "asks": "Which words of this partner collection stand with the subgroup's surfaces in the verses they share, where does each stand (side and distance, from the stored structure), and which stand out? The WordNet control for this collection is shown. Write one finding for each distinct thing the structure shows; a finding holds the verses it holds in as its nodes.",
+      "none_allowed": true,
+      "verses": [
+        "Ecc 1:17"
+      ],
+      "occurrences": [
+        {
+          "occurrence": 1288171,
+          "reference": "Ecc 1:17",
+          "surface": "striving",
+          "strong": "H7475",
+          "as": "member"
+        },
+        {
+          "occurrence": 1288163,
+          "reference": "Ecc 1:17",
+          "surface": "madness",
+          "strong": "H1947",
+          "as": "partner"
+        },
+        {
+          "occurrence": 1288165,
+          "reference": "Ecc 1:17",
+          "surface": "folly",
+          "strong": "H5531A",
+          "as": "partner"
+        }
+      ],
+      "older": [
+        {
+          "observation": 17173,
+          "stage": "prior-capture",
+          "kind": "statement",
+          "nature": null,
+          "text": "10. Madness (M66): \"the hearts of the children of man are full of evil, and madness is in their hearts while they live\" (Ecc 9:3); \"The Lord will strike you with madness and blindness and confusion of mind [*heart*]\" (Deu 28:28); \"I applied my heart to know wisdom and to know madness and folly … a striving after wind\" (Ecc 1:17); \"I turned my heart to know … the foolishness that is madness\" (Ecc 7:25); \"The prophet is a fool; the man of the spirit is mad\" (Hos 9:7) [U]; [Claude reading] Madness is located in the heart (Ecc 9:3; Deu 28:28). The heart can also investigate madness (Ecc 1:17; 7:25). Hos 9:7 is the only verse linking madness to \"spirit\", and its spirit is not determinable.",
+          "verses": [
+            "Eccl.9.3",
+            "Deut.28.28",
+            "Eccl.1.17",
+            "Eccl.7.25",
+            "Hos.9.7"
+          ]
+        },
+        {
+          "observation": 21424,
+          "stage": "engagement",
+          "kind": "face",
+          "nature": null,
+          "text": "Madness is here madness or derangement of the mind or heart: a state of the inner being, set against wisdom or sanity, or a craze such as a passion for idols.",
+          "verses": [
+            "2Pet.2.16",
+            "Deut.28.28",
+            "Eccl.1.17",
+            "Eccl.10.13",
+            "Eccl.2.12",
+            "Eccl.7.25",
+            "Eccl.7.7",
+            "Eccl.9.3",
+            "Zech.12.4"
+          ]
+        }
+      ],
+      "wordnet_control": "WordNet relates no surface of the subgroup to this collection (a verse-only pairing: no control)"
+    },
+    {
+      "ledger_id": 2273,
+      "item": "pairing",
+      "subject": "forsake",
+      "asks": "Which words of this partner collection stand with the subgroup's surfaces in the verses they share, where does each stand (side and distance, from the stored structure), and which stand out? The WordNet control for this collection is shown. Write one finding for each distinct thing the structure shows; a finding holds the verses it holds in as its nodes.",
+      "none_allowed": true,
+      "verses": [
+        "Pro 28:4"
+      ],
+      "occurrences": [
+        {
+          "occurrence": 1276887,
+          "reference": "Pro 28:4",
+          "surface": "strive",
+          "strong": "H1624",
+          "as": "member"
+        },
+        {
+          "occurrence": 1276881,
+          "reference": "Pro 28:4",
+          "surface": "forsake",
+          "strong": "H5800A",
+          "as": "partner"
+        }
+      ],
+      "older": [],
+      "wordnet_control": "WordNet relates no surface of the subgroup to this collection (a verse-only pairing: no control)"
+    },
+    {
+      "ledger_id": 2274,
+      "item": "pairing",
+      "subject": "gladden",
+      "asks": "Which words of this partner collection stand with the subgroup's surfaces in the verses they share, where does each stand (side and distance, from the stored structure), and which stand out? The WordNet control for this collection is shown. Write one finding for each distinct thing the structure shows; a finding holds the verses it holds in as its nodes.",
+      "none_allowed": true,
+      "verses": [
+        "Ecc 4:16"
+      ],
+      "occurrences": [
+        {
+          "occurrence": 1287996,
+          "reference": "Ecc 4:16",
+          "surface": "striving",
+          "strong": "H7475",
+          "as": "member"
+        },
+        {
+          "occurrence": 1287989,
+          "reference": "Ecc 4:16",
+          "surface": "rejoice",
+          "strong": "H8055",
+          "as": "partner"
+        }
+      ],
+      "older": [],
+      "wordnet_control": "WordNet relates no surface of the subgroup to this collection (a verse-only pairing: no control)"
+    },
+    {
+      "ledger_id": 2275,
+      "item": "pairing",
+      "subject": "godly",
+      "asks": "Which words of this partner collection stand with the subgroup's surfaces in the verses they share, where does each stand (side and distance, from the stored structure), and which stand out? The WordNet control for this collection is shown. Write one finding for each distinct thing the structure shows; a finding holds the verses it holds in as its nodes.",
+      "none_allowed": true,
+      "verses": [
+        "Heb 12:14"
+      ],
+      "occurrences": [
+        {
+          "occurrence": 1505281,
+          "reference": "Heb 12:14",
+          "surface": "strive",
+          "strong": "G1377",
+          "as": "member"
+        },
+        {
+          "occurrence": 1505286,
+          "reference": "Heb 12:14",
+          "surface": "holiness",
+          "strong": "G0038",
+          "as": "partner"
+        }
+      ],
+      "older": [
+        {
+          "observation": 21454,
+          "stage": "engagement",
+          "kind": "face",
+          "nature": null,
+          "text": "Holiness is here the godliness, devoutness, reverence or uprightness of a person as a state of the heart toward God or toward what is right (a devout man who feared God, godliness trained and pursued, uprightness of heart, reverence and awe).",
+          "verses": [
+            "1Thess.3.13",
+            "1Thess.4.4",
+            "1Thess.4.7",
+            "1Tim.2.15",
+            "2Cor.7.1",
+            "2Pet.3.11",
+            "Eph.4.24",
+            "Heb.12.14",
+            "Luke.1.75"
+          ]
+        }
+      ],
+      "wordnet_control": "WordNet relates no surface of the subgroup to this collection (a verse-only pairing: no control)"
+    },
+    {
+      "ledger_id": 2276,
+      "item": "pairing",
+      "subject": "govern",
+      "asks": "Which words of this partner collection stand with the subgroup's surfaces in the verses they share, where does each stand (side and distance, from the stored structure), and which stand out? The WordNet control for this collection is shown. Write one finding for each distinct thing the structure shows; a finding holds the verses it holds in as its nodes.",
+      "none_allowed": true,
+      "verses": [
+        "Ecc 4:16"
+      ],
+      "occurrences": [
+        {
+          "occurrence": 1287996,
+          "reference": "Ecc 4:16",
+          "surface": "striving",
+          "strong": "H7475",
+          "as": "member"
+        },
+        {
+          "occurrence": 1287980,
+          "reference": "Ecc 4:16",
+          "surface": "led",
+          "strong": "H6440G",
+          "as": "partner"
+        },
+        {
+          "occurrence": 1287982,
+          "reference": "Ecc 4:16",
+          "surface": "led",
+          "strong": "H0834A",
+          "as": "partner"
+        },
+        {
+          "occurrence": 1287983,
+          "reference": "Ecc 4:16",
+          "surface": "led",
+          "strong": "H1961",
+          "as": "partner"
+        }
+      ],
+      "older": [],
+      "wordnet_control": "WordNet relates no surface of the subgroup to this collection (a verse-only pairing: no control)"
+    },
+    {
+      "ledger_id": 2277,
+      "item": "pairing",
+      "subject": "heart",
+      "asks": "Which words of this partner collection stand with the subgroup's surfaces in the verses they share, where does each stand (side and distance, from the stored structure), and which stand out? The WordNet control for this collection is shown. Write one finding for each distinct thing the structure shows; a finding holds the verses it holds in as its nodes.",
+      "none_allowed": true,
+      "verses": [
+        "Ecc 1:17",
+        "Ecc 2:22",
+        "1Th 2:17"
+      ],
+      "occurrences": [
+        {
+          "occurrence": 1288171,
+          "reference": "Ecc 1:17",
+          "surface": "striving",
+          "strong": "H7475",
+          "as": "member"
+        },
+        {
+          "occurrence": 1285121,
+          "reference": "Ecc 2:22",
+          "surface": "striving",
+          "strong": "H7475",
+          "as": "member"
+        },
+        {
+          "occurrence": 1497259,
+          "reference": "1Th 2:17",
+          "surface": "endeavored",
+          "strong": "G4704",
+          "as": "member"
+        },
+        {
+          "occurrence": 1288156,
+          "reference": "Ecc 1:17",
+          "surface": "heart",
+          "strong": "H3820A",
+          "as": "partner"
+        },
+        {
+          "occurrence": 1285125,
+          "reference": "Ecc 2:22",
+          "surface": "heart",
+          "strong": "H3820A",
+          "as": "partner"
+        },
+        {
+          "occurrence": 1497258,
+          "reference": "1Th 2:17",
+          "surface": "heart",
+          "strong": "G2588",
+          "as": "partner"
+        }
+      ],
+      "older": [
+        {
+          "observation": 13488,
+          "stage": "prior-capture",
+          "kind": "link",
+          "nature": null,
+          "text": "foes → eye wastes away (Psa 6:7); toil → vexation → heart does not rest at night (Ecc 2:22–23).",
+          "verses": [
+            "Eccl.2.22",
+            "Eccl.2.23"
+          ]
+        },
+        {
+          "observation": 13918,
+          "stage": "prior-capture",
+          "kind": "statement",
+          "nature": null,
+          "text": "Ecc 1:16–17 \"I said in my heart … I applied my heart to know\". Genuine. The bearer's own (E v2 §1.3; B v3 §1.2, §1.11; C v3 §10). New here is only the link: the heart that seeks knowledge comes before the vexation that knowledge brings.",
+          "verses": [
+            "Eccl.1.16",
+            "Eccl.1.17"
+          ]
+        },
+        {
+          "observation": 14224,
+          "stage": "prior-capture",
+          "kind": "statement",
+          "nature": null,
+          "text": "Part 2 verses: what they add. Three new strands: (a) The eye wasting, as in Job 17:7; \"My eye wastes away because of grief; it grows weak because of all my foes\" (Psa 6:7), after \"every night I flood my bed with tears\" (6:6); \"My eye is wasted from grief; my soul and my body also. For my life is spent with sorrow\" (Psa 31:9–10); The eye is where ka'as shows in the body, in all three texts (Job 17:7; Psa 6:7; 31:9); What turns Psa 6 round is being heard: \"the Lord has heard the sound of my weeping. The Lord has heard my plea\" (6:8–9). In Psa 10:14, \"you do see, for you note mischief and vexation, that you may take it into your hands; to you the helpless commits himself\". The vexation is seen by God, and the helpless hands it over; (b) Provocation from those closest; \"A foolish son is a grief to his father and bitterness to her who bore him\" (Pro 17:25); The reverse direction: \"Fathers, do not provoke your children to anger\" (Eph 6:4), and \"do not provoke your children, lest they become discouraged\" (Col 3:21); Vexation passes both ways between parent and child. Col 3:21 names its outcome as losing heart. Hannah's rival (1Sa 1:6) was a co-wife. These are the family members; (c) Qoheleth's vexation: the vexation of the thinker and the worker; Knowing brings it: \"in much wisdom is much vexation, and he who increases knowledge increases sorrow\" (Ecc 1:18). This comes after \"I applied my heart to know wisdom … this also is but a striving after wind\" (1:17); Work brings it, and it keeps the heart awake: \"his work is a vexation. Even in the night his heart does not rest\" (2:23); \"all his days he eats in darkness in much vexation and sickness and anger\" (5:17); Its answer is enjoyment received as God's gift: \"There is nothing better … than that he should eat and drink and find enjoyment in his toil. This also, I saw, is from the hand of God\" (2:24), and \"this is the gift of God\" (5:19); It is to be removed: \"Remove vexation from your heart, and put away pain from your body\" (11:10), after \"Rejoice, O young man … let your heart cheer you\" (11:9); It is sometimes better than laughter: \"Sorrow [ka'as] is better than laughter, for by sadness of face the heart is made glad\" (7:3). The one place where ka'as is valued. The face is sad and the heart made good. Face and heart go in opposite directions.",
+          "verses": [
+            "Job.17.2",
+            "Job.17.7",
+            "Ps.6.7",
+            "Ps.6.6",
+            "Ps.31.9",
+            "Ps.31.10",
+            "Ps.6.8",
+            "Ps.6.9",
+            "Ps.10.14",
+            "Prov.17.25",
+            "Eph.6.4",
+            "Col.3.21",
+            "1Sam.1.6",
+            "Eccl.1.18",
+            "Eccl.1.17",
+            "Eccl.2.23",
+            "Eccl.5.17",
+            "Eccl.2.24",
+            "Eccl.5.19",
+            "Eccl.11.10",
+            "Eccl.11.9",
+            "Eccl.7.3"
+          ]
+        },
+        {
+          "observation": 14470,
+          "stage": "prior-capture",
+          "kind": "statement",
+          "nature": null,
+          "text": "VX §8 (Psa 10:14; 31:9; Ecc 1:18; 2:23; 7:3; 11:10; Col 3:21; Eph 6:4): Context seats: sense · batch · use: Psa 10:13 \"say in his heart\": offender's · C v3 §9.4 · used. Psa 31:7 \"distress of my soul\": bearer's own · E v2 §10.1 · used. Ecc 1:16–17 heart · E v2 §1.3, B v3 §1.2 · used. Ecc 2:22 heart · new · used. Ecc 2:24 \"find\" [make his soul see good] · new · used (enjoyment as answer). Ecc 5:16 \"wind\" · spurious. Ecc 7:2, 7:4 heart · A v3 §3.3 · used. Ecc 11:9 heart · F v4 §7, H v1 §4.1 · used. Eph 6:5–6, Col 3:22–23 \"heart … heartily\" (bondservants) · E v2 §6, H v1 §3.1 · not used (next household rule).",
+          "verses": [
+            "Ps.31.9",
+            "Eccl.2.23",
+            "Eccl.7.3",
+            "Eccl.11.10",
+            "Ps.10.13",
+            "Ps.31.7",
+            "Eccl.1.16",
+            "Eccl.1.17",
+            "Eccl.2.22",
+            "Eccl.2.24",
+            "Eccl.5.16",
+            "Eccl.7.2",
+            "Eccl.7.4",
+            "Eccl.11.9",
+            "Eph.6.5",
+            "Eph.6.6",
+            "Col.3.22",
+            "Col.3.23"
+          ]
+        },
+        {
+          "observation": 14962,
+          "stage": "prior-capture",
+          "kind": "statement",
+          "nature": null,
+          "text": "(v3) 1Th 2:16 (RB): Context seat: 1Th 2:17 \"in person not in heart\"; Whose · check: Paul's · genuine; Already read in: C v3 §1.3, §4; §: §9.",
+          "verses": [
+            "1Thess.2.17"
+          ]
+        },
+        {
+          "observation": 15940,
+          "stage": "prior-capture",
+          "kind": "statement",
+          "nature": null,
+          "text": "1.2 Attention — setting the heart (see §0.1): \"Consider your ways\" = set your heart on your ways.; \"set your heart to understand\" (Dan 10:12); \"apply my heart to know wisdom\" (Ecc 1:17; 7:25; 8:16); \"Take to heart all the words\" (Deu 32:46); The failure case: \"it burned him up, but he did not take it to heart\" (Isa 42:25).",
+          "verses": [
+            "Dan.10.12",
+            "Eccl.1.17",
+            "Eccl.7.25",
+            "Eccl.8.16",
+            "Deut.32.46",
+            "Isa.42.25"
+          ]
+        },
+        {
+          "observation": 17279,
+          "stage": "prior-capture",
+          "kind": "statement",
+          "nature": null,
+          "text": "3.8 The inner seat shared or joined between persons ◆ fringe cluster: *Soul to soul:*; \"the soul of Jonathan was knit to the soul of David, and Jonathan loved him as his own soul\" (1Sa 18:1, 3; 20:17); \"your friend who is as your own soul\" (Deu 13:6, with \"the wife you embrace\"); \"his life is bound up in the boy's life\" (Gen 44:30); *Heart to heart:* \"my heart will be joined to you\" (1Ch 12:17); \"Is your heart true to my heart as mine is to yours?\" (2Ki 10:15); \"you are in our hearts, to die together and to live together\" (2Co 7:3); \"I hold you in my heart\" (Phili 1:7); \"in person not in heart\" (1Th 2:17).; *Shared across a group:* \"one heart and soul\" (Act 4:32); \"one spirit, with one mind\" (Phili 1:27); \"Did we not act in the same spirit?\" (2Co 12:18).; *Transferred between persons:* \"a double portion of your spirit\" (2Ki 2:9, 15); \"take some of the Spirit that is on you and put it on them\" (Num 11:17, 25); \"in the spirit and power of Elijah, to turn the hearts of the fathers to the children\" (Luk 1:17; Mal 4:6).; *Captured or stolen by others:* \"Absalom stole the hearts of the men of Israel\" (2Sa 15:6); \"his wives turned away his heart\" (1Ki 11:3); \"he swayed the heart of all the men of Judah as one man\" (2Sa 19:14).; *Known from shared experience:* \"You know the heart [nephesh] of a sojourner, for you were sojourners\" (Exo 23:9).; *With a spouse:* \"guard yourselves in your spirit, and let none of you be faithless to the wife of your youth\" (Mal 2:15–16); \"one flesh\" (Gen 2:24).; [Claude reading] The inner seat is not depicted as sealed inside the individual. It can be knit to, joined with, held within, carried in, stolen by, or shared with another person. It can also be passed from one person to another (spirit).",
+          "verses": [
+            "1Sam.18.1",
+            "1Sam.18.3",
+            "1Sam.20.17",
+            "Deut.13.6",
+            "1Chr.12.17",
+            "2Kgs.10.15",
+            "2Cor.7.3",
+            "Phil.1.7",
+            "1Thess.2.17",
+            "Acts.4.32",
+            "Phil.1.27",
+            "2Cor.12.18",
+            "2Kgs.2.9",
+            "2Kgs.2.15",
+            "Num.11.17",
+            "Num.11.25",
+            "Luke.1.17",
+            "Mal.4.6",
+            "2Sam.15.6",
+            "1Kgs.11.3",
+            "2Sam.19.14",
+            "Exod.23.9",
+            "Mal.2.15",
+            "Mal.2.16",
+            "Gen.2.24"
+          ]
+        }
+      ],
+      "older_answered_under_another_row": [
+        {
+          "observation": 17173,
+          "answered_under": 2272
+        }
+      ],
+      "wordnet_control": "WordNet relates no surface of the subgroup to this collection (a verse-only pairing: no control)"
+    },
+    {
+      "ledger_id": 2278,
+      "item": "pairing",
+      "subject": "honor",
+      "asks": "Which words of this partner collection stand with the subgroup's surfaces in the verses they share, where does each stand (side and distance, from the stored structure), and which stand out? The WordNet control for this collection is shown. Write one finding for each distinct thing the structure shows; a finding holds the verses it holds in as its nodes.",
+      "none_allowed": true,
+      "verses": [
+        "Isa 41:11"
+      ],
+      "occurrences": [
+        {
+          "occurrence": 1292401,
+          "reference": "Isa 41:11",
+          "surface": "strive",
+          "strong": "H7379",
+          "as": "member"
+        },
+        {
+          "occurrence": 1292398,
+          "reference": "Isa 41:11",
+          "surface": "put to shame",
+          "strong": "H0954",
+          "as": "partner"
+        }
+      ],
+      "older": [],
+      "wordnet_control": "WordNet relates no surface of the subgroup to this collection (a verse-only pairing: no control)"
+    },
+    {
+      "ledger_id": 2279,
+      "item": "pairing",
+      "subject": "hope",
+      "asks": "Which words of this partner collection stand with the subgroup's surfaces in the verses they share, where does each stand (side and distance, from the stored structure), and which stand out? The WordNet control for this collection is shown. Write one finding for each distinct thing the structure shows; a finding holds the verses it holds in as its nodes.",
+      "none_allowed": true,
+      "verses": [
+        "1Ti 4:10"
+      ],
+      "occurrences": [
+        {
+          "occurrence": 1499524,
+          "reference": "1Ti 4:10",
+          "surface": "strive",
+          "strong": "G0075",
+          "as": "member"
+        },
+        {
+          "occurrence": 1499526,
+          "reference": "1Ti 4:10",
+          "surface": "hope",
+          "strong": "G1679",
+          "as": "partner"
+        }
+      ],
+      "older": [],
+      "wordnet_control": "WordNet relates no surface of the subgroup to this collection (a verse-only pairing: no control)"
+    },
+    {
+      "ledger_id": 2280,
+      "item": "pairing",
+      "subject": "jealous",
+      "asks": "Which words of this partner collection stand with the subgroup's surfaces in the verses they share, where does each stand (side and distance, from the stored structure), and which stand out? The WordNet control for this collection is shown. Write one finding for each distinct thing the structure shows; a finding holds the verses it holds in as its nodes.",
+      "none_allowed": true,
+      "verses": [
+        "Ecc 4:4"
+      ],
+      "occurrences": [
+        {
+          "occurrence": 1285196,
+          "reference": "Ecc 4:4",
+          "surface": "striving",
+          "strong": "H7469",
+          "as": "member"
+        },
+        {
+          "occurrence": 1285187,
+          "reference": "Ecc 4:4",
+          "surface": "envy",
+          "strong": "H7068",
+          "as": "partner"
+        },
+        {
+          "occurrence": 1285188,
+          "reference": "Ecc 4:4",
+          "surface": "envy",
+          "strong": "H3588A",
+          "as": "partner"
+        },
+        {
+          "occurrence": 1285189,
+          "reference": "Ecc 4:4",
+          "surface": "envy",
+          "strong": "H1931",
+          "as": "partner"
+        }
+      ],
+      "older": [],
+      "wordnet_control": "WordNet relates no surface of the subgroup to this collection (a verse-only pairing: no control)"
+    },
+    {
+      "ledger_id": 2281,
+      "item": "pairing",
+      "subject": "know",
+      "asks": "Which words of this partner collection stand with the subgroup's surfaces in the verses they share, where does each stand (side and distance, from the stored structure), and which stand out? The WordNet control for this collection is shown. Write one finding for each distinct thing the structure shows; a finding holds the verses it holds in as its nodes.",
+      "none_allowed": true,
+      "verses": [
+        "Ecc 1:17",
+        "Ecc 2:26"
+      ],
+      "occurrences": [
+        {
+          "occurrence": 1288171,
+          "reference": "Ecc 1:17",
+          "surface": "striving",
+          "strong": "H7475",
+          "as": "member"
+        },
+        {
+          "occurrence": 1287677,
+          "reference": "Ecc 2:26",
+          "surface": "striving",
+          "strong": "H7469",
+          "as": "member"
+        },
+        {
+          "occurrence": 1288158,
+          "reference": "Ecc 1:17",
+          "surface": "know",
+          "strong": "H3045",
+          "as": "partner"
+        },
+        {
+          "occurrence": 1288162,
+          "reference": "Ecc 1:17",
+          "surface": "know",
+          "strong": "H3045",
+          "as": "partner"
+        },
+        {
+          "occurrence": 1288166,
+          "reference": "Ecc 1:17",
+          "surface": "perceived",
+          "strong": "H3045",
+          "as": "partner"
+        },
+        {
+          "occurrence": 1287652,
+          "reference": "Ecc 2:26",
+          "surface": "knowledge",
+          "strong": "H1847",
+          "as": "partner"
+        }
+      ],
+      "older": [],
+      "older_answered_under_another_row": [
+        {
+          "observation": 13918,
+          "answered_under": 2277
+        },
+        {
+          "observation": 14224,
+          "answered_under": 2277
+        },
+        {
+          "observation": 15940,
+          "answered_under": 2277
+        },
+        {
+          "observation": 17173,
+          "answered_under": 2272
+        }
+      ],
+      "wordnet_control": "WordNet relates no surface of the subgroup to this collection (a verse-only pairing: no control)"
+    }
+  ],
+  "answer": {
+    "command": "ReadStructure",
+    "collection": "strive",
+    "subgroup": "exertion toward an end",
+    "rows": [
+      {
+        "ledger_id": 2272,
+        "item": "pairing",
+        "subject": "folly",
+        "disposition": "observed",
+        "reason": "",
+        "findings": [
+          {
+            "kind": "pairing",
+            "obs_text": "In Ecc 1:17 'madness' (H1947) and 'folly' (H5531A) are objects of 'to know', set beside wisdom; the applying of the heart to know them is what the verse calls a striving after wind.",
+            "basis": "stated",
+            "grounds": "to know madness and folly",
+            "occurrences": [
+              1288171,
+              1288163,
+              1288165
+            ]
+          }
+        ],
+        "older": [
+          {
+            "observation": 17173,
+            "action": "defer",
+            "collection": "folly",
+            "nature": "inner_being",
+            "finding": "Its reading that madness is located in the heart and that the heart can investigate madness rests on five verses it quotes at length (B:131); the folly collection is to split it into findings tied to their verses or remove it.",
+            "reason": "Its finding is about madness, a word of the folly collection."
+          },
+          {
+            "observation": 21424,
+            "action": "defer",
+            "collection": "folly",
+            "nature": "evidence",
+            "finding": "It is a gloss of the word madness from the engagement; the folly collection's reading of the word is to adopt, restate or remove it.",
+            "reason": "It sits on a word of the folly collection and states that word's meaning."
+          }
+        ]
+      },
+      {
+        "ledger_id": 2273,
+        "item": "pairing",
+        "subject": "forsake",
+        "disposition": "observed",
+        "reason": "",
+        "findings": [
+          {
+            "kind": "pairing",
+            "obs_text": "In Pro 28:4 'forsake' (H5800A, a participle) names those who leave the law and praise the wicked, set opposite those who keep it and strive.",
+            "basis": "stated",
+            "grounds": "Those who forsake the law",
+            "occurrences": [
+              1276887,
+              1276881
+            ]
+          }
+        ],
+        "older": []
+      },
+      {
+        "ledger_id": 2274,
+        "item": "pairing",
+        "subject": "gladden",
+        "disposition": "observed",
+        "reason": "",
+        "findings": [
+          {
+            "kind": "pairing",
+            "obs_text": "In Ecc 4:16 'rejoice' (H8055) is negated: the generations after the king take no joy in him, and the verse then calls it a striving after wind.",
+            "basis": "stated",
+            "grounds": "will not rejoice in him",
+            "occurrences": [
+              1287996,
+              1287989
+            ]
+          }
+        ],
+        "older": []
+      },
+      {
+        "ledger_id": 2275,
+        "item": "pairing",
+        "subject": "godly",
+        "disposition": "observed",
+        "reason": "",
+        "findings": [
+          {
+            "kind": "pairing",
+            "obs_text": "In Heb 12:14 'holiness' (hagiasmos, G0038) is the second object of 'strive for', after peace, and the clause after it makes it the condition of seeing the Lord.",
+            "basis": "stated",
+            "grounds": "and for the holiness without which",
+            "occurrences": [
+              1505281,
+              1505286
+            ]
+          }
+        ],
+        "older": [
+          {
+            "observation": 21454,
+            "action": "defer",
+            "collection": "godly",
+            "nature": "evidence",
+            "finding": "It is a gloss of the word holiness from the engagement; the godly collection's reading of the word is to adopt, restate or remove it.",
+            "reason": "It sits on a word of the godly collection and states that word's meaning."
+          }
+        ]
+      },
+      {
+        "ledger_id": 2276,
+        "item": "pairing",
+        "subject": "govern",
+        "disposition": "observed",
+        "reason": "",
+        "findings": [
+          {
+            "kind": "pairing",
+            "obs_text": "In Ecc 4:16 'led' (three codes, H6440G, H0834A, H1961: those he was before) names the people the king led without end; their later lack of rejoicing is called a striving after wind.",
+            "basis": "read",
+            "grounds": "all of whom he led",
+            "occurrences": [
+              1287996,
+              1287980,
+              1287982,
+              1287983
+            ]
+          }
+        ],
+        "older": []
+      },
+      {
+        "ledger_id": 2277,
+        "item": "pairing",
+        "subject": "heart",
+        "disposition": "observed",
+        "reason": "",
+        "findings": [
+          {
+            "kind": "pairing",
+            "obs_text": "In Ecc 1:17 'heart' (lev, H3820A) is the object of 'applied': the speaker applied his heart to know, and that knowing is then called a striving after wind.",
+            "basis": "stated",
+            "grounds": "I applied my heart to know wisdom",
+            "occurrences": [
+              1288171,
+              1288156
+            ]
+          },
+          {
+            "kind": "pairing",
+            "obs_text": "In Ecc 2:22 'heart' (lev, H3820A) stands in construct after striving, so the striving is of the heart, joined to the toil.",
+            "basis": "stated",
+            "grounds": "striving of heart",
+            "occurrences": [
+              1285121,
+              1285125
+            ]
+          },
+          {
+            "kind": "pairing",
+            "obs_text": "In 1Th 2:17 'heart' (kardia, G2588) stands in the contrast 'in person, not in heart', which comes just before endeavored.",
+            "basis": "stated",
+            "grounds": "in person not in heart",
+            "occurrences": [
+              1497259,
+              1497258
+            ]
+          }
+        ],
+        "older": [
+          {
+            "observation": 13488,
+            "action": "delete_neither",
+            "reason": "It is two arrow fragments linking words in Psa 6:7 and Ecc 2:22-23, with no statement of a finding; it is neither evidence nor inner being."
+          },
+          {
+            "observation": 13918,
+            "action": "defer",
+            "collection": "heart",
+            "nature": "inner_being",
+            "finding": "Its one finding is the link that the heart that seeks knowledge comes before the vexation knowledge brings (Ecc 1:17-18); the rest is a check note. The heart collection is to restate that finding tied to its verses or remove it.",
+            "reason": "Its finding is about the heart, a word of the heart collection."
+          },
+          {
+            "observation": 14224,
+            "action": "defer",
+            "collection": "heart",
+            "nature": "inner_being",
+            "finding": "It is a long section note on vexation quoting many verses (B:131), among them Ecc 1:17-18 and 2:22-23 with the heart; the heart collection is to split it into findings tied to their verses or remove it.",
+            "reason": "It sits on the heart words of these verses, which the heart collection reads."
+          },
+          {
+            "observation": 14470,
+            "action": "delete_neither",
+            "reason": "It is a working table of an earlier check, listing verses with their batch and section codes and whether each was used; it has no finding and is neither evidence nor inner being."
+          },
+          {
+            "observation": 14962,
+            "action": "delete_neither",
+            "reason": "It is a working note of an earlier check on whose heart 1Th 2:17 names, with section codes; it has no finding and is neither evidence nor inner being."
+          },
+          {
+            "observation": 15940,
+            "action": "delete_neither",
+            "reason": "It is a numbered heading followed by quotations from several verses on setting the heart, with no finding of its own; it is neither evidence nor inner being."
+          },
+          {
+            "observation": 17279,
+            "action": "defer",
+            "collection": "heart",
+            "nature": "inner_being",
+            "finding": "Its reading that the inner seat can be joined, held, stolen, shared or passed between persons rests on many verses it quotes at length (B:131); the heart collection is to split it into findings tied to their verses or remove it.",
+            "reason": "Its finding is about the heart and spirit, read by the heart collection."
+          }
+        ]
+      },
+      {
+        "ledger_id": 2278,
+        "item": "pairing",
+        "subject": "honor",
+        "disposition": "observed",
+        "reason": "",
+        "findings": [
+          {
+            "kind": "pairing",
+            "obs_text": "In Isa 41:11 'put to shame' (H0954) is the outcome for the incensed, in the clause parallel to the one where those who strive against Israel come to nothing.",
+            "basis": "stated",
+            "grounds": "shall be put to shame",
+            "occurrences": [
+              1292401,
+              1292398
+            ]
+          }
+        ],
+        "older": []
+      },
+      {
+        "ledger_id": 2279,
+        "item": "pairing",
+        "subject": "hope",
+        "disposition": "observed",
+        "reason": "",
+        "findings": [
+          {
+            "kind": "pairing",
+            "obs_text": "In 1Ti 4:10 'hope' (G1679, a perfect: hope set and standing) gives the ground of the toil and striving, in the clause after 'because'.",
+            "basis": "stated",
+            "grounds": "because we have our hope set on the living God",
+            "occurrences": [
+              1499524,
+              1499526
+            ]
+          }
+        ],
+        "older": []
+      },
+      {
+        "ledger_id": 2280,
+        "item": "pairing",
+        "subject": "jealous",
+        "disposition": "observed",
+        "reason": "",
+        "findings": [
+          {
+            "kind": "pairing",
+            "obs_text": "In Ecc 4:4 'envy' (qinah, H7068, with H3588A and H1931 at the same place) of a man toward his neighbor is named as the source of all toil and skill in work, which the verse then calls a striving after wind.",
+            "basis": "stated",
+            "grounds": "envy of his neighbor",
+            "occurrences": [
+              1285196,
+              1285187,
+              1285188,
+              1285189
+            ]
+          }
+        ],
+        "older": []
+      },
+      {
+        "ledger_id": 2281,
+        "item": "pairing",
+        "subject": "know",
+        "disposition": "observed",
+        "reason": "",
+        "findings": [
+          {
+            "kind": "pairing",
+            "obs_text": "In Ecc 1:17 'know' (yada, H3045) is used three times: twice for setting the heart to know wisdom, madness and folly, and once for perceiving that this too is a striving after wind.",
+            "basis": "stated",
+            "grounds": "I perceived that this also is",
+            "occurrences": [
+              1288171,
+              1288158,
+              1288162,
+              1288166
+            ]
+          },
+          {
+            "kind": "pairing",
+            "obs_text": "In Ecc 2:26 'knowledge' (H1847) is one of the gifts God gives to the one who pleases him, set against the sinner's business that is called a striving after wind.",
+            "basis": "stated",
+            "grounds": "God has given wisdom and knowledge and joy",
+            "occurrences": [
+              1287677,
+              1287652
+            ]
+          }
+        ],
+        "older": []
+      }
+    ]
+  },
+  "measured": {
+    "package_chars": 56181,
+    "seconds": 0.02
+  }
+}

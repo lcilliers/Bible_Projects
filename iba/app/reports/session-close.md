@@ -1,10 +1,10 @@
 # Session close (#1875, rebuilt #2173)
 
-> Generated 2026-11-26T15:30:11Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
+> Generated 2026-11-26T16:00:59Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
 
 - session: `44fa45e5-b886-40b6-9928-2c435d1a9f56` (CLAUDE_CODE_SESSION_ID); started 2026-11-26T12:27:55Z; window base commit `5cb37da44c4c1ee838443bfa6179cf1782d3d014`
 - compliance file: `Logs/compliance/COMPLIANCE-20261126-44fa45e5.md`; session log: `Logs/SESSION-LOG-20261126-2637-refusal-keys-check-answer-view-form.md`
-- **open findings: 0**; cleared by disposition: 3
+- **open findings: 0**; cleared by disposition: 4
 
 
 ## Contents
@@ -49,7 +49,7 @@ _no finding_
 <a id="sc4-open-items-in-the-register"></a>
 ## SC4 Open items in the register
 
-_no finding_
+- cleared `SC4b:d1dc9104`: researcher message 2026-11-26T15:53 holds, defers or asks to check something; name its register item: "follow up the new fixes in 2637" -- disposition: in register #2637
 
 <a id="sc5-analysis-integrity"></a>
 ## SC5 Analysis integrity

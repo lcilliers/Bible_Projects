@@ -1,0 +1,507 @@
+{
+ "collection": "strive",
+ "pulled": "2026-11-26T15:37:43Z",
+ "asks": "Place each surface, whole, in the subgroup of its meaning. The file gives, for each surface, its base and what the WordNet tables say of it (its network group and its pairs with the other surfaces of the collection) and a seed grouping; no verse is read at this step. Start from the seed (surfaces of one word family stay together unless their forms differ in meaning) and amend it by meaning. A surface that WordNet does not hold (a phrase, or a surface with no pair) is a subgroup on its own and still goes through the subgroup analysis. Name each subgroup for the kind of meaning its surfaces share and define it in a sentence. Membership of the collection is settled: set a surface aside only where it is plainly not a member in meaning, with the reason, and the change procedure moves it out. A surface is never split by Strong's code. Mark a placement that is open as uncertain and say what is unsettled. Nothing here judges what a word does for the inner being: a concept (a behaviour) comes into play only in stage 4.",
+ "groups": [
+  {
+   "name": "exertion toward an end",
+   "definition": "Words for putting effort into reaching or doing something: to strive and to endeavor, in all their forms, which WordNet pairs as synonyms in one network."
+  },
+  {
+   "name": "going after",
+   "definition": "Words for going after someone or something, following hard upon it to reach or take it: to pursue, in its two forms."
+  },
+  {
+   "name": "contention",
+   "definition": "A word for a state of conflict between parties, a quarrel or contest held between them: strife, the noun."
+  },
+  {
+   "name": "joint striving",
+   "definition": "A phrase for effort or contest carried on together with others, the striving shared by more than one party: strive together."
+  }
+ ],
+ "rows": [
+  {
+   "surface": "endeavor",
+   "base": "endeavor",
+   "link": "synonym",
+   "wordnet": {
+    "in_wordnet": true,
+    "network_kind": "main",
+    "network_group": 1,
+    "pairs_in_collection": 6,
+    "neighbours": [
+     {
+      "surface": "endeavored",
+      "type": "same_base",
+      "weight": 2
+     },
+     {
+      "surface": "strive",
+      "type": "synonym",
+      "weight": 1
+     },
+     {
+      "surface": "striven",
+      "type": "synonym",
+      "weight": 1
+     },
+     {
+      "surface": "strives",
+      "type": "synonym",
+      "weight": 1
+     },
+     {
+      "surface": "striving",
+      "type": "synonym",
+      "weight": 1
+     },
+     {
+      "surface": "strove",
+      "type": "synonym",
+      "weight": 1
+     }
+    ]
+   },
+   "seed_group": "endeavor; endeavored",
+   "current": {
+    "state": "unplaced",
+    "group": null
+   },
+   "fill": {
+    "group": "exertion toward an end",
+    "reason": "WordNet pairs endeavor as a synonym of strive and all its forms in one main network; both name the same kind of meaning, effort spent to reach something, so the two families form one subgroup (GP-04: a split needs a difference in kind, and none is shown).",
+    "certainty": "decided",
+    "uncertain": ""
+   }
+  },
+  {
+   "surface": "endeavored",
+   "base": "endeavor",
+   "link": "synonym",
+   "wordnet": {
+    "in_wordnet": true,
+    "network_kind": "main",
+    "network_group": 1,
+    "pairs_in_collection": 6,
+    "neighbours": [
+     {
+      "surface": "endeavor",
+      "type": "same_base",
+      "weight": 2
+     },
+     {
+      "surface": "strive",
+      "type": "synonym",
+      "weight": 1
+     },
+     {
+      "surface": "striven",
+      "type": "synonym",
+      "weight": 1
+     },
+     {
+      "surface": "strives",
+      "type": "synonym",
+      "weight": 1
+     },
+     {
+      "surface": "striving",
+      "type": "synonym",
+      "weight": 1
+     },
+     {
+      "surface": "strove",
+      "type": "synonym",
+      "weight": 1
+     }
+    ]
+   },
+   "seed_group": "endeavor; endeavored",
+   "current": {
+    "state": "unplaced",
+    "group": null
+   },
+   "fill": {
+    "group": "exertion toward an end",
+    "reason": "WordNet pairs endeavor as a synonym of strive and all its forms in one main network; both name the same kind of meaning, effort spent to reach something, so the two families form one subgroup (GP-04: a split needs a difference in kind, and none is shown).",
+    "certainty": "decided",
+    "uncertain": ""
+   }
+  },
+  {
+   "surface": "pursue",
+   "base": "pursue",
+   "link": "synonym",
+   "wordnet": {
+    "in_wordnet": true,
+    "network_kind": "main",
+    "network_group": 1,
+    "pairs_in_collection": 1,
+    "neighbours": [
+     {
+      "surface": "pursued",
+      "type": "same_base",
+      "weight": 4
+     }
+    ]
+   },
+   "seed_group": "pursue; pursued",
+   "current": {
+    "state": "unplaced",
+    "group": null
+   },
+   "fill": {
+    "group": "going after",
+    "reason": "Pursue and pursued are one word family; WordNet places them in the main network but pairs them with no other surface of the collection. Their kind of meaning differs from strive: going after a person or thing to reach or take it, a movement toward a target, not the spending of effort as such; so a subgroup of their own (GP-04 difference in kind stated).",
+    "certainty": "decided",
+    "uncertain": ""
+   }
+  },
+  {
+   "surface": "pursued",
+   "base": "pursue",
+   "link": "synonym",
+   "wordnet": {
+    "in_wordnet": true,
+    "network_kind": "main",
+    "network_group": 1,
+    "pairs_in_collection": 1,
+    "neighbours": [
+     {
+      "surface": "pursue",
+      "type": "same_base",
+      "weight": 4
+     }
+    ]
+   },
+   "seed_group": "pursue; pursued",
+   "current": {
+    "state": "unplaced",
+    "group": null
+   },
+   "fill": {
+    "group": "going after",
+    "reason": "Pursue and pursued are one word family; WordNet places them in the main network but pairs them with no other surface of the collection. Their kind of meaning differs from strive: going after a person or thing to reach or take it, a movement toward a target, not the spending of effort as such; so a subgroup of their own (GP-04 difference in kind stated).",
+    "certainty": "decided",
+    "uncertain": ""
+   }
+  },
+  {
+   "surface": "strife",
+   "base": "strive",
+   "link": "synonym",
+   "wordnet": {
+    "in_wordnet": true,
+    "network_kind": "small",
+    "network_group": 17,
+    "pairs_in_collection": 0,
+    "neighbours": []
+   },
+   "seed_group": "strife",
+   "current": {
+    "state": "unplaced",
+    "group": null
+   },
+   "fill": {
+    "group": "contention",
+    "reason": "Strife has the base strive but differs in form and kind: a noun for a state of conflict held between parties, not an effort toward an end. WordNet keeps it in a small network of its own with no pair in the collection. So a subgroup of its own (GP-04 difference in kind stated).",
+    "certainty": "decided",
+    "uncertain": ""
+   }
+  },
+  {
+   "surface": "strive",
+   "base": "strive",
+   "link": "core",
+   "wordnet": {
+    "in_wordnet": true,
+    "network_kind": "main",
+    "network_group": 1,
+    "pairs_in_collection": 6,
+    "neighbours": [
+     {
+      "surface": "striving",
+      "type": "same_base",
+      "weight": 3
+     },
+     {
+      "surface": "striven",
+      "type": "same_base",
+      "weight": 2
+     },
+     {
+      "surface": "strives",
+      "type": "same_base",
+      "weight": 2
+     },
+     {
+      "surface": "strove",
+      "type": "same_base",
+      "weight": 2
+     },
+     {
+      "surface": "endeavor",
+      "type": "synonym",
+      "weight": 1
+     },
+     {
+      "surface": "endeavored",
+      "type": "synonym",
+      "weight": 1
+     }
+    ]
+   },
+   "seed_group": "strive; striven; strives; striving; strove",
+   "current": {
+    "state": "unplaced",
+    "group": null
+   },
+   "fill": {
+    "group": "exertion toward an end",
+    "reason": "The word family of strive stays together (same base, WordNet same_base pairs); WordNet pairs every form with endeavor as a synonym, so the family sits with endeavor in the subgroup of effort spent to reach something.",
+    "certainty": "decided",
+    "uncertain": ""
+   }
+  },
+  {
+   "surface": "strive together",
+   "base": "strive together",
+   "link": "phrase",
+   "wordnet": {
+    "in_wordnet": false,
+    "network_kind": null,
+    "network_group": null,
+    "pairs_in_collection": 0,
+    "neighbours": []
+   },
+   "seed_group": "strive together",
+   "current": {
+    "state": "unplaced",
+    "group": null
+   },
+   "fill": {
+    "group": "joint striving",
+    "reason": "A phrase WordNet does not hold, so a subgroup of its own (GP-01). It is one concept, striving shared with others, and is placed whole.",
+    "certainty": "decided",
+    "uncertain": ""
+   }
+  },
+  {
+   "surface": "striven",
+   "base": "strive",
+   "link": "synonym",
+   "wordnet": {
+    "in_wordnet": true,
+    "network_kind": "main",
+    "network_group": 1,
+    "pairs_in_collection": 6,
+    "neighbours": [
+     {
+      "surface": "striving",
+      "type": "same_base",
+      "weight": 3
+     },
+     {
+      "surface": "strive",
+      "type": "same_base",
+      "weight": 2
+     },
+     {
+      "surface": "strives",
+      "type": "same_base",
+      "weight": 2
+     },
+     {
+      "surface": "strove",
+      "type": "same_base",
+      "weight": 2
+     },
+     {
+      "surface": "endeavor",
+      "type": "synonym",
+      "weight": 1
+     },
+     {
+      "surface": "endeavored",
+      "type": "synonym",
+      "weight": 1
+     }
+    ]
+   },
+   "seed_group": "strive; striven; strives; striving; strove",
+   "current": {
+    "state": "unplaced",
+    "group": null
+   },
+   "fill": {
+    "group": "exertion toward an end",
+    "reason": "The word family of strive stays together (same base, WordNet same_base pairs); WordNet pairs every form with endeavor as a synonym, so the family sits with endeavor in the subgroup of effort spent to reach something.",
+    "certainty": "decided",
+    "uncertain": ""
+   }
+  },
+  {
+   "surface": "strives",
+   "base": "strive",
+   "link": "synonym",
+   "wordnet": {
+    "in_wordnet": true,
+    "network_kind": "main",
+    "network_group": 1,
+    "pairs_in_collection": 6,
+    "neighbours": [
+     {
+      "surface": "striving",
+      "type": "same_base",
+      "weight": 3
+     },
+     {
+      "surface": "strive",
+      "type": "same_base",
+      "weight": 2
+     },
+     {
+      "surface": "striven",
+      "type": "same_base",
+      "weight": 2
+     },
+     {
+      "surface": "strove",
+      "type": "same_base",
+      "weight": 2
+     },
+     {
+      "surface": "endeavor",
+      "type": "synonym",
+      "weight": 1
+     },
+     {
+      "surface": "endeavored",
+      "type": "synonym",
+      "weight": 1
+     }
+    ]
+   },
+   "seed_group": "strive; striven; strives; striving; strove",
+   "current": {
+    "state": "unplaced",
+    "group": null
+   },
+   "fill": {
+    "group": "exertion toward an end",
+    "reason": "The word family of strive stays together (same base, WordNet same_base pairs); WordNet pairs every form with endeavor as a synonym, so the family sits with endeavor in the subgroup of effort spent to reach something.",
+    "certainty": "decided",
+    "uncertain": ""
+   }
+  },
+  {
+   "surface": "striving",
+   "base": "strive",
+   "link": "synonym",
+   "wordnet": {
+    "in_wordnet": true,
+    "network_kind": "main",
+    "network_group": 1,
+    "pairs_in_collection": 6,
+    "neighbours": [
+     {
+      "surface": "strive",
+      "type": "same_base",
+      "weight": 3
+     },
+     {
+      "surface": "striven",
+      "type": "same_base",
+      "weight": 3
+     },
+     {
+      "surface": "strives",
+      "type": "same_base",
+      "weight": 3
+     },
+     {
+      "surface": "strove",
+      "type": "same_base",
+      "weight": 3
+     },
+     {
+      "surface": "endeavor",
+      "type": "synonym",
+      "weight": 1
+     },
+     {
+      "surface": "endeavored",
+      "type": "synonym",
+      "weight": 1
+     }
+    ]
+   },
+   "seed_group": "strive; striven; strives; striving; strove",
+   "current": {
+    "state": "unplaced",
+    "group": null
+   },
+   "fill": {
+    "group": "exertion toward an end",
+    "reason": "The word family of strive stays together (same base, WordNet same_base pairs); WordNet pairs every form with endeavor as a synonym, so the family sits with endeavor in the subgroup of effort spent to reach something.",
+    "certainty": "decided",
+    "uncertain": ""
+   }
+  },
+  {
+   "surface": "strove",
+   "base": "strive",
+   "link": "synonym",
+   "wordnet": {
+    "in_wordnet": true,
+    "network_kind": "main",
+    "network_group": 1,
+    "pairs_in_collection": 6,
+    "neighbours": [
+     {
+      "surface": "striving",
+      "type": "same_base",
+      "weight": 3
+     },
+     {
+      "surface": "strive",
+      "type": "same_base",
+      "weight": 2
+     },
+     {
+      "surface": "striven",
+      "type": "same_base",
+      "weight": 2
+     },
+     {
+      "surface": "strives",
+      "type": "same_base",
+      "weight": 2
+     },
+     {
+      "surface": "endeavor",
+      "type": "synonym",
+      "weight": 1
+     },
+     {
+      "surface": "endeavored",
+      "type": "synonym",
+      "weight": 1
+     }
+    ]
+   },
+   "seed_group": "strive; striven; strives; striving; strove",
+   "current": {
+    "state": "unplaced",
+    "group": null
+   },
+   "fill": {
+    "group": "exertion toward an end",
+    "reason": "The word family of strive stays together (same base, WordNet same_base pairs); WordNet pairs every form with endeavor as a synonym, so the family sits with endeavor in the subgroup of effort spent to reach something.",
+    "certainty": "decided",
+    "uncertain": ""
+   }
+  }
+ ]
+}

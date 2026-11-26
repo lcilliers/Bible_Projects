@@ -866,12 +866,16 @@ def _text_rules(cfg, conn, s, idef, text: str, basis, grounds, nodes, where: str
         gw = _words(g)
         if len(g) < minr:
             errors.append(f"{where}: a read observation names its grounds in the words of the verse (grounds, {minr} characters or more)")
-        elif idef.get("grounds_in") == "lexicon":
-            blob = " ".join(" ".join(str(v) for v in _lexicon(conn, c, 4000).values() if v) for c in {x[0]["strong"] for x in nodes if x[0].get("strong")})
-            if gw not in _words(blob):
-                errors.append(f"{where}: the grounds {g!r} are not words of the lexicon entries of the codes the observation is about (the dictionary meaning is the ground of this item)")
-        elif nodes and not any(gw in _words(x[0].get("text") or "") for x in nodes):
-            errors.append(f"{where}: the grounds {g!r} are not words of the verses the observation is tied to")
+        else:      # grounds are runs of words copied exactly, several runs separated by ";" or "..." (LR-02; #2637 v20 K5): each run is checked
+            runs = [_words(x) for x in re.split(r";|\.\.\.|\u2026", g) if _words(x).strip()] or [gw]
+            if idef.get("grounds_in") == "lexicon":
+                blob = _words(" ".join(" ".join(str(v) for v in _lexicon(conn, c, 4000).values() if v) for c in {x[0]["strong"] for x in nodes if x[0].get("strong")}))
+                if not all(r_ in blob for r_ in runs):
+                    errors.append(f"{where}: the grounds {g!r} are not words of the lexicon entries of the codes the observation is about (the dictionary meaning is the ground of this item; each run copied exactly)")
+            elif nodes:
+                texts = [_words(x[0].get("text") or "") for x in nodes]
+                if not all(any(r_ in t for t in texts) for r_ in runs):
+                    errors.append(f"{where}: the grounds {g!r} are not words of the verses the observation is tied to (each run copied exactly from one verse; separate runs with ;)")
 
 
 _TYPO = str.maketrans({"’": "'", "‘": "'", "ʼ": "'", "“": " ", "”": " ", '"': " "})

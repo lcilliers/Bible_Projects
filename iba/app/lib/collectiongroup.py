@@ -140,10 +140,14 @@ def _pull(conn, s, cid, cname, rows, out_dir):
                     "seed_group": seed[tid], "current": {"state": state, "group": groups.get(gid)},
                     "fill": {"group": groups.get(gid) or seed[tid], "reason": "", "certainty": "decided | uncertain", "uncertain": ""}})
     names = sorted(groups.values()) or sorted(set(seed.values()))
-    data = {"collection": cname, "pulled": _now(), "asks": s["asks"], "groups": [{"name": n, "definition": ""} for n in names], "rows": out}
+    from . import readcommands as rc      # the grouping under the read contract (#2637 v20 K3): its instruction, rules, refusals and readable view
+    from .cfg import Cfg
+    rt = rc.settings(Cfg.on(conn))["grouping"]
+    data = {"command": "GroupPull", "collection": cname, "step": "grouping", "pulled": _now(), "instruction": rc.instruction(conn, rt), "asks": s["asks"],
+            "groups": [{"name": n, "definition": ""} for n in names], "rows": out}
     out_dir.mkdir(parents=True, exist_ok=True)
     path = out_dir / f"group-{cname}-{_now()[:10].replace('-', '')}.json"
-    path.write_text(json.dumps(data, ensure_ascii=False, indent=1), encoding="utf-8")
+    rc._write(conn, path, data)
     return path, len(out)
 
 
