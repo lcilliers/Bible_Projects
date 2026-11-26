@@ -1,10 +1,10 @@
 # Session close (#1875, rebuilt #2173)
 
-> Generated 2026-11-26T12:25:52Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
+> Generated 2026-11-26T14:49:21Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
 
-- session: `1dc61df3-3564-4325-94ae-0a36c7540ce9` (CLAUDE_CODE_SESSION_ID); started 2026-11-26T11:17:49Z; window base commit `f52dac6ca083a24cfd216cf65d5ee7623f9893ce`
-- compliance file: `Logs/compliance/COMPLIANCE-20261126-1dc61df3.md`; session log: `Logs/SESSION-LOG-20261126-developer-mode-2637-done-test-and-failure-log.md`
-- **open findings: 0**; cleared by disposition: 0
+- session: `44fa45e5-b886-40b6-9928-2c435d1a9f56` (CLAUDE_CODE_SESSION_ID); started 2026-11-26T12:27:55Z; window base commit `5cb37da44c4c1ee838443bfa6179cf1782d3d014`
+- compliance file: `Logs/compliance/COMPLIANCE-20261126-44fa45e5.md`; session log: `Logs/SESSION-LOG-20261126-2637-refusal-keys-check-answer-view-form.md`
+- **open findings: 0**; cleared by disposition: 3
 
 
 ## Contents
@@ -42,7 +42,9 @@ _no finding_
 <a id="sc3-researchers-words-recorded"></a>
 ## SC3 Researcher's words recorded
 
-_no finding_
+- cleared `SC3:9e495b4f`: researcher message 2026-11-26T14:16 is too short to be matched; name where it is recorded: "proceed with 2637" -- disposition: recorded in #2637 v15
+- cleared `SC3:7fea37fa`: researcher message 2026-11-26T14:32 is too short to be matched; name where it is recorded: "Continue with X3" -- disposition: recorded in #2637 v15
+- cleared `SC3:f631c012`: researcher message 2026-11-26T14:48 is too short to be matched; name where it is recorded: "Yes, close here" -- disposition: recorded in #2637 v15
 
 <a id="sc4-open-items-in-the-register"></a>
 ## SC4 Open items in the register

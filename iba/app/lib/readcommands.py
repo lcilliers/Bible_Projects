@@ -28,6 +28,7 @@ import re
 import time
 
 from . import layerreading as lr
+from . import refusalrules
 from . import scanguard as sg
 
 
@@ -57,6 +58,92 @@ def _slug(s: str) -> str:
     return re.sub(r"[^a-z0-9]+", "-", str(s).lower()).strip("-")
 
 
+# CheckAnswer (#2637 X3): the Record function of each read, by the `command` its answer names
+CHECKS = {"ReadWords": "record_words", "ReadSenses": "record_senses", "ReadEnrichment": "record_enrichment", "ReadStructure": "record_structure",
+          "ReadSweep": "record_sweep", "ReadEvidence": "record_evidence", "ReadElements": "record_elements", "ReadBehaviours": "record_behaviours"}
+
+_HEADS = ("the file is refused, nothing written; problems:", "the answer is refused whole, nothing written:")
+
+
+def _lines(text) -> list[str]:
+    """The problem lines of a refusal, its heading taken off."""
+    out = []
+    for ln in str(text).split("\n"):
+        ln = ln.strip()
+        for h in _HEADS:
+            if ln.startswith(h):
+                ln = ln[len(h):].strip()
+        if ln:
+            out.append(ln)
+    return out
+
+
+def _faults(errors: list, collect: bool, write):
+    """The checks of a Record command around its write (#2637 X3). Without collect: the answer's own problems refuse it before the recorder runs,
+    and a refusal of the recorder is passed on as it is. With collect (CheckAnswer): the recorder runs anyway on what the answer's own checks let
+    through, and every problem of both is listed in one refusal. `write` is None where nothing is left to write."""
+    if errors and not collect:
+        raise ReadError("the answer is refused whole, nothing written:\n  " + "\n  ".join(errors))
+    r, more = None, []
+    if write is not None:
+        try:
+            r = write()
+        except (lr.LayerError, ReadError) as exc:
+            if not collect:
+                raise ReadError(str(exc))
+            more = _lines(exc)
+    if errors or more:
+        raise ReadError("the answer is refused whole, nothing written:\n  " + "\n  ".join(errors + more))
+    return r
+
+
+def _cell(v) -> str:
+    return v if isinstance(v, str) else json.dumps(v, ensure_ascii=False)
+
+
+def view(conn, pkg: dict) -> list[str]:
+    """#2637 X1: the readable view of a package, the same content as its JSON: the instruction, what is refused by rule, the text of each rule,
+    then the data one item to a line, and the answer form. Split into parts of at most cfg_setting layer.read_types limits.view_max_chars."""
+    lim = settings_of(conn)["limits"]["view_max_chars"]
+    ins = pkg.get("instruction") or {}
+    head = f"# {pkg.get('command')} -- {pkg.get('collection')}" + (f" / {pkg['subgroup']}" if pkg.get("subgroup") else "") + f" -- step {pkg.get('step')}\n\n"
+    lines = [head, "## What to do\n\n", ins.get("what", "") + "\n\n", "Read:\n"] + [f"- {x}\n" for x in ins.get("read", [])]
+    lines += ["\nWrite:\n"] + [f"- {x}\n" for x in ins.get("write", [])]
+    lines += ["\n## Refused when (by rule)\n\n"] + [f"- {k}: {'; '.join(v)}\n" for k, v in (ins.get("refused_when") or {}).items()]
+    lines += ["\n## The rules\n\n"] + [f"- {r['rule']}: {r['text']}\n" for r in ins.get("keep", [])]
+    for k, v in pkg.items():
+        if k in ("instruction", "answer", "command", "collection", "subgroup", "step"):
+            continue
+        lines.append(f"\n## {k}\n\n")
+        if isinstance(v, list):
+            for it in v:
+                lines.append("- " + ("; ".join(f"{x}: {_cell(y)}" for x, y in it.items()) if isinstance(it, dict) else _cell(it)) + "\n")
+        elif isinstance(v, dict):
+            lines += [f"- {x}: {_cell(y)}\n" for x, y in v.items()]
+        else:
+            lines.append(_cell(v) + "\n")
+    lines += ["\n## The answer form (fill it in the JSON file, `answer`)\n\n```json\n", json.dumps(pkg.get("answer"), ensure_ascii=False, indent=1), "\n```\n"]
+    parts, cur = [], ""
+    for ln in lines:
+        if cur and len(cur) + len(ln) > lim:
+            parts.append(cur)
+            cur = head + f"(continued, part {len(parts) + 1})\n\n"
+        cur += ln
+    return parts + [cur]
+
+
+def settings_of(conn) -> dict:
+    return json.loads(conn.execute("SELECT value FROM cfg_setting WHERE key='layer.read_types'").fetchone()[0])
+
+
+def _write(conn, path: pathlib.Path, pkg: dict) -> None:
+    """The package (JSON, what the record reads) and its readable view beside it: <name>.md, or <name>-part-<n>.md where it is split."""
+    path.write_text(json.dumps(pkg, ensure_ascii=False, indent=1), encoding="utf-8")
+    parts = view(conn, pkg)
+    for i, text in enumerate(parts, 1):
+        (path.with_suffix(".md") if len(parts) == 1 else path.with_name(f"{path.stem}-part-{i}.md")).write_text(text, encoding="utf-8")
+
+
 def instruction(conn, rt: dict) -> dict:
     """The instruction of one read: its own steps from config, and the text of each rule it keeps, read now from cfg_method_rule, or from cfg_behaviour_rule for a
     rule named B:<id> (a behaviour rule a read depends on, such as B:72, the meaning of the routes of a party finding; #2576). A rule that is missing or inactive refuses."""
@@ -72,7 +159,12 @@ def instruction(conn, rt: dict) -> dict:
             keep.append({"rule": r[0], "text": r[1]})
     if missing:
         raise ReadError(f"the read names rule(s) not active in cfg_method_rule: {', '.join(missing)} (cfg_setting layer.read_types)")
-    return {"what": rt["what"], "read": rt["read"], "write": rt["write"], "keep": keep, "not_in_this_read": rt.get("not_in_this_read", "")}
+    # #2637 X4: what the record and the gates of this read refuse, by rule (cfg_setting layer.refusals); each rule's text is in `keep`
+    types = json.loads(conn.execute("SELECT value FROM cfg_setting WHERE key='layer.read_types'").fetchone()[0])
+    read = next((k for k, v in types.items() if isinstance(v, dict) and v.get("command") and v.get("command") == rt.get("command")), None)
+    refusals = refusalrules.for_read(refusalrules.load(conn), read) if read else {}
+    return {"what": rt["what"], "read": rt["read"], "write": rt["write"], "keep": keep, "refused_when": refusals,
+            "not_in_this_read": rt.get("not_in_this_read", "")}
 
 
 def _subgroup(conn, name: str, subgroup: str) -> tuple[int, int, str]:
@@ -181,12 +273,13 @@ def read_words(conn, cfg, run_id: str, name: str, subgroup: str, out_dir: pathli
     pkg["measured"] = {"package_chars": chars, "seconds": secs}
     out_dir.mkdir(parents=True, exist_ok=True)
     path = out_dir / f"readwords-{_slug(L['name'])}-{_slug(gname)}-{datetime.datetime.now().strftime('%Y%m%dt%H%M%S')}.json"
-    path.write_text(json.dumps(pkg, ensure_ascii=False, indent=1), encoding="utf-8")
+    _write(conn, path, pkg)
     return {"path": path, "words": len(words), "left": left, "chars": chars, "seconds": secs, "opened": opened}
 
 
-def record_words(conn, cfg, run_id: str, data: dict, keep: bool) -> dict:
+def record_words(conn, cfg, run_id: str, data: dict, keep: bool, collect: bool = False) -> dict:
     """Check a filled ReadWords answer whole and write it through the recorder; then validate the subgroup's rows and name the next command. keep=False previews (nothing kept)."""
+    keep = keep and not collect      # CheckAnswer (#2637 X3): every check, nothing kept
     rt = settings(cfg)["words"]
     s = lr.settings(cfg)
     step, item = rt["step"], rt["item"]
@@ -205,12 +298,7 @@ def record_words(conn, cfg, run_id: str, data: dict, keep: bool) -> dict:
         rows.append({"ledger_id": lid, "fill": {"disposition": "observed", "senses": row.get("readings") or [], "member_role": idef["member_role"], "older": row.get("older") or []}})
     if not rows and not errors:
         errors.append("the answer holds no row")
-    if errors:
-        raise ReadError("the answer is refused whole, nothing written:\n  " + "\n  ".join(errors))
-    try:
-        r = lr.record(conn, cfg, run_id, {"collection": name, "step": step, "subgroup": gname, "rows": rows}, keep)
-    except lr.LayerError as exc:
-        raise ReadError(str(exc))
+    r = _faults(errors, collect, (lambda: lr.record(conn, cfg, run_id, {"collection": name, "step": step, "subgroup": gname, "rows": rows}, keep, collect=collect)) if rows else None)
     out = {"observed": r["observed"], "nodes": r["nodes"], "rows": len(rows)}
     if not keep:
         return {**out, "preview": True}
@@ -343,13 +431,14 @@ def read_senses(conn, cfg, run_id: str, name: str, subgroup: str, out_dir: pathl
         raise ReadError(f"the senses package of {gname!r} is {chars} characters, more than {rt['package_max_chars']} (cfg_setting layer.read_types senses.package_max_chars); nothing is written")
     out_dir.mkdir(parents=True, exist_ok=True)
     path = out_dir / f"readsenses-{_slug(L['name'])}-{_slug(gname)}-{datetime.datetime.now().strftime('%Y%m%dt%H%M%S')}.json"
-    path.write_text(json.dumps(pkg, ensure_ascii=False, indent=1), encoding="utf-8")
+    _write(conn, path, pkg)
     return {"path": path, "readings": len(d["readings"]), "occurrences": len(d["occ"]), "older": len(older), "chars": chars, "seconds": secs, "opened": opened}
 
 
-def record_senses(conn, cfg, run_id: str, data: dict, keep: bool) -> dict:
+def record_senses(conn, cfg, run_id: str, data: dict, keep: bool, collect: bool = False) -> dict:
     """Check a filled ReadSenses answer whole: each sense's `carries` (B1 observations of the subgroup) become the occurrences they hold, joined with any `occurrences` named; every B1
     observation is carried or has its occurrences named. Then write through the recorder (exactly once, coverage, text rules, traces to B1, RW-13), validate, name the next command."""
+    keep = keep and not collect      # CheckAnswer (#2637 X3): every check, nothing kept
     rt = settings(cfg)["senses"]
     s = lr.settings(cfg)
     step, item = rt["step"], rt["item"]
@@ -382,13 +471,8 @@ def record_senses(conn, cfg, run_id: str, data: dict, keep: bool) -> dict:
             errors.append(f"B1 observation {b} is carried by no sense and none of its occurrences is named (every B1 observation of the subgroup is carried)")
     if not senses:
         errors.append("the answer holds no sense")
-    if errors:
-        raise ReadError("the answer is refused whole, nothing written:\n  " + "\n  ".join(errors))
-    rows = [{"ledger_id": lid, "fill": {"disposition": "observed", "senses": senses, "member_role": idef["member_role"], "older": data.get("older") or []}}]
-    try:
-        r = lr.record(conn, cfg, run_id, {"collection": name, "step": step, "subgroup": gname, "rows": rows}, keep)
-    except lr.LayerError as exc:
-        raise ReadError(str(exc))
+    rows = [{"ledger_id": lid, "fill": {"disposition": "observed", "senses": senses, "member_role": idef["member_role"], "older": data.get("older") or []}}] if senses else []
+    r = _faults(errors, collect, (lambda: lr.record(conn, cfg, run_id, {"collection": name, "step": step, "subgroup": gname, "rows": rows}, keep, collect=collect)) if rows else None)
     out = {"observed": r["observed"], "nodes": r["nodes"], "senses": len(senses)}
     if not keep:
         return {**out, "preview": True}
@@ -448,13 +532,14 @@ def read_enrichment(conn, cfg, run_id: str, name: str, subgroup: str, out_dir: p
         raise ReadError(f"the enrichment package of {gname!r} is {chars} characters, more than {rt['package_max_chars']} (cfg_setting layer.read_types enrichment.package_max_chars); nothing is written")
     out_dir.mkdir(parents=True, exist_ok=True)
     path = out_dir / f"readenrichment-{_slug(L['name'])}-{_slug(gname)}-{datetime.datetime.now().strftime('%Y%m%dt%H%M%S')}.json"
-    path.write_text(json.dumps(pkg, ensure_ascii=False, indent=1), encoding="utf-8")
+    _write(conn, path, pkg)
     return {"path": path, "senses": len(senses), "codes": len(d["codes"]), "older": len(older), "chars": chars, "seconds": secs, "opened": opened}
 
 
-def record_enrichment(conn, cfg, run_id: str, data: dict, keep: bool) -> dict:
+def record_enrichment(conn, cfg, run_id: str, data: dict, keep: bool, collect: bool = False) -> dict:
     """Check a filled ReadEnrichment answer whole: one enrichment for each 1.1 sense of the subgroup, named by `sense`; each takes the sense's occurrences. An occurrence held by no sense
     is named in an enrichment's `occurrences`. Then write through the recorder (exactly once, coverage, lexicon grounds, traces to the sense, RW-13), validate, name the next command."""
+    keep = keep and not collect      # CheckAnswer (#2637 X3): every check, nothing kept
     rt = settings(cfg)["enrichment"]
     s = lr.settings(cfg)
     step, item = rt["step"], rt["item"]
@@ -484,13 +569,8 @@ def record_enrichment(conn, cfg, run_id: str, data: dict, keep: bool) -> dict:
         errors.append(f"sense {sid} has no enrichment (one enrichment for each 1.1 sense of the subgroup)")
     if not built and not errors:
         errors.append("the answer holds no enrichment")
-    if errors:
-        raise ReadError("the answer is refused whole, nothing written:\n  " + "\n  ".join(errors))
-    rows = [{"ledger_id": lid, "fill": {"disposition": "observed", "senses": built, "member_role": idef["member_role"], "older": data.get("older") or []}}]
-    try:
-        r = lr.record(conn, cfg, run_id, {"collection": name, "step": step, "subgroup": gname, "rows": rows}, keep)
-    except lr.LayerError as exc:
-        raise ReadError(str(exc))
+    rows = [{"ledger_id": lid, "fill": {"disposition": "observed", "senses": built, "member_role": idef["member_role"], "older": data.get("older") or []}}] if built else []
+    r = _faults(errors, collect, (lambda: lr.record(conn, cfg, run_id, {"collection": name, "step": step, "subgroup": gname, "rows": rows}, keep, collect=collect)) if rows else None)
     out = {"observed": r["observed"], "nodes": r["nodes"], "enrichments": len(built)}
     if not keep:
         return {**out, "preview": True}
@@ -633,13 +713,14 @@ def read_structure(conn, cfg, run_id: str, name: str, subgroup: str, out_dir: pa
     pkg["measured"] = {"package_chars": chars, "seconds": secs}
     out_dir.mkdir(parents=True, exist_ok=True)
     path = out_dir / f"readstructure-{_slug(L['name'])}-{_slug(gname)}-{_slug(first)}-{datetime.datetime.now().strftime('%Y%m%dt%H%M%S')}.json"
-    path.write_text(json.dumps(pkg, ensure_ascii=False, indent=1), encoding="utf-8")
+    _write(conn, path, pkg)
     return {"path": path, "item": first, "rows": len(out_rows), "left": left, "verses": len(verses), "chars": chars, "seconds": secs, "opened": opened}
 
 
-def record_structure(conn, cfg, run_id: str, data: dict, keep: bool) -> dict:
+def record_structure(conn, cfg, run_id: str, data: dict, keep: bool, collect: bool = False) -> dict:
     """Check a filled ReadStructure answer whole and write it through the recorder (each finding's occurrences, exactly the row's demanded occurrences where the item asks for all of them,
     the text rules, traces to the 1.1 senses, a none with its reason where the item allows it, RW-13); validate the subgroup's rows and name the next command. keep=False previews."""
+    keep = keep and not collect      # CheckAnswer (#2637 X3): every check, nothing kept
     rt = settings(cfg)["structure"]
     s = lr.settings(cfg)
     step = rt["step"]
@@ -665,12 +746,7 @@ def record_structure(conn, cfg, run_id: str, data: dict, keep: bool) -> dict:
         rows.append({"ledger_id": lid, "fill": fill})
     if not rows and not errors:
         errors.append("the answer holds no row")
-    if errors:
-        raise ReadError("the answer is refused whole, nothing written:\n  " + "\n  ".join(errors))
-    try:
-        r = lr.record(conn, cfg, run_id, {"collection": name, "step": step, "subgroup": gname, "rows": rows}, keep)
-    except lr.LayerError as exc:
-        raise ReadError(str(exc))
+    r = _faults(errors, collect, (lambda: lr.record(conn, cfg, run_id, {"collection": name, "step": step, "subgroup": gname, "rows": rows}, keep, collect=collect)) if rows else None)
     out = {"observed": r["observed"], "nodes": r["nodes"], "rows": len(rows)}
     if not keep:
         return {**out, "preview": True}
@@ -772,13 +848,14 @@ def read_sweep(conn, cfg, run_id: str, name: str, subgroup: str, out_dir: pathli
         raise ReadError(f"ReadSweep for {gname!r} took {secs} s, more than {lim['read_max_seconds']} s; nothing is written")
     out_dir.mkdir(parents=True, exist_ok=True)
     path = out_dir / f"readsweep-{_slug(L['name'])}-{_slug(gname)}-{datetime.datetime.now().strftime('%Y%m%dt%H%M%S')}.json"
-    path.write_text(json.dumps(pkg, ensure_ascii=False, indent=1), encoding="utf-8")
+    _write(conn, path, pkg)
     return {"path": path, "older": len(olds), "chars": chars, "seconds": secs}
 
 
-def record_sweep(conn, cfg, run_id: str, data: dict, keep: bool) -> dict:
+def record_sweep(conn, cfg, run_id: str, data: dict, keep: bool, collect: bool = False) -> dict:
     """Check a filled ReadSweep answer whole and write it in one transaction: each older observation of the package answered once, keep (marked evidence or inner_being), delete_neither
     (comment first, its nodes here go; an observation held elsewhere loses only these) or defer (marked, deferred to a named collection). Then the sweep row is answered and validated."""
+    keep = keep and not collect      # CheckAnswer (#2637 X3): every check, nothing kept
     st = settings(cfg)["sweep"]
     s = lr.settings(cfg)
     if data.get("command") != "ReadSweep":
@@ -807,14 +884,28 @@ def record_sweep(conn, cfg, run_id: str, data: dict, keep: bool) -> dict:
     missing = sorted(set(cands) - seen)
     if missing:
         errors.append(f"{len(missing)} unmarked older observation(s) have no answer (for example {missing[:5]}): the sweep answers every one")
-    if errors:
+    if errors and not collect:
         raise ReadError("the answer is refused whole, nothing written:\n  " + "\n  ".join(errors))
+    bad = {int(e.split(" ", 2)[1].rstrip(":")) for e in errors if e.startswith("older ") and e.split(" ", 2)[1].rstrip(":").isdigit()}
     conn.execute("SAVEPOINT read_sweep")
     try:
-        for a in answers:
+        for i, a in enumerate(answers, 1):
+            if i in bad or a.get("observation") not in cands:
+                continue
             if isinstance(a.get("uncarried"), dict):      # a JSON answer names occurrences as strings; the consumption compares occurrence ids
                 a = {**a, "uncarried": {int(k): v for k, v in a["uncarried"].items()}}
-            lr.bv._answer(cfg, conn, a["observation"], a, [], run_id, s, home=home, step="sweep")
+            if collect:
+                conn.execute("SAVEPOINT sweep_answer")
+                try:
+                    lr.bv._answer(cfg, conn, a["observation"], a, [], run_id, s, home=home, step="sweep")
+                except (lr.bv.va.Refused, lr.bv.orec.Refused) as exc:
+                    conn.execute("ROLLBACK TO sweep_answer")
+                    conn.execute("RELEASE sweep_answer")
+                    errors.append(f"older {i} (observation {a['observation']}): {exc}")
+                    continue
+                conn.execute("RELEASE sweep_answer")
+            else:
+                lr.bv._answer(cfg, conn, a["observation"], a, [], run_id, s, home=home, step="sweep")
             for (lid_,) in conn.execute("SELECT id FROM collection_layer_item WHERE collection_id=? AND subgroup_id=? AND item=? AND subject=? AND state='open' AND deleted=0",
                                         (cid, gid, lr.bv.OLD_ITEM, str(a["observation"]))).fetchall():
                 conn.execute(f"UPDATE collection_layer_item SET state='observed', answered_at={lr.NOW}, reason=?, updated_at={lr.NOW}, run_id=? WHERE id=?",
@@ -822,12 +913,14 @@ def record_sweep(conn, cfg, run_id: str, data: dict, keep: bool) -> dict:
         conn.execute(f"UPDATE collection_layer_item SET state='observed', answered_at={lr.NOW}, reason=?, updated_at={lr.NOW}, run_id=? WHERE id=?",
                      (f"swept: {len(answers)} older observation(s) answered by content", run_id, row[0]))
         left = sweep_candidates(conn, cfg, s, L, cid, gid)
-        if left:
+        if left and not errors:
             raise ReadError(f"after the answers {len(left)} older observation(s) are still unmarked (for example {sorted(left)[:5]}); nothing written")
+        if errors:
+            raise ReadError("the answer is refused whole, nothing written:\n  " + "\n  ".join(errors))
     except (lr.bv.va.Refused, lr.bv.orec.Refused) as exc:
         conn.execute("ROLLBACK TO read_sweep")
         conn.execute("RELEASE read_sweep")
-        raise ReadError(f"the answer is refused whole, nothing written: {exc}")
+        raise ReadError(f"the answer is refused whole, nothing written:\n  {exc}")
     except Exception:
         conn.execute("ROLLBACK TO read_sweep")
         conn.execute("RELEASE read_sweep")
@@ -1015,15 +1108,16 @@ def read_evidence(conn, cfg, run_id: str, name: str, subgroup: str, out_dir: pat
         raise ReadError(f"ReadEvidence for {gname!r} took {secs} s, more than {lim['read_max_seconds']} s; nothing is written")
     out_dir.mkdir(parents=True, exist_ok=True)
     path = out_dir / f"readevidence-{_slug(L['name'])}-{_slug(gname)}-{datetime.datetime.now().strftime('%Y%m%dt%H%M%S')}.json"
-    path.write_text(json.dumps(pkg, ensure_ascii=False, indent=1), encoding="utf-8")
+    _write(conn, path, pkg)
     return {"path": path, "observations": len(batch), "left": len(unread) - len(batch), "passes": chk["passes"], "chars": chars, "seconds": secs}
 
 
-def record_evidence(conn, cfg, run_id: str, data: dict, keep: bool) -> dict:
+def record_evidence(conn, cfg, run_id: str, data: dict, keep: bool, collect: bool = False) -> dict:
     """Check a filled ReadEvidence answer whole and write it in one transaction: each observation of the answer is an evidence observation of the subgroup, answered once, `true` (with
     `why`: what in the verses and the data bears it out) or `repair` (with `why` and the `actions` of the validation that repair it, cfg_setting validate.reading actions). The repairs are
     written through collectionvalidate.record; each observation answered is logged as read (evidence_read). When every evidence observation is read and the code checks pass, the
     evidence-validation row is answered and validated."""
+    keep = keep and not collect      # CheckAnswer (#2637 X3): every check, nothing kept
     from . import collectionvalidate as cv
     from . import observationrecord as orec
     if data.get("command") != "ReadEvidence":
@@ -1057,13 +1151,20 @@ def record_evidence(conn, cfg, run_id: str, data: dict, keep: bool) -> dict:
         actions += a.get("actions") or []
     if not items:
         errors.append("the answer holds no observation")
-    if errors:
+    if errors and not collect:
         raise ReadError("the answer is refused whole, nothing written:\n  " + "\n  ".join(errors))
     conn.execute("SAVEPOINT read_evidence")
     try:
         repaired = {}
         if actions:
-            repaired = cv.record(conn, cfg, run_id, {"collection": name, "actions": actions}, keep=True)
+            try:
+                repaired = cv.record(conn, cfg, run_id, {"collection": name, "actions": actions}, keep=True, collect=collect)
+            except cv.ValidateError as exc:
+                if not collect:
+                    raise
+                errors += _lines(exc)
+        if errors:
+            raise ReadError("the answer is refused whole, nothing written:\n  " + "\n  ".join(errors))
         for a in items:
             orec.log(conn, a["observation"], None, "evidence_read", None, a["verdict"], a["why"], None, run_id, lr.bv.WHO)
         chk = evidence_check(conn, cfg, L, cid, gid)
@@ -1075,7 +1176,7 @@ def record_evidence(conn, cfg, run_id: str, data: dict, keep: bool) -> dict:
     except (cv.ValidateError, orec.Refused) as exc:
         conn.execute("ROLLBACK TO read_evidence")
         conn.execute("RELEASE read_evidence")
-        raise ReadError(f"the answer is refused whole, nothing written: {exc}")
+        raise ReadError(f"the answer is refused whole, nothing written:\n  {exc}")
     except Exception:
         conn.execute("ROLLBACK TO read_evidence")
         conn.execute("RELEASE read_evidence")
@@ -1185,6 +1286,10 @@ def read_elements(conn, cfg, run_id: str, name: str, subgroup: str, out_dir: pat
     uses = [{"item": k, "name": by_item[k]["name"], "kinds": by_item[k]["kinds"], "bases": by_item[k]["bases"]} for k in idef["uses"] if k in by_item]
     conn.execute(f"UPDATE collection_layer_item SET pulled_at={lr.NOW}, updated_at={lr.NOW} WHERE id=?", (row[0],))
     occ = [{"occurrence": o["vl_id"], "reference": o["reference"], "osis": o["osis"], "surface": o["surface"], "strong": o["strong"]} for o in dem]
+    allowed = li._allowed(dem)      # #2637 X2 (G1): the occurrences of this row each observation covers, so a finding names what it rests on and a role
+    cmap = li._cover_map(conn, [x["observation"] for x in take + besides])
+    for x in take + besides:
+        x["covers"] = sorted(cmap.get(x["observation"], set()) & allowed)
     pkg = {"command": "ReadElements", "collection": L["name"], "subgroup": gname, "step": "3.1",
            "made": datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
            "unit": {"ledger_id": row[0], "to_take_up": len(take), "may_rest_on_besides": len(besides), "older_inner_being": len(older), "earlier_readings": len(earlier),
@@ -1194,7 +1299,8 @@ def read_elements(conn, cfg, run_id: str, name: str, subgroup: str, out_dir: pat
            "to_take_up": take, "may_rest_on_besides": besides, "older_inner_being": older, "earlier_readings": earlier, "occurrences": occ, "verses": verses,
            "answer": {"command": "ReadElements", "collection": L["name"], "subgroup": gname, "ledger_id": row[0],
                       "findings": [{"key": "f1", "kind": "", "text": "", "basis": "read | stated", "parts": {"item": " | ".join(idef["uses"]), "grounds": ""},
-                                    "nodes": [{"occurrence": "<occurrence id>", "role": "<a node role>"}, {"traced": "<id of an observation it rests on>"}], "read_back": []}],
+                                    "rests_on": ["<ids of the observations it rests on>"], "role": "<the node role of the words they cover>", "roles": {},
+                                    "read_back": []}],
                       "not_used": {}, "older": [{"observation": o["observation"], "action": " | ".join(lr.bv.ACTIONS), "reason": ""} for o in older if not o["answered_before"]],
                       "existing": [{"observation": o["observation"], "action": "accept | modify | delete | merge | leave", "reason": ""} for o in earlier]}}
     if row[6] == "observed":
@@ -1208,14 +1314,15 @@ def read_elements(conn, cfg, run_id: str, name: str, subgroup: str, out_dir: pat
         raise ReadError(f"the elements package of {gname!r} is {chars} characters, more than {rt['package_max_chars']} (cfg_setting layer.read_types elements.package_max_chars); nothing is written")
     out_dir.mkdir(parents=True, exist_ok=True)
     path = out_dir / f"readelements-{_slug(L['name'])}-{_slug(gname)}-{datetime.datetime.now().strftime('%Y%m%dt%H%M%S')}.json"
-    path.write_text(json.dumps(pkg, ensure_ascii=False, indent=1), encoding="utf-8")
+    _write(conn, path, pkg)
     return {"path": path, "to_take_up": len(take), "older": len(older), "earlier": len(earlier), "verses": len(verses), "chars": chars, "seconds": secs, "opened": opened}
 
 
-def record_elements(conn, cfg, run_id: str, data: dict, keep: bool) -> dict:
+def record_elements(conn, cfg, run_id: str, data: dict, keep: bool, collect: bool = False) -> dict:
     """Check a filled ReadElements answer whole and write it through the recorder of stage 4 (layerinner.record: the finding rules, the traces to the evidence, the occurrences within
     what the finding rests on or read back, every observation taken up rested on or declared not used, the older inner-being observations answered, the written row checked as
     LayerCheck checks it); validate the row; name the next command. keep=False previews."""
+    keep = keep and not collect      # CheckAnswer (#2637 X3): every check, nothing kept
     from . import layerinner as li
     if data.get("command") != "ReadElements":
         raise ReadError("this is not a ReadElements answer (its `command` must be ReadElements; fill the `answer` part of the package)")
@@ -1229,14 +1336,12 @@ def record_elements(conn, cfg, run_id: str, data: dict, keep: bool) -> dict:
     dem = li.demanded(L, ELEMENTS_ITEM, gid, "", conn)
     earlier = {o["observation"] for o in _earlier_readings(conn, cfg, cid, gid, li._allowed(dem), sorted(set(s["stages"].values())))}
     named = {e.get("observation") for e in data.get("existing") or [] if isinstance(e, dict)}
+    errors = []
     if earlier - named:
-        raise ReadError("the answer is refused whole, nothing written:\n  " + f"{len(earlier - named)} earlier reading(s) of the subgroup's scope have no answer in `existing` "
-                        f"(for example {sorted(earlier - named)[:6]}): answer each with accept, modify, delete, merge or leave, with its reason")
+        errors.append(f"{len(earlier - named)} earlier reading(s) of the subgroup's scope have no answer in `existing` "
+                      f"(for example {sorted(earlier - named)[:6]}): answer each with accept, modify, delete, merge or leave, with its reason")
     fill = {"disposition": "observed", "findings": data.get("findings") or [], "not_used": data.get("not_used") or {}, "older": data.get("older") or [], "existing": data.get("existing") or []}
-    try:
-        r = li.record(conn, cfg, run_id, {"collection": name, "step": "3.1", "subgroup": gname, "rows": [{"ledger_id": row[0], "fill": fill}]}, keep)
-    except lr.LayerError as exc:
-        raise ReadError(str(exc))
+    r = _faults(errors, collect, lambda: li.record(conn, cfg, run_id, {"collection": name, "step": "3.1", "subgroup": gname, "rows": [{"ledger_id": row[0], "fill": fill}]}, keep, collect=collect))
     out = {"observed": r["observed"], "nodes": r["nodes"]}
     if not keep:
         return {**out, "preview": True}
@@ -1349,7 +1454,7 @@ def read_behaviours(conn, cfg, run_id: str, name: str, out_dir: pathlib.Path) ->
            "to_take_up": take, "older_unsettled": older,
            "answer": {"command": "ReadBehaviours", "collection": cname, "ledger_id": row[0], "disposition": "observed | none", "reason": "",
                       "findings": [{"key": "b1", "kind": "", "text": "", "basis": "read | stated", "parts": {"item": "flag", "flag_type": "discovery", "grounds": ""},
-                                    "nodes": [{"traced": "<id of an observation this behaviour gathers>"}, {"occurrence": "<occurrence id of a traced observation>", "role": "<a node role>"}],
+                                    "rests_on": ["<ids of the observations this behaviour gathers>"], "role": "<the node role of the words they cover>", "roles": {},
                                     "read_back": []}],
                       "not_gathered": {}, "older": [{"observation": o["observation"], "action": " | ".join(lr.bv.ACTIONS), "reason": ""} for o in older], "existing": []}}
     if "(no subgroup on its nodes)" in by_sub:
@@ -1366,17 +1471,18 @@ def read_behaviours(conn, cfg, run_id: str, name: str, out_dir: pathlib.Path) ->
         raise ReadError(f"the behaviours package of {cname!r} is {chars} characters, more than {rt['package_max_chars']} (cfg_setting layer.read_types behaviours.package_max_chars); nothing is written")
     out_dir.mkdir(parents=True, exist_ok=True)
     path = out_dir / f"readbehaviours-{_slug(cname)}-{datetime.datetime.now().strftime('%Y%m%dt%H%M%S')}.json"
-    path.write_text(json.dumps(pkg, ensure_ascii=False, indent=1), encoding="utf-8")
+    _write(conn, path, pkg)
     out = {"path": path, "to_take_up": len(take), "subgroups": len(subs), "older": len(older), "chars": chars, "seconds": secs, "opened": opened}
     if swept:
         out["swept"] = f"{swept['rows']} row(s) of deleted subgroups retired, {swept['observations']} observation(s) removed"
     return out
 
 
-def record_behaviours(conn, cfg, run_id: str, data: dict, keep: bool) -> dict:
+def record_behaviours(conn, cfg, run_id: str, data: dict, keep: bool, collect: bool = False) -> dict:
     """Check a filled ReadBehaviours answer whole and write it through the recorder of stage 4 (layerinner.record: at least one behaviour, a flag finding of type discovery; every finding
     rests on inner-being observations of the collection by traced nodes; its occurrences within theirs or read back; every observation taken up gathered or declared not gathered with
     its reason; the older observations answered; the written row checked as LayerCheck checks it); validate the collection's rows; name the next command. keep=False previews."""
+    keep = keep and not collect      # CheckAnswer (#2637 X3): every check, nothing kept
     from . import layerinner as li
     if data.get("command") != "ReadBehaviours":
         raise ReadError("this is not a ReadBehaviours answer (its `command` must be ReadBehaviours; fill the `answer` part of the package)")
@@ -1389,10 +1495,7 @@ def record_behaviours(conn, cfg, run_id: str, data: dict, keep: bool) -> dict:
         raise ReadError("the answer is refused whole, nothing written:\n  `disposition` is observed (with findings) or none (with its reason)")
     fill = {"disposition": disp, "reason": data.get("reason") or "", "findings": data.get("findings") or [], "not_gathered": data.get("not_gathered") or {},
             "older": data.get("older") or [], "existing": data.get("existing") or []}
-    try:
-        r = li.record(conn, cfg, run_id, {"collection": cname, "step": "3.2", "rows": [{"ledger_id": row[0], "fill": fill}]}, keep)
-    except lr.LayerError as exc:
-        raise ReadError(str(exc))
+    r = _faults([], collect, lambda: li.record(conn, cfg, run_id, {"collection": cname, "step": "3.2", "rows": [{"ledger_id": row[0], "fill": fill}]}, keep, collect=collect))
     out = {"observed": r["observed"], "none": r["none"], "nodes": r["nodes"]}
     if not keep:
         return {**out, "preview": True}

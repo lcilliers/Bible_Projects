@@ -235,6 +235,37 @@ def _covered(conn, ids) -> set:
     return out
 
 
+def _cover_map(conn, ids) -> dict:
+    """{observation: the occurrences it carries as live nodes}, by chunk (RW-14)."""
+    out: dict = {}
+    for part in lr._chunks(sorted(set(ids))):
+        for o, v in conn.execute("SELECT observation_id, verse_lexical_id FROM ib_node WHERE deleted=0 AND verse_lexical_id IS NOT NULL "
+                                 "AND observation_id IN (SELECT value FROM json_each(?))", (json.dumps(part),)):
+            out.setdefault(o, set()).add(v)
+    return out
+
+
+def _expand_nodes(conn, f, sources: set, allowed: set):
+    """#2637 X2, the judgement-only form: a finding may name `rests_on` (the observations it rests on) and `role` (the role of the words those
+    observations cover, with `roles` {occurrence: role, or "" to leave one out} for the exceptions) in place of writing its nodes. The recorder
+    writes a traced node on each observation named and an occurrence node on each occurrence they cover that the row may name. Nodes written by
+    hand are kept as they are and win over the expansion."""
+    if not isinstance(f, dict) or not f.get("rests_on"):
+        return f
+    rests = [int(x) for x in f["rests_on"] if str(x).strip().isdigit()]
+    nodes = [n for n in (f.get("nodes") or [])]
+    have_t = {n.get("traced") for n in nodes if isinstance(n, dict)}
+    have_o = {n.get("occurrence") for n in nodes if isinstance(n, dict)}
+    nodes += [{"traced": t} for t in rests if t not in have_t]
+    role, roles = f.get("role"), {int(k): v for k, v in (f.get("roles") or {}).items() if str(k).strip().isdigit()}
+    if role or roles:
+        for o in sorted(_covered(conn, [t for t in rests if t in sources]) & allowed):
+            r = roles.get(o, role)
+            if r and o not in have_o:
+                nodes.append({"occurrence": o, "role": r})
+    return {**{k: v for k, v in f.items() if k not in ("rests_on", "role", "roles")}, "nodes": nodes}
+
+
 def _texts(conn, dem: list[dict]) -> dict:
     """{osis: verse text} of the verses of the demanded occurrences (a partner word from the typed pairings carries no text of its own)."""
     out = {}
@@ -357,8 +388,13 @@ def _read_back_ok(rb, dem: list[dict], where: str, minr: int, errors: list) -> l
     return out
 
 
-def record(conn, cfg, run_id: str, data: dict, keep: bool) -> dict:
+def record(conn, cfg, run_id: str, data: dict, keep: bool, collect: bool = False) -> dict:
     """Check the filled file whole, write it in one savepoint and check the written rows as LayerCheck does; any problem refuses all (nothing written). keep=False rolls back (the preview)."""
+    # collect=True (CheckAnswer, #2637 X3): nothing is kept, and the record does not stop between its stages: the finding rules are checked on every
+    # row however its form fared, a row with no problem is written in a savepoint of its own and checked as LayerCheck checks it, and every
+    # problem of every stage is listed in one refusal. A row whose findings break a rule is not written: its write would only repeat them.
+    if collect:
+        keep = False
     s = lr.settings(cfg)
     name, step = data.get("collection"), data.get("step")
     sd = lr.step_def(s, step)
@@ -408,6 +444,7 @@ def record(conn, cfg, run_id: str, data: dict, keep: bool) -> dict:
             if not key or key in keys or ":" in key:
                 errors.append(f"{fw}: `key` is a short name unique in the row (no colon)")
             keys.add(key)
+            f = _expand_nodes(conn, f, sources, allowed)
             f2 = _norm_nodes(conn, f, allowed, fw, errors)
             if f2.get("route") in ("", None):    # an empty route is no route (a route is held only on a party or link finding)
                 f2.pop("route", None)
@@ -462,8 +499,9 @@ def record(conn, cfg, run_id: str, data: dict, keep: bool) -> dict:
         todo.append({"lrow": lrow, "disp": "observed", "specs": specs, "existing": ex, "where": where, "older": fill.get("older"),
                      "state": {"not_used": {str(k): v for k, v in decl.items()} if step == "3.1" else {}, "not_gathered": {str(k): v for k, v in decl.items()} if step == "3.2" else {},
                                "read_back": {k: v for k, v in read_back.items() if v}}})
-    if errors:
+    if errors and not collect:
         raise lr.LayerError("the file is refused, nothing written; problems:\n  " + "\n  ".join(errors))
+    first_stage = {w for w in (t["where"] for t in todo) if any(e.startswith(w) for e in errors)}
     conn.execute("SAVEPOINT layer_inner")
     res = {"observed": 0, "none": 0, "nodes": 0, "withdrawn": 0}
     try:
@@ -482,42 +520,58 @@ def record(conn, cfg, run_id: str, data: dict, keep: bool) -> dict:
             t["plan"] = orec.check(cfg, t["specs"], perr, quotes)
             perr += [f"{t['where']}: {q} is not the ESV's wording (quote check)" if isinstance(q, str) else str(q) for q in quotes]
             errors += perr
-        if errors:
+            t["bad"] = bool(perr) or t["where"] in first_stage
+        if errors and not collect:
             raise lr.LayerError("the file is refused, nothing written; problems:\n  " + "\n  ".join(errors))
         stage = lr.stage_of(s, sd)
         texts = bv.scope_texts(conn, cfg, L["cid"])
         for t in todo:
-            lid = t["lrow"][0]
-            if t["disp"] == "none":
-                conn.execute(f"UPDATE collection_layer_item SET answered_at={lr.NOW}, state='none', observation_id=NULL, reason=?, validated=0, updated_at={lr.NOW}, run_id=? WHERE id=?", (t["reason"], run_id, lid))
-                res["none"] += 1
+            if collect and t.get("bad"):
                 continue
-            for e in t["existing"]:
-                a, oid = e["action"], e["observation"]
-                if a == "delete":
-                    orec.soft_delete_observation(conn, oid, e["reason"].strip(), None, run_id, WHO)
-                elif a == "merge":
-                    orec.merge_observation(conn, oid, e.get("into"), e["reason"].strip(), None, run_id, WHO)
-                elif a == "modify" and e.get("set"):
-                    orec.modify_observation(cfg, conn, oid, e["set"], e["reason"].strip(), None, run_id, WHO)
-                for nx in e.get("nodes") or []:
-                    if nx.get("action") == "delete":
-                        orec.delete_node(conn, nx["node"], (nx.get("reason") or e["reason"]).strip(), None, run_id, WHO)
-                    elif nx.get("action") == "modify":
-                        orec.modify_node(cfg, conn, nx["node"], nx.get("set") or {}, (nx.get("reason") or e["reason"]).strip(), None, run_id, WHO)
-            written = orec.write(conn, t["plan"], None, run_id, stage=stage, stable_key=lambda k, lid=lid: f"layer:{lid}:{run_id}:{k}", nature=s["items"][t["lrow"][3]]["nature"])
-            for w in written.values():
-                if w["new"]:
-                    errors += lr.settle_nodes(conn, s, w["observation"], run_id, sd["layer"])
-            errors += bv.settle_row(conn, cfg, s, L["cid"], [w["observation"] for w in written.values() if w["new"]], t.get("older"), run_id, texts, 99, sd["key"], {int(o["vl_id"]) for o in L["d"]["occurrences"]})
-            first = min(w["observation"] for w in written.values())
-            res["nodes"] += sum(len(w["nodes"]) for w in written.values())
-            res["observed"] += sum(1 for w in written.values() if w["new"])
-            conn.execute(f"UPDATE collection_layer_item SET answered_at={lr.NOW}, state='observed', observation_id=?, reason=?, validated=0, updated_at={lr.NOW}, run_id=? WHERE id=?",
-                         (first, STATE + json.dumps(t["state"], ensure_ascii=False, sort_keys=True), run_id, lid))
+            if collect:      # a savepoint per row (a `continue` in the body leaves it open inside layer_inner, which a check always rolls back)
+                conn.execute("SAVEPOINT inner_row")
+            try:
+                lid = t["lrow"][0]
+                if t["disp"] == "none":
+                    conn.execute(f"UPDATE collection_layer_item SET answered_at={lr.NOW}, state='none', observation_id=NULL, reason=?, validated=0, updated_at={lr.NOW}, run_id=? WHERE id=?", (t["reason"], run_id, lid))
+                    res["none"] += 1
+                    continue
+                for e in t["existing"]:
+                    a, oid = e["action"], e["observation"]
+                    if a == "delete":
+                        orec.soft_delete_observation(conn, oid, e["reason"].strip(), None, run_id, WHO)
+                    elif a == "merge":
+                        orec.merge_observation(conn, oid, e.get("into"), e["reason"].strip(), None, run_id, WHO)
+                    elif a == "modify" and e.get("set"):
+                        orec.modify_observation(cfg, conn, oid, e["set"], e["reason"].strip(), None, run_id, WHO)
+                    for nx in e.get("nodes") or []:
+                        if nx.get("action") == "delete":
+                            orec.delete_node(conn, nx["node"], (nx.get("reason") or e["reason"]).strip(), None, run_id, WHO)
+                        elif nx.get("action") == "modify":
+                            orec.modify_node(cfg, conn, nx["node"], nx.get("set") or {}, (nx.get("reason") or e["reason"]).strip(), None, run_id, WHO)
+                written = orec.write(conn, t["plan"], None, run_id, stage=stage, stable_key=lambda k, lid=lid: f"layer:{lid}:{run_id}:{k}", nature=s["items"][t["lrow"][3]]["nature"])
+                for w in written.values():
+                    if w["new"]:
+                        errors += lr.settle_nodes(conn, s, w["observation"], run_id, sd["layer"])
+                errors += bv.settle_row(conn, cfg, s, L["cid"], [w["observation"] for w in written.values() if w["new"]], t.get("older"), run_id, texts, 99, sd["key"], {int(o["vl_id"]) for o in L["d"]["occurrences"]})
+                first = min(w["observation"] for w in written.values())
+                res["nodes"] += sum(len(w["nodes"]) for w in written.values())
+                res["observed"] += sum(1 for w in written.values() if w["new"])
+                conn.execute(f"UPDATE collection_layer_item SET answered_at={lr.NOW}, state='observed', observation_id=?, reason=?, validated=0, updated_at={lr.NOW}, run_id=? WHERE id=?",
+                             (first, STATE + json.dumps(t["state"], ensure_ascii=False, sort_keys=True), run_id, lid))
+            except Exception as exc:
+                if not collect:
+                    raise
+                conn.execute("ROLLBACK TO inner_row")
+                conn.execute("RELEASE inner_row")
+                errors.append(f"{t['where']}: the write is refused: {exc}")
+                t["bad"] = True
+                continue
+            if collect:
+                conn.execute("RELEASE inner_row")
         L = lr.load(conn, cfg, name, pairs=lr.needs_pairs(sd), subgroup=lr.file_scope(conn, name, step, data))     # the grouping on the nodes is read back, so the check sees what was written
         for t in todo:
-            if t["disp"] != "observed":
+            if t["disp"] != "observed" or (collect and t.get("bad")):
                 continue
             lrow = next(r for r in lr._rows(conn, L["cid"], step) if r[0] == t["lrow"][0])
             why = check_row(conn, cfg, s, L, sd, lrow)

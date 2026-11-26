@@ -263,7 +263,10 @@ def _answer(cfg, conn, oid: int, a: dict, new_ids: list, run_id: str, s: dict, h
         orec.merge_observation(conn, oid, into, reason, None, run_id, WHO)
     elif act == "consume":
         carriers = [x for c in (a.get("carriers") or []) for x in (new_ids if c == "this" else [c])]
-        va.consume(cfg, conn, oid, carriers, a.get("mapping") or "", run_id, WHO, a.get("uncarried"))
+        unc = a.get("uncarried")      # a JSON answer names occurrences as strings; the consumption compares occurrence ids (#2628, every path)
+        if isinstance(unc, dict):
+            unc = {int(k) if str(k).isdigit() else k: v for k, v in unc.items()}
+        va.consume(cfg, conn, oid, carriers, a.get("mapping") or "", run_id, WHO, unc)
     elif act == "delete_neither":
         here, there = _home_nodes(conn, oid, home)
         va.delete_neither(cfg, conn, oid, reason, run_id, WHO, node_ids=here if there else None)     # its nodes here go with it; the nodes of another subgroup or collection stay with the observation

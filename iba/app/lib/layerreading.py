@@ -905,15 +905,20 @@ def file_scope(conn, name: str, step: str, data: dict):
     return gs or None
 
 
-def record(conn, cfg, run_id: str, data: dict, keep: bool) -> dict:
-    """Check the filled file whole and write it in one savepoint; any problem refuses all. keep=False rolls back (the preview)."""
+def record(conn, cfg, run_id: str, data: dict, keep: bool, collect: bool = False) -> dict:
+    """Check the filled file whole and write it in one savepoint; any problem refuses all. keep=False rolls back (the preview).
+    collect=True (CheckAnswer, #2637 X3): nothing is kept, and the record does not stop at the problems of the answer's rows: every row that
+    could be planned is written in a savepoint of its own (its traces, its nodes, its older observations answered), so the problems of the write
+    are listed with the others in one refusal."""
+    if collect:
+        keep = False
     s = settings(cfg)
     name, step = data.get("collection"), data.get("step")
     sd = step_def(s, step)
     check_natures(cfg, s, sd)
     if sd["layer"] == 3:     # stage 4: the findings of the inner-being reading (#2528)
         from . import layerinner
-        return layerinner.record(conn, cfg, run_id, data, keep)
+        return layerinner.record(conn, cfg, run_id, data, keep, collect=collect)
     L = load(conn, cfg, name, pairs=needs_pairs(sd), subgroup=file_scope(conn, name, step, data))
     roles, bases, routes = set(orec.node_roles(cfg)), set(cfg.enum("ib_observation.basis")), set(cfg.enum("observation_route"))
     minr = s["min_reason_chars"]
@@ -969,6 +974,8 @@ def record(conn, cfg, run_id: str, data: dict, keep: bool) -> dict:
                 if sn.get("basis") not in bases:
                     errors.append(f"{sw}: basis must be one of {sorted(bases)}")
                 named = sn.get("occurrences") or []
+                if named == "all" or named == ["all"]:      # #2637 X2: "all" is every occurrence of the row's subject, so a one-reading word names none by hand
+                    named = list(byid)
                 nodes = []
                 for n_ in named:
                     hit = [byid[n_]] if n_ in byid else byref.get(n_, [])
@@ -1073,7 +1080,7 @@ def record(conn, cfg, run_id: str, data: dict, keep: bool) -> dict:
         if nodes:
             _text_rules(cfg, conn, s, idef, text, fill.get("basis"), fill.get("grounds"), nodes, where, errors)
         plan.append({"ledger": lr, "disp": "observed", "text": text, "grounds": (fill.get("grounds") or "").strip() or None, "basis": fill.get("basis"), "route": route, "mrole": mrole, "prole": prole, "nodes": nodes, "idef": idef, "older": fill.get("older")})
-    if errors:
+    if errors and not collect:
         raise LayerError("the file is refused, nothing written; problems:\n  " + "\n  ".join(errors))
     conn.execute("SAVEPOINT layer_record")
     res = {"observed": 0, "none": 0, "nodes": 0, "withdrawn": 0}
@@ -1083,88 +1090,100 @@ def record(conn, cfg, run_id: str, data: dict, keep: bool) -> dict:
         stage = stage_of(s, sd)
         vl = _vl(conn, [o["vl_id"] for p in plan if p["disp"] == "observed" for o, _ in p["nodes"]])
         for p in plan:
-            lid, old = p["ledger"][0], p["ledger"][7]
-            if p["disp"] == "multi":
-                for (prev,) in conn.execute("SELECT id FROM ib_observation WHERE stable_key >= ? AND stable_key < ? AND deleted=0", (f"layer:{lid}:", f"layer:{lid};")).fetchall():
-                    for (pn,) in conn.execute("SELECT id FROM ib_node WHERE observation_id=? AND deleted=0", (prev,)).fetchall():
+            if collect:      # a savepoint per row: a row whose write is refused is listed and the next row is written (a `continue` in the body leaves it
+                conn.execute("SAVEPOINT layer_row")      # open inside layer_record, which a check always rolls back)
+            try:
+                lid, old = p["ledger"][0], p["ledger"][7]
+                if p["disp"] == "multi":
+                    for (prev,) in conn.execute("SELECT id FROM ib_observation WHERE stable_key >= ? AND stable_key < ? AND deleted=0", (f"layer:{lid}:", f"layer:{lid};")).fetchall():
+                        for (pn,) in conn.execute("SELECT id FROM ib_node WHERE observation_id=? AND deleted=0", (prev,)).fetchall():
+                            orec.delete_node(conn, pn, f"re-recorded under ledger row {lid} ({run_id})", None, run_id, WHO)
+                        orec.soft_delete_observation(conn, prev, f"re-recorded under ledger row {lid} ({run_id})", None, run_id, WHO)
+                        res["withdrawn"] += 1
+                    first = None
+                    row_ids: list[int] = []
+                    stage = stage_of(s, sd)
+                    vlm = _vl(conn, [o["vl_id"] for sn in p["senses"] for o, _ in sn["nodes"]])
+                    for k, sn in enumerate(p["senses"], 1):
+                        pj = {"item": p["ledger"][3], "step": step, "word": p["ledger"][5]}
+                        if sn.get("grounds"):
+                            pj["grounds"] = sn["grounds"]
+                        pj = json.dumps(pj, ensure_ascii=False)
+                        msrc = recordingpass.normalise_meaning_source(conn, p["idef"].get("meaning_source", "verse-text"))
+                        oid = conn.execute("INSERT INTO ib_observation (cluster_code, stage, tag, window, obs_text, basis, route, parts, meaning_source, status, stable_key, run_id, created_at, nature) "
+                                           "VALUES (NULL,?,?,?,?,?,NULL,?,?,'draft',?,?,?,?)",
+                                           (stage, sn["kind"], p["idef"].get("window"), sn["text"], sn["basis"], pj, msrc, f"layer:{lid}:{run_id}:{k}", run_id, _now(), p["idef"]["nature"])).lastrowid
+                        orec.log(conn, oid, None, "created", None, sn["text"], f"layer observation {p['ledger'][3]} for ledger row {lid}", None, run_id, WHO)
+                        first = first or oid
+                        row_ids.append(oid)
+                        seq = 0
+                        for o, role_of in sn["nodes"]:
+                            v = vlm[o["vl_id"]]
+                            seq += 1
+                            cid_ = L["cid"]
+                            if role_of == "partner" and len(o.get("collections") or []) == 1 and o["collections"][0] in L["col_ids"]:
+                                cid_ = L["col_ids"][o["collections"][0]]
+                            mr_ = p["mrole"] if role_of == "member" else (p.get("prole") or p["mrole"])
+                            nid = conn.execute("INSERT INTO ib_node (observation_id, strong, verse_reference, surface, morph_code, source_stage, seq, role, reading_id, created_at, verse_lexical_id, collection_id, subgroup_id) "
+                                               "VALUES (?,?,?,?,?,?,?,?,NULL,?,?,?,?)", (oid, v[1], v[2], v[3], v[4], stage, seq, mr_, _now(), o["vl_id"], cid_, ci.subgroup_for(conn, cid_, v[5], v[1]))).lastrowid
+                            orec.log(conn, oid, nid, "node", None, f"added: {v[2]} {v[3]} ({v[1]}) role {mr_}", f"layer node of ledger row {lid}", None, run_id, WHO)
+                            res["nodes"] += 1
+                        seq = write_traces(conn, oid, sorted(set(trace_targets(conn, oid, [o["vl_id"] for o, r_ in sn["nodes"] if r_ == "member"], p["idef"].get("traces_to"), L["cid"])) | set(sn.get("rests_on") or [])),
+                                           L["cid"], p["ledger"][4], stage, seq, run_id, lid)
+                        node_problems += settle_nodes(conn, s, oid, run_id, sd["layer"])
+                        res["observed"] += 1
+                    node_problems += bv.settle_row(conn, cfg, s, L["cid"], row_ids, p.get("older"), run_id, texts, sd["layer"], sd["key"], {o["vl_id"] for o in L["d"]["occurrences"]})
+                    conn.execute(f"UPDATE collection_layer_item SET answered_at={NOW}, state='observed', observation_id=?, reason=NULL, validated=0, updated_at={NOW}, run_id=? WHERE id=?", (first, run_id, lid))
+                    continue
+                if old and p["disp"] != "adopt" and conn.execute("SELECT 1 FROM ib_observation WHERE id=? AND deleted=0", (old,)).fetchone():
+                    for (pn,) in conn.execute("SELECT id FROM ib_node WHERE observation_id=? AND deleted=0", (old,)).fetchall():
                         orec.delete_node(conn, pn, f"re-recorded under ledger row {lid} ({run_id})", None, run_id, WHO)
-                    orec.soft_delete_observation(conn, prev, f"re-recorded under ledger row {lid} ({run_id})", None, run_id, WHO)
+                    orec.soft_delete_observation(conn, old, f"re-recorded under ledger row {lid} ({run_id})", None, run_id, WHO)
                     res["withdrawn"] += 1
-                first = None
-                row_ids: list[int] = []
-                stage = stage_of(s, sd)
-                vlm = _vl(conn, [o["vl_id"] for sn in p["senses"] for o, _ in sn["nodes"]])
-                for k, sn in enumerate(p["senses"], 1):
-                    pj = {"item": p["ledger"][3], "step": step, "word": p["ledger"][5]}
-                    if sn.get("grounds"):
-                        pj["grounds"] = sn["grounds"]
-                    pj = json.dumps(pj, ensure_ascii=False)
-                    msrc = recordingpass.normalise_meaning_source(conn, p["idef"].get("meaning_source", "verse-text"))
-                    oid = conn.execute("INSERT INTO ib_observation (cluster_code, stage, tag, window, obs_text, basis, route, parts, meaning_source, status, stable_key, run_id, created_at, nature) "
-                                       "VALUES (NULL,?,?,?,?,?,NULL,?,?,'draft',?,?,?,?)",
-                                       (stage, sn["kind"], p["idef"].get("window"), sn["text"], sn["basis"], pj, msrc, f"layer:{lid}:{run_id}:{k}", run_id, _now(), p["idef"]["nature"])).lastrowid
-                    orec.log(conn, oid, None, "created", None, sn["text"], f"layer observation {p['ledger'][3]} for ledger row {lid}", None, run_id, WHO)
-                    first = first or oid
-                    row_ids.append(oid)
-                    seq = 0
-                    for o, role_of in sn["nodes"]:
-                        v = vlm[o["vl_id"]]
-                        seq += 1
-                        cid_ = L["cid"]
-                        if role_of == "partner" and len(o.get("collections") or []) == 1 and o["collections"][0] in L["col_ids"]:
-                            cid_ = L["col_ids"][o["collections"][0]]
-                        mr_ = p["mrole"] if role_of == "member" else (p.get("prole") or p["mrole"])
-                        nid = conn.execute("INSERT INTO ib_node (observation_id, strong, verse_reference, surface, morph_code, source_stage, seq, role, reading_id, created_at, verse_lexical_id, collection_id, subgroup_id) "
-                                           "VALUES (?,?,?,?,?,?,?,?,NULL,?,?,?,?)", (oid, v[1], v[2], v[3], v[4], stage, seq, mr_, _now(), o["vl_id"], cid_, ci.subgroup_for(conn, cid_, v[5], v[1]))).lastrowid
-                        orec.log(conn, oid, nid, "node", None, f"added: {v[2]} {v[3]} ({v[1]}) role {mr_}", f"layer node of ledger row {lid}", None, run_id, WHO)
-                        res["nodes"] += 1
-                    seq = write_traces(conn, oid, sorted(set(trace_targets(conn, oid, [o["vl_id"] for o, r_ in sn["nodes"] if r_ == "member"], p["idef"].get("traces_to"), L["cid"])) | set(sn.get("rests_on") or [])),
-                                       L["cid"], p["ledger"][4], stage, seq, run_id, lid)
-                    node_problems += settle_nodes(conn, s, oid, run_id, sd["layer"])
-                    res["observed"] += 1
-                node_problems += bv.settle_row(conn, cfg, s, L["cid"], row_ids, p.get("older"), run_id, texts, sd["layer"], sd["key"], {o["vl_id"] for o in L["d"]["occurrences"]})
-                conn.execute(f"UPDATE collection_layer_item SET answered_at={NOW}, state='observed', observation_id=?, reason=NULL, validated=0, updated_at={NOW}, run_id=? WHERE id=?", (first, run_id, lid))
+                if p["disp"] == "none":
+                    conn.execute(f"UPDATE collection_layer_item SET answered_at={NOW}, state='none', observation_id=NULL, reason=?, validated=0, updated_at={NOW}, run_id=? WHERE id=?", (p["reason"], run_id, lid))
+                    res["none"] += 1
+                    continue
+                if p["disp"] == "adopt":
+                    _adopt(conn, cfg, L, run_id, lid, p)
+                    res["adopted"] = res.get("adopted", 0) + 1
+                    continue
+                pj = {"item": p["ledger"][3], "step": step}
+                if p["ledger"][3] in WORD_ITEMS:
+                    pj["word"] = p["ledger"][5]
+                if p.get("grounds"):
+                    pj["grounds"] = p["grounds"]
+                parts = json.dumps(pj, ensure_ascii=False)
+                msrc = recordingpass.normalise_meaning_source(conn, p["idef"].get("meaning_source", "verse-text"))
+                oid = conn.execute("INSERT INTO ib_observation (cluster_code, stage, tag, window, obs_text, basis, route, parts, meaning_source, status, stable_key, run_id, created_at, nature) "
+                                   "VALUES (NULL,?,?,?,?,?,?,?,?,'draft',?,?,?,?)",
+                                   (stage, p["idef"]["kind"], p["idef"].get("window"), p["text"], p["basis"], p["route"], parts, msrc, f"layer:{lid}:{run_id}", run_id, _now(), p["idef"]["nature"])).lastrowid
+                orec.log(conn, oid, None, "created", None, p["text"], f"layer observation {p['ledger'][3]} for ledger row {lid}", None, run_id, WHO)
+                seq = 0
+                for o, role_of in p["nodes"]:
+                    v = vl[o["vl_id"]]
+                    cid = L["cid"]
+                    if role_of == "partner" and len(o["collections"]) == 1 and o["collections"][0] in L["col_ids"]:
+                        cid = L["col_ids"][o["collections"][0]]
+                    role = p["mrole"] if role_of == "member" else (p["prole"] or p["mrole"])
+                    seq += 1
+                    nid = conn.execute("INSERT INTO ib_node (observation_id, strong, verse_reference, surface, morph_code, source_stage, seq, role, reading_id, created_at, verse_lexical_id, collection_id, subgroup_id) "
+                                       "VALUES (?,?,?,?,?,?,?,?,NULL,?,?,?,?)", (oid, v[1], v[2], v[3], v[4], stage, seq, role, _now(), o["vl_id"], cid, ci.subgroup_for(conn, cid, v[5], v[1]))).lastrowid
+                    orec.log(conn, oid, nid, "node", None, f"added: {v[2]} {v[3]} ({v[1]}) role {role}", f"layer node of ledger row {lid}", None, run_id, WHO)
+                    res["nodes"] += 1
+                node_problems += settle_nodes(conn, s, oid, run_id, sd["layer"])
+                node_problems += bv.settle_row(conn, cfg, s, L["cid"], [oid], p.get("older"), run_id, texts, sd["layer"], sd["key"], {o["vl_id"] for o in L["d"]["occurrences"]})
+                conn.execute(f"UPDATE collection_layer_item SET answered_at={NOW}, state='observed', observation_id=?, reason=NULL, validated=0, updated_at={NOW}, run_id=? WHERE id=?", (oid, run_id, lid))
+                res["observed"] += 1
+            except Exception as exc:
+                if not collect:
+                    raise
+                conn.execute("ROLLBACK TO layer_row")
+                conn.execute("RELEASE layer_row")
+                node_problems.append(f"row (ledger {p['ledger'][0]}): the write is refused: {exc}")
                 continue
-            if old and p["disp"] != "adopt" and conn.execute("SELECT 1 FROM ib_observation WHERE id=? AND deleted=0", (old,)).fetchone():
-                for (pn,) in conn.execute("SELECT id FROM ib_node WHERE observation_id=? AND deleted=0", (old,)).fetchall():
-                    orec.delete_node(conn, pn, f"re-recorded under ledger row {lid} ({run_id})", None, run_id, WHO)
-                orec.soft_delete_observation(conn, old, f"re-recorded under ledger row {lid} ({run_id})", None, run_id, WHO)
-                res["withdrawn"] += 1
-            if p["disp"] == "none":
-                conn.execute(f"UPDATE collection_layer_item SET answered_at={NOW}, state='none', observation_id=NULL, reason=?, validated=0, updated_at={NOW}, run_id=? WHERE id=?", (p["reason"], run_id, lid))
-                res["none"] += 1
-                continue
-            if p["disp"] == "adopt":
-                _adopt(conn, cfg, L, run_id, lid, p)
-                res["adopted"] = res.get("adopted", 0) + 1
-                continue
-            pj = {"item": p["ledger"][3], "step": step}
-            if p["ledger"][3] in WORD_ITEMS:
-                pj["word"] = p["ledger"][5]
-            if p.get("grounds"):
-                pj["grounds"] = p["grounds"]
-            parts = json.dumps(pj, ensure_ascii=False)
-            msrc = recordingpass.normalise_meaning_source(conn, p["idef"].get("meaning_source", "verse-text"))
-            oid = conn.execute("INSERT INTO ib_observation (cluster_code, stage, tag, window, obs_text, basis, route, parts, meaning_source, status, stable_key, run_id, created_at, nature) "
-                               "VALUES (NULL,?,?,?,?,?,?,?,?,'draft',?,?,?,?)",
-                               (stage, p["idef"]["kind"], p["idef"].get("window"), p["text"], p["basis"], p["route"], parts, msrc, f"layer:{lid}:{run_id}", run_id, _now(), p["idef"]["nature"])).lastrowid
-            orec.log(conn, oid, None, "created", None, p["text"], f"layer observation {p['ledger'][3]} for ledger row {lid}", None, run_id, WHO)
-            seq = 0
-            for o, role_of in p["nodes"]:
-                v = vl[o["vl_id"]]
-                cid = L["cid"]
-                if role_of == "partner" and len(o["collections"]) == 1 and o["collections"][0] in L["col_ids"]:
-                    cid = L["col_ids"][o["collections"][0]]
-                role = p["mrole"] if role_of == "member" else (p["prole"] or p["mrole"])
-                seq += 1
-                nid = conn.execute("INSERT INTO ib_node (observation_id, strong, verse_reference, surface, morph_code, source_stage, seq, role, reading_id, created_at, verse_lexical_id, collection_id, subgroup_id) "
-                                   "VALUES (?,?,?,?,?,?,?,?,NULL,?,?,?,?)", (oid, v[1], v[2], v[3], v[4], stage, seq, role, _now(), o["vl_id"], cid, ci.subgroup_for(conn, cid, v[5], v[1]))).lastrowid
-                orec.log(conn, oid, nid, "node", None, f"added: {v[2]} {v[3]} ({v[1]}) role {role}", f"layer node of ledger row {lid}", None, run_id, WHO)
-                res["nodes"] += 1
-            node_problems += settle_nodes(conn, s, oid, run_id, sd["layer"])
-            node_problems += bv.settle_row(conn, cfg, s, L["cid"], [oid], p.get("older"), run_id, texts, sd["layer"], sd["key"], {o["vl_id"] for o in L["d"]["occurrences"]})
-            conn.execute(f"UPDATE collection_layer_item SET answered_at={NOW}, state='observed', observation_id=?, reason=NULL, validated=0, updated_at={NOW}, run_id=? WHERE id=?", (oid, run_id, lid))
-            res["observed"] += 1
+            if collect:
+                conn.execute("RELEASE layer_row")
         if data.get("older"):       # the old observations answered at the top of the file (the sweep, and a step with no row left to carry them), the ledger recording each at once
             gids_ = {p["ledger"][4] for p in plan if p.get("ledger") and p["ledger"][4]} or set(L["scope"] or ())
             node_problems += bv.answer_old(conn, cfg, s, L["cid"], gids_, {o["vl_id"] for o in L["d"]["occurrences"]}, data["older"], sd["key"], run_id)
@@ -1175,8 +1194,8 @@ def record(conn, cfg, run_id: str, data: dict, keep: bool) -> dict:
             else:
                 node_problems += bv.sweep(cfg, conn, data["delete_unmarked"], unmarked_of(conn, cfg, s, L, gid_), run_id)
                 res["deleted_unmarked"] = len(data["delete_unmarked"])
-        if node_problems:
-            raise LayerError("the file is refused, nothing written; problems:\n  " + "\n  ".join(node_problems))
+        if node_problems or errors:
+            raise LayerError("the file is refused, nothing written; problems:\n  " + "\n  ".join(errors + node_problems))
         conn.execute("RELEASE layer_record" if keep else "ROLLBACK TO layer_record")
         if not keep:
             conn.execute("RELEASE layer_record")

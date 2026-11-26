@@ -60,6 +60,8 @@ def _logged(fn):
             _log_failure(ctx, "crash", f"{exc!r}\n{traceback.format_exc()}")
             raise
         if out.condition == "refused":
+            from ..lib import refusalrules       # #2637 X4: each line of the refusal names the rule it applies (cfg_setting layer.refusals)
+            out.message = refusalrules.annotate(ctx.cfg.conn, out.message)
             _log_failure(ctx, "refused", out.message)
         return out
     return wrapper
@@ -475,7 +477,7 @@ def read_words(ctx: Ctx) -> Outcome:
     ctx.cfg.conn.commit()
     head = f"step S1 opened for the subgroup ({r['opened']['add']} rows added). " if r.get("opened") else ""
     return ok(head + f"package of {r['words']} word(s), {r['left']} left after it ({r['chars']} characters, {r['seconds']} s): {r['path'].as_posix()}. "
-              f"Read it and fill its `answer`, then: Collection-Build.ps1 -Action RecordWords -File <answer file> (-Check to preview)", words=r["words"], left=r["left"])
+              f"Read it (its view beside it: the same name, .md, or -part-<n>.md) and fill its `answer`, then: Collection-Build.ps1 -Action CheckAnswer -File <answer file> until it finds no problem, and -Action RecordWords -File <answer file>", words=r["words"], left=r["left"])
 
 
 @_logged
@@ -502,6 +504,38 @@ def record_words(ctx: Ctx) -> Outcome:
     conn.commit()
     tail = f"; check: {r['validated']} validated" + (f", FAILED: {', '.join(r['failed'])}" if r["failed"] else "") + f"; {r['words_open']} word(s) still open. Next: {r['next']}"
     return ok(line + tail, observed=r["observed"], nodes=r["nodes"], validated=r["validated"])
+
+
+@_logged
+def check_answer(ctx: Ctx) -> Outcome:
+    """CheckAnswer (#2637 X3): every check the Record command of the answer's read makes, run on the filled answer at once, without stopping
+    between the answer's own checks, the recorder's rules, the write and the check of the written rows; every problem is listed in one refusal,
+    each line with the rule it applies. Nothing is written: the write is tried in savepoints that are rolled back. The read is the one the
+    answer names in `command` (lib/readcommands.py CHECKS)."""
+    from ..lib import readcommands as rc
+    file = str(ctx.params.get("File", "")).strip()
+    if not file:
+        return fail("refused", "-File is required: the filled answer of a read package")
+    conn = ctx.cfg.conn
+    try:
+        data = _answer_of(json.loads(pathlib.Path(file).read_text(encoding="utf-8")))
+    except (OSError, ValueError) as exc:
+        return fail("refused", f"cannot read {file}: {exc}")
+    cmd = data.get("command") if isinstance(data, dict) else None
+    if cmd not in rc.CHECKS:
+        return fail("refused", f"this is not the answer of a read: its `command` is {cmd!r}, one of {sorted(rc.CHECKS)} (fill the `answer` part of the package)")
+    record = "Record" + cmd[len("Read"):]
+    try:
+        getattr(rc, rc.CHECKS[cmd])(conn, ctx.cfg, ctx.run_id, data, keep=False, collect=True)
+    except rc.ReadNext as exc:
+        conn.rollback()
+        return ok(str(exc))
+    except rc.ReadError as exc:
+        conn.rollback()
+        return fail("refused", str(exc))
+    finally:
+        conn.rollback()
+    return ok(f"no problem found: every check of {record} passes on {file}; nothing written. Next: Collection-Build.ps1 -Action {record} -File {file}")
 
 
 def _answer_of(data):
@@ -532,7 +566,7 @@ def read_senses(ctx: Ctx) -> Outcome:
     ctx.cfg.conn.commit()
     head = f"step 1.1 opened for the subgroup ({r['opened']['add']} rows added). " if r.get("opened") else ""
     return ok(head + f"package of {r['readings']} B1 observation(s) on {r['occurrences']} occurrence(s), {r['older']} older observation(s) ({r['chars']} characters, {r['seconds']} s): "
-              f"{r['path'].as_posix()}. Read it and fill its `answer`, then: Collection-Build.ps1 -Action RecordSenses -File <answer file> (-Check to preview)", readings=r["readings"])
+              f"{r['path'].as_posix()}. Read it (its view beside it: the same name, .md, or -part-<n>.md) and fill its `answer`, then: Collection-Build.ps1 -Action CheckAnswer -File <answer file> until it finds no problem, and -Action RecordSenses -File <answer file>", readings=r["readings"])
 
 
 @_logged
@@ -584,7 +618,7 @@ def read_enrichment(ctx: Ctx) -> Outcome:
     ctx.cfg.conn.commit()
     head = f"step 1.2 opened for the subgroup ({r['opened']['add']} rows added). " if r.get("opened") else ""
     return ok(head + f"package of {r['senses']} sense(s) and {r['codes']} code(s), {r['older']} older observation(s) ({r['chars']} characters, {r['seconds']} s): "
-              f"{r['path'].as_posix()}. Read it and fill its `answer`, then: Collection-Build.ps1 -Action RecordEnrichment -File <answer file> (-Check to preview)", senses=r["senses"])
+              f"{r['path'].as_posix()}. Read it (its view beside it: the same name, .md, or -part-<n>.md) and fill its `answer`, then: Collection-Build.ps1 -Action CheckAnswer -File <answer file> until it finds no problem, and -Action RecordEnrichment -File <answer file>", senses=r["senses"])
 
 
 @_logged
@@ -637,7 +671,7 @@ def read_structure(ctx: Ctx) -> Outcome:
     ctx.cfg.conn.commit()
     head = f"step 2.1 opened for the subgroup ({r['opened']['add']} rows added). " if r.get("opened") else ""
     return ok(head + f"package of {r['rows']} {r['item']} row(s), {r['left']} row(s) left after it, {r['verses']} verse(s) ({r['chars']} characters, {r['seconds']} s): "
-              f"{r['path'].as_posix()}. Read it and fill its `answer`, then: Collection-Build.ps1 -Action RecordStructure -File <answer file> (-Check to preview)", rows=r["rows"], left=r["left"])
+              f"{r['path'].as_posix()}. Read it (its view beside it: the same name, .md, or -part-<n>.md) and fill its `answer`, then: Collection-Build.ps1 -Action CheckAnswer -File <answer file> until it finds no problem, and -Action RecordStructure -File <answer file>", rows=r["rows"], left=r["left"])
 
 
 @_logged
@@ -686,7 +720,7 @@ def _read_gate(ctx: Ctx, fn_name: str, what: str) -> Outcome:
     except (lr.LayerError, sg.ScanBudgetExceeded) as exc:
         return fail("refused", str(exc))
     ctx.cfg.conn.commit()
-    return ok(", ".join(f"{k} {v}" for k, v in r.items() if k != "path") + f": {r['path'].as_posix()}. Read it and fill its `answer`, then the Record command (-Check to preview)")
+    return ok(", ".join(f"{k} {v}" for k, v in r.items() if k != "path") + f": {r['path'].as_posix()}. Read it (its view beside it: the same name, .md, or -part-<n>.md) and fill its `answer`, then CheckAnswer -File <answer> until it finds no problem, and the Record command")
 
 
 @_logged
@@ -819,7 +853,7 @@ def read_behaviours(ctx: Ctx) -> Outcome:
     except (lr.LayerError, sg.ScanBudgetExceeded) as exc:
         return fail("refused", str(exc))
     ctx.cfg.conn.commit()
-    return ok(", ".join(f"{k} {v}" for k, v in r.items() if k != "path") + f": {r['path'].as_posix()}. Read it and fill its `answer`, then RecordBehaviours -File <answer> (-Check to preview)")
+    return ok(", ".join(f"{k} {v}" for k, v in r.items() if k != "path") + f": {r['path'].as_posix()}. Read it (its view beside it: the same name, .md, or -part-<n>.md) and fill its `answer`, then CheckAnswer -File <answer> until it finds no problem, and RecordBehaviours -File <answer>")
 
 
 @_logged

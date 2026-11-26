@@ -49,6 +49,7 @@ printed as section 15 of the config report.
 | Escalations | `cfg_escalation`, `cfg_escalation_requirement`, `cfg_escalation_transition` |
 | The control map | `cfg_control_home` |
 | Domain rule sets | e.g. `cfg_candidate_rule`, `cfg_method_rule`, `cfg_passage`, `cfg_book_order`, `cfg_api`, `cfg_connection` |
+| What a reading refuses | `cfg_setting layer.refusals` (`lib/refusalrules.py`) |
 | Audit | `cfg_change_detail` (row level), `cfg_change_log` (whole reloads), `cfg_meta` |
 
 ## 3. How a run reads config

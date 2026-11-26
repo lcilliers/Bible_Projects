@@ -278,10 +278,12 @@ def _resolve(value, made: dict):
     return value
 
 
-def record(conn, cfg, run_id: str, data: dict, keep: bool = True, who: str = "Claude") -> dict:
+def record(conn, cfg, run_id: str, data: dict, keep: bool = True, who: str = "Claude", collect: bool = False) -> dict:
     """Check a sheet of actions whole and write it in one transaction. A sheet: {"collection": name, "actions": [{"action": name, <the parameters of
     that validationactions function>}]}. A create_observation action is numbered in the order of the create actions (1, 2, ...) and later actions
-    name it "@new1". Any problem refuses the whole sheet; keep=False runs every action and rolls the transaction back (a preview)."""
+    name it "@new1". Any problem refuses the whole sheet, every problem listed one to a line; keep=False runs every action and rolls the
+    transaction back (a preview). collect=True (CheckAnswer, #2637 X3) is a preview that does not stop at a fault: an action whose parameters are
+    wrong is not run, every other action is run in a savepoint of its own, and every fault of every action is listed."""
     if not isinstance(data, dict) or not isinstance(data.get("actions"), list) or not data["actions"]:
         raise ValidateError("a sheet is an object with a collection and a list of actions")
     collection_id(conn, data.get("collection", ""))
@@ -298,12 +300,17 @@ def record(conn, cfg, run_id: str, data: dict, keep: bool = True, who: str = "Cl
             errors.append(f"action {i} ({name}): unknown parameter(s) {sorted(given - set(allp))}; takes {allp}")
         if set(req) - given:
             errors.append(f"action {i} ({name}): missing parameter(s) {sorted(set(req) - given)}")
-    if errors:
-        raise ValidateError("; ".join(errors[:12]))
+    if errors and not collect:
+        raise ValidateError("\n  ".join(errors))
+    bad = {int(e.split(" ", 2)[1].rstrip(":")) for e in errors if e.startswith("action ")}
+    if collect:
+        keep = False
     made, counts = {}, Counter()
     conn.execute(f"SAVEPOINT {SAVEPOINT}")
     try:
         for i, a in enumerate(data["actions"], 1):
+            if i in bad:
+                continue
             name = a["action"]
             fn = table[name]
             params = {k: _resolve(v, made) for k, v in a.items() if k != "action"}
@@ -314,13 +321,24 @@ def record(conn, cfg, run_id: str, data: dict, keep: bool = True, who: str = "Cl
             kw["conn"] = conn
             kw["run_id"] = run_id
             kw["who"] = who
+            if collect:
+                conn.execute("SAVEPOINT cv_action")
             try:
                 out = fn(**kw, **params)
             except (orec.Refused, ValueError, sqlite3.Error) as exc:
-                raise ValidateError(f"action {i} ({name}): {exc}") from exc
+                if not collect:
+                    raise ValidateError(f"action {i} ({name}): {exc}") from exc
+                conn.execute("ROLLBACK TO cv_action")
+                conn.execute("RELEASE cv_action")
+                errors.append(f"action {i} ({name}): {exc}")
+                continue
+            if collect:
+                conn.execute("RELEASE cv_action")
             counts[name] += 1
             if name == "create_observation":
                 made[len(made) + 1] = out["observation"]
+        if errors:
+            raise ValidateError("\n  ".join(errors))
         if keep:
             conn.execute(f"RELEASE {SAVEPOINT}")
         else:

@@ -101,6 +101,10 @@ def next_action(conn, cfg, name: str) -> dict:
     ps = r".\iba\app\ps\Collection-Build.ps1"
     out = {"collection": coll, "progress": [f"{g['name']}: " + " ".join(f"{s}={g['steps'][s]}" for s in LOOP_STEPS) for g in p["subgroups"]],
            "collection_steps": p["collection_steps"]}
+    if not p["subgroups"]:      # not grouped yet: the loop starts with the grouping (stage 2), never with a collection step (#2621)
+        out.update({"subgroup": None, "step": "grouping", "state": "open", "what": "the grouping of the surfaces into subgroups (stage 2, from the WordNet tables)",
+                    "commands": [f"{ps} -Action GroupPull -Collection {coll}", f"{ps} -Action GroupRecord -File <the filled grouping file>"]})
+        return out
     if cur is None:
         from . import layerreading as lr
         left = lr.superseded(conn, p["cid"])
