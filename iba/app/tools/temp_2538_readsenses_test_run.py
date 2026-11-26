@@ -11,6 +11,8 @@ import json
 import pathlib
 import sqlite3
 import sys
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+import temp_2538_test_state as ts  # noqa: E402
 import tempfile
 import time
 
@@ -54,6 +56,9 @@ def main(db, name="thought", sub="meditating and pondering", other="reasoning"):
     st = rc.settings(cfg)
     rt, lim = st["senses"], st["limits"]
     s = lr.settings(cfg)
+    if not ts.in_loop(conn, cfg, name):      # live is past this step: the copy is put back to it (temp_2538_test_state, BUILD.md 597)
+        print(ts.back_to(conn, cfg, name, sub, '1.1'), file=sys.stderr)
+        print(ts.back_to(conn, cfg, name, other, 'S1'), file=sys.stderr)
     cid, gid, gname = rc._subgroup(conn, name, sub)
 
     ins = rc.instruction(conn, rt)
@@ -68,7 +73,7 @@ def main(db, name="thought", sub="meditating and pondering", other="reasoning"):
     b1_db = set()
     for (lid,) in s1_rows:
         b1_db |= {x[0] for x in q("SELECT id FROM ib_observation WHERE stable_key >= ? AND stable_key < ? AND deleted=0", f"layer:{lid}:", f"layer:{lid};")}
-    before = q("SELECT count(*) FROM collection_layer_item WHERE collection_id=? AND subgroup_id=? AND step='1.1' AND deleted=0 AND item='group-definition'", cid, gid)[0][0]
+    before = q("SELECT count(*) FROM collection_layer_item WHERE collection_id=? AND subgroup_id=? AND step='1.1' AND deleted=0 AND state!='retired' AND item='group-definition'", cid, gid)[0][0]
     r = rc.read_senses(conn, cfg, "TEST-RS", name, gname, out)
     pkg = json.loads(r["path"].read_text(encoding="utf-8"))
     conn.commit()

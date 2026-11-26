@@ -13,6 +13,8 @@ import json
 import pathlib
 import sqlite3
 import sys
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+import temp_2538_test_state as ts  # noqa: E402
 import tempfile
 import time
 
@@ -44,6 +46,16 @@ def counts(conn):
     return {t: conn.execute(f"SELECT count(*) FROM {t}").fetchone()[0] for t in ("ib_observation", "ib_node", "ib_observation_change")}
 
 
+
+def _whole_words(g: str) -> str:
+    """Live grounds as an answer would give them now: a last word cut short when the reading was written (observation 22919: '... the content o') is dropped; the
+    grounds check compares whole words since BUILD.md 589."""
+    if g and not g.rstrip().endswith((".", ",", ";", ":", ")", "'", '"')) and len(g.split()) > 3:
+        last = g.split()[-1]
+        if len(last) <= 2:
+            return g.rsplit(" ", 1)[0]
+    return g
+
 def main(db, name="thought", sub="reasoning", other="meditating and pondering"):
     if pathlib.Path(db).resolve() == LIVE.resolve():
         sys.exit("refused: this test runs on a copy, never the live database")
@@ -54,6 +66,8 @@ def main(db, name="thought", sub="reasoning", other="meditating and pondering"):
     out = pathlib.Path(tempfile.mkdtemp(prefix="readenrichment-"))
     st = rc.settings(cfg)
     rt, lim = st["enrichment"], st["limits"]
+    if not ts.in_loop(conn, cfg, name):      # live is past this step: the copy is put back to it (temp_2538_test_state, BUILD.md 597)
+        print(ts.back_to(conn, cfg, name, sub, '1.2'), file=sys.stderr)
     cid, gid, gname = rc._subgroup(conn, name, sub)
 
     ins = rc.instruction(conn, rt)
@@ -110,7 +124,7 @@ def main(db, name="thought", sub="reasoning", other="meditating and pondering"):
             if len(match) != 1:
                 unmatched += 1
                 continue
-            enrich.append({"sense": match[0], "kind": tag, "obs_text": text, "basis": basis, "grounds": (json.loads(parts) if parts else {}).get("grounds") or ""})
+            enrich.append({"sense": match[0], "kind": tag, "obs_text": text, "basis": basis, "grounds": _whole_words((json.loads(parts) if parts else {}).get("grounds") or "")})
     old_ans, missing = [], []
     for o in pkg["older"]:
         ch = {k: (v, rs) for k, v, rs in live.execute("SELECT column_name, new_value, reason FROM ib_observation_change WHERE observation_id=? AND node_id IS NULL AND column_name IN ('build_answer','carried_to') ORDER BY id", (o["observation"],))}

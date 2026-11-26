@@ -575,8 +575,9 @@ def open_step(conn, cfg, run_id: str, name: str, step: str, dry: bool = False, s
     for k, r in have.items():      # a row retired earlier whose observations are still live (the retire above did not withdraw them then): withdrawn now
         if k not in wanted and r[6] == "retired":
             _withdraw_row(conn, r, f"the row was retired because the data no longer demands it; its observations are withdrawn ({run_id})", run_id)
-    for r in revive:
-        conn.execute(f"UPDATE collection_layer_item SET state='open', validated=0, updated_at={NOW}, run_id=? WHERE id=?", (run_id, r[0]))
+    for r in revive:      # a revived row starts afresh: an earlier pulled_at made the reads treat it as sent and offer it again without end (#2538, found 2026-11-26)
+        conn.execute(f"UPDATE collection_layer_item SET state='open', validated=0, pulled_at=NULL, answered_at=NULL, checked_at=NULL, observation_id=NULL, reason=NULL, "
+                     f"updated_at={NOW}, run_id=? WHERE id=?", (run_id, r[0]))
     return out
 
 

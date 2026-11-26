@@ -1,7 +1,7 @@
 """temp_2538_loop_order_test_run.py -- the loop of the layered reading held in code (escalation #2538; lib/layerloop.py; researcher 2026-11-25: B1 to C1 for ONE subgroup at a time, and
 "the moment I close the chat then you will have no clue what to do").
 
-Runs on a COPY of iba.db, never the live database. Where every subgroup of thought is through 3.1 (live since 2026-11-26), back_to_31 first puts one subgroup back to
+Runs on a COPY of iba.db, never the live database. Where every subgroup of thought is through 3.1 (live since 2026-11-26), temp_2538_test_state.back_to first puts one subgroup back to
 3.1 not yet read on the copy, so the loop has a subgroup in flight whatever the state of live. Each case compares the library with a query written here.
 
 Usage: python iba/app/tools/temp_2538_loop_order_test_run.py <db copy> [collection]
@@ -9,6 +9,8 @@ Usage: python iba/app/tools/temp_2538_loop_order_test_run.py <db copy> [collecti
 import json
 import pathlib
 import sys
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+import temp_2538_test_state as ts  # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parents[3]
 sys.path.insert(0, str(ROOT))
@@ -25,28 +27,6 @@ def case(cid, desc, passed, evidence=""):
     print(f"[{results[-1][2]}] {cid}: {results[-1][3][:170]}", file=sys.stderr, flush=True)
 
 
-def back_to_31(conn, cfg, name, sub, run_id, steps=("3.1",), force=False):
-    """Test state on the copy (not a method): when no subgroup of the collection is still in its loop (every one through 3.1, as live is since 2026-11-26), put `sub` back to
-    "3.1 not yet read": the observations under its 3.1 row are removed through observationrecord (nodes deleted, traces released, each change logged) and the row retired, so
-    that ReadElements opens 3.1 again. The tests of the loop then run on the state they test, whatever the state of live (#2538). Returns what it did."""
-    from iba.app.lib import layerloop as ll_, layerreading as lr_, observationrecord as orec_
-    p = ll_.progress(conn, cfg, name)
-    if any(not g["complete"] for g in p["subgroups"]) and not force:
-        return "a subgroup is already in its loop: copy used as it is"
-    cid, _ = lr_.ci._collection(conn, name)
-    gid = next(g["id"] for g in p["subgroups"] if g["name"].lower() == sub.lower())
-    n = 0
-    for (lid,) in conn.execute("SELECT id FROM collection_layer_item WHERE collection_id=? AND subgroup_id=? AND step IN (SELECT value FROM json_each(?)) AND deleted=0 AND state!='retired'", (cid, gid, json.dumps(list(steps)))).fetchall():
-        for (oid,) in conn.execute("SELECT id FROM ib_observation WHERE stable_key >= ? AND stable_key < ? AND deleted=0", (f"layer:{lid}:", f"layer:{lid};")).fetchall():
-            for (nid,) in conn.execute("SELECT id FROM ib_node WHERE observation_id=? AND deleted=0", (oid,)).fetchall():
-                orec_.delete_node(conn, nid, "test state on a copy", None, run_id, "Claude")
-            orec_.soft_delete_observation(conn, oid, "test state on a copy", None, run_id, "Claude")
-            n += 1
-        conn.execute("UPDATE collection_layer_item SET state='retired', validated=0, reason='test state on a copy' WHERE id=?", (lid,))
-    conn.commit()
-    return f"{sub!r} put back to {steps[0]} not yet read on the copy ({n} observations removed)"
-
-
 def main(db, name="thought"):
     if pathlib.Path(db).resolve() == LIVE.resolve():
         sys.exit("refused: this test runs on a copy, never the live database")
@@ -54,9 +34,9 @@ def main(db, name="thought"):
     conn = cfg.conn
     q = lambda s, *a: conn.execute(s, a).fetchall()  # noqa: E731
     cid = q("SELECT id FROM collection WHERE name=? AND deleted=0", name)[0][0]
-    print(back_to_31(conn, cfg, name, "reasoning", "TEST-2538-LOOP-STATE"), file=sys.stderr)
-    if "put back" in (_m := back_to_31(conn, cfg, name, "giving thought", "TEST-2538-LOOP-STATE", steps=("2.1", "3.1"), force=True)):      # a subgroup behind the one in flight (L4, L5)
-        print(_m, file=sys.stderr)
+    if not ts.in_loop(conn, cfg, name):
+        print(ts.back_to(conn, cfg, name, "reasoning", "3.1", "TEST-2538-LOOP-STATE"), file=sys.stderr)
+        print(ts.back_to(conn, cfg, name, "giving thought", "2.1", "TEST-2538-LOOP-STATE"), file=sys.stderr)      # a subgroup behind the one in flight (L4, L5)
     p = ll.progress(conn, cfg, name)
     # an independent count of the closed steps of each subgroup
     ok = True

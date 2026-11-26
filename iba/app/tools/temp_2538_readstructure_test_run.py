@@ -10,6 +10,8 @@ Usage: python iba/app/tools/temp_2538_readstructure_test_run.py <db copy> [colle
 import json
 import pathlib
 import sys
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+import temp_2538_test_state as ts  # noqa: E402
 import tempfile
 import time
 
@@ -66,6 +68,8 @@ def main(db, name="thought", sub="reasoning", other="meditating and pondering"):
     st = rc.settings(cfg)
     rt, lim = st["structure"], st["limits"]
     s = lr.settings(cfg)
+    if not ts.in_loop(conn, cfg, name):      # live is past this step: the copy is put back to it (temp_2538_test_state, BUILD.md 597)
+        print(ts.back_to(conn, cfg, name, sub, '2.1'), file=sys.stderr)
     cid, gid, gname = rc._subgroup(conn, name, sub)
 
     ins = rc.instruction(conn, rt)

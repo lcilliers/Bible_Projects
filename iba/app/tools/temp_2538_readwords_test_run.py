@@ -10,6 +10,8 @@ import json
 import pathlib
 import sqlite3
 import sys
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+import temp_2538_test_state as ts  # noqa: E402
 import tempfile
 
 ROOT = pathlib.Path(__file__).resolve().parents[3]
@@ -49,6 +51,9 @@ def main(db, name="thought", sub="meditating and pondering", other="reasoning"):
     out = pathlib.Path(tempfile.mkdtemp(prefix="readwords-"))
     st = rc.settings(cfg)
     rt, lim = st["words"], st["limits"]
+    if not ts.in_loop(conn, cfg, name):      # live is past this step: the copy is put back to it (temp_2538_test_state, BUILD.md 597)
+        print(ts.back_to(conn, cfg, name, sub, 'S1'), file=sys.stderr)
+        print(ts.back_to(conn, cfg, name, other, 'S1'), file=sys.stderr)
     cid, gid, gname = rc._subgroup(conn, name, sub)
 
     ins = rc.instruction(conn, rt)
@@ -58,7 +63,7 @@ def main(db, name="thought", sub="meditating and pondering", other="reasoning"):
          refused(lambda: rc.instruction(conn, {**rt, "rules": ["XX-99"]})))
     case("R3", "an unknown subgroup is refused", bool(refused(lambda: rc.read_words(conn, cfg, "TEST-RW", name, "no such subgroup", out))), "")
 
-    before = q("SELECT count(*) FROM collection_layer_item WHERE collection_id=? AND subgroup_id=? AND step='S1' AND deleted=0", cid, gid)[0][0]
+    before = q("SELECT count(*) FROM collection_layer_item WHERE collection_id=? AND subgroup_id=? AND step='S1' AND deleted=0 AND state!='retired'", cid, gid)[0][0]
     r = rc.read_words(conn, cfg, "TEST-RW", name, gname, out)
     pkg = json.loads(r["path"].read_text(encoding="utf-8"))
     words_all = q("SELECT id, subject FROM collection_layer_item WHERE collection_id=? AND subgroup_id=? AND step='S1' AND item='word-sense' AND deleted=0 AND state!='retired'", cid, gid)
