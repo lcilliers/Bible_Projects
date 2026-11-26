@@ -79,3 +79,5 @@ Claude's self-correctable fixes, made and closed:
 - After the close (2026-11-26): branch main, commit 607fb34a "#2538: validation runs once and targeted; the trace index made partial", pushed: `   f8bf1b98..607fb34a  main -> main`.
 
 - After the close (2026-11-26): branch main, commit c46c420d "#2538: the read suites set their own state; a revived ledger row starts afresh", pushed: `   b520a6cc..c46c420d  main -> main`.
+
+- Session close (2026-11-26): branch main, commit 8468d37671217af9b040b237be2fc99e9d2f44df "session 20261126: close -- the session's interventions encoded into the packages, step 3.2 codified and thought's 3.2 recorded, validation once and targeted, session log and project map", pushed: `5f7fb8cc..8468d376  main -> main`.
