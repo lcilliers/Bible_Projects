@@ -40,3 +40,8 @@ Session id: 3d283b80-98ca-46e7-8dc1-49b2b74b0f49 (standard)
 - #2619 (Claude): step 3.3 and the validation after stage 4, gated.
 
 ## 6. Git
+
+- Branch: main
+- Commit: 767b19c559f23440e6e634af6ffce06ba497a752 (session 20261126: strive read through the analytic package (#2638) ...)
+- Push: `To https://github.com/lcilliers/Bible_Projects.git` / `5d4e531a..767b19c5  main -> main`
+- Not committed: iba/app/db/archive/iba-pre-rollback-thought-rerun-20261125.db and iba/app/db/archive/iba-restore-point-20261124T152322Z.db (about 1 GB each, left untracked as found at the start).
