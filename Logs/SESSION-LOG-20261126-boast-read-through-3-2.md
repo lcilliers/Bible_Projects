@@ -55,3 +55,8 @@ Claude's self-correctable fixes:
 - #2637 (Claude, in-progress): two points from the boastful run for Developer Mode: the 3.1 packet lists no allowed values for polarity, mode and route; the .md view puts each row on one long line.
 
 ## 6. Git
+
+- Branch: main
+- Commit: d0f8592e "session 20261126: close -- thought and the backlog closed (#2538, #2568, #2544, #2545, #2554 handed), boast read through 3.2 on the package commands (CheckAnswer before every Record, Cycle audit PASS for each subgroup and 3.2), manual interventions listed for Developer Mode (#2637), gated 3.3 carried to #2619, session log"
+- Push: `To https://github.com/lcilliers/Bible_Projects.git  34b91fa9..d0f8592e  main -> main`
+- Not committed: iba/app/db/archive/iba-pre-rollback-thought-rerun-20261125.db and iba/app/db/archive/iba-restore-point-20261124T152322Z.db (about 1 GB each, over the remote's file limit; left untracked as at the previous close).
