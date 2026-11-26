@@ -1,10 +1,10 @@
 # Session close (#1875, rebuilt #2173)
 
-> Generated 2026-11-26T10:17:03Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
+> Generated 2026-11-26T10:19:13Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
 
 - session: `760131f7-a5d4-44b5-92a0-7c28ca0a4683` (CLAUDE_CODE_SESSION_ID); started 2026-11-25T16:27:19Z; window base commit `cbd46aa8dcb46fb95e5ee10283311450498641a6`
 - compliance file: `Logs/compliance/COMPLIANCE-20261125-760131f7.md`; session log: `Logs/SESSION-LOG-20261126-read-commands-and-thought-through-3-1.md`
-- **open findings: 0**; cleared by disposition: 35
+- **open findings: 0**; cleared by disposition: 36
 
 
 ## Contents
@@ -84,6 +84,7 @@ Summar" -- disposition: no record needed: not the researcher's words (an app con
 <task-id>bxfm8sz6v</task-id>
 <tool-use-id>toolu_01QyS5GtnDsbU8AqcyfijZxC</tool-use-id>
 <output-file>C:\Users\lerouxc\AppData\Local\Temp\clau" -- disposition: no record needed: not the researcher's words (an automated background-task notification)
+- cleared `SC3:15cb8942`: researcher message 2026-11-26T10:18 is too short to be matched; name where it is recorded: "close the session" -- disposition: recorded in #2538 v103
 
 <a id="sc4-open-items-in-the-register"></a>
 ## SC4 Open items in the register
