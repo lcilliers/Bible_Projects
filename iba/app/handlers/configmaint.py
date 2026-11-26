@@ -226,6 +226,8 @@ def validate(ctx: Ctx) -> Outcome:
     errors += cfgquality.find_unregistered_project_scripts(ctx.db.conn, PROJECT_ROOT)
     # and its mirror: every registered utility names a file that exists (#2618 follow-up)
     errors += cfgquality.find_utility_paths_missing(ctx.db.conn, PROJECT_ROOT)
+    # the analytic process described as one path of its methods in its guide section (#2538)
+    errors += cfgquality.find_analytic_guide_gaps(ctx.db.conn, PROJECT_ROOT)
     # every rule linked to the operations it governs (#2209)
     errors += cfgquality.find_rule_scope_gaps(ctx.db.conn, APP_ROOT)
     # the retired names of the lexical work still described as live, and the layered reading's items without a prompt (#2507, D9)

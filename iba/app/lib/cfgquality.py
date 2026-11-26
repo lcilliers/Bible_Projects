@@ -500,6 +500,40 @@ def find_utility_paths_missing(conn: sqlite3.Connection, project_root: pathlib.P
     return out
 
 
+def find_analytic_guide_gaps(conn: sqlite3.Connection, project_root: pathlib.Path) -> list[str]:
+    """The analytic process is described as one path of methods in one section of the user guide (#2538, researcher 2026-11-26: "then the
+    work for creating the analytic process as a collection of methods with a clear path of execution clearly described as such is not
+    complete"). cfg_setting layer.read_types `guide` names the file and the section; every read command of layer.read_types (its `command`
+    and the `Record` half) and every method in `guide.also` must be named in that section in backticks. A HARD error in configmaint.validate,
+    so a read command added for 3.2 or 3.3 cannot go live without its place on the path."""
+    import json
+    row = conn.execute("SELECT value FROM cfg_setting WHERE key='layer.read_types' AND inactive=0").fetchone()
+    if not row:
+        return []
+    rts = json.loads(row[0])
+    g = rts.get("guide")
+    if not isinstance(g, dict):
+        return ["cfg_setting layer.read_types has no `guide` (file, section, also): the analytic path has no home in the user guide"]
+    f = project_root / g["file"]
+    if not f.exists():
+        return [f"cfg_setting layer.read_types guide.file {g['file']} does not exist"]
+    lines = f.read_text(encoding="utf-8").splitlines()
+    head = f"### {g['section']} "
+    start = next((i for i, l in enumerate(lines) if l.startswith(head)), None)
+    if start is None:
+        return [f"{g['file']} has no section headed '{head.strip()}' (cfg_setting layer.read_types guide.section)"]
+    end = next((i for i in range(start + 1, len(lines)) if lines[i].startswith("### ") or lines[i].startswith("## ")), len(lines))
+    body = chr(10).join(lines[start:end])
+    want = []
+    for t in rts.values():
+        if isinstance(t, dict) and t.get("command"):
+            c = t["command"]
+            want += [c, "Record" + c[4:] if c.startswith("Read") else None]
+    want += list(g.get("also", []))
+    return [f"{g['file']} section {g['section']} does not name the analytic method `{c}` (cfg_setting layer.read_types): add it to the path of execution"
+            for c in dict.fromkeys(w for w in want if w) if f"`{c}`" not in body and f"`{c} " not in body]
+
+
 def find_filled_by_referencing_inactive_step(conn: sqlite3.Connection) -> list[str]:
     """`cfg_column.filled_by` naming an inactive step -- ADVISORY: each needs a judgement (the column
     may be dormant, or another active mechanism may now write it)."""
