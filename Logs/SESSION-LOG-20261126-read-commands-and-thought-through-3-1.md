@@ -45,3 +45,8 @@ Claude's self-correctable fixes, made and closed:
 - #2568 (Claude): the standing test-copy approval, open while #2538 runs.
 
 ## 6. Git
+
+- Branch: `main`.
+- Session commit: `a9021fdcb0961ac654c2599c16fa5fbe55c440e9` ("session 20261126: one command for each read (#2538) and the ten subgroups of thought read through step 3.1"), 371 files.
+- Push output: `To https://github.com/lcilliers/Bible_Projects.git` / `cbd46aa8..a9021fdc  main -> main`.
+- Not committed: two untracked database copies in `iba/app/db/archive/` (`iba-pre-rollback-thought-rerun-20261125.db`, `iba-restore-point-20261124T152322Z.db`, about 1 GB each, made before this session, over the GitHub file size limit; left out as the earlier commits left them).
