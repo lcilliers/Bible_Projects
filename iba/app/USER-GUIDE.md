@@ -1129,6 +1129,8 @@ iba\app\ps\Surface-Relation.ps1 -Action Validate                     # WordNet s
 
 **How every method works.** A read is a pair of commands. `Read<X>` writes ONE package to `layer.working_dir`: the instruction of the read (cfg_setting `layer.read_types`: what to read, how, what to write and the rules it keeps, their text read live from `cfg_method_rule` and `cfg_behaviour_rule`), the data of its unit only, and an `answer` to fill. Claude reads the package whole and fills the answer. `Record<X> -File <answer> -Check` checks it and writes nothing; `Record<X> -File <answer>` refuses the whole file on any fault (every fault listed, nothing written), or writes it in one transaction, validates the ledger rows and prints the next command. A method opens its own step when the steps before it are closed; it refuses, and says why, when they are not.
 
+**Which step wrote an observation.** Its `stage` says it: `lexical` (S1), `layer-1` (1.1, 1.2), `layer-2` (2.1), `layer-3.1` (the elements), `layer-3.2` (the behaviours), `layer-3.3` (the matches); `layer-3` is history, before 2026-11-26 (#2538). The node carries the collection (`ib_node.collection_id`), so an observation whose live word nodes carry more than one collection is a multi-collection observation, the input of 3.3.
+
 **Where you are: `LayerNext`.** `Collection-Build.ps1 -Action LayerNext -Collection <name>` reads the ledger and names the subgroup in flight, the step, its state and the next command. Run it at the start of every session and after any break; it answers the same in every session.
 
 **The path of execution.**

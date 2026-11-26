@@ -370,6 +370,22 @@ def log(conn, observation_id: int, node_id: int | None, column: str, old, new, r
                   None if new is None else str(new), reason.strip(), reading_id, run_id, who))
 
 
+def restage_observation(cfg, conn, observation_id: int, stage: str, reason: str, reading_id, run_id: str, who: str) -> bool:
+    """Set the stage of a live observation (cfg_enum ib_observation.stage), the change kept with its reason. The stage names the step that wrote the observation
+    (researcher 2026-11-26, #2538: "the layer must be part of it ... (probably the observation)"): stage 4 writes layer-3.1, layer-3.2, layer-3.3. Returns False when
+    it already holds that stage."""
+    if stage not in cfg.enum("ib_observation.stage"):
+        raise Refused(f"stage must be one of {cfg.enum('ib_observation.stage')}")
+    o = conn.execute("SELECT stage, deleted FROM ib_observation WHERE id=?", (observation_id,)).fetchone()
+    if o is None or o["deleted"]:
+        raise Refused(f"observation {observation_id} is not a live observation")
+    if o["stage"] == stage:
+        return False
+    log(conn, observation_id, None, "stage", o["stage"], stage, reason, reading_id, run_id, who)
+    conn.execute("UPDATE ib_observation SET stage=?, updated_at=strftime('%Y-%m-%dT%H:%M:%SZ','now') WHERE id=?", (stage, observation_id))
+    return True
+
+
 def set_disposition(conn, node_id: int, disposition: str, note: str, reading_id, run_id: str, who: str) -> None:
     """Where this verse ends up for the finding (cfg_enum observation_disposition; the claims step's ending of a node), the
     change kept. A disposition of withdrawn also deletes the node (the deleted column, #2323). A reading deletes a node with

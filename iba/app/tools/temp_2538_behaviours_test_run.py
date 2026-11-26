@@ -3,7 +3,8 @@
 Researcher 2026-11-26: "step 3.2 is a fundamental part of the collection process and must be codified"; "step 3.1 is incomplete. it did not sweep the observations that are
 not valid, and removed them"; "the approach and observation results for 3.2 looks good."
 
-Runs on a COPY of iba.db (dbsnapshot.copy_db of live into <scratch dir>), never the live database, on the collection thought:
+Runs on a COPY of iba.db (dbsnapshot.copy_db of live into <scratch dir>), never the live database, on the collection thought. Live has been swept and its 3.2
+recorded since 2026-11-26: pre_32_state first restores one swept row with its observations and unvalidates 3.2 on the copy, so the cases test the state they describe.
   S1  behaviours_2538_v1_20261126.py applies on the copy; a second run writes nothing; the file is not archived from a copy
   S2  the steps, grants and IB-08 are registered; the coherence check finds no analytic guide gap (every step has its read command or a deferral)
   S3  before the sweep: ReadBehaviours refuses naming SweepSuperseded, and LayerNext names SweepSuperseded
@@ -63,6 +64,28 @@ def one_behaviour(conn, lid, ids, drop=None):
             "not_gathered": {}, "older": [], "existing": []}
 
 
+def pre_32_state(conn, cid):
+    """Test state on the copy (not a method): live has been swept and its 3.2 recorded since 2026-11-26, so the copy is put back to the state these cases test: one row the
+    sweep retired is live again with its observations and their nodes (restored as they were), and the 3.2 row is unvalidated. Returns what it did."""
+    done = []
+    if not conn.execute("SELECT 1 FROM collection_layer_item c JOIN collection_subgroup s ON s.id=c.subgroup_id WHERE c.collection_id=? AND c.deleted=0 AND c.state!='retired' "
+                        "AND s.deleted=1 LIMIT 1", (cid,)).fetchone():
+        row = conn.execute("SELECT c.id FROM collection_layer_item c JOIN collection_subgroup s ON s.id=c.subgroup_id WHERE c.collection_id=? AND c.deleted=0 AND c.state='retired' "
+                           "AND s.deleted=1 AND c.reason LIKE '%retired by the sweep at the close of 3.1%' AND c.step='3.1' ORDER BY c.id LIMIT 1", (cid,)).fetchone()
+        if row:
+            obs = [r[0] for r in conn.execute("SELECT id FROM ib_observation WHERE stable_key >= ? AND stable_key < ? AND deleted=1", (f"layer:{row[0]}:", f"layer:{row[0]};"))]
+            for oid in obs:
+                conn.execute("UPDATE ib_observation SET deleted=0, status=NULL WHERE id=?", (oid,))
+                conn.execute("UPDATE ib_node SET deleted=0 WHERE observation_id=? AND id IN (SELECT node_id FROM ib_observation_change WHERE observation_id=? AND node_id IS NOT NULL "
+                             "AND reason LIKE '%sweep at the close of 3.1%')", (oid, oid))
+            conn.execute("UPDATE collection_layer_item SET state='observed' WHERE id=?", (row[0],))
+            done.append(f"swept row {row[0]} restored with {len(obs)} observation(s)")
+    conn.execute("UPDATE collection_layer_item SET validated=0 WHERE collection_id=? AND step='3.2' AND deleted=0 AND state!='retired' AND validated=1", (cid,))
+    done.append("3.2 unvalidated")
+    conn.commit()
+    return "; ".join(done)
+
+
 def main(scratch, answer_file=None):
     t0 = time.monotonic()
     S = pathlib.Path(scratch) / "t2538behaviours"
@@ -85,6 +108,7 @@ def main(scratch, answer_file=None):
     case("S2", "steps, IB-08 registered; no analytic guide gap", len(steps) == 3 and ib08 == 1 and not gaps, gaps[:3] or steps)
 
     cid, _ = lr.ci._collection(conn, COLL)
+    print(pre_32_state(conn, cid), file=sys.stderr)
     out = pathlib.Path(scratch) / "t2538behaviours" / "packages"
     try:
         rc.read_behaviours(conn, cfg, "T2538B", COLL, out)

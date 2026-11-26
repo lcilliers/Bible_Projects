@@ -484,7 +484,7 @@ def record(conn, cfg, run_id: str, data: dict, keep: bool) -> dict:
             errors += perr
         if errors:
             raise lr.LayerError("the file is refused, nothing written; problems:\n  " + "\n  ".join(errors))
-        stage = s["stages"][str(sd["layer"])]
+        stage = lr.stage_of(s, sd)
         texts = bv.scope_texts(conn, cfg, L["cid"])
         for t in todo:
             lid = t["lrow"][0]
@@ -557,7 +557,7 @@ def check_row(conn, cfg, s, L, sd, r) -> str | None:
         return "the data no longer demands this aspect (LayerOpen retires it)"
     allowed = _allowed(dem)
     osis_of = {int(o["vl_id"]): o["osis"] for o in dem}
-    stage = s["stages"][str(sd["layer"])]
+    stage = lr.stage_of(s, sd)
     inner = _roles(cfg)
     groups = orec.node_role_groups(cfg)
     sources, required = _sources(conn, s, L, sd, gid, subject)

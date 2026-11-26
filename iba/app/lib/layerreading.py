@@ -113,6 +113,12 @@ def settle_nodes(conn, s: dict, oid: int, run_id: str, layer: int) -> list[str]:
     return problems
 
 
+def stage_of(s: dict, sd: dict) -> str:
+    """The stage an observation of a step is written with: the step's own (cfg_setting layer.reading stages, keyed by the step: layer-3.1, layer-3.2, layer-3.3; researcher
+    2026-11-26, #2538, so that the observation says which step wrote it), else the stage of its layer."""
+    return s["stages"].get(sd["key"]) or s["stages"][str(sd["layer"])]
+
+
 def needs_pairs(sd: dict) -> bool:
     """A step that reads the typed pairings of the evidence report: the steps of layer 2 and a step that sets `pairs` (3.3)."""
     return sd["layer"] == 2 or bool(sd.get("pairs"))
@@ -1073,7 +1079,7 @@ def record(conn, cfg, run_id: str, data: dict, keep: bool) -> dict:
     node_problems: list[str] = []
     texts = bv.scope_texts(conn, cfg, L["cid"]) if any(x["disp"] in ("observed", "multi") for x in plan) else {}
     try:
-        stage = s["stages"][str(sd["layer"])]
+        stage = stage_of(s, sd)
         vl = _vl(conn, [o["vl_id"] for p in plan if p["disp"] == "observed" for o, _ in p["nodes"]])
         for p in plan:
             lid, old = p["ledger"][0], p["ledger"][7]
@@ -1085,7 +1091,7 @@ def record(conn, cfg, run_id: str, data: dict, keep: bool) -> dict:
                     res["withdrawn"] += 1
                 first = None
                 row_ids: list[int] = []
-                stage = s["stages"][str(sd["layer"])]
+                stage = stage_of(s, sd)
                 vlm = _vl(conn, [o["vl_id"] for sn in p["senses"] for o, _ in sn["nodes"]])
                 for k, sn in enumerate(p["senses"], 1):
                     pj = {"item": p["ledger"][3], "step": step, "word": p["ledger"][5]}
@@ -1258,7 +1264,7 @@ def check(conn, cfg, run_id: str, name: str, dry: bool = False, subgroup: str | 
                     have, bad_kind, bad_node, fail_tr, traced_all = set(), 0, 0, None, set()
                     for oid_ in obs_:
                         o_ = conn.execute("SELECT stage, tag FROM ib_observation WHERE id=?", (oid_,)).fetchone()
-                        if o_[0] != s["stages"][str(sd["layer"])] or o_[1] not in idef.get("kinds", [idef["kind"]]):
+                        if o_[0] != stage_of(s, sd) or o_[1] not in idef.get("kinds", [idef["kind"]]):
                             bad_kind += 1
                         nl = conn.execute("SELECT verse_lexical_id, role, collection_id FROM ib_node WHERE observation_id=? AND deleted=0 AND traced_observation_id IS NULL", (oid_,)).fetchall()
                         if not nl:
@@ -1302,7 +1308,7 @@ def check(conn, cfg, run_id: str, name: str, dry: bool = False, subgroup: str | 
                 o = conn.execute("SELECT stage, tag, deleted FROM ib_observation WHERE id=?", (oid,)).fetchone() if oid else None
                 if o is None or o[2]:
                     fail = "its observation is missing or withdrawn"
-                elif (o[0] != s["stages"][str(sd["layer"])] and not (reason or "").startswith("adopted")) or o[1] not in idef.get("kinds", [idef["kind"]]):
+                elif (o[0] != stage_of(s, sd) and not (reason or "").startswith("adopted")) or o[1] not in idef.get("kinds", [idef["kind"]]):
                     fail = f"its observation has stage {o[0]} and kind {o[1]}, not {s['stages'][str(sd['layer'])]} and {idef['kind']}"
                 elif gid and gid not in L["groups"]:
                     fail = "its group is retired or missing"
