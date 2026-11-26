@@ -38,3 +38,6 @@ Session id: 44fa45e5-b886-40b6-9928-2c435d1a9f56 (Developer Mode)
 
 ## 6. Git
 
+- branch: main
+- commit: 1ee1f6e6f75f93236f60e533be0a2e3fea13f6a3 (session 20261126: Developer Mode -- #2637 X4 refusal keys, X3 CheckAnswer, X1 readable view, X2 judgement-only form; #2628 and #2621 fixed; B:20 cheaper route by default; session log)
+- push: To https://github.com/lcilliers/Bible_Projects.git   5cb37da4..1ee1f6e6  main -> main
