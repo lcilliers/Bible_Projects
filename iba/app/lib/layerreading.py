@@ -1187,8 +1187,12 @@ def record(conn, cfg, run_id: str, data: dict, keep: bool) -> dict:
 
 
 # ══ check: validate every answered row against the tables ══════════════════════════════════════
-def check(conn, cfg, run_id: str, name: str, dry: bool = False, subgroup: str | None = None) -> dict:
-    """Re-derive what each answered row demands and validate it. Sets `validated` (the check alone sets it). Returns the findings by step."""
+def check(conn, cfg, run_id: str, name: str, dry: bool = False, subgroup: str | None = None, only: set | None = None, prechecked: set | None = None) -> dict:
+    """Re-derive what each answered row demands and validate it. Sets `validated` (the check alone sets it). Returns the findings by step.
+    `only` (ledger ids): the targeted check a Record runs after it writes (researcher 2026-11-26, #2538: "do not run validation twice ... ensure that the validation is highly
+    efficient and targeted"): only those rows are re-derived and validated, besides the settlement of the open old-observation rows; the summary is then partial (`closed` None).
+    `prechecked`: stage-4 rows the recorder has just passed through layerinner.check_row in the same transaction; check_row is not run again for them. LayerCheck itself (no `only`)
+    is the full audit of every row."""
     s = settings(cfg)
     roles = set(orec.node_roles(cfg))
     L1 = load(conn, cfg, name, pairs=False, subgroup=subgroup)
@@ -1201,7 +1205,8 @@ def check(conn, cfg, run_id: str, name: str, dry: bool = False, subgroup: str | 
         if needs_pairs(sd) and L2 is None:
             L2 = load(conn, cfg, name, pairs=True, subgroup=subgroup)
         L = L2 if needs_pairs(sd) else L1
-        rows = [r for r in _rows(conn, L["cid"], step) if r[6] != "retired" and (gsel is None or r[4] == gsel)]
+        rows = [r for r in _rows(conn, L["cid"], step) if r[6] != "retired" and (gsel is None or r[4] == gsel)
+                and (only is None or r[0] in only or (r[3] == bv.OLD_ITEM and r[6] == "open"))]
         problems, ok_, open_ = [], 0, 0
         for r in rows:
             lid, _, _, item, gid, subject, state, oid, reason, val = r
@@ -1242,7 +1247,7 @@ def check(conn, cfg, run_id: str, name: str, dry: bool = False, subgroup: str | 
                 continue
             if sd["layer"] == 3:     # stage 4: re-derived and validated by layerinner.check_row (#2528)
                 from . import layerinner
-                fail = layerinner.check_row(conn, cfg, s, L, sd, r)
+                fail = None if prechecked and lid in prechecked else layerinner.check_row(conn, cfg, s, L, sd, r)
                 if not fail and state != "none":
                     fail = bv.row_problems(conn, cfg, s, L["cid"], _row_obs(conn, lid, oid), sd["layer"], sd["key"])
                 if fail:
@@ -1342,17 +1347,17 @@ def check(conn, cfg, run_id: str, name: str, dry: bool = False, subgroup: str | 
             if not dry:
                 conn.execute(f"UPDATE collection_layer_item SET checked_at={NOW}, validated=?, updated_at={NOW}, run_id=? WHERE id=?", (0 if fail else 1, run_id, lid))
         diff = []
-        if rows and (sd["layer"] == 0 or not rep["grouping"]):
+        if rows and only is None and (sd["layer"] == 0 or not rep["grouping"]):      # what the data demands and the ledger lacks: the full check only
             have_k = {(r[3], r[4], r[5]) for r in rows}
             diff = [f"missing: {w['item']} / {L['groups'][w['subgroup_id']]['name'] if w['subgroup_id'] else ''} {w['subject']}".strip() for w in derive(conn, cfg, L, step)
                     if (w["item"], w["subgroup_id"], w["subject"]) not in have_k and (gsel is None or w["subgroup_id"] == gsel)]      # with -Subgroup only the subgroup's own rows are demanded (found by the audit of 2026-11-25)
-        if sd.get("closing_gate") and rows and not problems and not open_ and not diff:
+        if sd.get("closing_gate") and rows and not problems and not open_ and not diff and only is None:
             from . import layerinner
             problems += ["partner collection " + x for x in bv.partner_gaps(conn, layerinner.match_partners(r[5] for r in rows), declared=s.get("partner_complete") or [])]
-        if sd.get("closing_gate") and rows and not problems and not open_ and not diff:
+        if sd.get("closing_gate") and rows and not problems and not open_ and not diff and only is None:
             problems += ["the evidence validation of the collection does not pass: " + x for x in bv.closing_gate(conn, cfg, L["cid"], "evidence")]      # the inner-being validation completes AFTER 3.3 (researcher 2026-11-24)
         rep["steps"][step] = {"rows": len(rows), "validated": ok_, "open": open_, "failed": problems, "not_in_ledger": diff,
-                              "closed": bool(rows) and not problems and not open_ and not diff}
+                              "closed": (bool(rows) and not problems and not open_ and not diff) if only is None else None}
     rep["lexical"] = lexical_status(conn, cfg, L1)
     return rep
 

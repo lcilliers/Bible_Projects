@@ -871,7 +871,7 @@ def validate_pull(ctx: Ctx) -> Outcome:
     except (cv.ValidateError, ValueError, OSError) as exc:
         return fail("refused", str(exc))
     f = res["findings"]
-    return ok(f"{name}: {res['scope']['union']} observations in scope; {len(f.get('unmarked', []))} not marked; {len(f.get('word_missing', []))} word nodes missing a required column; "
+    return ok(f"{name}: {res['scope']['union']} observations in scope to judge ({res['scope'].get('built', 0)} validated by the build and not judged again); {len(f.get('unmarked', []))} not marked; {len(f.get('word_missing', []))} word nodes missing a required column; "
               f"{len(f.get('no_node', []))} without a node; {len(f.get('traced_dead', []))} traces to a deleted observation -- report {path.as_posix()} (run Manifest-Rebuild.ps1 to register it), "
               f"working file {wpath.as_posix()}. Read each observation, then write the sheet of actions and Collection-Build.ps1 -Action ValidateRecord -File <sheet> -Check",
               observations=res["scope"]["union"])

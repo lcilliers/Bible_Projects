@@ -371,7 +371,11 @@ def closing_gate(conn, cfg, cid: int, layers: str = "both", gid: int | None = No
     """What the collection's validation (collectionvalidate.check) still finds: the evidence layer ('evidence') or both ('both'). Empty when it passes. With gid, only what concerns the
     observations of that subgroup (a live node placed in it): the gate of one pass of the subgroup loop (#2538)."""
     from . import collectionvalidate as cv
-    res = cv.check(conn, cfg, cid)
+    mine_ids = None
+    if gid is not None:      # a subgroup's gate judges the observations with a live node placed in it (idx_ib_node_subgroup), not the whole collection filtered afterwards (#2538)
+        mine_ids = {r[0] for r in conn.execute("SELECT DISTINCT n.observation_id FROM ib_node n JOIN ib_observation o ON o.id=n.observation_id WHERE n.deleted=0 AND o.deleted=0 "
+                                               "AND n.subgroup_id=?", (gid,))}
+    res = cv.check(conn, cfg, cid, mine_ids)
     out = []
     ev = res["open_evidence"]
     if gid is not None:

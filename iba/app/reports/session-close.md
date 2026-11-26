@@ -1,10 +1,10 @@
 # Session close (#1875, rebuilt #2173)
 
-> Generated 2026-11-26T10:01:38Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
+> Generated 2026-11-26T10:11:33Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
 
 - session: `760131f7-a5d4-44b5-92a0-7c28ca0a4683` (CLAUDE_CODE_SESSION_ID); started 2026-11-25T16:27:19Z; window base commit `cbd46aa8dcb46fb95e5ee10283311450498641a6`
 - compliance file: `Logs/compliance/COMPLIANCE-20261125-760131f7.md`; session log: `Logs/SESSION-LOG-20261126-read-commands-and-thought-through-3-1.md`
-- **open findings: 0**; cleared by disposition: 31
+- **open findings: 0**; cleared by disposition: 32
 
 
 ## Contents
@@ -71,6 +71,10 @@ Summar" -- disposition: no record needed: not the researcher's words (an app con
 - cleared `SC3:1547af1c`: researcher message 2026-11-26T08:47 is in no escalation comment written this session: "2538 is still running? what does that mean." -- disposition: no record needed: a question about the state of #2538, answered in the chat from LayerNext; the state it asked about is recorded on #2538 v87 to v94
 - cleared `SC3:a17a9397`: researcher message 2026-11-26T09:27 is too short to be matched; name where it is recorded: "Yes, fix them" -- disposition: recorded in #2538 v95
 - cleared `SC3:2328ebf1`: researcher message 2026-11-26T09:46 is too short to be matched; name where it is recorded: "Yes, fix them" -- disposition: recorded in #2538 v100
+- cleared `SC3:d174de35`: researcher message 2026-11-26T10:06 is in no escalation comment written this session: "<task-notification>
+<task-id>bxz9kkvlu</task-id>
+<tool-use-id>toolu_01JcEYWJpN9CcFphQtLtDfaa</tool-use-id>
+<output-file>C:\Users\lerouxc\AppData\Local\Temp\clau" -- disposition: no record needed: not the researcher's words (an automated background-task notification)
 
 <a id="sc4-open-items-in-the-register"></a>
 ## SC4 Open items in the register
@@ -124,7 +128,7 @@ _no finding_
 
 _no finding_
 
-- cleared `SC16:Bash:_cd:e29939cc`: Bash: cd failed 5 times this session: /usr/bin/bash: -c: line 104: unexpected EOF while looking for matching `''; /usr/bin/bash: -c: line 108: unexpected EOF while looking for matching `''; /usr/bin/bash: -c: line 46: unexpected EOF while looking for matching `''; /usr/bin/bash: -c: line 57: unexpected EOF while looking for matching `''; /usr/bin/bash: -c: line 73: unexpected EOF while looking for matching `'' -- disposition: fixed: scripts with quotes are written with the Write tool and run as files (scratchpad step.ps1, evstep.ps1, elstep.ps1), not as bash heredocs
+- cleared `SC16:Bash:_cd:e29939cc`: Bash: cd failed 6 times this session: /usr/bin/bash: -c: line 104: unexpected EOF while looking for matching `''; /usr/bin/bash: -c: line 108: unexpected EOF while looking for matching `''; /usr/bin/bash: -c: line 113: unexpected EOF while looking for matching `''; /usr/bin/bash: -c: line 46: unexpected EOF while looking for matching `''; /usr/bin/bash: -c: line 57: unexpected EOF while looking for matching `''; /usr/bin/bash: -c: line 73: unexpected EOF while looking for matching `'' -- disposition: fixed: scripts with quotes are written with the Write tool and run as files (scratchpad step.ps1, evstep.ps1, elstep.ps1), not as bash heredocs
 - cleared `SC16:Escalation.ps1_-Action_ResolveSelfCorrectable`: Escalation.ps1 -Action ResolveSelfCorrectable failed 2 times this session: [31;1mInvoke-Expression: [31;1mMissing argument in parameter list.[0m; ResolveSelfCorrectable needs -Id and -Resolution (what was wrong, what changed). -- disposition: fixed: each call passes -Id and -Resolution from a script hashtable (scratchpad resolve.ps1)
 - cleared `SC16:Collection-Build.ps1_-Action_ReadEnrichment`: Collection-Build.ps1 -Action ReadEnrichment failed 2 times this session: work package : collection-build -- disposition: fixed: iba/app/lib/layerreading.py trace_targets finds the ledger row by key (BUILD.md 584, #2591)
 - cleared `SC16:Collection-Build.ps1_-Action_RecordStructure`: Collection-Build.ps1 -Action RecordStructure failed 18 times this session: work package : collection-build -- disposition: fixed: each refusal was the recorder's own check on a reading (copied verse words, grounds); reworded and recorded, #2586 to #2605 resolved

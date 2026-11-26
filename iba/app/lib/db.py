@@ -59,9 +59,9 @@ def table_ddl(cfg: Cfg, table: str, name: str | None = None) -> tuple[str, list[
         idx_name = f"idx_{phys}_live_unique"
         cols_sql = ", ".join(f'"{c}"' for c in key)
         index_sql.append(f'CREATE UNIQUE INDEX "{idx_name}" ON "{phys}" ({cols_sql}) WHERE deleted=0')
-    for idx_name, idx_cols in cfg.indexes(table):
+    for idx_name, idx_cols, idx_where in cfg.indexes(table):
         cols_sql = ", ".join(f'"{c}"' for c in idx_cols)
-        index_sql.append(f'CREATE INDEX "{idx_name}" ON "{phys}" ({cols_sql})')
+        index_sql.append(f'CREATE INDEX "{idx_name}" ON "{phys}" ({cols_sql})' + (f" WHERE {idx_where}" if idx_where else ""))
     return create_sql, index_sql
 
 

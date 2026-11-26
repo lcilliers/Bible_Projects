@@ -6,7 +6,7 @@
 | --- | --- |
 | database | iba |
 | config_version | app-0.1.0 |
-| generated_at | 2026-11-26T09:45:00Z |
+| generated_at | 2026-11-26T10:10:50Z |
 | current_seed_hash | bootstrap:configuration-maintenance-2026-07-21 |
 
 ## Contents
@@ -149,7 +149,7 @@ _(none)_
 <a id="2-utilities-registry"></a>
 ## 2. Utilities registry
 
-**1178** registered module(s) — **695** declared `config_exempt` (a legitimate zero for config-setting/enum usage, not a completeness gap), **996** inactive (module removed/merged). See §0 "Low config-density utilities" for any NON-exempt module still flagged.
+**1180** registered module(s) — **697** declared `config_exempt` (a legitimate zero for config-setting/enum usage, not a completeness gap), **998** inactive (module removed/merged). See §0 "Low config-density utilities" for any NON-exempt module still flagged.
 
 | module | file | purpose | active | exempt | exempt reason |
 | --- | --- | --- | --- | --- | --- |
@@ -1309,6 +1309,8 @@ _(none)_
 | t_word_and_retire_2297_2299_v1_20261026 | iba/app/migration/archive/t_word_and_retire_2297_2299_v1_20261026.py | ONE-OFF migration -- escalations #2297 and #2299 (#2286 U7, U9): method rule RA-01 on reading.apply; the cluster.subgroup pipeline retired; run_id DEVMODE-2297-2299-T-WORD-RETIRE-20261026. |  | ✓ | one-off migration script -- writes cfg_* rows through configmaint.apply_logged, same class as the other Developer Mode migrations |
 | taggingguidance | iba/app/lib/taggingguidance.py | taggingguidance.py -- the one shared source of ib_observation.tag definitions for every LLM-calling generator stage (escalation #1836); imported by four generators. | ✓ |  |  |
 | threadaudit | iba/app/lib/threadaudit.py | threadaudit.py -- thread quality, validity and integrity (#2173 P5), T-a to T-g by item. | ✓ |  |  |
+| traceindex_2538_v1_20261126 | iba/app/migration/archive/traceindex_2538_v1_20261126.py | migration of #2538: the index on ib_node(traced_observation_id), so no trace lookup scans ib_node |  | ✓ | a one-off migration; its values are the config it writes |
+| traceindex_2538_v2_20261126 | iba/app/migration/archive/traceindex_2538_v2_20261126.py | migration of #2538: cfg_index.partial_where and the trace index made partial |  | ✓ | a one-off migration; its values are the config it writes |
 | utilities_2207_v1_20261022 | iba/app/migration/archive/utilities_2207_v1_20261022.py | ONE-OFF migration -- escalation #2207 item 2: batch monitoring and lexicalenrich retired, tag definitions into cfg_setting, through configmaint.apply_logged under run_id DEVMODE-2207-UTILITIES-20261022. inactive=1 once applied. |  | ✓ | one-off migration script -- writes cfg_* rows through configmaint.apply_logged, same class as the other Developer Mode migrations |
 | validation | iba/app/validation.py | Word/book validation reports, called by handlers/reports.py. | ✓ | ✓ | app core, outside the utility config-density check |
 | validation_2538_v1_20261122 | iba/app/migration/archive/validation_2538_v1_20261122.py | ONE-OFF migration -- escalation #2538: the validation registered; run_id DEVMODE-2538-VALIDATION-20261122. |  | ✓ | one-off migration script -- writes cfg_* rows through configmaint.apply_logged, same class as the other Developer Mode migrations |
@@ -3188,6 +3190,7 @@ dedup key: `table_name, name, col`
 | name | TEXT |  | ✓ |  |  | index name (unique DB-wide, SQLite requirement) -- convention: idx_{table}_{col} |  |
 | col | TEXT |  | ✓ |  |  | one column of this index; multiple rows sharing (table_name, name) form one composite index |  |
 | ordinal | INTEGER |  | ✓ |  |  | column order within a composite index |  |
+| partial_where | TEXT |  |  |  |  | the WHERE of a partial index (NULL: a whole index); for a column that is mostly NULL, so the planner never walks the index for IS NULL (#2538) |  |
 
 ### debate_change_detail
 _hib_change_detail_ — one row per hib/hib_referent_option/verse_hib/passage/verse_passage/phenomenon/operation/operation_party/passage_linkage/passage_insufficiency/passage_emergent_question/passage_validation_note row inserted, updated, or soft-deleted by hib.set/passage.build/phenomenon.set/operation.set/closing.set -- the per-run CRUD audit trail shared by every debate writer (researcher direction 2026-08-08).

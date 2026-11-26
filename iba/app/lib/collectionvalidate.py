@@ -82,14 +82,22 @@ def scope(conn, cid: int) -> dict:
                            "(SELECT 1 FROM ib_node n WHERE n.observation_id=o.id AND n.deleted=0)").fetchall()
     c |= {r[0] for r in orphans if r[1] in pair_strongs}
     unplaced = [r[0] for r in orphans if r[1] not in pair_strongs]
-    return {"a": a, "b": b, "c": c, "union": a | b | c, "verses": len(verses), "pairs": len(pairs), "orphans_unplaced": unplaced}
+    # what the build has validated is not validated twice (researcher 2026-11-26, #2538: "Most of the validation issues were in the meantime built into the process. a) do not
+    # run validation twice"): an observation written under a ledger row of the collection that LayerCheck or the recorder validated (marker and node columns at creation,
+    # RW-12; no duplicate, RW-03; its traces, IB-02 to IB-07) is counted, not judged again; each row's observations are read by the range of its key (idx_ib_observation_stable_key)
+    built = set()
+    for (lid,) in conn.execute("SELECT id FROM collection_layer_item WHERE collection_id=? AND deleted=0 AND state!='retired' AND validated=1", (cid,)).fetchall():
+        built |= {r[0] for r in conn.execute("SELECT id FROM ib_observation WHERE stable_key >= ? AND stable_key < ? AND deleted=0", (f"layer:{lid}:", f"layer:{lid};"))}
+    union = a | b | c
+    return {"a": a, "b": b, "c": c, "built": union & built, "union": union - built, "verses": len(verses), "pairs": len(pairs), "orphans_unplaced": unplaced}
 
 
 # ══ the structural tests ═════════════════════════════════════════════════════════════════════════════
-def pull(conn, cfg, cid: int) -> dict:
+def pull(conn, cfg, cid: int, only=None) -> dict:
+    """`only`: the observations to judge, when the caller has the scope already (a subgroup's gate, #2538: the validation targeted); else the whole scope of the collection."""
     st = settings(cfg)
     cols = st["word_columns"]                       # [column, ...] of ib_node a word node must carry
-    sc = scope(conn, cid)
+    sc = scope(conn, cid) if only is None else {"a": set(only), "b": set(), "c": set(), "built": set(), "union": set(only), "verses": [], "pairs": [], "orphans_unplaced": []}
     ids = sorted(sc["union"])
     obs: dict[int, dict] = {}
     for ch in _chunks(ids):
@@ -144,7 +152,7 @@ def pull(conn, cfg, cid: int) -> dict:
         if key[1]:
             seen[key].append(oid)
     findings["duplicate_text"] = [v for v in seen.values() if len(v) > 1]
-    return {"collection_id": cid, "scope": {k: len(sc[k]) for k in ("a", "b", "c", "union")}, "verses": sc["verses"], "pairs": sc["pairs"],
+    return {"collection_id": cid, "scope": {k: len(sc[k]) for k in ("a", "b", "c", "built", "union")}, "verses": sc["verses"], "pairs": sc["pairs"],
             "observations": obs, "by_stage": dict(by_stage), "by_nature": dict(by_nature), "word_nodes": word_nodes, "traced_nodes": traced_nodes,
             "missing_columns": dict(missing_cols), "findings": dict(findings), "reach_in": dict(reach_in), "orphans_unplaced": len(sc["orphans_unplaced"])}
 
@@ -172,7 +180,7 @@ def worksheet(conn, res: dict, name: str) -> dict:
 def report_lines(conn, cfg, name: str, res: dict, gates: dict | None = None, sample: int = 8) -> list[str]:
     f = res["findings"]
     L = [f"# Validation: {name}", "",
-         f"- scope: a {res['scope']['a']}, b {res['scope']['b']}, c {res['scope']['c']}, union {res['scope']['union']} live observations "
+         f"- scope: a {res['scope']['a']}, b {res['scope']['b']}, c {res['scope']['c']}; {res['scope'].get('built', 0)} validated by the build and not judged again; to judge {res['scope']['union']} live observations "
          f"({res['verses']} verses, {res['pairs']} surface|strong pairs); d (meaning) by reading, not counted",
          f"- word nodes {res['word_nodes']}, traced nodes {res['traced_nodes']}",
          f"- marker: " + ", ".join(f"{k} {v}" for k, v in sorted(res["by_nature"].items())), "", "## Live observations by stored stage", ""]
@@ -194,13 +202,13 @@ def report_lines(conn, cfg, name: str, res: dict, gates: dict | None = None, sam
 
 
 # ══ the completeness check, two layers ═════════════════════════════════════════════════════════════════
-def check(conn, cfg, cid: int) -> dict:
+def check(conn, cfg, cid: int, only=None) -> dict:
     """Evidence layer first: every in-scope observation marked, no live observation without a live node, no word node missing a required column
     without its reason, no live trace to a deleted observation, no two of one meaning (exact text here; by meaning is the reading). The inner-being
     layer is judged only when the evidence layer passes: every inner-being observation traced to evidence marked as such (or recorded
     self-evidencing), none left with no trace; traces to evidence not yet marked are pending. The deferrals addressed to the collection are listed,
     and those the scope's observations carry to other collections are counted: a finding deferred to a named collection is not a failure."""
-    res = pull(conn, cfg, cid)
+    res = pull(conn, cfg, cid, only)
     f = res["findings"]
     obs = res["observations"]
     ev_fail = {"unmarked": f.get("unmarked", []), "no_node": f.get("no_node", []), "word_missing": [x[0] for x in f.get("word_missing", [])],

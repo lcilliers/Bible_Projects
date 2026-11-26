@@ -143,16 +143,20 @@ class Cfg:
     def column_names(self, table: str) -> set[str]:
         return {r["name"] for r in self.columns(table)}
 
-    def indexes(self, table: str) -> list[tuple[str, list[str]]]:
-        """Secondary (non-unique) indexes to build for this table -- [(index_name, [cols])], cols in
-        cfg_index.ordinal order, indexes in name order."""
+    def indexes(self, table: str) -> list[tuple[str, list[str], str | None]]:
+        """Secondary (non-unique) indexes to build for this table -- [(index_name, [cols], partial_where)], cols in
+        cfg_index.ordinal order, indexes in name order. `partial_where` (cfg_index.partial_where, #2538) makes a partial index:
+        an index on a column that is mostly NULL is built over the rows that hold a value, so the planner never walks it for IS NULL."""
+        has_where = any(r[1] == "partial_where" for r in self.conn.execute("PRAGMA table_info(cfg_index)"))
         rows = self.conn.execute(
-            "SELECT name, col FROM cfg_index WHERE table_name=? ORDER BY name, ordinal",
+            f"SELECT name, col, {'partial_where' if has_where else 'NULL'} AS w FROM cfg_index WHERE table_name=? ORDER BY name, ordinal",
             (table,)).fetchall()
         out: dict[str, list[str]] = {}
+        where: dict[str, str | None] = {}
         for r in rows:
             out.setdefault(r["name"], []).append(r["col"])
-        result = sorted(out.items())
+            where[r["name"]] = where.get(r["name"]) or r["w"]
+        result = sorted((n, cols, where.get(n)) for n, cols in out.items())
         _trace(f"indexes({table})", result)
         return result
 

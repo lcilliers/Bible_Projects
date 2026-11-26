@@ -40,6 +40,14 @@ def settings(cfg) -> dict:
     return json.loads(v) if isinstance(v, str) else v
 
 
+def _check_written(conn, cfg, run_id: str, name: str, gname: str | None, prechecked: bool = False) -> dict:
+    """The validation a Record runs after it writes: only the ledger rows this run answered (their run_id), and for a stage-4 record without running check_row again
+    (layerinner.record has passed them through it in this transaction). Researcher 2026-11-26 (#2538): "do not run validation twice ... highly efficient and targeted"."""
+    cid, _ = lr.ci._collection(conn, name)
+    mine = {r[0] for r in conn.execute("SELECT id FROM collection_layer_item WHERE collection_id=? AND run_id=? AND deleted=0", (cid, run_id))}
+    return lr.check(conn, cfg, run_id, name, subgroup=gname, only=mine, prechecked=mine if prechecked else None)
+
+
 def _slug(s: str) -> str:
     return re.sub(r"[^a-z0-9]+", "-", str(s).lower()).strip("-")
 
@@ -201,7 +209,7 @@ def record_words(conn, cfg, run_id: str, data: dict, keep: bool) -> dict:
     out = {"observed": r["observed"], "nodes": r["nodes"], "rows": len(rows)}
     if not keep:
         return {**out, "preview": True}
-    lr.check(conn, cfg, run_id, name, subgroup=gname)
+    _check_written(conn, cfg, run_id, name, gname)
     after = {x[0]: x for x in _word_rows(conn, cid, gid, step, item)}
     failed = [after[x["ledger_id"]][5] for x in rows if not after[x["ledger_id"]][9]]
     left = sum(1 for x in after.values() if x[6] == "open")
@@ -379,7 +387,7 @@ def record_senses(conn, cfg, run_id: str, data: dict, keep: bool) -> dict:
     out = {"observed": r["observed"], "nodes": r["nodes"], "senses": len(senses)}
     if not keep:
         return {**out, "preview": True}
-    lr.check(conn, cfg, run_id, name, subgroup=gname)
+    _check_written(conn, cfg, run_id, name, gname)
     after = {x[0]: x for x in _word_rows(conn, cid, gid, step, item)}
     return {**out, "validated": bool(after[lid][9]), "reason": after[lid][8], "next": next_after_senses(conn, cid, gid, name, gname, step)}
 
@@ -481,7 +489,7 @@ def record_enrichment(conn, cfg, run_id: str, data: dict, keep: bool) -> dict:
     out = {"observed": r["observed"], "nodes": r["nodes"], "enrichments": len(built)}
     if not keep:
         return {**out, "preview": True}
-    lr.check(conn, cfg, run_id, name, subgroup=gname)
+    _check_written(conn, cfg, run_id, name, gname)
     after = {x[0]: x for x in _word_rows(conn, cid, gid, step, item)}
     return {**out, "validated": bool(after[lid][9]), "reason": after[lid][8], "next": next_after_enrichment(conn, cid, gid, name, gname, step)}
 
@@ -661,7 +669,7 @@ def record_structure(conn, cfg, run_id: str, data: dict, keep: bool) -> dict:
     out = {"observed": r["observed"], "nodes": r["nodes"], "rows": len(rows)}
     if not keep:
         return {**out, "preview": True}
-    lr.check(conn, cfg, run_id, name, subgroup=gname)
+    _check_written(conn, cfg, run_id, name, gname)
     after = {x[0]: x for x in lr._rows(conn, cid, step)}
     failed = [f"{after[x['ledger_id']][3]} {after[x['ledger_id']][5]}".strip() + f" ({after[x['ledger_id']][8]})" for x in rows if not after[x["ledger_id"]][9]]
     left = sum(1 for x in after.values() if x[4] == gid and x[3] in STRUCTURE_ITEMS and x[6] == "open")
@@ -734,7 +742,7 @@ def read_sweep(conn, cfg, run_id: str, name: str, subgroup: str, out_dir: pathli
         if not (row[6] == "observed" and row[9]):
             conn.execute(f"UPDATE collection_layer_item SET state='observed', answered_at={lr.NOW}, reason=?, updated_at={lr.NOW}, run_id=? WHERE id=?",
                          ("swept: no older observation on the subgroup's occurrences is left unmarked after B1 to B3, and none is carried to the sweep", run_id, row[0]))
-            lr.check(conn, cfg, run_id, name, subgroup=gname)
+            _check_written(conn, cfg, run_id, name, gname)
         raise ReadError(f"the sweep of {gname!r} has nothing to read: no older observation is left unmarked; the sweep row is answered as such. Next: "
                         + next_after_gate(conn, cid, gid, name, gname))
     occ = {o["vl_id"] for o in L["d"]["occurrences"] if o["group"] == gid}
@@ -824,7 +832,7 @@ def record_sweep(conn, cfg, run_id: str, data: dict, keep: bool) -> dict:
         conn.execute("RELEASE read_sweep")
         return {"answered": len(answers), "preview": True}
     conn.execute("RELEASE read_sweep")
-    lr.check(conn, cfg, run_id, name, subgroup=gname)
+    _check_written(conn, cfg, run_id, name, gname)
     r2 = _gate_row(conn, cid, gid, SWEEP_ITEM)
     return {"answered": len(answers), "validated": bool(r2[9]), "reason": r2[8], "next": next_after_gate(conn, cid, gid, name, gname)}
 
@@ -966,7 +974,7 @@ def read_evidence(conn, cfg, run_id: str, name: str, subgroup: str, out_dir: pat
         if chk["passes"] and not (row[6] == "observed" and row[9]):
             conn.execute(f"UPDATE collection_layer_item SET state='observed', answered_at={lr.NOW}, reason=?, updated_at={lr.NOW}, run_id=? WHERE id=?",
                          (f"validated: the code checks pass and all {len(ev)} evidence observations are read", run_id, row[0]))
-            lr.check(conn, cfg, run_id, name, subgroup=gname)
+            _check_written(conn, cfg, run_id, name, gname)
         what = "every evidence observation is read" + ("" if chk["passes"] else "; the code checks do NOT pass: " + "; ".join(f"{k} {v[:5]}" for k, v in chk["findings"].items() if v))
         raise ReadError(f"the evidence validation of {gname!r}: {what}. Next: " + next_after_gate(conn, cid, gid, name, gname))
     traced = {}
@@ -1074,7 +1082,7 @@ def record_evidence(conn, cfg, run_id: str, data: dict, keep: bool) -> dict:
         conn.execute("RELEASE read_evidence")
         return {**out, "preview": True}
     conn.execute("RELEASE read_evidence")
-    lr.check(conn, cfg, run_id, name, subgroup=gname)
+    _check_written(conn, cfg, run_id, name, gname)
     r2 = _gate_row(conn, cid, gid, EVIDENCE_ITEM)
     return {**out, "validated": bool(r2[9]), "next": next_after_gate(conn, cid, gid, name, gname)}
 
@@ -1227,7 +1235,7 @@ def record_elements(conn, cfg, run_id: str, data: dict, keep: bool) -> dict:
     out = {"observed": r["observed"], "nodes": r["nodes"]}
     if not keep:
         return {**out, "preview": True}
-    lr.check(conn, cfg, run_id, name, subgroup=gname)
+    _check_written(conn, cfg, run_id, name, gname, prechecked=True)
     r2 = _elements_row(conn, cid, gid)
     res = {**out, "validated": bool(r2[9]), "reason": (r2[8] or "")[:300] if not r2[9] else "", "next": next_after_elements(conn, cfg, name, gname)}
     if r2[9] and lr.superseded(conn, cid)["rows"]:      # the last subgroup through 3.1 closes 3.1 for the collection: the sweep runs here (researcher 2026-11-26, #2538)
@@ -1383,6 +1391,6 @@ def record_behaviours(conn, cfg, run_id: str, data: dict, keep: bool) -> dict:
     out = {"observed": r["observed"], "none": r["none"], "nodes": r["nodes"]}
     if not keep:
         return {**out, "preview": True}
-    lr.check(conn, cfg, run_id, cname)
+    _check_written(conn, cfg, run_id, cname, None, prechecked=True)
     r2 = _behaviours_row(conn, cid)
     return {**out, "validated": bool(r2[9]), "reason": (r2[8] or "")[:300] if not r2[9] else "", "next": next_after_behaviours(cname)}
