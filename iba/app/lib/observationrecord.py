@@ -400,12 +400,45 @@ def delete_node(conn, node_id: int, reason: str, reading_id, run_id: str, who: s
     return True
 
 
-def soft_delete_observation(conn, observation_id: int, reason: str, reading_id, run_id: str, who: str) -> None:
+def release_traces(conn, observation_id: int, into, reason: str, reading_id, run_id: str, who: str) -> dict:
+    """The live traced nodes of OTHER observations that point at an observation being deleted (#2618): a trace to a deleted
+    observation supports nothing, and left standing it fails the evidence check of every subgroup whose scope holds the tracing
+    observation. Each is moved to the observations in `into` (what the deleted one went into: the observation it is merged into,
+    the carriers that consume it), or deleted when `into` is empty. A tracing observation that already traces a target keeps one
+    trace to it. Every change is logged on the tracing observation with the reason. Returns {moved, added, dropped}."""
+    into = [int(i) for i in (into or []) if int(i) != observation_id]
+    res = {"moved": 0, "added": 0, "dropped": 0}
+    for n in conn.execute("SELECT * FROM ib_node WHERE traced_observation_id=? AND deleted=0 AND observation_id<>?",
+                          (observation_id, observation_id)).fetchall():
+        holder = n["observation_id"]
+        why = f"traced observation {observation_id} deleted ({reason.strip()})"
+        targets = [t for t in into if t != holder and not conn.execute(
+            "SELECT 1 FROM ib_node WHERE observation_id=? AND traced_observation_id=? AND deleted=0", (holder, t)).fetchone()]
+        if not targets:
+            delete_node(conn, n["id"], why + (": the trace is dropped" if not into else f": {into} already traced"), reading_id, run_id, who)
+            res["dropped"] += 1
+            continue
+        log(conn, holder, n["id"], "traced_observation_id", observation_id, targets[0], why + f": moved to {targets[0]}", reading_id, run_id, who)
+        conn.execute("UPDATE ib_node SET traced_observation_id=? WHERE id=?", (targets[0], n["id"]))
+        res["moved"] += 1
+        seq = conn.execute("SELECT COALESCE(MAX(seq), 0) FROM ib_node WHERE observation_id=?", (holder,)).fetchone()[0]
+        for t in targets[1:]:
+            seq += 1
+            nid = conn.execute("INSERT INTO ib_node (observation_id, traced_observation_id, source_stage, seq, created_at, collection_id, subgroup_id) "
+                               "VALUES (?,?,?,?,?,?,?)", (holder, t, n["source_stage"], seq, _now(), n["collection_id"], n["subgroup_id"])).lastrowid
+            log(conn, holder, nid, "node", None, f"traced: rests on observation {t}", why + f": also traced to {t}", reading_id, run_id, who)
+            res["added"] += 1
+    return res
+
+
+def soft_delete_observation(conn, observation_id: int, reason: str, reading_id, run_id: str, who: str, into=None) -> None:
     """The finding is wrong everywhere: deleted=1 (and status withdrawn, kept equal for the readers that still look at status),
-    the change kept with its reason (nothing overwritten, nothing physically deleted)."""
+    the change kept with its reason (nothing overwritten, nothing physically deleted). The traces other observations hold to it
+    are released first (release_traces): moved to `into` where the caller names what it went into, dropped otherwise (#2618)."""
     o = conn.execute("SELECT status, deleted FROM ib_observation WHERE id=?", (observation_id,)).fetchone()
     if o is None or o["deleted"]:
         raise Refused(f"observation {observation_id} is not a live observation")
+    release_traces(conn, observation_id, into, reason, reading_id, run_id, who)
     log(conn, observation_id, None, "deleted", 0, 1, reason, reading_id, run_id, who)
     if o["status"] != "withdrawn":
         log(conn, observation_id, None, "status", o["status"], "withdrawn", reason, reading_id, run_id, who)
@@ -440,7 +473,7 @@ def merge_observation(conn, dup_id: int, into_id: int, reason: str, reading_id, 
             log(conn, dup_id, n["id"], "observation_id", dup_id, into_id, reason, reading_id, run_id, who)
             conn.execute("UPDATE ib_node SET observation_id=?, seq=? WHERE id=?", (into_id, seq, n["id"]))
             moved += 1
-    soft_delete_observation(conn, dup_id, f"merged into observation {into_id}: {reason}", reading_id, run_id, who)
+    soft_delete_observation(conn, dup_id, f"merged into observation {into_id}: {reason}", reading_id, run_id, who, into=[into_id])
     return {"moved": moved, "dropped": dropped}
 
 
