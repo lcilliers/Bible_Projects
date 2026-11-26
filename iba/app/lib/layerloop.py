@@ -102,10 +102,20 @@ def next_action(conn, cfg, name: str) -> dict:
     out = {"collection": coll, "progress": [f"{g['name']}: " + " ".join(f"{s}={g['steps'][s]}" for s in LOOP_STEPS) for g in p["subgroups"]],
            "collection_steps": p["collection_steps"]}
     if cur is None:
+        from . import layerreading as lr
+        left = lr.superseded(conn, p["cid"])
+        if left["rows"]:      # 3.1 closes with the sweep of what deleted subgroups left behind (researcher 2026-11-26, #2538)
+            out.update({"subgroup": None, "step": "3.1", "state": "sweep", "what": f"the close of 3.1: {len(left['rows'])} live ledger row(s) of deleted subgroups hold {len(left['observations'])} observation(s) that are no longer valid",
+                        "commands": [f"{ps} -Action SweepSuperseded -Collection {coll} -Check", f"{ps} -Action SweepSuperseded -Collection {coll}"]})
+            return out
         for s in COLLECTION_STEPS:
             stt = p["collection_steps"][s]
             if stt != "closed":
-                out.update({"subgroup": None, "step": s, "state": stt, "what": WHAT[s], "commands": _commands(ps, coll, s, None, stt)})
+                sdef = next((x for x in lr.settings(cfg)["steps"] if x["key"] == s), {})
+                if sdef.get("read_command_deferred"):      # a step the researcher has deferred is named with the ruling, not opened (#2538, 3.3 waits for every collection complete)
+                    out.update({"subgroup": None, "step": s, "state": "deferred", "what": f"{WHAT[s]} -- deferred: {sdef['read_command_deferred']}", "commands": []})
+                    return out
+                out.update({"subgroup": None, "step": s, "state": stt, "what": WHAT[s], "commands": _read_commands(conn, cfg, p["cid"], 0, s, stt, ps, coll, None) or _commands(ps, coll, s, None, stt)})
                 return out
         out.update({"subgroup": None, "step": None, "state": "complete", "what": "every subgroup is through 3.1 and 3.2 and 3.3 are closed: the inner-being validation completes the collection (it can only complete after 3.3)", "commands": [f"{ps} -Action LayerCheck -Collection {coll}"]})
         return out
@@ -138,7 +148,8 @@ def _read_commands(conn, cfg, cid: int, gid: int, step: str, state: str, ps: str
         todo = [i for i in items if i in pending and i in by_item][:1]
     if not todo:
         return []
-    return [f'{ps} -Action {by_item[todo[0]]} -Collection {coll} -Subgroup "{sub}"   (writes the package of the next {todo[0]} row(s); read it, fill its answer, then the matching Record command named in the package)']
+    where = f' -Subgroup "{sub}"' if sub else ""      # a collection step (3.2) is the collection's own and takes no subgroup
+    return [f'{ps} -Action {by_item[todo[0]]} -Collection {coll}{where}   (writes the package of the next {todo[0]} row(s); read it, fill its answer, then the matching Record command named in the package)']
 
 
 def _commands(ps: str, coll: str, step: str, sub, state: str) -> list[str]:

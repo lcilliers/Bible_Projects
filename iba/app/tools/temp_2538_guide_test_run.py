@@ -55,13 +55,14 @@ def main(scratch):
          "applied" in r1.stdout and "already applied: 0" in r2.stdout and MIG.exists(), (r1.stdout + r1.stderr).strip()[-160:] + " / " + r2.stdout.strip())
     cfg = Cfg(pathlib.Path(db))
     conn = cfg.conn
-    gaps = cfgquality.find_analytic_guide_gaps(conn, ROOT)
+    naming = lambda g_: [x for x in g_ if "does not name" in x or "no section" in x or "no `guide`" in x]      # the step coverage (#2538 3.2) is tested in temp_2538_behaviours
+    gaps = naming(cfgquality.find_analytic_guide_gaps(conn, ROOT))
     case("G2", "the guide as it stands names every method of the path", not gaps, gaps[:3])
     types = json.loads(conn.execute("SELECT value FROM cfg_setting WHERE key='layer.read_types'").fetchone()[0])
-    set_types(conn, {**types, "behaviours": {"step": "3.2", "command": "ReadBehaviours", "items": ["collection-gathering"], "rules": []}})
-    g3 = cfgquality.find_analytic_guide_gaps(conn, ROOT)
+    set_types(conn, {**types, "probe": {"step": "3.2", "command": "ReadProbe", "items": ["collection-gathering"], "rules": []}})
+    g3 = naming(cfgquality.find_analytic_guide_gaps(conn, ROOT))
     case("G3", "a read command the section does not name is found, with its Record half",
-         len(g3) == 2 and "`ReadBehaviours`" in g3[0] and "`RecordBehaviours`" in g3[1], g3)
+         len(g3) == 2 and "`ReadProbe`" in g3[0] and "`RecordProbe`" in g3[1], g3)
     set_types(conn, {**types, "guide": {**types["guide"], "section": "99.9"}})
     g4a = cfgquality.find_analytic_guide_gaps(conn, ROOT)
     set_types(conn, {k: v for k, v in types.items() if k != "guide"})

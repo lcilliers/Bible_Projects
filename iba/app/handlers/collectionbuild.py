@@ -677,6 +677,58 @@ def record_elements(ctx: Ctx) -> Outcome:
     """RecordElements: check a filled ReadElements answer whole and write it through the recorder of stage 4; validate the 3.1 row; name the next command. -Check previews."""
     return _record_gate(ctx, "record_elements", "ReadElements")
 
+def sweep_superseded(ctx: Ctx) -> Outcome:
+    """SweepSuperseded: the sweep that closes 3.1 for a collection: every live ledger row of a deleted subgroup retired and the observations written under it removed (nodes
+    deleted, traces released, each change kept with its reason; lib/layerreading.sweep_superseded; researcher 2026-11-26, #2538). Refused while a current subgroup is not through
+    3.1. A named snapshot first; -Check counts and writes nothing."""
+    from ..lib import dbsnapshot
+    from ..lib import layerreading as lr
+    coll = str(ctx.params.get("Collection", "")).strip()
+    if not coll:
+        return fail("refused", "-Collection is required")
+    conn = ctx.cfg.conn
+    try:
+        r = lr.sweep_superseded(conn, ctx.cfg, ctx.run_id, coll, check=True)
+        line = (f"{r['collection']}: {r['rows']} live ledger row(s) of deleted subgroups ({', '.join(r['subgroups']) or 'none'}; by step {r['rows_by_step']}) holding "
+                f"{r['observations']} observation(s)")
+        if _flag(ctx, "Check") or not r["rows"]:
+            return ok(("PREVIEW (nothing written): " if _flag(ctx, "Check") else "nothing to sweep: ") + line)
+        snap = dbsnapshot.snapshot("pre-sweep-superseded", named=True)
+        lr.sweep_superseded(conn, ctx.cfg, ctx.run_id, coll)
+    except lr.LayerError as exc:
+        return fail("refused", str(exc))
+    conn.commit()
+    return ok(f"swept: {line}; rows retired, observations removed; named snapshot {snap}. Next: Collection-Build.ps1 -Action LayerNext -Collection {coll}",
+              rows=r["rows"], observations=r["observations"])
+
+
+def read_behaviours(ctx: Ctx) -> Outcome:
+    """ReadBehaviours: the package of step 3.2 of a collection (C2): every inner-being observation of the collection to take up, each with its subgroups and occurrences, the subgroups
+    with their definitions, and the answer (lib/readcommands.py; escalation #2538). Opens 3.2 if it is not open. -Collection only: 3.2 is the collection's own step."""
+    from ..lib import layerreading as lr
+    from ..lib import readcommands as rc
+    from ..lib import scanguard as sg
+    coll = str(ctx.params.get("Collection", "")).strip()
+    if not coll:
+        return fail("refused", "-Collection is required (3.2 reads the whole collection; it takes no -Subgroup)")
+    root = ctx.cfg.setting("layer.working_dir")
+    if not root:
+        return fail("refused", "cfg_setting layer.working_dir is missing")
+    try:
+        r = rc.read_behaviours(ctx.cfg.conn, ctx.cfg, ctx.run_id, coll, pathlib.Path(root))
+    except rc.ReadError as exc:
+        return fail("refused", str(exc))
+    except (lr.LayerError, sg.ScanBudgetExceeded) as exc:
+        return fail("refused", str(exc))
+    ctx.cfg.conn.commit()
+    return ok(", ".join(f"{k} {v}" for k, v in r.items() if k != "path") + f": {r['path'].as_posix()}. Read it and fill its `answer`, then RecordBehaviours -File <answer> (-Check to preview)")
+
+
+def record_behaviours(ctx: Ctx) -> Outcome:
+    """RecordBehaviours: check a filled ReadBehaviours answer whole and write it through the recorder of stage 4; validate the 3.2 row; name the next command. -Check previews."""
+    return _record_gate(ctx, "record_behaviours", "ReadBehaviours")
+
+
 def layer_check(ctx: Ctx) -> Outcome:
     """Validate every answered row of a collection against the tables, set `validated`, and write the findings as a versioned Markdown report (cfg_setting layer.check_name)."""
     import datetime

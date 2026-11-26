@@ -1355,3 +1355,62 @@ def check(conn, cfg, run_id: str, name: str, dry: bool = False, subgroup: str | 
 def node_groups(conn, run_id: str, dry: bool = False) -> dict:
     """Set ib_node.subgroup_id of every live node from the index (collectionindex.refresh_nodes)."""
     return ci.refresh_nodes(conn, run_id, dry=dry)
+
+
+# ══ the sweep that closes 3.1 for the collection: what a deleted subgroup left behind (#2538) ═══════════════════════════════════
+# Researcher 2026-11-26: "step 3.1 is incomplete. it did not sweep the observations that are not valid, and removed them." A regrouping deletes subgroups but keeps the
+# observations they wrote, so that the 3.1 of the new subgroups can read them as earlier readings. Once every current subgroup is through 3.1 they have been read, and what
+# is still live under a row of a deleted subgroup is no longer valid: the row is retired and the observation removed (its nodes deleted, its traces released, each change kept
+# with its reason). Run by Collection-Build.ps1 -Action SweepSuperseded; ReadBehaviours (3.2) refuses while any is left.
+
+def superseded(conn, cid: int) -> dict:
+    """{rows: [(ledger id, step, item, subgroup id, subgroup name)], observations: [ids]}: the live (not retired) ledger rows of the collection whose subgroup is deleted, and the live
+    observations written under them (by the stable key range of each row, idx_ib_observation_stable_key)."""
+    rows = conn.execute("SELECT c.id, c.step, c.item, c.subgroup_id, s.name FROM collection_layer_item c JOIN collection_subgroup s ON s.id=c.subgroup_id "
+                        "WHERE c.collection_id=? AND c.deleted=0 AND c.state!='retired' AND s.deleted=1 ORDER BY c.id", (cid,)).fetchall()
+    obs = []
+    for r in rows:
+        obs += [x[0] for x in conn.execute("SELECT id FROM ib_observation WHERE stable_key >= ? AND stable_key < ? AND deleted=0", (f"layer:{r[0]}:", f"layer:{r[0]};"))]
+    return {"rows": [tuple(r) for r in rows], "observations": sorted(set(obs))}
+
+
+def sweep_superseded(conn, cfg, run_id: str, name: str, check: bool = False) -> dict:
+    """Retire every live ledger row of a deleted subgroup of the collection and remove the observations written under it (nodes deleted, traces released by
+    soft_delete_observation, each change kept with its reason). Refused while a current subgroup is not through 3.1 (its 3.1 reads these as earlier readings first).
+    check=True counts and writes nothing."""
+    from . import layerloop
+    cid, cname = ci._collection(conn, name)
+    prog = layerloop.progress(conn, cfg, cname)
+    behind = [g["name"] for g in prog["subgroups"] if not g["complete"]]
+    sw = superseded(conn, cid)
+    by_step: dict = {}
+    for r in sw["rows"]:
+        by_step[r[1]] = by_step.get(r[1], 0) + 1
+    out = {"collection": cname, "rows": len(sw["rows"]), "observations": len(sw["observations"]), "rows_by_step": by_step,
+           "subgroups": sorted({r[4] for r in sw["rows"]})}
+    if behind and sw["rows"]:
+        raise LayerError(f"the sweep waits for every current subgroup to be through 3.1 (their 3.1 reads the observations of the deleted subgroups as earlier readings first); "
+                         f"not yet: {', '.join(behind)}")
+    if check or not sw["rows"]:
+        return out
+    names = {r[0]: r[4] for r in sw["rows"]}
+    conn.execute("SAVEPOINT sweep_superseded")
+    try:
+        for lid, step, item, gid, gname in sw["rows"]:
+            why = (f"written under ledger row {lid} (step {step}, {item}) of the subgroup {gname!r}, which the regrouping deleted; every current subgroup is through 3.1 and has "
+                   f"read it as an earlier reading, so it is no longer valid (sweep at the close of 3.1, researcher 2026-11-26, #2538)")
+            for (oid,) in conn.execute("SELECT id FROM ib_observation WHERE stable_key >= ? AND stable_key < ? AND deleted=0", (f"layer:{lid}:", f"layer:{lid};")).fetchall():
+                for (nid,) in conn.execute("SELECT id FROM ib_node WHERE observation_id=? AND deleted=0", (oid,)).fetchall():
+                    orec.delete_node(conn, nid, why, None, run_id, WHO)
+                orec.soft_delete_observation(conn, oid, why, None, run_id, WHO)
+            conn.execute(f"UPDATE collection_layer_item SET state='retired', validated=0, updated_at={NOW}, run_id=?, reason=? WHERE id=?",
+                         (run_id, f"its subgroup {names[lid]!r} was deleted in the regrouping; retired by the sweep at the close of 3.1 (#2538)", lid))
+        left = superseded(conn, cid)
+        if left["rows"] or left["observations"]:
+            raise LayerError(f"the sweep left {len(left['rows'])} row(s) and {len(left['observations'])} observation(s); nothing is kept")
+        conn.execute("RELEASE sweep_superseded")
+    except Exception:
+        conn.execute("ROLLBACK TO sweep_superseded")
+        conn.execute("RELEASE sweep_superseded")
+        raise
+    return {**out, "swept": True}

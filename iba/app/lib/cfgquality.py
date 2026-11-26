@@ -530,8 +530,17 @@ def find_analytic_guide_gaps(conn: sqlite3.Connection, project_root: pathlib.Pat
             c = t["command"]
             want += [c, "Record" + c[4:] if c.startswith("Read") else None]
     want += list(g.get("also", []))
-    return [f"{g['file']} section {g['section']} does not name the analytic method `{c}` (cfg_setting layer.read_types): add it to the path of execution"
-            for c in dict.fromkeys(w for w in want if w) if f"`{c}`" not in body and f"`{c} " not in body]
+    out = [f"{g['file']} section {g['section']} does not name the analytic method `{c}` (cfg_setting layer.read_types): add it to the path of execution"
+           for c in dict.fromkeys(w for w in want if w) if f"`{c}`" not in body and f"`{c} " not in body]
+    # every step of the layered reading is run by a read command of the package, unless the researcher has deferred it (#2538, 2026-11-26: "step 3.2 is a fundamental
+    # part of the collection process and must be codified"; 3.3 is gated on every collection complete): a step with neither is a method missing from the package
+    lay = conn.execute("SELECT value FROM cfg_setting WHERE key='layer.reading' AND inactive=0").fetchone()
+    have = {t.get("step") for t in rts.values() if isinstance(t, dict) and t.get("command")}
+    for sd in (json.loads(lay[0]).get("steps") or []) if lay else []:
+        if sd.get("key") not in have and not sd.get("read_command_deferred"):
+            out.append(f"step {sd.get('key')} of the layered reading ({sd.get('name')}) has no read command in cfg_setting layer.read_types and no `read_command_deferred` "
+                       f"ruling in cfg_setting layer.reading: build its Read/Record method (rule 137)")
+    return out
 
 
 def find_filled_by_referencing_inactive_step(conn: sqlite3.Connection) -> list[str]:

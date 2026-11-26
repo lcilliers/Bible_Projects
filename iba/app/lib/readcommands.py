@@ -15,7 +15,9 @@ package: its B1 observations, each with the occurrences it holds, gathered by th
 occurrences, the occurrences no B1 observation holds (function words of a phrase surface) named with the readings of their verse; the enrichment
 (step 1.2, item strong-enrichment), one package per subgroup: each 1.1 sense with its codes, and the lexicon of every code (the three sources, cut to lexicon_chars); one
 enrichment for each sense, taking the sense's occurrences; the structure (step 2.1, items double-meaning, qualifier, entity, direction, pairing), one item at a time in batches of
-rows, the verses of the package once with their stored structure in compact lines, the subgroup's 1.1 senses once.
+rows, the verses of the package once with their stored structure in compact lines, the subgroup's 1.1 senses once; the sweep and the evidence validation (the gates of 2.1); the elements (step 3.1, one package
+per subgroup); the behaviours (step 3.2, item collection-gathering; one package for the collection: every inner-being observation of it, each whole with its subgroups and
+occurrences, recorded whole through layerinner.record). Step 3.3 (ReadMatches) and the validation after stage 4 wait for every collection to be complete (researcher 2026-11-26).
 """
 from __future__ import annotations
 
@@ -1228,3 +1230,148 @@ def record_elements(conn, cfg, run_id: str, data: dict, keep: bool) -> dict:
     lr.check(conn, cfg, run_id, name, subgroup=gname)
     r2 = _elements_row(conn, cid, gid)
     return {**out, "validated": bool(r2[9]), "reason": (r2[8] or "")[:300] if not r2[9] else "", "next": next_after_elements(conn, cfg, name, gname)}
+
+
+# ══ ReadBehaviours / RecordBehaviours: step 3.2, the behaviours of the collection (stage 4, C2; #2538) ═════════════════════════════
+# Researcher 2026-11-26: "step 3.2 is a fundamental part of the collection process and must be codified. it is not a process that is left open for interactive chat,
+# although it is reading based and the method must be called from within a chat." One package for the collection (a 3.2 row is the collection's own and is recorded whole),
+# written through the recorder of stage 4 (layerinner.record), checked as LayerCheck checks it.
+
+BEHAVIOURS_ITEM = "collection-gathering"
+
+
+def _behaviours_row(conn, cid: int):
+    return next((r for r in lr._rows(conn, cid, "3.2") if r[3] == BEHAVIOURS_ITEM and r[6] != "retired"), None)
+
+
+def next_after_behaviours(name: str) -> str:
+    return (f".\\iba\\app\\ps\\Collection-Build.ps1 -Action LayerNext -Collection {name}  (3.2 is closed once its row is validated; 3.3 and the validation after stage 4 wait for "
+            f"every collection to be complete)")
+
+
+def _collection_of(conn, name: str) -> tuple[int, str]:
+    try:
+        return lr.ci._collection(conn, name)
+    except lr.ci.IndexError_ as exc:
+        raise ReadError(str(exc))
+
+
+def _take_up_lines(conn, cfg, ids, sub_names: dict) -> list:
+    """Each observation 3.2 takes up, whole: its text, kind, item, basis, the subgroups of its nodes, the 3.1 row it was written under (if any), and its occurrences (the nodes a finding may
+    name, with their verses), each written "<occurrence id> <reference> (<surface>)". Read in chunks (idx_ib_node_observation_id)."""
+    ids = sorted(ids)
+    lines = {}
+    for part in sg.chunks(ids, cfg):
+        q = ",".join("?" * len(part))
+        for oid, stage, tag, text, basis, parts, key in conn.execute(f"SELECT id, stage, tag, obs_text, basis, parts, stable_key FROM ib_observation WHERE id IN ({q})", part):
+            lines[oid] = {"observation": oid, "stage": stage, "kind": tag, "item": (json.loads(parts) if parts else {}).get("item"), "basis": basis, "text": text or "",
+                          "ledger_row": int(key.split(":")[1]) if (key or "").startswith("layer:") else None, "subgroups": set(), "occurrences": []}
+        for oid, vl, ref, surf, sgid in conn.execute(f"SELECT observation_id, verse_lexical_id, verse_reference, surface, subgroup_id FROM ib_node WHERE deleted=0 AND traced_observation_id IS NULL "
+                                                     f"AND verse_lexical_id IS NOT NULL AND observation_id IN ({q}) ORDER BY verse_lexical_id", part):
+            lines[oid]["occurrences"].append(f"{vl} {ref} ({surf})")      # compact: "<occurrence id> <reference> (<surface>)"; as objects 3,342 nodes of thought took 241,016 characters
+            if sgid in sub_names:
+                lines[oid]["subgroups"].add(sub_names[sgid])
+    out = []
+    for oid in ids:
+        x = lines[oid]
+        x["subgroups"] = sorted(x["subgroups"])
+        out.append(x)
+    return sorted(out, key=lambda x: ((x["subgroups"] or ["~"])[0], x["observation"]))
+
+
+def read_behaviours(conn, cfg, run_id: str, name: str, out_dir: pathlib.Path) -> dict:
+    """The package of step 3.2 of a collection (C2): the 3.1 findings of its current subgroups to take up (layerinner._sources; researcher 2026-11-26), each whole with its subgroups and occurrences, the subgroups with their definitions, the items a finding may use with their kinds, the node roles, the older
+    observations still unsettled on its occurrences, and the answer. Opens 3.2 if it is not open (every subgroup through 3.1)."""
+    from . import layerinner as li
+    t0 = time.monotonic()
+    st = settings(cfg)
+    rt, lim = st["behaviours"], st["limits"]
+    s = lr.settings(cfg)
+    cid, cname = _collection_of(conn, name)
+    left = lr.superseded(conn, cid)
+    if left["rows"]:      # 3.1 closes with the sweep of what deleted subgroups left behind (researcher 2026-11-26, #2538)
+        raise ReadError(f"3.1 is not closed for {cname!r}: {len(left['rows'])} live ledger row(s) of deleted subgroups hold {len(left['observations'])} observation(s); "
+                        f"run .\\iba\\app\\ps\\Collection-Build.ps1 -Action SweepSuperseded -Collection {cname} (-Check to preview) first")
+    row = _behaviours_row(conn, cid)
+    opened = None
+    if row is None:
+        opened = lr.open_step(conn, cfg, run_id, cname, "3.2")
+        row = _behaviours_row(conn, cid)
+    if row is None:
+        raise ReadError(f"step 3.2 has no row for {cname!r}: the collection has no grouped occurrence")
+    if row[6] in ("observed", "none") and row[9]:
+        raise ReadError(f"the behaviours of {cname!r} are read and validated; next: " + next_after_behaviours(cname))
+    L = lr.load(conn, cfg, cname, pairs=False)
+    sd = lr.step_def(s, "3.2")
+    idef = s["items"][BEHAVIOURS_ITEM]
+    subs = {r[0]: {"name": r[1], "definition": r[2]} for r in conn.execute("SELECT id, name, note FROM collection_subgroup WHERE collection_id=? AND deleted=0 ORDER BY id", (cid,))}
+    with sg.budget(conn, cfg, "ReadBehaviours"):
+        dem = li.demanded(L, BEHAVIOURS_ITEM, 0, "", conn)
+        sources, required = li._sources(conn, s, L, sd, 0, "")
+        take = _take_up_lines(conn, cfg, required, {k: v["name"] for k, v in subs.items()})
+        older = lr.bv.older_on(conn, cfg, s, li._allowed(dem), 99)
+        done = lr.bv.settled(conn, cfg, list(older))
+        older = [{"observation": k, "stage": v.get("stage"), "kind": v.get("tag"), "nature": v.get("nature"), "text": v.get("text") or ""} for k, v in sorted(older.items()) if k not in done]
+    spec = lr.orec.items_setting(cfg)
+    by_item = {i["key"]: i for i in spec["items"]}
+    uses = [{"item": k, "name": by_item[k]["name"], "kinds": by_item[k]["kinds"], "bases": by_item[k]["bases"]} for k in idef["uses"] if k in by_item]
+    conn.execute(f"UPDATE collection_layer_item SET pulled_at={lr.NOW}, updated_at={lr.NOW} WHERE id=?", (row[0],))
+    by_sub = {}
+    for x in take:
+        for g in x["subgroups"] or ["(no subgroup on its nodes)"]:
+            by_sub.setdefault(g, []).append(x["observation"])
+    pkg = {"command": "ReadBehaviours", "collection": cname, "step": "3.2",
+           "made": datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+           "unit": {"ledger_id": row[0], "to_take_up": len(take), "subgroups": len(subs), "older_unsettled": len(older), "occurrences": len(dem)},
+           "instruction": instruction(conn, rt), "asks": idef["asks"], "uses": uses, "node_roles": lr.orec.node_role_groups(cfg),
+           "subgroups": [{"name": v["name"], "definition": v["definition"], "observations": by_sub.get(v["name"], [])} for v in subs.values()],
+           "to_take_up": take, "older_unsettled": older,
+           "answer": {"command": "ReadBehaviours", "collection": cname, "ledger_id": row[0], "disposition": "observed | none", "reason": "",
+                      "findings": [{"key": "b1", "kind": "", "text": "", "basis": "read | stated", "parts": {"item": "flag", "flag_type": "discovery", "grounds": ""},
+                                    "nodes": [{"traced": "<id of an observation this behaviour gathers>"}, {"occurrence": "<occurrence id of a traced observation>", "role": "<a node role>"}],
+                                    "read_back": []}],
+                      "not_gathered": {}, "older": [{"observation": o["observation"], "action": " | ".join(lr.bv.ACTIONS), "reason": ""} for o in older], "existing": []}}
+    if "(no subgroup on its nodes)" in by_sub:
+        pkg["subgroups"].append({"name": "(no subgroup on its nodes)", "definition": None, "observations": by_sub["(no subgroup on its nodes)"]})
+    if row[6] == "observed":
+        pkg["recorded_before"] = "the behaviours were recorded but their check failed: read them again (the record replaces the earlier reading)"
+    secs = round(time.monotonic() - t0, 2)
+    chars = len(json.dumps(pkg, ensure_ascii=False))
+    pkg["measured"] = {"package_chars": chars, "seconds": secs}
+    max_s = rt.get("read_max_seconds", lim["read_max_seconds"])
+    if secs > max_s:
+        raise ReadError(f"ReadBehaviours for {cname!r} took {secs} s, more than {max_s} s (cfg_setting layer.read_types); nothing is written")
+    if chars > rt["package_max_chars"]:
+        raise ReadError(f"the behaviours package of {cname!r} is {chars} characters, more than {rt['package_max_chars']} (cfg_setting layer.read_types behaviours.package_max_chars); nothing is written")
+    out_dir.mkdir(parents=True, exist_ok=True)
+    path = out_dir / f"readbehaviours-{_slug(cname)}-{datetime.datetime.now().strftime('%Y%m%dt%H%M%S')}.json"
+    path.write_text(json.dumps(pkg, ensure_ascii=False, indent=1), encoding="utf-8")
+    return {"path": path, "to_take_up": len(take), "subgroups": len(subs), "older": len(older), "chars": chars, "seconds": secs, "opened": opened}
+
+
+def record_behaviours(conn, cfg, run_id: str, data: dict, keep: bool) -> dict:
+    """Check a filled ReadBehaviours answer whole and write it through the recorder of stage 4 (layerinner.record: at least one behaviour, a flag finding of type discovery; every finding
+    rests on inner-being observations of the collection by traced nodes; its occurrences within theirs or read back; every observation taken up gathered or declared not gathered with
+    its reason; the older observations answered; the written row checked as LayerCheck checks it); validate the collection's rows; name the next command. keep=False previews."""
+    from . import layerinner as li
+    if data.get("command") != "ReadBehaviours":
+        raise ReadError("this is not a ReadBehaviours answer (its `command` must be ReadBehaviours; fill the `answer` part of the package)")
+    cid, cname = _collection_of(conn, str(data.get("collection") or ""))
+    row = _behaviours_row(conn, cid)
+    if row is None or data.get("ledger_id") != row[0]:
+        raise ReadError(f"the answer is refused whole, nothing written:\n  ledger {data.get('ledger_id')} is not the 3.2 row of {cname!r}")
+    disp = data.get("disposition")
+    if disp not in ("observed", "none"):
+        raise ReadError("the answer is refused whole, nothing written:\n  `disposition` is observed (with findings) or none (with its reason)")
+    fill = {"disposition": disp, "reason": data.get("reason") or "", "findings": data.get("findings") or [], "not_gathered": data.get("not_gathered") or {},
+            "older": data.get("older") or [], "existing": data.get("existing") or []}
+    try:
+        r = li.record(conn, cfg, run_id, {"collection": cname, "step": "3.2", "rows": [{"ledger_id": row[0], "fill": fill}]}, keep)
+    except lr.LayerError as exc:
+        raise ReadError(str(exc))
+    out = {"observed": r["observed"], "none": r["none"], "nodes": r["nodes"]}
+    if not keep:
+        return {**out, "preview": True}
+    lr.check(conn, cfg, run_id, cname)
+    r2 = _behaviours_row(conn, cid)
+    return {**out, "validated": bool(r2[9]), "reason": (r2[8] or "")[:300] if not r2[9] else "", "next": next_after_behaviours(cname)}

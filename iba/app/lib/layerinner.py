@@ -52,10 +52,19 @@ def _on(conn, vls, nature: str) -> set:
     return out
 
 
+def _written_under(conn, ledger_ids) -> set:
+    """The live observations written under the given ledger rows: a range of the stable key ('layer:<id>:' up to 'layer:<id>;') for each row, by idx_ib_observation_stable_key.
+    A join on `stable_key LIKE 'layer:' || c.id || ':%'` scans ib_observation and was refused by the scan guard (#2538, ReadBehaviours on thought, 2026-11-26)."""
+    out = set()
+    for lid in sorted(set(ledger_ids)):
+        out |= {r[0] for r in conn.execute("SELECT id FROM ib_observation WHERE stable_key >= ? AND stable_key < ? AND deleted=0", (f"layer:{lid}:", f"layer:{lid};"))}
+    return out
+
+
 def _of_steps(conn, cid: int, steps) -> set:
     """The live observations written under the ledger rows of the given steps of a collection (the stable key of the row)."""
-    return {r[0] for r in conn.execute("SELECT DISTINCT o.id FROM ib_observation o JOIN collection_layer_item c ON o.stable_key LIKE 'layer:' || c.id || ':%' WHERE o.deleted=0 AND c.deleted=0 AND c.collection_id=? "
-                                       "AND c.step IN (SELECT value FROM json_each(?))", (cid, json.dumps(list(steps))))}
+    return _written_under(conn, [r[0] for r in conn.execute("SELECT id FROM collection_layer_item WHERE deleted=0 AND collection_id=? AND step IN (SELECT value FROM json_each(?))",
+                                                            (cid, json.dumps(list(steps))))])
 
 
 def _inner_of_collection(conn, cid: int, own_steps) -> set:
@@ -91,7 +100,7 @@ def match_partners(subjects) -> set:
 def _cross_observations(conn, cid: int) -> dict:
     """{(observation id, verse reference): [(collection id, surface, strong, vl id)]} for every live observation's live word nodes in a verse where the observation has a node of the collection AND a node of
     another collection (the nodes carry the collection: researcher 2026-11-25), except what a 3.3 row wrote (3.3 reads the others). A match is a pairing in a verse. Searched by idx_ib_node_collection."""
-    wrote = {r[0] for r in conn.execute("SELECT DISTINCT o.id FROM ib_observation o JOIN collection_layer_item c ON o.stable_key LIKE 'layer:' || c.id || ':%' WHERE o.deleted=0 AND c.step='3.3'")}
+    wrote = _written_under(conn, [r[0] for r in conn.execute("SELECT id FROM collection_layer_item WHERE step='3.3'")])
     by = collections.defaultdict(list)
     for oid, ref, col, sf, st, vl in conn.execute("SELECT n.observation_id, n.verse_reference, n.collection_id, n.surface, n.strong, n.verse_lexical_id FROM ib_node n JOIN ib_observation o ON o.id=n.observation_id "
                                                   "WHERE n.deleted=0 AND o.deleted=0 AND n.traced_observation_id IS NULL AND n.verse_lexical_id IS NOT NULL AND n.collection_id IS NOT NULL "
@@ -138,8 +147,7 @@ def cross_gaps(conn, L) -> list[str]:
     the match), and a partner word of the typed pairings whose node on such an observation names no collection or the wrong one. Refused before 3.3 opens (researcher 2026-11-25)."""
     cid = L["cid"]
     gaps = []
-    ids = [r[0] for r in conn.execute("SELECT DISTINCT o.id FROM ib_observation o JOIN collection_layer_item c ON o.stable_key LIKE 'layer:' || c.id || ':%' WHERE o.deleted=0 AND c.deleted=0 AND c.collection_id=? "
-                                      "AND (c.item='pairing' OR c.step='3.2')", (cid,))]
+    ids = sorted(_written_under(conn, [r[0] for r in conn.execute("SELECT id FROM collection_layer_item WHERE deleted=0 AND collection_id=? AND (item='pairing' OR step='3.2')", (cid,))]))
     for part in lr._chunks(ids):
         for oid, n_ in conn.execute("SELECT observation_id, count(*) FROM ib_node WHERE deleted=0 AND traced_observation_id IS NULL AND verse_lexical_id IS NOT NULL AND collection_id IS NULL "
                                     "AND observation_id IN (SELECT value FROM json_each(?)) GROUP BY observation_id", (json.dumps(part),)):
@@ -199,7 +207,7 @@ def _sources(conn, s, L, sd, gid: int, subject: str = "") -> tuple[set, set]:
     """(the observations a finding of the row may rest on, those the row must take up), all chosen by the MARKER (researcher 2026-11-24):
     3.1 rests on the EVIDENCE observations of the subgroup (every stage, the senses first) and takes up those at the top of the chain: the sense, pairing and older evidence observations; a word observation a sense
     already carries (a traced node) is rested on through the sense and is not demanded again;
-    3.2 rests on, and takes up, ALL the inner_being observations of the collection (the 3.1 findings and the older ones kept as inner being);
+    3.2 rests on, and takes up, the 3.1 findings of the current subgroups (researcher 2026-11-26, #2538; until then it took every inner-being observation of the collection);
     3.3 rests on, and takes up, every observation its match comes from (any nature: those whose nodes reference this collection and the partner's)."""
     if sd["key"] == "3.1":
         vls = [o["vl_id"] for o in L["d"]["occurrences"] if o["group"] == gid]
@@ -210,9 +218,10 @@ def _sources(conn, s, L, sd, gid: int, subject: str = "") -> tuple[set, set]:
                                                   "AND n.traced_observation_id IN (SELECT value FROM json_each(?))", (s["stages"]["1"], json.dumps(sorted(ev))))}
             carried = {c for c in carried if conn.execute("SELECT stage FROM ib_observation WHERE id=?", (c,)).fetchone()[0] == s["stages"]["0"]}
         return ev, ev - carried
-    if sd["key"] == "3.2":
-        inner = _inner_of_collection(conn, L["cid"], ("3.2", "3.3"))
-        return inner, inner
+    if sd["key"] == "3.2":      # the 3.1 findings of the current subgroups (researcher 2026-11-26, #2538: the approach of the draft, spec v5 C2 and IB-04; not every inner-being observation)
+        found = _written_under(conn, [r[0] for r in conn.execute("SELECT c.id FROM collection_layer_item c JOIN collection_subgroup s ON s.id=c.subgroup_id WHERE c.collection_id=? "
+                                                                  "AND c.step='3.1' AND c.deleted=0 AND c.state!='retired' AND s.deleted=0", (L["cid"],))])
+        return found, found
     m = matches(conn, L).get(subject)      # 3.3: the observations the match comes from, every one traced by the observation of the match
     src = set(m["sources"]) if m else set()
     return src, src
@@ -613,6 +622,8 @@ def check_row(conn, cfg, s, L, sd, r) -> str | None:
         for k, why in ((st.get("not_used") if step == "3.1" else st.get("not_gathered")) or {}).items():
             if len(str(why).strip()) < minr:
                 return f"observation {k} is declared not {'used' if step == '3.1' else 'gathered'} without a reason in words"
+        gone = {r[0] for r in conn.execute("SELECT id FROM ib_observation WHERE deleted=1 AND id IN (SELECT value FROM json_each(?))", (_in(decl),))} if decl else set()
+        decl -= gone      # a declared observation removed since by the method (the sweep at the close of 3.1, #2538) no longer needs, or allows, a declaration
         miss = required - traced_all - decl
         if miss:
             return f"{len(miss)} observations are neither rested on by a finding nor declared (first: {sorted(miss)[0]}); nothing the step reads may be left out silently"
