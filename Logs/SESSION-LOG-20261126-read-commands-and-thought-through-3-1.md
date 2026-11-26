@@ -56,3 +56,5 @@ Claude's self-correctable fixes, made and closed:
 - After the close (2026-11-26): branch main, commit 07dd8cfc "#2538: step 3.2 as a read command (ReadBehaviours/RecordBehaviours, IB-08); SweepSuperseded closes 3.1; thought 3.2 recorded", pushed: `   8bda5e6c..07dd8cfc  main -> main`.
 
 - After the close (2026-11-26): branch main, commit 197a10d2 "#2538: the tests of the loop made independent of the state of live", pushed: `   cb965d57..197a10d2  main -> main`.
+
+- After the close (2026-11-26): branch main, commit 283de017 "#2538: each stage-4 step writes its own stage on the observation", pushed: `   00b7ffbd..283de017  main -> main`.
