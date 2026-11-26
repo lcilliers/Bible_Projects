@@ -224,6 +224,8 @@ def validate(ctx: Ctx) -> Outcome:
     errors = _validate_live(ctx.db.conn)
     # a live script in no utility or module is a hard error (#2198, #2200)
     errors += cfgquality.find_unregistered_project_scripts(ctx.db.conn, PROJECT_ROOT)
+    # and its mirror: every registered utility names a file that exists (#2618 follow-up)
+    errors += cfgquality.find_utility_paths_missing(ctx.db.conn, PROJECT_ROOT)
     # every rule linked to the operations it governs (#2209)
     errors += cfgquality.find_rule_scope_gaps(ctx.db.conn, APP_ROOT)
     # the retired names of the lexical work still described as live, and the layered reading's items without a prompt (#2507, D9)
@@ -499,6 +501,26 @@ def apply_logged(conn: sqlite3.Connection, run_id: str, table: str, op: str, whe
         (run_id, table, op, json.dumps(where) or None, json.dumps(set_) or None,
          json.dumps(before) if before is not None else None, _now()))
     return before
+
+
+def archive_migration(conn: sqlite3.Connection, run_id: str, migration_file: str) -> str | None:
+    """A one-off migration, once applied live, retires itself (#2618 follow-up): the file moves into its folder's `archive/` and its
+    `cfg_utility` row is pointed there in the same step, through apply_logged, so the registration never names a file that is gone
+    (cfgquality.find_utility_paths_missing). Call it after the live apply has committed, never on a test copy. The caller commits.
+    Returns the new project-relative path, or None when the file is already in an archive/ folder."""
+    import shutil
+    src = pathlib.Path(migration_file).resolve()
+    if "archive" in src.parts:
+        return None
+    dest = src.parent / "archive" / src.name
+    dest.parent.mkdir(exist_ok=True)
+    old = src.relative_to(PROJECT_ROOT).as_posix()
+    new = dest.relative_to(PROJECT_ROOT).as_posix()
+    row = conn.execute("SELECT module FROM cfg_utility WHERE file_path=?", (old,)).fetchone()
+    if row:
+        apply_logged(conn, run_id, "cfg_utility", "update", {"module": row[0]}, {"file_path": new})
+    shutil.move(str(src), str(dest))
+    return new
 
 
 def _apply(ctx: Ctx, table: str, op: str, where: dict, set_: dict) -> dict | None:

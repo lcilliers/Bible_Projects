@@ -20,6 +20,7 @@ Each action does one thing to the observation record and keeps the change with i
     close_deferral      the owning collection has closed a deferred finding
     mark_self_evidencing   IB-07's exemption, recorded with its reason
     trace_gaps          IB-07 over a set: no trace, pending (target not yet marked), dead trace
+    release_dead_traces live traced nodes that point at a deleted observation, dropped with their reason (#2618): over a set, or all
     consume             an observation whose meaning a live observation carries: verified, traces re-pointed, then deleted
     delete_neither      an observation that is neither evidence nor inner being: comment first, then deleted
     facts_held          which word occurrences of an observation no other live observation holds
@@ -299,6 +300,31 @@ def trace_gaps(conn, ids: list[int]) -> dict:
                     else:
                         gaps.append(oid)
     return {"no_trace": gaps, "pending": pending, "dead_trace": dead}
+
+
+def release_dead_traces(conn, run_id: str, who: str, ids: list[int] | None = None, check: bool = False) -> dict:
+    """Live traced nodes of live observations that point at a deleted observation (#2618). Since observationrecord.soft_delete_observation
+    releases the traces of what it deletes, a dead trace is one left from before that, or from a path that deleted without it. A trace to a
+    deleted observation supports nothing; it is deleted, logged on its holder with the deleted target named. Over the observations in `ids`
+    (searched by observation_id), or every live observation when `ids` is None (the database-wide repair, Collection-Build -Action
+    ReleaseDeadTraces). `check` counts and writes nothing. Returns {nodes, observations, by_nature, sample}."""
+    rows = []
+    sql = ("SELECT n.id, n.observation_id, n.traced_observation_id, o.nature FROM ib_node n JOIN ib_observation o ON o.id=n.observation_id "
+           "JOIN ib_observation t ON t.id=n.traced_observation_id WHERE n.deleted=0 AND o.deleted=0 AND t.deleted=1")
+    if ids is None:
+        rows = conn.execute(sql).fetchall()
+    else:
+        for ch in _chunks(sorted(set(ids))):
+            rows += conn.execute(sql + f" AND n.observation_id IN ({_qm(len(ch))})", ch).fetchall()
+    by_nature: dict = {}
+    for r in rows:
+        by_nature[r[3] or "unmarked"] = by_nature.get(r[3] or "unmarked", 0) + 1
+        if not check:
+            why = conn.execute("SELECT reason FROM ib_observation_change WHERE observation_id=? AND column_name='deleted' AND node_id IS NULL "
+                               "ORDER BY id DESC LIMIT 1", (r[2],)).fetchone()
+            orec.delete_node(conn, r[0], f"traced observation {r[2]} is deleted ({(why[0] if why else 'no reason recorded')[:200]}): "
+                                         "the trace supports nothing and is dropped (#2618)", None, run_id, who)
+    return {"nodes": len(rows), "observations": len({r[1] for r in rows}), "by_nature": by_nature, "sample": [(r[1], r[2]) for r in rows[:5]]}
 
 
 def drop_unrelated_node(conn, node_id: int, reason: str, run_id: str, who: str) -> bool:

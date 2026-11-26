@@ -41,7 +41,6 @@ Claude's self-correctable fixes, made and closed:
 
 - #2538 (Claude): the collection steps 3.2 (behaviours) and 3.3 of thought; they have no read command yet.
 - #2576 (researcher): what routes A, B and C mean, so that party findings can be written.
-- #2618 (Claude): the 3.1 recorder should drop or re-point traces to an earlier reading it deletes, or a sheet action should drop a dead trace.
 - #2568 (Claude): the standing test-copy approval, open while #2538 runs.
 
 ## 6. Git

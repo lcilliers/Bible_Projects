@@ -43,10 +43,14 @@ def _slug(s: str) -> str:
 
 
 def instruction(conn, rt: dict) -> dict:
-    """The instruction of one read: its own steps from config, and the text of each rule it keeps, read now from cfg_method_rule (a rule that is missing or inactive refuses)."""
+    """The instruction of one read: its own steps from config, and the text of each rule it keeps, read now from cfg_method_rule, or from cfg_behaviour_rule for a
+    rule named B:<id> (a behaviour rule a read depends on, such as B:72, the meaning of the routes of a party finding; #2576). A rule that is missing or inactive refuses."""
     keep, missing = [], []
     for code in rt["rules"]:
-        r = conn.execute("SELECT rule_key, rule_text FROM cfg_method_rule WHERE active=1 AND (rule_key=? OR rule_key LIKE ?)", (code, code + " %")).fetchone()
+        if str(code).startswith("B:"):
+            r = conn.execute("SELECT 'B:' || id || ' ' || rule_key, rule_text FROM cfg_behaviour_rule WHERE active=1 AND id=?", (int(str(code)[2:]),)).fetchone()
+        else:
+            r = conn.execute("SELECT rule_key, rule_text FROM cfg_method_rule WHERE active=1 AND (rule_key=? OR rule_key LIKE ?)", (code, code + " %")).fetchone()
         if r is None:
             missing.append(code)
         else:
@@ -951,6 +955,8 @@ def read_evidence(conn, cfg, run_id: str, name: str, subgroup: str, out_dir: pat
     L = lr.load(conn, cfg, name, pairs=False, subgroup=gname)
     with sg.budget(conn, cfg, "ReadEvidence"):
         sc = evidence_scope(conn, cfg, L, cid, gid)
+        from . import validationactions as va      # a trace to a deleted observation supports nothing: released before the checks, so it never holds the gate (#2618)
+        va.release_dead_traces(conn, run_id, "Claude", list(sc["obs"]))
         chk = evidence_check(conn, cfg, L, cid, gid, sc)
         ev = [o for o, v in sc["obs"].items() if v["nature"] == "evidence"]
         unread = sorted(set(ev) - evidence_read(conn, cfg, ev), key=lambda o: (["S1", "1.1", "1.2", "2.1", None].index(sc["obs"][o]["step"]), o))

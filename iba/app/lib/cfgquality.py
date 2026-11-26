@@ -482,6 +482,24 @@ def find_unregistered_project_scripts(conn: sqlite3.Connection,
     return out
 
 
+def find_utility_paths_missing(conn: sqlite3.Connection, project_root: pathlib.Path) -> list[str]:
+    """Every `cfg_utility.file_path` must name a file that exists (#2618 follow-up, researcher 2026-11-26: no item left dangling in a
+    table). The mirror of find_unregistered_project_scripts: a script moved to its folder's `archive/` (a migration once applied, a
+    retired tool) whose row still names the old place, or a row whose file is gone. A HARD error in configmaint.validate; the message
+    names the archive copy when there is one, so the fix is to point the row at it (or retire the row when the file is gone)."""
+    out = []
+    for module, path in conn.execute("SELECT module, file_path FROM cfg_utility WHERE file_path IS NOT NULL AND file_path<>''"):
+        p = project_root / path
+        if p.exists():
+            continue
+        top = project_root / pathlib.Path(path).parts[0]          # an archive may sit at any level of the same tree (research/archive/...)
+        moved = sorted(x.relative_to(project_root).as_posix() for x in top.rglob(p.name)
+                       if "archive" in x.relative_to(project_root).parts and ".git" not in x.parts) if top.exists() else []
+        out.append(f"cfg_utility {module}: file_path {path} does not exist"
+                   + (f" -- it is at {moved[0]}: point the row there" if moved else " -- the file is gone: retire the row"))
+    return out
+
+
 def find_filled_by_referencing_inactive_step(conn: sqlite3.Connection) -> list[str]:
     """`cfg_column.filled_by` naming an inactive step -- ADVISORY: each needs a judgement (the column
     may be dormant, or another active mechanism may now write it)."""

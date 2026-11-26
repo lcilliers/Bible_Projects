@@ -1,10 +1,10 @@
 # Session close (#1875, rebuilt #2173)
 
-> Generated 2026-11-26T07:23:27Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
+> Generated 2026-11-26T08:24:13Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
 
 - session: `760131f7-a5d4-44b5-92a0-7c28ca0a4683` (CLAUDE_CODE_SESSION_ID); started 2026-11-25T16:27:19Z; window base commit `cbd46aa8dcb46fb95e5ee10283311450498641a6`
 - compliance file: `Logs/compliance/COMPLIANCE-20261125-760131f7.md`; session log: `Logs/SESSION-LOG-20261126-read-commands-and-thought-through-3-1.md`
-- **open findings: 0**; cleared by disposition: 25
+- **open findings: 0**; cleared by disposition: 27
 
 
 ## Contents
@@ -63,6 +63,10 @@ Summar" -- disposition: no record needed: not the researcher's words (an app con
 
 Summar" -- disposition: no record needed: not the researcher's words (an app continuation summary)
 - cleared `SC3:c849bb38`: researcher message 2026-11-26T07:07 is too short to be matched; name where it is recorded: "Approve, apply live" -- disposition: recorded in #2609 v3
+- cleared `SC3:91e1ef5b`: researcher message 2026-11-26T08:22 is in no escalation comment written this session: "This session is being continued from a previous conversation that ran out of context. The summary below covers the earlier portion of the conversation.
+
+
+Summar" -- disposition: no record needed: not the researcher's words (an app continuation summary)
 
 <a id="sc4-open-items-in-the-register"></a>
 ## SC4 Open items in the register
@@ -73,6 +77,10 @@ Summar" -- disposition: no record needed: not the researcher's words (an app con
 
 Summar" -- disposition: not held: an app continuation summary, not the researcher's words
 - cleared `SC4b:a0700d87`: researcher message 2026-11-26T05:49 holds, defers or asks to check something; name its register item: "This session is being continued from a previous conversation that ran out of context. The summary below covers the earlier portion of the conversation.
+
+
+Summar" -- disposition: not held: an app continuation summary, not the researcher's words
+- cleared `SC4b:91e1ef5b`: researcher message 2026-11-26T08:22 holds, defers or asks to check something; name its register item: "This session is being continued from a previous conversation that ran out of context. The summary below covers the earlier portion of the conversation.
 
 
 Summar" -- disposition: not held: an app continuation summary, not the researcher's words

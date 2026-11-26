@@ -638,6 +638,24 @@ def _record_gate(ctx: Ctx, fn_name: str, what: str) -> Outcome:
     return ok(line + f". Next: {r['next']}")
 
 
+def release_dead_traces(ctx: Ctx) -> Outcome:
+    """ReleaseDeadTraces: every live trace node that points at a deleted observation, across the database, dropped with its reason, logged on its
+    holder (lib/validationactions.release_dead_traces; #2618). The deletes made since #2618 release their traces themselves and ReadEvidence
+    releases those in its scope; this repairs what is left from before, or from a path that deleted without it. -Check counts and writes nothing."""
+    from ..lib import validationactions as va
+    from ..lib import dbsnapshot
+    conn = ctx.cfg.conn
+    check = _flag(ctx, "Check")
+    r = va.release_dead_traces(conn, ctx.run_id, "Claude", None, check=True)
+    line = f"{r['nodes']} dead trace node(s) on {r['observations']} live observation(s), by marker {r['by_nature']}"
+    if check or not r["nodes"]:
+        return ok(("PREVIEW (nothing written): " if check else "nothing to release: ") + line)
+    snap = dbsnapshot.snapshot("pre-release-dead-traces", named=True)
+    r = va.release_dead_traces(conn, ctx.run_id, "Claude", None)
+    conn.commit()
+    return ok(f"released: {line}; named snapshot {snap}", nodes=r["nodes"], observations=r["observations"])
+
+
 def record_sweep(ctx: Ctx) -> Outcome:
     """RecordSweep: check a filled ReadSweep answer whole and write it; validate the sweep row; name the next command. -Check previews."""
     return _record_gate(ctx, "record_sweep", "ReadSweep")

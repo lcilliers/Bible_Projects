@@ -15,6 +15,7 @@ import pickle
 import datetime
 import json
 import pathlib
+import re
 
 from . import collectionevidence as ev
 from . import collectionindex as ci
@@ -854,14 +855,26 @@ def _text_rules(cfg, conn, s, idef, text: str, basis, grounds, nodes, where: str
             errors.append(f"{where}: B:131 an observation is tied to its verses: the text names none of them ({sorted(refs)[:3]})")
     if basis == "read":
         g = (grounds or "").strip()
+        gw = _words(g)
         if len(g) < minr:
             errors.append(f"{where}: a read observation names its grounds in the words of the verse (grounds, {minr} characters or more)")
         elif idef.get("grounds_in") == "lexicon":
-            blob = " ".join(" ".join(str(v) for v in _lexicon(conn, c, 4000).values() if v) for c in {x[0]["strong"] for x in nodes if x[0].get("strong")}).lower()
-            if g.lower() not in blob:
+            blob = " ".join(" ".join(str(v) for v in _lexicon(conn, c, 4000).values() if v) for c in {x[0]["strong"] for x in nodes if x[0].get("strong")})
+            if gw not in _words(blob):
                 errors.append(f"{where}: the grounds {g!r} are not words of the lexicon entries of the codes the observation is about (the dictionary meaning is the ground of this item)")
-        elif nodes and not any(g.lower() in (x[0].get("text") or "").lower() for x in nodes):
+        elif nodes and not any(gw in _words(x[0].get("text") or "") for x in nodes):
             errors.append(f"{where}: the grounds {g!r} are not words of the verses the observation is tied to")
+
+
+_TYPO = str.maketrans({"’": "'", "‘": "'", "ʼ": "'", "“": " ", "”": " ", '"': " "})
+
+
+def _words(s: str) -> str:
+    """The words of a text for the grounds check (#2538): lower case, typographic apostrophes made plain, quotation marks, punctuation and
+    the markup of a lexicon dropped, one space between words, and a space at each end so that a match is of whole words. The grounds are
+    words of the verse; the ESV's curly quotes and the punctuation between the words are not part of what the reader quotes."""
+    s = re.sub(r"<[^>]+>", " ", (s or "").translate(_TYPO).lower())
+    return " " + " ".join(re.findall(r"[0-9a-zÀ-ɏ]+(?:'[0-9a-z]+)*", s)) + " "
 
 
 def file_scope(conn, name: str, step: str, data: dict):
