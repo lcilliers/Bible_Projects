@@ -1,10 +1,10 @@
 # Session close (#1875, rebuilt #2173)
 
-> Generated 2026-11-26T16:00:59Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
+> Generated 2026-11-26T16:25:47Z by `session.close` (#1875, rebuilt #2173). Detection only; remediation is Claude's (`.claude/commands/session-close.md`). A finding is cleared by fixing it, or by a disposition in the compliance file's `## Close dispositions` that the check accepts. **The commit is blocked while any finding is open.**
 
-- session: `44fa45e5-b886-40b6-9928-2c435d1a9f56` (CLAUDE_CODE_SESSION_ID); started 2026-11-26T12:27:55Z; window base commit `5cb37da44c4c1ee838443bfa6179cf1782d3d014`
-- compliance file: `Logs/compliance/COMPLIANCE-20261126-44fa45e5.md`; session log: `Logs/SESSION-LOG-20261126-2637-refusal-keys-check-answer-view-form.md`
-- **open findings: 0**; cleared by disposition: 4
+- session: `3d283b80-98ca-46e7-8dc1-49b2b74b0f49` (CLAUDE_CODE_SESSION_ID); started 2026-11-26T15:31:43Z; window base commit `69a558f7de92982169da7df5de034481cc80c503`
+- compliance file: `Logs/compliance/COMPLIANCE-20261126-3d283b80.md`; session log: `Logs/SESSION-LOG-20261126-strive-reading.md`
+- **open findings: 0**; cleared by disposition: 2
 
 
 ## Contents
@@ -42,14 +42,13 @@ _no finding_
 <a id="sc3-researchers-words-recorded"></a>
 ## SC3 Researcher's words recorded
 
-- cleared `SC3:9e495b4f`: researcher message 2026-11-26T14:16 is too short to be matched; name where it is recorded: "proceed with 2637" -- disposition: recorded in #2637 v15
-- cleared `SC3:7fea37fa`: researcher message 2026-11-26T14:32 is too short to be matched; name where it is recorded: "Continue with X3" -- disposition: recorded in #2637 v15
-- cleared `SC3:f631c012`: researcher message 2026-11-26T14:48 is too short to be matched; name where it is recorded: "Yes, close here" -- disposition: recorded in #2637 v15
+- cleared `SC3:9503ea87`: researcher message 2026-11-26T15:36 is too short to be matched; name where it is recorded: "Yes, start strive" -- disposition: recorded in #2638 v2
+- cleared `SC3:894d5b1a`: researcher message 2026-11-26T16:21 is too short to be matched; name where it is recorded: "Yes, continue" -- disposition: no record needed: a bare go-ahead to continue the strive reading already approved and in progress; the progress it led to is recorded in #2638 v7
 
 <a id="sc4-open-items-in-the-register"></a>
 ## SC4 Open items in the register
 
-- cleared `SC4b:d1dc9104`: researcher message 2026-11-26T15:53 holds, defers or asks to check something; name its register item: "follow up the new fixes in 2637" -- disposition: in register #2637
+_no finding_
 
 <a id="sc5-analysis-integrity"></a>
 ## SC5 Analysis integrity

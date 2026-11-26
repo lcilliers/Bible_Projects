@@ -1,0 +1,739 @@
+{
+  "command": "ReadEnrichment",
+  "collection": "strive",
+  "subgroup": "going after",
+  "step": "1.2",
+  "made": "2026-11-26T16:08:10Z",
+  "unit": {
+    "ledger_id": 2355,
+    "senses": 5,
+    "occurrences": 114,
+    "codes": 10,
+    "older": 0
+  },
+  "instruction": {
+    "what": "Step 1.2, the enrichment of one subgroup (stage 1, B2): for each sense of step 1.1, what the Strong's codes of its occurrences say. The lexicon is the point of this read. Nothing here says what a sense does for the inner being; that begins at step 3.1.",
+    "read": [
+      "Take one sense at a time (`senses`: its text from step 1.1, its codes, words and occurrences).",
+      "Read the lexicon of each of its codes (`codes`: sense_head, meaning_range, lsj, mounce, related), the three meaning sources read together, none picked and the others dropped.",
+      "Validate the sense against its codes: do the lexicon entries bear out the meaning the sense names? Where they do not, say so in the enrichment; the sense is not changed here.",
+      "Where one surface carries several codes in the sense, read what each code adds."
+    ],
+    "write": [
+      "Fill `answer.enrichments`: one entry for each sense, named by `sense` (the id of its 1.1 observation); every sense has exactly one. The enrichment takes the sense's occurrences.",
+      "kind: enrichment. obs_text: a short definition from the lexicon entries; names the codes that link the sense to its usage and what different codes of one surface add; names verses the sense holds in, as the package writes the references (for example Psa 77:6); concise; never the lexicon copied whole, never a verse restated, never what the sense does for the inner being.",
+      "basis: read, with `grounds`: words copied exactly from the lexicon of a code of the sense (sense_head, meaning_range, lsj or mounce; the record checks them); or stated, where a verse says it.",
+      "Where the lexicon does not bear out the sense, the enrichment says so with its grounds; a missing lexicon entry is named, never filled from memory (RW-11).",
+      "`older`: answer each older observation shown, once: keep (with `nature`), restate (with `nature`, `new_text`, `checked`), merge (with `into`), consume (with `carriers` [\"this\"] for this answer's enrichments or observation ids, and `mapping`), delete_neither (with `reason`), carry (with `to` 2.1 and `reason`), defer (with `collection`, `nature`, `finding`).",
+      "Where a reading, sense, enrichment or finding holds every occurrence of the row's subject, `occurrences` may be \"all\": the recorder names them.",
+      "Then: Collection-Build.ps1 -Action CheckAnswer -File <the answer file>: every problem at once, each with its rule, nothing written; correct the answer until it finds none, then -Action RecordEnrichment -File <the answer file>. The record refuses the whole file on any fault and lists every fault."
+    ],
+    "keep": [
+      {
+        "rule": "RG-08 the-original",
+        "text": "For every word that names an inner or bodily act, look at the original: the root's range in all three meaning sources read together, never one picked and the others dropped; the ESV renderings across its verses; whether the English adds or hides; the literal sense beside the rendering. Where more than one reading is open, record each, and mark the choice 'I read'."
+      },
+      {
+        "rule": "RG-21 grain",
+        "text": "A word is read per its lettered Strong's code (its grain), never the bare lemma (B:113). The occurrences of a word with several senses are related per grain and never aggregated across grains: related verses are same-grain occurrences."
+      },
+      {
+        "rule": "RO11 one-row-per-code",
+        "text": "One observation per finding, never a duplicate description; a finding applying to several verses or words carries several nodes, each with the word's role in it."
+      },
+      {
+        "rule": "RW-03 no-duplicates-multi-node",
+        "text": "One observation per finding: the same description is never written twice. Applied to another verse, word or scope it gains a node on the existing observation."
+      },
+      {
+        "rule": "RW-04 concise-verse-specific",
+        "text": "Observation text is concise and tied to this verse's content, never a restatement of the word's dictionary sense. A transliteration is never given without its gloss."
+      },
+      {
+        "rule": "RW-09 reread-builds-on-prior",
+        "text": "A re-read includes the observations already recorded for the verse, so the reading sees prior findings and builds on them."
+      },
+      {
+        "rule": "RW-11 missing-is-named",
+        "text": "Missing data in the base extract is named as a gap, never substituted from memory or outside knowledge."
+      },
+      {
+        "rule": "RW-13 older-observations-answered-at-record",
+        "text": "Every older live observation with a live node on an occurrence of the row (a stage that is not the build's own) is answered in fill.older when the row is recorded, once: keep or restate (each with its marker), merge into a named observation, consume (live observations carry its meaning, stated in words, verified before it is deleted), delete as neither (comment first), or defer to a named collection (marked now; only the finding is left to that collection). An observation already marked by the validation, answered in a build or deferred is not asked again. A new observation whose text equals that of another live observation of the collection is refused, the other named. LayerCheck re-derives both from the tables. The end state of a collection's build is that every observation of its scope is marked and fixed or deleted, every word node complete or with its reason, and each deferral owned by a named collection."
+      },
+      {
+        "rule": "RS-04 existing-checked-accept-modify-delete",
+        "text": "When a verse is worked, every existing observation and node on it, of any stage, is checked against the verse by its wording. The stage is not an indication of the nature of an observation and is never used to filter. Each observation is accepted, modified (changed in place; the old value, the new value and the reason are kept in ib_observation_change), soft deleted (the `deleted` column, with the reason), merged (a duplicate description, into the observation that is kept) or, when its wording shows it is not verse understanding, left exactly as it is with the reason. The check's fixes are part of it and need no separate approval. Nothing is physically deleted."
+      },
+      {
+        "rule": "LR-02 nodes-are-built-from-the-data",
+        "text": "The nodes of a layer observation are the occurrences the aspect demands (a word's occurrences, the group's occurrences, the partner's occurrences in the verses they share), written by the recorder with the collection and the subgroup of each surface; they are never typed. An item answered by senses (word-sense) names, for each sense, the occurrences it holds for, and together the senses cover every occurrence; the recorder checks them against the data. The interpretation is the observation text, founded in what the evidence shows (basis stated or read, B:131) and tied to its verses (the text names them and does not restate them): the items of every step (S1, 1.1, 1.2, 2.1) state what the dictionary, the verses and the stored structure show of a word and never what a word does for the inner being; their nodes carry the role lexical and no route. The whole file is checked and written in one transaction; any problem refuses all of it. A row answered again withdraws its earlier observations with the reason."
+      },
+      {
+        "rule": "VA-03 consumption-is-verified-before-deletion",
+        "text": "An older observation is deleted as consumed only when live observations carry its meaning: every word occurrence of it is on a live node of a carrier or named as not carried with its reason, the mapping is stated in words (what the old says, which carrier states each part), the traces to it are re-pointed or replaced, and the consumption is kept as `consumed_by`. An observation that holds more than one finding is split first."
+      },
+      {
+        "rule": "VA-04 neither-evidence-nor-inner-being-is-deleted",
+        "text": "An observation that is neither evidence nor inner being contributes nothing to the purposes of the observations (researcher, 2026-11-22): it is commented with its reason and the word occurrences no other live observation holds, then deleted. An observation already marked, or one another observation traces, is not deleted this way."
+      },
+      {
+        "rule": "DA-02 a-node-per-occurrence-with-its-surfaces-collection",
+        "text": "A node is on one occurrence (verse_lexical_id) and carries the collection of its surface (a supportive node, the collection of the surface it supports); a node already on the observation for the same occurrence is not written twice, and takes the role. A node with no collection to carry, or on a verse out of scope (B:130), is not written and is listed."
+      },
+      {
+        "rule": "IB-07 inner-being-observations-trace-to-evidence",
+        "text": "Every live observation marked inner_being holds at least one live traced node on a live observation marked evidence, or on a live inner-being observation that itself traces to evidence (the trace chain of stage 4: a 3.2 behaviour traces the 3.1 elements it gathers, a 3.3 match the 3.1 and 3.2 observations it comes from; at most three links), unless it is recorded self-evidencing: it quotes its verse in full and holds a word node for every word it relies on. A traced node never points at a deleted observation. A trace points first at existing evidence; an evidence observation is created only when none states the fact and it states what the nodes and the quotation do not. An inner-being observation traced to evidence not yet marked is pending, not failed."
+      },
+      {
+        "rule": "LR-01 a-step-opens-on-gates-and-derives-its-ledger",
+        "text": "A step of the layered reading opens only when the grouping is finished (every surface placed in a subgroup or isolated with its reason, every subgroup holding a surface) and the previous step is closed; with -Subgroup the needs and gates are judged for that subgroup alone (#2538). Step S1 is read after the grouping; step 1.1 needs step S1 closed: every word of the subgroup (surface and lettered Strong's code) answered and validated. Opening derives one ledger row for each aspect the data demands (cfg_setting layer.reading); an aspect the data no longer demands is retired, a new one is added, and a second open changes nothing."
+      },
+      {
+        "rule": "LR-03 none-needs-a-permitted-reason",
+        "text": "An aspect is recorded as none only where its item allows it (cfg_setting layer.reading none_allowed) and with its reason in words. A group definition and a group's Strong's enrichment are always observed."
+      },
+      {
+        "rule": "PC-01 the-command-names-a-live-unit",
+        "text": "A read or record command names a live collection, a live subgroup of it where the read is by subgroup, and a step or item the layered reading knows. A command that names one that does not exist is refused and writes nothing."
+      },
+      {
+        "rule": "PC-02 the-answer-is-the-packet-form",
+        "text": "An answer is the output form its read wrote: the `command` of that read; every entry an object, or a list, where the form has one; each field in its place with its type (a key unique in the answer, a text, a reason in words); each item answered once; and at least one entry where the form asks for entries. A file in another shape is refused whole and nothing is written."
+      },
+      {
+        "rule": "PC-03 names-are-those-the-packet-offers",
+        "text": "Every ledger row, occurrence, observation, sense, node, verse and collection an answer names is one the packet offered for this unit, or a key the answer itself defines, and is live in the database. A name outside them is refused."
+      },
+      {
+        "rule": "PC-04 values-from-the-allowed-lists",
+        "text": "Every coded value of an answer (kind, basis, item, part, role, route, mode, polarity, flag type, disposition, verdict, action, nature, stage, status) is one of the values the configuration allows for it (cfg_enum, cfg_setting layer.reading, reading.observation_items, validate.reading), as the packet lists them. Any other value is refused."
+      },
+      {
+        "rule": "PC-05 the-unit-is-at-its-step",
+        "text": "A read or record runs only where the ledger has its unit at that step: the row open, or answered and not yet validated, and the steps before it closed (S1 before 1.1; the 2.1 rows before the sweep; the sweep before the evidence validation; its gate before 3.1; every subgroup through 3.1 before 3.2). Out of order it is refused, and the message names what comes first."
+      },
+      {
+        "rule": "PC-06 within-the-configured-limits",
+        "text": "A read writes its packet within the time and size the configuration sets (cfg_setting layer.read_types: limits, package_max_chars, read_max_seconds). A read that would exceed them is refused, nothing is written, and the limit is named."
+      },
+      {
+        "rule": "PC-07 the-config-the-code-needs-is-present",
+        "text": "The code of the reading runs only where the configuration it reads is in place (the settings, steps, items, natures, enums and rules it names). Where the code is ahead of the configuration, the command is refused and names what is missing."
+      },
+      {
+        "rule": "RG-06 parties-and-route",
+        "text": "Record the parties: who bears the act, who causes it, who is acted on (source, target, impact, purpose), and the route (cfg_enum observation_route), whose meaning is cfg_behaviour_rule 72 (route-verses-hib-other-beings-data-only): A another being in its own right, B another being with the human inner being, C no bearing, data only; a verse may take A and B. A non-human being is never itself a HIB; a collective stays one HIB; an implied party is named as referential, never asserted."
+      },
+      {
+        "rule": "RW-01 changed-only-by-reading",
+        "text": "No observation is changed except by a reading, and every change is recorded with its reason. An observation no longer supported by the verse is soft-deleted, with the reason."
+      },
+      {
+        "rule": "RW-12 marker-and-node-columns-at-creation",
+        "text": "An observation is created with its marker (ib_observation.nature, from the item answered, cfg_setting layer.reading items.<item>.nature; a finding file never sets it) and every word node with the columns of layer.reading node_required. A column the data cannot give (layer.reading node_gap_columns: an empty morph in the source row, a surface with no placement in the collection index) is left empty and its reason is kept on the node (disposition_note); any other missing column refuses the whole file and nothing is written. A trace to a deleted observation is refused (IB-07)."
+      },
+      {
+        "rule": "RW-14 every-lookup-is-pinpointed",
+        "text": "A lookup of related data in the build or the validation is by an indexed column and takes a chunk of ids (cfg_setting layer.scan chunk); none runs once for each item of a list, and a statement that uses more work than layer.scan max_vm_ops is stopped and named, nothing written (lib/scanguard.py). The tests refuse a statement of the build whose query plan scans a table (layer.scan scan_ok lists the temporary tables a statement may scan)."
+      },
+      {
+        "rule": "VA-05 the-marker-follows-content-not-stage",
+        "text": "Evidence states what the data are or show, tied to a verse. Inner being states how something works in the inner being, based on evidence, a building block of the stage 5 claims. The marker (ib_observation.nature) follows the content and purpose of the observation, never its stage (RS-04): an observation of any stage may be inner being when it traces to evidence. One that states both is split. The marker is set when the observation is created, by the item that is answered (cfg_setting layer.reading items.<item>.nature); a finding file never sets it; the validation changes it only where the content shows the item's nature does not hold."
+      }
+    ],
+    "refused_when": {
+      "DA-02": [
+        "belongs to collection",
+        "the nodes do not carry the collections"
+      ],
+      "IB-07": [
+        "is not marked evidence: an inner-being observation traces to evidence",
+        "an observation does not trace itself"
+      ],
+      "LR-01": [
+        "is not closed (every row answered"
+      ],
+      "LR-02": [
+        "the text names none of them",
+        "names its grounds in the words of the verse",
+        "are not words of the lexicon entries",
+        "are not words of the verses",
+        "the data holds no occurrence for this aspect",
+        "names the occurrences it is about",
+        "names no occurrence (fill occurrences",
+        "are already in another sense",
+        "are in no sense",
+        "has no enrichment (one enrichment",
+        "is already enriched by enrichment",
+        "no occurrence to adopt for"
+      ],
+      "LR-03": [
+        "cannot be recorded as none",
+        "none needs its reason"
+      ],
+      "PC-01": [
+        "is not a step of the layered reading",
+        "is not a live subgroup of",
+        "no live collection",
+        "has no live subgroup",
+        "cannot read ",
+        " are required",
+        " is required"
+      ],
+      "PC-02": [
+        "answer (its `command` must be",
+        "is a list of {observation, action, reason",
+        "the answer holds no ",
+        "(fill.senses): at least one",
+        "this is not the answer of a read"
+      ],
+      "PC-03": [
+        "nothing written:\n  ledger ",
+        "not a ledger row of",
+        "occurrences that are not occurrences of",
+        "is not an older live observation on the occurrences of this row",
+        "is not an open old observation of this subgroup",
+        "is not a 1.1 sense of subgroup",
+        "adopt names a live observation",
+        "a deferral names a live collection",
+        "has no matching live verse_lexical row",
+        "both must be different live observations",
+        " is not an occurrence of ",
+        "is not a live observation",
+        "is not a live node",
+        "does not exist",
+        " is not a ",
+        "merge names a live observation to keep",
+        "defer names a live collection"
+      ],
+      "PC-04": [
+        "kind must be one of",
+        "basis must be one of",
+        "role must be one of",
+        "route must be one of",
+        "tag must be one of",
+        "stage must be one of",
+        "nature must be one of",
+        "disposition must be observed",
+        "is not a node role",
+        "cannot be modified (allowed:",
+        "not in live cfg_enum ib_observation",
+        ", the item takes ",
+        "action is one of",
+        "names its marker, nature one of"
+      ],
+      "PC-05": [
+        "only an open or an unvalidated row is recorded",
+        " row is answered by its own command",
+        "the evidence validation of ",
+        "has no open row",
+        "its group is retired or missing",
+        "carry names a LATER step of",
+        "the loop is for one subgroup at a time",
+        "partner collection "
+      ],
+      "PC-06": [
+        " s, more than ",
+        " characters, more than "
+      ],
+      "PC-07": [
+        "cfg_setting layer.reading is missing",
+        "cfg_setting layer.scan",
+        "layer.reading step ",
+        "(apply iba/app/migration/archive/",
+        "the code is ahead of the config",
+        "have no nature in cfg_setting layer.reading",
+        "the read names rule(s) not active",
+        "is empty: run install_nature",
+        "are not ib_observation.tag values",
+        " is missing"
+      ],
+      "RG-06": [
+        "carries its route",
+        "this item takes no route"
+      ],
+      "RW-01": [
+        "needs its reason, in words",
+        "say in words what was checked",
+        "say what it states that the existing record does not",
+        "state the finding the collection is to close",
+        "say in words which words it relies on",
+        "say in words why the word supports no finding",
+        "is the last word node of observation",
+        "already holds that occurrence: drop the node instead",
+        "its occurrence is on no live node of",
+        "carry gives its reason in words"
+      ],
+      "RW-03": [
+        "is already live as observation",
+        "the same text as",
+        "a merge is for the same description"
+      ],
+      "RW-04": [
+        "restates the verse",
+        "the observation text is missing or under",
+        "is a bare negation with no actual content",
+        "is not the ESV's wording"
+      ],
+      "RW-09": [
+        "adopt needs its reason in words"
+      ],
+      "RW-12": [
+        "morph_code is empty but",
+        ") has no "
+      ],
+      "RW-13": [
+        "are still open in the ledger",
+        "have no answer in fill.older",
+        "its fate is not recorded",
+        "is not in the change log of observation",
+        "the change log does not show it"
+      ],
+      "RW-14": [
+        "the statement used more than"
+      ],
+      "VA-03": [
+        "name the carrying observations",
+        "the mapping is stated in words",
+        "occurrence(s) are on no node of",
+        "not carried needs its reason"
+      ],
+      "VA-04": [
+        "only an observation that is neither is deleted here",
+        "repair those traces first"
+      ],
+      "VA-05": [
+        "is an inner-being finding (its nodes carry an inner-being role)",
+        "a deferred observation is marked now"
+      ]
+    },
+    "limits": {
+      "grounds and every reason: characters at least": 10,
+      "observation text: characters at least": 40,
+      "consecutive verse words a text may copy, at most": 7
+    },
+    "not_in_this_read": ""
+  },
+  "prompts": [],
+  "senses": [
+    {
+      "sense": 24107,
+      "text": "Chasing to overtake: running after a person, band or army to overtake, capture or strike them, in Gen 14:15, Exo 14:9, Jos 10:19, Judg 4:16, Judg 20:45, Num 14:45, 1Sa 30:8, 2Sa 2:19, 2Ki 25:5 and the many other battle and flight narratives.",
+      "codes": [
+        "H0310A",
+        "H1692",
+        "H3807",
+        "H7291"
+      ],
+      "words": [
+        "pursued|H0310A",
+        "pursued|H1692",
+        "pursued|H3807",
+        "pursued|H7291",
+        "pursue|H0310A",
+        "pursue|H7291"
+      ],
+      "occurrences": [
+        "2Sa 24:13",
+        "Exo 14:4",
+        "Exo 14:4",
+        "2Ch 14:13",
+        "Gen 14:15",
+        "1Sa 26:18",
+        "2Sa 20:6",
+        "2Sa 20:6",
+        "Deu 11:4",
+        "Num 14:45",
+        "Jos 8:16",
+        "Jos 8:16",
+        "Jos 8:16",
+        "Jos 8:16",
+        "1Sa 30:8",
+        "1Sa 30:8",
+        "2Sa 17:1",
+        "2Sa 17:1",
+        "2Ki 9:27",
+        "2Ki 9:27",
+        "Judg 7:23",
+        "Judg 20:43",
+        "Gen 35:5",
+        "Gen 35:5",
+        "1Sa 24:14",
+        "2Sa 20:10",
+        "2Sa 20:10",
+        "1Sa 23:25",
+        "Exo 14:8",
+        "Exo 14:8",
+        "Jos 10:19",
+        "Jos 10:19",
+        "Jos 2:5",
+        "Jos 8:24",
+        "1Sa 30:10",
+        "2Sa 2:28",
+        "2Sa 2:28",
+        "1Sa 17:52",
+        "Judg 8:12",
+        "Judg 8:12",
+        "Hos 8:3",
+        "Jer 39:5",
+        "Jer 39:5",
+        "2Sa 2:19",
+        "2Sa 2:19",
+        "Judg 4:16",
+        "Judg 4:16",
+        "Judg 20:45",
+        "1Sa 7:11",
+        "2Sa 2:24",
+        "2Sa 2:24",
+        "2Sa 22:38",
+        "Psa 18:37",
+        "Exo 14:9",
+        "Exo 14:9",
+        "Jos 2:7",
+        "1Ki 20:20",
+        "2Ki 25:5",
+        "2Ki 25:5",
+        "Jer 52:8",
+        "Jer 52:8",
+        "Jos 8:17",
+        "Gen 31:23",
+        "2Sa 20:7",
+        "2Sa 20:7",
+        "2Sa 20:13",
+        "2Sa 20:13",
+        "Judg 7:25",
+        "Judg 1:6",
+        "Judg 1:6",
+        "Exo 14:23",
+        "Jos 24:6",
+        "Jos 24:6",
+        "2Ch 13:19",
+        "2Ch 13:19"
+      ]
+    },
+    {
+      "sense": 24108,
+      "text": "Hounding to destroy: pursuit aimed at a person's life, standing or the weak, driven in some verses by desire or anger, in Exo 15:9, Deu 19:6, 1Sa 25:29, Psa 7:5, Psa 71:11, Psa 109:16, Psa 143:3, Job 19:22, Amo 1:11, Lam 3:43 and Rev 12:13.",
+      "codes": [
+        "G1377",
+        "H0310A",
+        "H5921A",
+        "H7291"
+      ],
+      "words": [
+        "pursued|G1377",
+        "pursued|H5921A",
+        "pursued|H7291",
+        "pursue|H0310A",
+        "pursue|H7291"
+      ],
+      "occurrences": [
+        "Deu 19:6",
+        "Deu 19:6",
+        "Lam 3:43",
+        "Amo 1:11",
+        "Amo 1:11",
+        "Exo 15:9",
+        "Psa 143:3",
+        "Psa 109:16",
+        "Job 19:28",
+        "Psa 71:11",
+        "Job 19:22",
+        "1Sa 25:29",
+        "Psa 7:5",
+        "Rev 12:13"
+      ]
+    },
+    {
+      "sense": 24109,
+      "text": "Pursuit by God or by what is not a person: God pursuing with tempest, sword or flood (Psa 83:15, Jer 29:18, Lam 3:66, Nah 1:8, Job 13:25), and curses, diseases, blood and the sword as pursuers (Deu 28:22, Deu 28:45, Eze 35:6, Jer 48:2), with honor chased off in Job 30:15.",
+      "codes": [
+        "H0310A",
+        "H1980N",
+        "H7291"
+      ],
+      "words": [
+        "pursued|H7291",
+        "pursue|H0310A",
+        "pursue|H1980N",
+        "pursue|H7291"
+      ],
+      "occurrences": [
+        "Eze 35:6",
+        "Eze 35:6",
+        "Lam 3:66",
+        "Jer 48:2",
+        "Jer 48:2",
+        "Job 13:25",
+        "Deu 28:22",
+        "Jer 29:18",
+        "Job 30:15",
+        "Psa 83:15",
+        "Nah 1:8",
+        "Deu 28:45"
+      ]
+    },
+    {
+      "sense": 24110,
+      "text": "Pursuit of a good: going after righteousness, peace, love and the virtues as an aim, in Rom 9:30, Rom 9:31, Rom 14:19, 1Cor 14:1, 1Ti 6:11, 2Ti 2:22, 1Pe 3:11, Psa 34:14 and Isa 51:1.",
+      "codes": [
+        "G1161",
+        "G1377",
+        "H7291"
+      ],
+      "words": [
+        "pursued|G1377",
+        "pursue|G1161",
+        "pursue|G1377",
+        "pursue|H7291"
+      ],
+      "occurrences": [
+        "2Ti 2:22",
+        "Isa 51:1",
+        "1Cor 14:1",
+        "1Pe 3:11",
+        "Psa 34:14",
+        "1Ti 6:11",
+        "1Ti 6:11",
+        "Rom 9:30",
+        "Rom 9:31",
+        "Rom 14:19"
+      ]
+    },
+    {
+      "sense": 24111,
+      "text": "Going after a forbidden desire: the cities of Jude 7 going after other flesh, and the wife of Hos 2:7 chasing her lovers without reaching them.",
+      "codes": [
+        "G0565",
+        "G3694",
+        "H7291"
+      ],
+      "words": [
+        "pursued|G0565",
+        "pursued|G3694",
+        "pursue|H7291"
+      ],
+      "occurrences": [
+        "Hos 2:7",
+        "Jude 7",
+        "Jude 7"
+      ]
+    }
+  ],
+  "occurrences_in_no_sense": [],
+  "codes": {
+    "G0565": {
+      "surfaces": [
+        "pursued"
+      ],
+      "sense_head": "to go away",
+      "meaning_range": "to go away, withdraw; <b>to go away, depart,</b> <ref='Mat.8.18'>Mt. 8:18</ref>; <b>to go forth, pervade,</b> as a rumor, <ref='Mat.4.24'>Mt. 4:24</ref>; <b>to arrive at</b> a destination, <ref='Luk.23.33'>Lk. 23:33</ref>; <b>to pass away, disappear,</b> <ref='Rev.21.4'>Rev. 21:4;</ref> <greek>ἀπέρχομαι ὀπισω</greek>, <b>to follow,</b> <ref='Mrk.1.20'>Mk. 1:20</ref>",
+      "lsj": "<b> ἀπέρχομαι</b>, <br /> <i>future</i> -ελεύσομαι (<i>Attic dialect</i> <i>future</i> ἄπειμι): <i>perfect</i> -ελήλυθα: <i>aorist</i> -ῆλθον:— <b>go away, depart from,</b> with <i>genitive</i>, πάτρης[<a href=\"javascript:void(0)\" title=\" 8th c.BC: Ilias Homerus Epicus “Illiad” 24.766; οἴκου 8th c.BC: Odyssea Homerus Epicus “Odyssey” 2.136, compare 5th c.BC: Sophocles Tragicus “Oedipus Coloneus” 1165, etc.; λόγου 5th c.BC: Euripides Tragicus “Iphigenia Taurica” 546; ἀ. ἀπὸ τοῦ βουλευτηρίου 5th c.BC: Thucydides Historicus 8.92; ἐκ τῆς χώρας [prev. author] 1.89, etc.: _metaphorically_, ἀ. ἐκ δακρύων\">Refs 8th c.BC+</a>] <b>cease from</b> tears. [<a href=\"javascript:void(0)\" title=\" 5th c.BC: E",
+      "mounce": "to go away, withdraw",
+      "related": [
+        "G0575 ἀπό away from",
+        "G2064 ἔρχομαι to come/go"
+      ]
+    },
+    "G1161": {
+      "surfaces": [
+        "pursue"
+      ],
+      "sense_head": "then",
+      "meaning_range": "but, and, then, rather; a conjunctive particle, marking the superaddition of a clause, whether in opposition or in continuation, to what has preceded, and it may be variously rendered <b>but, on the other hand, and, also, now,</b> etc.; <greek>καὶ δέ</greek>, when there is a special superaddition in continuation, <b>too, yea,</b> etc. It sometimes is found at the commencement of the apodosis of a sentence, <ref='Act.11.17.'>Acts 11:17.</ref> It serves also to mark the resumption of an interrupted discourse, <ref='2Co.2.10'>2Cor. 2:10;</ref> <ref='Gal.2.6'>Gal. 2:6</ref>",
+      "lsj": "<b> δέ</b>, <br /> <b>but</b>: adversative and copulative Particle, <br /><Level2><b>__I</b></Level2> answering to μέν (which see), τὴν νῦν μὲν Βοιωτίαν, πρότερον δὲ Καδμηίδα γῆν καλουμένην [<a href=\"javascript:void(0)\" title=\" 5th c.BC: Thucydides Historicus 1.12, etc. \">Refs 5th c.BC+</a>]<br /><Level2><b>__II</b></Level2> without preceding μέν, <br /><Level3><b>__II.1</b></Level3> adversative, expressing distinct opposition, αἰεί τοι τὰ κάκ᾽ ἐστὶ φίλα.. μαντεύεσθαι, ἐσθλὸν δ᾽ οὔτε τί πω εἶπας[<a href=\"javascript:void(0)\" title=\" lines 1.108; ὀρθῶς ἔλεξας, οὐ φίλως δέ μοι λέγεις 5th c.BC: Euripides Tragicus “Orestes” 100, compare 5th c.BC: Sophocles Tragicus “Antigone” 85, etc.; τέθνηκεν ἀ",
+      "mounce": "but, and, then, rather",
+      "related": [
+        "G1211 δή so"
+      ]
+    },
+    "G1377": {
+      "surfaces": [
+        "pursue",
+        "pursued"
+      ],
+      "sense_head": "to pursue",
+      "meaning_range": "to pursue, persecute, to systematically oppress and harass a person or group, as an extended meaning of pursuing a person on foot in a chase; also from the image of the chase comes the meaning of striving and pressing on to a goal with intensity: to press on; <b>to put in rapid motion; to pursue; to follow, pursue the direction of,</b> <ref='Luk.17.23'>Lk. 17:23</ref>; <b>to follow eagerly, endeavor earnestly to acquire,</b> <ref='Rom.9.30, 31; 12.13'>Rom. 9:30, 31; 12:13</ref>; <b>to press forwards,</b> <ref='Php.3.12, 14'>Phil. 3:12, 14</ref>; <b>to pursue</b> with malignity, <b>persecute,</b> <ref='Mat.5.10, 11, 12, 44'>Mt. 5:10, 11, 12, 44</ref>",
+      "lsj": "<b> διώκω</b>, <br /> <i>Epic dialect</i> <i>infinitive</i> διωκέμεναι, -έμεν (see. below): <i>future</i> <b>-ξω</b>[<a href=\"javascript:void(0)\" title=\" 7th-6th c.BC: Sappho Lyrica 1.21, 5th c.BC: Pindarus Lyricus “O.” 3.45, 5th-6th c.BC: Xenophon Historicus “Institutio Cyri (Cyropaedia)” 6.3.13 (assuming variant), “An.” 1.4.8, 4th c.BC: Demosthenes Orator 38.16 codices; but διώξομαι 5th-6th c.BC: Aristophanes Comicus “Equites” 368 (and Elmsl. restored διώξει for -εις in “Eq.” 969, “Nu.” 1296, “Th.” 1224), 5th-6th c.BC: Plato Philosophus “Theaetetus” 168a: \">Refs 7th c.BC+</a>]<i>aorist</i> ἐδίωξα: <i>aorist 2</i> ἐδιώκαθον (see. διωκάθω): <i>perfect</i> δεδίωχα [<a href=\"javascript:void(0)",
+      "mounce": "to pursue, persecute, to systematically oppress and harass a person or group, as an extended meaning of pursuing a person on foot in a chase; also from the image of the chase comes the meaning of striving and pressing on to a goal with intensity: to press on",
+      "related": [
+        "G1375 διωγμός persecution",
+        "G1376 διώκτης persecutor",
+        "G1559 ἐκδιώκω to persecute",
+        "G2614 καταδιώκω to seek"
+      ]
+    },
+    "G3694": {
+      "surfaces": [
+        "pursued"
+      ],
+      "sense_head": "after",
+      "meaning_range": "behind, after, following; can function as an <i>improper preposition</i>, <b>behind, after, at one's back,</b> <ref='Mat.4.10'>Mt. 4:10</ref>; <ref='Luk.7.38'>Lk. 7:38</ref>; <ref='Rev.1.10'>Rev. 1:10;</ref> <greek>τὰ ὀπισω</greek>, <b>the things which are behind,</b> <ref='Php.3.13'>Phil. 3:13;</ref> <greek>ὀπισω</greek> and <greek>εἰς τὰ ὀπισω</greek>, <b>back, backwards,</b> <ref='Mat.24.18'>Mt. 24:18</ref>; <ref='Mrk.13.16'>Mk. 13:16</ref>; <ref='Luk.9.62'>Lk. 9:62</ref>, when an <i>improper preposition</i>, takes the <i>genitive</i>",
+      "lsj": "<b> ὀπίσω</b> [ῐ], <br /> <i>Epic dialect</i> <b>ὀπίσσω</b>, the former rare in [<a href=\"javascript:void(0)\" title=\" 8th c.BC: Homerus Epicus and only in signification 1 \">Refs 8th c.BC+</a>]; <i>Aeolic dialect</i> <b>ὐπίσσω</b> [<a href=\"javascript:void(0)\" title=\" 7th-6th c.BC: Sappho Lyrica “Papyrus fragments” in E. Diehl, 8.9 \">Refs 7th c.BC+</a>]:— <i>adverb</i>: <br /><Level2><b>__I</b></Level2> of Place, <b>backwards,</b> opposed to to πρόσω, [<a href=\"javascript:void(0)\" title=\" 8th c.BC: Ilias Homerus Epicus “Illiad” 12.272 \">Refs 8th c.BC+</a>]; to προπρηνές,[<a href=\"javascript:void(0)\" title=\" 3.218; ἀνεχάζετο τυτθὸν ὀπίσσω 5.443; ἀ. πολλὸν ὀ. 16.710; πάλιν εἶσιν ὀπίσσω 8th c.BC",
+      "mounce": "behind, after, following",
+      "related": [
+        "G3693 ὄπισθεν after"
+      ]
+    },
+    "H0310A": {
+      "surfaces": [
+        "pursue",
+        "pursued"
+      ],
+      "sense_head": "after",
+      "meaning_range": "1) after the following part, behind (of place), hinder, afterwards (of time); 1a) as an adverb; 1a1) behind (of place); 1a2) afterwards (of time); 1b) as a preposition; 1b1) behind, after (of place); 1b2) after (of time); 1b3) besides; 1c) as a conjunction; 1c) after that; 1d) as a substantive; 1d1) hinder part; 1e) with other prepositions; 1e1) from behind; 1e2) from following after",
+      "lsj": "",
+      "mounce": "",
+      "related": [
+        "H0268 אָחוֹר back",
+        "H0309 אָחַר to delay",
+        "H0310B אַחֲרַי backwards",
+        "H0311 אַחַר after",
+        "H0312 אַחֵר another",
+        "H0313 אַחֵר Aher",
+        "H0314 אַחֲרוֹן last",
+        "H0315 אַחְרַח Aharah",
+        "H0316 אֲחַרְחֵל Aharhel",
+        "H0318 אׇחֳרֵין finally",
+        "H0319 אַחֲרִית end",
+        "H0322 אֲחֹרַנִּית backwards"
+      ]
+    },
+    "H1692": {
+      "surfaces": [
+        "pursued"
+      ],
+      "sense_head": "to cleave",
+      "meaning_range": "1) to cling, stick, stay close, cleave, keep close, stick to, stick with, follow closely, join to, overtake, catch; 1a) (Qal); 1a1) to cling, cleave to; 1a2) to stay with; 1b) (Pual) to be joined together; 1c) (Hiphil); 1c1) to cause to cleave to; 1c2) to pursue closely; 1c3) to overtake; 1d) (Hophal) to be made to cleave; Aramaic equivalent: <i>de.vaq</i> (דְּבֵק \"to cleave\" H1693)",
+      "lsj": "",
+      "mounce": "",
+      "related": [
+        "H1693 דְּבֵק to cleave",
+        "H1694 דֶּ֫בֶק joint",
+        "H1695 דָּבֵק cleaving"
+      ]
+    },
+    "H1980N": {
+      "surfaces": [
+        "pursue"
+      ],
+      "sense_head": "follow/behind/go[after",
+      "meaning_range": "1) to go, walk, come; 1a) (Qal); 1a1) to go, walk, come, depart, proceed, move, go away; 1a2) to die, live, manner of life (fig.); 1b) (Piel); 1b1) to walk; 1b2) to walk (fig.); 1c) (Hithpael); 1c1) to traverse; 1c2) to walk about; 1d) (Niphal) to lead, bring, lead away, carry, cause to walk",
+      "lsj": "",
+      "mounce": "",
+      "related": [
+        "H1946 הוּךְ to go",
+        "H1978 הָלִיךְ step",
+        "H1979 הֲלִיכָה walk",
+        "H1980G הָלַךְ to go: went",
+        "H1980H הָלַךְ to go: come",
+        "H1980I הָלַךְ to go: walk",
+        "H1980J הָלַךְ to go: take",
+        "H1980K הָלַךְ to go: come!",
+        "H1980L הָלַךְ to go: continue",
+        "H1980M הָלַךְ to go: journey",
+        "H1980O הָלַךְ to go: send",
+        "H1981 הֲלַךְ to go"
+      ]
+    },
+    "H3807": {
+      "surfaces": [
+        "pursued"
+      ],
+      "sense_head": "to crush",
+      "meaning_range": "1) to beat, crush by beating, crush to pieces, crush fine; 1a) (Qal); 1a1) to beat or crush fine; 1a2) to beat, hammer; 1b) (Piel); 1b1) to beat or crush fine; 1b2) to beat, hammer; 1c) (Pual) to be beaten; 1d) (Hiphil) to beat in pieces, shatter; 1e) (Hophal) to be beaten, be crushed",
+      "lsj": "",
+      "mounce": "",
+      "related": [
+        "H3795 כָּתִית beaten",
+        "H4386 מְכִתָּה fragment"
+      ]
+    },
+    "H5921A": {
+      "surfaces": [
+        "pursued"
+      ],
+      "sense_head": "upon",
+      "meaning_range": "prep; 1) upon, on the ground of, according to, on account of, on behalf of, concerning, beside, in addition to, together with, beyond, above, over, by, on to, towards, to, against; 1a) upon, on the ground of, on the basis of, on account of, because of, therefore, on behalf of, for the sake of, for, with, in spite of, notwithstanding, concerning, in the matter of, as regards; 1b) above, beyond, over (of excess); 1c) above, over (of elevation or pre-eminence); 1d) upon, to, over to, unto, in addition to, together with, with (of addition); 1e) over (of suspension or extension); 1f) by, adjoining, next, at, over, around (of contiguity or proximity); 1g) down upon, upon, on, from, up upon, up to,",
+      "lsj": "",
+      "mounce": "",
+      "related": [
+        "H0131 אֲדֻמִּים Adummim",
+        "H3588A כִּי for",
+        "H3588B כִּי [אם] that if: except",
+        "H3588C כִּי [עַל כֵּן] for as that: since",
+        "H3651C כֵּן so",
+        "H3652 כֵּן thus",
+        "H4605 מַ֫עַל above",
+        "H4607 מֹ֫עַל lifting",
+        "H4608 מַעֲלֶה ascent",
+        "H4609A מַעֲלָה thought",
+        "H4609B מַעֲלָה step",
+        "H4610 עַקְרַבִּים Akrabbim"
+      ]
+    },
+    "H7291": {
+      "surfaces": [
+        "pursue",
+        "pursued"
+      ],
+      "sense_head": "to pursue",
+      "meaning_range": "1) to be behind, follow after, pursue, persecute, run after; 1a) (Qal); 1a1) to pursue, put to flight, chase, dog, attend closely upon; 1a2) to persecute, harass (fig); 1a3) to follow after, aim to secure (fig); 1a4) to run after (a bribe) (fig); 1b) (Niphal); 1b1) to be pursued; 1b2) one pursued (participle); 1c) (Piel) to pursue ardently, aim eagerly to secure, pursue; 1d) (Pual) to be pursued, be chased away; 1e) (Hiphil) to pursue, chase",
+      "lsj": "",
+      "mounce": "",
+      "related": [
+        "H4783 מֻרְדָּף persecution"
+      ]
+    }
+  },
+  "older": [],
+  "answer": {
+    "command": "ReadEnrichment",
+    "collection": "strive",
+    "subgroup": "going after",
+    "ledger_id": 2355,
+    "enrichments": [
+      {
+        "sense": 24107,
+        "kind": "enrichment",
+        "obs_text": "radaph (H7291) is to be behind and follow after, to chase and put to flight; achar (H0310A, after) marks the one chased as ahead; dabaq (H1692) adds keeping close and overtaking in Judg 20:45, and katat (H3807, to crush) in Num 14:45 adds the beating down the ESV renders as pursuit. The lexicon bears out the chase.",
+        "basis": "read",
+        "grounds": "to pursue, put to flight, chase"
+      },
+      {
+        "sense": 24108,
+        "kind": "enrichment",
+        "obs_text": "radaph (H7291) has the figurative sense to persecute and harass, and dioko (G1377) the sense to oppress a person or group systematically, the dragon's pursuit in Rev 12:13; al (H5921A, upon) in Amo 1:11 is a preposition and adds no meaning. The lexicon bears out a hostile pursuit.",
+        "basis": "read",
+        "grounds": "to persecute, harass (fig)"
+      },
+      {
+        "sense": 24109,
+        "kind": "enrichment",
+        "obs_text": "radaph (H7291) carries no sense of its own for a pursuer that is God, a curse or blood; the lexicon gives the chase, and the verses Psa 83:15, Deu 28:45 and Eze 35:6 supply the pursuer. halak (H1980N) with achar in Jer 48:2 is to go after, given here to the sword.",
+        "basis": "read",
+        "grounds": "to be behind, follow after, pursue"
+      },
+      {
+        "sense": 24110,
+        "kind": "enrichment",
+        "obs_text": "dioko (G1377) from the image of the chase has the sense of pressing on to a goal and following eagerly to acquire it, which Rom 14:19 and 1Ti 6:11 use; radaph (H7291) has the figurative sense to follow after and aim to secure, used in Psa 34:14 and Isa 51:1. de (G1161) is a particle and adds no meaning.",
+        "basis": "read",
+        "grounds": "to follow eagerly, endeavor earnestly to acquire"
+      },
+      {
+        "sense": 24111,
+        "kind": "enrichment",
+        "obs_text": "aperchomai (G0565) is to go away or depart, and opiso (G3694, after) in Jude 7 turns the going away into a going after; radaph (H7291) in Hos 2:7 is the chase itself. The lexicon has no sense of desire in these codes; the desire is in the objects the verses name.",
+        "basis": "read",
+        "grounds": "to go away, withdraw"
+      }
+    ],
+    "older": []
+  },
+  "measured": {
+    "package_chars": 34265,
+    "seconds": 0.09
+  }
+}

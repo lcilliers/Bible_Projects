@@ -1,0 +1,780 @@
+# ReadElements -- strive / exertion toward an end -- step 3.1
+
+## What to do
+
+Step 3.1, the elements of one subgroup (stage 4, C1; the end of the loop for the subgroup): what the evidence of the subgroup shows of the elements of a behaviour of the inner being. The input is the evidence observations of the subgroup by marker (`to_take_up`, the senses first, then the 2.1 findings and the older evidence), not the verses; the verses are kept for an occasional read-back. A finding is a building block, never a claim about the behaviour as a whole (that is stage 5).
+
+Read:
+- Read the observations to take up, in order: the senses (1.1) and their enrichments (1.2) first, then the 2.1 findings (pairings, qualifiers, entities, direction, double meanings), then the older evidence. The inner-being workings work more with the senses than with the surfaces, so findings rest on the senses first.
+- For each item a finding may use (`uses`): what is done and its mode (operation, with its chain), whether a refusal or a pursuit (polarity), what it is directed at (object), the outward act (enactment), the other party with the route (party), the circumstance, and what a qualifier or a variation of the word gives the working (role, the dimension). Never the meaning of the word (stage 1).
+- Read the older inner-being observations (`older_inner_being`) with them: each is considered first, accepted with a trace to evidence, restated where it says more than the evidence, consumed where a finding says the same, merged, or deleted where it cannot be made true.
+- Go back to a verse (`verses`) only where the evidence does not settle the question, and say why.
+
+Write:
+- Fill `answer.findings`: each one observation, with a `key` unique in the answer, `kind` (of the item's kinds), `text`, `basis` (stated or read), `parts` with `item` (one of `uses`) and what the item needs (with `grounds`), and `nodes`: a `traced` node on each observation it rests on (from `to_take_up` or `may_rest_on_besides`) and an `occurrence` node, with its `role` chosen from the verse (characteristic, qualifier, object, relational target, enactment or standalone), on the occurrences those observations cover.
+- An occurrence outside the observations a finding rests on is allowed only with a `read_back` entry on the finding: {verse: the osis id, why}.
+- `not_used`: {observation id: reason} for every observation to take up that no finding rests on. Every one is rested on or declared, never both.
+- `older`: answer, once, each older inner-being observation (`older_inner_being`) that has a node on an occurrence your findings name (RW-13; the record lists any it misses, and refuses an answer to one on no named occurrence: those are shown, not demanded, IB-05): keep (with nature inner_being: it stands, traced to evidence), restate, merge, consume (carriers ["this"] or ids, mapping), delete_neither, or defer (collection, nature, finding).
+- `existing`: answer every earlier reading (`earlier_readings`: inner being of an earlier grouping on these occurrences) with accept, modify, delete, merge or leave, and its reason.
+- The text says what the evidence shows of the element; it names its verses; it never restates a verse and never states the behaviour as a whole.
+- In place of writing `nodes`, a finding may name `rests_on` (the observations it rests on) and `role` (the node role of the words they cover; `roles` {occurrence: role, or "" to leave one out} for the exceptions): the recorder writes a traced node on each and an occurrence node on each occurrence they cover (each observation's `covers` or `occurrences` lists them). Nodes written by hand are kept.
+- Then: Collection-Build.ps1 -Action CheckAnswer -File <the answer file>: every problem at once, each with its rule, nothing written; correct the answer until it finds none, then -Action RecordElements -File <the answer file>. The record refuses the whole file on any fault and lists every fault.
+
+## Refused when (by rule)
+
+- DA-02: is not a word of a collection; is in no collection: name the occurrence it supports; word node(s) carry no collection; names collection ; belongs to collection; has a node with no collection; the nodes do not carry the collections
+- IB-02: are outside the observations the finding rests on; a finding rests on observations; rests on no observation (a traced node on each); which this row may not rest on; outside the observations it rests on; gives no reason in words
+- IB-03: names its grounds in the words of the verse (parts.grounds; at least one node (what the finding applies to); only a term finding applies to a word with no verse
+- IB-04: names an observation this row must take up; is neither rested on by a finding nor in; is both rested on by a finding and in; is part of this match and no finding traces it; without a reason in words; are neither rested on by a finding nor declared; declares an observation this row does not take up; of the match are not traced
+- IB-06: its observations are missing or withdrawn; records are not readable; which this row does not use;  has stage ; has no node on an occurrence
+- IB-07: is not marked evidence: an inner-being observation traces to evidence; an observation does not trace itself
+- IB-08: the collection shows at least one behaviour; no behaviour: the collection row needs a flag finding
+- LR-01: is not closed (every row answered
+- LR-02: the data holds no occurrence for this aspect
+- LR-03: cannot be recorded as none; none needs its reason; recorded as none without a permitted reason
+- PC-01: is not a step of the layered reading; is not a live subgroup of; no live collection; has no live subgroup; cannot read ;  are required;  is required
+- PC-02: answer (its `command` must be; a node is an object; a finding is an object; parts is an object with; is a list of {observation, action, reason; a unique key is required; is a short name unique in the row; text is required; a read_back entry is ;  is {observation id: reason}; `traced` is the id of an observation; a node names the occurrence id of the word; a node names the word (strong); an `existing` entry names a live observation and an action; the row is answered by findings; this is not the answer of a read
+- PC-03: nothing written:
+  ledger ; not a ledger row of; is not an occurrence this row may name; is neither a live observation nor a finding key; are not observations this row may rest on; is not an older live observation on the occurrences of this row; is not an open old observation of this subgroup; a deferral names a live collection; has no matching live verse_lexical row; both must be different live observations; is not a live occurrence of;  is not an occurrence of ; is not a live observation; is not a live node; does not exist;  is not a ; merge names a live observation to keep; defer names a live collection; which this row may not name
+- PC-04: kind must be one of; basis must be one of; role must be one of; route must be one of; tag must be one of; stage must be one of; nature must be one of; parts.item is one of; are not among; is written as a finding of the kind; has the basis; gives parts.polarity; gives parts.mode; gives parts.flag_type; disposition must be observed; cannot be modified (allowed:; not in live cfg_enum ib_observation; action is one of; names its marker, nature one of
+- PC-05: only an open or an unvalidated row is recorded; the evidence validation of ; has no row for; has no open row; its group is retired or missing; carry names a LATER step of; the loop is for one subgroup at a time; the data no longer demands this aspect; partner collection 
+- PC-06:  s, more than ;  characters, more than 
+- PC-07: cfg_setting layer.reading is missing; cfg_setting layer.scan; layer.reading step ; (apply iba/app/migration/archive/; the code is ahead of the config; have no nature in cfg_setting layer.reading; the read names rule(s) not active; is empty: run install_nature; are not ib_observation.tag values;  is missing
+- RG-03: every node it holds bears on an act; has a node with no valid stage 4 role
+- RG-04: a qualification finding applies to its qualifier
+- RG-06: carries its route; is held only on a party or link finding
+- RS-04: earlier reading(s) of the subg;  needs its reason (
+- RW-01: needs its reason, in words; say in words what was checked; say what it states that the existing record does not; state the finding the collection is to close; say in words which words it relies on; say in words why the word supports no finding; is the last word node of observation; already holds that occurrence: drop the node instead; its occurrence is on no live node of; carry gives its reason in words
+- RW-03: is already live as observation; the same text as; an existing finding takes nodes only; a merge is for the same description
+- RW-04: restates the verse; is a bare negation with no actual content
+- RW-13: are still open in the ledger; have no answer in fill.older; its fate is not recorded; is not in the change log of observation; the change log does not show it
+- RW-14: the statement used more than
+- VA-03: name the carrying observations; the mapping is stated in words; occurrence(s) are on no node of; not carried needs its reason
+- VA-04: only an observation that is neither is deleted here; repair those traces first
+- VA-05: a deferred observation is marked now
+
+## Limits
+
+- grounds and every reason: characters at least: 10
+- observation text: characters at least: 40
+- consecutive verse words a text may copy, at most: 7
+
+## The rules
+
+- IB-02 stage-4-starts-from-the-observations: Stage 4 starts from the observations, not the verses (researcher, #2526 Q7, 2026-11-21): the subgroups and the stage 3 observations on them are the input, the behaviours are discovered from analysing them, and the base data is read back into only occasionally. Every finding of step 3.1 or 3.2 rests on named observations (a traced node on each, with an occurrence node as well) and its occurrence nodes lie within the occurrences those observations cover; an occurrence outside them is allowed only where the finding records a read-back (the verse and why). Each node has a role from reading.node_roles other than lexical, chosen by the reading. A 3.3 finding carries nodes on the occurrences of both sides in the shared verses. In 3.1 a qualification finding may also hold, with the role qualifier, the occurrences of the partner words the subgroup's 2.1 qualifier observations name, where the reading judges the qualifier bears on the working; a qualifier that does not bear on it is declared in not_used with its reason, never forced into a finding.
+- IB-03 findings-follow-the-observation-rules: A finding of a stage 4 row is checked by the rules of observationrecord.check and check_item_parts (kind, text, basis, route, parts.item and what the item needs, node roles, collection of each node) and by RG, RW and RS, which are not restated here: one observation for each finding, never a duplicate, with a node on each word it applies to (RO11, RW-03); founded in the observations and never a restatement of the verse (B:131); parts.item is one of the items the row's item uses (cfg_setting layer.reading). An observation whose nodes all bear on an act is refused: those words are nodes of the observation of the act. A finding is a building block of a behaviour and never a claim (stage 5).
+- IB-04 nothing-is-lost-on-the-way-to-stage-5: Nothing the step reads is lost on the way to stage 5. Step 3.1: every stage 3 observation of the subgroup is rested on by a finding or declared in not_used with its reason in words. Step 3.2: every 3.1 observation of the collection is gathered into a behaviour (a traced node on it from a flag finding of type discovery) or declared in not_gathered with its reason, and the row has at least one behaviour unless it is recorded as none with its reason. A behaviour names and gathers; it makes no claim about what the behaviour is.
+- IB-05 earlier-observations-are-shown-not-demanded: An earlier inner-being observation with a node on the occurrences of a 3.1 row (any stage but those of the build: lexical, layer-1, layer-2, layer-3.1 to layer-3.3, and layer-3 before 2026-11-26) is shown in the pull for information and may be actioned in `existing`: accepted, modified, deleted, merged or left, each with its reason, through observationrecord (RW-01, RW-09); nothing is demanded of it, and it counts for nothing in the check. A row answered again withdraws its earlier observations with the reason. Every older live observation with a node on an occurrence of the row is answered in fill.older at the record of the row (RW-13); this rule's `existing` actions of stage 4 are unchanged.
+- IB-07 inner-being-observations-trace-to-evidence: Every live observation marked inner_being holds at least one live traced node on a live observation marked evidence, or on a live inner-being observation that itself traces to evidence (the trace chain of stage 4: a 3.2 behaviour traces the 3.1 elements it gathers, a 3.3 match the 3.1 and 3.2 observations it comes from; at most three links), unless it is recorded self-evidencing: it quotes its verse in full and holds a word node for every word it relies on. A traced node never points at a deleted observation. A trace points first at existing evidence; an evidence observation is created only when none states the fact and it states what the nodes and the quotation do not. An inner-being observation traced to evidence not yet marked is pending, not failed.
+- RG-03 role-per-occurrence: Find the main inner-being operation, and give every word that bears on it its role in this finding (cfg_setting reading.node_roles): characteristic, qualifier and what it gives the characteristic, object or content, relational target, or enactment. A word read in the verse that holds nothing for the inner being is standalone. The role comes from this verse, never from the cluster tag. Where a standalone word proves to qualify a characteristic, it is a qualifier of it.
+- RG-04 qualifier-binding: A qualifier gets no separate account of itself, but what it gives the characteristic it binds to is evaluated for its value and recorded as a qualification finding, applied by its nodes to the qualifier (role qualifier) and the characteristic (role characteristic). What it gives can vary widely: grade, nature, impact, size, relation, a measure, strengthening, ground, cause, object, setting or bait are examples, not a list (#2273 D9). A qualifier whose usage varies across contexts may earn its own reading later.
+- RG-06 parties-and-route: Record the parties: who bears the act, who causes it, who is acted on (source, target, impact, purpose), and the route (cfg_enum observation_route), whose meaning is cfg_behaviour_rule 72 (route-verses-hib-other-beings-data-only): A another being in its own right, B another being with the human inner being, C no bearing, data only; a verse may take A and B. A non-human being is never itself a HIB; a collective stays one HIB; an implied party is named as referential, never asserted.
+- RG-10 never-not-x: Never close a verse or item on 'not X'. A role label is never a verdict; the close records what the verse is. Silence about the inner being is a finding, recorded as data with its reason.
+- RG-11 hidden-behind-act: A phenomenon hidden behind a stated or refrained act may be named, with the verb, clause or stated silence that grounds it, and whether it is stated or read.
+- RG-13 source-vs-enablement: Keep the source of an interior state apart from the source of an enablement to act.
+- RG-24 adverbial-qualifier: A tagged word that works adverbially in an occurrence (a noun with a preposition qualifying the predicate, as 'in the counsel of the wicked') is a qualifier there, not the verse's characteristic. The role is per occurrence: the same word may be the characteristic elsewhere.
+- RG-25 simile-tenor: In a simile, the predicates of the vehicle (the tree that yields, does not wither) are read for what they say of the one compared (the tenor), not as the vehicle's own acts.
+- RO11 one-row-per-code: One observation per finding, never a duplicate description; a finding applying to several verses or words carries several nodes, each with the word's role in it.
+- RW-03 no-duplicates-multi-node: One observation per finding: the same description is never written twice. Applied to another verse, word or scope it gains a node on the existing observation.
+- RW-04 concise-verse-specific: Observation text is concise and tied to this verse's content, never a restatement of the word's dictionary sense. A transliteration is never given without its gloss.
+- RW-12 marker-and-node-columns-at-creation: An observation is created with its marker (ib_observation.nature, from the item answered, cfg_setting layer.reading items.<item>.nature; a finding file never sets it) and every word node with the columns of layer.reading node_required. A column the data cannot give (layer.reading node_gap_columns: an empty morph in the source row, a surface with no placement in the collection index) is left empty and its reason is kept on the node (disposition_note); any other missing column refuses the whole file and nothing is written. A trace to a deleted observation is refused (IB-07).
+- VA-05 the-marker-follows-content-not-stage: Evidence states what the data are or show, tied to a verse. Inner being states how something works in the inner being, based on evidence, a building block of the stage 5 claims. The marker (ib_observation.nature) follows the content and purpose of the observation, never its stage (RS-04): an observation of any stage may be inner being when it traces to evidence. One that states both is split. The marker is set when the observation is created, by the item that is answered (cfg_setting layer.reading items.<item>.nature); a finding file never sets it; the validation changes it only where the content shows the item's nature does not hold.
+- B:72 route-verses-hib-other-beings-data-only: The study's primary focus is the human inner being (HIB). Each verse read is routed by what it shows, and the route is recorded in its observation. (A) Other beings in their own right: a word used of God, angels, other spirits or nature (non-HIB) is routed to Ch 13 "Other beings" (13.1 Divine, 13.2 Angels, 13.3 Other spirits, 13.4 Nature), read for what the verses say that being is and does; for God, also how his character passed to the HIB through creation in his image, held open (#1984). (B) Another being interacting with the HIB is fully in HIB scope. A verse may take A and B, described from different angles. (C) A verse with no inner-being and no other-being bearing is still assessed and recorded as data, and does not enter the narrative.
+- DA-02 a-node-per-occurrence-with-its-surfaces-collection: A node is on one occurrence (verse_lexical_id) and carries the collection of its surface (a supportive node, the collection of the surface it supports); a node already on the observation for the same occurrence is not written twice, and takes the role. A node with no collection to carry, or on a verse out of scope (B:130), is not written and is listed.
+- IB-06 stage-4-check-rederives-from-the-tables: LayerCheck validates a stage 4 row from the tables alone: the demanded occurrences and the observations the row may rest on are re-derived; at least one live observation of the stage of its step (layer-3.1, layer-3.2 or layer-3.3) with its stable_key on the row; each observation's parts still valid and its item one the row uses; each live node has a valid role, a collection and its subgroup; each observation has a traced node on an observation the row may rest on; in 3.1 and 3.2 each occurrence node lies in the occurrences of the observations it rests on or its verse is in the recorded read-back; the completeness of IB-04 (not_used, not_gathered, the behaviour of 3.2); no observation restates a run of the verse longer than reading.observation_items max_verse_words_copied. A row that fails is unvalidated and its step is not closed.
+- IB-08 what-a-behaviour-is: A behaviour (step 3.2) is one working of the inner being: one core operation, who or what does what, shown by several element observations of 3.1. Elements that show the same operation belong to one behaviour, whatever their mode, polarity, object, party or circumstance, and in whatever subgroup they sit; those differences are written as relating findings (operation, chain, party, circumstance, role). Different operations linked in sequence are a chain between behaviours, not one behaviour. A group that holds two operations is split; two groups that hold one operation are joined. An element that shows no working of a human inner being (another being in its own right, route A of B:72; a word that is not an act of the mind) is declared not gathered with its reason. A behaviour is named by what is done, never by what it means for the inner being (stage 5).
+- LR-01 a-step-opens-on-gates-and-derives-its-ledger: A step of the layered reading opens only when the grouping is finished (every surface placed in a subgroup or isolated with its reason, every subgroup holding a surface) and the previous step is closed; with -Subgroup the needs and gates are judged for that subgroup alone (#2538). Step S1 is read after the grouping; step 1.1 needs step S1 closed: every word of the subgroup (surface and lettered Strong's code) answered and validated. Opening derives one ledger row for each aspect the data demands (cfg_setting layer.reading); an aspect the data no longer demands is retired, a new one is added, and a second open changes nothing.
+- LR-02 nodes-are-built-from-the-data: The nodes of a layer observation are the occurrences the aspect demands (a word's occurrences, the group's occurrences, the partner's occurrences in the verses they share), written by the recorder with the collection and the subgroup of each surface; they are never typed. An item answered by senses (word-sense) names, for each sense, the occurrences it holds for, and together the senses cover every occurrence; the recorder checks them against the data. The interpretation is the observation text, founded in what the evidence shows (basis stated or read, B:131) and tied to its verses (the text names them and does not restate them): the items of every step (S1, 1.1, 1.2, 2.1) state what the dictionary, the verses and the stored structure show of a word and never what a word does for the inner being; their nodes carry the role lexical and no route. The whole file is checked and written in one transaction; any problem refuses all of it. A row answered again withdraws its earlier observations with the reason.
+- LR-03 none-needs-a-permitted-reason: An aspect is recorded as none only where its item allows it (cfg_setting layer.reading none_allowed) and with its reason in words. A group definition and a group's Strong's enrichment are always observed.
+- PC-01 the-command-names-a-live-unit: A read or record command names a live collection, a live subgroup of it where the read is by subgroup, and a step or item the layered reading knows. A command that names one that does not exist is refused and writes nothing.
+- PC-02 the-answer-is-the-packet-form: An answer is the output form its read wrote: the `command` of that read; every entry an object, or a list, where the form has one; each field in its place with its type (a key unique in the answer, a text, a reason in words); each item answered once; and at least one entry where the form asks for entries. A file in another shape is refused whole and nothing is written.
+- PC-03 names-are-those-the-packet-offers: Every ledger row, occurrence, observation, sense, node, verse and collection an answer names is one the packet offered for this unit, or a key the answer itself defines, and is live in the database. A name outside them is refused.
+- PC-04 values-from-the-allowed-lists: Every coded value of an answer (kind, basis, item, part, role, route, mode, polarity, flag type, disposition, verdict, action, nature, stage, status) is one of the values the configuration allows for it (cfg_enum, cfg_setting layer.reading, reading.observation_items, validate.reading), as the packet lists them. Any other value is refused.
+- PC-05 the-unit-is-at-its-step: A read or record runs only where the ledger has its unit at that step: the row open, or answered and not yet validated, and the steps before it closed (S1 before 1.1; the 2.1 rows before the sweep; the sweep before the evidence validation; its gate before 3.1; every subgroup through 3.1 before 3.2). Out of order it is refused, and the message names what comes first.
+- PC-06 within-the-configured-limits: A read writes its packet within the time and size the configuration sets (cfg_setting layer.read_types: limits, package_max_chars, read_max_seconds). A read that would exceed them is refused, nothing is written, and the limit is named.
+- PC-07 the-config-the-code-needs-is-present: The code of the reading runs only where the configuration it reads is in place (the settings, steps, items, natures, enums and rules it names). Where the code is ahead of the configuration, the command is refused and names what is missing.
+- RS-04 existing-checked-accept-modify-delete: When a verse is worked, every existing observation and node on it, of any stage, is checked against the verse by its wording. The stage is not an indication of the nature of an observation and is never used to filter. Each observation is accepted, modified (changed in place; the old value, the new value and the reason are kept in ib_observation_change), soft deleted (the `deleted` column, with the reason), merged (a duplicate description, into the observation that is kept) or, when its wording shows it is not verse understanding, left exactly as it is with the reason. The check's fixes are part of it and need no separate approval. Nothing is physically deleted.
+- RW-01 changed-only-by-reading: No observation is changed except by a reading, and every change is recorded with its reason. An observation no longer supported by the verse is soft-deleted, with the reason.
+- RW-13 older-observations-answered-at-record: Every older live observation with a live node on an occurrence of the row (a stage that is not the build's own) is answered in fill.older when the row is recorded, once: keep or restate (each with its marker), merge into a named observation, consume (live observations carry its meaning, stated in words, verified before it is deleted), delete as neither (comment first), or defer to a named collection (marked now; only the finding is left to that collection). An observation already marked by the validation, answered in a build or deferred is not asked again. A new observation whose text equals that of another live observation of the collection is refused, the other named. LayerCheck re-derives both from the tables. The end state of a collection's build is that every observation of its scope is marked and fixed or deleted, every word node complete or with its reason, and each deferral owned by a named collection.
+- RW-14 every-lookup-is-pinpointed: A lookup of related data in the build or the validation is by an indexed column and takes a chunk of ids (cfg_setting layer.scan chunk); none runs once for each item of a list, and a statement that uses more work than layer.scan max_vm_ops is stopped and named, nothing written (lib/scanguard.py). The tests refuse a statement of the build whose query plan scans a table (layer.scan scan_ok lists the temporary tables a statement may scan).
+- VA-03 consumption-is-verified-before-deletion: An older observation is deleted as consumed only when live observations carry its meaning: every word occurrence of it is on a live node of a carrier or named as not carried with its reason, the mapping is stated in words (what the old says, which carrier states each part), the traces to it are re-pointed or replaced, and the consumption is kept as `consumed_by`. An observation that holds more than one finding is split first.
+- VA-04 neither-evidence-nor-inner-being-is-deleted: An observation that is neither evidence nor inner being contributes nothing to the purposes of the observations (researcher, 2026-11-22): it is commented with its reason and the word occurrences no other live observation holds, then deleted. An observation already marked, or one another observation traces, is not deleted this way.
+
+## made
+
+2026-11-26T16:04:06Z
+
+## unit
+
+- ledger_id: 2342
+- to_take_up: 113
+- may_rest_on_besides: 18
+- older_inner_being: 4
+- earlier_readings: 0
+- occurrences: 26
+- verses: 25
+
+## asks
+
+What do the stage 3 observations of this subgroup (its definition, its Strong's enrichment, its pairings, qualifiers, entities, direction, relations and double meanings, with the stage 1 senses) show of the elements of a behaviour of the inner being: what is done and its mode, whether a refusal or a pursuit, what it is directed at, the outward act, the other party with the route, the circumstance, the chain of operations, and the dimensions of the working (what a qualifier or a variation of the word gives it, from the lexical variation the stage 3 observations record)? Each finding is one observation that rests on named observations (a traced node on each) and carries nodes on the occurrences those observations cover, with the role each has; an occurrence outside them is allowed only with a read-back (the verse and why). Every stage 3 observation of the subgroup is rested on by a finding or declared not used, with the reason. A finding is a building block and never a claim about the behaviour as a whole (stage 5).
+
+## uses
+
+- item: role
+  name: its role: the qualifier and what it gives the characteristic
+  kinds: ["qualification", "statement"]
+  bases: ["stated", "read"]
+- item: polarity
+  name: whether the act is a refusal or a pursuit
+  kinds: ["statement"]
+  bases: ["stated", "read"]
+- item: object
+  name: what the act is directed at or against
+  kinds: ["statement"]
+  bases: ["stated", "read"]
+- item: enactment
+  name: the outward act the inner act produces, where the verse states one
+  kinds: ["statement"]
+  bases: ["stated", "read"]
+- item: party
+  name: the other party and the sequence, with the route
+  kinds: ["party"]
+  bases: ["stated", "read"]
+- item: circumstance
+  name: how it appears here: the circumstance of the verse
+  kinds: ["statement"]
+  bases: ["stated"]
+- item: operation
+  name: the operation as an action description (who or what does what), its mode, the primary one
+  kinds: ["statement"]
+  bases: ["stated", "read"]
+- item: chain
+  name: the chain of operations the verse links in sequence
+  kinds: ["link"]
+  bases: ["stated", "read"]
+- item: flag
+  name: a typed flag: data-quality, or discovery for the claims process
+  kinds: ["statement"]
+  bases: ["stated", "read"]
+
+## node_roles
+
+- relevant: ["characteristic", "qualifier"]
+- bears_on: ["object", "relational_target", "enactment"]
+- recognised: ["standalone"]
+- lexical: ["lexical"]
+
+## allowed_values
+
+- polarity: ["refusal", "pursuit"]
+- mode: ["done", "foreseen", "commanded", "negated", "reported"]
+- flag_type: ["data-quality", "discovery"]
+- route: ["A", "B", "C"]
+- basis: ["read", "stated"]
+
+## definition_of_the_subgroup
+
+null
+
+## meaning_by_code
+
+- G0075: {"sense_head": "to struggle", "meaning_range": "to fight, struggle, often an athletic contest; <b>to be a combatant in the public games; to contend, fight, strive earnestly</b>"}
+- G1377: {"sense_head": "to pursue", "meaning_range": "to pursue, persecute, to systematically oppress and harass a person or group, as an extended meaning of pursuing a person on foot in a chase; also from the image of the chase comes the meaning of striving and pressing on to a goal with intensity: to press on; <b>to put in rapid motion; to pursue; to follow, pursue the direction of,</b> <ref='Luk.17.23'>Lk. 17:23</ref>; <b>to follow eagerly, endeavor earnestly to acquire,</b> <ref='Rom.9.30, 31; 12.13'>Rom. 9:30, 31; 12:13</ref>; <b>to press forw"}
+- G2212: {"sense_head": "to seek", "meaning_range": "to look for, seek out; to try to obtain, desire to possess, strive for; <b>to seek, look for,</b> <ref='Mat.18.12'>Mt. 18:12</ref>; <ref='Luk.2.48, 49'>Lk. 2:48, 49</ref>; <b>to search after,</b> <ref='Mat.13.45'>Mt. 13:45</ref>; <b>to be on the watch for,</b> <ref='Mat.26.16'>Mt. 26:16</ref>; <b>to pursue, endeavor to obtain,</b> <ref='Rom.2.7'>Rom. 2:7;</ref> <ref='1Pe.3.11'>1Pet. 3:11;</ref> <b>to desire, wish, want,</b> <ref='Mat.12.47'>Mt. 12:47</ref>; <b>to seek, strive for,</b> <ref='Mat."}
+- G4704: {"sense_head": "be eager", "meaning_range": "to be eager, make every effort, do one’s best; <b>to hurry; be bent upon,</b> <ref='Gal.2.10'>Gal. 2:10;</ref> <b>to endeavor earnestly, strive, make every effort, to do one’s best</b> <ref='Eph.4.3'>Eph. 4:3</ref>"}
+- H1624: {"sense_head": "to stir up", "meaning_range": "1) to cause strife, stir up, contend, meddle, strive, be stirred up; 1a) (Piel) to stir up strife, excite strife; 1b) (Hithpael); 1b1) to excite oneself against, engage in strife; 1b2) to excite oneself (against foe), wage war"}
+- H3588A: {"sense_head": "for", "meaning_range": "1) that, for, because, when, as though, as, because that, but, then, certainly, except, surely, since; 1a) that; 1a1) yea, indeed; 1b) when (of time); 1b1) when, if, though (with a concessive force); 1c) because, since (causal connection); 1d) but (after negative); 1e) that if, for if, indeed if, for though, but if; 1f) but rather, but; 1g) except that; 1h) only, nevertheless; 1i) surely; 1j) that is; 1k) but if; 1l) for though; 1m) forasmuch as, for therefore"}
+- H5327A: {"sense_head": "to struggle", "meaning_range": "1) to struggle; 1a) (Niphal) to struggle; 1b) (Hiphil) to struggle"}
+- H7378: {"sense_head": "to contend", "meaning_range": "1) to strive, contend; 1a) (Qal); 1a1) to strive; 1a1a) physically; 1a1b) with words; 1a2) to conduct a case or suit (legal), sue; 1a3) to make complaint; 1a4) to quarrel; 1b) (Hiphil) to contend against"}
+- H7379: {"sense_head": "strife", "meaning_range": "1) strife, controversy, dispute; 1a) strife, quarrel; 1b) dispute, controversy, case at law"}
+- H7469: {"sense_head": "longing", "meaning_range": "longing, striving; Aramaic equivalent: <i>re.ut</i> (רְעוּ \"pleasure\" H7470)"}
+- H7475: {"sense_head": "striving", "meaning_range": "longing, striving; Aramaic equivalent: <i>ra.yon</i> (רַעְיוֹן \"thought\" H7476)"}
+- H7786: {"sense_head": "to reign", "meaning_range": "1) to be or act as prince, rule, contend, have power, prevail over; 1a) (Qal) to rule over, govern; 1b) (Hiphil) to make rulers, play the prince"}
+- H8280: {"sense_head": "to strive", "meaning_range": "1) contend, have power, contend with, persist, exert oneself, persevere; 1a) (Qal) to persevere, contend with"}
+
+## to_take_up
+
+- observation: 23951
+  stage: layer-1
+  kind: group
+  item: group-definition
+  text: Exertion toward a goal: effort spent to reach or to do something, in 1Th 2:17, Gal 2:17, Luk 13:24, 1Ti 4:10, Heb 12:14, 1Cor 14:12, Heb 4:11 and Ecc 2:22; the goal is named in each, a meeting, a standing before God, entry, peace and holiness, excelling, rest, or in Ecc 2:22 the labour itself.
+  basis: read
+  verses: ["1Thess.2.17", "Gal.2.17", "Luke.13.24", "1Tim.4.10", "Heb.12.14", "1Cor.14.12", "Heb.4.11", "Eccl.2.22"]
+  covers: [1285121, 1431899, 1483412, 1490125, 1497259, 1499524, 1504215, 1505281]
+- observation: 23952
+  stage: layer-1
+  kind: group
+  item: group-definition
+  text: Contention against an opponent: disputing with another or rousing oneself against another, in Isa 45:9 against one's maker, in Pro 28:4 by those who keep the law against the wicked, and in Isa 41:11 where Israel's opponents are named by their dispute with Israel.
+  basis: read
+  verses: ["Isa.45.9", "Prov.28.4", "Isa.41.11"]
+  covers: [1276887, 1292401, 1294373]
+- observation: 23953
+  stage: layer-1
+  kind: group
+  item: group-definition
+  text: Physical fighting: a bodily fight between men in Exo 21:22 and warfare between peoples in Psa 60:1, both with the verb natsah.
+  basis: read
+  verses: ["Exod.21.22", "Ps.60.1"]
+  covers: [1015257, 1015258, 1254571]
+- observation: 23954
+  stage: layer-1
+  kind: group
+  item: group-definition
+  text: Jacob's contending with God: the struggle with God, or with the angel, in which Jacob prevailed, told in Gen 32:28, Hos 12:3 and Hos 12:4 with sarah and sur.
+  basis: read
+  verses: ["Gen.32.28", "Hos.12.4", "Hos.12.3"]
+  covers: [987217, 1385251, 1387715]
+- observation: 23955
+  stage: layer-1
+  kind: group
+  item: group-definition
+  text: A reaching after wind: in Ecc 1:14, Ecc 1:17, Ecc 2:11, Ecc 2:17, Ecc 2:26, Ecc 4:4, Ecc 4:6, Ecc 4:16 and Ecc 6:9 two related nouns, reut and rayon, name a striving after wind, a reaching after what gives nothing to hold.
+  basis: read
+  verses: ["Eccl.2.17", "Eccl.2.11", "Eccl.4.4", "Eccl.4.6", "Eccl.6.9", "Eccl.2.26", "Eccl.1.14", "Eccl.4.16", "Eccl.1.17"]
+  covers: [1284708, 1285032, 1285196, 1285207, 1285680, 1287677, 1287996, 1288171, 1288469]
+- observation: 23956
+  stage: layer-1
+  kind: enrichment
+  item: strong-enrichment
+  text: Each code of this sense names effort toward a goal from its own side: spoudazo (G4704) eagerness and haste, agonizomai (G0075) struggle as in a contest, zeteo (G2212) seeking to obtain, dioko (G1377) pursuit pressed to a goal, and rayon (H7475) longing. The surface strive carries all four Greek codes, so Luk 13:24, Heb 12:14, 1Cor 14:12 and Heb 4:11 differ by code. The lexicon bears out the sense.
+  basis: read
+  verses: ["Eccl.2.22", "Luke.13.24", "1Cor.14.12", "Gal.2.17", "1Thess.2.17", "1Tim.4.10", "Heb.4.11", "Heb.12.14"]
+  covers: [1285121, 1431899, 1483412, 1490125, 1497259, 1499524, 1504215, 1505281]
+- observation: 23957
+  stage: layer-1
+  kind: enrichment
+  item: strong-enrichment
+  text: rib as verb (H7378) and noun (H7379) covers contending in words or at law and quarrel; garah (H1624) in its Hithpael is to rouse oneself against another and engage in strife. The lexicon bears out a contention against another in Isa 45:9, Isa 41:11 and Pro 28:4; the surface strive carries both the noun H7379 and the verb H1624.
+  basis: read
+  verses: ["Prov.28.4", "Isa.41.11", "Isa.45.9"]
+  covers: [1276887, 1292401, 1294373]
+- observation: 23958
+  stage: layer-1
+  kind: enrichment
+  item: strong-enrichment
+  text: natsah (H5327A) is given only as to struggle, in the Niphal of Exo 21:22 and the Hiphil of Psa 60:1; the lexicon gives no more than struggle, so the bodily and armed nature of the fight comes from the verses. H3588A (ki, that, when) is the conjunction the surface carries in Exo 21:22 and adds no meaning to the sense.
+  basis: read
+  verses: ["Exod.21.22", "Ps.60.1"]
+  covers: [1015257, 1015258, 1254571]
+- observation: 23959
+  stage: layer-1
+  kind: enrichment
+  item: strong-enrichment
+  text: sarah (H8280) is to contend, persist and persevere, and its related words include Israel (H3478), the name Gen 32:28 explains. sur (H7786) has rule and reign as its head sense, but its range includes contend and prevail over, which Hos 12:4 uses. The lexicon bears out the sense for both codes, with sur lying nearer to ruling.
+  basis: read
+  verses: ["Gen.32.28", "Hos.12.4", "Hos.12.3"]
+  covers: [987217, 1385251, 1387715]
+- observation: 23960
+  stage: layer-1
+  kind: enrichment
+  item: strong-enrichment
+  text: reut (H7469) and rayon (H7475) are given the same range, longing and striving, and their related words include words for thought (H7454, H7476) and for pasturing (H7462B). The lexicon bears out the sense of a reaching after in Ecc 1:14 and Ecc 1:17, and adds nothing on the wind it is joined with.
+  basis: read
+  verses: ["Eccl.2.17", "Eccl.2.11", "Eccl.4.4", "Eccl.4.6", "Eccl.6.9", "Eccl.2.26", "Eccl.4.16", "Eccl.1.17", "Eccl.1.14"]
+  covers: [1284708, 1285032, 1285196, 1285207, 1285680, 1287677, 1287996, 1288171, 1288469]
+- observation: 23251
+  stage: layer-2
+  kind: pairing
+  item: pairing
+  text: In Ecc 2:11 the Preacher considered all his work and toil and found it vanity and a striving after wind: the considering is a review of his toil that reaches its verdict.
+  basis: read
+  verses: ["Eccl.2.11"]
+  covers: [1285032]
+- observation: 23961
+  stage: layer-2
+  kind: face
+  item: double-meaning
+  text: In Exo 21:22 the surface strive stands on two codes at one position: natsah (H5327A, struggle, Niphal) and ki (H3588A, the conjunction 'when'), so the one English word holds both the opening conjunction and the verb of a fight between men.
+  basis: read
+  verses: ["Exod.21.22"]
+  covers: [1015257, 1015258]
+- observation: 23962
+  stage: layer-2
+  kind: face
+  item: double-meaning
+  text: In Pro 28:4 (garah, H1624, a Hithpael verb) and Isa 41:11 (rib, H7379, a noun in construct) the surface strive stands on two Hebrew codes of contention, each followed by the party opposed, 'them' and 'you'.
+  basis: read
+  verses: ["Prov.28.4", "Isa.41.11"]
+  covers: [1276887, 1292401]
+- observation: 23963
+  stage: layer-2
+  kind: face
+  item: double-meaning
+  text: In Luk 13:24, 1Ti 4:10, 1Cor 14:12, Heb 4:11 and Heb 12:14 the surface strive stands on four Greek codes, agonizomai (G0075), zeteo (G2212), spoudazo (G4704) and dioko (G1377), each with a goal as an infinitive or an object: one English word covers struggle, seeking, eagerness and pursuit.
+  basis: read
+  verses: ["Luke.13.24", "1Tim.4.10", "1Cor.14.12", "Heb.4.11", "Heb.12.14"]
+  covers: [1431899, 1483412, 1499524, 1504215, 1505281]
+- observation: 23964
+  stage: layer-2
+  kind: face
+  item: double-meaning
+  text: In Ecc 1:14, 2:11, 2:17, 2:26, 4:4, 4:6 and 6:9 (reut, H7469) and in Ecc 1:17 and 4:16 (rayon, H7475) the surface striving stands in the same construct phrase with 'wind', so the two codes give one face in that phrase.
+  basis: read
+  verses: ["Eccl.1.14", "Eccl.2.11", "Eccl.2.17", "Eccl.2.26", "Eccl.4.4", "Eccl.4.6", "Eccl.6.9", "Eccl.1.17", "Eccl.4.16"]
+  covers: [1284708, 1285032, 1285196, 1285207, 1285680, 1287677, 1287996, 1288171, 1288469]
+- observation: 23965
+  stage: layer-2
+  kind: face
+  item: double-meaning
+  text: In Ecc 2:22 striving stands on rayon (H7475) in construct with 'heart' and joined to 'toil', with no 'wind': the code that gives the phrase with wind in Ecc 1:17 and 4:16 here names the effort of the heart in labour.
+  basis: read
+  verses: ["Eccl.2.22"]
+  covers: [1285121]
+- observation: 23966
+  stage: layer-2
+  kind: face
+  item: double-meaning
+  text: In Psa 60:1 the surface strove stands on natsah (H5327A, a Hiphil infinitive) for David's warfare against Aram-naharaim and Aram-zobah, in the superscription.
+  basis: read
+  verses: ["Ps.60.1"]
+  covers: [1254571]
+- observation: 23967
+  stage: layer-2
+  kind: face
+  item: double-meaning
+  text: In Hos 12:3 (sarah, H8280, with God) and Hos 12:4 (sur, H7786, with the angel) the surface strove stands on two different codes for the one struggle of Jacob, told in two lines that follow each other.
+  basis: read
+  verses: ["Hos.12.3", "Hos.12.4"]
+  covers: [1385251, 1387715]
+- observation: 23968
+  stage: layer-2
+  kind: pairing
+  item: qualifier
+  text: In 1Th 2:17 the comparative adverb 'more eagerly' (G4056) qualifies endeavored, and 'great' (G4183) qualifies 'desire', the noun of the phrase that goes with the verb; the negator 'not' (G3756) reaches 'in heart', set against 'in person', not the verb.
+  basis: read
+  verses: ["1Thess.2.17"]
+  covers: [1497259]
+- observation: 23969
+  stage: layer-2
+  kind: pairing
+  item: qualifier
+  text: In Ecc 1:17, 2:26, 4:4, 4:16 and 6:9 the adverb 'also' (gam, H1571) stands in the clause that calls the case a striving after wind, adding it to the cases already called so; it reaches the clause, not the noun striving.
+  basis: read
+  verses: ["Eccl.1.17", "Eccl.2.26", "Eccl.4.4", "Eccl.4.16", "Eccl.6.9"]
+  covers: [1285196, 1285680, 1287677, 1287996, 1288171]
+- observation: 23971
+  stage: layer-2
+  kind: pairing
+  item: qualifier
+  text: In Ecc 4:6 and 6:9 'better' (tov, H2896A) opens a comparison in which the striving after wind stands on the side judged the lesser: with two hands full of toil in 4:6, with the wandering of the appetite in 6:9.
+  basis: read
+  verses: ["Eccl.4.6", "Eccl.6.9"]
+  covers: [1285207]
+- observation: 23972
+  stage: layer-2
+  kind: pairing
+  item: qualifier
+  text: In Ecc 2:17, 2:22 and 2:26 the adjectives grievous (H7451A), toils (H6001B) and pleases (H2896A) qualify other words of their verses, what is done under the sun, the man who labours, and the one who pleases God; none reaches striving.
+  basis: read
+  verses: ["Eccl.2.17", "Eccl.2.22", "Eccl.2.26"]
+  covers: [1284708, 1285121]
+- observation: 23973
+  stage: layer-2
+  kind: pairing
+  item: qualifier
+  text: In Gen 32:28 the negator 'no' with 'longer' (H3808, H5750) reaches 'be called Jacob', the old name, not the verb striven.
+  basis: read
+  verses: ["Gen.32.28"]
+  covers: [987217]
+- observation: 23974
+  stage: layer-2
+  kind: pairing
+  item: qualifier
+  text: In Exo 21:22 'pregnant' (H2030A) qualifies the woman struck and 'no' (H3808) negates 'harm'; neither reaches strive.
+  basis: read
+  verses: ["Exod.21.22"]
+  covers: [1015257, 1015258]
+- observation: 23975
+  stage: layer-2
+  kind: pairing
+  item: qualifier
+  text: In Hos 12:4 the adverb 'there' (H8033G) reaches 'spoke', placing God's speaking at Bethel; it does not reach strove.
+  basis: read
+  verses: ["Hos.12.4"]
+  covers: [1385251]
+- observation: 23976
+  stage: layer-2
+  kind: pairing
+  item: qualifier
+  text: In Luk 13:24 'narrow' (G4728) qualifies the door that is the goal of the striving; 'many' (G4183) names those who seek, and 'not' (G3756) negates 'be able' in their clause, not the command to strive.
+  basis: read
+  verses: ["Luke.13.24"]
+  covers: [1431899]
+- observation: 23977
+  stage: layer-2
+  kind: pairing
+  item: qualifier
+  text: In 1Cor 14:12 'so' (G3779) opens the sentence and applies what went before to the readers; it reaches the whole sentence and not strive alone.
+  basis: read
+  verses: ["1Cor.14.12"]
+  covers: [1483412]
+- observation: 23978
+  stage: layer-2
+  kind: pairing
+  item: qualifier
+  text: In Gal 2:17 'sinners' (G0268) is what those who endeavor are found to be, and 'not' (G3361) closes the verse as a denial of the question about Christ; neither reaches the endeavor.
+  basis: read
+  verses: ["Gal.2.17"]
+  covers: [1490125]
+- observation: 23979
+  stage: layer-2
+  kind: pairing
+  item: qualifier
+  text: In 1Ti 4:10 'all' (G3956), 'especially' (G3122) and 'believe' (G4103) qualify the people of whom God is Savior, in the clause about him; none reaches strive.
+  basis: read
+  verses: ["1Tim.4.10"]
+  covers: [1499524]
+- observation: 23980
+  stage: layer-2
+  kind: pairing
+  item: qualifier
+  text: In Heb 12:14 'everyone' (G3956) gives the range of the peace that is pursued, and 'no one' (G3762) is the subject of 'will see', in the clause about holiness.
+  basis: read
+  verses: ["Heb.12.14"]
+  covers: [1505281]
+- observation: 23981
+  stage: layer-2
+  kind: pairing
+  item: entity
+  text: In Gen 32:28 and Hos 12:3 the striving is with God (elohim, H0430G), and in Gen 32:28 also with men (H0582); the one who strove is Jacob (H3290), named in Gen 32:28 and referred to by 'he' in Hos 12:3.
+  basis: stated
+  verses: ["Gen.32.28", "Hos.12.3"]
+  covers: [987217, 1387715]
+- observation: 23982
+  stage: layer-2
+  kind: pairing
+  item: entity
+  text: In Exo 21:22 those who strive are 'men' (H0582), not named, and a third party, a pregnant woman (H0802G), is struck by them; her husband is named after, as the one who sets the fine.
+  basis: stated
+  verses: ["Exod.21.22"]
+  covers: [1015257, 1015258]
+- observation: 23983
+  stage: layer-2
+  kind: pairing
+  item: entity
+  text: In Psa 60:1 the one who strove is David (H1732), named in the superscription with Joab (H3097G) and the peoples fought; God (H0430G) is addressed in the body of the verse, not named as a party of the fighting.
+  basis: read
+  verses: ["Ps.60.1"]
+  covers: [1254571]
+- observation: 23984
+  stage: layer-2
+  kind: pairing
+  item: entity
+  text: In Ecc 2:22 and 2:26 the one who labours is 'a man' (adam, H0120G), in 2:26 set under God (H0430G), who gives to the one who pleases him; in Ecc 4:4 the neighbor (H7453) is the one envied.
+  basis: stated
+  verses: ["Eccl.2.22", "Eccl.2.26", "Eccl.4.4"]
+  covers: [1285121, 1285196, 1287677]
+- observation: 23985
+  stage: layer-2
+  kind: pairing
+  item: entity
+  text: In Isa 41:11 those who strive are 'those' (H0582, men in construct with the noun of strife), the opponents of the one addressed as 'you'.
+  basis: stated
+  verses: ["Isa.41.11"]
+  covers: [1292401]
+- observation: 23986
+  stage: layer-2
+  kind: pairing
+  item: entity
+  text: In Gal 2:17 Christ (G5547) is named twice, as the one in whom justification is sought and as the subject of the question whether he serves sin.
+  basis: stated
+  verses: ["Gal.2.17"]
+  covers: [1490125]
+- observation: 23987
+  stage: layer-2
+  kind: pairing
+  item: entity
+  text: In 1Th 2:17 the readers are addressed as 'brothers' (G0080), the ones from whom the writers were torn away and whom they made the effort to see.
+  basis: stated
+  verses: ["1Thess.2.17"]
+  covers: [1497259]
+- observation: 23988
+  stage: layer-2
+  kind: pairing
+  item: entity
+  text: In 1Ti 4:10 the living God (G2316) is the one on whom the hope of those who strive is set, and the Savior of all people (G0444); the strivers are 'we'.
+  basis: stated
+  verses: ["1Tim.4.10"]
+  covers: [1499524]
+- observation: 23989
+  stage: layer-2
+  kind: pairing
+  item: entity
+  text: In Heb 12:14 the Lord (G2962G) is the one who will not be seen without holiness; the strivers are the readers addressed by the imperative.
+  basis: stated
+  verses: ["Heb.12.14"]
+  covers: [1505281]
+- observation: 23990
+  stage: layer-2
+  kind: relation
+  item: direction
+  text: In Gen 32:28 and Hos 12:3 the striving goes from Jacob toward God, with the preposition 'with' (H5973A, H0854); in Gen 32:28 it also goes toward men, and the verse closes on his prevailing.
+  basis: stated
+  verses: ["Gen.32.28", "Hos.12.3"]
+  covers: [987217, 1387715]
+- observation: 23991
+  stage: layer-2
+  kind: relation
+  item: direction
+  text: In Exo 21:22 the striving runs both ways between the men (Niphal, 'together'), and their blows fall on a third party, the pregnant woman they strike.
+  basis: stated
+  verses: ["Exod.21.22"]
+  covers: [1015257, 1015258]
+- observation: 23992
+  stage: layer-2
+  kind: relation
+  item: direction
+  text: In Psa 60:1 the striving goes from David against two peoples, Aram-naharaim and Aram-zobah, while the body of the verse turns to God in address.
+  basis: stated
+  verses: ["Ps.60.1"]
+  covers: [1254571]
+- observation: 23993
+  stage: layer-2
+  kind: relation
+  item: direction
+  text: In Isa 41:11 the striving comes from opponents against the one addressed, 'against you'.
+  basis: stated
+  verses: ["Isa.41.11"]
+  covers: [1292401]
+- observation: 23994
+  stage: layer-2
+  kind: relation
+  item: direction
+  text: In 1Th 2:17 the effort goes from the writers toward persons, the brothers they want to see face to face.
+  basis: stated
+  verses: ["1Thess.2.17"]
+  covers: [1497259]
+- observation: 23995
+  stage: layer-2
+  kind: relation
+  item: direction
+  text: In Gal 2:17, 1Ti 4:10 and Heb 12:14 the effort goes toward an end and against no party: justification in Christ, 'this end' with hope set on God, and peace with everyone with the holiness without which the Lord is not seen.
+  basis: read
+  verses: ["Gal.2.17", "1Tim.4.10", "Heb.12.14"]
+  covers: [1490125, 1499524, 1505281]
+- observation: 23996
+  stage: layer-2
+  kind: relation
+  item: direction
+  text: In Ecc 2:22, 2:26 and 4:4 the striving is directed at no party: it is a man's own labour in 2:22, the business God gives to the sinner in 2:26, and work that comes from a man's envy of his neighbor in 4:4.
+  basis: read
+  verses: ["Eccl.2.22", "Eccl.2.26", "Eccl.4.4"]
+  covers: [1285121, 1285196, 1287677]
+- observation: 23997
+  stage: layer-2
+  kind: pairing
+  item: pairing
+  text: In Psa 60:1 'angry' (anaph, H0599) is said of God toward his people in the prayer of the verse, while 'strove' stands in the superscription for David's wars; the two words lie in different parts of the verse.
+  basis: read
+  verses: ["Ps.60.1"]
+  covers: [1254571]
+- observation: 23998
+  stage: layer-2
+  kind: pairing
+  item: pairing
+  text: In Isa 41:11 'incensed' (H2734) and 'those who strive against you' are two parallel names for the same opponents, each clause with its own outcome, shame and perishing.
+  basis: read
+  verses: ["Isa.41.11"]
+  covers: [1292401]
+- observation: 23999
+  stage: layer-2
+  kind: pairing
+  item: pairing
+  text: In Ecc 6:9 'wandering' (H1980I, an infinitive) of the appetite stands on the lesser side of the comparison, and the same clause then calls it a striving after wind.
+  basis: read
+  verses: ["Eccl.6.9"]
+  covers: [1285680]
+- observation: 24000
+  stage: layer-2
+  kind: pairing
+  item: pairing
+  text: In 1Ti 4:10 'believe' (G4103) names those of whom God is especially Savior, in the clause that gives the ground of the toil and striving.
+  basis: read
+  verses: ["1Tim.4.10"]
+  covers: [1499524]
+- observation: 24001
+  stage: layer-2
+  kind: pairing
+  item: pairing
+  text: In Exo 21:22 'harm' (two codes, H0611 and H1961) is negated: the case set out is a fight that brings the birth but no further harm, which decides the penalty.
+  basis: read
+  verses: ["Exod.21.22"]
+  covers: [1015257, 1015258]
+- observation: 24002
+  stage: layer-2
+  kind: pairing
+  item: pairing
+  text: In Ecc 2:11 'gained' (yitron, H3504) follows the striving after wind and is negated: the toil under the sun is said to leave no gain.
+  basis: stated
+  verses: ["Eccl.2.11"]
+  covers: [1285032]
+- observation: 24003
+  stage: layer-2
+  kind: pairing
+  item: pairing
+  text: In Gen 32:28 'called' (H0559, Niphal) gives the renaming of Jacob, and the clause with 'striven' is joined to it by 'for' as its reason.
+  basis: stated
+  verses: ["Gen.32.28"]
+  covers: [987217]
+- observation: 24004
+  stage: layer-2
+  kind: pairing
+  item: pairing
+  text: In Pro 28:4 'praise' (H1984B) of the wicked by those who forsake the law is set opposite the striving against the wicked by those who keep it.
+  basis: stated
+  verses: ["Prov.28.4"]
+  covers: [1276887]
+- observation: 24005
+  stage: layer-2
+  kind: pairing
+  item: pairing
+  text: In Exo 21:22 'judges' (H6414) set the payment due after the fight between the men; the word stands at the close of the case, not with strive.
+  basis: stated
+  verses: ["Exod.21.22"]
+  covers: [1015257, 1015258]
+- observation: 24006
+  stage: layer-2
+  kind: pairing
+  item: pairing
+  text: In Isa 41:11 'confounded' (H3637) is the outcome for the incensed, in the clause parallel to the one where those who strive against Israel come to nothing.
+  basis: stated
+  verses: ["Isa.41.11"]
+  covers: [1292401]
+- observation: 24007
+  stage: layer-2
+  kind: pairing
+  item: pairing
+  text: In Ecc 2:26 'pleases' (H2896A, H6440G) and 'joy' (H8057) belong to the one God favours, who receives wisdom, knowledge and joy, set against the sinner's business of gathering, which is called a striving after wind.
+  basis: stated
+  verses: ["Eccl.2.26"]
+  covers: [1287677]
+- observation: 24008
+  stage: layer-2
+  kind: pairing
+  item: pairing
+  text: In Hos 12:4 'favor' (H2603A, Hithpael) follows the striving: after prevailing, Jacob wept and sought favor.
+  basis: stated
+  verses: ["Hos.12.4"]
+  covers: [1385251]
+- observation: 24009
+  stage: layer-2
+  kind: pairing
+  item: pairing
+  text: In Ecc 6:9 'appetite' (nephesh, H5315L) is the one whose wandering is set below the sight of the eyes and called a striving after wind.
+  basis: stated
+  verses: ["Eccl.6.9"]
+  covers: [1285680]
+- observation: 24010
+  stage: layer-2
+  kind: pairing
+  item: pairing
+  text: In 1Cor 14:12 'eager' (zelotes, G2207) names the readers' eagerness for manifestations of the Spirit, and the imperative 'strive' that follows turns it to building up the church.
+  basis: read
+  verses: ["1Cor.14.12"]
+  covers: [1483412]
+- observation: 24011
+  stage: layer-2
+  kind: pairing
+  item: pairing
+  text: In 1Th 2:17 'desire' (epithymia, G1939) qualified by 'great' goes with endeavored in a prepositional phrase, naming what went with the effort to see the readers.
+  basis: read
+  verses: ["1Thess.2.17"]
+  covers: [1497259]
+- observation: 24012
+  stage: layer-2
+  kind: pairing
+  item: pairing
+  text: In Isa 41:11 'perish' (H0006) is the end of those who strive against Israel, after 'shall be as nothing'.
+  basis: stated
+  verses: ["Isa.41.11"]
+  covers: [1292401]
+- observation: 24013
+  stage: layer-2
+  kind: pairing
+  item: pairing
+  text: In Pro 28:4 'wicked' (H7563) are the ones the law-keepers strive against, referred to again by 'them' after the verb.
+  basis: stated
+  verses: ["Prov.28.4"]
+  covers: [1276887]
+- observation: 24014
+  stage: layer-2
+  kind: pairing
+  item: pairing
+  text: In Ecc 1:17 'madness' (H1947) and 'folly' (H5531A) are objects of 'to know', set beside wisdom; the applying of the heart to know them is what the verse calls a striving after wind.
+  basis: stated
+  verses: ["Eccl.1.17"]
+  covers: [1288171]
+- observation: 24015
+  stage: layer-2
+  kind: pairing
+  item: pairing
+  text: In Pro 28:4 'forsake' (H5800A, a participle) names those who leave the law and praise the wicked, set opposite those who keep it and strive.
+  basis: stated
+  verses: ["Prov.28.4"]
+  covers: [1276887]
+- observation: 24016
+  stage: layer-2
+  kind: pairing
+  item: pairing
+  text: In Ecc 4:16 'rejoice' (H8055) is negated: those who come after take no joy in the one who led the people, and the verse then calls it a striving after wind.
+  basis: stated
+  verses: ["Eccl.4.16"]
+  covers: [1287996]
+- observation: 24017
+  stage: layer-2
+  kind: pairing
+  item: pairing
+  text: In Heb 12:14 'holiness' (hagiasmos, G0038) is the second object of 'strive for', after peace, and the clause after it makes it the condition of seeing the Lord.
+  basis: stated
+  verses: ["Heb.12.14"]
+  covers: [1505281]
+- observation: 24018
+  stage: layer-2
+  kind: pairing
+  item: pairing
+  text: In Ecc 4:16 'led' (three codes, H6440G, H0834A, H1961: those he was before) names the people without end whom one man led; the lack of joy in him among those who come later is called a striving after wind.
+  basis: read
+  verses: ["Eccl.4.16"]
+  covers: [1287996]
+- observation: 24019
+  stage: layer-2
+  kind: pairing
+  item: pairing
+  text: In Ecc 1:17 'heart' (lev, H3820A) is the object of 'applied': the speaker applied his heart to know, and that knowing is then called a striving after wind.
+  basis: stated
+  verses: ["Eccl.1.17"]
+  covers: [1288171]
+- observation: 24020
+  stage: layer-2
+  kind: pairing
+  item: pairing
+  text: In Ecc 2:22 'heart' (lev, H3820A) stands in construct after striving, so the striving is of the heart, joined to the toil.
+  basis: stated
+  verses: ["Eccl.2.22"]
+  covers: [1285121]
+- observation: 24021
+  stage: layer-2
+  kind: pairing
+  item: pairing
+  text: In 1Th 2:17 'heart' (kardia, G2588) stands in the contrast 'in person, not in heart', which comes just before endeavored.
+  basis: stated
+  verses: ["1Thess.2.17"]
+  covers: [1497259]
+- observation: 24022
+  stage: layer-2
+  kind: pairing
+  item: pairing
+  text: In Isa 41:11 'put to shame' (H0954) is the outcome for the incensed, in the clause parallel to the one where those who strive against Israel come to nothing.
+  basis: stated
+  verses: ["Isa.41.11"]
+  covers: [1292401]
+- observation: 24023
+  stage: layer-2
+  kind: pairing
+  item: pairing
+  text: In 1Ti 4:10 'hope' (G1679, a perfect: hope set and standing) gives the ground of the toil and striving, in the clause after 'because'.
+  basis: stated
+  verses: ["1Tim.4.10"]
+  covers: [1499524]

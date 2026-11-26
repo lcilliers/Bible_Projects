@@ -1,0 +1,791 @@
+# ReadEvidence -- strive / contention -- step 2.1
+
+## What to do
+
+The evidence validation (B5) of one subgroup, after its sweep, the gate before 3.1: the code checks of its observations (shown in `code_checks`), and the reading of every evidence observation of the subgroup (its own of S1 to 2.1, and the older ones on its occurrences kept as evidence) for whether it is true, founded and coherent with the others. Inner being is not judged here; the two validations are never run together.
+
+Read:
+- Read the code checks first: a failing check names observations to repair (unmarked, no node, a word node missing a column without its reason, a trace to a deleted observation, two of one text, a B1 observation no sense traces, a sense the 2.1 observations on its occurrences do not trace, an older observation left open).
+- Take one observation at a time (`observations`, in the order of the steps): its text, basis and grounds against its verses (`verses`) and the observations it traces. Is it true of those verses? Does it say more than they show? Does it contradict another observation of the subgroup?
+
+Write:
+- Fill `answer.observations`, one entry for each observation of the package: verdict true, with `why` (what in the verses and the data bears it out); or verdict repair, with `why` (what is wrong) and `actions`: the actions of the validation that repair it (cfg_setting validate.reading actions, each with its parameters, for example {"action": "restate", "oid": id, "new_text": ..., "checked": ..., "reason": ...}, or delete_neither, complete_node, add_trace).
+- A repair is checked as it is written; an observation that cannot be made true is deleted with its reason.
+- Then: Collection-Build.ps1 -Action CheckAnswer -File <the answer file>: every problem at once, each with its rule, nothing written; correct the answer until it finds none, then -Action RecordEvidence -File <the answer file>, and ReadEvidence again until every evidence observation is read; the gate passes when all are read and the code checks pass.
+
+## Refused when (by rule)
+
+- DA-02: belongs to collection; the nodes do not carry the collections
+- IB-07: is not marked evidence: an inner-being observation traces to evidence; an observation does not trace itself
+- LR-01: is not closed (every row answered
+- PC-01: is not a step of the layered reading; is not a live subgroup of; no live collection; has no live subgroup; cannot read ;  are required;  is required
+- PC-02: answer (its `command` must be; is a list of {observation, action, reason; the answer holds no ; answered twice; a true observation takes no action; unknown parameter(s); a sheet is an object; missing parameter(s); this is not the answer of a read
+- PC-03: is not an older live observation on the occurrences of this row; is not an open old observation of this subgroup; not an evidence observation of; a deferral names a live collection; has no matching live verse_lexical row; both must be different live observations;  is not an occurrence of ; is not a live observation; is not a live node; does not exist;  is not a ; merge names a live observation to keep; defer names a live collection
+- PC-04: basis must be one of; role must be one of; route must be one of; tag must be one of; stage must be one of; nature must be one of; verdict is true or repair; cannot be modified (allowed:; not in live cfg_enum ib_observation; action is one of; names its marker, nature one of; is not an action of the validation
+- PC-05: the evidence validation of ; has no open row; its group is retired or missing; has no evidence-validation row; carry names a LATER step of; the loop is for one subgroup at a time; partner collection 
+- PC-06:  s, more than 
+- PC-07: cfg_setting layer.reading is missing; cfg_setting layer.scan; layer.reading step ; (apply iba/app/migration/archive/; the code is ahead of the config; have no nature in cfg_setting layer.reading; the read names rule(s) not active; is empty: run install_nature; are not ib_observation.tag values;  is missing
+- RW-01: needs its reason, in words; say in words what was checked; say what it states that the existing record does not; state the finding the collection is to close; say in words which words it relies on; say in words why the word supports no finding; is the last word node of observation; already holds that occurrence: drop the node instead; its occurrence is on no live node of; carry gives its reason in words
+- RW-03: is already live as observation; the same text as; a merge is for the same description
+- RW-04: is a bare negation with no actual content
+- RW-13: are still open in the ledger; have no answer in fill.older; its fate is not recorded; is not in the change log of observation; the change log does not show it
+- RW-14: the statement used more than
+- VA-02: why says, in words,; a repair names the actions
+- VA-03: name the carrying observations; the mapping is stated in words; occurrence(s) are on no node of; not carried needs its reason
+- VA-04: only an observation that is neither is deleted here; repair those traces first
+- VA-05: a deferred observation is marked now
+
+## Limits
+
+- grounds and every reason: characters at least: 10
+- observation text: characters at least: 40
+- consecutive verse words a text may copy, at most: 7
+
+## The rules
+
+- VA-01 a-sheet-is-one-checked-transaction: A sheet of validation actions is checked whole (every action named, its parameters complete) and written in one transaction: any action the tables refuse refuses the whole sheet and nothing is kept. -Check runs every action and rolls back. Every change is kept in ib_observation_change with its reason (RW-01); nothing is physically deleted.
+- VA-02 repair-first-and-every-finding-acted-on: A finding of the validation is repaired first: a wording that is untrue or stronger than its verse is restated and the restatement checked against the base data; a node missing a column is completed, or the reason the data cannot give it is recorded; a duplicate is consolidated; a node is deleted only when another live node carries its occurrence or it supports no finding of its observation. A finding is left open only when a named collection's validation will touch the observation: the deferral to that collection and the finding are recorded, and the check accepts it as deferred. A finding with no named owner is closed in the validation.
+- VA-03 consumption-is-verified-before-deletion: An older observation is deleted as consumed only when live observations carry its meaning: every word occurrence of it is on a live node of a carrier or named as not carried with its reason, the mapping is stated in words (what the old says, which carrier states each part), the traces to it are re-pointed or replaced, and the consumption is kept as `consumed_by`. An observation that holds more than one finding is split first.
+- VA-04 neither-evidence-nor-inner-being-is-deleted: An observation that is neither evidence nor inner being contributes nothing to the purposes of the observations (researcher, 2026-11-22): it is commented with its reason and the word occurrences no other live observation holds, then deleted. An observation already marked, or one another observation traces, is not deleted this way.
+- VA-05 the-marker-follows-content-not-stage: Evidence states what the data are or show, tied to a verse. Inner being states how something works in the inner being, based on evidence, a building block of the stage 5 claims. The marker (ib_observation.nature) follows the content and purpose of the observation, never its stage (RS-04): an observation of any stage may be inner being when it traces to evidence. One that states both is split. The marker is set when the observation is created, by the item that is answered (cfg_setting layer.reading items.<item>.nature); a finding file never sets it; the validation changes it only where the content shows the item's nature does not hold.
+- VA-06 evidence-validation-gates-inner-being-validation: The validation runs in two layers, never concurrently: evidence first, then inner being. The inner-being layer is judged only when the evidence layer passes (every in-scope observation marked, none without a live node, no word node missing a required column without its reason, no live trace to a deleted observation, no two of one meaning). A later evidence change reopens only the inner-being rows it touches. In the build this gate is: step 3.1 does not open before the evidence layer passes, and step 3.3 does not close before both layers pass (cfg_setting layer.reading open_gate and closing_gate).
+- RW-01 changed-only-by-reading: No observation is changed except by a reading, and every change is recorded with its reason. An observation no longer supported by the verse is soft-deleted, with the reason.
+- RW-03 no-duplicates-multi-node: One observation per finding: the same description is never written twice. Applied to another verse, word or scope it gains a node on the existing observation.
+- RW-04 concise-verse-specific: Observation text is concise and tied to this verse's content, never a restatement of the word's dictionary sense. A transliteration is never given without its gloss.
+- RW-06 resolved-fresh-on-evidence: Verse references are resolved fresh at write time, never taken from the text written. Relations are recorded only on evidence.
+- RW-11 missing-is-named: Missing data in the base extract is named as a gap, never substituted from memory or outside knowledge.
+- DA-02 a-node-per-occurrence-with-its-surfaces-collection: A node is on one occurrence (verse_lexical_id) and carries the collection of its surface (a supportive node, the collection of the surface it supports); a node already on the observation for the same occurrence is not written twice, and takes the role. A node with no collection to carry, or on a verse out of scope (B:130), is not written and is listed.
+- IB-07 inner-being-observations-trace-to-evidence: Every live observation marked inner_being holds at least one live traced node on a live observation marked evidence, or on a live inner-being observation that itself traces to evidence (the trace chain of stage 4: a 3.2 behaviour traces the 3.1 elements it gathers, a 3.3 match the 3.1 and 3.2 observations it comes from; at most three links), unless it is recorded self-evidencing: it quotes its verse in full and holds a word node for every word it relies on. A traced node never points at a deleted observation. A trace points first at existing evidence; an evidence observation is created only when none states the fact and it states what the nodes and the quotation do not. An inner-being observation traced to evidence not yet marked is pending, not failed.
+- LR-01 a-step-opens-on-gates-and-derives-its-ledger: A step of the layered reading opens only when the grouping is finished (every surface placed in a subgroup or isolated with its reason, every subgroup holding a surface) and the previous step is closed; with -Subgroup the needs and gates are judged for that subgroup alone (#2538). Step S1 is read after the grouping; step 1.1 needs step S1 closed: every word of the subgroup (surface and lettered Strong's code) answered and validated. Opening derives one ledger row for each aspect the data demands (cfg_setting layer.reading); an aspect the data no longer demands is retired, a new one is added, and a second open changes nothing.
+- PC-01 the-command-names-a-live-unit: A read or record command names a live collection, a live subgroup of it where the read is by subgroup, and a step or item the layered reading knows. A command that names one that does not exist is refused and writes nothing.
+- PC-02 the-answer-is-the-packet-form: An answer is the output form its read wrote: the `command` of that read; every entry an object, or a list, where the form has one; each field in its place with its type (a key unique in the answer, a text, a reason in words); each item answered once; and at least one entry where the form asks for entries. A file in another shape is refused whole and nothing is written.
+- PC-03 names-are-those-the-packet-offers: Every ledger row, occurrence, observation, sense, node, verse and collection an answer names is one the packet offered for this unit, or a key the answer itself defines, and is live in the database. A name outside them is refused.
+- PC-04 values-from-the-allowed-lists: Every coded value of an answer (kind, basis, item, part, role, route, mode, polarity, flag type, disposition, verdict, action, nature, stage, status) is one of the values the configuration allows for it (cfg_enum, cfg_setting layer.reading, reading.observation_items, validate.reading), as the packet lists them. Any other value is refused.
+- PC-05 the-unit-is-at-its-step: A read or record runs only where the ledger has its unit at that step: the row open, or answered and not yet validated, and the steps before it closed (S1 before 1.1; the 2.1 rows before the sweep; the sweep before the evidence validation; its gate before 3.1; every subgroup through 3.1 before 3.2). Out of order it is refused, and the message names what comes first.
+- PC-06 within-the-configured-limits: A read writes its packet within the time and size the configuration sets (cfg_setting layer.read_types: limits, package_max_chars, read_max_seconds). A read that would exceed them is refused, nothing is written, and the limit is named.
+- PC-07 the-config-the-code-needs-is-present: The code of the reading runs only where the configuration it reads is in place (the settings, steps, items, natures, enums and rules it names). Where the code is ahead of the configuration, the command is refused and names what is missing.
+- RW-13 older-observations-answered-at-record: Every older live observation with a live node on an occurrence of the row (a stage that is not the build's own) is answered in fill.older when the row is recorded, once: keep or restate (each with its marker), merge into a named observation, consume (live observations carry its meaning, stated in words, verified before it is deleted), delete as neither (comment first), or defer to a named collection (marked now; only the finding is left to that collection). An observation already marked by the validation, answered in a build or deferred is not asked again. A new observation whose text equals that of another live observation of the collection is refused, the other named. LayerCheck re-derives both from the tables. The end state of a collection's build is that every observation of its scope is marked and fixed or deleted, every word node complete or with its reason, and each deferral owned by a named collection.
+- RW-14 every-lookup-is-pinpointed: A lookup of related data in the build or the validation is by an indexed column and takes a chunk of ids (cfg_setting layer.scan chunk); none runs once for each item of a list, and a statement that uses more work than layer.scan max_vm_ops is stopped and named, nothing written (lib/scanguard.py). The tests refuse a statement of the build whose query plan scans a table (layer.scan scan_ok lists the temporary tables a statement may scan).
+
+## item
+
+evidence-validation
+
+## made
+
+2026-11-26T16:24:02Z
+
+## batch
+
+- observations: 40
+- left_after_this: 66
+- evidence_in_scope: 106
+- observations_in_scope: 127
+
+## code_checks
+
+- passes: true
+- findings: {"unmarked": [], "no_node": [], "word_missing": [], "traced_dead": [], "duplicate_text": [], "b1_not_traced_by_a_sense": [], "sense_not_traced_by_2_1": [], "older_open": []}
+
+## observations
+
+- observation: 24262
+  step: S1
+  item: word-sense
+  kind: term
+  text: In Rom 1:29 and Gal 5:20 eris (strife, quarrel; a noun) stands in a list among envy, murder, enmity, jealousy and anger; in 1Cor 3:3 jealousy and strife among the believers are named as the mark of being of the flesh.
+  basis: stated
+  grounds: jealousy and strife among you
+  traces: []
+  verses: ["1Cor 3:3", "Gal 5:20", "Rom 1:29"]
+- observation: 24263
+  step: S1
+  item: word-sense
+  kind: term
+  text: In Psa 56:6 and Psa 59:3 gur (stir up strife; Qal imperfect, plural) is what the speaker's enemies do, together with lying in wait for his life and watching his steps.
+  basis: stated
+  grounds: fierce men stir up strife against me
+  traces: []
+  verses: ["Psa 56:6", "Psa 59:3"]
+- observation: 24264
+  step: S1
+  item: word-sense
+  kind: face
+  text: In Isa 54:15 gur is used twice of anyone who stirs up strife against Zion: God says it is not from him, and the one who does it will fall.
+  basis: stated
+  grounds: whoever stirs up strife with you shall fall
+  traces: []
+  verses: ["Isa 54:15"]
+- observation: 24265
+  step: S1
+  item: word-sense
+  kind: term
+  text: In Hab 1:3 hayah (be, arise; Qal narrative) is the verb the surface strife carries: strife and contention arise, among the iniquity and violence the prophet is made to see.
+  basis: read
+  grounds: strife and contention arise
+  traces: []
+  verses: ["Hab 1:3"]
+- observation: 24266
+  step: S1
+  item: word-sense
+  kind: term
+  text: In Pro 15:18, 16:28, 28:25 and 29:22 madon (strife) is stirred up or spread by a man named by his trait: hot-tempered, dishonest, greedy, a man of wrath; in 15:18 the one slow to anger quiets it.
+  basis: stated
+  grounds: A hot-tempered man stirs up strife
+  traces: []
+  verses: ["Pro 15:18", "Pro 16:28", "Pro 28:25", "Pro 29:22"]
+- observation: 24267
+  step: S1
+  item: word-sense
+  kind: term
+  text: In Pro 17:14 and Pro 22:10 madon is given a course: its beginning is like letting out water, so one quits before it breaks out, and it goes out when the scoffer is driven out.
+  basis: stated
+  grounds: The beginning of strife is like letting out water
+  traces: []
+  verses: ["Pro 17:14", "Pro 22:10"]
+- observation: 24268
+  step: S1
+  item: word-sense
+  kind: term
+  text: In Pro 23:29 midyan (strife, contention; plural) is one of the woes asked about, beside sorrow, complaining and wounds without cause, of the one who tarries over wine.
+  basis: stated
+  grounds: Who has strife? Who has complaining
+  traces: []
+  verses: ["Pro 23:29"]
+- observation: 24269
+  step: S1
+  item: word-sense
+  kind: term
+  text: In Pro 10:12 medan (strife) is what hatred stirs up, set against love, which covers all offenses.
+  basis: stated
+  grounds: Hatred stirs up strife
+  traces: []
+  verses: ["Pro 10:12"]
+- observation: 24270
+  step: S1
+  item: word-sense
+  kind: term
+  text: In Pro 13:10 and Pro 17:19 matsah (strife) comes from insolence, set against wisdom with those who take advice, and is what the one who loves transgression loves.
+  basis: stated
+  grounds: By insolence comes nothing but strife
+  traces: []
+  verses: ["Pro 13:10", "Pro 17:19"]
+- observation: 24271
+  step: S1
+  item: word-sense
+  kind: term
+  text: In Gen 13:8 meribah (strife, contention) is refused by Abram toward Lot and between their herdsmen, on the ground that they are kinsmen.
+  basis: stated
+  grounds: Let there be no strife between you and me
+  traces: []
+  verses: ["Gen 13:8"]
+- observation: 24272
+  step: S1
+  item: word-sense
+  kind: face
+  text: In Job 33:19 the surface strife stands on rov (multitude, abundance; in construct), which the ESV gives with 'continual': a ceaseless struggle in the bones of the man rebuked by pain on his bed.
+  basis: read
+  grounds: continual strife in his bones
+  traces: []
+  verses: ["Job 33:19"]
+- observation: 24273
+  step: S1
+  item: word-sense
+  kind: term
+  text: In Gen 13:7, Deu 1:12, Psa 55:9, Pro 17:1 and Hab 1:3 rib (strife, dispute) is discord between people or in a place: between the herdsmen, the people's strife Moses must bear, violence and strife in the city, a house of feasting with strife.
+  basis: stated
+  grounds: there was strife between the herdsmen
+  traces: []
+  verses: ["Deu 1:12", "Gen 13:7", "Hab 1:3", "Pro 17:1", "Psa 55:9"]
+- observation: 24274
+  step: S1
+  item: word-sense
+  kind: term
+  text: In Pro 20:3, Pro 26:21 and Pro 30:33 rib is kindled or produced by a person: the fool is always quarreling while honor keeps aloof, the quarrelsome man kindles it as charcoal does embers, and pressing anger produces it.
+  basis: stated
+  grounds: pressing anger produces strife
+  traces: []
+  verses: ["Pro 20:3", "Pro 26:21", "Pro 30:33"]
+- observation: 24275
+  step: S1
+  item: word-sense
+  kind: face
+  text: In 2Sa 22:44, Psa 18:43 and Psa 31:20 rib is strife against the king or the faithful from which God delivers or shelters them, in Psa 31:20 the strife of tongues.
+  basis: stated
+  grounds: from the strife of tongues
+  traces: []
+  verses: ["2Sa 22:44", "Psa 18:43", "Psa 31:20"]
+- observation: 24276
+  step: S1
+  item: word-sense
+  kind: face
+  text: In Jer 15:10 rib names the prophet himself: he calls himself a man of strife and contention for all the land, cursed by everyone though he has neither lent nor borrowed.
+  basis: stated
+  grounds: a man of strife and contention
+  traces: []
+  verses: ["Jer 15:10"]
+- observation: 24277
+  step: 1.1
+  item: group-definition
+  kind: group
+  text: Discord among people: strife as a state between persons or in a place, in Gen 13:7, Gen 13:8, Deu 1:12, Psa 55:9, Pro 17:1, Pro 23:29, Hab 1:3, and in the vice lists of Rom 1:29, Gal 5:20 and 1Cor 3:3.
+  basis: read
+  grounds: strife, controversy, dispute
+  traces: [24262, 24265, 24268, 24271, 24273]
+  verses: ["1Cor 3:3", "Deu 1:12", "Gal 5:20", "Gen 13:7", "Gen 13:8", "Hab 1:3", "Pro 17:1", "Pro 23:29", "Psa 55:9", "Rom 1:29"]
+- observation: 24278
+  step: 1.1
+  item: group-definition
+  kind: group
+  text: Strife stirred up by a person: strife roused, spread or kindled by one named by his trait or act, the hot-tempered, the greedy, the quarrelsome, hatred, insolence, pressed anger, in Pro 10:12, Pro 13:10, Pro 15:18, Pro 16:28, Pro 17:14, Pro 22:10, Pro 26:21, Pro 29:22, Pro 30:33.
+  basis: read
+  grounds: strife, contention
+  traces: [24266, 24267, 24269, 24270, 24274]
+  verses: ["Pro 10:12", "Pro 13:10", "Pro 15:18", "Pro 16:28", "Pro 17:14", "Pro 17:19", "Pro 20:3", "Pro 22:10", "Pro 26:21", "Pro 28:25", "Pro 29:22", "Pro 30:33"]
+- observation: 24279
+  step: 1.1
+  item: group-definition
+  kind: group
+  text: Strife raised against someone: hostile strife stirred up against the speaker, Zion, the king or the faithful, from which God shelters or delivers them, in Psa 56:6, Psa 59:3, Isa 54:15, 2Sa 22:44, Psa 18:43, Psa 31:20, and Jer 15:10, where the prophet is the man all contend with.
+  basis: read
+  grounds: to stir up trouble, strife, quarrel
+  traces: [24263, 24264, 24275, 24276]
+  verses: ["2Sa 22:44", "Isa 54:15", "Jer 15:10", "Psa 18:43", "Psa 31:20", "Psa 56:6", "Psa 59:3"]
+- observation: 24280
+  step: 1.1
+  item: group-definition
+  kind: group
+  text: Strife in the body: in Job 33:19 the man rebuked by pain on his bed has a continual strife in his bones.
+  basis: read
+  grounds: multitude, abundance, greatness
+  traces: [24272]
+  verses: ["Job 33:19"]
+- observation: 24281
+  step: 1.2
+  item: strong-enrichment
+  kind: enrichment
+  text: rib (H7379) is strife, dispute and a case at law; meribah (H4808, provocation) and midyan (H4079) are strife and contention; eris (G2054) is quarrel, dissension and a contentious disposition, which fits the vice lists of Rom 1:29 and Gal 5:20. hayah (H1961, to be) in Hab 1:3 is the verb of arising and adds no meaning of strife.
+  basis: read
+  grounds: strife, controversy, dispute
+  traces: [24277]
+  verses: ["1Cor 3:3", "Deu 1:12", "Gal 5:20", "Gen 13:7", "Gen 13:8", "Hab 1:3", "Pro 17:1", "Pro 23:29", "Psa 55:9", "Rom 1:29"]
+- observation: 24282
+  step: 1.2
+  item: strong-enrichment
+  kind: enrichment
+  text: madon (H4066), medan (H4090) and matsah (H4683) are each given only as strife and contention, madon also as the object of contention; rib (H7379) adds quarrel and dispute. The lexicon gives no cause; the causes in Pro 10:12, Pro 15:18 and Pro 26:21 come from the verses.
+  basis: read
+  grounds: strife, contention
+  traces: [24278]
+  verses: ["Pro 10:12", "Pro 13:10", "Pro 15:18", "Pro 16:28", "Pro 17:14", "Pro 17:19", "Pro 20:3", "Pro 22:10", "Pro 26:21", "Pro 28:25", "Pro 29:22", "Pro 30:33"]
+- observation: 24283
+  step: 1.2
+  item: strong-enrichment
+  kind: enrichment
+  text: gur (H1481B) is to stir up trouble and strife, to quarrel, in the Qal, and in the Hithpolel to excite oneself; rib (H7379) is strife and dispute. The lexicon bears out strife roused against another in Psa 59:3 and Isa 54:15.
+  basis: read
+  grounds: to stir up trouble, strife, quarrel
+  traces: [24279]
+  verses: ["2Sa 22:44", "Isa 54:15", "Jer 15:10", "Psa 18:43", "Psa 31:20", "Psa 56:6", "Psa 59:3"]
+- observation: 24284
+  step: 1.2
+  item: strong-enrichment
+  kind: enrichment
+  text: rov (H7230) is multitude, abundance and greatness, not strife; the sense of strife in Job 33:19 is not borne out by this code and comes from the ESV rendering of the occurrence, a point on how the occurrence is coded.
+  basis: read
+  grounds: multitude, abundance, greatness
+  traces: [24280]
+  verses: ["Job 33:19"]
+- observation: 24285
+  step: 2.1
+  item: double-meaning
+  kind: face
+  text: In Gen 13:7, Deu 1:12, 2Sa 22:44, Psa 18:43, Psa 31:20, Psa 55:9, Pro 17:1, Pro 20:3, Pro 26:21, Pro 30:33, Jer 15:10 and Hab 1:3 the surface strife stands on rib (H7379), the noun of dispute and a case at law.
+  basis: read
+  grounds: pressing anger produces strife
+  traces: [24277, 24278, 24279]
+  verses: ["2Sa 22:44", "Deu 1:12", "Gen 13:7", "Hab 1:3", "Jer 15:10", "Pro 17:1", "Pro 20:3", "Pro 26:21", "Pro 30:33", "Psa 18:43", "Psa 31:20", "Psa 55:9"]
+- observation: 24286
+  step: 2.1
+  item: double-meaning
+  kind: face
+  text: In Proverbs the surface strife stands on four other nouns besides rib: madon (H4066) in Pro 15:18 and five more verses, medan (H4090) in Pro 10:12, matsah (H4683) in Pro 13:10 and 17:19, and midyan (H4079) in Pro 23:29; and in Gen 13:8 on meribah (H4808).
+  basis: read
+  grounds: A hot-tempered man stirs up strife
+  traces: [24277, 24278]
+  verses: ["Gen 13:8", "Pro 10:12", "Pro 13:10", "Pro 15:18", "Pro 16:28", "Pro 17:14", "Pro 17:19", "Pro 22:10", "Pro 23:29", "Pro 28:25", "Pro 29:22"]
+- observation: 24287
+  step: 2.1
+  item: double-meaning
+  kind: face
+  text: In Psa 56:6, Psa 59:3 and Isa 54:15 the surface strife stands on gur (H1481B), a verb: the English 'stir up strife' renders one verb, not a verb with a noun.
+  basis: read
+  grounds: They stir up strife, they lurk
+  traces: [24279]
+  verses: ["Isa 54:15", "Psa 56:6", "Psa 59:3"]
+- observation: 24288
+  step: 2.1
+  item: double-meaning
+  kind: face
+  text: In Hab 1:3 the surface strife holds both rib (H7379, counted above) and hayah (H1961, arise), and in Job 33:19 it stands on rov (H7230, multitude), not on a word of strife.
+  basis: read
+  grounds: continual strife in his bones
+  traces: [24277, 24280]
+  verses: ["Hab 1:3", "Job 33:19"]
+- observation: 24289
+  step: 2.1
+  item: double-meaning
+  kind: face
+  text: In Rom 1:29, 1Cor 3:3 and Gal 5:20 the surface strife stands on eris (G2054), the Greek noun of quarrel and dissension.
+  basis: read
+  grounds: jealousy and strife among you
+  traces: [24277]
+  verses: ["1Cor 3:3", "Gal 5:20", "Rom 1:29"]
+- observation: 24290
+  step: 2.1
+  item: qualifier
+  kind: pairing
+  text: In Gen 13:7 and Gen 13:8 'between' (H0996G) sets the parties of the strife, Abram and Lot and their herdsmen, and in Gen 13:8 'no' (H0408) negates the strife itself: let there be none.
+  basis: read
+  grounds: Let there be no strife between you and me
+  traces: [24277]
+  verses: ["Gen 13:7", "Gen 13:8"]
+- observation: 24291
+  step: 2.1
+  item: qualifier
+  kind: pairing
+  text: In Psa 59:3 and Jer 15:10 the negators deny a cause in the one the strife is raised against: no transgression or sin of the speaker, and the prophet has neither lent nor borrowed; in Psa 59:3 'fierce men' (H5794) names those who stir it.
+  basis: read
+  grounds: For no transgression or sin of mine
+  traces: [24279]
+  verses: ["Jer 15:10", "Psa 59:3"]
+- observation: 24292
+  step: 2.1
+  item: qualifier
+  kind: pairing
+  text: In Pro 15:18, Pro 20:3, Pro 22:10 and Pro 28:25 the qualifier names the trait of the one who stirs or stills strife: slow to anger, the fool, the scoffer, the greedy man.
+  basis: read
+  grounds: he who is slow to anger quiets contention
+  traces: [24278]
+  verses: ["Pro 15:18", "Pro 20:3", "Pro 22:10", "Pro 28:25"]
+- observation: 24293
+  step: 2.1
+  item: qualifier
+  kind: pairing
+  text: In Job 33:19, Pro 13:10, Pro 23:29, Pro 29:22 and Rom 1:29 the qualifier gives the measure of the strife or its company: continual, nothing but strife from insolence, wounds without cause, much transgression, full of envy, murder and strife.
+  basis: read
+  grounds: By insolence comes nothing but strife
+  traces: [24277, 24278, 24280]
+  verses: ["Job 33:19", "Pro 13:10", "Pro 23:29", "Pro 29:22", "Rom 1:29"]
+- observation: 24294
+  step: 2.1
+  item: qualifier
+  kind: pairing
+  text: In 1Cor 3:3 'still' and 'of the flesh' (G2089, G4559) qualify the believers among whom there is jealousy and strife: they are still of the flesh, and the negated question presses it.
+  basis: read
+  grounds: you are still of the flesh
+  traces: [24277]
+  verses: ["1Cor 3:3"]
+- observation: 24295
+  step: 2.1
+  item: qualifier
+  kind: pairing
+  text: In the other verses of the row, Pro 16:28, Pro 17:1, Hab 1:3, 2Sa 22:44 and Psa 18:43, the qualifiers reach other words: close friends separated, a dry morsel better than a full house, before the prophet's eyes, a people not known.
+  basis: read
+  grounds: a whisperer separates close friends
+  traces: [24277, 24278, 24279]
+  verses: ["2Sa 22:44", "Hab 1:3", "Pro 16:28", "Pro 17:1", "Psa 18:43"]
+- observation: 24296
+  step: 2.1
+  item: entity
+  kind: pairing
+  text: In Gen 13:7 and Gen 13:8 the parties of the strife are named: Abram and Lot and their herdsmen, whom Abram calls kinsmen.
+  basis: stated
+  grounds: for we are kinsmen
+  traces: [24277]
+  verses: ["Gen 13:7", "Gen 13:8"]
+- observation: 24297
+  step: 2.1
+  item: entity
+  kind: pairing
+  text: In Pro 15:18, Pro 16:28, Pro 20:3, Pro 26:21 and Pro 29:22 the one who stirs or keeps from strife is 'a man' (ish) named by his trait; in Jer 15:10 the prophet calls himself a man of strife and a man of contention.
+  basis: stated
+  grounds: a quarrelsome man for kindling strife
+  traces: [24278, 24279]
+  verses: ["Jer 15:10", "Pro 15:18", "Pro 16:28", "Pro 20:3", "Pro 26:21", "Pro 29:22"]
+- observation: 24298
+  step: 2.1
+  item: entity
+  kind: pairing
+  text: In Psa 59:3 and Pro 28:25 the Lord is named beside the strife, addressed by the one it is raised against and as the one the trusting man relies on; in Psa 31:20 the men whose plots and tongues God hides his own from.
+  basis: stated
+  grounds: the one who trusts in the Lord will be enriched
+  traces: [24278, 24279]
+  verses: ["Pro 28:25", "Psa 31:20", "Psa 59:3"]
+- observation: 24299
+  step: 2.1
+  item: entity
+  kind: pairing
+  text: In 1Cor 3:3 the strife among believers is called behaving in a human way (anthropos, G0444).
+  basis: stated
+  grounds: behaving only in a human way
+  traces: [24277]
+  verses: ["1Cor 3:3"]
+- observation: 24300
+  step: 2.1
+  item: direction
+  kind: relation
+  text: In Gen 13:7, Gen 13:8 and 1Cor 3:3 the strife runs both ways between parties who belong together: kinsmen and their herdsmen, and believers among themselves.
+  basis: read
+  grounds: strife between you and me
+  traces: [24277]
+  verses: ["1Cor 3:3", "Gen 13:7", "Gen 13:8"]
+- observation: 24301
+  step: 2.1
+  item: direction
+  kind: relation
+  text: In Pro 15:18, Pro 16:28, Pro 26:21, Pro 28:25 and Pro 29:22 the strife runs out from one man into the company around him: he stirs it up, spreads it or kindles it; in Pro 20:3 the man of honor keeps away from it.
+  basis: read
+  grounds: A man of wrath stirs up strife
+  traces: [24278]
+  verses: ["Pro 15:18", "Pro 16:28", "Pro 20:3", "Pro 26:21", "Pro 28:25", "Pro 29:22"]
+
+## verses
+
+- reference: Rom 1:29
+  text: They were filled with all manner of unrighteousness, evil, covetousness, malice. They are full of envy, murder, strife, deceit, maliciousness. They are gossips,
+- reference: Hab 1:3
+  text: Why do you make me see iniquity, and why do you idly look at wrong? Destruction and violence are before me; strife and contention arise.
+- reference: Gal 5:20
+  text: idolatry, sorcery, enmity, strife, jealousy, fits of anger, rivalries, dissensions, divisions,
+- reference: Pro 15:18
+  text: A hot-tempered man stirs up strife, but he who is slow to anger quiets contention.
+- reference: Pro 29:22
+  text: A man of wrath stirs up strife, and one given to anger causes much transgression.
+- reference: Pro 30:33
+  text: For pressing milk produces curds, pressing the nose produces blood, and pressing anger produces strife.
+- reference: Pro 28:25
+  text: A greedy man stirs up strife, but the one who trusts in the Lord will be enriched.
+- reference: Gen 13:7
+  text: and there was strife between the herdsmen of Abram’s livestock and the herdsmen of Lot’s livestock. At that time the Canaanites and the Perizzites were dwelling in the land.
+- reference: Gen 13:8
+  text: Then Abram said to Lot, “Let there be no strife between you and me, and between your herdsmen and my herdsmen, for we are kinsmen.
+- reference: Pro 17:19
+  text: Whoever loves transgression loves strife; he who makes his door high seeks destruction.
+- reference: Psa 18:43
+  text: You delivered me from strife with the people; you made me the head of the nations; people whom I had not known served me.
+- reference: Pro 16:28
+  text: A dishonest man spreads strife, and a whisperer separates close friends.
+- reference: 1Cor 3:3
+  text: for you are still of the flesh. For while there is jealousy and strife among you, are you not of the flesh and behaving only in a human way?
+- reference: Pro 17:14
+  text: The beginning of strife is like letting out water, so quit before the quarrel breaks out.
+- reference: Pro 22:10
+  text: Drive out a scoffer, and strife will go out, and quarreling and abuse will cease.
+- reference: Jer 15:10
+  text: Woe is me, my mother, that you bore me, a man of strife and contention to the whole land! I have not lent, nor have I borrowed, yet all of them curse me.
+- reference: Pro 23:29
+  text: Who has woe? Who has sorrow? Who has strife? Who has complaining? Who has wounds without cause? Who has redness of eyes?
+- reference: Pro 26:21
+  text: As charcoal to hot embers and wood to fire, so is a quarrelsome man for kindling strife.
+- reference: Pro 13:10
+  text: By insolence comes nothing but strife, but with those who take advice is wisdom.
+- reference: Deu 1:12
+  text: How can I bear by myself the weight and burden of you and your strife?
+- reference: 2Sa 22:44
+  text: “You delivered me from strife with my people; you kept me as the head of the nations; people whom I had not known served me.
+- reference: Psa 31:20
+  text: In the cover of your presence you hide them from the plots of men; you store them in your shelter from the strife of tongues.
+- reference: Psa 55:9
+  text: Destroy, O Lord, divide their tongues; for I see violence and strife in the city.
+- reference: Pro 17:1
+  text: Better is a dry morsel with quiet than a house full of feasting with strife.
+- reference: Pro 20:3
+  text: It is an honor for a man to keep aloof from strife, but every fool will be quarreling.
+- reference: Psa 56:6
+  text: They stir up strife, they lurk; they watch my steps, as they have waited for my life.
+- reference: Job 33:19
+  text: “Man is also rebuked with pain on his bed and with continual strife in his bones,
+- reference: Pro 10:12
+  text: Hatred stirs up strife, but love covers all offenses.
+- reference: Psa 59:3
+  text: For behold, they lie in wait for my life; fierce men stir up strife against me. For no transgression or sin of mine, O Lord,
+- reference: Isa 54:15
+  text: If anyone stirs up strife, it is not from me; whoever stirs up strife with you shall fall because of you.
+
+## validation_actions
+
+- add_trace: ["oid", "target", "reason", "moved"]
+- add_word_node: ["oid", "occurrence", "strong", "role", "reason"]
+- annotate: ["oid", "note"]
+- close_deferral: ["oid", "collection_id", "reason"]
+- complete_node: ["node_id", "role", "collection_id", "reason"]
+- consume: ["old_id", "carriers", "mapping", "uncarried"]
+- create_observation: ["spec", "nature", "reason", "serves", "traces"]
+- defer: ["oid", "collection_id", "finding"]
+- delete_neither: ["oid", "reason", "node_ids"]
+- drop_node: ["node_id", "carried_by", "reason"]
+- drop_unrelated_node: ["node_id", "reason"]
+- mark_self_evidencing: ["oid", "reason"]
+- move_node: ["node_id", "to_obs", "reason"]
+- note_node: ["node_id", "note"]
+- restate: ["oid", "new_text", "checked", "reason", "more"]
+- set_nature: ["oid", "nature", "reason"]
+
+## measured
+
+- package_chars: 42015
+- seconds: 0.03
+
+## The answer form (fill it in the JSON file, `answer`)
+
+```json
+{
+ "command": "ReadEvidence",
+ "collection": "strive",
+ "subgroup": "contention",
+ "observations": [
+  {
+   "observation": 24262,
+   "verdict": "true | repair",
+   "why": "",
+   "actions": []
+  },
+  {
+   "observation": 24263,
+   "verdict": "true | repair",
+   "why": "",
+   "actions": []
+  },
+  {
+   "observation": 24264,
+   "verdict": "true | repair",
+   "why": "",
+   "actions": []
+  },
+  {
+   "observation": 24265,
+   "verdict": "true | repair",
+   "why": "",
+   "actions": []
+  },
+  {
+   "observation": 24266,
+   "verdict": "true | repair",
+   "why": "",
+   "actions": []
+  },
+  {
+   "observation": 24267,
+   "verdict": "true | repair",
+   "why": "",
+   "actions": []
+  },
+  {
+   "observation": 24268,
+   "verdict": "true | repair",
+   "why": "",
+   "actions": []
+  },
+  {
+   "observation": 24269,
+   "verdict": "true | repair",
+   "why": "",
+   "actions": []
+  },
+  {
+   "observation": 24270,
+   "verdict": "true | repair",
+   "why": "",
+   "actions": []
+  },
+  {
+   "observation": 24271,
+   "verdict": "true | repair",
+   "why": "",
+   "actions": []
+  },
+  {
+   "observation": 24272,
+   "verdict": "true | repair",
+   "why": "",
+   "actions": []
+  },
+  {
+   "observation": 24273,
+   "verdict": "true | repair",
+   "why": "",
+   "actions": []
+  },
+  {
+   "observation": 24274,
+   "verdict": "true | repair",
+   "why": "",
+   "actions": []
+  },
+  {
+   "observation": 24275,
+   "verdict": "true | repair",
+   "why": "",
+   "actions": []
+  },
+  {
+   "observation": 24276,
+   "verdict": "true | repair",
+   "why": "",
+   "actions": []
+  },
+  {
+   "observation": 24277,
+   "verdict": "true | repair",
+   "why": "",
+   "actions": []
+  },
+  {
+   "observation": 24278,
+   "verdict": "true | repair",
+   "why": "",
+   "actions": []
+  },
+  {
+   "observation": 24279,
+   "verdict": "true | repair",
+   "why": "",
+   "actions": []
+  },
+  {
+   "observation": 24280,
+   "verdict": "true | repair",
+   "why": "",
+   "actions": []
+  },
+  {
+   "observation": 24281,
+   "verdict": "true | repair",
+   "why": "",
+   "actions": []
+  },
+  {
+   "observation": 24282,
+   "verdict": "true | repair",
+   "why": "",
+   "actions": []
+  },
+  {
+   "observation": 24283,
+   "verdict": "true | repair",
+   "why": "",
+   "actions": []
+  },
+  {
+   "observation": 24284,
+   "verdict": "true | repair",
+   "why": "",
+   "actions": []
+  },
+  {
+   "observation": 24285,
+   "verdict": "true | repair",
+   "why": "",
+   "actions": []
+  },
+  {
+   "observation": 24286,
+   "verdict": "true | repair",
+   "why": "",
+   "actions": []
+  },
+  {
+   "observation": 24287,
+   "verdict": "true | repair",
+   "why": "",
+   "actions": []
+  },
+  {
+   "observation": 24288,
+   "verdict": "true | repair",
+   "why": "",
+   "actions": []
+  },
+  {
+   "observation": 24289,
+   "verdict": "true | repair",
+   "why": "",
+   "actions": []
+  },
+  {
+   "observation": 24290,
+   "verdict": "true | repair",
+   "why": "",
+   "actions": []
+  },
+  {
+   "observation": 24291,
+   "verdict": "true | repair",
+   "why": "",
+   "actions": []
+  },
+  {
+   "observation": 24292,
+   "verdict": "true | repair",
+   "why": "",
+   "actions": []
+  },
+  {
+   "observation": 24293,
+   "verdict": "true | repair",
+   "why": "",
+   "actions": []
+  },
+  {
+   "observation": 24294,
+   "verdict": "true | repair",
+   "why": "",
+   "actions": []
+  },
+  {
+   "observation": 24295,
+   "verdict": "true | repair",
+   "why": "",
+   "actions": []
+  },
+  {
+   "observation": 24296,
+   "verdict": "true | repair",
+   "why": "",
+   "actions": []
+  },
+  {
+   "observation": 24297,
+   "verdict": "true | repair",
+   "why": "",
+   "actions": []
+  },
+  {
+   "observation": 24298,
+   "verdict": "true | repair",
+   "why": "",
+   "actions": []
+  },
+  {
+   "observation": 24299,
+   "verdict": "true | repair",
+   "why": "",
+   "actions": []
+  },
+  {
+   "observation": 24300,
+   "verdict": "true | repair",
+   "why": "",
+   "actions": []
+  },
+  {
+   "observation": 24301,
+   "verdict": "true | repair",
+   "why": "",
+   "actions": []
+  }
+ ],
+ "repairs": []
+}
+```
